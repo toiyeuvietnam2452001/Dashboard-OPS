@@ -1,0 +1,79 @@
+[
+{
+"platform": "CPP",
+"team": "P&P",
+"modules": 36,
+"developing": 6,
+"review": 1,
+"completed": 27,
+"theory_pct": 3.87,
+"ojt_modules": 36,
+"ojt_pct": 0
+},
+{
+"platform": "CPP",
+"team": "E&I",
+"modules": 39,
+"developing": 1,
+"review": null,
+"completed": 35,
+"theory_pct": 7.85,
+"ojt_modules": 39,
+"ojt_pct": 0
+},
+{
+"platform": "CPP",
+"team": "M&R",
+"modules": 38,
+"developing": 6,
+"review": 1,
+"completed": 27,
+"theory_pct": 1.48,
+"ojt_modules": 38,
+"ojt_pct": 0
+},
+{
+"platform": "CPP",
+"team": "Deck crew",
+"modules": 11,
+"developing": 0,
+"review": 0,
+"completed": 11,
+"theory_pct": 6.25,
+"ojt_modules": 11,
+"ojt_pct": 0
+},
+{
+"platform": "WHP",
+"team": "P&P",
+"modules": 21,
+"developing": 0,
+"review": 0,
+"completed": 21,
+"theory_pct": 0,
+"ojt_modules": 29,
+"ojt_pct": 0
+},
+{
+"platform": "WHP",
+"team": "E&I",
+"modules": 24,
+"developing": 2,
+"review": 2,
+"completed": 20,
+"theory_pct": 0,
+"ojt_modules": 35,
+"ojt_pct": 0
+},
+{
+"platform": "WHP",
+"team": "M&R",
+"modules": 22,
+"developing": 0,
+"review": 1,
+"completed": 21,
+"theory_pct": 0,
+"ojt_modules": 31,
+"ojt_pct": 0
+}
+]

@@ -1,0 +1,78 @@
+[
+{
+"course": "ICSS – EPCI#2",
+"period": "2026-09"
+},
+{
+"course": "Asset Integrity Management",
+"period": "2026-10"
+},
+{
+"course": "E-house",
+"period": "2026-10"
+},
+{
+"course": "Gas Conditioning and Processing – G-4",
+"period": "2026-10"
+},
+{
+"course": "ICSS – EPCI#1",
+"period": "2026-11"
+},
+{
+"course": "Gas Purification Technology: Mercury Removal",
+"period": "2026-11"
+},
+{
+"course": "ICSS – EPCI#1",
+"period": "2026-12"
+},
+{
+"course": "E-house",
+"period": "2026-12"
+},
+{
+"course": "Telecom System (CPC0-TEL001)",
+"period": "2027-01"
+},
+{
+"course": "HVAC system (MEL 41 – HVAC)",
+"period": "2027-03"
+},
+{
+"course": "Mark CS O&M",
+"period": "2027-04"
+},
+{
+"course": "Analyser – Water in Oil & Gas Chromatography (CPC0-ICS017)",
+"period": "2027-04"
+},
+{
+"course": "Metering Skid (CPPT-ICS001)",
+"period": "2027-05"
+},
+{
+"course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)",
+"period": "2027-05"
+},
+{
+"course": "ECPI#2 – Gas booster compressor",
+"period": "2027-11"
+},
+{
+"course": "EDG (CLQU-MEC005)",
+"period": "2027-12"
+},
+{
+"course": "Gas Turbine Generator (GTG, MER 02)",
+"period": "2028"
+},
+{
+"course": "Turbo Expander (CPPT-MEC003)",
+"period": "2028"
+},
+{
+"course": "Vapour Recovery Compressor (CPPT-MEC005)",
+"period": "2028"
+}
+]

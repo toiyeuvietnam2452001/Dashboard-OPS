@@ -1,0 +1,52 @@
+[
+{
+"stage": "1 CSP Preparation",
+"status": "Near-late",
+"count": 1
+},
+{
+"stage": "1 CSP Preparation",
+"status": "On time",
+"count": 1
+},
+{
+"stage": "2 CSP Approval",
+"status": "Late",
+"count": 1
+},
+{
+"stage": "2 CSP Approval",
+"status": "On time",
+"count": 1
+},
+{
+"stage": "3 Bidding",
+"status": "Near-late",
+"count": 1
+},
+{
+"stage": "3 Bidding",
+"status": "On time",
+"count": 1
+},
+{
+"stage": "4 Evaluation",
+"status": "Late",
+"count": 1
+},
+{
+"stage": "4 Evaluation",
+"status": "On time",
+"count": 2
+},
+{
+"stage": "5 TCEAR Approval",
+"status": "Late",
+"count": 1
+},
+{
+"stage": "6 Contract Signing",
+"status": "On time",
+"count": 1
+}
+]

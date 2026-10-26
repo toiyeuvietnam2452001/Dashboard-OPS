@@ -1,17 +1,27 @@
 # OPS Readiness Dashboard
 
-Dashboard báo cáo phòng OPS, host trên Vercel. Số liệu nhập trong Excel trên SharePoint, Power Automate tự đẩy lên GitHub, Vercel tự cập nhật trang.
+Dashboard báo cáo phòng OPS, có hai mặt hiển thị, cùng chạy từ một file Excel trên SharePoint:
 
 ```
-Excel trên SharePoint ──(Power Automate, theo lịch)──> data.json trên GitHub ──(Vercel tự deploy)──> Dashboard
+                          ┌──> Các sheet dashboard trong chính file Excel (tính lại ngay khi sửa số, xem bằng tài khoản công ty)
+Excel trên SharePoint ────┤
+                          └──(Power Automate, theo lịch)──> data.json trên GitHub ──(Vercel tự deploy)──> https://ops-pqpoc.vercel.app
 ```
 
 | File | Vai trò |
 |---|---|
-| `index.html` | Trang dashboard. Mỗi lần mở trang đọc `data.json`; nếu không đọc được thì hiện số liệu dự phòng nhúng sẵn và báo đỏ ở cuối trang. |
-| `data.json` | Số liệu dashboard. **Power Automate ghi đè file này**, không sửa tay. |
-| `automation/OPS_Dashboard_Data.xlsx` | Mẫu file Excel nguồn: 18 bảng + sheet "Huong dan". Đưa lên SharePoint, phòng OPS nhập số tại đây. |
-| `automation/xuat-du-lieu-dashboard.ts` | Office Script đọc các bảng Excel và xuất JSON. |
+| `index.html` | Trang dashboard web. Mỗi lần mở trang đọc `data.json`; nếu không đọc được thì hiện số liệu dự phòng nhúng sẵn và báo đỏ ở cuối trang. |
+| `data.json` | Số liệu dashboard web. **Power Automate ghi đè file này**, không sửa tay. |
+| `automation/OPS_Dashboard_Data.xlsx` | File Excel nguồn. 6 sheet dashboard ở đầu (Overview, Manpower & Training, ORR, Procedures, Contracts & Permits, Commissioning), sheet "Huong dan", rồi 18 bảng số liệu. Đưa lên SharePoint, phòng OPS nhập số tại các bảng số liệu. |
+| `automation/xuat-du-lieu-dashboard.ts` | Office Script đọc các bảng Excel và xuất JSON cho dashboard web. Chỉ đọc Excel Table, nên bỏ qua các sheet dashboard. |
+| `tools/` | Mã dựng lại `index.html`, `data.json` và file Excel (xem cuối trang). |
+
+## Dashboard trong Excel
+
+- Các sheet dashboard chỉ chứa công thức và biểu đồ trỏ vào các bảng số liệu: sửa số ở bảng là dashboard đổi ngay, không cần Power Automate.
+- Không gõ đè lên các sheet dashboard. Muốn khoá lại: chuột phải tên sheet → **Protect Sheet**.
+- Biểu đồ nhân sự (60 tháng 2024–2028), ORR theo tháng, CBTA và ORR theo team vẽ theo số dòng hiện có. Cập nhật bằng cách điền số vào dòng sẵn có; nếu thêm dòng mới vào các bảng này, cần kéo rộng vùng dữ liệu của biểu đồ (chọn biểu đồ → **Select Data**).
+- Bảng "PRs in progress by stage" dùng 6 tên bước cố định (`1 CSP Preparation` … `6 Contract Signing`); tên bước trong bảng "PR dang xu ly" phải trùng.
 
 ---
 
@@ -95,3 +105,13 @@ Vào <https://make.powerautomate.com>, chọn **Create → Scheduled cloud flow*
 ## Không có Premium
 
 Action HTTP là Premium. Nếu tài khoản Microsoft 365 không có, hỏi IT xin license Power Automate Premium cho một tài khoản chạy luồng, hoặc cho luồng chạy dưới tài khoản đã có Premium. Các bước khác giữ nguyên.
+
+## Dựng lại từ mã nguồn (`tools/`)
+
+Cần Python 3 và `openpyxl`. `tools/data/*.json` là số liệu gốc của báo cáo 21/10/2026.
+
+```bash
+python3 tools/build.py tools tools/data .                                   # index.html + data.json
+python3 tools/excel.py tools/data /tmp/base.xlsx                            # 18 bảng số liệu + Huong dan
+python3 tools/excel_dash.py /tmp/base.xlsx automation/OPS_Dashboard_Data.xlsx  # thêm 6 sheet dashboard
+```

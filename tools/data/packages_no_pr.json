@@ -1,0 +1,47 @@
+[
+{
+"dimension": "status",
+"category": "Open",
+"count": 19
+},
+{
+"dimension": "status",
+"category": "PR Request",
+"count": 7
+},
+{
+"dimension": "status",
+"category": "Screening",
+"count": 7
+},
+{
+"dimension": "priority",
+"category": "Priority 1",
+"count": 3
+},
+{
+"dimension": "priority",
+"category": "Priority 2",
+"count": 8
+},
+{
+"dimension": "priority",
+"category": "Priority 3",
+"count": 15
+},
+{
+"dimension": "scr_timing",
+"category": "This month",
+"count": 1
+},
+{
+"dimension": "scr_timing",
+"category": "Next month",
+"count": 2
+},
+{
+"dimension": "scr_timing",
+"category": "Not set",
+"count": 16
+}
+]

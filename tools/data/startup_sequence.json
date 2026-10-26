@@ -1,0 +1,72 @@
+[
+{
+"step": 1,
+"phase": "Preparation",
+"action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor"
+},
+{
+"step": 2,
+"phase": "Start up CPP",
+"action": "Start 1 GTG on diesel mode; start CPP air compressor"
+},
+{
+"step": 3,
+"phase": "First well",
+"action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea"
+},
+{
+"step": 4,
+"phase": "Pressurize CPP",
+"action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system"
+},
+{
+"step": 5,
+"phase": "Gas & fuel gas",
+"action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)"
+},
+{
+"step": 6,
+"phase": "Second well",
+"action": "Open 2nd AQWA well to test; switch 1st well out of test"
+},
+{
+"step": 7,
+"phase": "GTG to fuel gas",
+"action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation"
+},
+{
+"step": 8,
+"phase": "Third well",
+"action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test"
+},
+{
+"step": 9,
+"phase": "Ramp up wells",
+"action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells"
+},
+{
+"step": 10,
+"phase": "GTC & WHRU",
+"action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration"
+},
+{
+"step": 11,
+"phase": "Dew point",
+"action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed"
+},
+{
+"step": 12,
+"phase": "MRU",
+"action": "Start MRU; close bypass line when gas dew point is on spec"
+},
+{
+"step": 13,
+"phase": "Export gas",
+"action": "Export gas to export gas pipeline"
+},
+{
+"step": 14,
+"phase": "Condensate & PW",
+"action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO"
+}
+]

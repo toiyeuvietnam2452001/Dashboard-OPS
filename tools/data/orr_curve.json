@@ -1,0 +1,47 @@
+[
+{
+"month": "2026-10",
+"plan_pct": 67.2,
+"actual_pct": 70.5
+},
+{
+"month": "2026-11",
+"plan_pct": 71,
+"actual_pct": null
+},
+{
+"month": "2026-12",
+"plan_pct": 75,
+"actual_pct": null
+},
+{
+"month": "2027-01",
+"plan_pct": 80,
+"actual_pct": null
+},
+{
+"month": "2027-02",
+"plan_pct": 83,
+"actual_pct": null
+},
+{
+"month": "2027-03",
+"plan_pct": 87,
+"actual_pct": null
+},
+{
+"month": "2027-04",
+"plan_pct": 90,
+"actual_pct": null
+},
+{
+"month": "2027-05",
+"plan_pct": 93,
+"actual_pct": null
+},
+{
+"month": "2027-06",
+"plan_pct": 95,
+"actual_pct": null
+}
+]

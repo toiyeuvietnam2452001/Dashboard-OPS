@@ -1,0 +1,841 @@
+<style>
+#dash-root { --dash-gutter: clamp(16px, 3vw, 40px); }
+.ops { font-family: var(--font-anthropic-sans); display: flex; flex-direction: column; gap: var(--cds-gap-lg); font-variant-numeric: tabular-nums; }
+.ops-head { display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+.ops-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.ops-sub { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); margin: 0; max-width: 75ch; line-height: 1.5; }
+.ops .ops-sub b, .ops .ops-tile b { font-weight: 600; }
+.ops-tabs { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); border-bottom: 1px solid var(--color-border-line); }
+.ops-tab { font: inherit; font-size: var(--cds-font-size-body); background: none; border: 0; border-bottom: 2px solid transparent; padding: var(--cds-pad-sm) var(--cds-pad-md); color: var(--color-fg-muted); cursor: pointer; margin-bottom: -1px; }
+.ops-tab:hover { color: var(--color-fg); }
+.ops-tab[aria-selected="true"] { color: var(--color-fg); border-bottom-color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+.ops-tab:focus-visible, .ops-seg button:focus-visible, .ops input:focus-visible, .ops select:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+.ops-page { display: flex; flex-direction: column; gap: var(--cds-gap-lg); }
+.ops-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: var(--cds-gap-md); }
+.ops-tile { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md) var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+.ops-tile-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.ops-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.1; }
+.ops-tile-note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.4; }
+.ops-good { color: var(--color-ok); } .ops-bad { color: var(--color-bad); } .ops-warn { color: var(--color-warn); }
+.ops-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: var(--cds-gap-md); }
+.ops-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-width: 0; }
+.ops-card.ops-wide { grid-column: 1 / -1; }
+.ops-card h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.ops-card h3 { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); margin: var(--cds-gap-sm) 0 0; }
+.ops-note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; line-height: 1.45; }
+.ops-cardhead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: var(--cds-gap-sm); }
+.ops-chart { position: relative; min-height: 260px; }
+.ops-chart svg { display: block; overflow: visible; }
+.ops-chart text { fill: var(--color-fg-muted); font-size: var(--cds-font-size-caption); font-family: var(--font-anthropic-sans); }
+.ops-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); white-space: nowrap; z-index: 2; }
+.ops-tip .t { color: var(--cds-text-secondary); margin-bottom: 2px; }
+.ops-tip .r { display: flex; gap: 6px; align-items: center; }
+.ops-sw { width: 8px; height: 8px; border-radius: 2px; display: inline-block; flex: none; }
+.ops-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.ops-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.ops-seg { display: inline-flex; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); overflow: hidden; }
+.ops-seg button { font: inherit; font-size: var(--cds-font-size-caption); background: none; border: 0; padding: 4px 10px; color: var(--color-fg-muted); cursor: pointer; }
+.ops-seg button[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); }
+.ops-bars { display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+.ops-bar { display: grid; grid-template-columns: minmax(6rem, 9rem) 1fr auto; gap: var(--cds-gap-sm); align-items: center; font-size: var(--cds-font-size-caption); }
+.ops-bar-label { overflow-wrap: anywhere; }
+.ops-track { position: relative; height: 14px; background: var(--cds-chart-grid); border-radius: 7px; }
+.ops-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 7px; }
+.ops-tick { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--color-fg); border-radius: 1px; }
+.ops-bar-val { text-align: right; white-space: nowrap; color: var(--color-fg-muted); min-width: 6.5rem; }
+.ops-bar-val b { color: var(--color-fg); }
+.ops-stack { display: flex; height: 14px; border-radius: 7px; overflow: hidden; background: var(--cds-chart-grid); }
+.ops-stack > div { height: 100%; }
+.ops-tablebox { overflow: auto; max-height: 34rem; }
+.ops table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); }
+.ops th { text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: 6px 8px; border-bottom: 1px solid var(--color-border-line); position: sticky; top: 0; background: var(--color-panel); white-space: nowrap; }
+.ops td { padding: 6px 8px; border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.ops td.num, .ops th.num { text-align: right; }
+.ops-pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: var(--cds-font-size-caption); white-space: nowrap; border: 1px solid currentColor; }
+.ops-cell-bar { display: flex; align-items: center; gap: 8px; min-width: 8rem; }
+.ops-cell-bar .ops-track { flex: 1; height: 8px; }
+.ops-tools { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); }
+.ops input[type="search"], .ops select { font: inherit; font-size: var(--cds-font-size-caption); padding: 5px 8px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); }
+.ops input[type="search"] { flex: 1; min-width: 10rem; }
+.ops-list { display: flex; flex-direction: column; gap: var(--cds-gap-sm); margin: 0; padding: 0; list-style: none; }
+.ops-list li { display: grid; grid-template-columns: minmax(7rem, 12rem) 1fr; gap: var(--cds-gap-sm); font-size: var(--cds-font-size-caption); padding-bottom: var(--cds-gap-sm); border-bottom: 1px solid var(--color-border-line); line-height: 1.45; }
+.ops-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.ops-list .k { font-weight: var(--cds-font-weight-medium); }
+.ops-steps { counter-reset: s; display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+.ops-steps li { display: grid; grid-template-columns: 2rem 1fr; gap: var(--cds-gap-sm); font-size: var(--cds-font-size-caption); line-height: 1.45; position: relative; padding-bottom: var(--cds-gap-md); }
+.ops-steps li::before { content: ""; position: absolute; left: calc(1rem - 1px); top: 1.6rem; bottom: 2px; width: 2px; background: var(--color-border-line); }
+.ops-steps li:last-child::before { display: none; }
+.ops-steps .n { width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 1px solid var(--color-border-line); display: flex; align-items: center; justify-content: center; background: var(--color-bg); }
+.ops-steps .p { font-weight: var(--cds-font-weight-medium); font-size: var(--cds-font-size-body); }
+.ops-gantt { display: flex; flex-direction: column; gap: 6px; font-size: var(--cds-font-size-caption); }
+.ops-grow { display: grid; grid-template-columns: minmax(8rem, 22rem) 1fr; gap: var(--cds-gap-sm); align-items: center; }
+.ops-glane { position: relative; height: 16px; }
+.ops-gbar { position: absolute; top: 3px; height: 10px; border-radius: 5px; background: var(--cds-chart-muted); }
+.ops-gbar.now { background: var(--cds-chart-status-critical); }
+.ops-gbar.soon { background: var(--color-warn); }
+.ops-gbar.done { background: var(--color-ok); }
+.ops-gline { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--cds-chart-grid); }
+.ops-gtoday { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--cds-chart-reference); }
+.ops-gaxis { position: relative; height: 18px; color: var(--color-fg-muted); }
+.ops-gaxis span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.ops-months { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); gap: var(--cds-gap-sm); }
+.ops-month { border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-sm) var(--cds-pad-md); display: flex; flex-direction: column; gap: 4px; font-size: var(--cds-font-size-caption); }
+.ops-month .m { font-weight: var(--cds-font-weight-medium); }
+.ops-month.past { opacity: .6; }
+.ops-empty { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.ops-empty::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
+[data-dash-source-state=empty] { color: transparent; }
+[data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+@media (max-width: 560px) {
+  .ops-bar { grid-template-columns: 1fr auto; }
+  .ops-bar .ops-track, .ops-bar .ops-stack { grid-column: 1 / -1; grid-row: 2; }
+  .ops-grow { grid-template-columns: 1fr; gap: 2px; }
+  .ops-list li { grid-template-columns: 1fr; gap: 2px; }
+  .ops .hide-sm { display: none; }
+}
+</style>
+
+<div class="ops">
+  <header class="ops-head" id="top">
+    <h1>OPS readiness – report <span class="ops-report-date">—</span></h1>
+    <p class="ops-sub" id="takeaway">Manpower in <span class="ops-mp-month">—</span>: <b data-source="kpi_manpower" data-field="total_actual" class="dash-skeleton">—</b> / <b data-source="kpi_manpower" data-field="total_plan" class="dash-skeleton">—</b> people against plan; OPS teams ORR checklist at <b data-source="kpi_orr" data-field="actual_pct" class="dash-skeleton">—</b> vs plan <span data-source="kpi_orr" data-field="plan_pct" class="dash-skeleton">—</span>; <b data-source="pr_summary" data-field="late" class="dash-skeleton">—</b> PRs late.</p>
+  </header>
+
+  <nav class="ops-tabs" role="tablist" aria-label="Report sections">
+    <button class="ops-tab" role="tab" id="tab-overview" data-page="overview" aria-selected="true">Overview</button>
+    <button class="ops-tab" role="tab" id="tab-people" data-page="people" aria-selected="false">Manpower &amp; training</button>
+    <button class="ops-tab" role="tab" id="tab-orr" data-page="orr" aria-selected="false">ORR checklist</button>
+    <button class="ops-tab" role="tab" id="tab-procedures" data-page="procedures" aria-selected="false">Procedures</button>
+    <button class="ops-tab" role="tab" id="tab-contracts" data-page="contracts" aria-selected="false">Contracts, applications &amp; permits</button>
+    <button class="ops-tab" role="tab" id="tab-startup" data-page="startup" aria-selected="false">Commissioning &amp; start-up</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="ops-page" id="overview" data-page="overview">
+    <div class="ops-tiles" id="kpis">
+      <div class="ops-tile" id="kpi-manpower">
+        <span class="ops-tile-label">OPS manpower · <span class="ops-mp-month">—</span></span>
+        <span class="ops-big"><span data-source="kpi_manpower" data-field="total_actual" class="dash-skeleton">—</span><span class="ops-tile-note"> / <span data-source="kpi_manpower" data-field="total_plan">—</span></span></span>
+        <span class="ops-tile-note"><span data-source="kpi_manpower" data-field="pct_of_plan" class="dash-skeleton">—</span> of monthly plan</span>
+      </div>
+      <div class="ops-tile" id="kpi-orr">
+        <span class="ops-tile-label">OPS teams ORR checklist · <span class="ops-orr-month">—</span></span>
+        <span class="ops-big" data-source="kpi_orr" data-field="actual_pct">—</span>
+        <span class="ops-tile-note">Plan <span data-source="kpi_orr" data-field="plan_pct">—</span> · <b data-source="kpi_orr" data-field="gap_pts" class="kpi-gap">—</b></span>
+      </div>
+      <div class="ops-tile" id="kpi-cbta">
+        <span class="ops-tile-label">CBTA development (CPP &amp; WHP)</span>
+        <span class="ops-big" data-source="cbta_summary" data-where="platform=Overall" data-field="progress_pct">—</span>
+        <span class="ops-tile-note">Theory assessment <span data-source="cbta_summary" data-where="platform=Overall" data-field="theory_pct">—</span> · OJT <span data-source="cbta_summary" data-where="platform=Overall" data-field="ojt_pct">—</span></span>
+      </div>
+      <div class="ops-tile" id="kpi-mandatory">
+        <span class="ops-tile-label">Mandatory training · offshore</span>
+        <span class="ops-big" data-source="mandatory_summary" data-where="team=Total" data-field="pct">—</span>
+        <span class="ops-tile-note"><span data-source="mandatory_summary" data-where="team=Total" data-field="earned">—</span> / <span data-source="mandatory_summary" data-where="team=Total" data-field="planned">—</span> courses completed</span>
+      </div>
+      <div class="ops-tile" id="kpi-proc">
+        <span class="ops-tile-label">HSE · general operations procedures</span>
+        <span class="ops-big"><span data-source="proc_summary" data-where="category=HSE" data-field="completion_pct">—</span><span class="ops-tile-note"> · </span><span data-source="proc_summary" data-where="category=General%20operations" data-field="completion_pct">—</span></span>
+        <span class="ops-tile-note"><span data-source="proc_summary" data-where="category=All" data-field="open">—</span> procedures not yet issued</span>
+      </div>
+      <div class="ops-tile" id="kpi-pr">
+        <span class="ops-tile-label">PRs in progress</span>
+        <span class="ops-big" data-source="pr_summary" data-field="total">—</span>
+        <span class="ops-tile-note"><b class="ops-bad" data-source="pr_summary" data-field="late">—</b> late · <b class="ops-warn" data-source="pr_summary" data-field="near_late">—</b> near-late · <span data-source="packages_summary" data-field="total">—</span> packages without PR</span>
+      </div>
+    </div>
+
+    <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-manpower">
+        <div class="ops-cardhead">
+          <div><h2>Manpower ramp-up: plan vs actual</h2>
+          <p class="ops-note">Headcount by month. Dashed line is plan; the vertical marker is the report date.</p></div>
+          <div class="ops-seg" role="group" aria-label="Staff group" id="mp-seg">
+            <button data-k="total" aria-pressed="true">Total</button><button data-k="onshore" aria-pressed="false">Onshore</button><button data-k="offshore" aria-pressed="false">Offshore</button>
+          </div>
+        </div>
+        <div class="ops-legend" id="mp-legend"></div>
+        <div class="ops-chart dash-skeleton" id="chart-manpower" data-source="manpower"></div>
+      </div>
+      <div class="ops-card" id="card-orr-curve">
+        <h2>OPS teams ORR checklist vs plan</h2>
+        <p class="ops-note">Weighted % complete by month. Dashed line is plan, solid line is actual.</p>
+        <div class="ops-chart dash-skeleton" id="chart-orr-curve" data-source="orr_curve"></div>
+      </div>
+      <div class="ops-card" id="card-staffing">
+        <h2>Current staffing</h2>
+        <p class="ops-note">Filled / required positions at the report date.</p>
+        <div class="ops-bars" id="bars-staffing" data-source="staffing"></div>
+        <p class="ops-note" id="vacant">Vacant positions: <span id="vacant-list" data-source="workstreams" data-where="item=Vacant%20positions" data-field="status">—</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEOPLE -->
+  <section class="ops-page" id="people" data-page="people" hidden>
+    <div class="ops-grid">
+      <div class="ops-card" id="card-mandatory">
+        <h2>Mandatory training – PQPOC offshore staff</h2>
+        <p class="ops-note">Courses completed vs required by the HSE training matrix.</p>
+        <div class="ops-bars" id="bars-mandatory" data-source="mandatory mandatory_summary"></div>
+      </div>
+      <div class="ops-card" id="card-cbta-dev">
+        <h2>CBTA module development</h2>
+        <p class="ops-note">Modules by status: completed, in review, in development.</p>
+        <div class="ops-legend" id="cbta-legend"></div>
+        <div class="ops-bars" id="bars-cbta" data-source="cbta cbta_progress"></div>
+      </div>
+      <div class="ops-card ops-wide" id="card-cbta-table">
+        <h2>CBTA by team: development and assessment</h2>
+        <p class="ops-note">Module development and theory / OJT assessment progress for each team.</p>
+        <div class="ops-tablebox">
+          <table id="table-cbta" data-source="cbta" data-row-key="platform,team">
+            <thead><tr>
+              <th data-field="platform">Platform</th><th data-field="team">Team</th><th class="num" data-field="modules">Modules</th><th class="num" data-field="completed">Completed</th><th class="num hide-sm" data-field="developing">In development</th><th class="num hide-sm" data-field="review">In review</th><th class="num" data-source="cbta_progress" data-field="progress_pct">% developed</th><th class="num" data-field="theory_pct">% theory assessed</th><th class="num hide-sm" data-field="ojt_modules">OJT modules</th><th class="num" data-field="ojt_pct">% OJT</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="ops-card ops-wide" id="card-vendor">
+        <h2>Vendor training schedule</h2>
+        <p class="ops-note">Courses by month. Past months are dimmed.</p>
+        <div class="ops-months" id="vendor-months" data-source="vendor_training"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORR -->
+  <section class="ops-page" id="orr" data-page="orr" hidden>
+    <div class="ops-tiles">
+      <div class="ops-tile"><span class="ops-tile-label">Whole checklist · <span data-source="orr_groups" data-where="group=TOTAL" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=TOTAL" data-field="progress_pct">—</span></div>
+      <div class="ops-tile"><span class="ops-tile-label">People · <span data-source="orr_groups" data-where="group=PEOPLE" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PEOPLE" data-field="progress_pct">—</span></div>
+      <div class="ops-tile"><span class="ops-tile-label">Plant · <span data-source="orr_groups" data-where="group=PLANT" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PLANT" data-field="progress_pct">—</span></div>
+      <div class="ops-tile"><span class="ops-tile-label">Process · <span data-source="orr_groups" data-where="group=PROCESS" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PROCESS" data-field="progress_pct">—</span></div>
+    </div>
+    <div class="ops-grid">
+      <div class="ops-card" id="card-orr-teams">
+        <h2>Progress by OPS team · <span class="ops-orr-month">—</span></h2>
+        <p class="ops-note">Bar is actual %, black tick is plan %. The figure on the right is the gap in percentage points.</p>
+        <div class="ops-bars" id="bars-orr-teams" data-source="orr_teams orr_team_gap"></div>
+      </div>
+      <div class="ops-card" id="card-orr-weights">
+        <h2>Weight and workload by team</h2>
+        <p class="ops-note">Total and completed activities; weights roll up into the overall %.</p>
+        <div class="ops-tablebox">
+          <table id="table-orr-teams" data-source="orr_teams" data-row-key="team">
+            <thead><tr><th data-field="team">Team</th><th class="num" data-field="weight_pct">Weight</th><th class="num" data-field="total_activities">Activities</th><th class="num" data-field="completed">Completed</th><th class="num" data-field="plan_end_pct">Final plan</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="ops-card ops-wide" id="card-orr-elements">
+        <h2>Checklist by element (People · Plant · Process)</h2>
+        <p class="ops-note">Sorted from lowest %. Elements below 50% are shown in red.</p>
+        <div class="ops-tablebox">
+          <table id="table-orr-elements" data-source="orr_elements" data-row-key="code">
+            <thead><tr><th data-field="code">Code</th><th data-field="element">Element</th><th class="hide-sm" data-field="group">Group</th><th class="num" data-field="items">Items</th><th data-field="progress_pct">Progress</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCEDURES -->
+  <section class="ops-page" id="procedures" data-page="procedures" hidden>
+    <div class="ops-tiles">
+      <div class="ops-tile"><span class="ops-tile-label">HSE procedures · <span data-source="proc_summary" data-where="category=HSE" data-field="docs">—</span> documents</span><span class="ops-big" data-source="proc_summary" data-where="category=HSE" data-field="completion_pct">—</span><span class="ops-tile-note"><span data-source="proc_summary" data-where="category=HSE" data-field="open">—</span> not yet issued</span></div>
+      <div class="ops-tile"><span class="ops-tile-label">General operations procedures · <span data-source="proc_summary" data-where="category=General%20operations" data-field="docs">—</span> documents</span><span class="ops-big" data-source="proc_summary" data-where="category=General%20operations" data-field="completion_pct">—</span><span class="ops-tile-note"><span data-source="proc_summary" data-where="category=General%20operations" data-field="open">—</span> not yet issued</span></div>
+    </div>
+    <div class="ops-card" id="card-procedures">
+      <h2>Procedure register</h2>
+      <p class="ops-note">Sorted by % complete, lowest first, so open procedures sit at the top.</p>
+      <div class="ops-tools">
+        <input type="search" id="proc-q" placeholder="Search name, owner, remark…" aria-label="Search procedures">
+        <select id="proc-cat" aria-label="Procedure type"><option value="">All types</option><option value="HSE">HSE</option><option value="General operations">General operations</option></select>
+        <select id="proc-open" aria-label="Status"><option value="">All statuses</option><option value="open">Not issued</option><option value="done">Issued</option></select>
+      </div>
+      <div class="ops-tablebox">
+        <table id="table-procedures" data-source="procedures" data-row-key="id">
+          <thead><tr><th data-field="id">Code</th><th data-field="document">Document</th><th class="hide-sm" data-field="responsible">Owner</th><th data-field="expected">Due</th><th data-field="completion_pct">Completed</th><th class="hide-sm" data-field="remark">Remark</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRACTS / APPS / PERMITS -->
+  <section class="ops-page" id="contracts" data-page="contracts" hidden>
+    <div class="ops-grid">
+      <div class="ops-card" id="card-pr">
+        <h2>PRs in progress by stage</h2>
+        <p class="ops-note"><span data-source="pr_summary" data-field="total">—</span> PRs. Each block is one PR, coloured by schedule status.</p>
+        <div class="ops-legend" id="pr-legend"></div>
+        <div class="ops-bars" id="bars-pr" data-source="pr_pipeline"></div>
+      </div>
+      <div class="ops-card" id="card-packages">
+        <h2>Packages without PR</h2>
+        <p class="ops-note"><span data-source="packages_summary" data-field="total">—</span> packages in preparation, by status, priority and expected SCR timing.</p>
+        <div id="packages" data-source="packages_no_pr"></div>
+      </div>
+      <div class="ops-card" id="card-apps">
+        <h2>Applications</h2>
+        <p class="ops-note">Status of operations software systems.</p>
+        <ul class="ops-list" id="list-apps" data-source="workstreams"></ul>
+        <h3>CMMS (OA) – actual vs plan %</h3>
+        <div class="ops-bars" id="bars-cmms" data-source="cmms"></div>
+      </div>
+      <div class="ops-card" id="card-logistics">
+        <h2>Logistics, services &amp; coordination</h2>
+        <p class="ops-note">Contracting route and next step.</p>
+        <ul class="ops-list" id="list-logistics" data-source="workstreams"></ul>
+      </div>
+      <div class="ops-card ops-wide" id="card-permits">
+        <h2>Offshore platform permit register</h2>
+        <p class="ops-note">Permits, issuing authority, issue and expiry dates, and status.</p>
+        <div class="ops-tablebox">
+          <table id="table-permits" data-source="permits" data-row-key="permit">
+            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority</th><th data-field="issue_date">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STARTUP -->
+  <section class="ops-page" id="startup" data-page="startup" hidden>
+    <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-precom">
+        <div class="ops-cardhead"><div>
+          <h2>CPP pre-commissioning master plan (Train 1)</h2>
+          <p class="ops-note">Planned start – finish. Green: completed (has an actual finish date); red: inside its planned window on the report date; amber: starts within the next 30 days.</p>
+        </div></div>
+        <div class="ops-gantt" id="gantt" data-source="precom_plan"></div>
+      </div>
+      <div class="ops-card" id="card-commissioning">
+        <h2>Preservation, installation &amp; commissioning</h2>
+        <ul class="ops-list" id="list-com" data-source="workstreams"></ul>
+      </div>
+      <div class="ops-card" id="card-startup-seq">
+        <h2>CPP start-up sequence</h2>
+        <p class="ops-note">Summarised from the CPP start-up block diagram.</p>
+        <ol class="ops-steps" id="steps" data-source="startup_sequence"></ol>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+// ---- calculations ----
+dash.calc('kpi_manpower', {
+  inputs: ['manpower'], title: 'Latest month manpower',
+  description: 'Latest month with actuals: total actual, plan and % of plan.',
+  fn: (manpower) => {
+    const r = manpower.filter((d) => d.total_actual != null).at(-1);
+    return r ? [{ month: r.month, total_actual: r.total_actual, total_plan: r.total_plan, pct_of_plan: r.total_actual / r.total_plan }] : [];
+  },
+});
+dash.calc('kpi_orr', {
+  inputs: ['orr_curve'], title: 'OPS teams ORR, current month',
+  description: 'Latest month with an actual %: actual, plan and gap in percentage points.',
+  fn: (orr_curve) => {
+    const r = orr_curve.filter((d) => d.actual_pct != null).at(-1);
+    return r ? [{ month: r.month, actual_pct: r.actual_pct, plan_pct: r.plan_pct, gap_pts: Math.round((r.actual_pct - r.plan_pct) * 10) / 10 }] : [];
+  },
+});
+dash.calc('cbta_progress', {
+  inputs: ['cbta'], title: 'CBTA % developed by team',
+  description: 'Completed modules / total modules for each team.',
+  fn: (cbta) => cbta.map((d) => ({ platform: d.platform, team: d.team, progress_pct: d.completed / d.modules })),
+});
+dash.calc('cbta_summary', {
+  inputs: ['cbta'], title: 'CBTA by platform',
+  description: 'Per platform: completed / total modules and average theory and OJT assessment %; Overall is the mean of the two platforms, as in the report.',
+  fn: (cbta) => {
+    const rows = ['CPP', 'WHP'].map((p) => {
+      const t = cbta.filter((d) => d.platform === p);
+      const modules = t.reduce((s, d) => s + d.modules, 0), completed = t.reduce((s, d) => s + d.completed, 0);
+      return { platform: p, modules, completed, progress_pct: completed / modules, theory_pct: t.reduce((s, d) => s + d.theory_pct, 0) / t.length / 100,
+        ojt_pct: t.reduce((s, d) => s + d.ojt_pct, 0) / t.length / 100 };
+    });
+    rows.push({ platform: 'Overall', modules: rows[0].modules + rows[1].modules, completed: rows[0].completed + rows[1].completed,
+      progress_pct: (rows[0].progress_pct + rows[1].progress_pct) / 2, theory_pct: (rows[0].theory_pct + rows[1].theory_pct) / 2,
+      ojt_pct: (rows[0].ojt_pct + rows[1].ojt_pct) / 2 });
+    return rows;
+  },
+});
+dash.calc('mandatory_summary', {
+  inputs: ['mandatory'], title: 'Mandatory training – % complete',
+  description: 'Completed / planned courses, by team and in total.',
+  fn: (mandatory) => {
+    const rows = mandatory.map((d) => ({ team: d.team, earned: d.earned, planned: d.planned, pct: d.earned / d.planned }));
+    const earned = mandatory.reduce((s, d) => s + d.earned, 0), planned = mandatory.reduce((s, d) => s + d.planned, 0);
+    rows.push({ team: 'Total', earned, planned, pct: earned / planned });
+    return rows;
+  },
+});
+dash.calc('proc_summary', {
+  inputs: ['procedures'], title: 'Procedures by type',
+  description: 'Document count, not-yet-issued count and average % complete by type and in total.',
+  fn: (procedures) => {
+    const sum = (cat, rows) => ({ category: cat, docs: rows.length, open: rows.filter((d) => d.issued !== 'Yes').length,
+      completion_pct: rows.reduce((s, d) => s + d.completion_pct, 0) / rows.length / 100 });
+    return [sum('HSE', procedures.filter((d) => d.category === 'HSE')), sum('General operations', procedures.filter((d) => d.category === 'General operations')), sum('All', procedures)];
+  },
+});
+dash.calc('pr_summary', {
+  inputs: ['pr_pipeline'], title: 'PRs by schedule status',
+  description: 'Total PRs in progress and how many are late, near-late or on time.',
+  fn: (pr_pipeline) => {
+    const c = (s) => pr_pipeline.filter((d) => d.status === s).reduce((a, d) => a + d.count, 0);
+    return [{ total: pr_pipeline.reduce((a, d) => a + d.count, 0), late: c('Late'), near_late: c('Near-late'), on_time: c('On time') }];
+  },
+});
+dash.calc('packages_summary', {
+  inputs: ['packages_no_pr'], title: 'Packages without PR',
+  description: 'Total packages across procurement statuses.',
+  fn: (packages_no_pr) => [{ total: packages_no_pr.filter((d) => d.dimension === 'status').reduce((a, d) => a + d.count, 0) }],
+});
+dash.calc('orr_team_gap', {
+  inputs: ['orr_teams'], title: 'ORR gap by team',
+  description: 'Current month actual % minus plan %, in percentage points.',
+  fn: (orr_teams) => orr_teams.map((d) => ({ team: d.team, gap_pts: Math.round((d.actual_pct - d.plan_pct) * 10) / 10 })),
+});
+</script>
+
+<script>
+// ---- helpers shared by the drawing script ----
+const H = (window.opsH = {});
+H.pct = d3.format('.1%');
+H.pct0 = d3.format('.0%');
+H.p100 = (v) => (v == null ? '—' : d3.format('.1f')(v) + '%');
+H.num = d3.format(',');
+H.signPts = (v) => (v > 0 ? '+' : v < 0 ? '−' : '±') + d3.format('.1f')(Math.abs(v)) + ' pts';
+H.month = (s) => { const [y, m] = s.split('-').map(Number); return new Date(Date.UTC(y, (m || 1) - 1, 1)); };
+H.day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d)); };
+H.fmtMonth = d3.utcFormat('%b %Y');
+H.fmtDay = d3.utcFormat('%-d %b %Y');
+H.REPORT_DATE = H.day(((dash.data('meta').data || [])[0] || {}).report_date || new Date().toISOString().slice(0, 10));
+H.el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+H.state = (id, el) => {
+  const d = dash.data(id);
+  if (d.status === 'ok') { el.classList.remove('dash-skeleton'); return d.data; }
+  if (d.status === 'loading') { el.classList.add('dash-skeleton'); el.replaceChildren(); return null; }
+  el.classList.remove('dash-skeleton');
+  el.replaceChildren(H.el('div', 'ops-empty', 'Failed to load'));
+  return null;
+};
+H.fill = (sel, src, fmt) => {
+  document.querySelectorAll(sel).forEach((el) => {
+    const d = dash.data(src);
+    if (d.status !== 'ok') { el.textContent = '—'; d.status === 'loading' ? el.classList.add('dash-skeleton') : el.classList.remove('dash-skeleton'); return; }
+    el.classList.remove('dash-skeleton');
+    const where = el.dataset.where, f = el.dataset.field;
+    let row = d.data[0];
+    if (where) { const [k, v] = where.split('=').map(decodeURIComponent); row = d.data.find((r) => String(r[k]) === v); }
+    const v = row ? row[f] : null;
+    el.textContent = v == null ? '—' : (fmt[f] ? fmt[f](v) : H.num(v));
+  });
+};
+H.tip = (box) => {
+  let t = box.querySelector('.ops-tip');
+  if (!t) { t = H.el('div', 'ops-tip'); t.hidden = true; box.append(t); }
+  return {
+    show(x, y, title, lines) {
+      t.replaceChildren(H.el('div', 't', title), ...lines.map(([c, name, val]) => {
+        const r = H.el('div', 'r'); if (c) { const s = H.el('span', 'ops-sw'); s.style.background = c; r.append(s); }
+        r.append(H.el('span', null, name + ': '), H.el('b', null, val)); return r;
+      }));
+      t.hidden = false;
+      const bw = box.clientWidth, tw = t.offsetWidth;
+      t.style.left = Math.max(0, Math.min(bw - tw, x + 12)) + 'px';
+      t.style.top = Math.max(0, y - t.offsetHeight - 8) + 'px';
+    },
+    hide() { t.hidden = true; },
+  };
+};
+H.textW = (svg, s) => { const t = svg.append('text').text(s); const w = t.node().getComputedTextLength(); t.remove(); return w; };
+H.bar = (label, frac, color, val, tickFrac) => {
+  const row = H.el('div', 'ops-bar');
+  const tr = H.el('div', 'ops-track');
+  const f = H.el('div', 'ops-fill'); f.style.width = Math.max(0, Math.min(1, frac)) * 100 + '%'; f.style.background = color; tr.append(f);
+  if (tickFrac != null) { const k = H.el('div', 'ops-tick'); k.style.left = `calc(${Math.min(1, tickFrac) * 100}% - 1px)`; tr.append(k); }
+  const v = H.el('div', 'ops-bar-val'); if (val instanceof Node) v.append(val); else v.textContent = val;
+  row.append(H.el('div', 'ops-bar-label', label), tr, v);
+  return row;
+};
+</script>
+
+<script>
+const H = window.opsH;
+let mpKey = 'total';
+let currentPage = 'overview';
+const pages = ['overview', 'people', 'orr', 'procedures', 'contracts', 'startup'];
+
+function showPage(p, push) {
+  if (!pages.includes(p)) return;
+  currentPage = p;
+  document.querySelectorAll('.ops-tab').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.page === p)));
+  document.querySelectorAll('section.ops-page').forEach((s) => (s.hidden = s.dataset.page !== p));
+  if (push) dash.setLink(p);
+  draw();
+}
+document.querySelectorAll('.ops-tab').forEach((b) => b.addEventListener('click', () => showPage(b.dataset.page, true)));
+document.querySelectorAll('#mp-seg button').forEach((b) => b.addEventListener('click', () => {
+  mpKey = b.dataset.k;
+  document.querySelectorAll('#mp-seg button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  drawManpower();
+}));
+
+// ---------- overview ----------
+function drawKpis() {
+  H.fill('[data-source="kpi_manpower"]', 'kpi_manpower', { pct_of_plan: H.pct0 });
+  H.fill('[data-source="kpi_orr"]', 'kpi_orr', { actual_pct: H.p100, plan_pct: H.p100, gap_pts: H.signPts });
+  document.querySelectorAll('.kpi-gap').forEach((e) => { const r = dash.data('kpi_orr').data?.[0]; e.className = 'kpi-gap ' + (r && r.gap_pts >= 0 ? 'ops-good' : 'ops-bad'); });
+  H.fill('[data-source="cbta_summary"]', 'cbta_summary', { progress_pct: H.pct, theory_pct: H.pct, ojt_pct: H.pct });
+  H.fill('[data-source="mandatory_summary"]', 'mandatory_summary', { pct: H.pct0 });
+  H.fill('[data-source="proc_summary"]', 'proc_summary', { completion_pct: H.pct0 });
+  H.fill('[data-source="pr_summary"]', 'pr_summary', {});
+  H.fill('[data-source="packages_summary"]', 'packages_summary', {});
+  H.fill('[data-source="orr_groups"]', 'orr_groups', { progress_pct: H.p100 });
+  const mp = dash.data('kpi_manpower').data?.[0], orr = dash.data('kpi_orr').data?.[0];
+  document.querySelectorAll('.ops-report-date').forEach((e) => (e.textContent = d3.utcFormat('%-d %b %Y')(H.REPORT_DATE)));
+  document.querySelectorAll('.ops-mp-month').forEach((e) => (e.textContent = mp ? H.fmtMonth(H.month(mp.month)) : '—'));
+  document.querySelectorAll('.ops-orr-month').forEach((e) => (e.textContent = orr ? H.fmtMonth(H.month(orr.month)) : '—'));
+}
+
+function lineChart(box, { rows, xKey, series, xDomain, yMax, yFmt, tickFmt, ticks, marker, refX, refLabel }) {
+  box.querySelectorAll('svg').forEach((s) => s.remove());
+  const W = box.clientWidth, Hh = 260;
+  if (!W) return;
+  const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${Hh}`).attr('height', Hh);
+  const y = d3.scaleLinear([0, yMax], [Hh - 28, 12]).nice();
+  const ml = d3.max(y.ticks(5), (t) => H.textW(svg, yFmt(t))) + 10;
+  const endLabels = series.map((s) => { const last = rows.filter((r) => r[s.key] != null).at(-1); return last ? `${s.short} ${yFmt(last[s.key])}` : ''; });
+  const mr = d3.max(endLabels, (l) => H.textW(svg, l)) + 14;
+  const x = d3.scaleUtc(xDomain, [ml, W - mr]);
+  const g = svg.append('g');
+  g.selectAll('line.grid').data(y.ticks(5)).join('line').attr('x1', ml).attr('x2', W - mr).attr('y1', (d) => y(d)).attr('y2', (d) => y(d)).attr('stroke', 'var(--cds-chart-grid)');
+  g.selectAll('text.yt').data(y.ticks(5)).join('text').attr('x', ml - 8).attr('y', (d) => y(d)).attr('dy', '0.32em').attr('text-anchor', 'end').text(yFmt);
+  const xt = x.ticks(ticks);
+  g.selectAll('text.xt').data(xt).join('text').attr('x', (d) => x(d)).attr('y', Hh - 8).attr('text-anchor', 'middle').text(tickFmt);
+  g.append('line').attr('x1', ml).attr('x2', W - mr).attr('y1', y(0)).attr('y2', y(0)).attr('stroke', 'var(--cds-chart-axis)');
+  if (refX) {
+    g.append('line').attr('x1', x(refX)).attr('x2', x(refX)).attr('y1', 12).attr('y2', y(0)).attr('stroke', 'var(--cds-chart-reference)').attr('stroke-dasharray', '3 3');
+    g.append('text').attr('x', x(refX) + 4).attr('y', 14).text(refLabel);
+  }
+  series.forEach((s, i) => {
+    const pts = rows.filter((r) => r[s.key] != null);
+    g.append('path').datum(pts).attr('fill', 'none').attr('stroke', s.color).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round')
+      .attr('stroke-dasharray', s.dashed ? '5 4' : null).attr('d', d3.line((r) => x(r[xKey]), (r) => y(r[s.key])));
+    const last = pts.at(-1);
+    if (last) {
+      g.append('circle').attr('cx', x(last[xKey])).attr('cy', y(last[s.key])).attr('r', 3.5).attr('fill', s.color);
+      s._endY = y(last[s.key]); s._endX = x(last[xKey]); s._label = endLabels[i];
+    }
+  });
+  // end labels, nudged apart
+  const placed = series.filter((s) => s._label).sort((a, b) => a._endY - b._endY);
+  for (let i = 1; i < placed.length; i++) if (placed[i]._endY - placed[i - 1]._endY < 14) placed[i]._endY = placed[i - 1]._endY + 14;
+  placed.forEach((s) => g.append('text').attr('x', s._endX + 8).attr('y', s._endY).attr('dy', '0.32em').style('fill', s.color).text(s._label));
+  if (marker) marker(g, x, y);
+  // hover
+  const tip = H.tip(box);
+  const dot = g.append('g').attr('pointer-events', 'none');
+  svg.append('rect').attr('x', ml).attr('y', 0).attr('width', Math.max(0, W - mr - ml)).attr('height', Hh - 20).attr('fill', 'transparent')
+    .on('pointermove', (ev) => {
+      const [mx] = d3.pointer(ev);
+      const i = d3.bisector((r) => r[xKey]).center(rows, x.invert(mx));
+      const r = rows[i]; if (!r) return;
+      dot.selectAll('*').remove();
+      dot.append('line').attr('x1', x(r[xKey])).attr('x2', x(r[xKey])).attr('y1', 12).attr('y2', y(0)).attr('stroke', 'var(--cds-chart-axis)');
+      const lines = [];
+      series.forEach((s) => { if (r[s.key] != null) { dot.append('circle').attr('cx', x(r[xKey])).attr('cy', y(r[s.key])).attr('r', 4).attr('fill', s.color); lines.push([s.color, s.label, yFmt(r[s.key])]); } });
+      tip.show(x(r[xKey]), d3.min(series, (s) => (r[s.key] != null ? y(r[s.key]) : Hh)), H.fmtMonth(r[xKey]), lines);
+    })
+    .on('pointerleave', () => { dot.selectAll('*').remove(); tip.hide(); });
+}
+
+function drawManpower() {
+  const box = document.getElementById('chart-manpower');
+  const data = H.state('manpower', box);
+  const leg = document.getElementById('mp-legend');
+  if (!data) { leg.replaceChildren(); box.querySelectorAll('svg').forEach((s) => s.remove()); return; }
+  const rows = data.map((d) => ({ ...d, m: H.month(d.month) }));
+  const series = [
+    { key: mpKey + '_plan', label: 'Plan', short: 'Plan', color: 'var(--cds-chart-muted)', dashed: true },
+    { key: mpKey + '_actual', label: 'Actual', short: 'Actual', color: dash.colors[0] },
+  ];
+  leg.replaceChildren(...series.map((s) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = s.color; sp.append(sw, s.label); return sp; }));
+  lineChart(box, {
+    rows, xKey: 'm', series, xDomain: d3.extent(rows, (r) => r.m), yMax: d3.max(rows, (r) => Math.max(r[series[0].key] ?? 0, r[series[1].key] ?? 0)),
+    yFmt: H.num, tickFmt: d3.utcFormat('%Y'), ticks: d3.utcYear.every(1), refX: H.REPORT_DATE, refLabel: 'Report ' + H.fmtDay(H.REPORT_DATE),
+  });
+}
+
+function drawOrrCurve() {
+  const box = document.getElementById('chart-orr-curve');
+  const data = H.state('orr_curve', box);
+  if (!data) return;
+  const rows = data.map((d) => ({ ...d, m: H.month(d.month) }));
+  lineChart(box, {
+    rows, xKey: 'm', xDomain: d3.extent(rows, (r) => r.m), yMax: 100, yFmt: (v) => d3.format('.0f')(v) + '%',
+    tickFmt: d3.utcFormat('%b %y'), ticks: d3.utcMonth.every(box.clientWidth < 420 ? 2 : 1),
+    series: [{ key: 'plan_pct', label: 'Plan', short: 'Plan', color: 'var(--cds-chart-muted)', dashed: true },
+             { key: 'actual_pct', label: 'Actual', short: 'Actual', color: dash.colors[0] }],
+  });
+}
+
+function drawStaffing() {
+  const box = document.getElementById('bars-staffing');
+  const data = H.state('staffing', box);
+  const vac = document.getElementById('vacant-list');
+  const ws = dash.data('workstreams');
+  vac.textContent = ws.status === 'ok' ? (ws.data.find((r) => r.item === 'Vacant positions')?.status ?? '—') : '—';
+  if (!data) return;
+  box.replaceChildren(...data.map((d) => {
+    const v = H.el('span'); v.append(H.el('b', null, H.num(d.filled)), ' / ' + H.num(d.required));
+    return H.bar(d.group, d.filled / d.required, d.filled / d.required < 0.5 ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
+  }));
+}
+
+// ---------- people ----------
+function drawMandatory() {
+  const box = document.getElementById('bars-mandatory');
+  const data = H.state('mandatory', box), sum = dash.data('mandatory_summary');
+  if (!data || sum.status !== 'ok') return;
+  box.replaceChildren(...data.map((d) => {
+    const s = sum.data.find((r) => r.team === d.team);
+    const v = H.el('span'); v.append(H.el('b', null, H.pct0(s.pct)), ` · ${H.num(d.earned)}/${H.num(d.planned)}`);
+    return H.bar(d.team, d.earned / d.planned, s.pct < 0.3 ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
+  }));
+}
+
+function drawCbta() {
+  const box = document.getElementById('bars-cbta');
+  const data = H.state('cbta', box), prog = dash.data('cbta_progress');
+  const cols = [dash.colors[0], dash.colors[2], 'var(--cds-chart-muted)'];
+  document.getElementById('cbta-legend').replaceChildren(...['Completed', 'In review', 'In development'].map((n, i) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = cols[i]; sp.append(sw, n); return sp; }));
+  if (!data || prog.status !== 'ok') return;
+  box.replaceChildren(...data.map((d) => {
+    const row = H.el('div', 'ops-bar');
+    const st = H.el('div', 'ops-stack');
+    [d.completed, d.review || 0, d.developing || 0].forEach((n, i) => { const s = H.el('div'); s.style.width = (n / d.modules) * 100 + '%'; s.style.background = cols[i]; st.append(s); });
+    const p = prog.data.find((r) => r.platform === d.platform && r.team === d.team);
+    const v = H.el('div', 'ops-bar-val'); v.append(H.el('b', null, H.pct0(p.progress_pct)), ` · ${d.completed}/${d.modules}`);
+    row.append(H.el('div', 'ops-bar-label', `${d.platform} ${d.team}`), st, v);
+    return row;
+  }));
+  const tb = document.querySelector('#table-cbta tbody');
+  tb.replaceChildren(...data.map((d) => {
+    const tr = H.el('tr');
+    tr.dataset.key = [d.platform, d.team].map(encodeURIComponent).join(',');
+    const p = prog.data.find((r) => r.platform === d.platform && r.team === d.team);
+    [[d.platform], [d.team], [H.num(d.modules), 'num'], [H.num(d.completed), 'num'], [d.developing ?? '—', 'num hide-sm'], [d.review ?? '—', 'num hide-sm'],
+     [H.pct(p.progress_pct), 'num'], [H.p100(d.theory_pct), 'num'], [H.num(d.ojt_modules), 'num hide-sm'], [H.p100(d.ojt_pct), 'num']]
+      .forEach(([t, c]) => tr.append(H.el('td', c, String(t))));
+    return tr;
+  }));
+}
+
+function drawVendor() {
+  const box = document.getElementById('vendor-months');
+  const data = H.state('vendor_training', box);
+  if (!data) return;
+  const groups = d3.groups(data, (d) => d.period);
+  box.replaceChildren(...groups.map(([p, rows]) => {
+    const card = H.el('div', 'ops-month');
+    const label = p.length === 4 ? 'Year ' + p : H.fmtMonth(H.month(p));
+    if (p.length > 4 && d3.utcMonth.offset(H.month(p), 1) <= d3.utcMonth.floor(H.REPORT_DATE)) card.classList.add('past');
+    card.append(H.el('span', 'm', label), ...rows.map((r) => H.el('span', null, r.course)));
+    return card;
+  }));
+}
+
+// ---------- ORR ----------
+function drawOrrTeams() {
+  const box = document.getElementById('bars-orr-teams');
+  const data = H.state('orr_teams', box), gap = dash.data('orr_team_gap');
+  if (!data || gap.status !== 'ok') return;
+  box.replaceChildren(...data.map((d) => {
+    const g = gap.data.find((r) => r.team === d.team).gap_pts;
+    const v = H.el('span'); v.append(H.el('b', null, H.p100(d.actual_pct)), ' ');
+    v.append(H.el('span', g >= 0 ? 'ops-good' : 'ops-bad', H.signPts(g)));
+    return H.bar(d.team, d.actual_pct / 100, g >= 0 ? dash.colors[0] : 'var(--cds-chart-status-critical)', v, d.plan_pct / 100);
+  }));
+  const tb = document.querySelector('#table-orr-teams tbody');
+  tb.replaceChildren(...data.map((d) => {
+    const tr = H.el('tr');
+    tr.append(H.el('td', null, d.team), H.el('td', 'num', H.p100(d.weight_pct)), H.el('td', 'num', H.num(d.total_activities)), H.el('td', 'num', H.num(d.completed)), H.el('td', 'num', H.p100(d.plan_end_pct)));
+    return tr;
+  }));
+}
+
+function drawOrrElements() {
+  const tb = document.querySelector('#table-orr-elements tbody');
+  const d = dash.data('orr_elements');
+  if (d.status !== 'ok') { tb.replaceChildren(); return; }
+  const rows = [...d.data].sort((a, b) => a.progress_pct - b.progress_pct);
+  tb.replaceChildren(...rows.map((r) => {
+    const tr = H.el('tr');
+    const bar = H.el('div', 'ops-cell-bar'); const t = H.el('div', 'ops-track'); const f = H.el('div', 'ops-fill');
+    f.style.width = r.progress_pct + '%'; f.style.background = r.progress_pct < 50 ? 'var(--cds-chart-status-critical)' : dash.colors[0]; t.append(f);
+    bar.append(t, H.el('span', r.progress_pct < 50 ? 'ops-bad' : null, H.p100(r.progress_pct)));
+    const td = H.el('td'); td.append(bar);
+    tr.append(H.el('td', null, r.code), H.el('td', null, r.element), H.el('td', 'hide-sm', r.group), H.el('td', 'num', H.num(r.items)), td);
+    return tr;
+  }));
+}
+
+// ---------- procedures ----------
+['proc-q', 'proc-cat', 'proc-open'].forEach((id) => document.getElementById(id).addEventListener('input', drawProcedures));
+function drawProcedures() {
+  const tb = document.querySelector('#table-procedures tbody');
+  const d = dash.data('procedures');
+  if (d.status !== 'ok') { tb.replaceChildren(); return; }
+  const q = document.getElementById('proc-q').value.trim().toLowerCase();
+  const cat = document.getElementById('proc-cat').value, op = document.getElementById('proc-open').value;
+  const rows = d.data.filter((r) => (!cat || r.category === cat) && (!op || (op === 'open') === (r.issued !== 'Yes'))
+    && (!q || [r.document, r.responsible, r.remark, r.id].join(' ').toLowerCase().includes(q)))
+    .sort((a, b) => a.completion_pct - b.completion_pct || a.id.localeCompare(b.id));
+  tb.replaceChildren(...rows.map((r) => {
+    const tr = H.el('tr');
+    const c = r.completion_pct === 100 ? 'ops-good' : r.completion_pct === 0 ? 'ops-bad' : 'ops-warn';
+    const pill = H.el('span', 'ops-pill ' + c, r.completion_pct === 100 ? 'Issued' : r.completion_pct + '%');
+    const td = H.el('td'); td.append(pill);
+    tr.append(H.el('td', null, r.id), H.el('td', null, r.document), H.el('td', 'hide-sm', r.responsible), H.el('td', null, r.expected), td, H.el('td', 'hide-sm', r.remark));
+    return tr;
+  }));
+}
+
+// ---------- contracts ----------
+function drawPr() {
+  const box = document.getElementById('bars-pr');
+  const data = H.state('pr_pipeline', box);
+  const col = { 'Late': 'var(--cds-chart-status-critical)', 'Near-late': 'var(--color-warn)', 'On time': dash.colors[0] };
+  const vi = { 'Late': 'Late', 'Near-late': 'Near-late', 'On time': 'On time' };
+  document.getElementById('pr-legend').replaceChildren(...Object.keys(col).map((k) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = col[k]; sp.append(sw, vi[k]); return sp; }));
+  if (!data) return;
+  const max = d3.max(d3.rollups(data, (v) => d3.sum(v, (d) => d.count), (d) => d.stage), (d) => d[1]);
+  box.replaceChildren(...d3.groups(data, (d) => d.stage).map(([stage, rows]) => {
+    const row = H.el('div', 'ops-bar');
+    const st = H.el('div', 'ops-stack'); st.style.background = 'transparent'; st.style.gap = '2px';
+    ['Late', 'Near-late', 'On time'].forEach((s) => { const n = d3.sum(rows.filter((r) => r.status === s), (r) => r.count);
+      for (let i = 0; i < n; i++) { const b = H.el('div'); b.style.width = `calc(${100 / max}% - 2px)`; b.style.background = col[s]; b.style.borderRadius = '3px'; b.title = vi[s]; st.append(b); } });
+    const total = d3.sum(rows, (r) => r.count);
+    const v = H.el('div', 'ops-bar-val'); v.append(H.el('b', null, String(total)), ' PR');
+    row.append(H.el('div', 'ops-bar-label', stage), st, v);
+    return row;
+  }));
+}
+
+function drawPackages() {
+  const box = document.getElementById('packages');
+  const data = H.state('packages_no_pr', box);
+  if (!data) return;
+  const dims = [['status', 'Procurement status'], ['priority', 'Priority'], ['scr_timing', 'Expected SCR']];
+  box.replaceChildren(...dims.map(([dim, title]) => {
+    const wrap = H.el('div'); wrap.style.display = 'flex'; wrap.style.flexDirection = 'column'; wrap.style.gap = 'var(--cds-gap-xs)'; wrap.style.marginBottom = 'var(--cds-gap-md)';
+    const rows = data.filter((d) => d.dimension === dim); const max = d3.max(rows, (d) => d.count);
+    wrap.append(H.el('h3', null, title), ...rows.map((d) => {
+      const v = H.el('span'); v.append(H.el('b', null, String(d.count)), ' packages');
+      return H.bar(d.category, d.count / max, d.category === 'Priority 1' ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
+    }));
+    return wrap;
+  }));
+}
+
+function listInto(id, rows) {
+  const ul = document.getElementById(id);
+  ul.replaceChildren(...rows.map((r) => { const li = H.el('li'); li.append(H.el('span', 'k', r.item), H.el('span', null, r.status)); return li; }));
+}
+function drawWorkstreams() {
+  const d = dash.data('workstreams');
+  ['list-apps', 'list-logistics', 'list-com'].forEach((id) => { const el = document.getElementById(id); if (d.status !== 'ok') el.replaceChildren(); });
+  if (d.status !== 'ok') return;
+  listInto('list-apps', d.data.filter((r) => r.area === 'Applications'));
+  listInto('list-logistics', d.data.filter((r) => r.area === 'Logistics & services' || r.area === 'Coordination'));
+  listInto('list-com', d.data.filter((r) => r.area === 'Commissioning'));
+}
+
+function drawCmms() {
+  const box = document.getElementById('bars-cmms');
+  const data = H.state('cmms', box);
+  if (!data) return;
+  box.replaceChildren(...data.map((d) => {
+    const v = H.el('span'); v.append(H.el('b', null, H.p100(d.actual_pct)), ' / KH ' + H.p100(d.plan_pct));
+    return H.bar(d.package, d.actual_pct / 100, dash.colors[0], v, d.plan_pct / 100);
+  }));
+}
+
+function drawPermits() {
+  const tb = document.querySelector('#table-permits tbody');
+  const d = dash.data('permits');
+  if (d.status !== 'ok') { tb.replaceChildren(); return; }
+  tb.replaceChildren(...d.data.map((r) => {
+    const tr = H.el('tr');
+    const c = r.status === 'Issued' ? 'ops-good' : r.status === 'Temporary' ? 'ops-warn' : r.status.startsWith('Waiting') ? 'ops-bad' : '';
+    const td = H.el('td'); td.append(H.el('span', 'ops-pill ' + c, r.status));
+    const f = (s) => (s ? H.fmtDay(H.day(s)) : '—');
+    tr.append(H.el('td', null, r.permit), H.el('td', 'hide-sm', r.facility), H.el('td', 'hide-sm', r.authority), H.el('td', null, f(r.issue_date)), H.el('td', null, f(r.expiry_date)), H.el('td', 'hide-sm', f(r.renewal_date)), td);
+    return tr;
+  }));
+}
+
+// ---------- startup ----------
+function drawGantt() {
+  const box = document.getElementById('gantt');
+  const data = H.state('precom_plan', box);
+  if (!data) return;
+  const rows = data.map((d) => ({ ...d, s: H.day(d.plan_start), f: H.day(d.plan_finish) })).sort((a, b) => a.s - b.s || a.f - b.f);
+  const lo = d3.utcMonth.floor(d3.min(rows, (r) => r.s)), hi = d3.utcMonth.ceil(d3.max(rows, (r) => r.f));
+  const pos = (t) => ((t - lo) / (hi - lo)) * 100;
+  const months = d3.utcMonth.range(lo, hi);
+  const soon = d3.utcDay.offset(H.REPORT_DATE, 30);
+  const axisRow = H.el('div', 'ops-grow'); axisRow.append(H.el('div'));
+  const axis = H.el('div', 'ops-gaxis');
+  months.forEach((m) => { const s = H.el('span', null, d3.utcFormat('%b %y')(m)); s.style.left = pos(d3.utcDay.offset(m, 15)) + '%'; axis.append(s); });
+  axisRow.append(axis);
+  box.replaceChildren(axisRow, ...rows.map((r) => {
+    const row = H.el('div', 'ops-grow');
+    const lane = H.el('div', 'ops-glane');
+    months.forEach((m) => { const l = H.el('div', 'ops-gline'); l.style.left = pos(m) + '%'; lane.append(l); });
+    const b = H.el('div', 'ops-gbar' + (r.actual_finish ? ' done' : r.s <= H.REPORT_DATE && r.f >= H.REPORT_DATE ? ' now' : r.s > H.REPORT_DATE && r.s <= soon ? ' soon' : ''));
+    b.style.left = pos(r.s) + '%'; b.style.width = Math.max(0.8, pos(d3.utcDay.offset(r.f, 1)) - pos(r.s)) + '%';
+    b.title = `Plan ${H.fmtDay(r.s)} – ${H.fmtDay(r.f)}` + (r.actual_finish ? ` · done ${H.fmtDay(H.day(r.actual_finish))}` : '');
+    const t = H.el('div', 'ops-gtoday'); t.style.left = pos(H.REPORT_DATE) + '%';
+    lane.append(b, t);
+    const lab = H.el('div', null, r.activity);
+    const dd = H.el('span', 'ops-note', `  ${H.fmtDay(r.s)} – ${H.fmtDay(r.f)}`); dd.style.display = 'inline';
+    lab.append(dd);
+    row.append(lab, lane);
+    return row;
+  }));
+}
+
+function drawSteps() {
+  const ol = document.getElementById('steps');
+  const data = H.state('startup_sequence', ol);
+  if (!data) return;
+  ol.replaceChildren(...data.map((r) => {
+    const li = H.el('li'); const body = H.el('div');
+    body.append(H.el('div', 'p', r.phase), H.el('div', null, r.action));
+    li.append(H.el('span', 'n', String(r.step)), body); return li;
+  }));
+}
+
+function draw() {
+  drawKpis();
+  if (currentPage === 'overview') { drawManpower(); drawOrrCurve(); drawStaffing(); }
+  if (currentPage === 'people') { drawMandatory(); drawCbta(); drawVendor(); }
+  if (currentPage === 'orr') { drawOrrTeams(); drawOrrElements(); }
+  if (currentPage === 'procedures') drawProcedures();
+  if (currentPage === 'contracts') { drawPr(); drawPackages(); drawWorkstreams(); drawCmms(); drawPermits(); }
+  if (currentPage === 'startup') { drawGantt(); drawWorkstreams(); drawSteps(); }
+}
+dash.onData(draw);
+const initial = location.hash.slice(1);
+if (pages.includes(initial)) showPage(initial, false);
+</script>

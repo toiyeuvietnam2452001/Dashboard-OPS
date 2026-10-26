@@ -1,0 +1,38 @@
+[
+{
+"team": "Management",
+"planned": 263,
+"earned": 72,
+"balance": 191
+},
+{
+"team": "CPP P&P",
+"planned": 334,
+"earned": 195,
+"balance": 139
+},
+{
+"team": "CPP M&R",
+"planned": 210,
+"earned": 92,
+"balance": 118
+},
+{
+"team": "CPP E&I",
+"planned": 270,
+"earned": 96,
+"balance": 174
+},
+{
+"team": "CPP Deck crew",
+"planned": 72,
+"earned": 19,
+"balance": 53
+},
+{
+"team": "WHP team",
+"planned": 250,
+"earned": 130,
+"balance": 120
+}
+]

@@ -1,0 +1,170 @@
+[
+{
+"group": "PEOPLE",
+"code": "PE-01",
+"element": "Organization, Manning & Accountability",
+"items": 14,
+"progress_pct": 64.3
+},
+{
+"group": "PEOPLE",
+"code": "PE-02",
+"element": "Competency, Training & Authorization",
+"items": 26,
+"progress_pct": 59.9
+},
+{
+"group": "PEOPLE",
+"code": "PE-03",
+"element": "Personnel Mobilization & Fitness for Duty",
+"items": 3,
+"progress_pct": 83.7
+},
+{
+"group": "PEOPLE",
+"code": "PE-04",
+"element": "HR Policies, Employment Conditions & Retention",
+"items": 5,
+"progress_pct": 100.0
+},
+{
+"group": "PLANT",
+"code": "PL-01",
+"element": "Facilities, Process & Utilities Readiness",
+"items": 11,
+"progress_pct": 77.2
+},
+{
+"group": "PLANT",
+"code": "PL-02",
+"element": "Wells, Flowlines & Export Systems Readiness",
+"items": 20,
+"progress_pct": 80.2
+},
+{
+"group": "PLANT",
+"code": "PL-03",
+"element": "Asset Integrity & Safety Barrier Readiness",
+"items": 8,
+"progress_pct": 14.1
+},
+{
+"group": "PLANT",
+"code": "PL-04",
+"element": "Spares, Materials, Consumables & Tools Readiness",
+"items": 15,
+"progress_pct": 61.8
+},
+{
+"group": "PLANT",
+"code": "PL-05",
+"element": "Metering, Sampling, Analysers & Environmental Monitoring",
+"items": 2,
+"progress_pct": 0.0
+},
+{
+"group": "PLANT",
+"code": "PL-06",
+"element": "Onshore Base, Port & Support Infrastructure",
+"items": 4,
+"progress_pct": 72.3
+},
+{
+"group": "PROCESS",
+"code": "PR-01",
+"element": "ORR Governance, Readiness Acceptance & Financial Readiness",
+"items": 18,
+"progress_pct": 85.8
+},
+{
+"group": "PROCESS",
+"code": "PR-02",
+"element": "Legal Compliance, Licences, Permits, Certification & Security",
+"items": 20,
+"progress_pct": 81.5
+},
+{
+"group": "PROCESS",
+"code": "PR-03",
+"element": "HSE, Process Safety & Control of Work",
+"items": 104,
+"progress_pct": 85.6
+},
+{
+"group": "PROCESS",
+"code": "PR-04",
+"element": "Emergency Response, Crisis Management & Continuity",
+"items": 29,
+"progress_pct": 49.3
+},
+{
+"group": "PROCESS",
+"code": "PR-05",
+"element": "Operations Management & Production Chemistry",
+"items": 80,
+"progress_pct": 45.4
+},
+{
+"group": "PROCESS",
+"code": "PR-06",
+"element": "Maintenance, Reliability & Integrity Management",
+"items": 88,
+"progress_pct": 63.6
+},
+{
+"group": "PROCESS",
+"code": "PR-07",
+"element": "Contracts, Procurement & Supply Chain",
+"items": 51,
+"progress_pct": 59.4
+},
+{
+"group": "PROCESS",
+"code": "PR-08",
+"element": "Integrated Coordination, Gas Dispatch, Metering & Commercial Interface",
+"items": 13,
+"progress_pct": 41.5
+},
+{
+"group": "PROCESS",
+"code": "PR-09",
+"element": "Technical Information, Data, Digital Systems & OT Security",
+"items": 40,
+"progress_pct": 59.6
+},
+{
+"group": "PROCESS",
+"code": "PR-10",
+"element": "Commissioning Interface, Handover, Start-up & Stabilization",
+"items": 27,
+"progress_pct": 58.5
+},
+{
+"group": "PROCESS",
+"code": "PR-11",
+"element": "Production Management, Well Surveillance & Hydrocarbon Accounting",
+"items": 21,
+"progress_pct": 70.1
+},
+{
+"group": "PROCESS",
+"code": "PR-12",
+"element": "Marine, Aviation & Logistics Operations",
+"items": 49,
+"progress_pct": 68.8
+},
+{
+"group": "PROCESS",
+"code": "PR-13",
+"element": "Performance Management, Assurance & Continuous Improvement",
+"items": 22,
+"progress_pct": 68.0
+},
+{
+"group": "PROCESS",
+"code": "PR-14",
+"element": "Design, Engineering, Operability & Maintainability Assurance",
+"items": 22,
+"progress_pct": 89.3
+}
+]
