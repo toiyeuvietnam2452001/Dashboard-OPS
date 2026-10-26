@@ -7,14 +7,34 @@
 const SOURCES = require('../tools/notion-sources.json');
 
 const NOTION_VERSION = '2025-09-03';
-// Tables whose row order is a property rather than the order rows were created.
-const SORT_BY = { manpower: 'month', orr_curve: 'month', startup_sequence: 'step' };
+// Row order per table. Notion's created_time only has minute precision, so rows added together
+// would come back in arbitrary order; every table sorts on its own columns instead.
+// (A select column sorts by the order of its options, e.g. CPP before WHP.)
+const SORTS = {
+  manpower: [['month', 'ascending']],
+  orr_curve: [['month', 'ascending']],
+  startup_sequence: [['step', 'ascending']],
+  procedures: [['id', 'ascending']],
+  orr_elements: [['code', 'ascending']],
+  orr_groups: [['group', 'ascending']],
+  orr_teams: [['weight_pct', 'descending'], ['team', 'ascending']],
+  pr_pipeline: [['stage', 'ascending'], ['status', 'ascending']],
+  packages_no_pr: [['dimension', 'ascending'], ['count', 'descending']],
+  vendor_training: [['period', 'ascending'], ['course', 'ascending']],
+  precom_plan: [['plan_start', 'ascending'], ['activity', 'ascending']],
+  cbta: [['platform', 'ascending'], ['team', 'ascending']],
+  mandatory: [['team', 'ascending']],
+  staffing: [['group', 'ascending']],
+  cmms: [['package', 'descending']],
+  workstreams: [['area', 'ascending'], ['item', 'ascending']],
+  permits: [['permit', 'ascending']],
+};
 
-async function queryAll(token, dataSourceId, sortProp) {
+async function queryAll(token, dataSourceId, sorts) {
   const rows = [];
   let cursor;
   do {
-    const body = { page_size: 100, sorts: [sortProp ? { property: sortProp, direction: 'ascending' } : { timestamp: 'created_time', direction: 'ascending' }] };
+    const body = { page_size: 100, sorts: (sorts || []).map(([property, direction]) => ({ property, direction })).concat([{ timestamp: 'created_time', direction: 'ascending' }]) };
     if (cursor) body.start_cursor = cursor;
     const res = await fetch(`https://api.notion.com/v1/data_sources/${dataSourceId}/query`, {
       method: 'POST',
@@ -63,7 +83,7 @@ async function loadAll(token) {
   // three tables at a time keeps us inside Notion's ~3 requests/second limit
   for (let i = 0; i < ids.length; i += 3) {
     await Promise.all(ids.slice(i, i + 3).map(async (id) => {
-      const pages = await queryAll(token, SOURCES[id].data_source, SORT_BY[id]);
+      const pages = await queryAll(token, SOURCES[id].data_source, SORTS[id]);
       out[id] = pages.map(toRow).filter((r) => Object.values(r).some((v) => v !== null && v !== ''));
       for (const p of pages) if (p.last_edited_time > lastEdited) lastEdited = p.last_edited_time;
     }));
