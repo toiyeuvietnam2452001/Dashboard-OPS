@@ -13,6 +13,7 @@ Excel trên SharePoint ────┤
 | `index.html` | Trang dashboard web. Mỗi lần mở trang đọc `data.json`; nếu không đọc được thì hiện số liệu dự phòng nhúng sẵn và báo đỏ ở cuối trang. |
 | `data.json` | Số liệu dashboard web. **Power Automate ghi đè file này**, không sửa tay. |
 | `automation/OPS_Dashboard_Data.xlsx` | File Excel nguồn. 6 sheet dashboard ở đầu (Overview, Manpower & Training, ORR, Procedures, Contracts & Permits, Commissioning), sheet "Huong dan", rồi 18 bảng số liệu. Đưa lên SharePoint, phòng OPS nhập số tại các bảng số liệu. |
+| `automation/day-so-lieu-len-dashboard.ts` | Office Script: bấm là đẩy số liệu từ Excel lên GitHub, trang Vercel tự cập nhật (không cần Power Automate). |
 | `automation/xuat-du-lieu-dashboard.ts` | Office Script đọc các bảng Excel và xuất JSON cho dashboard web. Chỉ đọc Excel Table, nên bỏ qua các sheet dashboard. |
 | `tools/` | Mã dựng lại `index.html`, `data.json` và file Excel (xem cuối trang). |
 
@@ -24,6 +25,20 @@ Excel trên SharePoint ────┤
 - Bảng "PRs in progress by stage" dùng 6 tên bước cố định (`1 CSP Preparation` … `6 Contract Signing`); tên bước trong bảng "PR dang xu ly" phải trùng.
 
 ---
+
+## Cập nhật trang Vercel: nút bấm trong Excel (không cần Premium)
+
+Script `automation/day-so-lieu-len-dashboard.ts` đọc các bảng số liệu và ghi thẳng `data.json` lên GitHub; Vercel cập nhật trang sau 1–2 phút.
+
+1. Tạo GitHub token như **Bước 3** bên dưới.
+2. Mở file Excel trên web → **Automate → New Script** → xoá nội dung mẫu, dán toàn bộ file `day-so-lieu-len-dashboard.ts`.
+3. Thay `DAN_TOKEN_VAO_DAY` ở dòng `const GITHUB_TOKEN = …` bằng token (giữ dấu ngoặc kép). Đặt tên script `Day so lieu len dashboard` → **Save script**.
+4. Bấm **Run**. Lần đầu Excel có thể hỏi cho phép kết nối `api.github.com` → **Allow**. Output báo "Đã đẩy số liệu lên GitHub…" là xong.
+5. (Tuỳ chọn) Trong khung script, bấm **⋯ → Add in workbook** để gắn nút bấm vào sheet Overview.
+
+Mỗi lần nhập số xong, bấm nút này. Script chứa token: **không chia sẻ script** cho người khác; ai cần đẩy số thì tự tạo script với token của mình, hoặc nhờ người giữ token bấm.
+
+Muốn tự động theo lịch thay vì bấm tay: làm các bước Power Automate bên dưới (cần Premium).
 
 ## Bước 1: Đưa file Excel lên SharePoint
 
