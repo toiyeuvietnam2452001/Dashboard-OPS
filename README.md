@@ -5,17 +5,36 @@ Dashboard báo cáo phòng OPS, có hai mặt hiển thị, cùng chạy từ m�
 ```
                           ┌──> Các sheet dashboard trong chính file Excel (tính lại ngay khi sửa số, xem bằng tài khoản công ty)
 Excel trên SharePoint ────┤
-                          └──(Power Automate, theo lịch)──> data.json trên GitHub ──(Vercel tự deploy)──> https://ops-pqpoc.vercel.app
+                          └──(nút "Day so lieu len dashboard")──> data.json trên GitHub ──┬──(Vercel tự deploy)──> https://ops-pqpoc.vercel.app
+                                                                                          └──(GitHub Actions)──> history/<ngày báo cáo>.json
 ```
+
+## Quy trình mỗi kỳ báo cáo
+
+1. Mở file Excel trên SharePoint, sheet **Thong tin** → sửa `report_date` thành ngày báo cáo mới (dạng `2026-11-28`).
+2. Nhập số mới vào các bảng số liệu (sheet sau "Huong dan"). Các sheet dashboard trong Excel đổi ngay.
+3. Xem lại sheet **Overview** cho chắc số đúng.
+4. Bấm nút / chạy script **Day so lieu len dashboard**.
+5. Sau 1–2 phút, mở https://ops-pqpoc.vercel.app (Ctrl+F5): tiêu đề hiện ngày báo cáo mới.
+
+Sửa số sau khi đã đẩy: giữ nguyên `report_date`, sửa số, bấm lại nút: bản của ngày đó được ghi đè.
+
+## Xem lại báo cáo cũ
+
+- Mỗi lần `data.json` thay đổi, GitHub Actions (`.github/workflows/archive.yml`) lưu một bản sao vào `history/<report_date>.json` và cập nhật `history/index.json`.
+- Trên trang web, ô **Report** ở góc phải liệt kê mọi ngày báo cáo; chọn ngày cũ là trang mở lại đúng số của ngày đó, kèm dòng báo "You are viewing the archived report of …".
+- Link tới một báo cáo cũ gửi được cho người khác: `https://ops-pqpoc.vercel.app/?date=2026-10-21` (thêm `#orr`, `#procedures`… để mở thẳng tab).
+- Trong Excel, các lần lưu trước xem ở **File → Info → Version History** của SharePoint.
 
 | File | Vai trò |
 |---|---|
-| `index.html` | Trang dashboard web. Mỗi lần mở trang đọc `data.json`; nếu không đọc được thì hiện số liệu dự phòng nhúng sẵn và báo đỏ ở cuối trang. |
-| `data.json` | Số liệu dashboard web. **Power Automate ghi đè file này**, không sửa tay. |
+| `index.html` | Trang dashboard web. Mỗi lần mở trang đọc `data.json` (hoặc `history/<ngày>.json` khi có `?date=`); nếu không đọc được thì hiện số liệu dự phòng nhúng sẵn và báo đỏ ở cuối trang. |
+| `data.json` | Số liệu mới nhất. **Script trong Excel ghi đè file này**, không sửa tay. |
+| `history/` | Bản lưu theo ngày báo cáo, do GitHub Actions tạo. Không sửa tay. |
 | `automation/OPS_Dashboard_Data.xlsx` | File Excel nguồn. 6 sheet dashboard ở đầu (Overview, Manpower & Training, ORR, Procedures, Contracts & Permits, Commissioning), sheet "Huong dan", rồi 18 bảng số liệu. Đưa lên SharePoint, phòng OPS nhập số tại các bảng số liệu. |
 | `automation/day-so-lieu-len-dashboard.ts` | Office Script: bấm là đẩy số liệu từ Excel lên GitHub, trang Vercel tự cập nhật (không cần Power Automate). |
 | `automation/xuat-du-lieu-dashboard.ts` | Office Script đọc các bảng Excel và xuất JSON cho dashboard web. Chỉ đọc Excel Table, nên bỏ qua các sheet dashboard. |
-| `tools/` | Mã dựng lại `index.html`, `data.json` và file Excel (xem cuối trang). |
+| `tools/` | Mã dựng lại `index.html` và file Excel; `tools/archive.py` tạo bản lưu lịch sử (xem cuối trang). |
 
 ## Dashboard trong Excel
 

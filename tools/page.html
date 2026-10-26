@@ -5,6 +5,11 @@
 .ops-brand { flex-direction: row; align-items: center; gap: var(--cds-gap-md); }
 .ops-logo { flex: none; height: 64px; width: auto; background: #ffffff; border-radius: var(--cds-radius); padding: 6px 8px; box-sizing: content-box; }
 @media (max-width: 560px) { .ops-logo { height: 44px; } }
+.ops-picker { margin-left: auto; display: flex; flex-direction: column; gap: 2px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); align-self: flex-start; }
+.ops-picker select { font: inherit; font-size: var(--cds-font-size-body); padding: 5px 8px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); color: var(--color-fg); }
+.ops-archived { margin: 0; padding: var(--cds-pad-sm) var(--cds-pad-md); border: 1px solid var(--color-warn); border-radius: var(--cds-radius); color: var(--color-fg); font-size: var(--cds-font-size-body); }
+.ops-archived a { color: inherit; font-weight: 600; }
+@media (max-width: 560px) { .ops-brand { flex-wrap: wrap; } .ops-picker { margin-left: 0; width: 100%; } }
 .ops-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
 .ops-sub { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); margin: 0; max-width: 75ch; line-height: 1.5; }
 .ops .ops-sub b, .ops .ops-tile b { font-weight: 600; }
@@ -105,7 +110,12 @@
     <h1>OPS readiness – report <span class="ops-report-date">—</span></h1>
     <p class="ops-sub" id="takeaway">Manpower in <span class="ops-mp-month">—</span>: <b data-source="kpi_manpower" data-field="total_actual" class="dash-skeleton">—</b> / <b data-source="kpi_manpower" data-field="total_plan" class="dash-skeleton">—</b> people against plan; OPS teams ORR checklist at <b data-source="kpi_orr" data-field="actual_pct" class="dash-skeleton">—</b> vs plan <span data-source="kpi_orr" data-field="plan_pct" class="dash-skeleton">—</span>; <b data-source="pr_summary" data-field="late" class="dash-skeleton">—</b> PRs late.</p>
     </div>
+    <div class="ops-picker" id="report-picker" hidden>
+      <label for="report-pick">Report</label>
+      <select id="report-pick"></select>
+    </div>
   </header>
+  <p class="ops-archived" id="archived-note" hidden></p>
 
   <nav class="ops-tabs" role="tablist" aria-label="Report sections">
     <button class="ops-tab" role="tab" id="tab-overview" data-page="overview" aria-selected="true">Overview</button>
@@ -844,4 +854,26 @@ function draw() {
 dash.onData(draw);
 const initial = location.hash.slice(1);
 if (pages.includes(initial)) showPage(initial, false);
+</script>
+
+<script>
+// Report picker: lists archived reports (history/index.json) and reopens the page with ?date=.
+const pick = document.getElementById('report-pick');
+const fmt = d3.utcFormat('%-d %b %Y');
+const day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d)); };
+if (dash.reports.length) {
+  document.getElementById('report-picker').hidden = false;
+  pick.replaceChildren(...dash.reports.map((r) => new Option(fmt(day(r.date)) + (r.date === dash.latestDate ? ' · latest' : ''), r.date === dash.latestDate ? '' : r.date)));
+  pick.value = dash.archived ? dash.viewDate : '';
+  pick.addEventListener('change', () => location.assign(location.pathname + (pick.value ? '?date=' + pick.value : '') + location.hash));
+}
+const note = document.getElementById('archived-note');
+const latestLink = () => { const a = document.createElement('a'); a.href = location.pathname + location.hash; a.textContent = 'Open the latest report'; return a; };
+if (dash.archived) {
+  note.hidden = false;
+  note.append('You are viewing the archived report of ' + fmt(day(dash.viewDate)) + '. ', latestLink());
+} else if (dash.missingDate) {
+  note.hidden = false;
+  note.append('No archived report for ' + fmt(day(dash.missingDate)) + '; showing the latest report instead. ');
+}
 </script>

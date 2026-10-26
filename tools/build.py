@@ -47,16 +47,29 @@ shim = """<script>
 window.dash = (function () {
   var FALLBACK = %s;
   var DATA = FALLBACK, live = false;
-  try {
-    var x = new XMLHttpRequest();
-    x.open('GET', 'data.json?t=' + Date.now(), false);
-    x.send();
-    if (x.status === 200) { var j = JSON.parse(x.responseText); if (j && j.manpower) { DATA = j; live = true; } }
-  } catch (e) {}
+  function getJSON(url) {
+    try {
+      var x = new XMLHttpRequest();
+      x.open('GET', url + (url.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now(), false);
+      x.send();
+      return x.status === 200 ? JSON.parse(x.responseText) : null;
+    } catch (e) { return null; }
+  }
+  // ?date=YYYY-MM-DD opens the archived report of that date; otherwise the latest data.json.
+  var index = getJSON('history/index.json') || { latest: null, reports: [] };
+  var asked = (location.search.match(/[?&]date=(\\d{4}-\\d{2}-\\d{2})/) || [])[1] || null;
+  var viewDate = null, missingDate = null;
+  if (asked) {
+    var snap = getJSON('history/' + asked + '.json');
+    if (snap && snap.manpower) { DATA = snap; live = true; viewDate = asked; } else { missingDate = asked; }
+  }
+  if (!live) { var cur = getJSON('data.json'); if (cur && cur.manpower) { DATA = cur; live = true; } }
   var res = {}, fns = [];
   function input(i) { return i in DATA ? DATA[i] : res[i]; }
   return {
     live: live, updatedAt: DATA._updated_at,
+    reports: index.reports || [], latestDate: index.latest, viewDate: viewDate, missingDate: missingDate,
+    archived: !!viewDate && viewDate !== index.latest,
     data: function (id) { var d = input(id); return d === undefined ? { status: 'missing', data: [], meta: [] } : { status: 'ok', data: d, refreshing: false, meta: [] }; },
     calc: function (id, o) { try { res[id] = o.fn.apply(null, o.inputs.map(function (i) { return input(i) || []; })); } catch (e) { console.error('calc ' + id, e); } },
     loader: function () {},
@@ -100,5 +113,7 @@ html = f"""<!doctype html>
 </html>"""
 os.makedirs(OUT, exist_ok=True)
 open(os.path.join(OUT, 'index.html'), 'w').write(html)
-json.dump(data, open(os.path.join(OUT, 'data.json'), 'w'), ensure_ascii=False, indent=1)
+# data.json holds live numbers pushed from Excel: only create it, never overwrite it here.
+if not os.path.exists(os.path.join(OUT, 'data.json')):
+    json.dump(data, open(os.path.join(OUT, 'data.json'), 'w'), ensure_ascii=False, indent=1)
 print('index.html', len(html), 'data.json', os.path.getsize(os.path.join(OUT, 'data.json')))
