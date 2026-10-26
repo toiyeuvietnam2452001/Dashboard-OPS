@@ -1,0 +1,74 @@
+{
+ "meta": {
+  "database": "577aeb6e17644d14afe08bc7d3324b76",
+  "data_source": "979f5cbe-15ad-487c-818f-ecfcd6651edd"
+ },
+ "manpower": {
+  "database": "f016c9233e62431ba4b7be2531645a0b",
+  "data_source": "29419faa-4cea-4cad-8c5b-5f879d422f9f"
+ },
+ "staffing": {
+  "database": "28a28a74e4574f248b6fb1076b81bd7f",
+  "data_source": "28494001-2108-4e88-affb-ca965f5eb8f5"
+ },
+ "cbta": {
+  "database": "8fa1fe49835f4bab82055fafb7f22160",
+  "data_source": "358e016e-ca59-4232-9edb-2bea440dd730"
+ },
+ "mandatory": {
+  "database": "f3441b97170944aa8a2a8b119fa3f4cb",
+  "data_source": "e4a56f50-1dde-4baf-a420-341e3f4101ae"
+ },
+ "vendor_training": {
+  "database": "813dbab8ed8e41b28c1240e33bc8ce42",
+  "data_source": "bba9b1b3-ff70-4b7d-9429-85c69e5b35a6"
+ },
+ "orr_teams": {
+  "database": "56e8351cea2f4ab3b31b05f2d254464a",
+  "data_source": "82a7ed32-ad21-40f0-b956-c9326d836a29"
+ },
+ "orr_curve": {
+  "database": "409fcd2aa7c44490a355157bda26943c",
+  "data_source": "a57d2004-ae12-49f3-ae94-0da7e469e8b0"
+ },
+ "orr_elements": {
+  "database": "f3160b6ca36347939635d8696b59fed7",
+  "data_source": "21a73873-e58f-4001-a445-d566cdc6cafb"
+ },
+ "orr_groups": {
+  "database": "37171daa52a3445095b7d9fe75096065",
+  "data_source": "237be64b-201d-4572-b68b-3ee34bd67a2d"
+ },
+ "procedures": {
+  "database": "b02e844c3c6045938b877b46e579b732",
+  "data_source": "2034bfe2-876f-4ee9-bc65-1cb1d61528c3"
+ },
+ "packages_no_pr": {
+  "database": "a6ab2e4af614417e964f6c472c276877",
+  "data_source": "83a6122d-529e-43e3-ba61-14c570b8fde6"
+ },
+ "pr_pipeline": {
+  "database": "4139535d09af416aafbbc25cca16d0cd",
+  "data_source": "7e7a907e-916c-4f57-8e96-e9b2ab5d9b11"
+ },
+ "cmms": {
+  "database": "39b637126ea14bad9070b3fe74ccbe9d",
+  "data_source": "6e0bcb5e-0545-4b56-871d-ea28fd36278c"
+ },
+ "workstreams": {
+  "database": "f6efd9f3259543c3ac7062edf6f8f41b",
+  "data_source": "4a24085a-8d5f-4e4e-8953-99ed027dfc33"
+ },
+ "permits": {
+  "database": "d5b09463467241a1b214c6409ff878ee",
+  "data_source": "db2f74fa-681d-46ad-a61b-5aeed10c3ce1"
+ },
+ "precom_plan": {
+  "database": "122ddc8076ed4b73a5d7cb12740e0471",
+  "data_source": "d594d37c-98f8-4e2d-8b94-d3686e2e4dfe"
+ },
+ "startup_sequence": {
+  "database": "3a81f185fc9945a898cf5f9d90d8d9ce",
+  "data_source": "a31f5e3f-972f-4dbc-ad2f-727ac3d7beeb"
+ }
+}
