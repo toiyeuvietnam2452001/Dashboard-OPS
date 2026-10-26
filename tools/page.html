@@ -2,6 +2,9 @@
 #dash-root { --dash-gutter: clamp(16px, 3vw, 40px); }
 .ops { font-family: var(--font-anthropic-sans); display: flex; flex-direction: column; gap: var(--cds-gap-lg); font-variant-numeric: tabular-nums; }
 .ops-head { display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+.ops-brand { flex-direction: row; align-items: center; gap: var(--cds-gap-md); }
+.ops-logo { flex: none; height: 64px; width: auto; background: #ffffff; border-radius: var(--cds-radius); padding: 6px 8px; box-sizing: content-box; }
+@media (max-width: 560px) { .ops-logo { height: 44px; } }
 .ops-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
 .ops-sub { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); margin: 0; max-width: 75ch; line-height: 1.5; }
 .ops .ops-sub b, .ops .ops-tile b { font-weight: 600; }
@@ -96,9 +99,12 @@
 </style>
 
 <div class="ops">
-  <header class="ops-head" id="top">
+  <header class="ops-head ops-brand" id="top">
+    <img class="ops-logo" src="{{LOGO}}" alt="PetroVietnam PQPOC" width="77" height="64">
+    <div class="ops-head">
     <h1>OPS readiness – report <span class="ops-report-date">—</span></h1>
     <p class="ops-sub" id="takeaway">Manpower in <span class="ops-mp-month">—</span>: <b data-source="kpi_manpower" data-field="total_actual" class="dash-skeleton">—</b> / <b data-source="kpi_manpower" data-field="total_plan" class="dash-skeleton">—</b> people against plan; OPS teams ORR checklist at <b data-source="kpi_orr" data-field="actual_pct" class="dash-skeleton">—</b> vs plan <span data-source="kpi_orr" data-field="plan_pct" class="dash-skeleton">—</span>; <b data-source="pr_summary" data-field="late" class="dash-skeleton">—</b> PRs late.</p>
+    </div>
   </header>
 
   <nav class="ops-tabs" role="tablist" aria-label="Report sections">

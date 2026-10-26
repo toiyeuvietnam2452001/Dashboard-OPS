@@ -12,6 +12,8 @@ data = {i: json.load(open(os.path.join(D, i + '.json'))) for i in IDS}
 data['_updated_at'] = '2026-10-21T00:00:00Z'
 
 page = open(os.path.join(G, 'page.html')).read()
+import base64
+page = page.replace('{{LOGO}}', 'data:image/png;base64,' + base64.b64encode(open(os.path.join(G, 'logo.png'), 'rb').read()).decode())
 style, body = page.split('</style>', 1)
 style = style.replace('<style>', '')
 body = re.sub(r'<script>(.*?)</script>', lambda m: '<script>(function(){' + m.group(1) + '\n})();</script>', body, flags=re.S)

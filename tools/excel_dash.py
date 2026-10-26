@@ -164,6 +164,11 @@ ov['B3'] = (f'="Manpower in "&TEXT(DATEVALUE({mp_month}&"-01"),"mmm yyyy")&": "&
             f'&TEXT({LAST("orr_curve", "actual_pct")}/100,"0.0%")&" vs plan "&TEXT(LOOKUP(2,1/({R("orr_curve", "actual_pct")}<>""),{R("orr_curve", "plan_pct")})/100,"0.0%")'
             f'&"; "&SUMIFS({R("pr_pipeline", "count")},{R("pr_pipeline", "status")},"Late")&" PRs late."')
 ov['B3'].font = F(size=11)
+import os
+from openpyxl.drawing.image import Image as XLImage
+logo = XLImage(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logo.png'))
+logo.height, logo.width = 62, round(62 * logo.width / logo.height)
+ov.add_image(logo, 'X1')
 ov.merge_cells('B3:Y3')
 
 r = 5
