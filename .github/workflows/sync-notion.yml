@@ -1,0 +1,47 @@
+name: Sync from Notion
+
+# Every hour, copy the live Notion data (served by api/data on Vercel) into data.json and
+# history/<report_date>.json, so the dashboard has a fallback and old reports stay viewable.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch live data
+        run: |
+          code=$(curl -s -o /tmp/live.json -w '%{http_code}' https://ops-pqpoc.vercel.app/api/data)
+          echo "api/data answered $code"
+          if [ "$code" != "200" ]; then echo "Notion not connected yet; nothing to sync"; exit 0; fi
+          python3 - <<'PY'
+          import json
+          d = json.load(open('/tmp/live.json'))
+          assert d.get('manpower') and d.get('meta'), 'unexpected answer from api/data'
+          old = json.load(open('data.json'))
+          if old.get('_updated_at') == d.get('_updated_at') and old.get('_source') == 'notion':
+              print('No change in Notion')
+          else:
+              json.dump(d, open('data.json', 'w'), ensure_ascii=False, indent=1)
+              print('data.json updated, last edit', d.get('_updated_at'))
+          PY
+          python3 tools/archive.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data.json history
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "Sync report data from Notion"
+          git pull --rebase origin main
+          git push origin HEAD:main

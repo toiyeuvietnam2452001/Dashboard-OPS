@@ -9,6 +9,25 @@ Excel trên SharePoint ────┤
                                                                                           └──(GitHub Actions)──> history/<ngày báo cáo>.json
 ```
 
+## Nạp dữ liệu qua Notion (realtime)
+
+Các trưởng nhóm cập nhật số trên trang Notion **OPS Dashboard Data** (18 bảng, tên bảng có id trong ngoặc vuông, ví dụ `Nhân sự theo tháng [manpower]`). Trang web đọc thẳng từ Notion:
+
+```
+Notion (OPS Dashboard Data) ──> api/data trên Vercel (đệm 60 giây) ──> ops-pqpoc.vercel.app (tự làm mới mỗi phút)
+                                   └──> GitHub Actions mỗi giờ ──> data.json (dự phòng) + history/<report_date>.json
+```
+
+**Cài một lần**
+1. Vào <https://www.notion.so/profile/integrations> → **New integration** → tên `OPS Dashboard`, workspace của anh, loại **Internal** → **Save**. Ở tab **Capabilities** chỉ cần **Read content**. Copy **Internal Integration Secret** (`ntn_…`).
+2. Mở trang **OPS Dashboard Data** trên Notion → **⋯ → Connections → Add connections** → chọn `OPS Dashboard`.
+3. Vercel → project → **Settings → Environment Variables** → thêm `NOTION_TOKEN` = secret ở bước 1 (Production) → **Save**. Vào **Deployments**, bấm **⋯ → Redeploy** bản mới nhất.
+4. Mở `https://ops-pqpoc.vercel.app/api/data`: thấy JSON là xong. Dòng cuối dashboard ghi "Live from Notion".
+
+**Quy tắc khi sửa trên Notion**: không đổi tên bảng/cột; % gõ 0–100; tháng dạng `YYYY-MM`; mỗi kỳ báo cáo mới sửa `report_date` trong bảng **Thông tin báo cáo** trước. ID các bảng nằm trong `tools/notion-sources.json`.
+
+Mời trưởng nhóm: trang **OPS Dashboard Data** → **Chia sẻ** → nhập email → **Có thể chỉnh sửa**. Mời ở dạng **khách (guest)**: gói miễn phí cho tối đa 10 khách.
+
 ## Quy trình mỗi kỳ báo cáo
 
 1. Mở file Excel trên SharePoint, sheet **Thong tin** → sửa `report_date` thành ngày báo cáo mới (dạng `2026-11-28`).
@@ -34,6 +53,8 @@ Sửa số sau khi đã đẩy: giữ nguyên `report_date`, sửa số, bấm l
 | `automation/OPS_Dashboard_Data.xlsx` | File Excel nguồn. 6 sheet dashboard ở đầu (Overview, Manpower & Training, ORR, Procedures, Contracts & Permits, Commissioning), sheet "Huong dan", rồi 18 bảng số liệu. Đưa lên SharePoint, phòng OPS nhập số tại các bảng số liệu. |
 | `automation/day-so-lieu-len-dashboard.ts` | Office Script: bấm là đẩy số liệu từ Excel lên GitHub, trang Vercel tự cập nhật (không cần Power Automate). |
 | `automation/xuat-du-lieu-dashboard.ts` | Office Script đọc các bảng Excel và xuất JSON cho dashboard web. Chỉ đọc Excel Table, nên bỏ qua các sheet dashboard. |
+| `api/data.js` | Hàm Vercel đọc 18 bảng Notion, trả về cùng dạng `data.json`. Cần biến môi trường `NOTION_TOKEN`. |
+| `.github/workflows/sync-notion.yml` | Mỗi giờ chép số liệu Notion vào `data.json` và `history/`. |
 | `tools/` | Mã dựng lại `index.html` và file Excel; `tools/archive.py` tạo bản lưu lịch sử (xem cuối trang). |
 
 ## Dashboard trong Excel

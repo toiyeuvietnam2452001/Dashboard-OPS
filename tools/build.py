@@ -47,10 +47,10 @@ shim = """<script>
 window.dash = (function () {
   var FALLBACK = %s;
   var DATA = FALLBACK, live = false;
-  function getJSON(url) {
+  function getJSON(url, cached) {
     try {
       var x = new XMLHttpRequest();
-      x.open('GET', url + (url.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now(), false);
+      x.open('GET', cached ? url : url + (url.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now(), false);
       x.send();
       return x.status === 200 ? JSON.parse(x.responseText) : null;
     } catch (e) { return null; }
@@ -63,11 +63,22 @@ window.dash = (function () {
     var snap = getJSON('history/' + asked + '.json');
     if (snap && snap.manpower) { DATA = snap; live = true; viewDate = asked; } else { missingDate = asked; }
   }
-  if (!live) { var cur = getJSON('data.json'); if (cur && cur.manpower) { DATA = cur; live = true; } }
+  // Latest report: live from Notion through api/data (edge-cached ~60 s), else the last data.json.
+  var source = viewDate ? 'archive' : null;
+  if (!live) { var api = getJSON('api/data', true); if (api && api.manpower) { DATA = api; live = true; source = 'notion'; } }
+  if (!live) { var cur = getJSON('data.json'); if (cur && cur.manpower) { DATA = cur; live = true; source = 'file'; } }
+  // Re-check Notion every minute; reload when someone has edited the data.
+  if (source === 'notion') {
+    setInterval(function () {
+      fetch('api/data').then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+        if (j && j._updated_at && j._updated_at !== DATA._updated_at) location.reload();
+      }).catch(function () {});
+    }, 60000);
+  }
   var res = {}, fns = [];
   function input(i) { return i in DATA ? DATA[i] : res[i]; }
   return {
-    live: live, updatedAt: DATA._updated_at,
+    live: live, updatedAt: DATA._updated_at, source: source,
     reports: index.reports || [], latestDate: index.latest, viewDate: viewDate, missingDate: missingDate,
     archived: !!viewDate && viewDate !== index.latest,
     data: function (id) { var d = input(id); return d === undefined ? { status: 'missing', data: [], meta: [] } : { status: 'ok', data: d, refreshing: false, meta: [] }; },
@@ -88,7 +99,7 @@ foot = """<p class="ops-foot" id="ops-foot"></p>
   var f = document.getElementById('ops-foot'), m = (dash.data('meta').data || [])[0] || {};
   var t = dash.updatedAt ? new Date(dash.updatedAt) : null;
   var when = t && !isNaN(t) ? t.toLocaleString('en-GB', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false, day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—';
-  f.textContent = 'Source: ' + (m.report_title || 'OPS Dashboard Data') + (m.prepared_by ? ', ' + m.prepared_by : '') + ' · Data updated ' + when + ' (Vietnam time).';
+  f.textContent = 'Source: ' + (m.report_title || 'OPS Dashboard Data') + (m.prepared_by ? ', ' + m.prepared_by : '') + (dash.source === 'notion' ? ' · Live from Notion, last edited ' : ' · Data updated ') + when + ' (Vietnam time).';
   if (!dash.live) { var s = document.createElement('span'); s.className = 'ops-stale'; s.textContent = ' Could not read data.json; showing fallback data.'; f.append(s); }
 })();</script>"""
 
