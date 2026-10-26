@@ -324,7 +324,7 @@
    "month": "2026-10"
   },
   {
-   "offshore_plan": 88,
+   "offshore_plan": 85,
    "onshore_actual": null,
    "total_plan": 122,
    "offshore_actual": null,
@@ -565,80 +565,18 @@
    "report_title": "Operations Readiness Preparation"
   }
  ],
- "mandatory": [
-  {
-   "planned": 210,
-   "balance": 118,
-   "earned": 92,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 263,
-   "balance": 191,
-   "earned": 72,
-   "team": "Management"
-  },
-  {
-   "planned": 270,
-   "balance": 174,
-   "earned": 96,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 334,
-   "balance": 139,
-   "earned": 195,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 72,
-   "balance": 53,
-   "earned": 19,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 250,
-   "balance": 120,
-   "earned": 130,
-   "team": "WHP team"
-  }
- ],
  "vendor_training": [
-  {
-   "period": "2027-03",
-   "course": "HVAC system (MEL 41 – HVAC)"
-  },
-  {
-   "period": "2027-05",
-   "course": "Metering Skid (CPPT-ICS001)"
-  },
-  {
-   "period": "2026-12",
-   "course": "ICSS – EPCI#1"
-  },
-  {
-   "period": "2028",
-   "course": "Vapour Recovery Compressor (CPPT-MEC005)"
-  },
   {
    "period": "2026-09",
    "course": "ICSS – EPCI#2"
   },
   {
-   "period": "2027-12",
-   "course": "EDG (CLQU-MEC005)"
+   "period": "2026-10",
+   "course": "Asset Integrity Management"
   },
   {
    "period": "2026-10",
    "course": "E-house"
-  },
-  {
-   "period": "2028",
-   "course": "Gas Turbine Generator (GTG, MER 02)"
-  },
-  {
-   "period": "2027-01",
-   "course": "Telecom System (CPC0-TEL001)"
   },
   {
    "period": "2026-10",
@@ -649,39 +587,85 @@
    "course": "Gas Purification Technology: Mercury Removal"
   },
   {
-   "period": "2026-10",
-   "course": "Asset Integrity Management"
-  },
-  {
    "period": "2026-11",
    "course": "ICSS – EPCI#1"
   },
   {
-   "period": "2027-05",
-   "course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)"
+   "period": "2026-12",
+   "course": "E-house"
   },
   {
-   "period": "2027-04",
-   "course": "Mark CS O&M"
+   "period": "2026-12",
+   "course": "ICSS – EPCI#1"
   },
   {
-   "period": "2028",
-   "course": "Turbo Expander (CPPT-MEC003)"
+   "period": "2027-01",
+   "course": "Telecom System (CPC0-TEL001)"
+  },
+  {
+   "period": "2027-03",
+   "course": "HVAC system (MEL 41 – HVAC)"
   },
   {
    "period": "2027-04",
    "course": "Analyser – Water in Oil & Gas Chromatography (CPC0-ICS017)"
   },
   {
+   "period": "2027-04",
+   "course": "Mark CS O&M"
+  },
+  {
+   "period": "2027-05",
+   "course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)"
+  },
+  {
+   "period": "2027-05",
+   "course": "Metering Skid (CPPT-ICS001)"
+  },
+  {
    "period": "2027-11",
    "course": "ECPI#2 – Gas booster compressor"
   },
   {
-   "period": "2026-12",
-   "course": "E-house"
+   "period": "2027-12",
+   "course": "EDG (CLQU-MEC005)"
+  },
+  {
+   "period": "2028",
+   "course": "Gas Turbine Generator (GTG, MER 02)"
+  },
+  {
+   "period": "2028",
+   "course": "Turbo Expander (CPPT-MEC003)"
+  },
+  {
+   "period": "2028",
+   "course": "Vapour Recovery Compressor (CPPT-MEC005)"
   }
  ],
  "cbta": [
+  {
+   "ojt_modules": 11,
+   "theory_pct": 6.25,
+   "developing": 0,
+   "review": 0,
+   "completed": 11,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 11,
+   "team": "Deck crew"
+  },
+  {
+   "ojt_modules": 39,
+   "theory_pct": 7.85,
+   "developing": 1,
+   "review": null,
+   "completed": 35,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 39,
+   "team": "E&I"
+  },
   {
    "ojt_modules": 38,
    "theory_pct": 1.48,
@@ -694,15 +678,15 @@
    "team": "M&R"
   },
   {
-   "ojt_modules": 11,
-   "theory_pct": 6.25,
-   "developing": 0,
-   "review": 0,
-   "completed": 11,
+   "ojt_modules": 36,
+   "theory_pct": 3.87,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
    "ojt_pct": 0,
    "platform": "CPP",
-   "modules": 11,
-   "team": "Deck crew"
+   "modules": 36,
+   "team": "P&P"
   },
   {
    "ojt_modules": 35,
@@ -727,17 +711,6 @@
    "team": "M&R"
   },
   {
-   "ojt_modules": 36,
-   "theory_pct": 3.87,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 36,
-   "team": "P&P"
-  },
-  {
    "ojt_modules": 29,
    "theory_pct": 0,
    "developing": 0,
@@ -747,17 +720,44 @@
    "platform": "WHP",
    "modules": 21,
    "team": "P&P"
+  }
+ ],
+ "mandatory": [
+  {
+   "planned": 72,
+   "balance": 53,
+   "earned": 19,
+   "team": "CPP Deck crew"
   },
   {
-   "ojt_modules": 39,
-   "theory_pct": 7.85,
-   "developing": 1,
-   "review": null,
-   "completed": 35,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 39,
-   "team": "E&I"
+   "planned": 270,
+   "balance": 174,
+   "earned": 96,
+   "team": "CPP E&I"
+  },
+  {
+   "planned": 210,
+   "balance": 118,
+   "earned": 92,
+   "team": "CPP M&R"
+  },
+  {
+   "planned": 334,
+   "balance": 139,
+   "earned": 195,
+   "team": "CPP P&P"
+  },
+  {
+   "planned": 263,
+   "balance": 191,
+   "earned": 72,
+   "team": "Management"
+  },
+  {
+   "planned": 250,
+   "balance": 120,
+   "earned": 130,
+   "team": "WHP team"
   }
  ],
  "orr_teams": [
@@ -771,6 +771,15 @@
    "team": "Offshore"
   },
   {
+   "weight_pct": 13.2,
+   "completed": 23,
+   "actual_pct": 66.5,
+   "total_activities": 59,
+   "plan_pct": 71.3,
+   "plan_end_pct": 98,
+   "team": "Production OPS"
+  },
+  {
    "weight_pct": 12.5,
    "completed": 57,
    "actual_pct": 70.6,
@@ -778,33 +787,6 @@
    "plan_pct": 77.1,
    "plan_end_pct": 94,
    "team": "Manager OPS"
-  },
-  {
-   "weight_pct": 8.7,
-   "completed": 25,
-   "actual_pct": 63.9,
-   "total_activities": 48,
-   "plan_pct": 70.6,
-   "plan_end_pct": 98,
-   "team": "M&R"
-  },
-  {
-   "weight_pct": 6.8,
-   "completed": 27,
-   "actual_pct": 71.1,
-   "total_activities": 49,
-   "plan_pct": 71.9,
-   "plan_end_pct": 95,
-   "team": "Marine"
-  },
-  {
-   "weight_pct": 6.9,
-   "completed": 10,
-   "actual_pct": 71.3,
-   "total_activities": 28,
-   "plan_pct": 67,
-   "plan_end_pct": 96,
-   "team": "Application Eng"
   },
   {
    "weight_pct": 11.2,
@@ -816,24 +798,6 @@
    "team": "Asset Integrity"
   },
   {
-   "weight_pct": 6,
-   "completed": 14,
-   "actual_pct": 57.3,
-   "total_activities": 36,
-   "plan_pct": 60.6,
-   "plan_end_pct": 99,
-   "team": "Production Eng"
-  },
-  {
-   "weight_pct": 13.2,
-   "completed": 23,
-   "actual_pct": 66.5,
-   "total_activities": 59,
-   "plan_pct": 71.3,
-   "plan_end_pct": 98,
-   "team": "Production OPS"
-  },
-  {
    "weight_pct": 9.1,
    "completed": 21,
    "actual_pct": 79.4,
@@ -841,176 +805,42 @@
    "plan_pct": 65.7,
    "plan_end_pct": 82,
    "team": "E&I"
-  }
- ],
- "orr_elements": [
-  {
-   "progress_pct": 72.3,
-   "items": 4,
-   "element": "Onshore Base, Port & Support Infrastructure",
-   "group": "PLANT",
-   "code": "PL-06"
   },
   {
-   "progress_pct": 49.3,
-   "items": 29,
-   "element": "Emergency Response, Crisis Management & Continuity",
-   "group": "PROCESS",
-   "code": "PR-04"
+   "weight_pct": 8.7,
+   "completed": 25,
+   "actual_pct": 63.9,
+   "total_activities": 48,
+   "plan_pct": 70.6,
+   "plan_end_pct": 98,
+   "team": "M&R"
   },
   {
-   "progress_pct": 59.6,
-   "items": 40,
-   "element": "Technical Information, Data, Digital Systems & OT Security",
-   "group": "PROCESS",
-   "code": "PR-09"
+   "weight_pct": 6.9,
+   "completed": 10,
+   "actual_pct": 71.3,
+   "total_activities": 28,
+   "plan_pct": 67,
+   "plan_end_pct": 96,
+   "team": "Application Eng"
   },
   {
-   "progress_pct": 68.8,
-   "items": 49,
-   "element": "Marine, Aviation & Logistics Operations",
-   "group": "PROCESS",
-   "code": "PR-12"
+   "weight_pct": 6.8,
+   "completed": 27,
+   "actual_pct": 71.1,
+   "total_activities": 49,
+   "plan_pct": 71.9,
+   "plan_end_pct": 95,
+   "team": "Marine"
   },
   {
-   "progress_pct": 68,
-   "items": 22,
-   "element": "Performance Management, Assurance & Continuous Improvement",
-   "group": "PROCESS",
-   "code": "PR-13"
-  },
-  {
-   "progress_pct": 89.3,
-   "items": 22,
-   "element": "Design, Engineering, Operability & Maintainability Assurance",
-   "group": "PROCESS",
-   "code": "PR-14"
-  },
-  {
-   "progress_pct": 81.5,
-   "items": 20,
-   "element": "Legal Compliance, Licences, Permits, Certification & Security",
-   "group": "PROCESS",
-   "code": "PR-02"
-  },
-  {
-   "progress_pct": 85.6,
-   "items": 104,
-   "element": "HSE, Process Safety & Control of Work",
-   "group": "PROCESS",
-   "code": "PR-03"
-  },
-  {
-   "progress_pct": 58.5,
-   "items": 27,
-   "element": "Commissioning Interface, Handover, Start-up & Stabilization",
-   "group": "PROCESS",
-   "code": "PR-10"
-  },
-  {
-   "progress_pct": 70.1,
-   "items": 21,
-   "element": "Production Management, Well Surveillance & Hydrocarbon Accounting",
-   "group": "PROCESS",
-   "code": "PR-11"
-  },
-  {
-   "progress_pct": 41.5,
-   "items": 13,
-   "element": "Integrated Coordination, Gas Dispatch, Metering & Commercial Interface",
-   "group": "PROCESS",
-   "code": "PR-08"
-  },
-  {
-   "progress_pct": 0,
-   "items": 2,
-   "element": "Metering, Sampling, Analysers & Environmental Monitoring",
-   "group": "PLANT",
-   "code": "PL-05"
-  },
-  {
-   "progress_pct": 64.3,
-   "items": 14,
-   "element": "Organization, Manning & Accountability",
-   "group": "PEOPLE",
-   "code": "PE-01"
-  },
-  {
-   "progress_pct": 85.8,
-   "items": 18,
-   "element": "ORR Governance, Readiness Acceptance & Financial Readiness",
-   "group": "PROCESS",
-   "code": "PR-01"
-  },
-  {
-   "progress_pct": 59.9,
-   "items": 26,
-   "element": "Competency, Training & Authorization",
-   "group": "PEOPLE",
-   "code": "PE-02"
-  },
-  {
-   "progress_pct": 80.2,
-   "items": 20,
-   "element": "Wells, Flowlines & Export Systems Readiness",
-   "group": "PLANT",
-   "code": "PL-02"
-  },
-  {
-   "progress_pct": 63.6,
-   "items": 88,
-   "element": "Maintenance, Reliability & Integrity Management",
-   "group": "PROCESS",
-   "code": "PR-06"
-  },
-  {
-   "progress_pct": 83.7,
-   "items": 3,
-   "element": "Personnel Mobilization & Fitness for Duty",
-   "group": "PEOPLE",
-   "code": "PE-03"
-  },
-  {
-   "progress_pct": 61.8,
-   "items": 15,
-   "element": "Spares, Materials, Consumables & Tools Readiness",
-   "group": "PLANT",
-   "code": "PL-04"
-  },
-  {
-   "progress_pct": 77.2,
-   "items": 11,
-   "element": "Facilities, Process & Utilities Readiness",
-   "group": "PLANT",
-   "code": "PL-01"
-  },
-  {
-   "progress_pct": 59.4,
-   "items": 51,
-   "element": "Contracts, Procurement & Supply Chain",
-   "group": "PROCESS",
-   "code": "PR-07"
-  },
-  {
-   "progress_pct": 14.1,
-   "items": 8,
-   "element": "Asset Integrity & Safety Barrier Readiness",
-   "group": "PLANT",
-   "code": "PL-03"
-  },
-  {
-   "progress_pct": 100,
-   "items": 5,
-   "element": "HR Policies, Employment Conditions & Retention",
-   "group": "PEOPLE",
-   "code": "PE-04"
-  },
-  {
-   "progress_pct": 45.4,
-   "items": 80,
-   "element": "Operations Management & Production Chemistry",
-   "group": "PROCESS",
-   "code": "PR-05"
+   "weight_pct": 6,
+   "completed": 14,
+   "actual_pct": 57.3,
+   "total_activities": 36,
+   "plan_pct": 60.6,
+   "plan_end_pct": 99,
+   "team": "Production Eng"
   }
  ],
  "orr_curve": [
@@ -1060,11 +890,213 @@
    "month": "2027-06"
   }
  ],
+ "orr_elements": [
+  {
+   "progress_pct": 64.3,
+   "items": 14,
+   "element": "Organization, Manning & Accountability",
+   "group": "PEOPLE",
+   "code": "PE-01"
+  },
+  {
+   "progress_pct": 59.9,
+   "items": 26,
+   "element": "Competency, Training & Authorization",
+   "group": "PEOPLE",
+   "code": "PE-02"
+  },
+  {
+   "progress_pct": 83.7,
+   "items": 3,
+   "element": "Personnel Mobilization & Fitness for Duty",
+   "group": "PEOPLE",
+   "code": "PE-03"
+  },
+  {
+   "progress_pct": 100,
+   "items": 5,
+   "element": "HR Policies, Employment Conditions & Retention",
+   "group": "PEOPLE",
+   "code": "PE-04"
+  },
+  {
+   "progress_pct": 77.2,
+   "items": 11,
+   "element": "Facilities, Process & Utilities Readiness",
+   "group": "PLANT",
+   "code": "PL-01"
+  },
+  {
+   "progress_pct": 80.2,
+   "items": 20,
+   "element": "Wells, Flowlines & Export Systems Readiness",
+   "group": "PLANT",
+   "code": "PL-02"
+  },
+  {
+   "progress_pct": 14.1,
+   "items": 8,
+   "element": "Asset Integrity & Safety Barrier Readiness",
+   "group": "PLANT",
+   "code": "PL-03"
+  },
+  {
+   "progress_pct": 61.8,
+   "items": 15,
+   "element": "Spares, Materials, Consumables & Tools Readiness",
+   "group": "PLANT",
+   "code": "PL-04"
+  },
+  {
+   "progress_pct": 0,
+   "items": 2,
+   "element": "Metering, Sampling, Analysers & Environmental Monitoring",
+   "group": "PLANT",
+   "code": "PL-05"
+  },
+  {
+   "progress_pct": 72.3,
+   "items": 4,
+   "element": "Onshore Base, Port & Support Infrastructure",
+   "group": "PLANT",
+   "code": "PL-06"
+  },
+  {
+   "progress_pct": 85.8,
+   "items": 18,
+   "element": "ORR Governance, Readiness Acceptance & Financial Readiness",
+   "group": "PROCESS",
+   "code": "PR-01"
+  },
+  {
+   "progress_pct": 81.5,
+   "items": 20,
+   "element": "Legal Compliance, Licences, Permits, Certification & Security",
+   "group": "PROCESS",
+   "code": "PR-02"
+  },
+  {
+   "progress_pct": 85.6,
+   "items": 104,
+   "element": "HSE, Process Safety & Control of Work",
+   "group": "PROCESS",
+   "code": "PR-03"
+  },
+  {
+   "progress_pct": 49.3,
+   "items": 29,
+   "element": "Emergency Response, Crisis Management & Continuity",
+   "group": "PROCESS",
+   "code": "PR-04"
+  },
+  {
+   "progress_pct": 45.4,
+   "items": 80,
+   "element": "Operations Management & Production Chemistry",
+   "group": "PROCESS",
+   "code": "PR-05"
+  },
+  {
+   "progress_pct": 63.6,
+   "items": 88,
+   "element": "Maintenance, Reliability & Integrity Management",
+   "group": "PROCESS",
+   "code": "PR-06"
+  },
+  {
+   "progress_pct": 59.4,
+   "items": 51,
+   "element": "Contracts, Procurement & Supply Chain",
+   "group": "PROCESS",
+   "code": "PR-07"
+  },
+  {
+   "progress_pct": 41.5,
+   "items": 13,
+   "element": "Integrated Coordination, Gas Dispatch, Metering & Commercial Interface",
+   "group": "PROCESS",
+   "code": "PR-08"
+  },
+  {
+   "progress_pct": 59.6,
+   "items": 40,
+   "element": "Technical Information, Data, Digital Systems & OT Security",
+   "group": "PROCESS",
+   "code": "PR-09"
+  },
+  {
+   "progress_pct": 58.5,
+   "items": 27,
+   "element": "Commissioning Interface, Handover, Start-up & Stabilization",
+   "group": "PROCESS",
+   "code": "PR-10"
+  },
+  {
+   "progress_pct": 70.1,
+   "items": 21,
+   "element": "Production Management, Well Surveillance & Hydrocarbon Accounting",
+   "group": "PROCESS",
+   "code": "PR-11"
+  },
+  {
+   "progress_pct": 68.8,
+   "items": 49,
+   "element": "Marine, Aviation & Logistics Operations",
+   "group": "PROCESS",
+   "code": "PR-12"
+  },
+  {
+   "progress_pct": 68,
+   "items": 22,
+   "element": "Performance Management, Assurance & Continuous Improvement",
+   "group": "PROCESS",
+   "code": "PR-13"
+  },
+  {
+   "progress_pct": 89.3,
+   "items": 22,
+   "element": "Design, Engineering, Operability & Maintainability Assurance",
+   "group": "PROCESS",
+   "code": "PR-14"
+  }
+ ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
+  }
+ ],
  "packages_no_pr": [
   {
-   "count": 16,
-   "dimension": "scr_timing",
-   "category": "Not set"
+   "count": 19,
+   "dimension": "status",
+   "category": "Open"
+  },
+  {
+   "count": 7,
+   "dimension": "status",
+   "category": "Screening"
+  },
+  {
+   "count": 7,
+   "dimension": "status",
+   "category": "PR Request"
   },
   {
    "count": 15,
@@ -1077,14 +1109,14 @@
    "category": "Priority 2"
   },
   {
-   "count": 1,
-   "dimension": "scr_timing",
-   "category": "This month"
+   "count": 3,
+   "dimension": "priority",
+   "category": "Priority 1"
   },
   {
-   "count": 7,
-   "dimension": "status",
-   "category": "Screening"
+   "count": 16,
+   "dimension": "scr_timing",
+   "category": "Not set"
   },
   {
    "count": 2,
@@ -1092,264 +1124,12 @@
    "category": "Next month"
   },
   {
-   "count": 3,
-   "dimension": "priority",
-   "category": "Priority 1"
-  },
-  {
-   "count": 19,
-   "dimension": "status",
-   "category": "Open"
-  },
-  {
-   "count": 7,
-   "dimension": "status",
-   "category": "PR Request"
+   "count": 1,
+   "dimension": "scr_timing",
+   "category": "This month"
   }
  ],
  "procedures": [
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "May-25",
-   "completion_pct": 100,
-   "id": "HSE-16",
-   "remark": "Issued on 22/01/25",
-   "document": "Compressed Air procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Apr-25",
-   "completion_pct": 100,
-   "id": "HSE-13",
-   "remark": "Issued on 22/01/25",
-   "document": "Working at Height Procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Dec-26",
-   "completion_pct": 100,
-   "id": "GEN-14",
-   "remark": "Issued on 13 Feb 25",
-   "document": "Platform Standing Instruction"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jun-26",
-   "completion_pct": 100,
-   "id": "GEN-20",
-   "remark": "Issued 27 May 25",
-   "document": "Hot bolting procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "TN Nguyen",
-   "expected": "Jan-27",
-   "completion_pct": 100,
-   "id": "GEN-28",
-   "remark": "Issued",
-   "document": "Pressure Safety Valve Testing and Recertification"
-  },
-  {
-   "category": "General operations",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Dec-26",
-   "completion_pct": 60,
-   "id": "GEN-15",
-   "remark": "Ongoing",
-   "document": "Shutdown and start up procedure including field start up"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "NN Thanh",
-   "expected": "Jun-25",
-   "completion_pct": 100,
-   "id": "GEN-04",
-   "remark": "In Marine Operations Manual (section 8.13)",
-   "document": "Fast Rescue Craft (OSV)"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Mar-25",
-   "completion_pct": 100,
-   "id": "HSE-05",
-   "remark": "Issued 09 Jun 25",
-   "document": "Respirator Protection procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jan-26",
-   "completion_pct": 100,
-   "id": "GEN-17",
-   "remark": "Issued",
-   "document": "Coating Maintenance & Repair Procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Nguyen TN",
-   "expected": "Jun-26",
-   "completion_pct": 100,
-   "id": "HSE-25",
-   "remark": "Issued",
-   "document": "Inspection and Certification of Lifting Equipment"
-  },
-  {
-   "category": "HSE",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "HSE Onshore",
-   "expected": "Apr-27",
-   "completion_pct": 0,
-   "id": "HSE-38",
-   "remark": "Bid submission deadline extended to 13 Oct 2026",
-   "document": "Emergency response Procedure for CPP complex"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Kiet HT",
-   "expected": "Mar-25",
-   "completion_pct": 100,
-   "id": "HSE-11",
-   "remark": "Issued on Oct 24",
-   "document": "Electrical safety procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Sep-25",
-   "completion_pct": 100,
-   "id": "GEN-10",
-   "remark": "Issued",
-   "document": "Instrument Calibration Procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "Offshore + Thuy",
-   "expected": "Dec-26",
-   "completion_pct": 50,
-   "id": "GEN-19",
-   "remark": "Ongoing",
-   "document": "Controlled Gas Offspec Procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Company",
-   "responsible": "Offshore",
-   "expected": "Jan-25",
-   "completion_pct": 100,
-   "id": "HSE-02",
-   "remark": null,
-   "document": "Equipment Isolation Philosophy"
-  },
-  {
-   "category": "General operations",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "Guy NT",
-   "expected": "Dec-27",
-   "completion_pct": 0,
-   "id": "GEN-27",
-   "remark": "Discussing with potential vendors (Rosen, TDWilliamson, …)",
-   "document": "Pigging and batch pigging procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "DCD",
-   "expected": "Sep-25",
-   "completion_pct": 100,
-   "id": "GEN-09",
-   "remark": null,
-   "document": "Well Handover Procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "WH Sup",
-   "expected": "Jan-27",
-   "completion_pct": 75,
-   "id": "GEN-30",
-   "remark": "Reviewing",
-   "document": "WH CFT"
-  },
-  {
-   "category": "HSE",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "HSE Onshore",
-   "expected": "Apr-27",
-   "completion_pct": 0,
-   "id": "HSE-35",
-   "remark": "Bid submission deadline extended to 13 Oct 2026",
-   "document": "Emergency response Procedure for HUB/WHP"
-  },
-  {
-   "category": "HSE",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "Onshore",
-   "expected": "Dec-26",
-   "completion_pct": 90,
-   "id": "HSE-39",
-   "remark": "Completed for ECP2; ECP1 in EDMS for review",
-   "document": "Operation Performance Standard"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "HT Kiet + Thuy",
-   "expected": "Dec-26",
-   "completion_pct": 100,
-   "id": "GEN-26",
-   "remark": "Issued",
-   "document": "Alarm & Trip Setting Procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Thanh NN",
-   "expected": "Oct-25",
-   "completion_pct": 100,
-   "id": "HSE-36",
-   "remark": "Issued",
-   "document": "Operating and guideline for Security vessel"
-  },
   {
    "category": "General operations",
    "issued": "Yes",
@@ -1365,12 +1145,12 @@
    "category": "General operations",
    "issued": "Yes",
    "level": "Department",
-   "responsible": "HT Kiet + Offshore",
-   "expected": "Dec-26",
+   "responsible": "Offshore",
+   "expected": "Jun-25",
    "completion_pct": 100,
-   "id": "GEN-25",
-   "remark": "On E-office",
-   "document": "Control Override / Bypass / Suppression Management"
+   "id": "GEN-02",
+   "remark": "Issued",
+   "document": "Offshore Crane Operating and Maintenance Guideline"
   },
   {
    "category": "General operations",
@@ -1387,6 +1167,83 @@
    "category": "General operations",
    "issued": "Yes",
    "level": "Department",
+   "responsible": "NN Thanh",
+   "expected": "Jun-25",
+   "completion_pct": 100,
+   "id": "GEN-04",
+   "remark": "In Marine Operations Manual (section 8.13)",
+   "document": "Fast Rescue Craft (OSV)"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Jun-25",
+   "completion_pct": 100,
+   "id": "GEN-05",
+   "remark": "Issued on 13 Feb 25",
+   "document": "Portable and Temporary Equipment Procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "NN Thanh",
+   "expected": "Jul-25",
+   "completion_pct": 100,
+   "id": "GEN-06",
+   "remark": "In Marine Operations Manual (section 8)",
+   "document": "Safety Standby/Lifting Support Vessel Operations"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Aug-25",
+   "completion_pct": 100,
+   "id": "GEN-07",
+   "remark": "Issued",
+   "document": "Handover Guidelines for Personnel at Crew & Shift Changes"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Anh HT Kiet",
+   "expected": "Sep-25",
+   "completion_pct": 100,
+   "id": "GEN-08",
+   "remark": "Issued",
+   "document": "Maintenance, inspection, repair & overhaul of electrical installations in Hazardous Areas"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "DCD",
+   "expected": "Sep-25",
+   "completion_pct": 100,
+   "id": "GEN-09",
+   "remark": null,
+   "document": "Well Handover Procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Sep-25",
+   "completion_pct": 100,
+   "id": "GEN-10",
+   "remark": "Issued",
+   "document": "Instrument Calibration Procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
    "responsible": "DCD",
    "expected": "Sep-25",
    "completion_pct": 100,
@@ -1395,26 +1252,15 @@
    "document": "Well Integrity Procedure"
   },
   {
-   "category": "HSE",
+   "category": "General operations",
    "issued": "Yes",
    "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jan-25",
+   "responsible": "NN Thanh",
+   "expected": "Sep-25",
    "completion_pct": 100,
-   "id": "HSE-04",
-   "remark": "Issued on 25-Mar-25",
-   "document": "Hot work control procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jan-27",
-   "completion_pct": 75,
-   "id": "GEN-31",
-   "remark": "Reviewing",
-   "document": "P&P Critical Function Testing"
+   "id": "GEN-12",
+   "remark": "Issued",
+   "document": "Errant Vessel Response Procedure"
   },
   {
    "category": "General operations",
@@ -1428,15 +1274,268 @@
    "document": "Fuel management and bunkering procedure"
   },
   {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Dec-26",
+   "completion_pct": 100,
+   "id": "GEN-14",
+   "remark": "Issued on 13 Feb 25",
+   "document": "Platform Standing Instruction"
+  },
+  {
+   "category": "General operations",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Dec-26",
+   "completion_pct": 60,
+   "id": "GEN-15",
+   "remark": "Ongoing",
+   "document": "Shutdown and start up procedure including field start up"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "HT Kiet",
+   "expected": "Dec-26",
+   "completion_pct": 100,
+   "id": "GEN-16",
+   "remark": "Issued",
+   "document": "E&I Tools Re-Certification Procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Jan-26",
+   "completion_pct": 100,
+   "id": "GEN-17",
+   "remark": "Issued",
+   "document": "Coating Maintenance & Repair Procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "Anh HT Kiet + Offshore",
+   "expected": "Dec-26",
+   "completion_pct": 0,
+   "id": "GEN-18",
+   "remark": "DX lead to work with Biên",
+   "document": "CPP Export Gas Metering procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "Offshore + Thuy",
+   "expected": "Dec-26",
+   "completion_pct": 50,
+   "id": "GEN-19",
+   "remark": "Ongoing",
+   "document": "Controlled Gas Offspec Procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Jun-26",
+   "completion_pct": 100,
+   "id": "GEN-20",
+   "remark": "Issued 27 May 25",
+   "document": "Hot bolting procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Dec-26",
+   "completion_pct": 100,
+   "id": "GEN-21",
+   "remark": "Issued on 11 Jan 25",
+   "document": "Housekeeping Guidelines"
+  },
+  {
+   "category": "General operations",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "NN Thanh",
+   "expected": "Dec-26",
+   "completion_pct": 50,
+   "id": "GEN-22",
+   "remark": "Waiting for lifeboat manual from vendor",
+   "document": "Lifeboat Launching Recovery and Stowage"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Thuy + Offshore",
+   "expected": "Dec-26",
+   "completion_pct": 100,
+   "id": "GEN-23",
+   "remark": "Issued",
+   "document": "Laboratory Operations General"
+  },
+  {
+   "category": "General operations",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "Thuy + Offshore",
+   "expected": "Dec-26",
+   "completion_pct": 65,
+   "id": "GEN-24",
+   "remark": "Preparation ongoing",
+   "document": "Lab sampling and Testing"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "HT Kiet + Offshore",
+   "expected": "Dec-26",
+   "completion_pct": 100,
+   "id": "GEN-25",
+   "remark": "On E-office",
+   "document": "Control Override / Bypass / Suppression Management"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "HT Kiet + Thuy",
+   "expected": "Dec-26",
+   "completion_pct": 100,
+   "id": "GEN-26",
+   "remark": "Issued",
+   "document": "Alarm & Trip Setting Procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "Guy NT",
+   "expected": "Dec-27",
+   "completion_pct": 0,
+   "id": "GEN-27",
+   "remark": "Discussing with potential vendors (Rosen, TDWilliamson, …)",
+   "document": "Pigging and batch pigging procedure"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "TN Nguyen",
+   "expected": "Jan-27",
+   "completion_pct": 100,
+   "id": "GEN-28",
+   "remark": "Issued",
+   "document": "Pressure Safety Valve Testing and Recertification"
+  },
+  {
+   "category": "General operations",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "E&I Sup",
+   "expected": "Jan-27",
+   "completion_pct": 100,
+   "id": "GEN-29",
+   "remark": "Issued",
+   "document": "E&I CFT"
+  },
+  {
+   "category": "General operations",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "WH Sup",
+   "expected": "Jan-27",
+   "completion_pct": 75,
+   "id": "GEN-30",
+   "remark": "Reviewing",
+   "document": "WH CFT"
+  },
+  {
+   "category": "General operations",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Jan-27",
+   "completion_pct": 75,
+   "id": "GEN-31",
+   "remark": "Reviewing",
+   "document": "P&P Critical Function Testing"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Company",
+   "responsible": "Offshore",
+   "expected": "Jan-25",
+   "completion_pct": 100,
+   "id": "HSE-01",
+   "remark": "Issued on 25-Mar-25",
+   "document": "Permit to Work Procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Company",
+   "responsible": "Offshore",
+   "expected": "Jan-25",
+   "completion_pct": 100,
+   "id": "HSE-02",
+   "remark": null,
+   "document": "Equipment Isolation Philosophy"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Company",
+   "responsible": "Offshore",
+   "expected": "Jan-25",
+   "completion_pct": 100,
+   "id": "HSE-03",
+   "remark": "Issued",
+   "document": "Lock-out Tag-out Procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Jan-25",
+   "completion_pct": 100,
+   "id": "HSE-04",
+   "remark": "Issued on 25-Mar-25",
+   "document": "Hot work control procedure"
+  },
+  {
    "category": "HSE",
    "issued": "Yes",
    "level": "Department",
    "responsible": "Offshore",
    "expected": "Mar-25",
    "completion_pct": 100,
-   "id": "HSE-10",
-   "remark": "Issued on 22/01/25",
-   "document": "Scaffolding Procedure"
+   "id": "HSE-05",
+   "remark": "Issued 09 Jun 25",
+   "document": "Respirator Protection procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Kiet HT",
+   "expected": "Mar-25",
+   "completion_pct": 100,
+   "id": "HSE-06",
+   "remark": "Issued",
+   "document": "HV/MV procedure"
   },
   {
    "category": "HSE",
@@ -1452,24 +1551,134 @@
   {
    "category": "HSE",
    "issued": "Yes",
+   "level": "Company",
+   "responsible": "Kiet HT",
+   "expected": "Jun-26",
+   "completion_pct": 100,
+   "id": "HSE-08",
+   "remark": "Issued",
+   "document": "Electrical Code of Practice"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Company",
+   "responsible": "Offshore",
+   "expected": "Mar-25",
+   "completion_pct": 100,
+   "id": "HSE-09",
+   "remark": "Issued",
+   "document": "H2S procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Mar-25",
+   "completion_pct": 100,
+   "id": "HSE-10",
+   "remark": "Issued on 22/01/25",
+   "document": "Scaffolding Procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
    "level": "Department",
    "responsible": "Kiet HT",
    "expected": "Mar-25",
    "completion_pct": 100,
-   "id": "HSE-06",
-   "remark": "Issued",
-   "document": "HV/MV procedure"
+   "id": "HSE-11",
+   "remark": "Issued on Oct 24",
+   "document": "Electrical safety procedure"
   },
   {
-   "category": "General operations",
-   "issued": "No",
+   "category": "HSE",
+   "issued": "Yes",
    "level": "Department",
-   "responsible": "Thuy + Offshore",
-   "expected": "Dec-26",
-   "completion_pct": 65,
-   "id": "GEN-24",
-   "remark": "Preparation ongoing",
-   "document": "Lab sampling and Testing"
+   "responsible": "Thanh NN",
+   "expected": "Mar-25",
+   "completion_pct": 100,
+   "id": "HSE-12",
+   "remark": "Issued",
+   "document": "Marine Operations Manual"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Apr-25",
+   "completion_pct": 100,
+   "id": "HSE-13",
+   "remark": "Issued on 22/01/25",
+   "document": "Working at Height Procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Apr-25",
+   "completion_pct": 100,
+   "id": "HSE-14",
+   "remark": "Issued on 22/01/25",
+   "document": "Overside Working Procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "May-25",
+   "completion_pct": 100,
+   "id": "HSE-15",
+   "remark": "Issued",
+   "document": "Pressure and Leak Testing Procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "May-25",
+   "completion_pct": 100,
+   "id": "HSE-16",
+   "remark": "Issued on 22/01/25",
+   "document": "Compressed Air procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "HSE Onshore",
+   "expected": "Dec-25",
+   "completion_pct": 100,
+   "id": "HSE-17",
+   "remark": "Issued",
+   "document": "Noise exposure and hearing protection"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "May-25",
+   "completion_pct": 100,
+   "id": "HSE-18",
+   "remark": "Issued on 15 Feb 25",
+   "document": "Vibration Impact procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Jun-25",
+   "completion_pct": 100,
+   "id": "HSE-19",
+   "remark": "Issued",
+   "document": "Catering food safety & hygiene management procedure"
   },
   {
    "category": "HSE",
@@ -1486,23 +1695,12 @@
    "category": "HSE",
    "issued": "Yes",
    "level": "Department",
-   "responsible": "HSE Onshore",
-   "expected": "Dec-25",
-   "completion_pct": 100,
-   "id": "HSE-17",
-   "remark": "Issued",
-   "document": "Noise exposure and hearing protection"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
    "responsible": "Offshore",
-   "expected": "Aug-25",
+   "expected": "Jun-25",
    "completion_pct": 100,
-   "id": "GEN-07",
-   "remark": "Issued",
-   "document": "Handover Guidelines for Personnel at Crew & Shift Changes"
+   "id": "HSE-21",
+   "remark": "PQ1-00-HSE-PCD-PQC-00004-00_H01",
+   "document": "HSE Risk Management Procedure"
   },
   {
    "category": "HSE",
@@ -1522,75 +1720,9 @@
    "responsible": "Offshore",
    "expected": "Jun-25",
    "completion_pct": 100,
-   "id": "HSE-21",
-   "remark": "PQ1-00-HSE-PCD-PQC-00004-00_H01",
-   "document": "HSE Risk Management Procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "Anh HT Kiet + Offshore",
-   "expected": "Dec-26",
-   "completion_pct": 0,
-   "id": "GEN-18",
-   "remark": "DX lead to work with Biên",
-   "document": "CPP Export Gas Metering procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Company",
-   "responsible": "Offshore",
-   "expected": "Jan-25",
-   "completion_pct": 100,
-   "id": "HSE-03",
-   "remark": "Issued",
-   "document": "Lock-out Tag-out Procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Anh HT Kiet",
-   "expected": "Sep-25",
-   "completion_pct": 100,
-   "id": "GEN-08",
-   "remark": "Issued",
-   "document": "Maintenance, inspection, repair & overhaul of electrical installations in Hazardous Areas"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jun-25",
-   "completion_pct": 100,
-   "id": "HSE-19",
-   "remark": "Issued",
-   "document": "Catering food safety & hygiene management procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jun-25",
-   "completion_pct": 100,
    "id": "HSE-23",
    "remark": "Issued",
    "document": "Confined Space Entry Procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jun-25",
-   "completion_pct": 100,
-   "id": "GEN-05",
-   "remark": "Issued on 13 Feb 25",
-   "document": "Portable and Temporary Equipment Procedure"
   },
   {
    "category": "HSE",
@@ -1604,114 +1736,15 @@
    "document": "HSE Recording and Reporting Guideline"
   },
   {
-   "category": "General operations",
+   "category": "HSE",
    "issued": "Yes",
    "level": "Department",
-   "responsible": "NN Thanh",
-   "expected": "Jul-25",
+   "responsible": "Nguyen TN",
+   "expected": "Jun-26",
    "completion_pct": 100,
-   "id": "GEN-06",
-   "remark": "In Marine Operations Manual (section 8)",
-   "document": "Safety Standby/Lifting Support Vessel Operations"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Thuy + Offshore",
-   "expected": "Dec-26",
-   "completion_pct": 100,
-   "id": "GEN-23",
+   "id": "HSE-25",
    "remark": "Issued",
-   "document": "Laboratory Operations General"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jul-25",
-   "completion_pct": 100,
-   "id": "HSE-32",
-   "remark": "Issued",
-   "document": "POB List and control procedure incl. T-Card control"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Company",
-   "responsible": "Offshore",
-   "expected": "Mar-25",
-   "completion_pct": 100,
-   "id": "HSE-09",
-   "remark": "Issued",
-   "document": "H2S procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "May-25",
-   "completion_pct": 100,
-   "id": "HSE-18",
-   "remark": "Issued on 15 Feb 25",
-   "document": "Vibration Impact procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "Offshore HSE",
-   "expected": "Dec-26",
-   "completion_pct": 75,
-   "id": "HSE-29",
-   "remark": "Review ongoing",
-   "document": "Simultaneous Operations procedure (SIMOP)"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jun-25",
-   "completion_pct": 100,
-   "id": "HSE-28",
-   "remark": "Issued on 15 Feb 25",
-   "document": "Offshore facility procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "No",
-   "level": "Department",
-   "responsible": "NN Thanh",
-   "expected": "Dec-26",
-   "completion_pct": 50,
-   "id": "GEN-22",
-   "remark": "Waiting for lifeboat manual from vendor",
-   "document": "Lifeboat Launching Recovery and Stowage"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Dec-26",
-   "completion_pct": 100,
-   "id": "GEN-21",
-   "remark": "Issued on 11 Jan 25",
-   "document": "Housekeeping Guidelines"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Company",
-   "responsible": "Ngoc NV",
-   "expected": "Dec-25",
-   "completion_pct": 100,
-   "id": "HSE-37",
-   "remark": "Issued",
-   "document": "Management of Change Procedure"
+   "document": "Inspection and Certification of Lifting Equipment"
   },
   {
    "category": "HSE",
@@ -1723,149 +1756,6 @@
    "id": "HSE-26",
    "remark": "Issued",
    "document": "Portable Appliance Testing Procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Thanh NN",
-   "expected": "Mar-25",
-   "completion_pct": 100,
-   "id": "HSE-12",
-   "remark": "Issued",
-   "document": "Marine Operations Manual"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "May-25",
-   "completion_pct": 100,
-   "id": "HSE-15",
-   "remark": "Issued",
-   "document": "Pressure and Leak Testing Procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Thanh NN/HSE",
-   "expected": "Dec-26",
-   "completion_pct": 100,
-   "id": "HSE-30",
-   "remark": "Included in vessel service contract",
-   "document": "Emergency response plan for supply vessels"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Apr-25",
-   "completion_pct": 100,
-   "id": "HSE-14",
-   "remark": "Issued on 22/01/25",
-   "document": "Overside Working Procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Drilling Dep",
-   "expected": "Aug-25",
-   "completion_pct": 100,
-   "id": "HSE-33",
-   "remark": "Issued",
-   "document": "Radio Silence Procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Jun-25",
-   "completion_pct": 100,
-   "id": "GEN-02",
-   "remark": "Issued",
-   "document": "Offshore Crane Operating and Maintenance Guideline"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore/HSE",
-   "expected": "Jul-25",
-   "completion_pct": 100,
-   "id": "HSE-31",
-   "remark": "Issued",
-   "document": "Domestic Water Control & Monitoring"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "E&I Sup",
-   "expected": "Jan-27",
-   "completion_pct": 100,
-   "id": "GEN-29",
-   "remark": "Issued",
-   "document": "E&I CFT"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Company",
-   "responsible": "Kiet HT",
-   "expected": "Jun-26",
-   "completion_pct": 100,
-   "id": "HSE-08",
-   "remark": "Issued",
-   "document": "Electrical Code of Practice"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "Offshore",
-   "expected": "Dec-26",
-   "completion_pct": 100,
-   "id": "HSE-40",
-   "remark": "Issued",
-   "document": "Pressure cylinder management Procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "NN Thanh",
-   "expected": "Sep-25",
-   "completion_pct": 100,
-   "id": "GEN-12",
-   "remark": "Issued",
-   "document": "Errant Vessel Response Procedure"
-  },
-  {
-   "category": "General operations",
-   "issued": "Yes",
-   "level": "Department",
-   "responsible": "HT Kiet",
-   "expected": "Dec-26",
-   "completion_pct": 100,
-   "id": "GEN-16",
-   "remark": "Issued",
-   "document": "E&I Tools Re-Certification Procedure"
-  },
-  {
-   "category": "HSE",
-   "issued": "Yes",
-   "level": "Company",
-   "responsible": "Offshore",
-   "expected": "Jan-25",
-   "completion_pct": 100,
-   "id": "HSE-01",
-   "remark": "Issued on 25-Mar-25",
-   "document": "Permit to Work Procedure"
   },
   {
    "category": "HSE",
@@ -1883,48 +1773,255 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "Offshore",
+   "expected": "Jun-25",
+   "completion_pct": 100,
+   "id": "HSE-28",
+   "remark": "Issued on 15 Feb 25",
+   "document": "Offshore facility procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "Offshore HSE",
+   "expected": "Dec-26",
+   "completion_pct": 75,
+   "id": "HSE-29",
+   "remark": "Review ongoing",
+   "document": "Simultaneous Operations procedure (SIMOP)"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Thanh NN/HSE",
+   "expected": "Dec-26",
+   "completion_pct": 100,
+   "id": "HSE-30",
+   "remark": "Included in vessel service contract",
+   "document": "Emergency response plan for supply vessels"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore/HSE",
+   "expected": "Jul-25",
+   "completion_pct": 100,
+   "id": "HSE-31",
+   "remark": "Issued",
+   "document": "Domestic Water Control & Monitoring"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Jul-25",
+   "completion_pct": 100,
+   "id": "HSE-32",
+   "remark": "Issued",
+   "document": "POB List and control procedure incl. T-Card control"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Drilling Dep",
+   "expected": "Aug-25",
+   "completion_pct": 100,
+   "id": "HSE-33",
+   "remark": "Issued",
+   "document": "Radio Silence Procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
    "expected": "Jun-26",
    "completion_pct": 100,
    "id": "HSE-34",
    "remark": "Issued",
    "document": "Safety Standdown Procedure"
-  }
- ],
- "orr_groups": [
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
   },
   {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
+   "category": "HSE",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "HSE Onshore",
+   "expected": "Apr-27",
+   "completion_pct": 0,
+   "id": "HSE-35",
+   "remark": "Bid submission deadline extended to 13 Oct 2026",
+   "document": "Emergency response Procedure for HUB/WHP"
   },
   {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Thanh NN",
+   "expected": "Oct-25",
+   "completion_pct": 100,
+   "id": "HSE-36",
+   "remark": "Issued",
+   "document": "Operating and guideline for Security vessel"
   },
   {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Company",
+   "responsible": "Ngoc NV",
+   "expected": "Dec-25",
+   "completion_pct": 100,
+   "id": "HSE-37",
+   "remark": "Issued",
+   "document": "Management of Change Procedure"
+  },
+  {
+   "category": "HSE",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "HSE Onshore",
+   "expected": "Apr-27",
+   "completion_pct": 0,
+   "id": "HSE-38",
+   "remark": "Bid submission deadline extended to 13 Oct 2026",
+   "document": "Emergency response Procedure for CPP complex"
+  },
+  {
+   "category": "HSE",
+   "issued": "No",
+   "level": "Department",
+   "responsible": "Onshore",
+   "expected": "Dec-26",
+   "completion_pct": 90,
+   "id": "HSE-39",
+   "remark": "Completed for ECP2; ECP1 in EDMS for review",
+   "document": "Operation Performance Standard"
+  },
+  {
+   "category": "HSE",
+   "issued": "Yes",
+   "level": "Department",
+   "responsible": "Offshore",
+   "expected": "Dec-26",
+   "completion_pct": 100,
+   "id": "HSE-40",
+   "remark": "Issued",
+   "document": "Pressure cylinder management Procedure"
   }
  ],
  "cmms": [
   {
-   "actual_pct": 41.58,
-   "plan_pct": 42.3,
-   "package": "EPCI#1"
-  },
-  {
    "actual_pct": 82.11,
    "plan_pct": 85,
    "package": "EPCI#2"
+  },
+  {
+   "actual_pct": 41.58,
+   "plan_pct": 42.3,
+   "package": "EPCI#1"
+  }
+ ],
+ "workstreams": [
+  {
+   "area": "Manpower",
+   "status": "Document Control, OIM, HSE, FSO",
+   "item": "Vacant positions"
+  },
+  {
+   "area": "Applications",
+   "status": "TCEAR",
+   "item": "AIMS"
+  },
+  {
+   "area": "Applications",
+   "status": "Training and UAT phase 2 completed (Plant maintenance, Inventory & Warehouse); preparing phase 3 kick-off (KPI, reports)",
+   "item": "EAM/SAP"
+  },
+  {
+   "area": "Applications",
+   "status": "Platform built (production launch); preparing test and data population",
+   "item": "HRIS"
+  },
+  {
+   "area": "Applications",
+   "status": "Phase 1 blueprint completed; platform development continuing",
+   "item": "OMS"
+  },
+  {
+   "area": "Applications",
+   "status": "ITB",
+   "item": "OSCC"
+  },
+  {
+   "area": "Applications",
+   "status": "Technical evaluation",
+   "item": "PDMS"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "No update in report",
+   "item": "Catering services"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Raise PIA, PR",
+   "item": "Crew change service to Nam Can"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Combine with DCD's contract",
+   "item": "Helicopter"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Change to contract",
+   "item": "MGO"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "ITB",
+   "item": "Supply vessel, FCB, security boat"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Combine with DCD to 2030",
+   "item": "Vessel inspection"
+  },
+  {
+   "area": "Coordination",
+   "status": "Being split into 2 procedures; parties to review and complete by 31 Oct",
+   "item": "Coordination procedure"
+  },
+  {
+   "area": "Coordination",
+   "status": "Sales gas capability 73 MMscfd (SSF) from Sep-27, rising to about 170 MMscfd (75%) by Nov-27 vs total sales gas requirement",
+   "item": "Production profile"
+  },
+  {
+   "area": "Commissioning",
+   "status": "E-house, HVAC, Crane, FM200, LQ UPS",
+   "item": "Installation, pre-com, com"
+  },
+  {
+   "area": "Commissioning",
+   "status": "Findings → punch list → close out",
+   "item": "Offshore preservation"
   }
  ],
  "pr_pipeline": [
+  {
+   "count": 1,
+   "status": "Near-late",
+   "stage": "1 CSP Preparation"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "1 CSP Preparation"
+  },
   {
    "count": 1,
    "status": "Late",
@@ -1932,8 +2029,8 @@
   },
   {
    "count": 1,
-   "status": "Near-late",
-   "stage": "1 CSP Preparation"
+   "status": "On time",
+   "stage": "2 CSP Approval"
   },
   {
    "count": 1,
@@ -1951,14 +2048,9 @@
    "stage": "4 Evaluation"
   },
   {
-   "count": 1,
+   "count": 2,
    "status": "On time",
-   "stage": "6 Contract Signing"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "2 CSP Approval"
+   "stage": "4 Evaluation"
   },
   {
    "count": 1,
@@ -1968,232 +2060,10 @@
   {
    "count": 1,
    "status": "On time",
-   "stage": "1 CSP Preparation"
-  },
-  {
-   "count": 2,
-   "status": "On time",
-   "stage": "4 Evaluation"
-  }
- ],
- "workstreams": [
-  {
-   "area": "Commissioning",
-   "status": "E-house, HVAC, Crane, FM200, LQ UPS",
-   "item": "Installation, pre-com, com"
-  },
-  {
-   "area": "Applications",
-   "status": "Training and UAT phase 2 completed (Plant maintenance, Inventory & Warehouse); preparing phase 3 kick-off (KPI, reports)",
-   "item": "EAM/SAP"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "ITB",
-   "item": "Supply vessel, FCB, security boat"
-  },
-  {
-   "area": "Applications",
-   "status": "Phase 1 blueprint completed; platform development continuing",
-   "item": "OMS"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "No update in report",
-   "item": "Catering services"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Combine with DCD's contract",
-   "item": "Helicopter"
-  },
-  {
-   "area": "Coordination",
-   "status": "Sales gas capability 73 MMscfd (SSF) from Sep-27, rising to about 170 MMscfd (75%) by Nov-27 vs total sales gas requirement",
-   "item": "Production profile"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Change to contract",
-   "item": "MGO"
-  },
-  {
-   "area": "Commissioning",
-   "status": "Findings → punch list → close out",
-   "item": "Offshore preservation"
-  },
-  {
-   "area": "Applications",
-   "status": "Technical evaluation",
-   "item": "PDMS"
-  },
-  {
-   "area": "Applications",
-   "status": "ITB",
-   "item": "OSCC"
-  },
-  {
-   "area": "Applications",
-   "status": "TCEAR",
-   "item": "AIMS"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Combine with DCD to 2030",
-   "item": "Vessel inspection"
-  },
-  {
-   "area": "Manpower",
-   "status": "Document Control, OIM, HSE, FSO",
-   "item": "Vacant positions"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Raise PIA, PR",
-   "item": "Crew change service to Nam Can"
-  },
-  {
-   "area": "Coordination",
-   "status": "Being split into 2 procedures; parties to review and complete by 31 Oct",
-   "item": "Coordination procedure"
-  },
-  {
-   "area": "Applications",
-   "status": "Platform built (production launch); preparing test and data population",
-   "item": "HRIS"
-  }
- ],
- "precom_plan": [
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-02-19",
-   "plan_start": "2027-01-09",
-   "activity": "Comm Train 1 – Production & Pipeline Compressor System (FTP)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-01-23",
-   "plan_start": "2027-01-06",
-   "activity": "Pre-commissioning Inlet Separators Train 1 (CPPT-10-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-01-13",
-   "plan_start": "2027-01-04",
-   "activity": "Pre-commissioning Hydraulic Power Unit (with TUTU) (CPPT-04-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-12-08",
-   "plan_start": "2026-11-16",
-   "activity": "Pre-commissioning UCP for Production & Pipeline Compressor Train 1 (CPPT-11-05)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-13",
-   "plan_start": "2026-10-31",
-   "activity": "Pre-commissioning Expander Suction Train 1 (CPPT-13-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-16",
-   "plan_start": "2026-10-13",
-   "activity": "Pre-commissioning Gas Turbine Lube Oil Train 1 (CPPT-11-04)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-19",
-   "plan_start": "2026-11-02",
-   "activity": "Pre-commissioning Glycol Regeneration Train 1 (CPPT-12-02)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-02-26",
-   "plan_start": "2027-01-25",
-   "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-12-12",
-   "plan_start": "2026-12-03",
-   "activity": "Pre-commissioning Production Compressor Suction Train 1 (CPPT-11-02)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-13",
-   "plan_start": "2026-10-31",
-   "activity": "Pre-commissioning Expander Discharge Train 1 (CPPT-13-03)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-12-25",
-   "plan_start": "2026-12-15",
-   "activity": "Pre-commissioning Production & Pipeline Compressor Train 1 (CPPT-11-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-01-23",
-   "plan_start": "2027-01-04",
-   "activity": "Pre-commissioning Glycol Dehydration Train 1 (CPPT-12-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-23",
-   "plan_start": "2026-11-14",
-   "activity": "Pre-commissioning Booster Compressor Suction & Discharge Train 1 (CPPT-13-04)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-10-26",
-   "plan_start": "2026-10-17",
-   "activity": "Pre-commissioning UCP – Turbo Expander Package Train 1 (CPPT-13-06)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-01-08",
-   "plan_start": "2027-01-05",
-   "activity": "Pre-commissioning Production Compressor Discharge Train 1 (CPPT-11-03)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-23",
-   "plan_start": "2026-10-31",
-   "activity": "Pre-commissioning Turbo Expander Lube Oil Cooler Train 1 (CPPT-13-05) incl. oil flushing"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-11",
-   "plan_start": "2026-10-31",
-   "activity": "Pre-commissioning Turbo Expander Package Train 1 (CPPT-13-02)"
+   "stage": "6 Contract Signing"
   }
  ],
  "permits": [
-  {
-   "facility": "CPP",
-   "status": "Issued",
-   "authority": "Radio Frequency Authority (ARFM)",
-   "expiry_date": "2028-07-20",
-   "renewal_date": "2028-01-22",
-   "issue_date": "2025-07-21",
-   "permit": "UHF radio frequency license"
-  },
   {
    "facility": "CPP – FSO",
    "status": "Issued",
@@ -2222,42 +2092,6 @@
    "permit": "Frequency license for NDB (LQ)"
   },
   {
-   "facility": "Marine",
-   "status": "No update in report",
-   "authority": "MM Marine",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "ISPS"
-  },
-  {
-   "facility": "FSO",
-   "status": "No update in report",
-   "authority": "PPS",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "FSO certificate (class & flag state)"
-  },
-  {
-   "facility": "Marine",
-   "status": "No update in report",
-   "authority": "MM Marine",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "Port license"
-  },
-  {
-   "facility": "Helideck",
-   "status": "No update in report",
-   "authority": "MM Marine",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "Helideck operation approval"
-  },
-  {
    "facility": "CPP, LQ",
    "status": "Waiting for helideck license",
    "authority": "Radio Frequency Authority (ARFM)",
@@ -2274,6 +2108,172 @@
    "renewal_date": null,
    "issue_date": "2025-08-13",
    "permit": "Frequency licenses for temporary DMRs"
+  },
+  {
+   "facility": "FSO",
+   "status": "No update in report",
+   "authority": "PPS",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "FSO certificate (class & flag state)"
+  },
+  {
+   "facility": "Helideck",
+   "status": "No update in report",
+   "authority": "MM Marine",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Helideck operation approval"
+  },
+  {
+   "facility": "Marine",
+   "status": "No update in report",
+   "authority": "MM Marine",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "ISPS"
+  },
+  {
+   "facility": "Marine",
+   "status": "No update in report",
+   "authority": "MM Marine",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Port license"
+  },
+  {
+   "facility": "CPP",
+   "status": "Issued",
+   "authority": "Radio Frequency Authority (ARFM)",
+   "expiry_date": "2028-07-20",
+   "renewal_date": "2028-01-22",
+   "issue_date": "2025-07-21",
+   "permit": "UHF radio frequency license"
+  }
+ ],
+ "precom_plan": [
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-16",
+   "plan_start": "2026-10-13",
+   "activity": "Pre-commissioning Gas Turbine Lube Oil Train 1 (CPPT-11-04)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-10-26",
+   "plan_start": "2026-10-17",
+   "activity": "Pre-commissioning UCP – Turbo Expander Package Train 1 (CPPT-13-06)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-13",
+   "plan_start": "2026-10-31",
+   "activity": "Pre-commissioning Expander Discharge Train 1 (CPPT-13-03)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-13",
+   "plan_start": "2026-10-31",
+   "activity": "Pre-commissioning Expander Suction Train 1 (CPPT-13-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-23",
+   "plan_start": "2026-10-31",
+   "activity": "Pre-commissioning Turbo Expander Lube Oil Cooler Train 1 (CPPT-13-05) incl. oil flushing"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-11",
+   "plan_start": "2026-10-31",
+   "activity": "Pre-commissioning Turbo Expander Package Train 1 (CPPT-13-02)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-19",
+   "plan_start": "2026-11-02",
+   "activity": "Pre-commissioning Glycol Regeneration Train 1 (CPPT-12-02)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-23",
+   "plan_start": "2026-11-14",
+   "activity": "Pre-commissioning Booster Compressor Suction & Discharge Train 1 (CPPT-13-04)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-12-08",
+   "plan_start": "2026-11-16",
+   "activity": "Pre-commissioning UCP for Production & Pipeline Compressor Train 1 (CPPT-11-05)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-12-12",
+   "plan_start": "2026-12-03",
+   "activity": "Pre-commissioning Production Compressor Suction Train 1 (CPPT-11-02)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-12-25",
+   "plan_start": "2026-12-15",
+   "activity": "Pre-commissioning Production & Pipeline Compressor Train 1 (CPPT-11-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-01-23",
+   "plan_start": "2027-01-04",
+   "activity": "Pre-commissioning Glycol Dehydration Train 1 (CPPT-12-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-01-13",
+   "plan_start": "2027-01-04",
+   "activity": "Pre-commissioning Hydraulic Power Unit (with TUTU) (CPPT-04-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-01-08",
+   "plan_start": "2027-01-05",
+   "activity": "Pre-commissioning Production Compressor Discharge Train 1 (CPPT-11-03)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-01-23",
+   "plan_start": "2027-01-06",
+   "activity": "Pre-commissioning Inlet Separators Train 1 (CPPT-10-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-02-19",
+   "plan_start": "2027-01-09",
+   "activity": "Comm Train 1 – Production & Pipeline Compressor System (FTP)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-02-26",
+   "plan_start": "2027-01-25",
+   "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
   }
  ],
  "startup_sequence": [
@@ -2348,6 +2348,6 @@
    "phase": "Condensate & PW"
   }
  ],
- "_updated_at": "2026-10-26T09:45:00.000Z",
+ "_updated_at": "2026-10-26T10:05:00.000Z",
  "_source": "notion"
 }
