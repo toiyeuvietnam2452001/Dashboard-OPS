@@ -3,7 +3,7 @@
   {
    "report_date": "2026-10-21",
    "report_title": "Operations Readiness Preparation",
-   "prepared_by": "Phòng OPS"
+   "prepared_by": "OPS Department"
   }
  ],
  "manpower": [
@@ -1719,7 +1719,7 @@
    "responsible": "Anh HT Kiet + Offshore",
    "expected": "Dec-26",
    "completion_pct": 0,
-   "remark": "Trưởng DX to work with Biên"
+   "remark": "DX lead to work with Biên"
   },
   {
    "id": "GEN-19",
@@ -2067,7 +2067,7 @@
   {
    "permit": "Frequency certificate for FSO DMR (CPP)",
    "facility": "CPP – FSO",
-   "authority": "Cục Tần số",
+   "authority": "Radio Frequency Authority (ARFM)",
    "issue_date": "2025-07-31",
    "expiry_date": "2028-07-30",
    "renewal_date": "2028-02-01",
@@ -2076,7 +2076,7 @@
   {
    "permit": "Frequency certificate for FSO DMR (LQ)",
    "facility": "LQ – FSO",
-   "authority": "Cục Tần số",
+   "authority": "Radio Frequency Authority (ARFM)",
    "issue_date": "2025-07-31",
    "expiry_date": "2028-07-30",
    "renewal_date": "2028-02-01",
@@ -2085,7 +2085,7 @@
   {
    "permit": "UHF radio frequency license",
    "facility": "CPP",
-   "authority": "Cục Tần số",
+   "authority": "Radio Frequency Authority (ARFM)",
    "issue_date": "2025-07-21",
    "expiry_date": "2028-07-20",
    "renewal_date": "2028-01-22",
@@ -2094,7 +2094,7 @@
   {
    "permit": "Frequency licenses for temporary DMRs",
    "facility": "AQWA, KLWA, KLWB, CVWA",
-   "authority": "Cục Tần số",
+   "authority": "Radio Frequency Authority (ARFM)",
    "issue_date": "2025-08-13",
    "expiry_date": "2027-08-12",
    "renewal_date": null,
@@ -2103,7 +2103,7 @@
   {
    "permit": "Frequency license for VHF Airband (CPP, LQ)",
    "facility": "CPP, LQ",
-   "authority": "Cục Tần số",
+   "authority": "Radio Frequency Authority (ARFM)",
    "issue_date": null,
    "expiry_date": null,
    "renewal_date": null,
@@ -2112,7 +2112,7 @@
   {
    "permit": "Frequency license for NDB (LQ)",
    "facility": "LQ",
-   "authority": "Cục Tần số",
+   "authority": "Radio Frequency Authority (ARFM)",
    "issue_date": null,
    "expiry_date": null,
    "renewal_date": null,
