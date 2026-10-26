@@ -244,7 +244,7 @@ body(pt, 7, 10, [lambda k: pick('cbta', 'platform', k), lambda k: pick('cbta', '
 bar(pt, 'P7:P16'); bar(pt, 'Q7:Q16', '2A9D8F'); bar(pt, 'S7:S16', '7B5EA7')
 
 n = n_rows('cbta')
-ch = BarChart(); ch.type = 'bar'; ch.grouping = 'stacked'; ch.overlap = 100; ch.title = 'CBTA modules by status'; ch.height = 8; ch.width = 17
+ch = BarChart(); ch.type = 'bar'; ch.grouping = 'stacked'; ch.overlap = 100; ch.title = 'CBTA modules by status'; ch.height = 9; ch.width = 14
 for k in range(1, 11):
     pt.cell(6 + k, 23, f'=IF(J{6 + k}="","",J{6 + k}&" "&K{6 + k})')
 pt.column_dimensions['W'].hidden = True
@@ -253,7 +253,7 @@ for c, color, name in [(13, BLUE, 'Completed'), (15, AMBER, 'In review'), (14, G
     s = ch.series[-1]; s.tx = SeriesLabel(v=name); s.graphicalProperties.solidFill = color; s.graphicalProperties.line.solidFill = color
 ch.set_categories(Reference(pt, min_col=23, min_row=7, max_row=6 + n)); ch.legend.position = 'b'; ch.y_axis.majorGridlines = None
 ch.visible_cells_only = False
-ch.x_axis.delete = False; ch.y_axis.delete = False; ch.x_axis.scaling.orientation = 'maxMin'
+ch.x_axis.delete = False; ch.y_axis.delete = False; ch.x_axis.scaling.orientation = 'maxMin'; ch.y_axis.crosses = 'max'
 pt.add_chart(ch, 'B20')
 
 section(pt, 20, 10, 'Vendor training schedule', 'Period = month (YYYY-MM) or year.')
@@ -289,7 +289,7 @@ for col, color, name in [('plan_pct', GREY, 'Plan %'), ('actual_pct', BLUE, 'Act
     ch.add_data(data_ref('orr_teams', col, n), titles_from_data=True); ch.series[-1].graphicalProperties.solidFill = color; ch.series[-1].graphicalProperties.line.solidFill = color
     ch.series[-1].tx = SeriesLabel(v=name)
 ch.set_categories(cat_ref('orr_teams', 'team', n)); ch.legend.position = 'b'; ch.y_axis.scaling.min = 0; ch.y_axis.scaling.max = 100
-ch.x_axis.delete = False; ch.y_axis.delete = False; ch.x_axis.scaling.orientation = 'maxMin'; ch.y_axis.majorGridlines = None
+ch.x_axis.delete = False; ch.y_axis.delete = False; ch.x_axis.scaling.orientation = 'maxMin'; ch.y_axis.crosses = 'max'; ch.y_axis.majorGridlines = None
 orr.add_chart(ch, 'L8')
 
 section(orr, 25, 2, 'Checklist by element (People · Plant · Process)', 'Elements below 50% are shown in red.')
@@ -351,7 +351,7 @@ for c, color in [(4, RED), (5, AMBER), (6, BLUE)]:
     ch.add_data(Reference(cp, min_col=c, min_row=6, max_row=12), titles_from_data=True)
     ch.series[-1].graphicalProperties.solidFill = color; ch.series[-1].graphicalProperties.line.solidFill = color
 ch.set_categories(Reference(cp, min_col=2, min_row=7, max_row=12)); ch.legend.position = 'b'
-ch.x_axis.delete = False; ch.y_axis.delete = False; ch.x_axis.scaling.orientation = 'maxMin'; ch.y_axis.majorGridlines = None
+ch.x_axis.delete = False; ch.y_axis.delete = False; ch.x_axis.scaling.orientation = 'maxMin'; ch.y_axis.crosses = 'max'; ch.y_axis.majorGridlines = None
 cp.add_chart(ch, 'B15')
 
 section(cp, 4, 10, 'Packages without PR')
