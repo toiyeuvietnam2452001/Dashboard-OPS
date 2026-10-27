@@ -70,5 +70,13 @@
  "startup_sequence": {
   "database": "3a81f185fc9945a898cf5f9d90d8d9ce",
   "data_source": "a31f5e3f-972f-4dbc-ad2f-727ac3d7beeb"
+ },
+ "readiness": {
+  "database": "bbf71ecedf8a4526874780dde593bd75",
+  "data_source": "94431355-1fc1-4a1e-886b-df54b9db9a7b"
+ },
+ "milestones": {
+  "database": "81220f3e6baf443a8865107b9b0d3d7e",
+  "data_source": "c0757dbf-976a-4a86-9287-f69e98917620"
  }
 }

@@ -28,6 +28,8 @@ const SORTS = {
   cmms: [['package', 'descending']],
   workstreams: [['area', 'ascending'], ['item', 'ascending']],
   permits: [['permit', 'ascending']],
+  readiness: [['order', 'ascending']],
+  milestones: [['order', 'ascending']],
 };
 
 async function queryAll(token, dataSourceId, sorts) {

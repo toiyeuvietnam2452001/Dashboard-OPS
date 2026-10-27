@@ -7,7 +7,7 @@ import json, os, re, sys
 G, D, OUT = sys.argv[1:4]
 IDS = ['meta', 'manpower', 'staffing', 'cbta', 'mandatory', 'vendor_training', 'orr_teams', 'orr_curve', 'orr_elements',
        'orr_groups', 'procedures', 'packages_no_pr', 'pr_pipeline', 'cmms', 'workstreams', 'permits', 'precom_plan',
-       'startup_sequence']
+       'startup_sequence', 'readiness', 'milestones']
 data = {i: json.load(open(os.path.join(D, i + '.json'))) for i in IDS}
 data['_updated_at'] = '2026-10-21T00:00:00Z'
 
@@ -28,11 +28,12 @@ tokens = """
 --cds-gap-xs:4px;--cds-gap-sm:8px;--cds-gap-md:16px;--cds-gap-lg:24px;--cds-gap-xl:40px;
 --cds-pad-xs:4px;--cds-pad-sm:8px;--cds-pad-md:12px;--cds-pad-lg:20px;--cds-radius:8px;
 --cds-font-size-caption:12.5px;--cds-font-size-body:14.5px;--cds-font-size-heading:16px;--cds-font-size-title:30px;--cds-font-weight-medium:600;
---cds-dur-slow:.3s;--font-anthropic-sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--font-anthropic-serif:'Source Serif 4',Georgia,serif;color-scheme:light}
+--cds-dur-slow:.3s;--brand:#2B3990;--brand-2:#00A14B;--brand-ink:#2B3990;--brand-tint:#EEF0FA;--brand-line:#C9CEEC;--rag-g:#1F7A4D;--rag-a:#B7791F;--rag-r:#C0392B;--rag-a-tint:#FDF6E7;--rag-a-line:#F0D9A8;--rag-r-tint:#FCEEEC;--rag-r-line:#F2C4BE;--font-anthropic-sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--font-anthropic-serif:'Source Serif 4',Georgia,serif;color-scheme:light}
 @media (prefers-color-scheme: dark){:root{--color-bg:#12161c;--color-panel:#1a2029;--color-fg:#e6eaf0;--color-fg-muted:#9aa5b4;--color-border-line:#2b3440;
 --color-ok:#5cc28d;--color-warn:#e5a83b;--color-bad:#ef6f62;--s1:#5aa3e0;--s2:#4cc0b0;--s3:#f0c04a;--s4:#a58bd0;--s5:#ef6f62;--s6:#93b85a;--s7:#b89a8e;--s8:#90a4ae;
 --cds-chart-grid:#26303b;--cds-chart-axis:#46525f;--cds-chart-reference:#8b96a3;--cds-chart-muted:#6b7786;--cds-chart-status-critical:#ef6f62;
---cds-surface-popover:#222a35;--cds-border:#36414e;--cds-shadow-popover:0 4px 16px rgba(0,0,0,.4);--cds-text-secondary:#9aa5b4;color-scheme:dark}}
+--cds-surface-popover:#222a35;--cds-border:#36414e;--cds-shadow-popover:0 4px 16px rgba(0,0,0,.4);--cds-text-secondary:#9aa5b4;--brand:#4C5BC4;--brand-ink:#9EA8F0;--brand-tint:#1E2440;--brand-line:#34407A;--rag-g:#5CC28D;--rag-a:#E5A83B;--rag-r:#EF6F62;--rag-a-tint:#2A2414;--rag-a-line:#5A4A20;--rag-r-tint:#2C1A1A;--rag-r-line:#5E2C28;color-scheme:dark}}
+@media print{:root{--color-bg:#ffffff;--color-panel:#ffffff;--color-fg:#1b2430;--color-fg-muted:#5d6878;--color-border-line:#d6dbe2;--brand-ink:#2B3990;--brand-tint:#EEF0FA;--rag-a-tint:#FDF6E7;--rag-r-tint:#FCEEEC;color-scheme:light}body{font-size:12px}}
 html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans);font-size:14px}
 #dash-root{max-width:1280px;margin-inline:auto;padding-block:24px 40px;padding-left:max(var(--dash-gutter,16px),env(safe-area-inset-left,0px));padding-right:max(var(--dash-gutter,16px),env(safe-area-inset-right,0px))}
 .dash-skeleton{color:transparent!important;background:var(--cds-chart-grid);border-radius:4px}
@@ -67,6 +68,13 @@ window.dash = (function () {
   var source = viewDate ? 'archive' : null;
   if (!live) { var api = getJSON('api/data', true); if (api && api.manpower) { DATA = api; live = true; source = 'notion'; } }
   if (!live) { var cur = getJSON('data.json'); if (cur && cur.manpower) { DATA = cur; live = true; source = 'file'; } }
+  // The report just before this one, for "change since last report" figures.
+  var prev = null, prevDate = null;
+  try {
+    var cur = ((DATA.meta || [])[0] || {}).report_date;
+    (index.reports || []).forEach(function (r) { if (cur && r.date < cur && (!prevDate || r.date > prevDate)) prevDate = r.date; });
+    if (prevDate) { prev = getJSON('history/' + prevDate + '.json'); if (!prev || !prev.manpower) { prev = null; prevDate = null; } }
+  } catch (e) {}
   // Re-check Notion every minute; reload when someone has edited the data.
   if (source === 'notion') {
     setInterval(function () {
@@ -78,7 +86,7 @@ window.dash = (function () {
   var res = {}, fns = [];
   function input(i) { return i in DATA ? DATA[i] : res[i]; }
   return {
-    live: live, updatedAt: DATA._updated_at, source: source,
+    live: live, updatedAt: DATA._updated_at, source: source, prev: prev, prevDate: prevDate,
     reports: index.reports || [], latestDate: index.latest, viewDate: viewDate, missingDate: missingDate,
     archived: !!viewDate && viewDate !== index.latest,
     data: function (id) { var d = input(id); return d === undefined ? { status: 'missing', data: [], meta: [] } : { status: 'ok', data: d, refreshing: false, meta: [] }; },
@@ -94,12 +102,16 @@ window.dash = (function () {
 var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __rt = setTimeout(dash._redraw, 150); });
 </script>""" % json.dumps(data, ensure_ascii=False)
 
-foot = """<p class="ops-foot" id="ops-foot"></p>
+foot = """<div class="ops-docctl" id="docctl" hidden></div>
+<p class="ops-foot" id="ops-foot"></p>
 <script>(function(){
   var f = document.getElementById('ops-foot'), m = (dash.data('meta').data || [])[0] || {};
   var t = dash.updatedAt ? new Date(dash.updatedAt) : null;
   var when = t && !isNaN(t) ? t.toLocaleString('en-GB', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false, day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—';
   f.textContent = 'Source: ' + (m.report_title || 'OPS Dashboard Data') + (m.prepared_by ? ', ' + m.prepared_by : '') + (dash.source === 'notion' ? ' · Live from Notion, last edited ' : ' · Data updated ') + when + ' (Vietnam time).';
+  var dc = document.getElementById('docctl'), items = [['Document no.', m.doc_no], ['Revision', m.revision], ['Classification', m.classification], ['Prepared by', m.prepared_by], ['Reviewed by', m.reviewed_by], ['Approved by', m.approved_by]].filter(function (x) { return x[1]; });
+  if (items.length) { dc.hidden = false; items.forEach(function (x) { var d = document.createElement('div'), s = document.createElement('span'); s.textContent = x[0]; d.append(s, x[1]); dc.append(d); }); }
+  var cls = document.getElementById('doc-class'); if (cls && m.classification) { cls.hidden = false; cls.textContent = m.classification; }
   if (!dash.live) { var s = document.createElement('span'); s.className = 'ops-stale'; s.textContent = ' Could not read data.json; showing fallback data.'; f.append(s); }
 })();</script>"""
 
