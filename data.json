@@ -16,6 +16,18 @@
    "group": "Outsource"
   }
  ],
+ "meta": [
+  {
+   "report_date": "2026-10-21",
+   "approved_by": null,
+   "doc_no": null,
+   "prepared_by": "OPS Department",
+   "revision": null,
+   "reviewed_by": null,
+   "classification": "Internal",
+   "report_title": "Operations Readiness Preparation"
+  }
+ ],
  "manpower": [
   {
    "offshore_plan": 2,
@@ -558,11 +570,42 @@
    "month": "2028-12"
   }
  ],
- "meta": [
+ "mandatory": [
   {
-   "report_date": "2026-10-21",
-   "prepared_by": "OPS Department",
-   "report_title": "Operations Readiness Preparation"
+   "planned": 72,
+   "balance": 53,
+   "earned": 19,
+   "team": "CPP Deck crew"
+  },
+  {
+   "planned": 270,
+   "balance": 174,
+   "earned": 96,
+   "team": "CPP E&I"
+  },
+  {
+   "planned": 210,
+   "balance": 118,
+   "earned": 92,
+   "team": "CPP M&R"
+  },
+  {
+   "planned": 334,
+   "balance": 139,
+   "earned": 195,
+   "team": "CPP P&P"
+  },
+  {
+   "planned": 263,
+   "balance": 191,
+   "earned": 72,
+   "team": "Management"
+  },
+  {
+   "planned": 250,
+   "balance": 120,
+   "earned": 130,
+   "team": "WHP team"
   }
  ],
  "cbta": [
@@ -644,44 +687,6 @@
    "team": "P&P"
   }
  ],
- "mandatory": [
-  {
-   "planned": 72,
-   "balance": 53,
-   "earned": 19,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 270,
-   "balance": 174,
-   "earned": 96,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 210,
-   "balance": 118,
-   "earned": 92,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 334,
-   "balance": 139,
-   "earned": 195,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 263,
-   "balance": 191,
-   "earned": 72,
-   "team": "Management"
-  },
-  {
-   "planned": 250,
-   "balance": 120,
-   "earned": 130,
-   "team": "WHP team"
-  }
- ],
  "vendor_training": [
   {
    "period": "2026-09",
@@ -758,6 +763,53 @@
   {
    "period": "2028",
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
+  }
+ ],
+ "orr_curve": [
+  {
+   "actual_pct": 70.5,
+   "plan_pct": 67.2,
+   "month": "2026-10"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 71,
+   "month": "2026-11"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 75,
+   "month": "2026-12"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 80,
+   "month": "2027-01"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 83,
+   "month": "2027-02"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 87,
+   "month": "2027-03"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 90,
+   "month": "2027-04"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 93,
+   "month": "2027-05"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 95,
+   "month": "2027-06"
   }
  ],
  "orr_teams": [
@@ -1013,75 +1065,6 @@
    "code": "PR-14"
   }
  ],
- "orr_curve": [
-  {
-   "actual_pct": 70.5,
-   "plan_pct": 67.2,
-   "month": "2026-10"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 71,
-   "month": "2026-11"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 75,
-   "month": "2026-12"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 80,
-   "month": "2027-01"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 83,
-   "month": "2027-02"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 87,
-   "month": "2027-03"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 90,
-   "month": "2027-04"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 93,
-   "month": "2027-05"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 95,
-   "month": "2027-06"
-  }
- ],
- "orr_groups": [
-  {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
-  },
-  {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
-  },
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
-  },
-  {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
-  }
- ],
  "packages_no_pr": [
   {
    "count": 19,
@@ -1127,6 +1110,28 @@
    "count": 1,
    "dimension": "scr_timing",
    "category": "This month"
+  }
+ ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
   }
  ],
  "procedures": [
@@ -1924,58 +1929,6 @@
    "package": "EPCI#1"
   }
  ],
- "pr_pipeline": [
-  {
-   "count": 1,
-   "status": "Near-late",
-   "stage": "1 CSP Preparation"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "1 CSP Preparation"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "2 CSP Approval"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "2 CSP Approval"
-  },
-  {
-   "count": 1,
-   "status": "Near-late",
-   "stage": "3 Bidding"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "3 Bidding"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "4 Evaluation"
-  },
-  {
-   "count": 2,
-   "status": "On time",
-   "stage": "4 Evaluation"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "5 TCEAR Approval"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "6 Contract Signing"
-  }
- ],
  "workstreams": [
   {
    "area": "Manpower",
@@ -2063,76 +2016,56 @@
    "item": "Offshore preservation"
   }
  ],
- "startup_sequence": [
+ "pr_pipeline": [
   {
-   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
-   "step": 1,
-   "phase": "Preparation"
+   "count": 1,
+   "status": "Near-late",
+   "stage": "1 CSP Preparation"
   },
   {
-   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
-   "step": 2,
-   "phase": "Start up CPP"
+   "count": 1,
+   "status": "On time",
+   "stage": "1 CSP Preparation"
   },
   {
-   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
-   "step": 3,
-   "phase": "First well"
+   "count": 1,
+   "status": "Late",
+   "stage": "2 CSP Approval"
   },
   {
-   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
-   "step": 4,
-   "phase": "Pressurize CPP"
+   "count": 1,
+   "status": "On time",
+   "stage": "2 CSP Approval"
   },
   {
-   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
-   "step": 5,
-   "phase": "Gas & fuel gas"
+   "count": 1,
+   "status": "Near-late",
+   "stage": "3 Bidding"
   },
   {
-   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
-   "step": 6,
-   "phase": "Second well"
+   "count": 1,
+   "status": "On time",
+   "stage": "3 Bidding"
   },
   {
-   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
-   "step": 7,
-   "phase": "GTG to fuel gas"
+   "count": 1,
+   "status": "Late",
+   "stage": "4 Evaluation"
   },
   {
-   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
-   "step": 8,
-   "phase": "Third well"
+   "count": 2,
+   "status": "On time",
+   "stage": "4 Evaluation"
   },
   {
-   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
-   "step": 9,
-   "phase": "Ramp up wells"
+   "count": 1,
+   "status": "Late",
+   "stage": "5 TCEAR Approval"
   },
   {
-   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
-   "step": 10,
-   "phase": "GTC & WHRU"
-  },
-  {
-   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
-   "step": 11,
-   "phase": "Dew point"
-  },
-  {
-   "action": "Start MRU; close bypass line when gas dew point is on spec",
-   "step": 12,
-   "phase": "MRU"
-  },
-  {
-   "action": "Export gas to export gas pipeline",
-   "step": 13,
-   "phase": "Export gas"
-  },
-  {
-   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
-   "step": 14,
-   "phase": "Condensate & PW"
+   "count": 1,
+   "status": "On time",
+   "stage": "6 Contract Signing"
   }
  ],
  "permits": [
@@ -2225,6 +2158,78 @@
    "renewal_date": "2028-01-22",
    "issue_date": "2025-07-21",
    "permit": "UHF radio frequency license"
+  }
+ ],
+ "startup_sequence": [
+  {
+   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
+   "step": 1,
+   "phase": "Preparation"
+  },
+  {
+   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
+   "step": 2,
+   "phase": "Start up CPP"
+  },
+  {
+   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
+   "step": 3,
+   "phase": "First well"
+  },
+  {
+   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
+   "step": 4,
+   "phase": "Pressurize CPP"
+  },
+  {
+   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
+   "step": 5,
+   "phase": "Gas & fuel gas"
+  },
+  {
+   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
+   "step": 6,
+   "phase": "Second well"
+  },
+  {
+   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
+   "step": 7,
+   "phase": "GTG to fuel gas"
+  },
+  {
+   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
+   "step": 8,
+   "phase": "Third well"
+  },
+  {
+   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
+   "step": 9,
+   "phase": "Ramp up wells"
+  },
+  {
+   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
+   "step": 10,
+   "phase": "GTC & WHRU"
+  },
+  {
+   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
+   "step": 11,
+   "phase": "Dew point"
+  },
+  {
+   "action": "Start MRU; close bypass line when gas dew point is on spec",
+   "step": 12,
+   "phase": "MRU"
+  },
+  {
+   "action": "Export gas to export gas pipeline",
+   "step": 13,
+   "phase": "Export gas"
+  },
+  {
+   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
+   "step": 14,
+   "phase": "Condensate & PW"
   }
  ],
  "precom_plan": [
@@ -2348,6 +2353,106 @@
    "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
   }
  ],
- "_updated_at": "2026-10-26T10:14:00.000Z",
+ "milestones": [
+  {
+   "plan_date": "2026-10-13",
+   "note": "Theo master plan pre-com (hoạt động sớm nhất)",
+   "is_target": false,
+   "actual_date": null,
+   "order": 1,
+   "milestone": "Pre-commissioning start (CPP Train 1)"
+  },
+  {
+   "plan_date": "2027-06-30",
+   "note": "Theo đường kế hoạch ORR (06/2027 = 95%)",
+   "is_target": false,
+   "actual_date": null,
+   "order": 2,
+   "milestone": "ORR plan 95%"
+  },
+  {
+   "plan_date": null,
+   "note": "Cần điền ngày kế hoạch",
+   "is_target": false,
+   "actual_date": null,
+   "order": 3,
+   "milestone": "Mechanical Completion"
+  },
+  {
+   "plan_date": null,
+   "note": "Cần điền ngày kế hoạch",
+   "is_target": false,
+   "actual_date": null,
+   "order": 4,
+   "milestone": "RFSU – Ready for Start-Up"
+  },
+  {
+   "plan_date": "2027-09-01",
+   "note": "Tạm theo production profile slide 16 (SSF 73 MMscfd từ 09/2027) – cần xác nhận ngày chính thức",
+   "is_target": true,
+   "actual_date": null,
+   "order": 5,
+   "milestone": "First Gas (sales gas)"
+  }
+ ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
+  }
+ ],
+ "_updated_at": "2026-10-27T03:43:00.000Z",
  "_source": "notion"
 }
