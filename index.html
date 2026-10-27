@@ -1200,8 +1200,11 @@ function drawAttention() {
   }));
 }
 
+// Countdowns follow the calendar day in Vietnam (UTC+7, no daylight saving), not the viewer's clock.
+const vnToday = () => H.day(new Date(Date.now() + 7 * 3600000).toISOString().slice(0, 10));
+
 function drawMilestones() {
-  const list = rows('cur', 'milestones'), today = d3.utcDay.floor(new Date()), DAY = 86400000;
+  const list = rows('cur', 'milestones'), today = vnToday(), DAY = 86400000;
   const ol = document.getElementById('milestones');
   const firstOpen = list.find((r) => !r.actual_date && r.plan_date && H.day(r.plan_date) >= today);
   ol.replaceChildren(...list.map((r) => {
@@ -1248,6 +1251,9 @@ function drawDeltas() {
 }
 
 dash.onData(() => { drawRag(); drawAttention(); drawMilestones(); drawDeltas(); });
+// A page left open (e.g. on a control-room screen) ticks over at midnight Vietnam time.
+let shownDay = +vnToday();
+setInterval(() => { if (+vnToday() !== shownDay) { shownDay = +vnToday(); drawMilestones(); drawAttention(); } }, 60000);
 
 // Print: show every section and redraw charts at print width, then restore.
 document.getElementById('print-btn').addEventListener('click', () => window.print());
