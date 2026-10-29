@@ -142,9 +142,15 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:
 .ops-mast-sub b { color: var(--color-fg); }
 .ops-class { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--brand-ink); color: var(--brand-ink); }
 .ops-mast-side { display: flex; align-items: stretch; gap: var(--cds-gap-md); flex-wrap: wrap; }
-.ops-mast-tools { display: flex; align-items: flex-end; gap: var(--cds-gap-sm); }
+.ops-mast-tools { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: var(--cds-gap-sm); }
+.ops-mast-actions { display: flex; align-items: flex-end; gap: var(--cds-gap-sm); }
+.ops-lang { display: inline-flex; padding: 2px; border: 1px solid var(--brand-line); border-radius: 999px; background: var(--color-panel); }
+.ops-lang button { font: inherit; font-size: 12px; font-weight: 600; letter-spacing: .04em; padding: 3px 11px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
+.ops-lang button:hover { color: var(--brand-ink); }
+.ops-lang button[aria-pressed="true"] { background: var(--brand); color: #fff; cursor: default; }
+.ops-lang button:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 1px; }
 .ops-mast .ops-picker { margin-left: 0; }
-.ops-btn { font: inherit; font-size: var(--cds-font-size-caption); padding: 6px 12px; border-radius: var(--cds-radius); border: 1px solid var(--brand); background: var(--brand); color: #fff; cursor: pointer; }
+.ops-btn { white-space: nowrap; font: inherit; font-size: var(--cds-font-size-caption); padding: 6px 12px; border-radius: var(--cds-radius); border: 1px solid var(--brand); background: var(--brand); color: #fff; cursor: pointer; }
 .ops-btn:hover { filter: brightness(1.1); }
 .ops-btn:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
 .ops-count { display: flex; flex-direction: column; justify-content: center; padding: 6px 14px; border-radius: var(--cds-radius); background: var(--brand-tint); border: 1px solid var(--brand-line); min-width: 9rem; }
@@ -205,7 +211,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:
 .ops-ms .tbc { color: var(--rag-a); font-weight: 600; }
 .ops-docctl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 4px 16px; padding: var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); font-size: var(--cds-font-size-caption); }
 .ops-docctl span { color: var(--color-fg-muted); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
-@media (max-width: 560px) { .ops-mast-side { width: 100%; } .ops-count { flex: 1; } }
+@media (max-width: 560px) { .ops-mast-side { width: 100%; } .ops-count { flex: 1; } .ops-lang { position: absolute; top: 10px; right: 10px; } .ops-mast-id { padding-right: 88px; } }
 @media print {
   .ops-tabs, .ops-mast-tools, #archived-note, .ops-tools, .ops-seg { display: none !important; }
   section.ops-page[hidden] { display: flex !important; }
@@ -222,6 +228,36 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:
 <script>
 window.dash = (function () {
   var FALLBACK = {"meta": [{"report_date": "2026-10-21", "report_title": "Operations Readiness Preparation", "prepared_by": "OPS Department", "doc_no": null, "revision": null, "reviewed_by": null, "approved_by": null, "classification": "Internal"}], "manpower": [{"month": "2024-01", "onshore_plan": 5, "onshore_actual": 5, "offshore_plan": 2, "offshore_actual": 2, "total_plan": 7, "total_actual": 7}, {"month": "2024-02", "onshore_plan": 5, "onshore_actual": 5, "offshore_plan": 2, "offshore_actual": 2, "total_plan": 7, "total_actual": 7}, {"month": "2024-03", "onshore_plan": 5, "onshore_actual": 5, "offshore_plan": 2, "offshore_actual": 2, "total_plan": 7, "total_actual": 7}, {"month": "2024-04", "onshore_plan": 5, "onshore_actual": 5, "offshore_plan": 2, "offshore_actual": 2, "total_plan": 7, "total_actual": 7}, {"month": "2024-05", "onshore_plan": 5, "onshore_actual": 5, "offshore_plan": 2, "offshore_actual": 2, "total_plan": 7, "total_actual": 7}, {"month": "2024-06", "onshore_plan": 5, "onshore_actual": 5, "offshore_plan": 2, "offshore_actual": 2, "total_plan": 7, "total_actual": 7}, {"month": "2024-07", "onshore_plan": 7, "onshore_actual": 7, "offshore_plan": 2, "offshore_actual": 2, "total_plan": 9, "total_actual": 9}, {"month": "2024-08", "onshore_plan": 8, "onshore_actual": 8, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 14, "total_actual": 14}, {"month": "2024-09", "onshore_plan": 11, "onshore_actual": 11, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 17, "total_actual": 17}, {"month": "2024-10", "onshore_plan": 13, "onshore_actual": 13, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 19, "total_actual": 19}, {"month": "2024-11", "onshore_plan": 13, "onshore_actual": 13, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 19, "total_actual": 19}, {"month": "2024-12", "onshore_plan": 13, "onshore_actual": 13, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 19, "total_actual": 19}, {"month": "2025-01", "onshore_plan": 18, "onshore_actual": 13, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 24, "total_actual": 19}, {"month": "2025-02", "onshore_plan": 18, "onshore_actual": 13, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 24, "total_actual": 19}, {"month": "2025-03", "onshore_plan": 18, "onshore_actual": 16, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 24, "total_actual": 22}, {"month": "2025-04", "onshore_plan": 19, "onshore_actual": 16, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 25, "total_actual": 22}, {"month": "2025-05", "onshore_plan": 19, "onshore_actual": 16, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 25, "total_actual": 22}, {"month": "2025-06", "onshore_plan": 20, "onshore_actual": 18, "offshore_plan": 6, "offshore_actual": 6, "total_plan": 26, "total_actual": 24}, {"month": "2025-07", "onshore_plan": 20, "onshore_actual": 20, "offshore_plan": 7, "offshore_actual": 7, "total_plan": 27, "total_actual": 27}, {"month": "2025-08", "onshore_plan": 20, "onshore_actual": 20, "offshore_plan": 7, "offshore_actual": 7, "total_plan": 27, "total_actual": 27}, {"month": "2025-09", "onshore_plan": 21, "onshore_actual": 20, "offshore_plan": 7, "offshore_actual": 7, "total_plan": 28, "total_actual": 27}, {"month": "2025-10", "onshore_plan": 21, "onshore_actual": 20, "offshore_plan": 7, "offshore_actual": 7, "total_plan": 28, "total_actual": 27}, {"month": "2025-11", "onshore_plan": 21, "onshore_actual": 18, "offshore_plan": 7, "offshore_actual": 7, "total_plan": 28, "total_actual": 25}, {"month": "2025-12", "onshore_plan": 21, "onshore_actual": 19, "offshore_plan": 7, "offshore_actual": 8, "total_plan": 28, "total_actual": 27}, {"month": "2026-01", "onshore_plan": 29, "onshore_actual": 18, "offshore_plan": 23, "offshore_actual": 9, "total_plan": 52, "total_actual": 27}, {"month": "2026-02", "onshore_plan": 29, "onshore_actual": 19, "offshore_plan": 23, "offshore_actual": 16, "total_plan": 52, "total_actual": 35}, {"month": "2026-03", "onshore_plan": 29, "onshore_actual": 23, "offshore_plan": 23, "offshore_actual": 20, "total_plan": 52, "total_actual": 43}, {"month": "2026-04", "onshore_plan": 33, "onshore_actual": 24, "offshore_plan": 35, "offshore_actual": 25, "total_plan": 68, "total_actual": 49}, {"month": "2026-05", "onshore_plan": 33, "onshore_actual": 24, "offshore_plan": 35, "offshore_actual": 32, "total_plan": 68, "total_actual": 56}, {"month": "2026-06", "onshore_plan": 33, "onshore_actual": 28, "offshore_plan": 35, "offshore_actual": 36, "total_plan": 68, "total_actual": 64}, {"month": "2026-07", "onshore_plan": 34, "onshore_actual": 28, "offshore_plan": 50, "offshore_actual": 39, "total_plan": 84, "total_actual": 67}, {"month": "2026-08", "onshore_plan": 34, "onshore_actual": 29, "offshore_plan": 88, "offshore_actual": 42, "total_plan": 122, "total_actual": 71}, {"month": "2026-09", "onshore_plan": 34, "onshore_actual": 33, "offshore_plan": 88, "offshore_actual": 46, "total_plan": 122, "total_actual": 79}, {"month": "2026-10", "onshore_plan": 34, "onshore_actual": 32, "offshore_plan": 88, "offshore_actual": 47, "total_plan": 122, "total_actual": 78}, {"month": "2026-11", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 88, "offshore_actual": null, "total_plan": 122, "total_actual": null}, {"month": "2026-12", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 88, "offshore_actual": null, "total_plan": 122, "total_actual": null}, {"month": "2027-01", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 99, "offshore_actual": null, "total_plan": 133, "total_actual": null}, {"month": "2027-02", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 99, "offshore_actual": null, "total_plan": 133, "total_actual": null}, {"month": "2027-03", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 119, "offshore_actual": null, "total_plan": 153, "total_actual": null}, {"month": "2027-04", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 131, "offshore_actual": null, "total_plan": 165, "total_actual": null}, {"month": "2027-05", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 131, "offshore_actual": null, "total_plan": 165, "total_actual": null}, {"month": "2027-06", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 131, "offshore_actual": null, "total_plan": 165, "total_actual": null}, {"month": "2027-07", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2027-08", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2027-09", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2027-10", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2027-11", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2027-12", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-01", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-02", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-03", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-04", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-05", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-06", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-07", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-08", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-09", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-10", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-11", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}, {"month": "2028-12", "onshore_plan": 34, "onshore_actual": null, "offshore_plan": 132, "offshore_actual": null, "total_plan": 166, "total_actual": null}], "staffing": [{"group": "Onshore", "filled": 32, "required": 34}, {"group": "Offshore", "filled": 47, "required": 50}, {"group": "Outsource", "filled": 9, "required": 38}], "cbta": [{"platform": "CPP", "team": "P&P", "modules": 36, "developing": 6, "review": 1, "completed": 27, "theory_pct": 3.87, "ojt_modules": 36, "ojt_pct": 0}, {"platform": "CPP", "team": "E&I", "modules": 39, "developing": 1, "review": null, "completed": 35, "theory_pct": 7.85, "ojt_modules": 39, "ojt_pct": 0}, {"platform": "CPP", "team": "M&R", "modules": 38, "developing": 6, "review": 1, "completed": 27, "theory_pct": 1.48, "ojt_modules": 38, "ojt_pct": 0}, {"platform": "CPP", "team": "Deck crew", "modules": 11, "developing": 0, "review": 0, "completed": 11, "theory_pct": 6.25, "ojt_modules": 11, "ojt_pct": 0}, {"platform": "WHP", "team": "P&P", "modules": 21, "developing": 0, "review": 0, "completed": 21, "theory_pct": 0, "ojt_modules": 29, "ojt_pct": 0}, {"platform": "WHP", "team": "E&I", "modules": 24, "developing": 2, "review": 2, "completed": 20, "theory_pct": 0, "ojt_modules": 35, "ojt_pct": 0}, {"platform": "WHP", "team": "M&R", "modules": 22, "developing": 0, "review": 1, "completed": 21, "theory_pct": 0, "ojt_modules": 31, "ojt_pct": 0}], "mandatory": [{"team": "Management", "planned": 263, "earned": 72, "balance": 191}, {"team": "CPP P&P", "planned": 334, "earned": 195, "balance": 139}, {"team": "CPP M&R", "planned": 210, "earned": 92, "balance": 118}, {"team": "CPP E&I", "planned": 270, "earned": 96, "balance": 174}, {"team": "CPP Deck crew", "planned": 72, "earned": 19, "balance": 53}, {"team": "WHP team", "planned": 250, "earned": 130, "balance": 120}], "vendor_training": [{"course": "ICSS – EPCI#2", "period": "2026-09"}, {"course": "Asset Integrity Management", "period": "2026-10"}, {"course": "E-house", "period": "2026-10"}, {"course": "Gas Conditioning and Processing – G-4", "period": "2026-10"}, {"course": "ICSS – EPCI#1", "period": "2026-11"}, {"course": "Gas Purification Technology: Mercury Removal", "period": "2026-11"}, {"course": "ICSS – EPCI#1", "period": "2026-12"}, {"course": "E-house", "period": "2026-12"}, {"course": "Telecom System (CPC0-TEL001)", "period": "2027-01"}, {"course": "HVAC system (MEL 41 – HVAC)", "period": "2027-03"}, {"course": "Mark CS O&M", "period": "2027-04"}, {"course": "Analyser – Water in Oil & Gas Chromatography (CPC0-ICS017)", "period": "2027-04"}, {"course": "Metering Skid (CPPT-ICS001)", "period": "2027-05"}, {"course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)", "period": "2027-05"}, {"course": "ECPI#2 – Gas booster compressor", "period": "2027-11"}, {"course": "EDG (CLQU-MEC005)", "period": "2027-12"}, {"course": "Gas Turbine Generator (GTG, MER 02)", "period": "2028"}, {"course": "Turbo Expander (CPPT-MEC003)", "period": "2028"}, {"course": "Vapour Recovery Compressor (CPPT-MEC005)", "period": "2028"}], "orr_teams": [{"team": "Offshore", "weight_pct": 25.5, "total_activities": 89, "completed": 57, "plan_pct": 69.5, "actual_pct": 76.8, "plan_end_pct": 99}, {"team": "Production OPS", "weight_pct": 13.2, "total_activities": 59, "completed": 23, "plan_pct": 71.3, "actual_pct": 66.5, "plan_end_pct": 98}, {"team": "Asset Integrity", "weight_pct": 11.2, "total_activities": 53, "completed": 20, "plan_pct": 45.6, "actual_pct": 64.4, "plan_end_pct": 89}, {"team": "Manager OPS", "weight_pct": 12.5, "total_activities": 80, "completed": 57, "plan_pct": 77.1, "actual_pct": 70.6, "plan_end_pct": 94}, {"team": "E&I", "weight_pct": 9.1, "total_activities": 32, "completed": 21, "plan_pct": 65.7, "actual_pct": 79.4, "plan_end_pct": 82}, {"team": "M&R", "weight_pct": 8.7, "total_activities": 48, "completed": 25, "plan_pct": 70.6, "actual_pct": 63.9, "plan_end_pct": 98}, {"team": "Application Eng", "weight_pct": 6.9, "total_activities": 28, "completed": 10, "plan_pct": 67.0, "actual_pct": 71.3, "plan_end_pct": 96}, {"team": "Marine", "weight_pct": 6.8, "total_activities": 49, "completed": 27, "plan_pct": 71.9, "actual_pct": 71.1, "plan_end_pct": 95}, {"team": "Production Eng", "weight_pct": 6.0, "total_activities": 36, "completed": 14, "plan_pct": 60.6, "actual_pct": 57.3, "plan_end_pct": 99}], "orr_curve": [{"month": "2026-10", "plan_pct": 67.2, "actual_pct": 70.5}, {"month": "2026-11", "plan_pct": 71, "actual_pct": null}, {"month": "2026-12", "plan_pct": 75, "actual_pct": null}, {"month": "2027-01", "plan_pct": 80, "actual_pct": null}, {"month": "2027-02", "plan_pct": 83, "actual_pct": null}, {"month": "2027-03", "plan_pct": 87, "actual_pct": null}, {"month": "2027-04", "plan_pct": 90, "actual_pct": null}, {"month": "2027-05", "plan_pct": 93, "actual_pct": null}, {"month": "2027-06", "plan_pct": 95, "actual_pct": null}], "orr_elements": [{"group": "PEOPLE", "code": "PE-01", "element": "Organization, Manning & Accountability", "items": 14, "progress_pct": 64.3}, {"group": "PEOPLE", "code": "PE-02", "element": "Competency, Training & Authorization", "items": 26, "progress_pct": 59.9}, {"group": "PEOPLE", "code": "PE-03", "element": "Personnel Mobilization & Fitness for Duty", "items": 3, "progress_pct": 83.7}, {"group": "PEOPLE", "code": "PE-04", "element": "HR Policies, Employment Conditions & Retention", "items": 5, "progress_pct": 100.0}, {"group": "PLANT", "code": "PL-01", "element": "Facilities, Process & Utilities Readiness", "items": 11, "progress_pct": 77.2}, {"group": "PLANT", "code": "PL-02", "element": "Wells, Flowlines & Export Systems Readiness", "items": 20, "progress_pct": 80.2}, {"group": "PLANT", "code": "PL-03", "element": "Asset Integrity & Safety Barrier Readiness", "items": 8, "progress_pct": 14.1}, {"group": "PLANT", "code": "PL-04", "element": "Spares, Materials, Consumables & Tools Readiness", "items": 15, "progress_pct": 61.8}, {"group": "PLANT", "code": "PL-05", "element": "Metering, Sampling, Analysers & Environmental Monitoring", "items": 2, "progress_pct": 0.0}, {"group": "PLANT", "code": "PL-06", "element": "Onshore Base, Port & Support Infrastructure", "items": 4, "progress_pct": 72.3}, {"group": "PROCESS", "code": "PR-01", "element": "ORR Governance, Readiness Acceptance & Financial Readiness", "items": 18, "progress_pct": 85.8}, {"group": "PROCESS", "code": "PR-02", "element": "Legal Compliance, Licences, Permits, Certification & Security", "items": 20, "progress_pct": 81.5}, {"group": "PROCESS", "code": "PR-03", "element": "HSE, Process Safety & Control of Work", "items": 104, "progress_pct": 85.6}, {"group": "PROCESS", "code": "PR-04", "element": "Emergency Response, Crisis Management & Continuity", "items": 29, "progress_pct": 49.3}, {"group": "PROCESS", "code": "PR-05", "element": "Operations Management & Production Chemistry", "items": 80, "progress_pct": 45.4}, {"group": "PROCESS", "code": "PR-06", "element": "Maintenance, Reliability & Integrity Management", "items": 88, "progress_pct": 63.6}, {"group": "PROCESS", "code": "PR-07", "element": "Contracts, Procurement & Supply Chain", "items": 51, "progress_pct": 59.4}, {"group": "PROCESS", "code": "PR-08", "element": "Integrated Coordination, Gas Dispatch, Metering & Commercial Interface", "items": 13, "progress_pct": 41.5}, {"group": "PROCESS", "code": "PR-09", "element": "Technical Information, Data, Digital Systems & OT Security", "items": 40, "progress_pct": 59.6}, {"group": "PROCESS", "code": "PR-10", "element": "Commissioning Interface, Handover, Start-up & Stabilization", "items": 27, "progress_pct": 58.5}, {"group": "PROCESS", "code": "PR-11", "element": "Production Management, Well Surveillance & Hydrocarbon Accounting", "items": 21, "progress_pct": 70.1}, {"group": "PROCESS", "code": "PR-12", "element": "Marine, Aviation & Logistics Operations", "items": 49, "progress_pct": 68.8}, {"group": "PROCESS", "code": "PR-13", "element": "Performance Management, Assurance & Continuous Improvement", "items": 22, "progress_pct": 68.0}, {"group": "PROCESS", "code": "PR-14", "element": "Design, Engineering, Operability & Maintainability Assurance", "items": 22, "progress_pct": 89.3}], "orr_groups": [{"group": "PEOPLE", "items": 48, "progress_pct": 66.3}, {"group": "PLANT", "items": 60, "progress_pct": 61.4}, {"group": "PROCESS", "items": 590, "progress_pct": 66.0}, {"group": "TOTAL", "items": 698, "progress_pct": 65.6}], "procedures": [{"id": "HSE-01", "category": "HSE", "document": "Permit to Work Procedure", "level": "Company", "issued": "Yes", "responsible": "Offshore", "expected": "Jan-25", "completion_pct": 100, "remark": "Issued on 25-Mar-25"}, {"id": "HSE-02", "category": "HSE", "document": "Equipment Isolation Philosophy", "level": "Company", "issued": "Yes", "responsible": "Offshore", "expected": "Jan-25", "completion_pct": 100, "remark": null}, {"id": "HSE-03", "category": "HSE", "document": "Lock-out Tag-out Procedure", "level": "Company", "issued": "Yes", "responsible": "Offshore", "expected": "Jan-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-04", "category": "HSE", "document": "Hot work control procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jan-25", "completion_pct": 100, "remark": "Issued on 25-Mar-25"}, {"id": "HSE-05", "category": "HSE", "document": "Respirator Protection procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Mar-25", "completion_pct": 100, "remark": "Issued 09 Jun 25"}, {"id": "HSE-06", "category": "HSE", "document": "HV/MV procedure", "level": "Department", "issued": "Yes", "responsible": "Kiet HT", "expected": "Mar-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-07", "category": "HSE", "document": "ToolBox Talk procedure", "level": "Company", "issued": "Yes", "responsible": "Offshore", "expected": "Mar-25", "completion_pct": 100, "remark": "Issued on 17 Jan 25"}, {"id": "HSE-08", "category": "HSE", "document": "Electrical Code of Practice", "level": "Company", "issued": "Yes", "responsible": "Kiet HT", "expected": "Jun-26", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-09", "category": "HSE", "document": "H2S procedure", "level": "Company", "issued": "Yes", "responsible": "Offshore", "expected": "Mar-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-10", "category": "HSE", "document": "Scaffolding Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Mar-25", "completion_pct": 100, "remark": "Issued on 22/01/25"}, {"id": "HSE-11", "category": "HSE", "document": "Electrical safety procedure", "level": "Department", "issued": "Yes", "responsible": "Kiet HT", "expected": "Mar-25", "completion_pct": 100, "remark": "Issued on Oct 24"}, {"id": "HSE-12", "category": "HSE", "document": "Marine Operations Manual", "level": "Department", "issued": "Yes", "responsible": "Thanh NN", "expected": "Mar-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-13", "category": "HSE", "document": "Working at Height Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Apr-25", "completion_pct": 100, "remark": "Issued on 22/01/25"}, {"id": "HSE-14", "category": "HSE", "document": "Overside Working Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Apr-25", "completion_pct": 100, "remark": "Issued on 22/01/25"}, {"id": "HSE-15", "category": "HSE", "document": "Pressure and Leak Testing Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "May-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-16", "category": "HSE", "document": "Compressed Air procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "May-25", "completion_pct": 100, "remark": "Issued on 22/01/25"}, {"id": "HSE-17", "category": "HSE", "document": "Noise exposure and hearing protection", "level": "Department", "issued": "Yes", "responsible": "HSE Onshore", "expected": "Dec-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-18", "category": "HSE", "document": "Vibration Impact procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "May-25", "completion_pct": 100, "remark": "Issued on 15 Feb 25"}, {"id": "HSE-19", "category": "HSE", "document": "Catering food safety & hygiene management procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-20", "category": "HSE", "document": "Mercury Hazard Control Procedure", "level": "Department", "issued": "Yes", "responsible": "Nguyen Minh Hoang", "expected": "Jun-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-21", "category": "HSE", "document": "HSE Risk Management Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-25", "completion_pct": 100, "remark": "PQ1-00-HSE-PCD-PQC-00004-00_H01"}, {"id": "HSE-22", "category": "HSE", "document": "Tools and Equipment Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jul-25", "completion_pct": 100, "remark": "Issued on 15 Feb 25"}, {"id": "HSE-23", "category": "HSE", "document": "Confined Space Entry Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-24", "category": "HSE", "document": "HSE Recording and Reporting Guideline", "level": "Company", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-26", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-25", "category": "HSE", "document": "Inspection and Certification of Lifting Equipment", "level": "Department", "issued": "Yes", "responsible": "Nguyen TN", "expected": "Jun-26", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-26", "category": "HSE", "document": "Portable Appliance Testing Procedure", "level": "Department", "issued": "Yes", "responsible": "Kiet HT", "expected": "Jun-26", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-27", "category": "HSE", "document": "Gas Testing procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-25", "completion_pct": 100, "remark": "Issued on 17 Jan 25"}, {"id": "HSE-28", "category": "HSE", "document": "Offshore facility procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-25", "completion_pct": 100, "remark": "Issued on 15 Feb 25"}, {"id": "HSE-29", "category": "HSE", "document": "Simultaneous Operations procedure (SIMOP)", "level": "Department", "issued": "No", "responsible": "Offshore HSE", "expected": "Dec-26", "completion_pct": 75, "remark": "Review ongoing"}, {"id": "HSE-30", "category": "HSE", "document": "Emergency response plan for supply vessels", "level": "Department", "issued": "Yes", "responsible": "Thanh NN/HSE", "expected": "Dec-26", "completion_pct": 100, "remark": "Included in vessel service contract"}, {"id": "HSE-31", "category": "HSE", "document": "Domestic Water Control & Monitoring", "level": "Department", "issued": "Yes", "responsible": "Offshore/HSE", "expected": "Jul-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-32", "category": "HSE", "document": "POB List and control procedure incl. T-Card control", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jul-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-33", "category": "HSE", "document": "Radio Silence Procedure", "level": "Department", "issued": "Yes", "responsible": "Drilling Dep", "expected": "Aug-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-34", "category": "HSE", "document": "Safety Standdown Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-26", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-35", "category": "HSE", "document": "Emergency response Procedure for HUB/WHP", "level": "Department", "issued": "No", "responsible": "HSE Onshore", "expected": "Apr-27", "completion_pct": 0, "remark": "Bid submission deadline extended to 13 Oct 2026"}, {"id": "HSE-36", "category": "HSE", "document": "Operating and guideline for Security vessel", "level": "Department", "issued": "Yes", "responsible": "Thanh NN", "expected": "Oct-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-37", "category": "HSE", "document": "Management of Change Procedure", "level": "Company", "issued": "Yes", "responsible": "Ngoc NV", "expected": "Dec-25", "completion_pct": 100, "remark": "Issued"}, {"id": "HSE-38", "category": "HSE", "document": "Emergency response Procedure for CPP complex", "level": "Department", "issued": "No", "responsible": "HSE Onshore", "expected": "Apr-27", "completion_pct": 0, "remark": "Bid submission deadline extended to 13 Oct 2026"}, {"id": "HSE-39", "category": "HSE", "document": "Operation Performance Standard", "level": "Department", "issued": "No", "responsible": "Onshore", "expected": "Dec-26", "completion_pct": 90, "remark": "Completed for ECP2; ECP1 in EDMS for review"}, {"id": "HSE-40", "category": "HSE", "document": "Pressure cylinder management Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Dec-26", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-01", "category": "General operations", "document": "Use and inspection of utility hoses and fittings", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-25", "completion_pct": 100, "remark": "Issued on 13 Feb 25"}, {"id": "GEN-02", "category": "General operations", "document": "Offshore Crane Operating and Maintenance Guideline", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-25", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-03", "category": "General operations", "document": "Mooring Guidelines at PQPOC field", "level": "Department", "issued": "No", "responsible": "NN Thanh", "expected": "Dec-26", "completion_pct": 0, "remark": "Waiting for mooring system"}, {"id": "GEN-04", "category": "General operations", "document": "Fast Rescue Craft (OSV)", "level": "Department", "issued": "Yes", "responsible": "NN Thanh", "expected": "Jun-25", "completion_pct": 100, "remark": "In Marine Operations Manual (section 8.13)"}, {"id": "GEN-05", "category": "General operations", "document": "Portable and Temporary Equipment Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-25", "completion_pct": 100, "remark": "Issued on 13 Feb 25"}, {"id": "GEN-06", "category": "General operations", "document": "Safety Standby/Lifting Support Vessel Operations", "level": "Department", "issued": "Yes", "responsible": "NN Thanh", "expected": "Jul-25", "completion_pct": 100, "remark": "In Marine Operations Manual (section 8)"}, {"id": "GEN-07", "category": "General operations", "document": "Handover Guidelines for Personnel at Crew & Shift Changes", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Aug-25", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-08", "category": "General operations", "document": "Maintenance, inspection, repair & overhaul of electrical installations in Hazardous Areas", "level": "Department", "issued": "Yes", "responsible": "Anh HT Kiet", "expected": "Sep-25", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-09", "category": "General operations", "document": "Well Handover Procedure", "level": "Department", "issued": "Yes", "responsible": "DCD", "expected": "Sep-25", "completion_pct": 100, "remark": null}, {"id": "GEN-10", "category": "General operations", "document": "Instrument Calibration Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Sep-25", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-11", "category": "General operations", "document": "Well Integrity Procedure", "level": "Department", "issued": "Yes", "responsible": "DCD", "expected": "Sep-25", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-12", "category": "General operations", "document": "Errant Vessel Response Procedure", "level": "Department", "issued": "Yes", "responsible": "NN Thanh", "expected": "Sep-25", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-13", "category": "General operations", "document": "Fuel management and bunkering procedure", "level": "Department", "issued": "No", "responsible": "NN Thanh", "expected": "Dec-26", "completion_pct": 75, "remark": "Ongoing"}, {"id": "GEN-14", "category": "General operations", "document": "Platform Standing Instruction", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Dec-26", "completion_pct": 100, "remark": "Issued on 13 Feb 25"}, {"id": "GEN-15", "category": "General operations", "document": "Shutdown and start up procedure including field start up", "level": "Department", "issued": "No", "responsible": "Offshore", "expected": "Dec-26", "completion_pct": 60, "remark": "Ongoing"}, {"id": "GEN-16", "category": "General operations", "document": "E&I Tools Re-Certification Procedure", "level": "Department", "issued": "Yes", "responsible": "HT Kiet", "expected": "Dec-26", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-17", "category": "General operations", "document": "Coating Maintenance & Repair Procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jan-26", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-18", "category": "General operations", "document": "CPP Export Gas Metering procedure", "level": "Department", "issued": "No", "responsible": "Anh HT Kiet + Offshore", "expected": "Dec-26", "completion_pct": 0, "remark": "DX lead to work with Biên"}, {"id": "GEN-19", "category": "General operations", "document": "Controlled Gas Offspec Procedure", "level": "Department", "issued": "No", "responsible": "Offshore + Thuy", "expected": "Dec-26", "completion_pct": 50, "remark": "Ongoing"}, {"id": "GEN-20", "category": "General operations", "document": "Hot bolting procedure", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Jun-26", "completion_pct": 100, "remark": "Issued 27 May 25"}, {"id": "GEN-21", "category": "General operations", "document": "Housekeeping Guidelines", "level": "Department", "issued": "Yes", "responsible": "Offshore", "expected": "Dec-26", "completion_pct": 100, "remark": "Issued on 11 Jan 25"}, {"id": "GEN-22", "category": "General operations", "document": "Lifeboat Launching Recovery and Stowage", "level": "Department", "issued": "No", "responsible": "NN Thanh", "expected": "Dec-26", "completion_pct": 50, "remark": "Waiting for lifeboat manual from vendor"}, {"id": "GEN-23", "category": "General operations", "document": "Laboratory Operations General", "level": "Department", "issued": "Yes", "responsible": "Thuy + Offshore", "expected": "Dec-26", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-24", "category": "General operations", "document": "Lab sampling and Testing", "level": "Department", "issued": "No", "responsible": "Thuy + Offshore", "expected": "Dec-26", "completion_pct": 65, "remark": "Preparation ongoing"}, {"id": "GEN-25", "category": "General operations", "document": "Control Override / Bypass / Suppression Management", "level": "Department", "issued": "Yes", "responsible": "HT Kiet + Offshore", "expected": "Dec-26", "completion_pct": 100, "remark": "On E-office"}, {"id": "GEN-26", "category": "General operations", "document": "Alarm & Trip Setting Procedure", "level": "Department", "issued": "Yes", "responsible": "HT Kiet + Thuy", "expected": "Dec-26", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-27", "category": "General operations", "document": "Pigging and batch pigging procedure", "level": "Department", "issued": "No", "responsible": "Guy NT", "expected": "Dec-27", "completion_pct": 0, "remark": "Discussing with potential vendors (Rosen, TDWilliamson, …)"}, {"id": "GEN-28", "category": "General operations", "document": "Pressure Safety Valve Testing and Recertification", "level": "Department", "issued": "Yes", "responsible": "TN Nguyen", "expected": "Jan-27", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-29", "category": "General operations", "document": "E&I CFT", "level": "Department", "issued": "Yes", "responsible": "E&I Sup", "expected": "Jan-27", "completion_pct": 100, "remark": "Issued"}, {"id": "GEN-30", "category": "General operations", "document": "WH CFT", "level": "Department", "issued": "No", "responsible": "WH Sup", "expected": "Jan-27", "completion_pct": 75, "remark": "Reviewing"}, {"id": "GEN-31", "category": "General operations", "document": "P&P Critical Function Testing", "level": "Department", "issued": "No", "responsible": "Offshore", "expected": "Jan-27", "completion_pct": 75, "remark": "Reviewing"}], "packages_no_pr": [{"dimension": "status", "category": "Open", "count": 19}, {"dimension": "status", "category": "PR Request", "count": 7}, {"dimension": "status", "category": "Screening", "count": 7}, {"dimension": "priority", "category": "Priority 1", "count": 3}, {"dimension": "priority", "category": "Priority 2", "count": 8}, {"dimension": "priority", "category": "Priority 3", "count": 15}, {"dimension": "scr_timing", "category": "This month", "count": 1}, {"dimension": "scr_timing", "category": "Next month", "count": 2}, {"dimension": "scr_timing", "category": "Not set", "count": 16}], "pr_pipeline": [{"stage": "1 CSP Preparation", "status": "Near-late", "count": 1}, {"stage": "1 CSP Preparation", "status": "On time", "count": 1}, {"stage": "2 CSP Approval", "status": "Late", "count": 1}, {"stage": "2 CSP Approval", "status": "On time", "count": 1}, {"stage": "3 Bidding", "status": "Near-late", "count": 1}, {"stage": "3 Bidding", "status": "On time", "count": 1}, {"stage": "4 Evaluation", "status": "Late", "count": 1}, {"stage": "4 Evaluation", "status": "On time", "count": 2}, {"stage": "5 TCEAR Approval", "status": "Late", "count": 1}, {"stage": "6 Contract Signing", "status": "On time", "count": 1}], "cmms": [{"package": "EPCI#2", "actual_pct": 82.11, "plan_pct": 85.0}, {"package": "EPCI#1", "actual_pct": 41.58, "plan_pct": 42.3}], "workstreams": [{"area": "Manpower", "item": "Vacant positions", "status": "Document Control, OIM, HSE, FSO"}, {"area": "Applications", "item": "PDMS", "status": "Technical evaluation"}, {"area": "Applications", "item": "AIMS", "status": "TCEAR"}, {"area": "Applications", "item": "OSCC", "status": "ITB"}, {"area": "Applications", "item": "HRIS", "status": "Platform built (production launch); preparing test and data population"}, {"area": "Applications", "item": "EAM/SAP", "status": "Training and UAT phase 2 completed (Plant maintenance, Inventory & Warehouse); preparing phase 3 kick-off (KPI, reports)"}, {"area": "Applications", "item": "OMS", "status": "Phase 1 blueprint completed; platform development continuing"}, {"area": "Logistics & services", "item": "Helicopter", "status": "Combine with DCD's contract"}, {"area": "Logistics & services", "item": "Supply vessel, FCB, security boat", "status": "ITB"}, {"area": "Logistics & services", "item": "Vessel inspection", "status": "Combine with DCD to 2030"}, {"area": "Logistics & services", "item": "MGO", "status": "Change to contract"}, {"area": "Logistics & services", "item": "Crew change service to Nam Can", "status": "Raise PIA, PR"}, {"area": "Logistics & services", "item": "Catering services", "status": "No update in report"}, {"area": "Coordination", "item": "Coordination procedure", "status": "Being split into 2 procedures; parties to review and complete by 31 Oct"}, {"area": "Coordination", "item": "Production profile", "status": "Sales gas capability 73 MMscfd (SSF) from Sep-27, rising to about 170 MMscfd (75%) by Nov-27 vs total sales gas requirement"}, {"area": "Commissioning", "item": "Offshore preservation", "status": "Findings → punch list → close out"}, {"area": "Commissioning", "item": "Installation, pre-com, com", "status": "E-house, HVAC, Crane, FM200, LQ UPS"}], "permits": [{"permit": "Frequency certificate for FSO DMR (CPP)", "facility": "CPP – FSO", "authority": "Radio Frequency Authority (ARFM)", "issue_date": "2025-07-31", "expiry_date": "2028-07-30", "renewal_date": "2028-02-01", "status": "Issued"}, {"permit": "Frequency certificate for FSO DMR (LQ)", "facility": "LQ – FSO", "authority": "Radio Frequency Authority (ARFM)", "issue_date": "2025-07-31", "expiry_date": "2028-07-30", "renewal_date": "2028-02-01", "status": "Issued"}, {"permit": "UHF radio frequency license", "facility": "CPP", "authority": "Radio Frequency Authority (ARFM)", "issue_date": "2025-07-21", "expiry_date": "2028-07-20", "renewal_date": "2028-01-22", "status": "Issued"}, {"permit": "Frequency licenses for temporary DMRs", "facility": "AQWA, KLWA, KLWB, CVWA", "authority": "Radio Frequency Authority (ARFM)", "issue_date": "2025-08-13", "expiry_date": "2027-08-12", "renewal_date": null, "status": "Temporary"}, {"permit": "Frequency license for VHF Airband (CPP, LQ)", "facility": "CPP, LQ", "authority": "Radio Frequency Authority (ARFM)", "issue_date": null, "expiry_date": null, "renewal_date": null, "status": "Waiting for helideck license"}, {"permit": "Frequency license for NDB (LQ)", "facility": "LQ", "authority": "Radio Frequency Authority (ARFM)", "issue_date": null, "expiry_date": null, "renewal_date": null, "status": "Waiting for helideck license"}, {"permit": "FSO certificate (class & flag state)", "facility": "FSO", "authority": "PPS", "issue_date": null, "expiry_date": null, "renewal_date": null, "status": "No update in report"}, {"permit": "Helideck operation approval", "facility": "Helideck", "authority": "MM Marine", "issue_date": null, "expiry_date": null, "renewal_date": null, "status": "No update in report"}, {"permit": "ISPS", "facility": "Marine", "authority": "MM Marine", "issue_date": null, "expiry_date": null, "renewal_date": null, "status": "No update in report"}, {"permit": "Port license", "facility": "Marine", "authority": "MM Marine", "issue_date": null, "expiry_date": null, "renewal_date": null, "status": "No update in report"}], "precom_plan": [{"activity": "Pre-commissioning Hydraulic Power Unit (with TUTU) (CPPT-04-01)", "plan_start": "2027-01-04", "plan_finish": "2027-01-13", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Inlet Separators Train 1 (CPPT-10-01)", "plan_start": "2027-01-06", "plan_finish": "2027-01-23", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Production & Pipeline Compressor Train 1 (CPPT-11-01)", "plan_start": "2026-12-15", "plan_finish": "2026-12-25", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Production Compressor Suction Train 1 (CPPT-11-02)", "plan_start": "2026-12-03", "plan_finish": "2026-12-12", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Production Compressor Discharge Train 1 (CPPT-11-03)", "plan_start": "2027-01-05", "plan_finish": "2027-01-08", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Gas Turbine Lube Oil Train 1 (CPPT-11-04)", "plan_start": "2026-10-13", "plan_finish": "2026-11-16", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning UCP for Production & Pipeline Compressor Train 1 (CPPT-11-05)", "plan_start": "2026-11-16", "plan_finish": "2026-12-08", "actual_start": null, "actual_finish": null}, {"activity": "Comm Train 1 – Production & Pipeline Compressor System (FTP)", "plan_start": "2027-01-09", "plan_finish": "2027-02-19", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Glycol Dehydration Train 1 (CPPT-12-01)", "plan_start": "2027-01-04", "plan_finish": "2027-01-23", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Glycol Regeneration Train 1 (CPPT-12-02)", "plan_start": "2026-11-02", "plan_finish": "2026-11-19", "actual_start": null, "actual_finish": null}, {"activity": "Comm Train 1 – Glycol Regeneration (FTP)", "plan_start": "2027-01-25", "plan_finish": "2027-02-26", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Expander Suction Train 1 (CPPT-13-01)", "plan_start": "2026-10-31", "plan_finish": "2026-11-13", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Turbo Expander Package Train 1 (CPPT-13-02)", "plan_start": "2026-10-31", "plan_finish": "2026-11-11", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Expander Discharge Train 1 (CPPT-13-03)", "plan_start": "2026-10-31", "plan_finish": "2026-11-13", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Booster Compressor Suction & Discharge Train 1 (CPPT-13-04)", "plan_start": "2026-11-14", "plan_finish": "2026-11-23", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning Turbo Expander Lube Oil Cooler Train 1 (CPPT-13-05) incl. oil flushing", "plan_start": "2026-10-31", "plan_finish": "2026-11-23", "actual_start": null, "actual_finish": null}, {"activity": "Pre-commissioning UCP – Turbo Expander Package Train 1 (CPPT-13-06)", "plan_start": "2026-10-17", "plan_finish": "2026-10-26", "actual_start": null, "actual_finish": null}], "startup_sequence": [{"step": 1, "phase": "Preparation", "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor"}, {"step": 2, "phase": "Start up CPP", "action": "Start 1 GTG on diesel mode; start CPP air compressor"}, {"step": 3, "phase": "First well", "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea"}, {"step": 4, "phase": "Pressurize CPP", "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system"}, {"step": 5, "phase": "Gas & fuel gas", "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)"}, {"step": 6, "phase": "Second well", "action": "Open 2nd AQWA well to test; switch 1st well out of test"}, {"step": 7, "phase": "GTG to fuel gas", "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation"}, {"step": 8, "phase": "Third well", "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test"}, {"step": 9, "phase": "Ramp up wells", "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells"}, {"step": 10, "phase": "GTC & WHRU", "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration"}, {"step": 11, "phase": "Dew point", "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed"}, {"step": 12, "phase": "MRU", "action": "Start MRU; close bypass line when gas dew point is on spec"}, {"step": 13, "phase": "Export gas", "action": "Export gas to export gas pipeline"}, {"step": 14, "phase": "Condensate & PW", "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO"}], "readiness": [{"area": "Manpower", "order": 1, "status_override": null, "comment": null, "owner": null}, {"area": "Training & Competence", "order": 2, "status_override": null, "comment": null, "owner": null}, {"area": "ORR Checklist", "order": 3, "status_override": null, "comment": null, "owner": null}, {"area": "Procedures", "order": 4, "status_override": null, "comment": null, "owner": null}, {"area": "Contracts & Procurement", "order": 5, "status_override": null, "comment": null, "owner": null}, {"area": "Permits & Licences", "order": 6, "status_override": null, "comment": null, "owner": null}, {"area": "Applications & Systems", "order": 7, "status_override": null, "comment": null, "owner": null}, {"area": "Commissioning & Start-up", "order": 8, "status_override": null, "comment": null, "owner": null}], "milestones": [{"milestone": "Pre-commissioning start (CPP Train 1)", "order": 1, "plan_date": "2026-10-13", "actual_date": null, "is_target": false, "note": "Theo master plan pre-com (hoạt động sớm nhất)"}, {"milestone": "ORR plan 95%", "order": 2, "plan_date": "2027-06-30", "actual_date": null, "is_target": false, "note": "Theo đường kế hoạch ORR (06/2027 = 95%)"}, {"milestone": "Mechanical Completion", "order": 3, "plan_date": null, "actual_date": null, "is_target": false, "note": "Cần điền ngày kế hoạch"}, {"milestone": "RFSU – Ready for Start-Up", "order": 4, "plan_date": null, "actual_date": null, "is_target": false, "note": "Cần điền ngày kế hoạch"}, {"milestone": "First Gas (sales gas)", "order": 5, "plan_date": "2027-09-01", "actual_date": null, "is_target": true, "note": "Tạm theo production profile slide 16 (SSF 73 MMscfd từ 09/2027) – cần xác nhận ngày chính thức"}], "_updated_at": "2026-10-21T00:00:00Z"};
+  // Language: ?lang=en|vi in the address wins, else the viewer's last choice, else English.
+  var VI = {"ui": {"OPS Readiness Dashboard": "Dashboard Sẵn sàng Vận hành", "PQPOC · Operations Department": "PQPOC · Phòng Vận hành Khai thác", "Operations Readiness Dashboard": "Dashboard Sẵn sàng Vận hành", "Report": "Báo cáo", "First Gas": "First Gas", "days": "ngày", "Print or save as PDF": "In hoặc lưu thành PDF", "Print / PDF": "In / PDF", "Language": "Ngôn ngữ", "Summary": "Tóm tắt", "Manpower in": "Nhân sự tháng", "people against plan; OPS teams ORR checklist at": "người so với kế hoạch; ORR checklist các team OPS đạt", "vs plan": "so với kế hoạch", "PRs late.": "PR trễ hạn.", "Report sections": "Các phần báo cáo", "Overview": "Tổng quan", "Manpower & training": "Nhân sự & đào tạo", "ORR checklist": "ORR checklist", "Procedures": "Quy trình", "Contracts, applications & permits": "Hợp đồng, ứng dụng & giấy phép", "Commissioning & start-up": "Chạy thử & khởi động", "Readiness status": "Trạng thái sẵn sàng", "On track": "Đúng tiến độ", "At risk": "Có rủi ro", "Off track": "Chậm tiến độ", "Not assessed": "Chưa đánh giá", "Key figures": "Chỉ số chính", "OPS manpower ·": "Nhân sự OPS ·", "of monthly plan": "kế hoạch tháng", "OPS teams ORR checklist ·": "ORR checklist các team OPS ·", "Plan": "KH", "CBTA development (CPP & WHP)": "Phát triển CBTA (CPP & WHP)", "Theory assessment": "Đánh giá lý thuyết", "· OJT": "· OJT", "Mandatory training · offshore": "Đào tạo bắt buộc · offshore", "courses completed": "khóa đã hoàn thành", "HSE · general operations procedures": "Quy trình HSE · vận hành chung", "procedures not yet issued": "quy trình chưa ban hành", "PRs in progress": "PR đang xử lý", "late ·": "trễ ·", "near-late ·": "sắp trễ ·", "packages without PR": "gói chưa có PR", "Attention required": "Cần lưu ý", "Items picked automatically from the data: late, overdue, expiring or below threshold.": "Tự động lọc từ số liệu: trễ hạn, quá hạn, sắp hết hạn hoặc dưới ngưỡng.", "Key milestones": "Mốc tiến độ chính", "Plan dates from the milestones table. Dates still to be confirmed show as TBC.": "Ngày kế hoạch lấy từ bảng mốc tiến độ. Mốc chưa có ngày hiển thị là “Chưa chốt”.", "Manpower ramp-up: plan vs actual": "Tăng cường nhân sự: kế hoạch và thực tế", "Headcount by month. Dashed line is plan; the vertical marker is the report date.": "Số người theo tháng. Đường đứt nét là kế hoạch; vạch dọc là ngày báo cáo.", "Staff group": "Nhóm nhân sự", "Total": "Tổng", "Onshore": "Trên bờ", "Offshore": "Ngoài khơi", "OPS teams ORR checklist vs plan": "ORR checklist các team OPS so với kế hoạch", "Weighted % complete by month. Dashed line is plan, solid line is actual.": "% hoàn thành có trọng số theo tháng. Đường đứt nét là kế hoạch, đường liền là thực tế.", "Current staffing": "Định biên hiện tại", "Filled / required positions at the report date.": "Số vị trí đã có / cần có tại ngày báo cáo.", "Vacant positions:": "Vị trí còn trống:", "Mandatory training – PQPOC offshore staff": "Đào tạo bắt buộc – nhân sự offshore PQPOC", "Courses completed vs required by the HSE training matrix.": "Số khóa đã hoàn thành so với yêu cầu của HSE training matrix.", "CBTA module development": "Phát triển module CBTA", "Modules by status: completed, in review, in development.": "Số module theo trạng thái: hoàn thành, đang soát xét, đang biên soạn.", "CBTA by team: development and assessment": "CBTA theo team: biên soạn và đánh giá", "Module development and theory / OJT assessment progress for each team.": "Tiến độ biên soạn module và đánh giá lý thuyết / OJT của từng team.", "Platform": "Giàn", "Team": "Team", "Modules": "Module", "Completed": "Hoàn thành", "In development": "Đang biên soạn", "In review": "Đang soát xét", "% developed": "% đã biên soạn", "% theory assessed": "% đánh giá lý thuyết", "OJT modules": "Module OJT", "% OJT": "% OJT", "Vendor training schedule": "Lịch đào tạo vendor", "Courses by month. Past months are dimmed.": "Khóa đào tạo theo tháng. Các tháng đã qua được làm mờ.", "Whole checklist ·": "Toàn bộ checklist ·", "items": "hạng mục", "People ·": "Con người ·", "Plant ·": "Thiết bị ·", "Process ·": "Quy trình ·", "Progress by OPS team ·": "Tiến độ theo team OPS ·", "Bar is actual %, black tick is plan %. The figure on the right is the gap in percentage points.": "Thanh là % thực tế, vạch đen là % kế hoạch. Số bên phải là chênh lệch tính bằng điểm phần trăm.", "Weight and workload by team": "Trọng số và khối lượng theo team", "Total and completed activities; weights roll up into the overall %.": "Tổng số và số hoạt động đã hoàn thành; trọng số dùng để tính % chung.", "Weight": "Trọng số", "Activities": "Hoạt động", "Final plan": "KH cuối kỳ", "Checklist by element (People · Plant · Process)": "Checklist theo hạng mục (Con người · Thiết bị · Quy trình)", "Sorted from lowest %. Elements below 50% are shown in red.": "Sắp xếp từ % thấp nhất. Hạng mục dưới 50% hiển thị màu đỏ.", "Code": "Mã", "Element": "Hạng mục", "Group": "Nhóm", "Items": "Số mục", "Progress": "Tiến độ", "HSE procedures ·": "Quy trình HSE ·", "documents": "tài liệu", "not yet issued": "chưa ban hành", "General operations procedures ·": "Quy trình vận hành chung ·", "Procedure register": "Danh mục quy trình", "Sorted by % complete, lowest first, so open procedures sit at the top.": "Sắp xếp theo % hoàn thành từ thấp đến cao, quy trình chưa xong nằm trên cùng.", "Search name, owner, remark…": "Tìm theo tên, người phụ trách, ghi chú…", "Search procedures": "Tìm quy trình", "Procedure type": "Loại quy trình", "All types": "Tất cả các loại", "General operations": "Vận hành chung", "Status": "Trạng thái", "All statuses": "Tất cả trạng thái", "Not issued": "Chưa ban hành", "Issued": "Đã ban hành", "Document": "Tài liệu", "Owner": "Phụ trách", "Due": "Hạn", "Remark": "Ghi chú", "PRs in progress by stage": "PR đang xử lý theo bước", "PRs. Each block is one PR, coloured by schedule status.": "PR. Mỗi ô là một PR, tô màu theo tình trạng tiến độ.", "Packages without PR": "Gói chưa có PR", "packages in preparation, by status, priority and expected SCR timing.": "gói đang chuẩn bị, theo trạng thái, mức ưu tiên và thời điểm SCR dự kiến.", "Applications": "Ứng dụng", "Status of operations software systems.": "Tình trạng các hệ thống phần mềm vận hành.", "CMMS (OA) – actual vs plan %": "CMMS (OA) – % thực tế so với kế hoạch", "Logistics, services & coordination": "Hậu cần, dịch vụ & điều phối", "Contracting route and next step.": "Hình thức hợp đồng và bước tiếp theo.", "Offshore platform permit register": "Danh mục giấy phép giàn ngoài khơi", "Permits, issuing authority, issue and expiry dates, and status.": "Giấy phép, cơ quan cấp, ngày cấp, ngày hết hạn và trạng thái.", "Permit": "Giấy phép", "Applies to": "Áp dụng cho", "Authority": "Cơ quan cấp", "Expires": "Hết hạn", "Renew by": "Gia hạn trước", "CPP pre-commissioning master plan (Train 1)": "Kế hoạch tổng thể pre-commissioning CPP (Train 1)", "Planned start – finish. Green: completed (has an actual finish date); red: inside its planned window on the report date; amber: starts within the next 30 days.": "Bắt đầu – kết thúc theo kế hoạch. Xanh: đã hoàn thành (có ngày kết thúc thực tế); đỏ: đang trong khung kế hoạch tại ngày báo cáo; vàng: bắt đầu trong 30 ngày tới.", "Preservation, installation & commissioning": "Bảo quản, lắp đặt & chạy thử", "CPP start-up sequence": "Trình tự khởi động CPP", "Summarised from the CPP start-up block diagram.": "Tóm tắt từ sơ đồ khối khởi động CPP."}, "data": {"Manpower": "Nhân sự", "Training & Competence": "Đào tạo & năng lực", "ORR Checklist": "ORR checklist", "Procedures": "Quy trình", "Contracts & Procurement": "Hợp đồng & mua sắm", "Permits & Licences": "Giấy phép", "Applications & Systems": "Ứng dụng & hệ thống", "Commissioning & Start-up": "Chạy thử & khởi động", "Offshore": "Ngoài khơi", "Onshore": "Trên bờ", "Outsource": "Thuê ngoài", "1 CSP Preparation": "1 Chuẩn bị CSP", "2 CSP Approval": "2 Phê duyệt CSP", "3 Bidding": "3 Đấu thầu", "4 Evaluation": "4 Đánh giá thầu", "5 TCEAR Approval": "5 Phê duyệt TCEAR", "6 Contract Signing": "6 Ký hợp đồng", "Open": "Mở", "Screening": "Sàng lọc", "PR Request": "Yêu cầu PR", "Priority 1": "Ưu tiên 1", "Priority 2": "Ưu tiên 2", "Priority 3": "Ưu tiên 3", "Not set": "Chưa xác định", "This month": "Tháng này", "Next month": "Tháng sau", "Issued": "Đã cấp", "Temporary": "Tạm thời", "No update in report": "Chưa cập nhật trong báo cáo", "Waiting for helideck license": "Chờ giấy phép sân bay trực thăng", "Catering services": "Dịch vụ suất ăn", "Crew change service to Nam Can": "Dịch vụ đổi ca đi Năm Căn", "Helicopter": "Trực thăng", "Supply vessel, FCB, security boat": "Tàu dịch vụ, FCB, tàu an ninh", "Vessel inspection": "Kiểm tra tàu", "Coordination procedure": "Quy trình phối hợp", "Production profile": "Biểu đồ khai thác", "Installation, pre-com, com": "Lắp đặt, pre-com, com", "Offshore preservation": "Bảo quản ngoài khơi", "Internal": "Nội bộ", "Confidential": "Mật", "Restricted": "Hạn chế", "Public": "Công khai", "PEOPLE": "Con người", "PLANT": "Thiết bị", "PROCESS": "Quy trình", "Preparation": "Chuẩn bị", "Start up CPP": "Khởi động CPP", "First well": "Giếng thứ nhất", "Pressurize CPP": "Tăng áp CPP", "Gas & fuel gas": "Khí & khí nhiên liệu", "Second well": "Giếng thứ hai", "GTG to fuel gas": "Chuyển GTG sang khí nhiên liệu", "Third well": "Giếng thứ ba", "Ramp up wells": "Mở thêm giếng", "GTC & WHRU": "GTC & WHRU", "Dew point": "Điểm sương", "MRU": "MRU", "Export gas": "Xuất khí", "Condensate & PW": "Condensate & nước khai thác", "Pre-commissioning start (CPP Train 1)": "Bắt đầu pre-commissioning (CPP Train 1)", "ORR plan 95%": "ORR đạt 95% theo kế hoạch", "First Gas (sales gas)": "First Gas (khí thương phẩm)", "Vacant positions": "Vị trí còn trống"}}, lang = 'en';
+  try { if (localStorage.getItem('ops-lang') === 'vi') lang = 'vi'; } catch (e) {}
+  var qLang = (location.search.match(/[?&]lang=(en|vi)(?:&|$)/) || [])[1]; if (qLang) lang = qLang;
+  if (lang === 'vi') {
+    document.documentElement.lang = 'vi';
+    document.title = VI.ui[document.title] || document.title;
+    d3.formatDefaultLocale({ decimal: ',', thousands: '.', grouping: [3], currency: ['', ' ₫'], minus: '−' });
+  }
+  var own = function (o, k) { return k != null && Object.prototype.hasOwnProperty.call(o, k); };
+  function translateStatic(root) {
+    if (lang !== 'vi' || !root) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), n, list = [];
+    while ((n = w.nextNode())) list.push(n);
+    list.forEach(function (n) {
+      var p = n.parentNode, t = n.nodeValue, k = t.trim();
+      if (!k || !p || p.closest('script,style')) return;
+      var v = p.hasAttribute('data-vi') ? p.getAttribute('data-vi') : own(VI.ui, k) ? VI.ui[k] : null;
+      if (v == null) return;
+      var i = t.indexOf(k); n.nodeValue = t.slice(0, i) + v + t.slice(i + k.length);
+    });
+    root.querySelectorAll('[title],[placeholder],[aria-label]').forEach(function (e) {
+      ['title', 'placeholder', 'aria-label'].forEach(function (a) { var v = (e.getAttribute(a) || '').trim(); if (own(VI.ui, v)) e.setAttribute(a, VI.ui[v]); });
+    });
+  }
+  function setLang(l) {
+    try { localStorage.setItem('ops-lang', l); } catch (e) {}
+    var q = new URLSearchParams(location.search); q.set('lang', l);
+    location.assign(location.pathname + '?' + q.toString() + location.hash);
+  }
   var DATA = FALLBACK, live = false;
   function getJSON(url, cached) {
     try {
@@ -271,7 +307,11 @@ window.dash = (function () {
     colors: ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)', 'var(--s7)', 'var(--s8)'],
     setLink: function (n) { try { history.replaceState(null, '', '#' + n); } catch (e) {} },
     params: function () { return {}; }, setParams: function () {}, resetParams: function () {}, refresh: function () {},
-    _redraw: function () { fns.forEach(function (f) { f(); }); }
+    _redraw: function () { fns.forEach(function (f) { f(); }); },
+    lang: lang, setLang: setLang, _translateStatic: translateStatic,
+    // L('English', 'Tiếng Việt') picks the text for the current language; D(value) translates a known data label.
+    L: function (en, vi) { return lang === 'vi' ? vi : en; },
+    D: function (s) { return lang === 'vi' && own(VI.data, s) ? VI.data[s] : s; }
   };
 })();
 var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __rt = setTimeout(dash._redraw, 150); });
@@ -298,11 +338,16 @@ var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __
         <span class="ops-count-date" id="countdown-date">—</span>
       </div>
       <div class="ops-mast-tools">
-        <div class="ops-picker" id="report-picker" hidden>
-          <label for="report-pick">Report</label>
-          <select id="report-pick"></select>
+        <div class="ops-lang" id="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" title="English" aria-pressed="true">EN</button><button type="button" data-lang="vi" title="Tiếng Việt" aria-pressed="false">VI</button>
         </div>
-        <button class="ops-btn" id="print-btn" type="button" title="Print or save as PDF">Print / PDF</button>
+        <div class="ops-mast-actions">
+          <div class="ops-picker" id="report-picker" hidden>
+            <label for="report-pick" data-vi="Kỳ báo cáo">Report</label>
+            <select id="report-pick"></select>
+          </div>
+          <button class="ops-btn" id="print-btn" type="button" title="Print or save as PDF">Print / PDF</button>
+        </div>
       </div>
     </div>
   </header>
@@ -525,7 +570,7 @@ var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __
         <p class="ops-note">Permits, issuing authority, issue and expiry dates, and status.</p>
         <div class="ops-tablebox">
           <table id="table-permits" data-source="permits" data-row-key="permit">
-            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority</th><th data-field="issue_date">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
+            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
@@ -556,6 +601,7 @@ var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __
   </section>
 </div>
 
+<script>dash._translateStatic(document.getElementById('dash-root'));</script>
 <script>(function(){
 // ---- calculations ----
 dash.calc('kpi_manpower', {
@@ -638,15 +684,18 @@ dash.calc('orr_team_gap', {
 <script>(function(){
 // ---- helpers shared by the drawing script ----
 const H = (window.opsH = {});
+const L = dash.L;
 H.pct = d3.format('.1%');
 H.pct0 = d3.format('.0%');
 H.p100 = (v) => (v == null ? '—' : d3.format('.1f')(v) + '%');
 H.num = d3.format(',');
-H.signPts = (v) => (v > 0 ? '+' : v < 0 ? '−' : '±') + d3.format('.1f')(Math.abs(v)) + ' pts';
+H.signPts = (v) => (v > 0 ? '+' : v < 0 ? '−' : '±') + d3.format('.1f')(Math.abs(v)) + L(' pts', ' điểm');
 H.month = (s) => { const [y, m] = s.split('-').map(Number); return new Date(Date.UTC(y, (m || 1) - 1, 1)); };
 H.day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d)); };
-H.fmtMonth = d3.utcFormat('%b %Y');
-H.fmtDay = d3.utcFormat('%-d %b %Y');
+H.f1 = d3.format('.1f');
+H.fmtMonth = d3.utcFormat(L('%b %Y', '%m/%Y'));
+H.fmtMonthShort = d3.utcFormat(L('%b %y', '%m/%y'));
+H.fmtDay = d3.utcFormat(L('%-d %b %Y', '%d/%m/%Y'));
 H.REPORT_DATE = H.day(((dash.data('meta').data || [])[0] || {}).report_date || new Date().toISOString().slice(0, 10));
 H.el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 H.state = (id, el) => {
@@ -654,7 +703,7 @@ H.state = (id, el) => {
   if (d.status === 'ok') { el.classList.remove('dash-skeleton'); return d.data; }
   if (d.status === 'loading') { el.classList.add('dash-skeleton'); el.replaceChildren(); return null; }
   el.classList.remove('dash-skeleton');
-  el.replaceChildren(H.el('div', 'ops-empty', 'Failed to load'));
+  el.replaceChildren(H.el('div', 'ops-empty', L('Failed to load', 'Không tải được dữ liệu')));
   return null;
 };
 H.fill = (sel, src, fmt) => {
@@ -700,7 +749,7 @@ H.bar = (label, frac, color, val, tickFrac) => {
 })();</script>
 
 <script>(function(){
-const H = window.opsH;
+const H = window.opsH, L = dash.L, D = dash.D;
 let mpKey = 'total';
 let currentPage = 'overview';
 const pages = ['overview', 'people', 'orr', 'procedures', 'contracts', 'startup'];
@@ -732,7 +781,7 @@ function drawKpis() {
   H.fill('[data-source="packages_summary"]', 'packages_summary', {});
   H.fill('[data-source="orr_groups"]', 'orr_groups', { progress_pct: H.p100 });
   const mp = dash.data('kpi_manpower').data?.[0], orr = dash.data('kpi_orr').data?.[0];
-  document.querySelectorAll('.ops-report-date').forEach((e) => (e.textContent = d3.utcFormat('%-d %b %Y')(H.REPORT_DATE)));
+  document.querySelectorAll('.ops-report-date').forEach((e) => (e.textContent = H.fmtDay(H.REPORT_DATE)));
   document.querySelectorAll('.ops-mp-month').forEach((e) => (e.textContent = mp ? H.fmtMonth(H.month(mp.month)) : '—'));
   document.querySelectorAll('.ops-orr-month').forEach((e) => (e.textContent = orr ? H.fmtMonth(H.month(orr.month)) : '—'));
 }
@@ -796,13 +845,13 @@ function drawManpower() {
   if (!data) { leg.replaceChildren(); box.querySelectorAll('svg').forEach((s) => s.remove()); return; }
   const rows = data.map((d) => ({ ...d, m: H.month(d.month) }));
   const series = [
-    { key: mpKey + '_plan', label: 'Plan', short: 'Plan', color: 'var(--cds-chart-muted)', dashed: true },
-    { key: mpKey + '_actual', label: 'Actual', short: 'Actual', color: dash.colors[0] },
+    { key: mpKey + '_plan', label: L('Plan', 'Kế hoạch'), short: L('Plan', 'KH'), color: 'var(--cds-chart-muted)', dashed: true },
+    { key: mpKey + '_actual', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0] },
   ];
   leg.replaceChildren(...series.map((s) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = s.color; sp.append(sw, s.label); return sp; }));
   lineChart(box, {
     rows, xKey: 'm', series, xDomain: d3.extent(rows, (r) => r.m), yMax: d3.max(rows, (r) => Math.max(r[series[0].key] ?? 0, r[series[1].key] ?? 0)),
-    yFmt: H.num, tickFmt: d3.utcFormat('%Y'), ticks: d3.utcYear.every(1), refX: H.REPORT_DATE, refLabel: 'Report ' + H.fmtDay(H.REPORT_DATE),
+    yFmt: H.num, tickFmt: d3.utcFormat('%Y'), ticks: d3.utcYear.every(1), refX: H.REPORT_DATE, refLabel: L('Report ', 'Báo cáo ') + H.fmtDay(H.REPORT_DATE),
   });
 }
 
@@ -813,9 +862,9 @@ function drawOrrCurve() {
   const rows = data.map((d) => ({ ...d, m: H.month(d.month) }));
   lineChart(box, {
     rows, xKey: 'm', xDomain: d3.extent(rows, (r) => r.m), yMax: 100, yFmt: (v) => d3.format('.0f')(v) + '%',
-    tickFmt: d3.utcFormat('%b %y'), ticks: d3.utcMonth.every(box.clientWidth < 420 ? 2 : 1),
-    series: [{ key: 'plan_pct', label: 'Plan', short: 'Plan', color: 'var(--cds-chart-muted)', dashed: true },
-             { key: 'actual_pct', label: 'Actual', short: 'Actual', color: dash.colors[0] }],
+    tickFmt: H.fmtMonthShort, ticks: d3.utcMonth.every(box.clientWidth < 420 ? 2 : 1),
+    series: [{ key: 'plan_pct', label: L('Plan', 'Kế hoạch'), short: L('Plan', 'KH'), color: 'var(--cds-chart-muted)', dashed: true },
+             { key: 'actual_pct', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0] }],
   });
 }
 
@@ -828,7 +877,7 @@ function drawStaffing() {
   if (!data) return;
   box.replaceChildren(...data.map((d) => {
     const v = H.el('span'); v.append(H.el('b', null, H.num(d.filled)), ' / ' + H.num(d.required));
-    return H.bar(d.group, d.filled / d.required, d.filled / d.required < 0.5 ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
+    return H.bar(D(d.group), d.filled / d.required, d.filled / d.required < 0.5 ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
   }));
 }
 
@@ -848,7 +897,7 @@ function drawCbta() {
   const box = document.getElementById('bars-cbta');
   const data = H.state('cbta', box), prog = dash.data('cbta_progress');
   const cols = [dash.colors[0], dash.colors[2], 'var(--cds-chart-muted)'];
-  document.getElementById('cbta-legend').replaceChildren(...['Completed', 'In review', 'In development'].map((n, i) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = cols[i]; sp.append(sw, n); return sp; }));
+  document.getElementById('cbta-legend').replaceChildren(...[L('Completed', 'Hoàn thành'), L('In review', 'Đang soát xét'), L('In development', 'Đang biên soạn')].map((n, i) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = cols[i]; sp.append(sw, n); return sp; }));
   if (!data || prog.status !== 'ok') return;
   box.replaceChildren(...data.map((d) => {
     const row = H.el('div', 'ops-bar');
@@ -878,7 +927,7 @@ function drawVendor() {
   const groups = d3.groups(data, (d) => d.period);
   box.replaceChildren(...groups.map(([p, rows]) => {
     const card = H.el('div', 'ops-month');
-    const label = p.length === 4 ? 'Year ' + p : H.fmtMonth(H.month(p));
+    const label = p.length === 4 ? L('Year ', 'Năm ') + p : H.fmtMonth(H.month(p));
     if (p.length > 4 && d3.utcMonth.offset(H.month(p), 1) <= d3.utcMonth.floor(H.REPORT_DATE)) card.classList.add('past');
     card.append(H.el('span', 'm', label), ...rows.map((r) => H.el('span', null, r.course)));
     return card;
@@ -915,7 +964,7 @@ function drawOrrElements() {
     f.style.width = r.progress_pct + '%'; f.style.background = r.progress_pct < 50 ? 'var(--cds-chart-status-critical)' : dash.colors[0]; t.append(f);
     bar.append(t, H.el('span', r.progress_pct < 50 ? 'ops-bad' : null, H.p100(r.progress_pct)));
     const td = H.el('td'); td.append(bar);
-    tr.append(H.el('td', null, r.code), H.el('td', null, r.element), H.el('td', 'hide-sm', r.group), H.el('td', 'num', H.num(r.items)), td);
+    tr.append(H.el('td', null, r.code), H.el('td', null, r.element), H.el('td', 'hide-sm', D(r.group)), H.el('td', 'num', H.num(r.items)), td);
     return tr;
   }));
 }
@@ -934,7 +983,7 @@ function drawProcedures() {
   tb.replaceChildren(...rows.map((r) => {
     const tr = H.el('tr');
     const c = r.completion_pct === 100 ? 'ops-good' : r.completion_pct === 0 ? 'ops-bad' : 'ops-warn';
-    const pill = H.el('span', 'ops-pill ' + c, r.completion_pct === 100 ? 'Issued' : r.completion_pct + '%');
+    const pill = H.el('span', 'ops-pill ' + c, r.completion_pct === 100 ? L('Issued', 'Đã ban hành') : r.completion_pct + '%');
     const td = H.el('td'); td.append(pill);
     tr.append(H.el('td', null, r.id), H.el('td', null, r.document), H.el('td', 'hide-sm', r.responsible), H.el('td', null, r.expected), td, H.el('td', 'hide-sm', r.remark));
     return tr;
@@ -946,7 +995,7 @@ function drawPr() {
   const box = document.getElementById('bars-pr');
   const data = H.state('pr_pipeline', box);
   const col = { 'Late': 'var(--cds-chart-status-critical)', 'Near-late': 'var(--color-warn)', 'On time': dash.colors[0] };
-  const vi = { 'Late': 'Late', 'Near-late': 'Near-late', 'On time': 'On time' };
+  const vi = { 'Late': L('Late', 'Trễ hạn'), 'Near-late': L('Near-late', 'Sắp trễ'), 'On time': L('On time', 'Đúng hạn') };
   document.getElementById('pr-legend').replaceChildren(...Object.keys(col).map((k) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = col[k]; sp.append(sw, vi[k]); return sp; }));
   if (!data) return;
   const max = d3.max(d3.rollups(data, (v) => d3.sum(v, (d) => d.count), (d) => d.stage), (d) => d[1]);
@@ -957,7 +1006,7 @@ function drawPr() {
       for (let i = 0; i < n; i++) { const b = H.el('div'); b.style.width = `calc(${100 / max}% - 2px)`; b.style.background = col[s]; b.style.borderRadius = '3px'; b.title = vi[s]; st.append(b); } });
     const total = d3.sum(rows, (r) => r.count);
     const v = H.el('div', 'ops-bar-val'); v.append(H.el('b', null, String(total)), ' PR');
-    row.append(H.el('div', 'ops-bar-label', stage), st, v);
+    row.append(H.el('div', 'ops-bar-label', D(stage)), st, v);
     return row;
   }));
 }
@@ -966,13 +1015,13 @@ function drawPackages() {
   const box = document.getElementById('packages');
   const data = H.state('packages_no_pr', box);
   if (!data) return;
-  const dims = [['status', 'Procurement status'], ['priority', 'Priority'], ['scr_timing', 'Expected SCR']];
+  const dims = [['status', L('Procurement status', 'Trạng thái mua sắm')], ['priority', L('Priority', 'Mức ưu tiên')], ['scr_timing', L('Expected SCR', 'SCR dự kiến')]];
   box.replaceChildren(...dims.map(([dim, title]) => {
     const wrap = H.el('div'); wrap.style.display = 'flex'; wrap.style.flexDirection = 'column'; wrap.style.gap = 'var(--cds-gap-xs)'; wrap.style.marginBottom = 'var(--cds-gap-md)';
     const rows = data.filter((d) => d.dimension === dim); const max = d3.max(rows, (d) => d.count);
     wrap.append(H.el('h3', null, title), ...rows.map((d) => {
-      const v = H.el('span'); v.append(H.el('b', null, String(d.count)), ' packages');
-      return H.bar(d.category, d.count / max, d.category === 'Priority 1' ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
+      const v = H.el('span'); v.append(H.el('b', null, String(d.count)), L(' packages', ' gói'));
+      return H.bar(D(d.category), d.count / max, d.category === 'Priority 1' ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
     }));
     return wrap;
   }));
@@ -980,7 +1029,7 @@ function drawPackages() {
 
 function listInto(id, rows) {
   const ul = document.getElementById(id);
-  ul.replaceChildren(...rows.map((r) => { const li = H.el('li'); li.append(H.el('span', 'k', r.item), H.el('span', null, r.status)); return li; }));
+  ul.replaceChildren(...rows.map((r) => { const li = H.el('li'); li.append(H.el('span', 'k', D(r.item)), H.el('span', null, D(r.status))); return li; }));
 }
 function drawWorkstreams() {
   const d = dash.data('workstreams');
@@ -996,7 +1045,7 @@ function drawCmms() {
   const data = H.state('cmms', box);
   if (!data) return;
   box.replaceChildren(...data.map((d) => {
-    const v = H.el('span'); v.append(H.el('b', null, H.p100(d.actual_pct)), ' / KH ' + H.p100(d.plan_pct));
+    const v = H.el('span'); v.append(H.el('b', null, H.p100(d.actual_pct)), L(' / plan ', ' / KH ') + H.p100(d.plan_pct));
     return H.bar(d.package, d.actual_pct / 100, dash.colors[0], v, d.plan_pct / 100);
   }));
 }
@@ -1008,7 +1057,7 @@ function drawPermits() {
   tb.replaceChildren(...d.data.map((r) => {
     const tr = H.el('tr');
     const c = r.status === 'Issued' ? 'ops-good' : r.status === 'Temporary' ? 'ops-warn' : r.status.startsWith('Waiting') ? 'ops-bad' : '';
-    const td = H.el('td'); td.append(H.el('span', 'ops-pill ' + c, r.status));
+    const td = H.el('td'); td.append(H.el('span', 'ops-pill ' + c, D(r.status)));
     const f = (s) => (s ? H.fmtDay(H.day(s)) : '—');
     tr.append(H.el('td', null, r.permit), H.el('td', 'hide-sm', r.facility), H.el('td', 'hide-sm', r.authority), H.el('td', null, f(r.issue_date)), H.el('td', null, f(r.expiry_date)), H.el('td', 'hide-sm', f(r.renewal_date)), td);
     return tr;
@@ -1027,7 +1076,7 @@ function drawGantt() {
   const soon = d3.utcDay.offset(H.REPORT_DATE, 30);
   const axisRow = H.el('div', 'ops-grow'); axisRow.append(H.el('div'));
   const axis = H.el('div', 'ops-gaxis');
-  months.forEach((m) => { const s = H.el('span', null, d3.utcFormat('%b %y')(m)); s.style.left = pos(d3.utcDay.offset(m, 15)) + '%'; axis.append(s); });
+  months.forEach((m) => { const s = H.el('span', null, H.fmtMonthShort(m)); s.style.left = pos(d3.utcDay.offset(m, 15)) + '%'; axis.append(s); });
   axisRow.append(axis);
   box.replaceChildren(axisRow, ...rows.map((r) => {
     const row = H.el('div', 'ops-grow');
@@ -1035,7 +1084,7 @@ function drawGantt() {
     months.forEach((m) => { const l = H.el('div', 'ops-gline'); l.style.left = pos(m) + '%'; lane.append(l); });
     const b = H.el('div', 'ops-gbar' + (r.actual_finish ? ' done' : r.s <= H.REPORT_DATE && r.f >= H.REPORT_DATE ? ' now' : r.s > H.REPORT_DATE && r.s <= soon ? ' soon' : ''));
     b.style.left = pos(r.s) + '%'; b.style.width = Math.max(0.8, pos(d3.utcDay.offset(r.f, 1)) - pos(r.s)) + '%';
-    b.title = `Plan ${H.fmtDay(r.s)} – ${H.fmtDay(r.f)}` + (r.actual_finish ? ` · done ${H.fmtDay(H.day(r.actual_finish))}` : '');
+    b.title = L('Plan ', 'Kế hoạch ') + `${H.fmtDay(r.s)} – ${H.fmtDay(r.f)}` + (r.actual_finish ? L(' · done ', ' · xong ') + H.fmtDay(H.day(r.actual_finish)) : '');
     const t = H.el('div', 'ops-gtoday'); t.style.left = pos(H.REPORT_DATE) + '%';
     lane.append(b, t);
     const lab = H.el('div', null, r.activity);
@@ -1052,7 +1101,7 @@ function drawSteps() {
   if (!data) return;
   ol.replaceChildren(...data.map((r) => {
     const li = H.el('li'); const body = H.el('div');
-    body.append(H.el('div', 'p', r.phase), H.el('div', null, r.action));
+    body.append(H.el('div', 'p', D(r.phase)), H.el('div', null, r.action));
     li.append(H.el('span', 'n', String(r.step)), body); return li;
   }));
 }
@@ -1074,30 +1123,36 @@ if (pages.includes(initial)) showPage(initial, false);
 
 <script>(function(){
 // Report picker: lists archived reports (history/index.json) and reopens the page with ?date=.
-const pick = document.getElementById('report-pick');
-const fmt = d3.utcFormat('%-d %b %Y');
+const pick = document.getElementById('report-pick'), L = dash.L;
+const fmt = window.opsH.fmtDay;
 const day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d)); };
 if (dash.reports.length) {
   document.getElementById('report-picker').hidden = false;
-  pick.replaceChildren(...dash.reports.map((r) => new Option(fmt(day(r.date)) + (r.date === dash.latestDate ? ' · latest' : ''), r.date === dash.latestDate ? '' : r.date)));
+  pick.replaceChildren(...dash.reports.map((r) => new Option(fmt(day(r.date)) + (r.date === dash.latestDate ? L(' · latest', ' · mới nhất') : ''), r.date === dash.latestDate ? '' : r.date)));
   pick.value = dash.archived ? dash.viewDate : '';
-  pick.addEventListener('change', () => location.assign(location.pathname + (pick.value ? '?date=' + pick.value : '') + location.hash));
+  pick.addEventListener('change', () => {
+    const q = new URLSearchParams(location.search); if (pick.value) q.set('date', pick.value); else q.delete('date');
+    location.assign(location.pathname + (q.toString() ? '?' + q : '') + location.hash);
+  });
 }
 const note = document.getElementById('archived-note');
-const latestLink = () => { const a = document.createElement('a'); a.href = location.pathname + location.hash; a.textContent = 'Open the latest report'; return a; };
+const latestLink = () => {
+  const q = new URLSearchParams(location.search); q.delete('date');
+  const a = document.createElement('a'); a.href = location.pathname + (q.toString() ? '?' + q : '') + location.hash; a.textContent = L('Open the latest report', 'Mở báo cáo mới nhất'); return a;
+};
 if (dash.archived) {
   note.hidden = false;
-  note.append('You are viewing the archived report of ' + fmt(day(dash.viewDate)) + '. ', latestLink());
+  note.append(L('You are viewing the archived report of ', 'Bạn đang xem báo cáo lưu ngày ') + fmt(day(dash.viewDate)) + '. ', latestLink());
 } else if (dash.missingDate) {
   note.hidden = false;
-  note.append('No archived report for ' + fmt(day(dash.missingDate)) + '; showing the latest report instead. ');
+  note.append(L('No archived report for ', 'Không có báo cáo lưu ngày ') + fmt(day(dash.missingDate)) + L('; showing the latest report instead. ', '; đang hiển thị báo cáo mới nhất. '));
 }
 
 })();</script>
 
 <script>(function(){
-// Readiness status (RAG), attention list, milestones, countdown, change since last report, print.
-const H = window.opsH;
+// Readiness status (RAG), attention list, milestones, countdown, change since last report, print, language switch.
+const H = window.opsH, L = dash.L, D = dash.D;
 const rows = (src, id) => (src === 'cur' ? (dash.data(id).data || []) : ((dash.prev || {})[id] || []));
 const goTab = (page) => { const b = document.getElementById('tab-' + page); if (b) { b.click(); window.scrollTo({ top: 0 }); } };
 const lastWith = (list, key) => list.filter((r) => r[key] != null).at(-1);
@@ -1133,32 +1188,43 @@ function rag() {
   const pc = rows('cur', 'precom_plan'), pcLate = pc.filter((r) => r.plan_finish && !r.actual_finish && H.day(r.plan_finish) < R).length;
   const lvl = (v, g, a, higherIsBetter = true) => v == null ? 'n' : higherIsBetter ? (v >= g ? 'g' : v >= a ? 'a' : 'r') : (v <= g ? 'g' : v <= a ? 'a' : 'r');
   const pctTxt = (v) => (v == null ? '—' : d3.format('.0%')(v));
+  const ptsTxt = (v) => (v == null ? '—' : (v >= 0 ? '+' : '') + H.f1(v) + L(' pts', ' điểm'));
+  const p1 = (v) => (v == null ? '—' : H.f1(v) + '%');
   const mpPct = m.manpower != null && m.manpowerPlan ? m.manpower / m.manpowerPlan : null;
   const orrGap = m.orr != null && m.orrPlan != null ? m.orr - m.orrPlan : null;
   return {
-    'Manpower': { s: lvl(mpPct, 0.9, 0.75), why: `<em>${m.manpower ?? '—'} / ${m.manpowerPlan ?? '—'}</em> people · ${pctTxt(mpPct)} of plan`, rule: 'Green ≥ 90% of plan, amber ≥ 75%', tab: 'overview' },
-    'Training & Competence': { s: lvl(m.mandatory, 0.8, 0.5), why: `Mandatory <em>${pctTxt(m.mandatory)}</em> · CBTA developed ${pctTxt(m.cbta)}`, rule: 'Mandatory training: green ≥ 80%, amber ≥ 50%', tab: 'people' },
-    'ORR Checklist': { s: lvl(orrGap, 0, -5), why: `<em>${m.orr ?? '—'}%</em> vs plan ${m.orrPlan ?? '—'}% (${orrGap == null ? '—' : (orrGap >= 0 ? '+' : '') + orrGap.toFixed(1) + ' pts'})`, rule: 'Green on or ahead of plan, amber up to 5 pts behind', tab: 'orr' },
-    'Procedures': { s: lvl(m.procedures, 0.95, 0.85), why: `<em>${pctTxt(m.procedures)}</em> average completion · ${rows('cur', 'procedures').filter((r) => r.issued !== 'Yes').length} not issued`, rule: 'Average completion: green ≥ 95%, amber ≥ 85%', tab: 'procedures' },
-    'Contracts & Procurement': { s: lvl(m.prLate, 0, 2, false), why: `<em>${m.prLate}</em> PRs late`, rule: 'Green no late PR, amber 1–2 late', tab: 'contracts' },
-    'Permits & Licences': { s: expired ? 'r' : (soon || waiting) ? 'a' : permits.length ? 'g' : 'n', why: `${expired ? `<em>${expired}</em> expired · ` : ''}<em>${waiting}</em> waiting · ${soon} expiring ≤ 6 months`, rule: 'Red if any expired, amber if waiting or expiring within 6 months', tab: 'contracts' },
-    'Applications & Systems': { s: lvl(cmGap, 0, -5), why: `CMMS worst gap <em>${cmGap == null ? '—' : (cmGap >= 0 ? '+' : '') + cmGap.toFixed(1) + ' pts'}</em> vs plan`, rule: 'CMMS: green on plan, amber up to 5 pts behind', tab: 'contracts' },
-    'Commissioning & Start-up': { s: pc.length ? lvl(pcLate, 0, 2, false) : 'n', why: `<em>${pcLate}</em> pre-com activities past planned finish`, rule: 'Green none overdue, amber 1–2 overdue', tab: 'startup' },
+    'Manpower': { s: lvl(mpPct, 0.9, 0.75), why: `<em>${m.manpower ?? '—'} / ${m.manpowerPlan ?? '—'}</em> ` + L(`people · ${pctTxt(mpPct)} of plan`, `người · ${pctTxt(mpPct)} kế hoạch`),
+      rule: L('Green ≥ 90% of plan, amber ≥ 75%', 'Xanh ≥ 90% kế hoạch, vàng ≥ 75%'), tab: 'overview' },
+    'Training & Competence': { s: lvl(m.mandatory, 0.8, 0.5), why: L(`Mandatory <em>${pctTxt(m.mandatory)}</em> · CBTA developed ${pctTxt(m.cbta)}`, `Bắt buộc <em>${pctTxt(m.mandatory)}</em> · CBTA đã biên soạn ${pctTxt(m.cbta)}`),
+      rule: L('Mandatory training: green ≥ 80%, amber ≥ 50%', 'Đào tạo bắt buộc: xanh ≥ 80%, vàng ≥ 50%'), tab: 'people' },
+    'ORR Checklist': { s: lvl(orrGap, 0, -5), why: `<em>${p1(m.orr)}</em> ` + L('vs plan', 'so với KH') + ` ${p1(m.orrPlan)} (${ptsTxt(orrGap)})`,
+      rule: L('Green on or ahead of plan, amber up to 5 pts behind', 'Xanh khi đạt hoặc vượt kế hoạch, vàng khi chậm tối đa 5 điểm'), tab: 'orr' },
+    'Procedures': { s: lvl(m.procedures, 0.95, 0.85), why: `<em>${pctTxt(m.procedures)}</em> ` + L('average completion', 'hoàn thành trung bình') + ` · ${rows('cur', 'procedures').filter((r) => r.issued !== 'Yes').length} ` + L('not issued', 'chưa ban hành'),
+      rule: L('Average completion: green ≥ 95%, amber ≥ 85%', 'Hoàn thành trung bình: xanh ≥ 95%, vàng ≥ 85%'), tab: 'procedures' },
+    'Contracts & Procurement': { s: lvl(m.prLate, 0, 2, false), why: `<em>${m.prLate}</em> ` + L('PRs late', 'PR trễ hạn'),
+      rule: L('Green no late PR, amber 1–2 late', 'Xanh khi không có PR trễ, vàng khi trễ 1–2'), tab: 'contracts' },
+    'Permits & Licences': { s: expired ? 'r' : (soon || waiting) ? 'a' : permits.length ? 'g' : 'n',
+      why: (expired ? `<em>${expired}</em> ` + L('expired', 'đã hết hạn') + ' · ' : '') + `<em>${waiting}</em> ` + L(`waiting · ${soon} expiring ≤ 6 months`, `đang chờ · ${soon} hết hạn trong ≤ 6 tháng`),
+      rule: L('Red if any expired, amber if waiting or expiring within 6 months', 'Đỏ nếu có giấy phép hết hạn, vàng nếu đang chờ hoặc hết hạn trong 6 tháng'), tab: 'contracts' },
+    'Applications & Systems': { s: lvl(cmGap, 0, -5), why: L('CMMS worst gap ', 'CMMS chênh lệch lớn nhất ') + `<em>${ptsTxt(cmGap)}</em> ` + L('vs plan', 'so với KH'),
+      rule: L('CMMS: green on plan, amber up to 5 pts behind', 'CMMS: xanh khi đúng kế hoạch, vàng khi chậm tối đa 5 điểm'), tab: 'contracts' },
+    'Commissioning & Start-up': { s: pc.length ? lvl(pcLate, 0, 2, false) : 'n', why: `<em>${pcLate}</em> ` + L('pre-com activities past planned finish', 'hoạt động pre-com quá ngày kết thúc kế hoạch'),
+      rule: L('Green none overdue, amber 1–2 overdue', 'Xanh khi không có hạng mục quá hạn, vàng khi quá hạn 1–2'), tab: 'startup' },
   };
 }
 
-const STATE = { g: 'On track', a: 'At risk', r: 'Off track', n: 'Not assessed' };
+const STATE = { g: L('On track', 'Đúng tiến độ'), a: L('At risk', 'Có rủi ro'), r: L('Off track', 'Chậm tiến độ'), n: L('Not assessed', 'Chưa đánh giá') };
 function drawRag() {
   const box = document.getElementById('rag'), auto = rag();
   const over = rows('cur', 'readiness');
   const areas = over.length ? over.map((r) => r.area) : Object.keys(auto);
   box.replaceChildren(...areas.filter((a) => auto[a] || over.find((r) => r.area === a)).map((area) => {
-    const a = auto[area] || { s: 'n', why: '', rule: 'No automatic rule', tab: 'overview' };
+    const a = auto[area] || { s: 'n', why: '', rule: L('No automatic rule', 'Không có quy tắc tự động'), tab: 'overview' };
     const o = over.find((r) => r.area === area) || {};
     const s = { Green: 'g', Amber: 'a', Red: 'r' }[o.status_override] || a.s;
     const el = document.createElement('button'); el.type = 'button'; el.className = 'ops-rag-tile ' + s;
-    el.title = (o.status_override ? 'Set manually by team. ' : 'Automatic: ') + a.rule;
-    const dot = H.el('span', 'ops-rag-dot'), nm = H.el('span', 'ops-rag-name', area), st = H.el('span', 'ops-rag-state', STATE[s] + (o.status_override ? ' · set by team' : ''));
+    el.title = (o.status_override ? L('Set manually by team. ', 'Do team tự đánh giá. ') : L('Automatic: ', 'Tự động: ')) + a.rule;
+    const dot = H.el('span', 'ops-rag-dot'), nm = H.el('span', 'ops-rag-name', D(area)), st = H.el('span', 'ops-rag-state', STATE[s] + (o.status_override ? L(' · set by team', ' · team đánh giá') : ''));
     const why = H.el('span', 'ops-rag-why'); why.innerHTML = o.comment ? '' : a.why; if (o.comment) why.textContent = o.comment;
     el.append(dot, nm, st, why); el.addEventListener('click', () => goTab(a.tab));
     return el;
@@ -1170,32 +1236,39 @@ function drawAttention() {
   const add = (sev, html, tab) => items.push({ sev, html, tab });
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const m = metrics('cur');
-  if (m.manpower != null && m.manpowerPlan && m.manpower / m.manpowerPlan < 0.75) add('r', `Manpower at <b>${d3.format('.0%')(m.manpower / m.manpowerPlan)}</b> of plan — <b>${m.manpowerPlan - m.manpower}</b> people short`, 'overview');
+  if (m.manpower != null && m.manpowerPlan && m.manpower / m.manpowerPlan < 0.75) add('r', L(`Manpower at <b>${d3.format('.0%')(m.manpower / m.manpowerPlan)}</b> of plan — <b>${m.manpowerPlan - m.manpower}</b> people short`,
+    `Nhân sự đạt <b>${d3.format('.0%')(m.manpower / m.manpowerPlan)}</b> kế hoạch — thiếu <b>${m.manpowerPlan - m.manpower}</b> người`), 'overview');
   d3.rollups(rows('cur', 'pr_pipeline').filter((r) => r.status === 'Late'), (v) => d3.sum(v, (r) => r.count), (r) => r.stage)
-    .forEach(([stage, n]) => add('r', `<b>${n}</b> PR late at stage <b>${esc(stage)}</b>`, 'contracts'));
+    .forEach(([stage, n]) => add('r', L(`<b>${n}</b> PR late at stage <b>${esc(stage)}</b>`, `<b>${n}</b> PR trễ hạn ở bước <b>${esc(D(stage))}</b>`), 'contracts'));
   rows('cur', 'precom_plan').filter((r) => r.plan_finish && !r.actual_finish && H.day(r.plan_finish) < R)
-    .forEach((r) => add('r', `Pre-com overdue: <b>${esc(r.activity)}</b> (plan finish ${H.fmtDay(H.day(r.plan_finish))})`, 'startup'));
+    .forEach((r) => add('r', L('Pre-com overdue: ', 'Pre-com quá hạn: ') + `<b>${esc(r.activity)}</b> (` + L('plan finish ', 'kết thúc theo KH ') + `${H.fmtDay(H.day(r.plan_finish))})`, 'startup'));
   rows('cur', 'procedures').filter((r) => r.issued !== 'Yes').forEach((r) => {
     const due = endOfMonthText(r.expected);
-    if (due && due < R) add('r', `Procedure overdue: <b>${esc(r.id)}</b> ${esc(r.document)} (due ${esc(r.expected)}, ${r.completion_pct ?? 0}%)`, 'procedures');
-    else if (!r.completion_pct) add('a', `Procedure not started: <b>${esc(r.id)}</b> ${esc(r.document)} (due ${esc(r.expected)})`, 'procedures');
+    if (due && due < R) add('r', L('Procedure overdue: ', 'Quy trình quá hạn: ') + `<b>${esc(r.id)}</b> ${esc(r.document)} (` + L('due ', 'hạn ') + `${esc(r.expected)}, ${r.completion_pct ?? 0}%)`, 'procedures');
+    else if (!r.completion_pct) add('a', L('Procedure not started: ', 'Quy trình chưa bắt đầu: ') + `<b>${esc(r.id)}</b> ${esc(r.document)} (` + L('due ', 'hạn ') + `${esc(r.expected)})`, 'procedures');
   });
   rows('cur', 'permits').forEach((p) => {
-    if (p.expiry_date && H.day(p.expiry_date) < R) add('r', `Permit expired: <b>${esc(p.permit)}</b> (${H.fmtDay(H.day(p.expiry_date))})`, 'contracts');
-    else if (p.expiry_date && (H.day(p.expiry_date) - R) / DAY <= 180) add('a', `Permit expires ${H.fmtDay(H.day(p.expiry_date))}: <b>${esc(p.permit)}</b>`, 'contracts');
-    else if (/waiting/i.test(p.status || '')) add('a', `Permit pending: <b>${esc(p.permit)}</b> — ${esc(p.status)}`, 'contracts');
+    if (p.expiry_date && H.day(p.expiry_date) < R) add('r', L('Permit expired: ', 'Giấy phép đã hết hạn: ') + `<b>${esc(p.permit)}</b> (${H.fmtDay(H.day(p.expiry_date))})`, 'contracts');
+    else if (p.expiry_date && (H.day(p.expiry_date) - R) / DAY <= 180) add('a', L('Permit expires ', 'Giấy phép hết hạn ngày ') + `${H.fmtDay(H.day(p.expiry_date))}: <b>${esc(p.permit)}</b>`, 'contracts');
+    else if (/waiting/i.test(p.status || '')) add('a', L('Permit pending: ', 'Giấy phép đang chờ: ') + `<b>${esc(p.permit)}</b> — ${esc(D(p.status))}`, 'contracts');
   });
-  rows('cur', 'orr_teams').forEach((t) => { const g = (t.actual_pct ?? 0) - (t.plan_pct ?? 0); if (g < -5) add('r', `ORR: <b>${esc(t.team)}</b> ${g.toFixed(1)} pts behind plan`, 'orr'); else if (g < 0) add('a', `ORR: <b>${esc(t.team)}</b> ${g.toFixed(1)} pts behind plan`, 'orr'); });
-  rows('cur', 'orr_elements').filter((e) => (e.progress_pct ?? 0) < 50).forEach((e) => add((e.progress_pct ?? 0) < 25 ? 'r' : 'a', `ORR element <b>${esc(e.code)}</b> ${esc(e.element)} at <b>${e.progress_pct ?? 0}%</b>`, 'orr'));
-  rows('cur', 'mandatory').filter((r) => r.planned && r.earned / r.planned < 0.3).forEach((r) => add('r', `Mandatory training <b>${esc(r.team)}</b> at <b>${d3.format('.0%')(r.earned / r.planned)}</b>`, 'people'));
+  rows('cur', 'orr_teams').forEach((t) => {
+    const g = (t.actual_pct ?? 0) - (t.plan_pct ?? 0);
+    const txt = `ORR: <b>${esc(t.team)}</b> ` + L(`${H.f1(-g)} pts behind plan`, `chậm ${H.f1(-g)} điểm so với kế hoạch`);
+    if (g < -5) add('r', txt, 'orr'); else if (g < 0) add('a', txt, 'orr');
+  });
+  rows('cur', 'orr_elements').filter((e) => (e.progress_pct ?? 0) < 50).forEach((e) => add((e.progress_pct ?? 0) < 25 ? 'r' : 'a',
+    L('ORR element ', 'Hạng mục ORR ') + `<b>${esc(e.code)}</b> ${esc(e.element)} ` + L('at', 'đạt') + ` <b>${H.f1(e.progress_pct ?? 0).replace(/[.,]0$/, '')}%</b>`, 'orr'));
+  rows('cur', 'mandatory').filter((r) => r.planned && r.earned / r.planned < 0.3).forEach((r) => add('r',
+    L('Mandatory training ', 'Đào tạo bắt buộc ') + `<b>${esc(r.team)}</b> ` + L('at', 'đạt') + ` <b>${d3.format('.0%')(r.earned / r.planned)}</b>`, 'people'));
   items.sort((a, b) => (a.sev === b.sev ? 0 : a.sev === 'r' ? -1 : 1));
   const ul = document.getElementById('attention');
   const red = items.filter((i) => i.sev === 'r').length;
-  const pill = document.getElementById('attention-count'); pill.textContent = `${red} critical · ${items.length - red} watch`;
-  if (!items.length) { const li = H.el('li', 'empty', 'Nothing needs attention right now.'); ul.replaceChildren(li); return; }
+  const pill = document.getElementById('attention-count'); pill.textContent = L(`${red} critical · ${items.length - red} watch`, `${red} nghiêm trọng · ${items.length - red} theo dõi`);
+  if (!items.length) { const li = H.el('li', 'empty', L('Nothing needs attention right now.', 'Hiện không có mục nào cần lưu ý.')); ul.replaceChildren(li); return; }
   ul.replaceChildren(...items.map((i) => {
     const li = document.createElement('li'); const what = H.el('span', 'what'); what.innerHTML = i.html;
-    const go = H.el('button', 'where', 'View'); go.type = 'button'; go.addEventListener('click', () => goTab(i.tab));
+    const go = H.el('button', 'where', L('View', 'Xem')); go.type = 'button'; go.addEventListener('click', () => goTab(i.tab));
     li.append(H.el('span', 'sev ' + i.sev), what, go); return li;
   }));
 }
@@ -1212,20 +1285,20 @@ function drawMilestones() {
     li.className = r.actual_date ? 'done' : r === firstOpen ? 'next' : '';
     if (r.is_target) li.classList.add('target');
     const mk = H.el('span', 'mk', r.actual_date ? '✓' : '');
-    const body = H.el('div'); body.append(H.el('div', 'nm', r.milestone), H.el('div', 'sub', r.note || ''));
+    const body = H.el('div'); body.append(H.el('div', 'nm', D(r.milestone)), H.el('div', 'sub', r.note || ''));
     const dt = H.el('div', 'dt');
-    if (r.actual_date) { dt.append(H.el('b', null, H.fmtDay(H.day(r.actual_date))), H.el('span', 'sub', 'Achieved')); }
-    else if (r.plan_date) { const d = Math.round((H.day(r.plan_date) - today) / DAY); dt.append(H.el('b', null, H.fmtDay(H.day(r.plan_date))), H.el('span', 'sub', d >= 0 ? `in ${d} days` : `${-d} days ago`)); }
-    else dt.append(H.el('b', 'tbc', 'TBC'));
+    if (r.actual_date) { dt.append(H.el('b', null, H.fmtDay(H.day(r.actual_date))), H.el('span', 'sub', L('Achieved', 'Đã đạt'))); }
+    else if (r.plan_date) { const d = Math.round((H.day(r.plan_date) - today) / DAY); dt.append(H.el('b', null, H.fmtDay(H.day(r.plan_date))), H.el('span', 'sub', d >= 0 ? L(`in ${d} days`, `còn ${d} ngày`) : L(`${-d} days ago`, `${-d} ngày trước`))); }
+    else dt.append(H.el('b', 'tbc', L('TBC', 'Chưa chốt')));
     li.append(mk, body, dt); return li;
   }));
   const target = list.find((r) => r.is_target && r.plan_date && !r.actual_date);
   const box = document.getElementById('countdown');
   if (target) {
     box.hidden = false;
-    document.getElementById('countdown-label').textContent = target.milestone;
+    document.getElementById('countdown-label').textContent = D(target.milestone);
     document.getElementById('countdown-days').textContent = d3.format(',')(Math.max(0, Math.round((H.day(target.plan_date) - today) / DAY)));
-    document.getElementById('countdown-date').textContent = 'Plan ' + H.fmtDay(H.day(target.plan_date));
+    document.getElementById('countdown-date').textContent = L('Plan ', 'Kế hoạch ') + H.fmtDay(H.day(target.plan_date));
   } else box.hidden = true;
 }
 
@@ -1236,24 +1309,30 @@ function drawDeltas() {
     const d = cur - prev; el.hidden = false;
     el.className = 'ops-delta ' + (Math.abs(d) < 1e-9 ? 'flat' : d > 0 ? 'up' : 'down');
     if (id === 'kpi-pr') el.className = 'ops-delta ' + (d === 0 ? 'flat' : d < 0 ? 'up' : 'down');
-    el.textContent = (d > 0 ? '▲ +' : d < 0 ? '▼ −' : '● ') + fmt(d) + unit + ' vs last report';
-    el.title = 'Change since report of ' + H.fmtDay(H.day(dash.prevDate));
+    el.textContent = (d > 0 ? '▲ +' : d < 0 ? '▼ −' : '● ') + fmt(d) + unit + L(' vs last report', ' so kỳ trước');
+    el.title = L('Change since report of ', 'Thay đổi so với báo cáo ngày ') + H.fmtDay(H.day(dash.prevDate));
   };
   const c = metrics('cur'), p = metrics('prev');
   const n = (d) => d3.format(',')(Math.round(Math.abs(d)));
-  const pts = (d) => (Math.abs(d) * 100).toFixed(1).replace(/\.0$/, '');
+  const pts = (d) => d3.format('.1~f')(Math.abs(d) * 100), PTS = L(' pts', ' điểm');
   show('kpi-manpower', c.manpower, p.manpower, n, '');
-  show('kpi-orr', c.orr, p.orr, (d) => Math.abs(d).toFixed(1), ' pts');
-  show('kpi-cbta', c.cbta, p.cbta, pts, ' pts');
-  show('kpi-mandatory', c.mandatory, p.mandatory, pts, ' pts');
-  show('kpi-proc', c.procedures, p.procedures, pts, ' pts');
-  show('kpi-pr', c.prLate, p.prLate, (d) => String(Math.abs(d)), ' late');
+  show('kpi-orr', c.orr, p.orr, (d) => H.f1(Math.abs(d)), PTS);
+  show('kpi-cbta', c.cbta, p.cbta, pts, PTS);
+  show('kpi-mandatory', c.mandatory, p.mandatory, pts, PTS);
+  show('kpi-proc', c.procedures, p.procedures, pts, PTS);
+  show('kpi-pr', c.prLate, p.prLate, (d) => String(Math.abs(d)), L(' late', ' PR trễ'));
 }
 
 dash.onData(() => { drawRag(); drawAttention(); drawMilestones(); drawDeltas(); });
 // A page left open (e.g. on a control-room screen) ticks over at midnight Vietnam time.
 let shownDay = +vnToday();
 setInterval(() => { if (+vnToday() !== shownDay) { shownDay = +vnToday(); drawMilestones(); drawAttention(); } }, 60000);
+
+// Language switch (top right): remembers the choice and reloads in the other language.
+document.querySelectorAll('#lang-switch button').forEach((b) => {
+  b.setAttribute('aria-pressed', String(b.dataset.lang === dash.lang));
+  b.addEventListener('click', () => { if (b.dataset.lang !== dash.lang) dash.setLang(b.dataset.lang); });
+});
 
 // Print: show every section and redraw charts at print width, then restore.
 document.getElementById('print-btn').addEventListener('click', () => window.print());
@@ -1271,14 +1350,15 @@ window.addEventListener('afterprint', () => { if (printPage) goTab(printPage); }
 <div class="ops-docctl" id="docctl" hidden></div>
 <p class="ops-foot" id="ops-foot"></p>
 <script>(function(){
-  var f = document.getElementById('ops-foot'), m = (dash.data('meta').data || [])[0] || {};
+  var f = document.getElementById('ops-foot'), m = (dash.data('meta').data || [])[0] || {}, L = dash.L;
   var t = dash.updatedAt ? new Date(dash.updatedAt) : null;
-  var when = t && !isNaN(t) ? t.toLocaleString('en-GB', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false, day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—';
-  f.textContent = 'Source: ' + (m.report_title || 'OPS Dashboard Data') + (m.prepared_by ? ', ' + m.prepared_by : '') + (dash.source === 'notion' ? ' · Live from Notion, last edited ' : ' · Data updated ') + when + ' (Vietnam time).';
-  var dc = document.getElementById('docctl'), items = [['Document no.', m.doc_no], ['Revision', m.revision], ['Classification', m.classification], ['Prepared by', m.prepared_by], ['Reviewed by', m.reviewed_by], ['Approved by', m.approved_by]].filter(function (x) { return x[1]; });
+  var when = t && !isNaN(t) ? t.toLocaleString(L('en-GB', 'vi-VN'), { timeZone: 'Asia/Ho_Chi_Minh', hour12: false, day: 'numeric', month: L('short', '2-digit'), year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—';
+  f.textContent = L('Source: ', 'Nguồn: ') + (m.report_title || 'OPS Dashboard Data') + (m.prepared_by ? ', ' + m.prepared_by : '')
+    + (dash.source === 'notion' ? L(' · Live from Notion, last edited ', ' · Trực tiếp từ Notion, sửa lần cuối ') : L(' · Data updated ', ' · Số liệu cập nhật ')) + when + L(' (Vietnam time).', ' (giờ Việt Nam).');
+  var dc = document.getElementById('docctl'), items = [[L('Document no.', 'Số tài liệu'), m.doc_no], [L('Revision', 'Phiên bản'), m.revision], [L('Classification', 'Mức độ mật'), dash.D(m.classification)], [L('Prepared by', 'Người lập'), m.prepared_by], [L('Reviewed by', 'Người soát xét'), m.reviewed_by], [L('Approved by', 'Người phê duyệt'), m.approved_by]].filter(function (x) { return x[1]; });
   if (items.length) { dc.hidden = false; items.forEach(function (x) { var d = document.createElement('div'), s = document.createElement('span'); s.textContent = x[0]; d.append(s, x[1]); dc.append(d); }); }
-  var cls = document.getElementById('doc-class'); if (cls && m.classification) { cls.hidden = false; cls.textContent = m.classification; }
-  if (!dash.live) { var s = document.createElement('span'); s.className = 'ops-stale'; s.textContent = ' Could not read data.json; showing fallback data.'; f.append(s); }
+  var cls = document.getElementById('doc-class'); if (cls && m.classification) { cls.hidden = false; cls.textContent = dash.D(m.classification); }
+  if (!dash.live) { var s = document.createElement('span'); s.className = 'ops-stale'; s.textContent = L(' Could not read data.json; showing fallback data.', ' Không đọc được data.json; đang hiển thị số liệu dự phòng.'); f.append(s); }
 })();</script>
 </div>
 </body>

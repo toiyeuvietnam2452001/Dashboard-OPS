@@ -34,6 +34,8 @@ Notion (OPS Dashboard Data) ──> api/data trên Vercel (đệm 60 giây) ─�
 
 Nút **Print / PDF** in toàn bộ dashboard ra A4 ngang.
 
+**Song ngữ**: nút **EN | VI** góc trên bên phải đổi ngôn ngữ; trình duyệt nhớ lựa chọn. Gửi link thẳng bản tiếng Việt: `https://ops-pqpoc.vercel.app/?lang=vi`. Bản dịch nằm trong `tools/i18n-vi.json` (`ui` = chữ trên giao diện, `data` = các nhãn số liệu như trạng thái, bước PR, tên mảng). Số liệu gõ tự do trên Notion hiển thị đúng như đã nhập.
+
 Mời trưởng nhóm: trang **OPS Dashboard Data** → **Chia sẻ** → nhập email → **Có thể chỉnh sửa**. Mời ở dạng **khách (guest)**: gói miễn phí cho tối đa 10 khách.
 
 ## Quy trình mỗi kỳ báo cáo

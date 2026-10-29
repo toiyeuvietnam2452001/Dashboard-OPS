@@ -113,9 +113,15 @@
 .ops-mast-sub b { color: var(--color-fg); }
 .ops-class { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--brand-ink); color: var(--brand-ink); }
 .ops-mast-side { display: flex; align-items: stretch; gap: var(--cds-gap-md); flex-wrap: wrap; }
-.ops-mast-tools { display: flex; align-items: flex-end; gap: var(--cds-gap-sm); }
+.ops-mast-tools { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: var(--cds-gap-sm); }
+.ops-mast-actions { display: flex; align-items: flex-end; gap: var(--cds-gap-sm); }
+.ops-lang { display: inline-flex; padding: 2px; border: 1px solid var(--brand-line); border-radius: 999px; background: var(--color-panel); }
+.ops-lang button { font: inherit; font-size: 12px; font-weight: 600; letter-spacing: .04em; padding: 3px 11px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
+.ops-lang button:hover { color: var(--brand-ink); }
+.ops-lang button[aria-pressed="true"] { background: var(--brand); color: #fff; cursor: default; }
+.ops-lang button:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 1px; }
 .ops-mast .ops-picker { margin-left: 0; }
-.ops-btn { font: inherit; font-size: var(--cds-font-size-caption); padding: 6px 12px; border-radius: var(--cds-radius); border: 1px solid var(--brand); background: var(--brand); color: #fff; cursor: pointer; }
+.ops-btn { white-space: nowrap; font: inherit; font-size: var(--cds-font-size-caption); padding: 6px 12px; border-radius: var(--cds-radius); border: 1px solid var(--brand); background: var(--brand); color: #fff; cursor: pointer; }
 .ops-btn:hover { filter: brightness(1.1); }
 .ops-btn:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
 .ops-count { display: flex; flex-direction: column; justify-content: center; padding: 6px 14px; border-radius: var(--cds-radius); background: var(--brand-tint); border: 1px solid var(--brand-line); min-width: 9rem; }
@@ -176,7 +182,7 @@
 .ops-ms .tbc { color: var(--rag-a); font-weight: 600; }
 .ops-docctl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 4px 16px; padding: var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); font-size: var(--cds-font-size-caption); }
 .ops-docctl span { color: var(--color-fg-muted); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
-@media (max-width: 560px) { .ops-mast-side { width: 100%; } .ops-count { flex: 1; } }
+@media (max-width: 560px) { .ops-mast-side { width: 100%; } .ops-count { flex: 1; } .ops-lang { position: absolute; top: 10px; right: 10px; } .ops-mast-id { padding-right: 88px; } }
 @media print {
   .ops-tabs, .ops-mast-tools, #archived-note, .ops-tools, .ops-seg { display: none !important; }
   section.ops-page[hidden] { display: flex !important; }
@@ -205,11 +211,16 @@
         <span class="ops-count-date" id="countdown-date">—</span>
       </div>
       <div class="ops-mast-tools">
-        <div class="ops-picker" id="report-picker" hidden>
-          <label for="report-pick">Report</label>
-          <select id="report-pick"></select>
+        <div class="ops-lang" id="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" title="English" aria-pressed="true">EN</button><button type="button" data-lang="vi" title="Tiếng Việt" aria-pressed="false">VI</button>
         </div>
-        <button class="ops-btn" id="print-btn" type="button" title="Print or save as PDF">Print / PDF</button>
+        <div class="ops-mast-actions">
+          <div class="ops-picker" id="report-picker" hidden>
+            <label for="report-pick" data-vi="Kỳ báo cáo">Report</label>
+            <select id="report-pick"></select>
+          </div>
+          <button class="ops-btn" id="print-btn" type="button" title="Print or save as PDF">Print / PDF</button>
+        </div>
       </div>
     </div>
   </header>
@@ -432,7 +443,7 @@
         <p class="ops-note">Permits, issuing authority, issue and expiry dates, and status.</p>
         <div class="ops-tablebox">
           <table id="table-permits" data-source="permits" data-row-key="permit">
-            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority</th><th data-field="issue_date">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
+            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
@@ -544,15 +555,18 @@ dash.calc('orr_team_gap', {
 <script>
 // ---- helpers shared by the drawing script ----
 const H = (window.opsH = {});
+const L = dash.L;
 H.pct = d3.format('.1%');
 H.pct0 = d3.format('.0%');
 H.p100 = (v) => (v == null ? '—' : d3.format('.1f')(v) + '%');
 H.num = d3.format(',');
-H.signPts = (v) => (v > 0 ? '+' : v < 0 ? '−' : '±') + d3.format('.1f')(Math.abs(v)) + ' pts';
+H.signPts = (v) => (v > 0 ? '+' : v < 0 ? '−' : '±') + d3.format('.1f')(Math.abs(v)) + L(' pts', ' điểm');
 H.month = (s) => { const [y, m] = s.split('-').map(Number); return new Date(Date.UTC(y, (m || 1) - 1, 1)); };
 H.day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d)); };
-H.fmtMonth = d3.utcFormat('%b %Y');
-H.fmtDay = d3.utcFormat('%-d %b %Y');
+H.f1 = d3.format('.1f');
+H.fmtMonth = d3.utcFormat(L('%b %Y', '%m/%Y'));
+H.fmtMonthShort = d3.utcFormat(L('%b %y', '%m/%y'));
+H.fmtDay = d3.utcFormat(L('%-d %b %Y', '%d/%m/%Y'));
 H.REPORT_DATE = H.day(((dash.data('meta').data || [])[0] || {}).report_date || new Date().toISOString().slice(0, 10));
 H.el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 H.state = (id, el) => {
@@ -560,7 +574,7 @@ H.state = (id, el) => {
   if (d.status === 'ok') { el.classList.remove('dash-skeleton'); return d.data; }
   if (d.status === 'loading') { el.classList.add('dash-skeleton'); el.replaceChildren(); return null; }
   el.classList.remove('dash-skeleton');
-  el.replaceChildren(H.el('div', 'ops-empty', 'Failed to load'));
+  el.replaceChildren(H.el('div', 'ops-empty', L('Failed to load', 'Không tải được dữ liệu')));
   return null;
 };
 H.fill = (sel, src, fmt) => {
@@ -605,7 +619,7 @@ H.bar = (label, frac, color, val, tickFrac) => {
 </script>
 
 <script>
-const H = window.opsH;
+const H = window.opsH, L = dash.L, D = dash.D;
 let mpKey = 'total';
 let currentPage = 'overview';
 const pages = ['overview', 'people', 'orr', 'procedures', 'contracts', 'startup'];
@@ -637,7 +651,7 @@ function drawKpis() {
   H.fill('[data-source="packages_summary"]', 'packages_summary', {});
   H.fill('[data-source="orr_groups"]', 'orr_groups', { progress_pct: H.p100 });
   const mp = dash.data('kpi_manpower').data?.[0], orr = dash.data('kpi_orr').data?.[0];
-  document.querySelectorAll('.ops-report-date').forEach((e) => (e.textContent = d3.utcFormat('%-d %b %Y')(H.REPORT_DATE)));
+  document.querySelectorAll('.ops-report-date').forEach((e) => (e.textContent = H.fmtDay(H.REPORT_DATE)));
   document.querySelectorAll('.ops-mp-month').forEach((e) => (e.textContent = mp ? H.fmtMonth(H.month(mp.month)) : '—'));
   document.querySelectorAll('.ops-orr-month').forEach((e) => (e.textContent = orr ? H.fmtMonth(H.month(orr.month)) : '—'));
 }
@@ -701,13 +715,13 @@ function drawManpower() {
   if (!data) { leg.replaceChildren(); box.querySelectorAll('svg').forEach((s) => s.remove()); return; }
   const rows = data.map((d) => ({ ...d, m: H.month(d.month) }));
   const series = [
-    { key: mpKey + '_plan', label: 'Plan', short: 'Plan', color: 'var(--cds-chart-muted)', dashed: true },
-    { key: mpKey + '_actual', label: 'Actual', short: 'Actual', color: dash.colors[0] },
+    { key: mpKey + '_plan', label: L('Plan', 'Kế hoạch'), short: L('Plan', 'KH'), color: 'var(--cds-chart-muted)', dashed: true },
+    { key: mpKey + '_actual', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0] },
   ];
   leg.replaceChildren(...series.map((s) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = s.color; sp.append(sw, s.label); return sp; }));
   lineChart(box, {
     rows, xKey: 'm', series, xDomain: d3.extent(rows, (r) => r.m), yMax: d3.max(rows, (r) => Math.max(r[series[0].key] ?? 0, r[series[1].key] ?? 0)),
-    yFmt: H.num, tickFmt: d3.utcFormat('%Y'), ticks: d3.utcYear.every(1), refX: H.REPORT_DATE, refLabel: 'Report ' + H.fmtDay(H.REPORT_DATE),
+    yFmt: H.num, tickFmt: d3.utcFormat('%Y'), ticks: d3.utcYear.every(1), refX: H.REPORT_DATE, refLabel: L('Report ', 'Báo cáo ') + H.fmtDay(H.REPORT_DATE),
   });
 }
 
@@ -718,9 +732,9 @@ function drawOrrCurve() {
   const rows = data.map((d) => ({ ...d, m: H.month(d.month) }));
   lineChart(box, {
     rows, xKey: 'm', xDomain: d3.extent(rows, (r) => r.m), yMax: 100, yFmt: (v) => d3.format('.0f')(v) + '%',
-    tickFmt: d3.utcFormat('%b %y'), ticks: d3.utcMonth.every(box.clientWidth < 420 ? 2 : 1),
-    series: [{ key: 'plan_pct', label: 'Plan', short: 'Plan', color: 'var(--cds-chart-muted)', dashed: true },
-             { key: 'actual_pct', label: 'Actual', short: 'Actual', color: dash.colors[0] }],
+    tickFmt: H.fmtMonthShort, ticks: d3.utcMonth.every(box.clientWidth < 420 ? 2 : 1),
+    series: [{ key: 'plan_pct', label: L('Plan', 'Kế hoạch'), short: L('Plan', 'KH'), color: 'var(--cds-chart-muted)', dashed: true },
+             { key: 'actual_pct', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0] }],
   });
 }
 
@@ -733,7 +747,7 @@ function drawStaffing() {
   if (!data) return;
   box.replaceChildren(...data.map((d) => {
     const v = H.el('span'); v.append(H.el('b', null, H.num(d.filled)), ' / ' + H.num(d.required));
-    return H.bar(d.group, d.filled / d.required, d.filled / d.required < 0.5 ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
+    return H.bar(D(d.group), d.filled / d.required, d.filled / d.required < 0.5 ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
   }));
 }
 
@@ -753,7 +767,7 @@ function drawCbta() {
   const box = document.getElementById('bars-cbta');
   const data = H.state('cbta', box), prog = dash.data('cbta_progress');
   const cols = [dash.colors[0], dash.colors[2], 'var(--cds-chart-muted)'];
-  document.getElementById('cbta-legend').replaceChildren(...['Completed', 'In review', 'In development'].map((n, i) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = cols[i]; sp.append(sw, n); return sp; }));
+  document.getElementById('cbta-legend').replaceChildren(...[L('Completed', 'Hoàn thành'), L('In review', 'Đang soát xét'), L('In development', 'Đang biên soạn')].map((n, i) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = cols[i]; sp.append(sw, n); return sp; }));
   if (!data || prog.status !== 'ok') return;
   box.replaceChildren(...data.map((d) => {
     const row = H.el('div', 'ops-bar');
@@ -783,7 +797,7 @@ function drawVendor() {
   const groups = d3.groups(data, (d) => d.period);
   box.replaceChildren(...groups.map(([p, rows]) => {
     const card = H.el('div', 'ops-month');
-    const label = p.length === 4 ? 'Year ' + p : H.fmtMonth(H.month(p));
+    const label = p.length === 4 ? L('Year ', 'Năm ') + p : H.fmtMonth(H.month(p));
     if (p.length > 4 && d3.utcMonth.offset(H.month(p), 1) <= d3.utcMonth.floor(H.REPORT_DATE)) card.classList.add('past');
     card.append(H.el('span', 'm', label), ...rows.map((r) => H.el('span', null, r.course)));
     return card;
@@ -820,7 +834,7 @@ function drawOrrElements() {
     f.style.width = r.progress_pct + '%'; f.style.background = r.progress_pct < 50 ? 'var(--cds-chart-status-critical)' : dash.colors[0]; t.append(f);
     bar.append(t, H.el('span', r.progress_pct < 50 ? 'ops-bad' : null, H.p100(r.progress_pct)));
     const td = H.el('td'); td.append(bar);
-    tr.append(H.el('td', null, r.code), H.el('td', null, r.element), H.el('td', 'hide-sm', r.group), H.el('td', 'num', H.num(r.items)), td);
+    tr.append(H.el('td', null, r.code), H.el('td', null, r.element), H.el('td', 'hide-sm', D(r.group)), H.el('td', 'num', H.num(r.items)), td);
     return tr;
   }));
 }
@@ -839,7 +853,7 @@ function drawProcedures() {
   tb.replaceChildren(...rows.map((r) => {
     const tr = H.el('tr');
     const c = r.completion_pct === 100 ? 'ops-good' : r.completion_pct === 0 ? 'ops-bad' : 'ops-warn';
-    const pill = H.el('span', 'ops-pill ' + c, r.completion_pct === 100 ? 'Issued' : r.completion_pct + '%');
+    const pill = H.el('span', 'ops-pill ' + c, r.completion_pct === 100 ? L('Issued', 'Đã ban hành') : r.completion_pct + '%');
     const td = H.el('td'); td.append(pill);
     tr.append(H.el('td', null, r.id), H.el('td', null, r.document), H.el('td', 'hide-sm', r.responsible), H.el('td', null, r.expected), td, H.el('td', 'hide-sm', r.remark));
     return tr;
@@ -851,7 +865,7 @@ function drawPr() {
   const box = document.getElementById('bars-pr');
   const data = H.state('pr_pipeline', box);
   const col = { 'Late': 'var(--cds-chart-status-critical)', 'Near-late': 'var(--color-warn)', 'On time': dash.colors[0] };
-  const vi = { 'Late': 'Late', 'Near-late': 'Near-late', 'On time': 'On time' };
+  const vi = { 'Late': L('Late', 'Trễ hạn'), 'Near-late': L('Near-late', 'Sắp trễ'), 'On time': L('On time', 'Đúng hạn') };
   document.getElementById('pr-legend').replaceChildren(...Object.keys(col).map((k) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = col[k]; sp.append(sw, vi[k]); return sp; }));
   if (!data) return;
   const max = d3.max(d3.rollups(data, (v) => d3.sum(v, (d) => d.count), (d) => d.stage), (d) => d[1]);
@@ -862,7 +876,7 @@ function drawPr() {
       for (let i = 0; i < n; i++) { const b = H.el('div'); b.style.width = `calc(${100 / max}% - 2px)`; b.style.background = col[s]; b.style.borderRadius = '3px'; b.title = vi[s]; st.append(b); } });
     const total = d3.sum(rows, (r) => r.count);
     const v = H.el('div', 'ops-bar-val'); v.append(H.el('b', null, String(total)), ' PR');
-    row.append(H.el('div', 'ops-bar-label', stage), st, v);
+    row.append(H.el('div', 'ops-bar-label', D(stage)), st, v);
     return row;
   }));
 }
@@ -871,13 +885,13 @@ function drawPackages() {
   const box = document.getElementById('packages');
   const data = H.state('packages_no_pr', box);
   if (!data) return;
-  const dims = [['status', 'Procurement status'], ['priority', 'Priority'], ['scr_timing', 'Expected SCR']];
+  const dims = [['status', L('Procurement status', 'Trạng thái mua sắm')], ['priority', L('Priority', 'Mức ưu tiên')], ['scr_timing', L('Expected SCR', 'SCR dự kiến')]];
   box.replaceChildren(...dims.map(([dim, title]) => {
     const wrap = H.el('div'); wrap.style.display = 'flex'; wrap.style.flexDirection = 'column'; wrap.style.gap = 'var(--cds-gap-xs)'; wrap.style.marginBottom = 'var(--cds-gap-md)';
     const rows = data.filter((d) => d.dimension === dim); const max = d3.max(rows, (d) => d.count);
     wrap.append(H.el('h3', null, title), ...rows.map((d) => {
-      const v = H.el('span'); v.append(H.el('b', null, String(d.count)), ' packages');
-      return H.bar(d.category, d.count / max, d.category === 'Priority 1' ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
+      const v = H.el('span'); v.append(H.el('b', null, String(d.count)), L(' packages', ' gói'));
+      return H.bar(D(d.category), d.count / max, d.category === 'Priority 1' ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
     }));
     return wrap;
   }));
@@ -885,7 +899,7 @@ function drawPackages() {
 
 function listInto(id, rows) {
   const ul = document.getElementById(id);
-  ul.replaceChildren(...rows.map((r) => { const li = H.el('li'); li.append(H.el('span', 'k', r.item), H.el('span', null, r.status)); return li; }));
+  ul.replaceChildren(...rows.map((r) => { const li = H.el('li'); li.append(H.el('span', 'k', D(r.item)), H.el('span', null, D(r.status))); return li; }));
 }
 function drawWorkstreams() {
   const d = dash.data('workstreams');
@@ -901,7 +915,7 @@ function drawCmms() {
   const data = H.state('cmms', box);
   if (!data) return;
   box.replaceChildren(...data.map((d) => {
-    const v = H.el('span'); v.append(H.el('b', null, H.p100(d.actual_pct)), ' / KH ' + H.p100(d.plan_pct));
+    const v = H.el('span'); v.append(H.el('b', null, H.p100(d.actual_pct)), L(' / plan ', ' / KH ') + H.p100(d.plan_pct));
     return H.bar(d.package, d.actual_pct / 100, dash.colors[0], v, d.plan_pct / 100);
   }));
 }
@@ -913,7 +927,7 @@ function drawPermits() {
   tb.replaceChildren(...d.data.map((r) => {
     const tr = H.el('tr');
     const c = r.status === 'Issued' ? 'ops-good' : r.status === 'Temporary' ? 'ops-warn' : r.status.startsWith('Waiting') ? 'ops-bad' : '';
-    const td = H.el('td'); td.append(H.el('span', 'ops-pill ' + c, r.status));
+    const td = H.el('td'); td.append(H.el('span', 'ops-pill ' + c, D(r.status)));
     const f = (s) => (s ? H.fmtDay(H.day(s)) : '—');
     tr.append(H.el('td', null, r.permit), H.el('td', 'hide-sm', r.facility), H.el('td', 'hide-sm', r.authority), H.el('td', null, f(r.issue_date)), H.el('td', null, f(r.expiry_date)), H.el('td', 'hide-sm', f(r.renewal_date)), td);
     return tr;
@@ -932,7 +946,7 @@ function drawGantt() {
   const soon = d3.utcDay.offset(H.REPORT_DATE, 30);
   const axisRow = H.el('div', 'ops-grow'); axisRow.append(H.el('div'));
   const axis = H.el('div', 'ops-gaxis');
-  months.forEach((m) => { const s = H.el('span', null, d3.utcFormat('%b %y')(m)); s.style.left = pos(d3.utcDay.offset(m, 15)) + '%'; axis.append(s); });
+  months.forEach((m) => { const s = H.el('span', null, H.fmtMonthShort(m)); s.style.left = pos(d3.utcDay.offset(m, 15)) + '%'; axis.append(s); });
   axisRow.append(axis);
   box.replaceChildren(axisRow, ...rows.map((r) => {
     const row = H.el('div', 'ops-grow');
@@ -940,7 +954,7 @@ function drawGantt() {
     months.forEach((m) => { const l = H.el('div', 'ops-gline'); l.style.left = pos(m) + '%'; lane.append(l); });
     const b = H.el('div', 'ops-gbar' + (r.actual_finish ? ' done' : r.s <= H.REPORT_DATE && r.f >= H.REPORT_DATE ? ' now' : r.s > H.REPORT_DATE && r.s <= soon ? ' soon' : ''));
     b.style.left = pos(r.s) + '%'; b.style.width = Math.max(0.8, pos(d3.utcDay.offset(r.f, 1)) - pos(r.s)) + '%';
-    b.title = `Plan ${H.fmtDay(r.s)} – ${H.fmtDay(r.f)}` + (r.actual_finish ? ` · done ${H.fmtDay(H.day(r.actual_finish))}` : '');
+    b.title = L('Plan ', 'Kế hoạch ') + `${H.fmtDay(r.s)} – ${H.fmtDay(r.f)}` + (r.actual_finish ? L(' · done ', ' · xong ') + H.fmtDay(H.day(r.actual_finish)) : '');
     const t = H.el('div', 'ops-gtoday'); t.style.left = pos(H.REPORT_DATE) + '%';
     lane.append(b, t);
     const lab = H.el('div', null, r.activity);
@@ -957,7 +971,7 @@ function drawSteps() {
   if (!data) return;
   ol.replaceChildren(...data.map((r) => {
     const li = H.el('li'); const body = H.el('div');
-    body.append(H.el('div', 'p', r.phase), H.el('div', null, r.action));
+    body.append(H.el('div', 'p', D(r.phase)), H.el('div', null, r.action));
     li.append(H.el('span', 'n', String(r.step)), body); return li;
   }));
 }
@@ -978,29 +992,35 @@ if (pages.includes(initial)) showPage(initial, false);
 
 <script>
 // Report picker: lists archived reports (history/index.json) and reopens the page with ?date=.
-const pick = document.getElementById('report-pick');
-const fmt = d3.utcFormat('%-d %b %Y');
+const pick = document.getElementById('report-pick'), L = dash.L;
+const fmt = window.opsH.fmtDay;
 const day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d)); };
 if (dash.reports.length) {
   document.getElementById('report-picker').hidden = false;
-  pick.replaceChildren(...dash.reports.map((r) => new Option(fmt(day(r.date)) + (r.date === dash.latestDate ? ' · latest' : ''), r.date === dash.latestDate ? '' : r.date)));
+  pick.replaceChildren(...dash.reports.map((r) => new Option(fmt(day(r.date)) + (r.date === dash.latestDate ? L(' · latest', ' · mới nhất') : ''), r.date === dash.latestDate ? '' : r.date)));
   pick.value = dash.archived ? dash.viewDate : '';
-  pick.addEventListener('change', () => location.assign(location.pathname + (pick.value ? '?date=' + pick.value : '') + location.hash));
+  pick.addEventListener('change', () => {
+    const q = new URLSearchParams(location.search); if (pick.value) q.set('date', pick.value); else q.delete('date');
+    location.assign(location.pathname + (q.toString() ? '?' + q : '') + location.hash);
+  });
 }
 const note = document.getElementById('archived-note');
-const latestLink = () => { const a = document.createElement('a'); a.href = location.pathname + location.hash; a.textContent = 'Open the latest report'; return a; };
+const latestLink = () => {
+  const q = new URLSearchParams(location.search); q.delete('date');
+  const a = document.createElement('a'); a.href = location.pathname + (q.toString() ? '?' + q : '') + location.hash; a.textContent = L('Open the latest report', 'Mở báo cáo mới nhất'); return a;
+};
 if (dash.archived) {
   note.hidden = false;
-  note.append('You are viewing the archived report of ' + fmt(day(dash.viewDate)) + '. ', latestLink());
+  note.append(L('You are viewing the archived report of ', 'Bạn đang xem báo cáo lưu ngày ') + fmt(day(dash.viewDate)) + '. ', latestLink());
 } else if (dash.missingDate) {
   note.hidden = false;
-  note.append('No archived report for ' + fmt(day(dash.missingDate)) + '; showing the latest report instead. ');
+  note.append(L('No archived report for ', 'Không có báo cáo lưu ngày ') + fmt(day(dash.missingDate)) + L('; showing the latest report instead. ', '; đang hiển thị báo cáo mới nhất. '));
 }
 </script>
 
 <script>
-// Readiness status (RAG), attention list, milestones, countdown, change since last report, print.
-const H = window.opsH;
+// Readiness status (RAG), attention list, milestones, countdown, change since last report, print, language switch.
+const H = window.opsH, L = dash.L, D = dash.D;
 const rows = (src, id) => (src === 'cur' ? (dash.data(id).data || []) : ((dash.prev || {})[id] || []));
 const goTab = (page) => { const b = document.getElementById('tab-' + page); if (b) { b.click(); window.scrollTo({ top: 0 }); } };
 const lastWith = (list, key) => list.filter((r) => r[key] != null).at(-1);
@@ -1036,32 +1056,43 @@ function rag() {
   const pc = rows('cur', 'precom_plan'), pcLate = pc.filter((r) => r.plan_finish && !r.actual_finish && H.day(r.plan_finish) < R).length;
   const lvl = (v, g, a, higherIsBetter = true) => v == null ? 'n' : higherIsBetter ? (v >= g ? 'g' : v >= a ? 'a' : 'r') : (v <= g ? 'g' : v <= a ? 'a' : 'r');
   const pctTxt = (v) => (v == null ? '—' : d3.format('.0%')(v));
+  const ptsTxt = (v) => (v == null ? '—' : (v >= 0 ? '+' : '') + H.f1(v) + L(' pts', ' điểm'));
+  const p1 = (v) => (v == null ? '—' : H.f1(v) + '%');
   const mpPct = m.manpower != null && m.manpowerPlan ? m.manpower / m.manpowerPlan : null;
   const orrGap = m.orr != null && m.orrPlan != null ? m.orr - m.orrPlan : null;
   return {
-    'Manpower': { s: lvl(mpPct, 0.9, 0.75), why: `<em>${m.manpower ?? '—'} / ${m.manpowerPlan ?? '—'}</em> people · ${pctTxt(mpPct)} of plan`, rule: 'Green ≥ 90% of plan, amber ≥ 75%', tab: 'overview' },
-    'Training & Competence': { s: lvl(m.mandatory, 0.8, 0.5), why: `Mandatory <em>${pctTxt(m.mandatory)}</em> · CBTA developed ${pctTxt(m.cbta)}`, rule: 'Mandatory training: green ≥ 80%, amber ≥ 50%', tab: 'people' },
-    'ORR Checklist': { s: lvl(orrGap, 0, -5), why: `<em>${m.orr ?? '—'}%</em> vs plan ${m.orrPlan ?? '—'}% (${orrGap == null ? '—' : (orrGap >= 0 ? '+' : '') + orrGap.toFixed(1) + ' pts'})`, rule: 'Green on or ahead of plan, amber up to 5 pts behind', tab: 'orr' },
-    'Procedures': { s: lvl(m.procedures, 0.95, 0.85), why: `<em>${pctTxt(m.procedures)}</em> average completion · ${rows('cur', 'procedures').filter((r) => r.issued !== 'Yes').length} not issued`, rule: 'Average completion: green ≥ 95%, amber ≥ 85%', tab: 'procedures' },
-    'Contracts & Procurement': { s: lvl(m.prLate, 0, 2, false), why: `<em>${m.prLate}</em> PRs late`, rule: 'Green no late PR, amber 1–2 late', tab: 'contracts' },
-    'Permits & Licences': { s: expired ? 'r' : (soon || waiting) ? 'a' : permits.length ? 'g' : 'n', why: `${expired ? `<em>${expired}</em> expired · ` : ''}<em>${waiting}</em> waiting · ${soon} expiring ≤ 6 months`, rule: 'Red if any expired, amber if waiting or expiring within 6 months', tab: 'contracts' },
-    'Applications & Systems': { s: lvl(cmGap, 0, -5), why: `CMMS worst gap <em>${cmGap == null ? '—' : (cmGap >= 0 ? '+' : '') + cmGap.toFixed(1) + ' pts'}</em> vs plan`, rule: 'CMMS: green on plan, amber up to 5 pts behind', tab: 'contracts' },
-    'Commissioning & Start-up': { s: pc.length ? lvl(pcLate, 0, 2, false) : 'n', why: `<em>${pcLate}</em> pre-com activities past planned finish`, rule: 'Green none overdue, amber 1–2 overdue', tab: 'startup' },
+    'Manpower': { s: lvl(mpPct, 0.9, 0.75), why: `<em>${m.manpower ?? '—'} / ${m.manpowerPlan ?? '—'}</em> ` + L(`people · ${pctTxt(mpPct)} of plan`, `người · ${pctTxt(mpPct)} kế hoạch`),
+      rule: L('Green ≥ 90% of plan, amber ≥ 75%', 'Xanh ≥ 90% kế hoạch, vàng ≥ 75%'), tab: 'overview' },
+    'Training & Competence': { s: lvl(m.mandatory, 0.8, 0.5), why: L(`Mandatory <em>${pctTxt(m.mandatory)}</em> · CBTA developed ${pctTxt(m.cbta)}`, `Bắt buộc <em>${pctTxt(m.mandatory)}</em> · CBTA đã biên soạn ${pctTxt(m.cbta)}`),
+      rule: L('Mandatory training: green ≥ 80%, amber ≥ 50%', 'Đào tạo bắt buộc: xanh ≥ 80%, vàng ≥ 50%'), tab: 'people' },
+    'ORR Checklist': { s: lvl(orrGap, 0, -5), why: `<em>${p1(m.orr)}</em> ` + L('vs plan', 'so với KH') + ` ${p1(m.orrPlan)} (${ptsTxt(orrGap)})`,
+      rule: L('Green on or ahead of plan, amber up to 5 pts behind', 'Xanh khi đạt hoặc vượt kế hoạch, vàng khi chậm tối đa 5 điểm'), tab: 'orr' },
+    'Procedures': { s: lvl(m.procedures, 0.95, 0.85), why: `<em>${pctTxt(m.procedures)}</em> ` + L('average completion', 'hoàn thành trung bình') + ` · ${rows('cur', 'procedures').filter((r) => r.issued !== 'Yes').length} ` + L('not issued', 'chưa ban hành'),
+      rule: L('Average completion: green ≥ 95%, amber ≥ 85%', 'Hoàn thành trung bình: xanh ≥ 95%, vàng ≥ 85%'), tab: 'procedures' },
+    'Contracts & Procurement': { s: lvl(m.prLate, 0, 2, false), why: `<em>${m.prLate}</em> ` + L('PRs late', 'PR trễ hạn'),
+      rule: L('Green no late PR, amber 1–2 late', 'Xanh khi không có PR trễ, vàng khi trễ 1–2'), tab: 'contracts' },
+    'Permits & Licences': { s: expired ? 'r' : (soon || waiting) ? 'a' : permits.length ? 'g' : 'n',
+      why: (expired ? `<em>${expired}</em> ` + L('expired', 'đã hết hạn') + ' · ' : '') + `<em>${waiting}</em> ` + L(`waiting · ${soon} expiring ≤ 6 months`, `đang chờ · ${soon} hết hạn trong ≤ 6 tháng`),
+      rule: L('Red if any expired, amber if waiting or expiring within 6 months', 'Đỏ nếu có giấy phép hết hạn, vàng nếu đang chờ hoặc hết hạn trong 6 tháng'), tab: 'contracts' },
+    'Applications & Systems': { s: lvl(cmGap, 0, -5), why: L('CMMS worst gap ', 'CMMS chênh lệch lớn nhất ') + `<em>${ptsTxt(cmGap)}</em> ` + L('vs plan', 'so với KH'),
+      rule: L('CMMS: green on plan, amber up to 5 pts behind', 'CMMS: xanh khi đúng kế hoạch, vàng khi chậm tối đa 5 điểm'), tab: 'contracts' },
+    'Commissioning & Start-up': { s: pc.length ? lvl(pcLate, 0, 2, false) : 'n', why: `<em>${pcLate}</em> ` + L('pre-com activities past planned finish', 'hoạt động pre-com quá ngày kết thúc kế hoạch'),
+      rule: L('Green none overdue, amber 1–2 overdue', 'Xanh khi không có hạng mục quá hạn, vàng khi quá hạn 1–2'), tab: 'startup' },
   };
 }
 
-const STATE = { g: 'On track', a: 'At risk', r: 'Off track', n: 'Not assessed' };
+const STATE = { g: L('On track', 'Đúng tiến độ'), a: L('At risk', 'Có rủi ro'), r: L('Off track', 'Chậm tiến độ'), n: L('Not assessed', 'Chưa đánh giá') };
 function drawRag() {
   const box = document.getElementById('rag'), auto = rag();
   const over = rows('cur', 'readiness');
   const areas = over.length ? over.map((r) => r.area) : Object.keys(auto);
   box.replaceChildren(...areas.filter((a) => auto[a] || over.find((r) => r.area === a)).map((area) => {
-    const a = auto[area] || { s: 'n', why: '', rule: 'No automatic rule', tab: 'overview' };
+    const a = auto[area] || { s: 'n', why: '', rule: L('No automatic rule', 'Không có quy tắc tự động'), tab: 'overview' };
     const o = over.find((r) => r.area === area) || {};
     const s = { Green: 'g', Amber: 'a', Red: 'r' }[o.status_override] || a.s;
     const el = document.createElement('button'); el.type = 'button'; el.className = 'ops-rag-tile ' + s;
-    el.title = (o.status_override ? 'Set manually by team. ' : 'Automatic: ') + a.rule;
-    const dot = H.el('span', 'ops-rag-dot'), nm = H.el('span', 'ops-rag-name', area), st = H.el('span', 'ops-rag-state', STATE[s] + (o.status_override ? ' · set by team' : ''));
+    el.title = (o.status_override ? L('Set manually by team. ', 'Do team tự đánh giá. ') : L('Automatic: ', 'Tự động: ')) + a.rule;
+    const dot = H.el('span', 'ops-rag-dot'), nm = H.el('span', 'ops-rag-name', D(area)), st = H.el('span', 'ops-rag-state', STATE[s] + (o.status_override ? L(' · set by team', ' · team đánh giá') : ''));
     const why = H.el('span', 'ops-rag-why'); why.innerHTML = o.comment ? '' : a.why; if (o.comment) why.textContent = o.comment;
     el.append(dot, nm, st, why); el.addEventListener('click', () => goTab(a.tab));
     return el;
@@ -1073,32 +1104,39 @@ function drawAttention() {
   const add = (sev, html, tab) => items.push({ sev, html, tab });
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const m = metrics('cur');
-  if (m.manpower != null && m.manpowerPlan && m.manpower / m.manpowerPlan < 0.75) add('r', `Manpower at <b>${d3.format('.0%')(m.manpower / m.manpowerPlan)}</b> of plan — <b>${m.manpowerPlan - m.manpower}</b> people short`, 'overview');
+  if (m.manpower != null && m.manpowerPlan && m.manpower / m.manpowerPlan < 0.75) add('r', L(`Manpower at <b>${d3.format('.0%')(m.manpower / m.manpowerPlan)}</b> of plan — <b>${m.manpowerPlan - m.manpower}</b> people short`,
+    `Nhân sự đạt <b>${d3.format('.0%')(m.manpower / m.manpowerPlan)}</b> kế hoạch — thiếu <b>${m.manpowerPlan - m.manpower}</b> người`), 'overview');
   d3.rollups(rows('cur', 'pr_pipeline').filter((r) => r.status === 'Late'), (v) => d3.sum(v, (r) => r.count), (r) => r.stage)
-    .forEach(([stage, n]) => add('r', `<b>${n}</b> PR late at stage <b>${esc(stage)}</b>`, 'contracts'));
+    .forEach(([stage, n]) => add('r', L(`<b>${n}</b> PR late at stage <b>${esc(stage)}</b>`, `<b>${n}</b> PR trễ hạn ở bước <b>${esc(D(stage))}</b>`), 'contracts'));
   rows('cur', 'precom_plan').filter((r) => r.plan_finish && !r.actual_finish && H.day(r.plan_finish) < R)
-    .forEach((r) => add('r', `Pre-com overdue: <b>${esc(r.activity)}</b> (plan finish ${H.fmtDay(H.day(r.plan_finish))})`, 'startup'));
+    .forEach((r) => add('r', L('Pre-com overdue: ', 'Pre-com quá hạn: ') + `<b>${esc(r.activity)}</b> (` + L('plan finish ', 'kết thúc theo KH ') + `${H.fmtDay(H.day(r.plan_finish))})`, 'startup'));
   rows('cur', 'procedures').filter((r) => r.issued !== 'Yes').forEach((r) => {
     const due = endOfMonthText(r.expected);
-    if (due && due < R) add('r', `Procedure overdue: <b>${esc(r.id)}</b> ${esc(r.document)} (due ${esc(r.expected)}, ${r.completion_pct ?? 0}%)`, 'procedures');
-    else if (!r.completion_pct) add('a', `Procedure not started: <b>${esc(r.id)}</b> ${esc(r.document)} (due ${esc(r.expected)})`, 'procedures');
+    if (due && due < R) add('r', L('Procedure overdue: ', 'Quy trình quá hạn: ') + `<b>${esc(r.id)}</b> ${esc(r.document)} (` + L('due ', 'hạn ') + `${esc(r.expected)}, ${r.completion_pct ?? 0}%)`, 'procedures');
+    else if (!r.completion_pct) add('a', L('Procedure not started: ', 'Quy trình chưa bắt đầu: ') + `<b>${esc(r.id)}</b> ${esc(r.document)} (` + L('due ', 'hạn ') + `${esc(r.expected)})`, 'procedures');
   });
   rows('cur', 'permits').forEach((p) => {
-    if (p.expiry_date && H.day(p.expiry_date) < R) add('r', `Permit expired: <b>${esc(p.permit)}</b> (${H.fmtDay(H.day(p.expiry_date))})`, 'contracts');
-    else if (p.expiry_date && (H.day(p.expiry_date) - R) / DAY <= 180) add('a', `Permit expires ${H.fmtDay(H.day(p.expiry_date))}: <b>${esc(p.permit)}</b>`, 'contracts');
-    else if (/waiting/i.test(p.status || '')) add('a', `Permit pending: <b>${esc(p.permit)}</b> — ${esc(p.status)}`, 'contracts');
+    if (p.expiry_date && H.day(p.expiry_date) < R) add('r', L('Permit expired: ', 'Giấy phép đã hết hạn: ') + `<b>${esc(p.permit)}</b> (${H.fmtDay(H.day(p.expiry_date))})`, 'contracts');
+    else if (p.expiry_date && (H.day(p.expiry_date) - R) / DAY <= 180) add('a', L('Permit expires ', 'Giấy phép hết hạn ngày ') + `${H.fmtDay(H.day(p.expiry_date))}: <b>${esc(p.permit)}</b>`, 'contracts');
+    else if (/waiting/i.test(p.status || '')) add('a', L('Permit pending: ', 'Giấy phép đang chờ: ') + `<b>${esc(p.permit)}</b> — ${esc(D(p.status))}`, 'contracts');
   });
-  rows('cur', 'orr_teams').forEach((t) => { const g = (t.actual_pct ?? 0) - (t.plan_pct ?? 0); if (g < -5) add('r', `ORR: <b>${esc(t.team)}</b> ${g.toFixed(1)} pts behind plan`, 'orr'); else if (g < 0) add('a', `ORR: <b>${esc(t.team)}</b> ${g.toFixed(1)} pts behind plan`, 'orr'); });
-  rows('cur', 'orr_elements').filter((e) => (e.progress_pct ?? 0) < 50).forEach((e) => add((e.progress_pct ?? 0) < 25 ? 'r' : 'a', `ORR element <b>${esc(e.code)}</b> ${esc(e.element)} at <b>${e.progress_pct ?? 0}%</b>`, 'orr'));
-  rows('cur', 'mandatory').filter((r) => r.planned && r.earned / r.planned < 0.3).forEach((r) => add('r', `Mandatory training <b>${esc(r.team)}</b> at <b>${d3.format('.0%')(r.earned / r.planned)}</b>`, 'people'));
+  rows('cur', 'orr_teams').forEach((t) => {
+    const g = (t.actual_pct ?? 0) - (t.plan_pct ?? 0);
+    const txt = `ORR: <b>${esc(t.team)}</b> ` + L(`${H.f1(-g)} pts behind plan`, `chậm ${H.f1(-g)} điểm so với kế hoạch`);
+    if (g < -5) add('r', txt, 'orr'); else if (g < 0) add('a', txt, 'orr');
+  });
+  rows('cur', 'orr_elements').filter((e) => (e.progress_pct ?? 0) < 50).forEach((e) => add((e.progress_pct ?? 0) < 25 ? 'r' : 'a',
+    L('ORR element ', 'Hạng mục ORR ') + `<b>${esc(e.code)}</b> ${esc(e.element)} ` + L('at', 'đạt') + ` <b>${H.f1(e.progress_pct ?? 0).replace(/[.,]0$/, '')}%</b>`, 'orr'));
+  rows('cur', 'mandatory').filter((r) => r.planned && r.earned / r.planned < 0.3).forEach((r) => add('r',
+    L('Mandatory training ', 'Đào tạo bắt buộc ') + `<b>${esc(r.team)}</b> ` + L('at', 'đạt') + ` <b>${d3.format('.0%')(r.earned / r.planned)}</b>`, 'people'));
   items.sort((a, b) => (a.sev === b.sev ? 0 : a.sev === 'r' ? -1 : 1));
   const ul = document.getElementById('attention');
   const red = items.filter((i) => i.sev === 'r').length;
-  const pill = document.getElementById('attention-count'); pill.textContent = `${red} critical · ${items.length - red} watch`;
-  if (!items.length) { const li = H.el('li', 'empty', 'Nothing needs attention right now.'); ul.replaceChildren(li); return; }
+  const pill = document.getElementById('attention-count'); pill.textContent = L(`${red} critical · ${items.length - red} watch`, `${red} nghiêm trọng · ${items.length - red} theo dõi`);
+  if (!items.length) { const li = H.el('li', 'empty', L('Nothing needs attention right now.', 'Hiện không có mục nào cần lưu ý.')); ul.replaceChildren(li); return; }
   ul.replaceChildren(...items.map((i) => {
     const li = document.createElement('li'); const what = H.el('span', 'what'); what.innerHTML = i.html;
-    const go = H.el('button', 'where', 'View'); go.type = 'button'; go.addEventListener('click', () => goTab(i.tab));
+    const go = H.el('button', 'where', L('View', 'Xem')); go.type = 'button'; go.addEventListener('click', () => goTab(i.tab));
     li.append(H.el('span', 'sev ' + i.sev), what, go); return li;
   }));
 }
@@ -1115,20 +1153,20 @@ function drawMilestones() {
     li.className = r.actual_date ? 'done' : r === firstOpen ? 'next' : '';
     if (r.is_target) li.classList.add('target');
     const mk = H.el('span', 'mk', r.actual_date ? '✓' : '');
-    const body = H.el('div'); body.append(H.el('div', 'nm', r.milestone), H.el('div', 'sub', r.note || ''));
+    const body = H.el('div'); body.append(H.el('div', 'nm', D(r.milestone)), H.el('div', 'sub', r.note || ''));
     const dt = H.el('div', 'dt');
-    if (r.actual_date) { dt.append(H.el('b', null, H.fmtDay(H.day(r.actual_date))), H.el('span', 'sub', 'Achieved')); }
-    else if (r.plan_date) { const d = Math.round((H.day(r.plan_date) - today) / DAY); dt.append(H.el('b', null, H.fmtDay(H.day(r.plan_date))), H.el('span', 'sub', d >= 0 ? `in ${d} days` : `${-d} days ago`)); }
-    else dt.append(H.el('b', 'tbc', 'TBC'));
+    if (r.actual_date) { dt.append(H.el('b', null, H.fmtDay(H.day(r.actual_date))), H.el('span', 'sub', L('Achieved', 'Đã đạt'))); }
+    else if (r.plan_date) { const d = Math.round((H.day(r.plan_date) - today) / DAY); dt.append(H.el('b', null, H.fmtDay(H.day(r.plan_date))), H.el('span', 'sub', d >= 0 ? L(`in ${d} days`, `còn ${d} ngày`) : L(`${-d} days ago`, `${-d} ngày trước`))); }
+    else dt.append(H.el('b', 'tbc', L('TBC', 'Chưa chốt')));
     li.append(mk, body, dt); return li;
   }));
   const target = list.find((r) => r.is_target && r.plan_date && !r.actual_date);
   const box = document.getElementById('countdown');
   if (target) {
     box.hidden = false;
-    document.getElementById('countdown-label').textContent = target.milestone;
+    document.getElementById('countdown-label').textContent = D(target.milestone);
     document.getElementById('countdown-days').textContent = d3.format(',')(Math.max(0, Math.round((H.day(target.plan_date) - today) / DAY)));
-    document.getElementById('countdown-date').textContent = 'Plan ' + H.fmtDay(H.day(target.plan_date));
+    document.getElementById('countdown-date').textContent = L('Plan ', 'Kế hoạch ') + H.fmtDay(H.day(target.plan_date));
   } else box.hidden = true;
 }
 
@@ -1139,24 +1177,30 @@ function drawDeltas() {
     const d = cur - prev; el.hidden = false;
     el.className = 'ops-delta ' + (Math.abs(d) < 1e-9 ? 'flat' : d > 0 ? 'up' : 'down');
     if (id === 'kpi-pr') el.className = 'ops-delta ' + (d === 0 ? 'flat' : d < 0 ? 'up' : 'down');
-    el.textContent = (d > 0 ? '▲ +' : d < 0 ? '▼ −' : '● ') + fmt(d) + unit + ' vs last report';
-    el.title = 'Change since report of ' + H.fmtDay(H.day(dash.prevDate));
+    el.textContent = (d > 0 ? '▲ +' : d < 0 ? '▼ −' : '● ') + fmt(d) + unit + L(' vs last report', ' so kỳ trước');
+    el.title = L('Change since report of ', 'Thay đổi so với báo cáo ngày ') + H.fmtDay(H.day(dash.prevDate));
   };
   const c = metrics('cur'), p = metrics('prev');
   const n = (d) => d3.format(',')(Math.round(Math.abs(d)));
-  const pts = (d) => (Math.abs(d) * 100).toFixed(1).replace(/\.0$/, '');
+  const pts = (d) => d3.format('.1~f')(Math.abs(d) * 100), PTS = L(' pts', ' điểm');
   show('kpi-manpower', c.manpower, p.manpower, n, '');
-  show('kpi-orr', c.orr, p.orr, (d) => Math.abs(d).toFixed(1), ' pts');
-  show('kpi-cbta', c.cbta, p.cbta, pts, ' pts');
-  show('kpi-mandatory', c.mandatory, p.mandatory, pts, ' pts');
-  show('kpi-proc', c.procedures, p.procedures, pts, ' pts');
-  show('kpi-pr', c.prLate, p.prLate, (d) => String(Math.abs(d)), ' late');
+  show('kpi-orr', c.orr, p.orr, (d) => H.f1(Math.abs(d)), PTS);
+  show('kpi-cbta', c.cbta, p.cbta, pts, PTS);
+  show('kpi-mandatory', c.mandatory, p.mandatory, pts, PTS);
+  show('kpi-proc', c.procedures, p.procedures, pts, PTS);
+  show('kpi-pr', c.prLate, p.prLate, (d) => String(Math.abs(d)), L(' late', ' PR trễ'));
 }
 
 dash.onData(() => { drawRag(); drawAttention(); drawMilestones(); drawDeltas(); });
 // A page left open (e.g. on a control-room screen) ticks over at midnight Vietnam time.
 let shownDay = +vnToday();
 setInterval(() => { if (+vnToday() !== shownDay) { shownDay = +vnToday(); drawMilestones(); drawAttention(); } }, 60000);
+
+// Language switch (top right): remembers the choice and reloads in the other language.
+document.querySelectorAll('#lang-switch button').forEach((b) => {
+  b.setAttribute('aria-pressed', String(b.dataset.lang === dash.lang));
+  b.addEventListener('click', () => { if (b.dataset.lang !== dash.lang) dash.setLang(b.dataset.lang); });
+});
 
 // Print: show every section and redraw charts at print width, then restore.
 document.getElementById('print-btn').addEventListener('click', () => window.print());

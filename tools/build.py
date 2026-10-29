@@ -10,6 +10,7 @@ IDS = ['meta', 'manpower', 'staffing', 'cbta', 'mandatory', 'vendor_training', '
        'startup_sequence', 'readiness', 'milestones']
 data = {i: json.load(open(os.path.join(D, i + '.json'))) for i in IDS}
 data['_updated_at'] = '2026-10-21T00:00:00Z'
+VI = json.load(open(os.path.join(G, 'i18n-vi.json'), encoding='utf-8'))
 
 page = open(os.path.join(G, 'page.html')).read()
 import base64
@@ -17,6 +18,8 @@ page = page.replace('{{LOGO}}', 'data:image/png;base64,' + base64.b64encode(open
 style, body = page.split('</style>', 1)
 style = style.replace('<style>', '')
 body = re.sub(r'<script>(.*?)</script>', lambda m: '<script>(function(){' + m.group(1) + '\n})();</script>', body, flags=re.S)
+# Translate the fixed text once the markup is parsed, before the drawing scripts run.
+body = body.replace('<script>', "<script>dash._translateStatic(document.getElementById('dash-root'));</script>\n<script>", 1)
 d3 = open(os.path.join(G, 'd3.min.js')).read().replace('</script', '<\\/script')
 
 tokens = """
@@ -47,6 +50,36 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:
 shim = """<script>
 window.dash = (function () {
   var FALLBACK = %s;
+  // Language: ?lang=en|vi in the address wins, else the viewer's last choice, else English.
+  var VI = %s, lang = 'en';
+  try { if (localStorage.getItem('ops-lang') === 'vi') lang = 'vi'; } catch (e) {}
+  var qLang = (location.search.match(/[?&]lang=(en|vi)(?:&|$)/) || [])[1]; if (qLang) lang = qLang;
+  if (lang === 'vi') {
+    document.documentElement.lang = 'vi';
+    document.title = VI.ui[document.title] || document.title;
+    d3.formatDefaultLocale({ decimal: ',', thousands: '.', grouping: [3], currency: ['', ' ₫'], minus: '\u2212' });
+  }
+  var own = function (o, k) { return k != null && Object.prototype.hasOwnProperty.call(o, k); };
+  function translateStatic(root) {
+    if (lang !== 'vi' || !root) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), n, list = [];
+    while ((n = w.nextNode())) list.push(n);
+    list.forEach(function (n) {
+      var p = n.parentNode, t = n.nodeValue, k = t.trim();
+      if (!k || !p || p.closest('script,style')) return;
+      var v = p.hasAttribute('data-vi') ? p.getAttribute('data-vi') : own(VI.ui, k) ? VI.ui[k] : null;
+      if (v == null) return;
+      var i = t.indexOf(k); n.nodeValue = t.slice(0, i) + v + t.slice(i + k.length);
+    });
+    root.querySelectorAll('[title],[placeholder],[aria-label]').forEach(function (e) {
+      ['title', 'placeholder', 'aria-label'].forEach(function (a) { var v = (e.getAttribute(a) || '').trim(); if (own(VI.ui, v)) e.setAttribute(a, VI.ui[v]); });
+    });
+  }
+  function setLang(l) {
+    try { localStorage.setItem('ops-lang', l); } catch (e) {}
+    var q = new URLSearchParams(location.search); q.set('lang', l);
+    location.assign(location.pathname + '?' + q.toString() + location.hash);
+  }
   var DATA = FALLBACK, live = false;
   function getJSON(url, cached) {
     try {
@@ -96,23 +129,28 @@ window.dash = (function () {
     colors: ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)', 'var(--s7)', 'var(--s8)'],
     setLink: function (n) { try { history.replaceState(null, '', '#' + n); } catch (e) {} },
     params: function () { return {}; }, setParams: function () {}, resetParams: function () {}, refresh: function () {},
-    _redraw: function () { fns.forEach(function (f) { f(); }); }
+    _redraw: function () { fns.forEach(function (f) { f(); }); },
+    lang: lang, setLang: setLang, _translateStatic: translateStatic,
+    // L('English', 'Tiếng Việt') picks the text for the current language; D(value) translates a known data label.
+    L: function (en, vi) { return lang === 'vi' ? vi : en; },
+    D: function (s) { return lang === 'vi' && own(VI.data, s) ? VI.data[s] : s; }
   };
 })();
 var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __rt = setTimeout(dash._redraw, 150); });
-</script>""" % json.dumps(data, ensure_ascii=False)
+</script>""" % (json.dumps(data, ensure_ascii=False), json.dumps({'ui': VI['ui'], 'data': VI['data']}, ensure_ascii=False))
 
 foot = """<div class="ops-docctl" id="docctl" hidden></div>
 <p class="ops-foot" id="ops-foot"></p>
 <script>(function(){
-  var f = document.getElementById('ops-foot'), m = (dash.data('meta').data || [])[0] || {};
+  var f = document.getElementById('ops-foot'), m = (dash.data('meta').data || [])[0] || {}, L = dash.L;
   var t = dash.updatedAt ? new Date(dash.updatedAt) : null;
-  var when = t && !isNaN(t) ? t.toLocaleString('en-GB', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false, day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—';
-  f.textContent = 'Source: ' + (m.report_title || 'OPS Dashboard Data') + (m.prepared_by ? ', ' + m.prepared_by : '') + (dash.source === 'notion' ? ' · Live from Notion, last edited ' : ' · Data updated ') + when + ' (Vietnam time).';
-  var dc = document.getElementById('docctl'), items = [['Document no.', m.doc_no], ['Revision', m.revision], ['Classification', m.classification], ['Prepared by', m.prepared_by], ['Reviewed by', m.reviewed_by], ['Approved by', m.approved_by]].filter(function (x) { return x[1]; });
+  var when = t && !isNaN(t) ? t.toLocaleString(L('en-GB', 'vi-VN'), { timeZone: 'Asia/Ho_Chi_Minh', hour12: false, day: 'numeric', month: L('short', '2-digit'), year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—';
+  f.textContent = L('Source: ', 'Nguồn: ') + (m.report_title || 'OPS Dashboard Data') + (m.prepared_by ? ', ' + m.prepared_by : '')
+    + (dash.source === 'notion' ? L(' · Live from Notion, last edited ', ' · Trực tiếp từ Notion, sửa lần cuối ') : L(' · Data updated ', ' · Số liệu cập nhật ')) + when + L(' (Vietnam time).', ' (giờ Việt Nam).');
+  var dc = document.getElementById('docctl'), items = [[L('Document no.', 'Số tài liệu'), m.doc_no], [L('Revision', 'Phiên bản'), m.revision], [L('Classification', 'Mức độ mật'), dash.D(m.classification)], [L('Prepared by', 'Người lập'), m.prepared_by], [L('Reviewed by', 'Người soát xét'), m.reviewed_by], [L('Approved by', 'Người phê duyệt'), m.approved_by]].filter(function (x) { return x[1]; });
   if (items.length) { dc.hidden = false; items.forEach(function (x) { var d = document.createElement('div'), s = document.createElement('span'); s.textContent = x[0]; d.append(s, x[1]); dc.append(d); }); }
-  var cls = document.getElementById('doc-class'); if (cls && m.classification) { cls.hidden = false; cls.textContent = m.classification; }
-  if (!dash.live) { var s = document.createElement('span'); s.className = 'ops-stale'; s.textContent = ' Could not read data.json; showing fallback data.'; f.append(s); }
+  var cls = document.getElementById('doc-class'); if (cls && m.classification) { cls.hidden = false; cls.textContent = dash.D(m.classification); }
+  if (!dash.live) { var s = document.createElement('span'); s.className = 'ops-stale'; s.textContent = L(' Could not read data.json; showing fallback data.', ' Không đọc được data.json; đang hiển thị số liệu dự phòng.'); f.append(s); }
 })();</script>"""
 
 html = f"""<!doctype html>
