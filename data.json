@@ -1,4 +1,83 @@
 {
+ "cbta": [
+  {
+   "ojt_modules": 11,
+   "theory_pct": 6.25,
+   "developing": 0,
+   "review": 0,
+   "completed": 11,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 11,
+   "team": "Deck crew"
+  },
+  {
+   "ojt_modules": 39,
+   "theory_pct": 7.85,
+   "developing": 1,
+   "review": null,
+   "completed": 35,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 39,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 38,
+   "theory_pct": 1.48,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 38,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 36,
+   "theory_pct": 3.87,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 36,
+   "team": "P&P"
+  },
+  {
+   "ojt_modules": 35,
+   "theory_pct": 0,
+   "developing": 2,
+   "review": 2,
+   "completed": 20,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 24,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 31,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 1,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 22,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 29,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 0,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 21,
+   "team": "P&P"
+  }
+ ],
  "staffing": [
   {
    "filled": 47,
@@ -14,18 +93,6 @@
    "filled": 9,
    "required": 38,
    "group": "Outsource"
-  }
- ],
- "meta": [
-  {
-   "report_date": "2026-10-21",
-   "approved_by": null,
-   "doc_no": null,
-   "prepared_by": "OPS Department",
-   "revision": null,
-   "reviewed_by": null,
-   "classification": "Internal",
-   "report_title": "Operations Readiness Preparation"
   }
  ],
  "manpower": [
@@ -570,123 +637,6 @@
    "month": "2028-12"
   }
  ],
- "mandatory": [
-  {
-   "planned": 72,
-   "balance": 53,
-   "earned": 19,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 270,
-   "balance": 174,
-   "earned": 96,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 210,
-   "balance": 118,
-   "earned": 92,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 334,
-   "balance": 139,
-   "earned": 195,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 263,
-   "balance": 191,
-   "earned": 72,
-   "team": "Management"
-  },
-  {
-   "planned": 250,
-   "balance": 120,
-   "earned": 130,
-   "team": "WHP team"
-  }
- ],
- "cbta": [
-  {
-   "ojt_modules": 11,
-   "theory_pct": 6.25,
-   "developing": 0,
-   "review": 0,
-   "completed": 11,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 11,
-   "team": "Deck crew"
-  },
-  {
-   "ojt_modules": 39,
-   "theory_pct": 7.85,
-   "developing": 1,
-   "review": null,
-   "completed": 35,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 39,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 38,
-   "theory_pct": 1.48,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 38,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 36,
-   "theory_pct": 3.87,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 36,
-   "team": "P&P"
-  },
-  {
-   "ojt_modules": 35,
-   "theory_pct": 0,
-   "developing": 2,
-   "review": 2,
-   "completed": 20,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 24,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 31,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 1,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 22,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 29,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 0,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 21,
-   "team": "P&P"
-  }
- ],
  "vendor_training": [
   {
    "period": "2026-09",
@@ -765,51 +715,42 @@
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
   }
  ],
- "orr_curve": [
+ "mandatory": [
   {
-   "actual_pct": 70.5,
-   "plan_pct": 67.2,
-   "month": "2026-10"
+   "planned": 72,
+   "balance": 53,
+   "earned": 19,
+   "team": "CPP Deck crew"
   },
   {
-   "actual_pct": null,
-   "plan_pct": 71,
-   "month": "2026-11"
+   "planned": 270,
+   "balance": 174,
+   "earned": 96,
+   "team": "CPP E&I"
   },
   {
-   "actual_pct": null,
-   "plan_pct": 75,
-   "month": "2026-12"
+   "planned": 210,
+   "balance": 118,
+   "earned": 92,
+   "team": "CPP M&R"
   },
   {
-   "actual_pct": null,
-   "plan_pct": 80,
-   "month": "2027-01"
+   "planned": 334,
+   "balance": 139,
+   "earned": 195,
+   "team": "CPP P&P"
   },
   {
-   "actual_pct": null,
-   "plan_pct": 83,
-   "month": "2027-02"
+   "planned": 263,
+   "balance": 191,
+   "earned": 72,
+   "team": "Management"
   },
   {
-   "actual_pct": null,
-   "plan_pct": 87,
-   "month": "2027-03"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 90,
-   "month": "2027-04"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 93,
-   "month": "2027-05"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 95,
-   "month": "2027-06"
+   "planned": 250,
+   "balance": 120,
+   "earned": 130,
+   "team": "WHP team"
   }
  ],
  "orr_teams": [
@@ -893,6 +834,28 @@
    "plan_pct": 60.6,
    "plan_end_pct": 99,
    "team": "Production Eng"
+  }
+ ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
   }
  ],
  "orr_elements": [
@@ -1065,6 +1028,105 @@
    "code": "PR-14"
   }
  ],
+ "orr_curve": [
+  {
+   "actual_pct": 70.5,
+   "plan_pct": 67.2,
+   "month": "2026-10"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 71,
+   "month": "2026-11"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 75,
+   "month": "2026-12"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 80,
+   "month": "2027-01"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 83,
+   "month": "2027-02"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 87,
+   "month": "2027-03"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 90,
+   "month": "2027-04"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 93,
+   "month": "2027-05"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 95,
+   "month": "2027-06"
+  }
+ ],
+ "pr_pipeline": [
+  {
+   "count": 1,
+   "status": "Near-late",
+   "stage": "1 CSP Preparation"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "1 CSP Preparation"
+  },
+  {
+   "count": 1,
+   "status": "Late",
+   "stage": "2 CSP Approval"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "2 CSP Approval"
+  },
+  {
+   "count": 1,
+   "status": "Near-late",
+   "stage": "3 Bidding"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "3 Bidding"
+  },
+  {
+   "count": 1,
+   "status": "Late",
+   "stage": "4 Evaluation"
+  },
+  {
+   "count": 2,
+   "status": "On time",
+   "stage": "4 Evaluation"
+  },
+  {
+   "count": 1,
+   "status": "Late",
+   "stage": "5 TCEAR Approval"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "6 Contract Signing"
+  }
+ ],
  "packages_no_pr": [
   {
    "count": 19,
@@ -1074,12 +1136,12 @@
   {
    "count": 7,
    "dimension": "status",
-   "category": "Screening"
+   "category": "PR Request"
   },
   {
    "count": 7,
    "dimension": "status",
-   "category": "PR Request"
+   "category": "Screening"
   },
   {
    "count": 15,
@@ -1110,28 +1172,6 @@
    "count": 1,
    "dimension": "scr_timing",
    "category": "This month"
-  }
- ],
- "orr_groups": [
-  {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
-  },
-  {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
-  },
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
-  },
-  {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
   }
  ],
  "procedures": [
@@ -1917,18 +1957,6 @@
    "document": "Pressure cylinder management Procedure"
   }
  ],
- "cmms": [
-  {
-   "actual_pct": 82.11,
-   "plan_pct": 85,
-   "package": "EPCI#2"
-  },
-  {
-   "actual_pct": 41.58,
-   "plan_pct": 42.3,
-   "package": "EPCI#1"
-  }
- ],
  "workstreams": [
   {
    "area": "Manpower",
@@ -2016,56 +2044,16 @@
    "item": "Offshore preservation"
   }
  ],
- "pr_pipeline": [
+ "cmms": [
   {
-   "count": 1,
-   "status": "Near-late",
-   "stage": "1 CSP Preparation"
+   "actual_pct": 82.11,
+   "plan_pct": 85,
+   "package": "EPCI#2"
   },
   {
-   "count": 1,
-   "status": "On time",
-   "stage": "1 CSP Preparation"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "2 CSP Approval"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "2 CSP Approval"
-  },
-  {
-   "count": 1,
-   "status": "Near-late",
-   "stage": "3 Bidding"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "3 Bidding"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "4 Evaluation"
-  },
-  {
-   "count": 2,
-   "status": "On time",
-   "stage": "4 Evaluation"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "5 TCEAR Approval"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "6 Contract Signing"
+   "actual_pct": 41.58,
+   "plan_pct": 42.3,
+   "package": "EPCI#1"
   }
  ],
  "permits": [
@@ -2232,6 +2220,64 @@
    "phase": "Condensate & PW"
   }
  ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
+  }
+ ],
  "precom_plan": [
   {
    "actual_start": null,
@@ -2395,64 +2441,43 @@
    "milestone": "First Gas (sales gas)"
   }
  ],
- "readiness": [
+ "meta": [
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
+   "report_date": "2026-11-04",
+   "from_date": "2026-10-28",
+   "name": "Báo cáo 28/10 – 04/11/2026",
+   "state": "open",
+   "as_of": "2026-10-29",
+   "report_title": "Operations Readiness Preparation",
+   "prepared_by": "OPS Department",
+   "doc_no": null,
+   "revision": null,
+   "reviewed_by": null,
+   "approved_by": null,
+   "classification": "Internal"
   }
  ],
- "_updated_at": "2026-10-27T03:43:00.000Z",
+ "_reports": [
+  {
+   "date": "2026-10-21",
+   "from": "2026-10-14",
+   "name": "Báo cáo 14/10 – 21/10/2026",
+   "state": "closed"
+  },
+  {
+   "date": "2026-10-28",
+   "from": "2026-10-21",
+   "name": "Báo cáo 21/10 – 28/10/2026",
+   "state": "closed"
+  },
+  {
+   "date": "2026-11-04",
+   "from": "2026-10-28",
+   "name": "Báo cáo 28/10 – 04/11/2026",
+   "state": "open"
+  }
+ ],
+ "_current": "2026-11-04",
+ "_updated_at": "2026-10-29T06:17:00.000Z",
  "_source": "notion"
 }
