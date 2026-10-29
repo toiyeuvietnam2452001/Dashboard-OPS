@@ -1143,7 +1143,7 @@
    "expected": "Jun-25",
    "completion_pct": 100,
    "id": "GEN-01",
-   "remark": "Issued on 13 Feb 25",
+   "remark": "Issued on 19 Feb 25",
    "document": "Use and inspection of utility hoses and fittings"
   },
   {
@@ -1187,7 +1187,7 @@
    "expected": "Jun-25",
    "completion_pct": 100,
    "id": "GEN-05",
-   "remark": "Issued on 13 Feb 25",
+   "remark": "Issued on 19 Feb 25",
    "document": "Portable and Temporary Equipment Procedure"
   },
   {
@@ -1283,10 +1283,10 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "Offshore",
-   "expected": "Dec-26",
+   "expected": "Dec-25",
    "completion_pct": 100,
    "id": "GEN-14",
-   "remark": "Issued on 13 Feb 25",
+   "remark": "Issued on 19 Feb 25",
    "document": "Platform Standing Instruction"
   },
   {
@@ -1305,7 +1305,7 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "HT Kiet",
-   "expected": "Dec-26",
+   "expected": "Dec-25",
    "completion_pct": 100,
    "id": "GEN-16",
    "remark": "Issued",
@@ -1418,14 +1418,14 @@
    "expected": "Dec-26",
    "completion_pct": 100,
    "id": "GEN-26",
-   "remark": "Issued",
+   "remark": null,
    "document": "Alarm & Trip Setting Procedure"
   },
   {
    "category": "General operations",
    "issued": "No",
    "level": "Department",
-   "responsible": "Guy NT",
+   "responsible": "Quy NT",
    "expected": "Dec-27",
    "completion_pct": 0,
    "id": "GEN-27",
@@ -1437,10 +1437,10 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "TN Nguyen",
-   "expected": "Jan-27",
+   "expected": "Jun-27",
    "completion_pct": 100,
    "id": "GEN-28",
-   "remark": "Issued",
+   "remark": null,
    "document": "Pressure Safety Valve Testing and Recertification"
   },
   {
@@ -1448,7 +1448,7 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "E&I Sup",
-   "expected": "Jan-27",
+   "expected": "Jun-27",
    "completion_pct": 100,
    "id": "GEN-29",
    "remark": "Issued",
@@ -1459,7 +1459,7 @@
    "issued": "No",
    "level": "Department",
    "responsible": "WH Sup",
-   "expected": "Jan-27",
+   "expected": "Jun-27",
    "completion_pct": 75,
    "id": "GEN-30",
    "remark": "Reviewing",
@@ -1470,7 +1470,7 @@
    "issued": "No",
    "level": "Department",
    "responsible": "Offshore",
-   "expected": "Jan-27",
+   "expected": "Jun-27",
    "completion_pct": 75,
    "id": "GEN-31",
    "remark": "Reviewing",
@@ -1726,7 +1726,7 @@
    "expected": "Jun-25",
    "completion_pct": 100,
    "id": "HSE-23",
-   "remark": "Issued",
+   "remark": null,
    "document": "Confined Space Entry Procedure"
   },
   {
@@ -1745,10 +1745,10 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "Nguyen TN",
-   "expected": "Jun-26",
+   "expected": "Jun-25",
    "completion_pct": 100,
    "id": "HSE-25",
-   "remark": "Issued",
+   "remark": null,
    "document": "Inspection and Certification of Lifting Equipment"
   },
   {
@@ -1858,7 +1858,7 @@
    "expected": "Apr-27",
    "completion_pct": 0,
    "id": "HSE-35",
-   "remark": "Bid submission deadline extended to 13 Oct 2026",
+   "remark": "Bid submission deadline extended from 14 Oct to 19 Oct 2026",
    "document": "Emergency response Procedure for HUB/WHP"
   },
   {
@@ -1891,7 +1891,7 @@
    "expected": "Apr-27",
    "completion_pct": 0,
    "id": "HSE-38",
-   "remark": "Bid submission deadline extended to 13 Oct 2026",
+   "remark": "Bid submission deadline extended from 14 Oct to 19 Oct 2026",
    "document": "Emergency response Procedure for CPP complex"
   },
   {
@@ -2158,6 +2158,33 @@
    "renewal_date": "2028-01-22",
    "issue_date": "2025-07-21",
    "permit": "UHF radio frequency license"
+  },
+  {
+   "facility": "Electrical",
+   "status": "No update in report",
+   "authority": null,
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Electrical Hazardous Area Certification"
+  },
+  {
+   "facility": "Electrical",
+   "status": "No update in report",
+   "authority": null,
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Pressure indicator (stand alone PI)"
+  },
+  {
+   "facility": "Electrical",
+   "status": "No update in report",
+   "authority": null,
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Electrical Safety equipment"
   }
  ],
  "startup_sequence": [
@@ -2351,6 +2378,13 @@
    "plan_finish": "2027-02-26",
    "plan_start": "2027-01-25",
    "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-12-16",
+   "plan_start": "2026-11-24",
+   "activity": "Comm Train 1 – Turbo Expander System (FTP)"
   }
  ],
  "milestones": [
