@@ -210,6 +210,30 @@
 .ops-docctl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 4px 16px; padding: var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); font-size: var(--cds-font-size-caption); }
 .ops-docctl span { color: var(--color-fg-muted); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
 @media (max-width: 560px) { .ops-mast-side { width: 100%; } .ops-count { flex: 1; } .ops-lang { position: absolute; top: 10px; right: 10px; } .ops-mast-id { padding-right: 88px; } }
+/* Changes since last report */
+.ops-tab-n { display: inline-block; margin-left: 6px; min-width: 1.4em; padding: 0 6px; border-radius: 999px; font-size: 11px; font-weight: 600; line-height: 1.6; text-align: center; background: var(--rag-a-tint); color: var(--rag-a); border: 1px solid var(--rag-a-line); }
+.ops-chg-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--cds-gap-md); align-items: flex-start; }
+.ops-chg-stats { display: flex; flex-wrap: wrap; gap: var(--cds-gap-lg); }
+.ops-chg-stats div { display: flex; flex-direction: column; }
+.ops-chg-stats b { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 28px; line-height: 1.1; }
+.ops-chg-stats span { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.ops-chg-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ops-chg-chips button { font: inherit; font-size: var(--cds-font-size-caption); padding: 3px 10px; border-radius: 999px; border: 1px solid var(--color-border-line); background: var(--color-panel); color: var(--color-fg); cursor: pointer; }
+.ops-chg-chips button:hover { border-color: var(--brand); color: var(--brand-ink); }
+.ops-chg-chips button b { margin-left: 4px; color: var(--rag-a); }
+.ops-chg-list { display: flex; flex-direction: column; gap: var(--cds-gap-md); }
+.ops-chg-group h3 { display: flex; align-items: baseline; gap: 8px; }
+.ops-chg-group h3 .ops-note { font-weight: 400; }
+.ops-chg td.old { color: var(--color-fg-muted); text-decoration: line-through; text-decoration-color: var(--color-border-line); }
+.ops-chg td.new { font-weight: 600; }
+.ops-chg-group table { table-layout: fixed; min-width: 640px; }
+.ops-chg-group th:nth-child(1) { width: 34%; } .ops-chg-group th:nth-child(2) { width: 16%; } .ops-chg-group th:nth-child(3), .ops-chg-group th:nth-child(4) { width: 19%; } .ops-chg-group th:nth-child(5) { width: 12%; }
+.ops-chg-group td { overflow-wrap: anywhere; }
+.ops-chg .d { white-space: nowrap; font-weight: 600; }
+.ops-chg .d.up { color: var(--color-ok); } .ops-chg .d.down { color: var(--color-bad); } .ops-chg .d.flat { color: var(--color-fg-muted); font-weight: 400; }
+.ops-chg .tag { display: inline-block; padding: 0 7px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+.ops-chg .tag.add { background: var(--brand-tint); color: var(--brand-ink); } .ops-chg .tag.del { background: var(--rag-r-tint); color: var(--rag-r); } .ops-chg .tag.edit { background: var(--cds-chart-grid); color: var(--color-fg-muted); }
+.ops-chg-more { font: inherit; font-size: var(--cds-font-size-caption); background: none; border: 0; padding: 0; color: var(--brand-ink); text-decoration: underline; cursor: pointer; }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -283,6 +307,7 @@
     <button class="ops-tab" role="tab" id="tab-procedures" data-page="procedures" aria-selected="false">Procedures</button>
     <button class="ops-tab" role="tab" id="tab-contracts" data-page="contracts" aria-selected="false">Contracts, applications &amp; permits</button>
     <button class="ops-tab" role="tab" id="tab-startup" data-page="startup" aria-selected="false">Commissioning &amp; start-up</button>
+    <button class="ops-tab" role="tab" id="tab-changes" data-page="changes" aria-selected="false">Changes</button>
   </nav>
 
   <!-- OVERVIEW -->
@@ -521,6 +546,19 @@
       </div>
     </div>
   </section>
+
+  <!-- CHANGES SINCE LAST REPORT -->
+  <section class="ops-page ops-chg" id="changes" data-page="changes" hidden>
+    <div class="ops-card">
+      <div class="ops-chg-head">
+        <div><h2 id="chg-title">Changes since last report</h2>
+        <p class="ops-note">Every figure in this report compared with the previous weekly report, item by item. Figures are cumulative, so a change is what moved during the week.</p></div>
+        <div class="ops-chg-stats" id="chg-stats"></div>
+      </div>
+      <div class="ops-chg-chips" id="chg-chips"></div>
+    </div>
+    <div class="ops-chg-list" id="chg-list"></div>
+  </section>
 </div>
 
 <div class="ops-theme" id="theme-switch" role="group" aria-label="Theme">
@@ -680,7 +718,7 @@ H.bar = (label, frac, color, val, tickFrac) => {
 const H = window.opsH, L = dash.L, D = dash.D;
 let mpKey = 'total';
 let currentPage = 'overview';
-const pages = ['overview', 'people', 'orr', 'procedures', 'contracts', 'startup'];
+const pages = ['overview', 'people', 'orr', 'procedures', 'contracts', 'startup', 'changes'];
 
 function showPage(p, push) {
   if (!pages.includes(p)) return;
@@ -1295,4 +1333,148 @@ window.addEventListener('beforeprint', () => {
   window.dispatchEvent(new Event('resize'));
 });
 window.addEventListener('afterprint', () => { if (printPage) goTab(printPage); });
+</script>
+
+<script>
+// Changes since last report: compares every row of every table with the previous weekly report.
+// Rows are matched on the columns that identify them (the same keys api/rollover uses).
+const H = window.opsH, L = dash.L, D = dash.D;
+const AREAS = [ // [table, area title EN, VI, tab]
+  ['readiness', 'Readiness status', 'Trạng thái tổng thể', 'overview'], ['milestones', 'Key milestones', 'Mốc tiến độ', 'overview'],
+  ['manpower', 'Manpower by month', 'Nhân sự theo tháng', 'overview'], ['staffing', 'Current staffing', 'Định biên', 'overview'],
+  ['orr_curve', 'ORR by month', 'ORR theo tháng', 'overview'],
+  ['mandatory', 'Mandatory training', 'Đào tạo bắt buộc', 'people'], ['cbta', 'CBTA', 'CBTA', 'people'], ['vendor_training', 'Vendor training', 'Đào tạo vendor', 'people'],
+  ['orr_teams', 'ORR by team', 'ORR theo team', 'orr'], ['orr_groups', 'ORR groups', 'ORR tổng nhóm', 'orr'], ['orr_elements', 'ORR elements', 'ORR hạng mục', 'orr'],
+  ['procedures', 'Procedures', 'Quy trình', 'procedures'],
+  ['pr_pipeline', 'PRs in progress', 'PR đang xử lý', 'contracts'], ['packages_no_pr', 'Packages without PR', 'Gói chưa có PR', 'contracts'], ['cmms', 'CMMS', 'CMMS', 'contracts'],
+  ['workstreams', 'Workstreams', 'Trạng thái công việc', 'contracts'], ['permits', 'Permits', 'Giấy phép', 'contracts'],
+  ['precom_plan', 'Pre-commissioning', 'Pre-com', 'startup'], ['startup_sequence', 'Start-up sequence', 'Trình tự khởi động', 'startup'],
+];
+const KEYS = {
+  manpower: ['month'], orr_curve: ['month'], startup_sequence: ['step'], procedures: ['id'], orr_elements: ['code'], orr_groups: ['group'],
+  orr_teams: ['team'], pr_pipeline: ['stage', 'status'], packages_no_pr: ['dimension', 'category'], vendor_training: ['period', 'course'],
+  precom_plan: ['activity'], cbta: ['platform', 'team'], mandatory: ['team'], staffing: ['group'], cmms: ['package'],
+  workstreams: ['area', 'item'], permits: ['permit'], readiness: ['area'], milestones: ['milestone'],
+};
+const FIELDS = {
+  total_plan: ['Total plan', 'KH tổng'], total_actual: ['Total actual', 'TT tổng'], onshore_plan: ['Onshore plan', 'KH trên bờ'], onshore_actual: ['Onshore actual', 'TT trên bờ'],
+  offshore_plan: ['Offshore plan', 'KH ngoài khơi'], offshore_actual: ['Offshore actual', 'TT ngoài khơi'], filled: ['Filled', 'Đã có'], required: ['Required', 'Cần có'],
+  modules: ['Modules', 'Số module'], completed: ['Completed', 'Hoàn thành'], developing: ['In development', 'Đang biên soạn'], review: ['In review', 'Đang soát xét'],
+  theory_pct: ['Theory assessed %', '% ĐG lý thuyết'], ojt_modules: ['OJT modules', 'Module OJT'], ojt_pct: ['OJT %', '% OJT'],
+  planned: ['Courses required', 'Số khóa cần'], earned: ['Courses completed', 'Số khóa đã xong'], balance: ['Courses remaining', 'Số khóa còn lại'],
+  weight_pct: ['Weight %', 'Trọng số %'], total_activities: ['Activities', 'Hoạt động'], actual_pct: ['Actual %', '% thực tế'], plan_pct: ['Plan %', '% kế hoạch'], plan_end_pct: ['Final plan %', '% KH cuối kỳ'],
+  element: ['Element', 'Hạng mục'], group: ['Group', 'Nhóm'], items: ['Items', 'Số mục'], progress_pct: ['Progress %', '% tiến độ'],
+  document: ['Document', 'Tài liệu'], category: ['Type', 'Loại'], level: ['Level', 'Cấp'], responsible: ['Owner', 'Phụ trách'], expected: ['Due', 'Hạn'],
+  completion_pct: ['Completed %', '% hoàn thành'], issued: ['Issued', 'Đã ban hành'], remark: ['Remark', 'Ghi chú'], count: ['Count', 'Số lượng'],
+  status: ['Status', 'Trạng thái'], facility: ['Applies to', 'Áp dụng cho'], authority: ['Authority', 'Cơ quan cấp'], issue_date: ['Issued on', 'Ngày cấp'],
+  expiry_date: ['Expires', 'Hết hạn'], renewal_date: ['Renew by', 'Gia hạn trước'], plan_start: ['Plan start', 'Bắt đầu KH'], plan_finish: ['Plan finish', 'Kết thúc KH'],
+  actual_start: ['Actual start', 'Bắt đầu TT'], actual_finish: ['Actual finish', 'Kết thúc TT'], phase: ['Phase', 'Giai đoạn'], action: ['Action', 'Thao tác'],
+  status_override: ['Status set by team', 'Màu do team chọn'], comment: ['Comment', 'Nhận xét'], owner: ['Owner', 'Phụ trách'], order: ['Order', 'Thứ tự'],
+  plan_date: ['Plan date', 'Ngày KH'], actual_date: ['Actual date', 'Ngày đạt'], is_target: ['Countdown target', 'Mốc đếm ngược'], note: ['Note', 'Ghi chú'],
+};
+// Fields where a rise is progress (green) or a setback (red); other fields show a neutral arrow.
+const GOOD_UP = new Set(['total_actual', 'onshore_actual', 'offshore_actual', 'filled', 'completed', 'theory_pct', 'ojt_pct', 'earned', 'actual_pct', 'progress_pct', 'completion_pct']);
+const BAD_UP = new Set(['balance', 'developing']);
+const DATES = new Set(['issue_date', 'expiry_date', 'renewal_date', 'plan_start', 'plan_finish', 'actual_start', 'actual_finish', 'plan_date', 'actual_date']);
+const rowLabel = {
+  manpower: (r) => H.fmtMonth(H.month(r.month)), orr_curve: (r) => H.fmtMonth(H.month(r.month)), staffing: (r) => D(r.group), orr_groups: (r) => D(r.group),
+  procedures: (r) => `${r.id} · ${r.document || ''}`, orr_elements: (r) => `${r.code} · ${r.element || ''}`, cbta: (r) => `${r.platform} ${r.team}`,
+  pr_pipeline: (r) => `${D(r.stage)} · ${L(r.status, { Late: 'Trễ hạn', 'Near-late': 'Sắp trễ', 'On time': 'Đúng hạn' }[r.status] || r.status)}`,
+  packages_no_pr: (r) => D(r.category), vendor_training: (r) => `${r.period} · ${r.course}`, workstreams: (r) => D(r.item), readiness: (r) => D(r.area),
+  milestones: (r) => D(r.milestone), startup_sequence: (r) => `${r.step}. ${D(r.phase)}`,
+};
+const label = (t, r) => (rowLabel[t] ? rowLabel[t](r) : String(r[KEYS[t][0]] ?? '—'));
+const fieldName = (f) => (FIELDS[f] ? L(FIELDS[f][0], FIELDS[f][1]) : f);
+const show = (f, v) => {
+  if (v == null || v === '') return '—';
+  if (typeof v === 'boolean') return v ? L('Yes', 'Có') : L('No', 'Không');
+  if (typeof v === 'number') return d3.format(',.2~f')(v) + (/_pct$/.test(f) ? '%' : '');
+  if (DATES.has(f)) return H.fmtDay(H.day(v));
+  return D(String(v));
+};
+const same = (a, b) => (a == null || a === '' ? b == null || b === '' : typeof a === 'number' && typeof b === 'number' ? Math.abs(a - b) < 1e-9 : a === b);
+
+function diff() {
+  if (!dash.prev) return null;
+  const out = [];
+  AREAS.forEach(([t]) => {
+    const cur = dash.data(t).data || [], prev = dash.prev[t] || [];
+    const k = (r) => JSON.stringify(KEYS[t].map((c) => r[c] ?? null));
+    const pmap = new Map(); prev.forEach((r) => pmap.set(k(r), r));
+    const seen = new Set();
+    cur.forEach((r) => {
+      const key = k(r), o = pmap.get(key); seen.add(key);
+      if (!o) { out.push({ t, kind: 'add', row: r }); return; }
+      Object.keys({ ...o, ...r }).forEach((f) => {
+        if (KEYS[t].includes(f) || same(o[f], r[f])) return;
+        out.push({ t, kind: 'edit', row: r, f, a: o[f], b: r[f] });
+      });
+    });
+    prev.forEach((r) => { if (!seen.has(k(r))) out.push({ t, kind: 'del', row: r }); });
+  });
+  return out;
+}
+
+function deltaCell(c) {
+  const td = H.el('td', 'num');
+  if (c.kind === 'add') { td.append(H.el('span', 'tag add', L('New', 'Mới'))); return td; }
+  if (c.kind === 'del') { td.append(H.el('span', 'tag del', L('Removed', 'Đã bỏ'))); return td; }
+  if (typeof c.a === 'number' && typeof c.b === 'number') {
+    const d = c.b - c.a, good = GOOD_UP.has(c.f) ? d > 0 : BAD_UP.has(c.f) ? d < 0 : null;
+    const cls = good == null ? 'flat' : good ? 'up' : 'down';
+    td.append(H.el('span', 'd ' + cls, (d > 0 ? '▲ +' : '▼ −') + d3.format(',.2~f')(Math.abs(d)) + (/_pct$/.test(c.f) ? L(' pts', ' điểm') : '')));
+  } else td.append(H.el('span', 'tag edit', c.a == null || c.a === '' ? L('Filled in', 'Mới điền') : c.b == null || c.b === '' ? L('Cleared', 'Đã xoá') : L('Edited', 'Đã sửa')));
+  return td;
+}
+
+function drawChanges() {
+  const list = document.getElementById('chg-list'), stats = document.getElementById('chg-stats'), chips = document.getElementById('chg-chips');
+  const changes = diff();
+  // count badge on each tab
+  document.querySelectorAll('.ops-tab .ops-tab-n').forEach((e) => e.remove());
+  const byTab = {};
+  (changes || []).forEach((c) => { const tab = AREAS.find((x) => x[0] === c.t)[3]; byTab[tab] = (byTab[tab] || 0) + 1; byTab.changes = (byTab.changes || 0) + 1; });
+  Object.entries(byTab).forEach(([tab, n]) => { const b = document.getElementById('tab-' + tab); if (b) { const s = H.el('span', 'ops-tab-n', String(n)); s.title = L(`${n} changes since last report`, `${n} thay đổi so với kỳ trước`); b.append(s); } });
+  const prevRep = dash.reports.find((r) => r.date === dash.prevDate);
+  document.getElementById('chg-title').textContent = dash.prevDate
+    ? L('Changes since report ', 'Thay đổi so với báo cáo ') + (prevRep && prevRep.from ? H.period(prevRep.from, prevRep.date) : H.fmtDay(H.day(dash.prevDate)))
+    : L('Changes since last report', 'Thay đổi so với kỳ trước');
+  if (!changes) {
+    stats.replaceChildren(); chips.replaceChildren();
+    list.replaceChildren(H.el('p', 'ops-note', L('No earlier report to compare with yet (or it is still loading).', 'Chưa có báo cáo trước để so sánh (hoặc đang tải).')));
+    return;
+  }
+  const n = (k) => changes.filter((c) => c.kind === k).length;
+  const touched = new Set(changes.map((c) => c.t + '|' + JSON.stringify(KEYS[c.t].map((f) => c.row[f])))).size;
+  stats.replaceChildren(...[[changes.length ? n('edit') : 0, L('figures changed', 'chỉ tiêu thay đổi')], [touched, L('rows affected', 'dòng bị ảnh hưởng')], [n('add'), L('rows added', 'dòng mới')], [n('del'), L('rows removed', 'dòng đã bỏ')]]
+    .map(([v, t]) => { const d = H.el('div'); d.append(H.el('b', null, H.num(v)), H.el('span', null, t)); return d; }));
+  if (!changes.length) {
+    chips.replaceChildren();
+    list.replaceChildren(H.el('p', 'ops-note', L('No figure has changed since the previous report.', 'Chưa có số liệu nào thay đổi so với báo cáo trước.')));
+    return;
+  }
+  const groups = AREAS.map(([t, en, vi, tab]) => ({ t, title: L(en, vi), tab, items: changes.filter((c) => c.t === t) })).filter((g) => g.items.length);
+  chips.replaceChildren(...groups.map((g) => { const b = H.el('button'); b.type = 'button'; b.append(g.title, H.el('b', null, String(g.items.length))); b.addEventListener('click', () => document.getElementById('chg-' + g.t).scrollIntoView({ behavior: 'smooth', block: 'start' })); return b; }));
+  list.replaceChildren(...groups.map((g) => {
+    const card = H.el('div', 'ops-card ops-chg-group'); card.id = 'chg-' + g.t;
+    const h = H.el('h3'); h.append(g.title, H.el('span', 'ops-note', L(`${g.items.length} change${g.items.length > 1 ? 's' : ''}`, `${g.items.length} thay đổi`)));
+    const go = H.el('button', 'ops-chg-more', L('Open tab', 'Mở tab')); go.type = 'button'; go.addEventListener('click', () => { document.getElementById('tab-' + g.tab).click(); window.scrollTo({ top: 0 }); });
+    h.append(go);
+    const box = H.el('div', 'ops-tablebox'), table = H.el('table'), thead = H.el('thead'), tr = H.el('tr');
+    [[L('Item', 'Mục')], [L('Figure', 'Chỉ tiêu')], [L('Last report', 'Kỳ trước')], [L('This report', 'Kỳ này')], [L('Change', 'Thay đổi'), 'num']].forEach(([t, c]) => tr.append(H.el('th', c || null, t)));
+    thead.append(tr);
+    const tb = H.el('tbody');
+    g.items.forEach((c) => {
+      const row = H.el('tr');
+      row.append(H.el('td', null, label(c.t, c.row)), H.el('td', null, c.kind === 'edit' ? fieldName(c.f) : '—'));
+      const oldV = c.kind === 'edit' ? show(c.f, c.a) : c.kind === 'del' ? L('present', 'có') : '—';
+      const newV = c.kind === 'edit' ? show(c.f, c.b) : c.kind === 'add' ? L('added', 'thêm mới') : '—';
+      const o = H.el('td', 'old', oldV), nw = H.el('td', 'new', newV);
+      row.append(o, nw, deltaCell(c)); tb.append(row);
+    });
+    table.append(thead, tb); box.append(table); card.append(h, box);
+    return card;
+  }));
+}
+dash.onData(drawChanges);
 </script>

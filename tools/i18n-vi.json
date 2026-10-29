@@ -139,7 +139,10 @@
   "Light mode": "Giao diện sáng",
   "Dark mode": "Giao diện tối",
   "Light": "Sáng",
-  "Dark": "Tối"
+  "Dark": "Tối",
+  "Changes": "Thay đổi",
+  "Changes since last report": "Thay đổi so với kỳ trước",
+  "Every figure in this report compared with the previous weekly report, item by item. Figures are cumulative, so a change is what moved during the week.": "So sánh từng chỉ tiêu của báo cáo này với báo cáo tuần trước. Số liệu là lũy kế, nên phần thay đổi chính là những gì biến động trong tuần."
  },
  "data": {
   "Manpower": "Nhân sự",
