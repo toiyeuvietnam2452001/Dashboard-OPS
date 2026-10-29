@@ -124,7 +124,18 @@
 .ops-btn { white-space: nowrap; font: inherit; font-size: var(--cds-font-size-caption); padding: 6px 12px; border-radius: var(--cds-radius); border: 1px solid var(--brand); background: var(--brand); color: #fff; cursor: pointer; }
 .ops-btn:hover { filter: brightness(1.1); }
 .ops-btn:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
-.ops-count { display: flex; flex-direction: column; justify-content: center; padding: 6px 14px; border-radius: var(--cds-radius); background: var(--brand-tint); border: 1px solid var(--brand-line); min-width: 9rem; }
+/* First Gas card: an LED light runs clockwise round the border. --led-a turns the conic gradient;
+   ::before draws the card fill and the crisp ring, ::after the blurred glow that shows outside the card. */
+@property --led-a { syntax: '<angle>'; inherits: true; initial-value: 0deg; }
+@keyframes ops-led { to { --led-a: 360deg; } }
+.ops-count { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; padding: 6px 14px; border-radius: var(--cds-radius); border: 1px solid transparent; min-width: 9rem; animation: ops-led 4s linear infinite; }
+.ops-count::before, .ops-count::after { content: ""; position: absolute; inset: -1px; border-radius: inherit; pointer-events: none; }
+.ops-count::before { z-index: -1; border: 2px solid transparent;
+  background: linear-gradient(var(--brand-tint), var(--brand-tint)) padding-box,
+    conic-gradient(from var(--led-a), var(--brand-line) 0 55%, var(--led) 85%, var(--led-head) 97%, var(--brand-line) 97.5%) border-box; }
+.ops-count::after { z-index: -2; inset: -3px; filter: blur(7px); opacity: .75;
+  background: conic-gradient(from var(--led-a), transparent 0 70%, var(--led) 90%, var(--led-head) 97%, transparent 97.5%); }
+@media (prefers-reduced-motion: reduce) { .ops-count { animation: none; --led-a: 45deg; } }
 .ops-count-label { font-size: var(--cds-font-size-caption); color: var(--brand-ink); font-weight: 600; }
 .ops-count-num { font-size: var(--cds-font-size-body); color: var(--color-fg-muted); }
 .ops-count-num b { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 26px; color: var(--color-fg); }
@@ -191,6 +202,9 @@
   .ops-card, .ops-tile, .ops-rag-tile { break-inside: avoid; }
   .ops-tablebox, .ops-attn { max-height: none !important; overflow: visible !important; }
   .ops-tabs { position: static; }
+  .ops-count { animation: none; }
+  .ops-count::after { display: none; }
+  .ops-count::before { background: linear-gradient(var(--brand-tint), var(--brand-tint)) padding-box, linear-gradient(var(--brand-line), var(--brand-line)) border-box; }
 }
 </style>
 
