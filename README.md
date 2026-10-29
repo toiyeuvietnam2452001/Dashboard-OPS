@@ -9,28 +9,34 @@ Excel trên SharePoint ────┤
                                                                                           └──(GitHub Actions)──> history/<ngày báo cáo>.json
 ```
 
-## Nạp dữ liệu qua Notion (realtime)
+## Nạp dữ liệu qua Notion: báo cáo theo tuần
 
-Các trưởng nhóm cập nhật số trên trang Notion **OPS Dashboard Data** (20 bảng, tên bảng có id trong ngoặc vuông, ví dụ `Nhân sự theo tháng [manpower]`). Trang web đọc thẳng từ Notion:
+Trên trang Notion **OPS Dashboard Data**, bảng **Kỳ báo cáo [reports]** có một dòng cho mỗi báo cáo tuần, **thứ Tư → thứ Tư** (ví dụ "Báo cáo 28/10 – 04/11/2026" nhận số đến hết ngày 04/11), đã tạo sẵn tới 30/12/2026. Mở một báo cáo là thấy đủ 19 hạng mục, chỉ chứa số của tuần đó. Mỗi dòng số liệu có cột `report` trỏ về báo cáo của nó, nên các tuần không bao giờ lẫn vào nhau. 19 bảng gốc (gộp mọi tuần) nằm trong trang con **Dữ liệu gốc – tất cả các tuần**.
 
 ```
-Notion (OPS Dashboard Data) ──> api/data trên Vercel (đệm 60 giây) ──> ops-pqpoc.vercel.app (tự làm mới mỗi phút)
-                                   └──> GitHub Actions mỗi giờ ──> data.json (dự phòng) + history/<report_date>.json
+Notion: báo cáo ✏️ Đang nhập ──> api/data trên Vercel (đệm 60 giây) ──> ops-pqpoc.vercel.app (tự làm mới mỗi phút)
+Notion: báo cáo ✅ Đã chốt   ──> api/data?date=2026-10-28            ──> ô "Kỳ báo cáo" trên dashboard
+GitHub Actions mỗi giờ ──> api/rollover (mở tuần mới) ──> data.json + history/<report_date>.json (dự phòng)
 ```
+
+- **Báo cáo đang mở** là báo cáo có `from_date < hôm nay ≤ report_date` (giờ Việt Nam). Không ai phải đổi ngày bằng tay.
+- **Sang tuần mới** (0h thứ Năm), báo cáo mới còn trống. Lần chạy GitHub Actions kế tiếp (≤ 1 giờ) gọi `api/rollover` để chép mọi dòng của báo cáo trước sang, rồi tích `initialized`. Trong lúc chờ, dashboard hiện số của báo cáo trước kèm dòng báo.
+- `api/rollover` cần integration có quyền **Insert content** và **Update content** (Notion → Settings → Connections / integrations → `OPS Dashboard` → Capabilities). Chạy lại nhiều lần cũng không chép trùng.
+- Thêm báo cáo cho năm 2027: thêm dòng vào **Kỳ báo cáo** với `name`, `from_date` (= report_date của báo cáo trước), `report_date`, để trống `initialized`.
 
 **Cài một lần**
-1. Vào <https://www.notion.so/profile/integrations> → **New integration** → tên `OPS Dashboard`, workspace của anh, loại **Internal** → **Save**. Ở tab **Capabilities** chỉ cần **Read content**. Copy **Internal Integration Secret** (`ntn_…`).
+1. Vào <https://www.notion.so/profile/integrations> → **New integration** → tên `OPS Dashboard`, workspace của anh, loại **Internal** → **Save**. Ở tab **Capabilities** tích **Read content**, **Update content**, **Insert content**. Copy **Internal Integration Secret** (`ntn_…`).
 2. Mở trang **OPS Dashboard Data** trên Notion → **⋯ → Connections → Add connections** → chọn `OPS Dashboard`.
 3. Vercel → project → **Settings → Environment Variables** → thêm `NOTION_TOKEN` = secret ở bước 1 (Production) → **Save**. Vào **Deployments**, bấm **⋯ → Redeploy** bản mới nhất.
 4. Mở `https://ops-pqpoc.vercel.app/api/data`: thấy JSON là xong. Dòng cuối dashboard ghi "Live from Notion".
 
-**Quy tắc khi sửa trên Notion**: không đổi tên bảng/cột; % gõ 0–100; tháng dạng `YYYY-MM`; mỗi kỳ báo cáo mới sửa `report_date` trong bảng **Thông tin báo cáo** trước. ID các bảng nằm trong `tools/notion-sources.json`.
+**Quy tắc khi sửa trên Notion**: nhập trong trang báo cáo của tuần; không đổi tên bảng/cột, không xoá cột `report`; % gõ 0–100; tháng dạng `YYYY-MM`. ID các bảng nằm trong `tools/notion-sources.json`.
 
 **Bảng dành cho lãnh đạo** (hiện ở đầu tab Overview):
 
 - **Trạng thái tổng thể [readiness]**: 8 mảng Xanh/Vàng/Đỏ. Dashboard tự tính màu theo ngưỡng; chỉ chọn `status_override` khi muốn ghi đè, và ghi lý do vào `comment`.
 - **Mốc tiến độ [milestones]**: các mốc MC, RFSU, First Gas… Tích `is_target` ở mốc dùng để đếm ngược trên đầu trang.
-- **Thông tin báo cáo [meta]**: thêm `doc_no`, `revision`, `reviewed_by`, `approved_by`, `classification` (in ở chân trang và bản PDF).
+- **Kỳ báo cáo [reports]**: mỗi báo cáo có `doc_no`, `revision`, `prepared_by`, `reviewed_by`, `approved_by`, `classification` riêng (in ở chân trang và bản PDF).
 
 Nút **Print / PDF** in toàn bộ dashboard ra A4 ngang.
 
@@ -63,8 +69,10 @@ Sửa số sau khi đã đẩy: giữ nguyên `report_date`, sửa số, bấm l
 | `automation/OPS_Dashboard_Data.xlsx` | File Excel nguồn. 6 sheet dashboard ở đầu (Overview, Manpower & Training, ORR, Procedures, Contracts & Permits, Commissioning), sheet "Huong dan", rồi 18 bảng số liệu. Đưa lên SharePoint, phòng OPS nhập số tại các bảng số liệu. |
 | `automation/day-so-lieu-len-dashboard.ts` | Office Script: bấm là đẩy số liệu từ Excel lên GitHub, trang Vercel tự cập nhật (không cần Power Automate). |
 | `automation/xuat-du-lieu-dashboard.ts` | Office Script đọc các bảng Excel và xuất JSON cho dashboard web. Chỉ đọc Excel Table, nên bỏ qua các sheet dashboard. |
-| `api/data.js` | Hàm Vercel đọc 20 bảng Notion, trả về cùng dạng `data.json`. Cần biến môi trường `NOTION_TOKEN`. |
-| `.github/workflows/sync-notion.yml` | Mỗi giờ chép số liệu Notion vào `data.json` và `history/`. |
+| `api/data.js` | Hàm Vercel đọc báo cáo đang mở (hoặc `?date=`) từ Notion, trả về cùng dạng `data.json`. Cần biến môi trường `NOTION_TOKEN`. |
+| `api/rollover.js` | Hàm Vercel mở báo cáo tuần mới: chép số của báo cáo trước sang. |
+| `lib/notion.js` | Phần dùng chung: gọi Notion API, chọn báo cáo theo ngày. |
+| `.github/workflows/sync-notion.yml` | Mỗi giờ gọi `api/rollover`, rồi chép số liệu báo cáo đang mở vào `data.json` và `history/`. |
 | `tools/` | Mã dựng lại `index.html` và file Excel; `tools/archive.py` tạo bản lưu lịch sử (xem cuối trang). |
 
 ## Dashboard trong Excel
