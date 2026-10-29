@@ -78,23 +78,6 @@
    "team": "P&P"
   }
  ],
- "staffing": [
-  {
-   "filled": 47,
-   "required": 50,
-   "group": "Offshore"
-  },
-  {
-   "filled": 32,
-   "required": 34,
-   "group": "Onshore"
-  },
-  {
-   "filled": 9,
-   "required": 38,
-   "group": "Outsource"
-  }
- ],
  "manpower": [
   {
    "offshore_plan": 2,
@@ -637,6 +620,139 @@
    "month": "2028-12"
   }
  ],
+ "staffing": [
+  {
+   "filled": 47,
+   "required": 50,
+   "group": "Offshore"
+  },
+  {
+   "filled": 32,
+   "required": 34,
+   "group": "Onshore"
+  },
+  {
+   "filled": 9,
+   "required": 38,
+   "group": "Outsource"
+  }
+ ],
+ "mandatory": [
+  {
+   "planned": 72,
+   "balance": 53,
+   "earned": 19,
+   "team": "CPP Deck crew"
+  },
+  {
+   "planned": 270,
+   "balance": 174,
+   "earned": 96,
+   "team": "CPP E&I"
+  },
+  {
+   "planned": 210,
+   "balance": 118,
+   "earned": 92,
+   "team": "CPP M&R"
+  },
+  {
+   "planned": 334,
+   "balance": 139,
+   "earned": 195,
+   "team": "CPP P&P"
+  },
+  {
+   "planned": 263,
+   "balance": 191,
+   "earned": 72,
+   "team": "Management"
+  },
+  {
+   "planned": 250,
+   "balance": 120,
+   "earned": 130,
+   "team": "WHP team"
+  }
+ ],
+ "vendor_training": [
+  {
+   "period": "2026-09",
+   "course": "ICSS – EPCI#2"
+  },
+  {
+   "period": "2026-10",
+   "course": "Asset Integrity Management"
+  },
+  {
+   "period": "2026-10",
+   "course": "E-house"
+  },
+  {
+   "period": "2026-10",
+   "course": "Gas Conditioning and Processing – G-4"
+  },
+  {
+   "period": "2026-11",
+   "course": "Gas Purification Technology: Mercury Removal"
+  },
+  {
+   "period": "2026-11",
+   "course": "ICSS – EPCI#1"
+  },
+  {
+   "period": "2026-12",
+   "course": "E-house"
+  },
+  {
+   "period": "2026-12",
+   "course": "ICSS – EPCI#1"
+  },
+  {
+   "period": "2027-01",
+   "course": "Telecom System (CPC0-TEL001)"
+  },
+  {
+   "period": "2027-03",
+   "course": "HVAC system (MEL 41 – HVAC)"
+  },
+  {
+   "period": "2027-04",
+   "course": "Analyser – Water in Oil & Gas Chromatography (CPC0-ICS017)"
+  },
+  {
+   "period": "2027-04",
+   "course": "Mark CS O&M"
+  },
+  {
+   "period": "2027-05",
+   "course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)"
+  },
+  {
+   "period": "2027-05",
+   "course": "Metering Skid (CPPT-ICS001)"
+  },
+  {
+   "period": "2027-11",
+   "course": "ECPI#2 – Gas booster compressor"
+  },
+  {
+   "period": "2027-12",
+   "course": "EDG (CLQU-MEC005)"
+  },
+  {
+   "period": "2028",
+   "course": "Gas Turbine Generator (GTG, MER 02)"
+  },
+  {
+   "period": "2028",
+   "course": "Turbo Expander (CPPT-MEC003)"
+  },
+  {
+   "period": "2028",
+   "course": "Vapour Recovery Compressor (CPPT-MEC005)"
+  }
+ ],
  "orr_teams": [
   {
    "weight_pct": 25.5,
@@ -720,144 +836,6 @@
    "team": "Production Eng"
   }
  ],
- "vendor_training": [
-  {
-   "period": "2026-09",
-   "course": "ICSS – EPCI#2"
-  },
-  {
-   "period": "2026-10",
-   "course": "Asset Integrity Management"
-  },
-  {
-   "period": "2026-10",
-   "course": "E-house"
-  },
-  {
-   "period": "2026-10",
-   "course": "Gas Conditioning and Processing – G-4"
-  },
-  {
-   "period": "2026-11",
-   "course": "Gas Purification Technology: Mercury Removal"
-  },
-  {
-   "period": "2026-11",
-   "course": "ICSS – EPCI#1"
-  },
-  {
-   "period": "2026-12",
-   "course": "E-house"
-  },
-  {
-   "period": "2026-12",
-   "course": "ICSS – EPCI#1"
-  },
-  {
-   "period": "2027-01",
-   "course": "Telecom System (CPC0-TEL001)"
-  },
-  {
-   "period": "2027-03",
-   "course": "HVAC system (MEL 41 – HVAC)"
-  },
-  {
-   "period": "2027-04",
-   "course": "Analyser – Water in Oil & Gas Chromatography (CPC0-ICS017)"
-  },
-  {
-   "period": "2027-04",
-   "course": "Mark CS O&M"
-  },
-  {
-   "period": "2027-05",
-   "course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)"
-  },
-  {
-   "period": "2027-05",
-   "course": "Metering Skid (CPPT-ICS001)"
-  },
-  {
-   "period": "2027-11",
-   "course": "ECPI#2 – Gas booster compressor"
-  },
-  {
-   "period": "2027-12",
-   "course": "EDG (CLQU-MEC005)"
-  },
-  {
-   "period": "2028",
-   "course": "Gas Turbine Generator (GTG, MER 02)"
-  },
-  {
-   "period": "2028",
-   "course": "Turbo Expander (CPPT-MEC003)"
-  },
-  {
-   "period": "2028",
-   "course": "Vapour Recovery Compressor (CPPT-MEC005)"
-  }
- ],
- "mandatory": [
-  {
-   "planned": 72,
-   "balance": 53,
-   "earned": 19,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 270,
-   "balance": 174,
-   "earned": 96,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 210,
-   "balance": 118,
-   "earned": 92,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 334,
-   "balance": 139,
-   "earned": 195,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 263,
-   "balance": 191,
-   "earned": 72,
-   "team": "Management"
-  },
-  {
-   "planned": 250,
-   "balance": 120,
-   "earned": 130,
-   "team": "WHP team"
-  }
- ],
- "orr_groups": [
-  {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
-  },
-  {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
-  },
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
-  },
-  {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
-  }
- ],
  "orr_curve": [
   {
    "actual_pct": 70.5,
@@ -903,6 +881,28 @@
    "actual_pct": null,
    "plan_pct": 95,
    "month": "2027-06"
+  }
+ ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
   }
  ],
  "orr_elements": [
@@ -2303,64 +2303,6 @@
    "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
   }
  ],
- "readiness": [
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
-  }
- ],
  "startup_sequence": [
   {
    "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
@@ -2433,6 +2375,64 @@
    "phase": "Condensate & PW"
   }
  ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
+  }
+ ],
  "milestones": [
   {
    "plan_date": "2026-10-13",
@@ -2481,7 +2481,7 @@
    "from_date": "2026-10-28",
    "name": "Báo cáo 28/10 – 04/11/2026",
    "state": "open",
-   "as_of": "2026-10-29",
+   "as_of": "2026-10-30",
    "report_title": "Operations Readiness Preparation",
    "prepared_by": "OPS Department",
    "doc_no": null,
