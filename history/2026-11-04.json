@@ -637,6 +637,89 @@
    "month": "2028-12"
   }
  ],
+ "orr_teams": [
+  {
+   "weight_pct": 25.5,
+   "completed": 57,
+   "actual_pct": 76.8,
+   "total_activities": 89,
+   "plan_pct": 69.5,
+   "plan_end_pct": 99,
+   "team": "Offshore"
+  },
+  {
+   "weight_pct": 13.2,
+   "completed": 23,
+   "actual_pct": 66.5,
+   "total_activities": 59,
+   "plan_pct": 71.3,
+   "plan_end_pct": 98,
+   "team": "Production OPS"
+  },
+  {
+   "weight_pct": 12.5,
+   "completed": 57,
+   "actual_pct": 70.6,
+   "total_activities": 80,
+   "plan_pct": 77.1,
+   "plan_end_pct": 94,
+   "team": "Manager OPS"
+  },
+  {
+   "weight_pct": 11.2,
+   "completed": 20,
+   "actual_pct": 64.4,
+   "total_activities": 53,
+   "plan_pct": 45.6,
+   "plan_end_pct": 89,
+   "team": "Asset Integrity"
+  },
+  {
+   "weight_pct": 9.1,
+   "completed": 21,
+   "actual_pct": 79.4,
+   "total_activities": 32,
+   "plan_pct": 65.7,
+   "plan_end_pct": 82,
+   "team": "E&I"
+  },
+  {
+   "weight_pct": 8.7,
+   "completed": 25,
+   "actual_pct": 63.9,
+   "total_activities": 48,
+   "plan_pct": 70.6,
+   "plan_end_pct": 98,
+   "team": "M&R"
+  },
+  {
+   "weight_pct": 6.9,
+   "completed": 10,
+   "actual_pct": 71.3,
+   "total_activities": 28,
+   "plan_pct": 67,
+   "plan_end_pct": 96,
+   "team": "Application Eng"
+  },
+  {
+   "weight_pct": 6.8,
+   "completed": 27,
+   "actual_pct": 71.1,
+   "total_activities": 49,
+   "plan_pct": 71.9,
+   "plan_end_pct": 95,
+   "team": "Marine"
+  },
+  {
+   "weight_pct": 6,
+   "completed": 14,
+   "actual_pct": 57.3,
+   "total_activities": 36,
+   "plan_pct": 60.6,
+   "plan_end_pct": 99,
+   "team": "Production Eng"
+  }
+ ],
  "vendor_training": [
   {
    "period": "2026-09",
@@ -753,89 +836,6 @@
    "team": "WHP team"
   }
  ],
- "orr_teams": [
-  {
-   "weight_pct": 25.5,
-   "completed": 57,
-   "actual_pct": 76.8,
-   "total_activities": 89,
-   "plan_pct": 69.5,
-   "plan_end_pct": 99,
-   "team": "Offshore"
-  },
-  {
-   "weight_pct": 13.2,
-   "completed": 23,
-   "actual_pct": 66.5,
-   "total_activities": 59,
-   "plan_pct": 71.3,
-   "plan_end_pct": 98,
-   "team": "Production OPS"
-  },
-  {
-   "weight_pct": 12.5,
-   "completed": 57,
-   "actual_pct": 70.6,
-   "total_activities": 80,
-   "plan_pct": 77.1,
-   "plan_end_pct": 94,
-   "team": "Manager OPS"
-  },
-  {
-   "weight_pct": 11.2,
-   "completed": 20,
-   "actual_pct": 64.4,
-   "total_activities": 53,
-   "plan_pct": 45.6,
-   "plan_end_pct": 89,
-   "team": "Asset Integrity"
-  },
-  {
-   "weight_pct": 9.1,
-   "completed": 21,
-   "actual_pct": 79.4,
-   "total_activities": 32,
-   "plan_pct": 65.7,
-   "plan_end_pct": 82,
-   "team": "E&I"
-  },
-  {
-   "weight_pct": 8.7,
-   "completed": 25,
-   "actual_pct": 63.9,
-   "total_activities": 48,
-   "plan_pct": 70.6,
-   "plan_end_pct": 98,
-   "team": "M&R"
-  },
-  {
-   "weight_pct": 6.9,
-   "completed": 10,
-   "actual_pct": 71.3,
-   "total_activities": 28,
-   "plan_pct": 67,
-   "plan_end_pct": 96,
-   "team": "Application Eng"
-  },
-  {
-   "weight_pct": 6.8,
-   "completed": 27,
-   "actual_pct": 71.1,
-   "total_activities": 49,
-   "plan_pct": 71.9,
-   "plan_end_pct": 95,
-   "team": "Marine"
-  },
-  {
-   "weight_pct": 6,
-   "completed": 14,
-   "actual_pct": 57.3,
-   "total_activities": 36,
-   "plan_pct": 60.6,
-   "plan_end_pct": 99,
-   "team": "Production Eng"
-  }
- ],
  "orr_groups": [
   {
    "progress_pct": 66.3,
@@ -856,6 +856,53 @@
    "progress_pct": 65.6,
    "items": 698,
    "group": "TOTAL"
+  }
+ ],
+ "orr_curve": [
+  {
+   "actual_pct": 70.5,
+   "plan_pct": 67.2,
+   "month": "2026-10"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 71,
+   "month": "2026-11"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 75,
+   "month": "2026-12"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 80,
+   "month": "2027-01"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 83,
+   "month": "2027-02"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 87,
+   "month": "2027-03"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 90,
+   "month": "2027-04"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 93,
+   "month": "2027-05"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 95,
+   "month": "2027-06"
   }
  ],
  "orr_elements": [
@@ -1028,53 +1075,6 @@
    "code": "PR-14"
   }
  ],
- "orr_curve": [
-  {
-   "actual_pct": 70.5,
-   "plan_pct": 67.2,
-   "month": "2026-10"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 71,
-   "month": "2026-11"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 75,
-   "month": "2026-12"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 80,
-   "month": "2027-01"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 83,
-   "month": "2027-02"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 87,
-   "month": "2027-03"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 90,
-   "month": "2027-04"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 93,
-   "month": "2027-05"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 95,
-   "month": "2027-06"
-  }
- ],
  "pr_pipeline": [
   {
    "count": 1,
@@ -1183,7 +1183,7 @@
    "expected": "Jun-25",
    "completion_pct": 100,
    "id": "GEN-01",
-   "remark": "Issued on 13 Feb 25",
+   "remark": "Issued on 19 Feb 25",
    "document": "Use and inspection of utility hoses and fittings"
   },
   {
@@ -1227,7 +1227,7 @@
    "expected": "Jun-25",
    "completion_pct": 100,
    "id": "GEN-05",
-   "remark": "Issued on 13 Feb 25",
+   "remark": "Issued on 19 Feb 25",
    "document": "Portable and Temporary Equipment Procedure"
   },
   {
@@ -1323,10 +1323,10 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "Offshore",
-   "expected": "Dec-26",
+   "expected": "Dec-25",
    "completion_pct": 100,
    "id": "GEN-14",
-   "remark": "Issued on 13 Feb 25",
+   "remark": "Issued on 19 Feb 25",
    "document": "Platform Standing Instruction"
   },
   {
@@ -1345,7 +1345,7 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "HT Kiet",
-   "expected": "Dec-26",
+   "expected": "Dec-25",
    "completion_pct": 100,
    "id": "GEN-16",
    "remark": "Issued",
@@ -1458,14 +1458,14 @@
    "expected": "Dec-26",
    "completion_pct": 100,
    "id": "GEN-26",
-   "remark": "Issued",
+   "remark": null,
    "document": "Alarm & Trip Setting Procedure"
   },
   {
    "category": "General operations",
    "issued": "No",
    "level": "Department",
-   "responsible": "Guy NT",
+   "responsible": "Quy NT",
    "expected": "Dec-27",
    "completion_pct": 0,
    "id": "GEN-27",
@@ -1477,10 +1477,10 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "TN Nguyen",
-   "expected": "Jan-27",
+   "expected": "Jun-27",
    "completion_pct": 100,
    "id": "GEN-28",
-   "remark": "Issued",
+   "remark": null,
    "document": "Pressure Safety Valve Testing and Recertification"
   },
   {
@@ -1488,7 +1488,7 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "E&I Sup",
-   "expected": "Jan-27",
+   "expected": "Jun-27",
    "completion_pct": 100,
    "id": "GEN-29",
    "remark": "Issued",
@@ -1499,7 +1499,7 @@
    "issued": "No",
    "level": "Department",
    "responsible": "WH Sup",
-   "expected": "Jan-27",
+   "expected": "Jun-27",
    "completion_pct": 75,
    "id": "GEN-30",
    "remark": "Reviewing",
@@ -1510,7 +1510,7 @@
    "issued": "No",
    "level": "Department",
    "responsible": "Offshore",
-   "expected": "Jan-27",
+   "expected": "Jun-27",
    "completion_pct": 75,
    "id": "GEN-31",
    "remark": "Reviewing",
@@ -1766,7 +1766,7 @@
    "expected": "Jun-25",
    "completion_pct": 100,
    "id": "HSE-23",
-   "remark": "Issued",
+   "remark": null,
    "document": "Confined Space Entry Procedure"
   },
   {
@@ -1785,10 +1785,10 @@
    "issued": "Yes",
    "level": "Department",
    "responsible": "Nguyen TN",
-   "expected": "Jun-26",
+   "expected": "Jun-25",
    "completion_pct": 100,
    "id": "HSE-25",
-   "remark": "Issued",
+   "remark": null,
    "document": "Inspection and Certification of Lifting Equipment"
   },
   {
@@ -1898,7 +1898,7 @@
    "expected": "Apr-27",
    "completion_pct": 0,
    "id": "HSE-35",
-   "remark": "Bid submission deadline extended to 13 Oct 2026",
+   "remark": "Bid submission deadline extended from 14 Oct to 19 Oct 2026",
    "document": "Emergency response Procedure for HUB/WHP"
   },
   {
@@ -1931,7 +1931,7 @@
    "expected": "Apr-27",
    "completion_pct": 0,
    "id": "HSE-38",
-   "remark": "Bid submission deadline extended to 13 Oct 2026",
+   "remark": "Bid submission deadline extended from 14 Oct to 19 Oct 2026",
    "document": "Emergency response Procedure for CPP complex"
   },
   {
@@ -1955,6 +1955,137 @@
    "id": "HSE-40",
    "remark": "Issued",
    "document": "Pressure cylinder management Procedure"
+  }
+ ],
+ "cmms": [
+  {
+   "actual_pct": 82.11,
+   "plan_pct": 85,
+   "package": "EPCI#2"
+  },
+  {
+   "actual_pct": 41.58,
+   "plan_pct": 42.3,
+   "package": "EPCI#1"
+  }
+ ],
+ "permits": [
+  {
+   "facility": "Electrical",
+   "status": "No update in report",
+   "authority": null,
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Electrical Hazardous Area Certification"
+  },
+  {
+   "facility": "Electrical",
+   "status": "No update in report",
+   "authority": null,
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Electrical Safety equipment"
+  },
+  {
+   "facility": "CPP – FSO",
+   "status": "Issued",
+   "authority": "Radio Frequency Authority (ARFM)",
+   "expiry_date": "2028-07-30",
+   "renewal_date": "2028-02-01",
+   "issue_date": "2025-07-31",
+   "permit": "Frequency certificate for FSO DMR (CPP)"
+  },
+  {
+   "facility": "LQ – FSO",
+   "status": "Issued",
+   "authority": "Radio Frequency Authority (ARFM)",
+   "expiry_date": "2028-07-30",
+   "renewal_date": "2028-02-01",
+   "issue_date": "2025-07-31",
+   "permit": "Frequency certificate for FSO DMR (LQ)"
+  },
+  {
+   "facility": "LQ",
+   "status": "Waiting for helideck license",
+   "authority": "Radio Frequency Authority (ARFM)",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Frequency license for NDB (LQ)"
+  },
+  {
+   "facility": "CPP, LQ",
+   "status": "Waiting for helideck license",
+   "authority": "Radio Frequency Authority (ARFM)",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Frequency license for VHF Airband (CPP, LQ)"
+  },
+  {
+   "facility": "AQWA, KLWA, KLWB, CVWA",
+   "status": "Temporary",
+   "authority": "Radio Frequency Authority (ARFM)",
+   "expiry_date": "2027-08-12",
+   "renewal_date": null,
+   "issue_date": "2025-08-13",
+   "permit": "Frequency licenses for temporary DMRs"
+  },
+  {
+   "facility": "FSO",
+   "status": "No update in report",
+   "authority": "PPS",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "FSO certificate (class & flag state)"
+  },
+  {
+   "facility": "Helideck",
+   "status": "No update in report",
+   "authority": "MM Marine",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Helideck operation approval"
+  },
+  {
+   "facility": "Marine",
+   "status": "No update in report",
+   "authority": "MM Marine",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "ISPS"
+  },
+  {
+   "facility": "Marine",
+   "status": "No update in report",
+   "authority": "MM Marine",
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Port license"
+  },
+  {
+   "facility": "Electrical",
+   "status": "No update in report",
+   "authority": null,
+   "expiry_date": null,
+   "renewal_date": null,
+   "issue_date": null,
+   "permit": "Pressure indicator (stand alone PI)"
+  },
+  {
+   "facility": "CPP",
+   "status": "Issued",
+   "authority": "Radio Frequency Authority (ARFM)",
+   "expiry_date": "2028-07-20",
+   "renewal_date": "2028-01-22",
+   "issue_date": "2025-07-21",
+   "permit": "UHF radio frequency license"
   }
  ],
  "workstreams": [
@@ -2044,108 +2175,190 @@
    "item": "Offshore preservation"
   }
  ],
- "cmms": [
+ "precom_plan": [
   {
-   "actual_pct": 82.11,
-   "plan_pct": 85,
-   "package": "EPCI#2"
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-16",
+   "plan_start": "2026-10-13",
+   "activity": "Pre-commissioning Gas Turbine Lube Oil Train 1 (CPPT-11-04)"
   },
   {
-   "actual_pct": 41.58,
-   "plan_pct": 42.3,
-   "package": "EPCI#1"
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-10-26",
+   "plan_start": "2026-10-17",
+   "activity": "Pre-commissioning UCP – Turbo Expander Package Train 1 (CPPT-13-06)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-13",
+   "plan_start": "2026-10-31",
+   "activity": "Pre-commissioning Expander Discharge Train 1 (CPPT-13-03)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-13",
+   "plan_start": "2026-10-31",
+   "activity": "Pre-commissioning Expander Suction Train 1 (CPPT-13-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-23",
+   "plan_start": "2026-10-31",
+   "activity": "Pre-commissioning Turbo Expander Lube Oil Cooler Train 1 (CPPT-13-05) incl. oil flushing"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-11",
+   "plan_start": "2026-10-31",
+   "activity": "Pre-commissioning Turbo Expander Package Train 1 (CPPT-13-02)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-19",
+   "plan_start": "2026-11-02",
+   "activity": "Pre-commissioning Glycol Regeneration Train 1 (CPPT-12-02)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-11-23",
+   "plan_start": "2026-11-14",
+   "activity": "Pre-commissioning Booster Compressor Suction & Discharge Train 1 (CPPT-13-04)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-12-08",
+   "plan_start": "2026-11-16",
+   "activity": "Pre-commissioning UCP for Production & Pipeline Compressor Train 1 (CPPT-11-05)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-12-16",
+   "plan_start": "2026-11-24",
+   "activity": "Comm Train 1 – Turbo Expander System (FTP)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-12-12",
+   "plan_start": "2026-12-03",
+   "activity": "Pre-commissioning Production Compressor Suction Train 1 (CPPT-11-02)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2026-12-25",
+   "plan_start": "2026-12-15",
+   "activity": "Pre-commissioning Production & Pipeline Compressor Train 1 (CPPT-11-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-01-23",
+   "plan_start": "2027-01-04",
+   "activity": "Pre-commissioning Glycol Dehydration Train 1 (CPPT-12-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-01-13",
+   "plan_start": "2027-01-04",
+   "activity": "Pre-commissioning Hydraulic Power Unit (with TUTU) (CPPT-04-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-01-08",
+   "plan_start": "2027-01-05",
+   "activity": "Pre-commissioning Production Compressor Discharge Train 1 (CPPT-11-03)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-01-23",
+   "plan_start": "2027-01-06",
+   "activity": "Pre-commissioning Inlet Separators Train 1 (CPPT-10-01)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-02-19",
+   "plan_start": "2027-01-09",
+   "activity": "Comm Train 1 – Production & Pipeline Compressor System (FTP)"
+  },
+  {
+   "actual_start": null,
+   "actual_finish": null,
+   "plan_finish": "2027-02-26",
+   "plan_start": "2027-01-25",
+   "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
   }
  ],
- "permits": [
+ "readiness": [
   {
-   "facility": "CPP – FSO",
-   "status": "Issued",
-   "authority": "Radio Frequency Authority (ARFM)",
-   "expiry_date": "2028-07-30",
-   "renewal_date": "2028-02-01",
-   "issue_date": "2025-07-31",
-   "permit": "Frequency certificate for FSO DMR (CPP)"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
   },
   {
-   "facility": "LQ – FSO",
-   "status": "Issued",
-   "authority": "Radio Frequency Authority (ARFM)",
-   "expiry_date": "2028-07-30",
-   "renewal_date": "2028-02-01",
-   "issue_date": "2025-07-31",
-   "permit": "Frequency certificate for FSO DMR (LQ)"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
   },
   {
-   "facility": "LQ",
-   "status": "Waiting for helideck license",
-   "authority": "Radio Frequency Authority (ARFM)",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "Frequency license for NDB (LQ)"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
   },
   {
-   "facility": "CPP, LQ",
-   "status": "Waiting for helideck license",
-   "authority": "Radio Frequency Authority (ARFM)",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "Frequency license for VHF Airband (CPP, LQ)"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
   },
   {
-   "facility": "AQWA, KLWA, KLWB, CVWA",
-   "status": "Temporary",
-   "authority": "Radio Frequency Authority (ARFM)",
-   "expiry_date": "2027-08-12",
-   "renewal_date": null,
-   "issue_date": "2025-08-13",
-   "permit": "Frequency licenses for temporary DMRs"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
   },
   {
-   "facility": "FSO",
-   "status": "No update in report",
-   "authority": "PPS",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "FSO certificate (class & flag state)"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
   },
   {
-   "facility": "Helideck",
-   "status": "No update in report",
-   "authority": "MM Marine",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "Helideck operation approval"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
   },
   {
-   "facility": "Marine",
-   "status": "No update in report",
-   "authority": "MM Marine",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "ISPS"
-  },
-  {
-   "facility": "Marine",
-   "status": "No update in report",
-   "authority": "MM Marine",
-   "expiry_date": null,
-   "renewal_date": null,
-   "issue_date": null,
-   "permit": "Port license"
-  },
-  {
-   "facility": "CPP",
-   "status": "Issued",
-   "authority": "Radio Frequency Authority (ARFM)",
-   "expiry_date": "2028-07-20",
-   "renewal_date": "2028-01-22",
-   "issue_date": "2025-07-21",
-   "permit": "UHF radio frequency license"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
   }
  ],
  "startup_sequence": [
@@ -2218,185 +2431,6 @@
    "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
    "step": 14,
    "phase": "Condensate & PW"
-  }
- ],
- "readiness": [
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
-  }
- ],
- "precom_plan": [
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-16",
-   "plan_start": "2026-10-13",
-   "activity": "Pre-commissioning Gas Turbine Lube Oil Train 1 (CPPT-11-04)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-10-26",
-   "plan_start": "2026-10-17",
-   "activity": "Pre-commissioning UCP – Turbo Expander Package Train 1 (CPPT-13-06)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-13",
-   "plan_start": "2026-10-31",
-   "activity": "Pre-commissioning Expander Discharge Train 1 (CPPT-13-03)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-13",
-   "plan_start": "2026-10-31",
-   "activity": "Pre-commissioning Expander Suction Train 1 (CPPT-13-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-23",
-   "plan_start": "2026-10-31",
-   "activity": "Pre-commissioning Turbo Expander Lube Oil Cooler Train 1 (CPPT-13-05) incl. oil flushing"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-11",
-   "plan_start": "2026-10-31",
-   "activity": "Pre-commissioning Turbo Expander Package Train 1 (CPPT-13-02)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-19",
-   "plan_start": "2026-11-02",
-   "activity": "Pre-commissioning Glycol Regeneration Train 1 (CPPT-12-02)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-11-23",
-   "plan_start": "2026-11-14",
-   "activity": "Pre-commissioning Booster Compressor Suction & Discharge Train 1 (CPPT-13-04)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-12-08",
-   "plan_start": "2026-11-16",
-   "activity": "Pre-commissioning UCP for Production & Pipeline Compressor Train 1 (CPPT-11-05)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-12-12",
-   "plan_start": "2026-12-03",
-   "activity": "Pre-commissioning Production Compressor Suction Train 1 (CPPT-11-02)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2026-12-25",
-   "plan_start": "2026-12-15",
-   "activity": "Pre-commissioning Production & Pipeline Compressor Train 1 (CPPT-11-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-01-23",
-   "plan_start": "2027-01-04",
-   "activity": "Pre-commissioning Glycol Dehydration Train 1 (CPPT-12-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-01-13",
-   "plan_start": "2027-01-04",
-   "activity": "Pre-commissioning Hydraulic Power Unit (with TUTU) (CPPT-04-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-01-08",
-   "plan_start": "2027-01-05",
-   "activity": "Pre-commissioning Production Compressor Discharge Train 1 (CPPT-11-03)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-01-23",
-   "plan_start": "2027-01-06",
-   "activity": "Pre-commissioning Inlet Separators Train 1 (CPPT-10-01)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-02-19",
-   "plan_start": "2027-01-09",
-   "activity": "Comm Train 1 – Production & Pipeline Compressor System (FTP)"
-  },
-  {
-   "actual_start": null,
-   "actual_finish": null,
-   "plan_finish": "2027-02-26",
-   "plan_start": "2027-01-25",
-   "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
   }
  ],
  "milestones": [
@@ -2478,6 +2512,6 @@
   }
  ],
  "_current": "2026-11-04",
- "_updated_at": "2026-10-29T06:17:00.000Z",
+ "_updated_at": "2026-10-29T09:37:00.000Z",
  "_source": "notion"
 }
