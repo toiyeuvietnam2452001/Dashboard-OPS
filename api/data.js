@@ -1,95 +1,55 @@
-// GET /api/data — reads the dashboard tables from Notion and returns them in the same shape as data.json.
+// GET /api/data            the report open this week, live from Notion
+// GET /api/data?date=DATE  the report with that report_date (YYYY-MM-DD)
 //
-// Needs the Vercel environment variable NOTION_TOKEN (an internal integration secret) and the
-// "OPS Dashboard Data" page shared with that integration (page ⋯ → Connections).
-// Responses are cached at the edge for 60 s so Notion is queried at most about once a minute.
+// Returns the same shape as data.json: one array per table plus "meta" (the report's details),
+// "_reports" (every report that has opened, for the report picker) and "_current" (this week's
+// report date). Needs the Vercel environment variable NOTION_TOKEN and the "OPS Dashboard Data"
+// page shared with that integration. Responses are cached at the edge for 60 s.
 
-const SOURCES = require('../tools/notion-sources.json');
+const { TABLES, queryAll, inReport, toRow, vnToday, loadReports, currentIndex } = require('../lib/notion');
 
-const NOTION_VERSION = '2025-09-03';
-// Row order per table. Notion's created_time only has minute precision, so rows added together
-// would come back in arbitrary order; every table sorts on its own columns instead.
-// (A select column sorts by the order of its options, e.g. CPP before WHP.)
-const SORTS = {
-  manpower: [['month', 'ascending']],
-  orr_curve: [['month', 'ascending']],
-  startup_sequence: [['step', 'ascending']],
-  procedures: [['id', 'ascending']],
-  orr_elements: [['code', 'ascending']],
-  orr_groups: [['group', 'ascending']],
-  orr_teams: [['weight_pct', 'descending'], ['team', 'ascending']],
-  pr_pipeline: [['stage', 'ascending'], ['status', 'ascending']],
-  packages_no_pr: [['dimension', 'ascending'], ['count', 'descending']],
-  vendor_training: [['period', 'ascending'], ['course', 'ascending']],
-  precom_plan: [['plan_start', 'ascending'], ['activity', 'ascending']],
-  cbta: [['platform', 'ascending'], ['team', 'ascending']],
-  mandatory: [['team', 'ascending']],
-  staffing: [['group', 'ascending']],
-  cmms: [['package', 'descending']],
-  workstreams: [['area', 'ascending'], ['item', 'ascending']],
-  permits: [['permit', 'ascending']],
-  readiness: [['order', 'ascending']],
-  milestones: [['order', 'ascending']],
-};
-
-async function queryAll(token, dataSourceId, sorts) {
-  const rows = [];
-  let cursor;
-  do {
-    const body = { page_size: 100, sorts: (sorts || []).map(([property, direction]) => ({ property, direction })).concat([{ timestamp: 'created_time', direction: 'ascending' }]) };
-    if (cursor) body.start_cursor = cursor;
-    const res = await fetch(`https://api.notion.com/v1/data_sources/${dataSourceId}/query`, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${token}`, 'Notion-Version': NOTION_VERSION, 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    });
-    if (res.status === 429) {
-      await new Promise((r) => setTimeout(r, 1000 * Number(res.headers.get('retry-after') || 1)));
-      continue;
-    }
-    if (!res.ok) throw new Error(`Notion ${res.status} on ${dataSourceId}: ${(await res.text()).slice(0, 300)}`);
-    const json = await res.json();
-    rows.push(...json.results);
-    cursor = json.has_more ? json.next_cursor : undefined;
-  } while (cursor);
-  return rows;
-}
-
-function cell(p) {
-  switch (p.type) {
-    case 'title':
-    case 'rich_text': {
-      const s = p[p.type].map((t) => t.plain_text).join('').trim();
-      return s === '' ? null : s;
-    }
-    case 'number': return p.number;
-    case 'select': return p.select ? p.select.name : null;
-    case 'status': return p.status ? p.status.name : null;
-    case 'date': return p.date ? p.date.start.slice(0, 10) : null;
-    case 'checkbox': return p.checkbox;
-    case 'formula': return p.formula[p.formula.type] ?? null;
-    default: return null;
-  }
-}
-
-function toRow(page) {
-  const row = {};
-  for (const [name, prop] of Object.entries(page.properties)) row[name] = cell(prop);
-  return row;
-}
-
-async function loadAll(token) {
+async function loadTables(token, reportId) {
   const out = {};
   let lastEdited = '';
-  const ids = Object.keys(SOURCES);
   // three tables at a time keeps us inside Notion's ~3 requests/second limit
-  for (let i = 0; i < ids.length; i += 3) {
-    await Promise.all(ids.slice(i, i + 3).map(async (id) => {
-      const pages = await queryAll(token, SOURCES[id].data_source, SORTS[id]);
+  for (let i = 0; i < TABLES.length; i += 3) {
+    await Promise.all(TABLES.slice(i, i + 3).map(async (id) => {
+      const pages = await queryAll(token, id, inReport(reportId));
       out[id] = pages.map(toRow).filter((r) => Object.values(r).some((v) => v !== null && v !== ''));
       for (const p of pages) if (p.last_edited_time > lastEdited) lastEdited = p.last_edited_time;
     }));
   }
+  return { out, lastEdited, rows: TABLES.reduce((n, id) => n + out[id].length, 0) };
+}
+
+async function load(token, date) {
+  const today = vnToday();
+  const reports = await loadReports(token);
+  if (!reports.length) throw new Error('No reports in "Kỳ báo cáo [reports]"');
+  const cur = currentIndex(reports, today);
+  const idx = date ? reports.findIndex((r) => r.report_date === date) : cur;
+  if (idx < 0) return null;
+  const rep = reports[idx];
+
+  let { out, lastEdited, rows } = await loadTables(token, rep.id);
+  // A week that has just opened has no rows until api/rollover copies the previous report in.
+  let carried = null;
+  if (!rows && idx > 0) {
+    ({ out, lastEdited } = await loadTables(token, reports[idx - 1].id));
+    carried = reports[idx - 1].report_date;
+  }
+  if (rep.edited > lastEdited) lastEdited = rep.edited;
+
+  const state = idx === cur ? 'open' : idx < cur ? 'closed' : 'upcoming';
+  out.meta = [{
+    report_date: rep.report_date, from_date: rep.from_date, name: rep.name, state,
+    as_of: state === 'open' && today < rep.report_date ? today : rep.report_date,
+    report_title: rep.report_title, prepared_by: rep.prepared_by, doc_no: rep.doc_no, revision: rep.revision,
+    reviewed_by: rep.reviewed_by, approved_by: rep.approved_by, classification: rep.classification,
+  }];
+  out._reports = reports.slice(0, cur + 1).map((r, i) => ({ date: r.report_date, from: r.from_date, name: r.name, state: i === cur ? 'open' : 'closed' }));
+  out._current = reports[cur].report_date;
+  if (carried) out._carried_from = carried;
   out._updated_at = lastEdited || new Date().toISOString();
   out._source = 'notion';
   return out;
@@ -101,13 +61,16 @@ module.exports = async (req, res) => {
     res.status(503).json({ error: 'NOTION_TOKEN is not set on Vercel' });
     return;
   }
+  const date = typeof req.query.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(req.query.date) ? req.query.date : null;
   try {
-    const data = await loadAll(token);
+    const data = await load(token, date);
+    if (!data) {
+      res.status(404).json({ error: `No report dated ${date}` });
+      return;
+    }
     res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
     res.status(200).json(data);
   } catch (e) {
     res.status(502).json({ error: String(e.message || e) });
   }
 };
-
-module.exports.toRow = toRow;

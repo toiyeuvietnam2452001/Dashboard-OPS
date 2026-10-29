@@ -112,6 +112,11 @@
 .ops-mast-sub { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .ops-mast-sub b { color: var(--color-fg); }
 .ops-class { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--brand-ink); color: var(--brand-ink); }
+.ops-state { border-color: var(--color-fg-muted); color: var(--color-fg-muted); }
+.ops-state.open { border-color: var(--rag-g); color: var(--rag-g); }
+.ops-state.open::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: currentColor; vertical-align: 1px; animation: ops-pulse 1.6s ease-in-out infinite; }
+@keyframes ops-pulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .ops-state.open::before { animation: none; } }
 .ops-mast-side { display: flex; align-items: stretch; gap: var(--cds-gap-md); flex-wrap: wrap; }
 .ops-mast-tools { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: var(--cds-gap-sm); }
 .ops-mast-actions { display: flex; align-items: flex-end; gap: var(--cds-gap-sm); }
@@ -239,7 +244,7 @@
       <div class="ops-mast-text">
         <span class="ops-eyebrow">PQPOC · Operations Department</span>
         <h1>Operations Readiness Dashboard</h1>
-        <span class="ops-mast-sub">Report <b class="ops-report-date">—</b><span class="ops-class" id="doc-class" hidden></span></span>
+        <span class="ops-mast-sub">Report <b class="ops-report-date">—</b><span class="ops-class ops-state" id="report-state" hidden></span><span class="ops-class" id="doc-class" hidden></span></span>
       </div>
     </div>
     <div class="ops-mast-side">
@@ -616,7 +621,11 @@ H.f1 = d3.format('.1f');
 H.fmtMonth = d3.utcFormat(L('%b %Y', '%m/%Y'));
 H.fmtMonthShort = d3.utcFormat(L('%b %y', '%m/%y'));
 H.fmtDay = d3.utcFormat(L('%-d %b %Y', '%d/%m/%Y'));
-H.REPORT_DATE = H.day(((dash.data('meta').data || [])[0] || {}).report_date || new Date().toISOString().slice(0, 10));
+H.META = (dash.data('meta').data || [])[0] || {};
+H.fmtDayShort = d3.utcFormat(L('%-d %b', '%d/%m'));
+// Figures are judged as of today while a report is open, and as of its report date once closed.
+H.REPORT_DATE = H.day(H.META.as_of || H.META.report_date || new Date().toISOString().slice(0, 10));
+H.period = (from, to) => (from ? H.fmtDayShort(H.day(from)) + ' – ' : '') + H.fmtDay(H.day(to));
 H.el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 H.state = (id, el) => {
   const d = dash.data(id);
@@ -700,7 +709,7 @@ function drawKpis() {
   H.fill('[data-source="packages_summary"]', 'packages_summary', {});
   H.fill('[data-source="orr_groups"]', 'orr_groups', { progress_pct: H.p100 });
   const mp = dash.data('kpi_manpower').data?.[0], orr = dash.data('kpi_orr').data?.[0];
-  document.querySelectorAll('.ops-report-date').forEach((e) => (e.textContent = H.fmtDay(H.REPORT_DATE)));
+  document.querySelectorAll('.ops-report-date').forEach((e) => (e.textContent = H.META.report_date ? H.period(H.META.from_date, H.META.report_date) : H.fmtDay(H.REPORT_DATE)));
   document.querySelectorAll('.ops-mp-month').forEach((e) => (e.textContent = mp ? H.fmtMonth(H.month(mp.month)) : '—'));
   document.querySelectorAll('.ops-orr-month').forEach((e) => (e.textContent = orr ? H.fmtMonth(H.month(orr.month)) : '—'));
 }
@@ -770,7 +779,7 @@ function drawManpower() {
   leg.replaceChildren(...series.map((s) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = s.color; sp.append(sw, s.label); return sp; }));
   lineChart(box, {
     rows, xKey: 'm', series, xDomain: d3.extent(rows, (r) => r.m), yMax: d3.max(rows, (r) => Math.max(r[series[0].key] ?? 0, r[series[1].key] ?? 0)),
-    yFmt: H.num, tickFmt: d3.utcFormat('%Y'), ticks: d3.utcYear.every(1), refX: H.REPORT_DATE, refLabel: L('Report ', 'Báo cáo ') + H.fmtDay(H.REPORT_DATE),
+    yFmt: H.num, tickFmt: d3.utcFormat('%Y'), ticks: d3.utcYear.every(1), refX: H.REPORT_DATE, refLabel: (dash.state === 'open' ? L('Today ', 'Hôm nay ') : L('Report ', 'Báo cáo ')) + H.fmtDay(H.REPORT_DATE),
   });
 }
 
@@ -1046,12 +1055,21 @@ const fmt = window.opsH.fmtDay;
 const day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d)); };
 if (dash.reports.length) {
   document.getElementById('report-picker').hidden = false;
-  pick.replaceChildren(...dash.reports.map((r) => new Option(fmt(day(r.date)) + (r.date === dash.latestDate ? L(' · latest', ' · mới nhất') : ''), r.date === dash.latestDate ? '' : r.date)));
+  const label = (r) => (r.from ? window.opsH.period(r.from, r.date) : fmt(day(r.date)))
+    + (r.date === dash.latestDate ? (r.state === 'open' ? L(' · in progress', ' · đang cập nhật') : L(' · latest', ' · mới nhất')) : '');
+  pick.replaceChildren(...dash.reports.map((r) => new Option(label(r), r.date === dash.latestDate ? '' : r.date)));
   pick.value = dash.archived ? dash.viewDate : '';
   pick.addEventListener('change', () => {
     const q = new URLSearchParams(location.search); if (pick.value) q.set('date', pick.value); else q.delete('date');
     location.assign(location.pathname + (q.toString() ? '?' + q : '') + location.hash);
   });
+}
+const stateEl = document.getElementById('report-state');
+if (dash.state === 'open' || dash.state === 'closed') {
+  stateEl.hidden = false;
+  stateEl.classList.toggle('open', dash.state === 'open');
+  stateEl.textContent = dash.state === 'open' ? L('In progress', 'Đang cập nhật') : L('Closed', 'Đã chốt');
+  stateEl.title = dash.state === 'open' ? L('This week’s report: figures update live as teams edit Notion.', 'Báo cáo tuần này: số liệu cập nhật trực tiếp khi các team sửa trên Notion.') : L('This report’s week has ended.', 'Tuần của báo cáo này đã kết thúc.');
 }
 const note = document.getElementById('archived-note');
 const latestLink = () => {
@@ -1060,7 +1078,11 @@ const latestLink = () => {
 };
 if (dash.archived) {
   note.hidden = false;
-  note.append(L('You are viewing the archived report of ', 'Bạn đang xem báo cáo lưu ngày ') + fmt(day(dash.viewDate)) + '. ', latestLink());
+  const r = dash.reports.find((x) => x.date === dash.viewDate) || {};
+  note.append(L('You are viewing the closed report ', 'Bạn đang xem báo cáo đã chốt ') + (r.from ? window.opsH.period(r.from, r.date) : fmt(day(dash.viewDate))) + '. ', latestLink());
+} else if (dash.carriedFrom) {
+  note.hidden = false;
+  note.append(L('This week’s report has just opened. Figures from the report of ', 'Báo cáo tuần này vừa mở. Đang hiển thị số liệu của báo cáo ngày ') + fmt(day(dash.carriedFrom)) + L(' are shown until they are copied in (within the hour).', ' cho tới khi hệ thống chép sang (trong vòng 1 giờ).'));
 } else if (dash.missingDate) {
   note.hidden = false;
   note.append(L('No archived report for ', 'Không có báo cáo lưu ngày ') + fmt(day(dash.missingDate)) + L('; showing the latest report instead. ', '; đang hiển thị báo cáo mới nhất. '));

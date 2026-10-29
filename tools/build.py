@@ -95,39 +95,38 @@ window.dash = (function () {
       return x.status === 200 ? JSON.parse(x.responseText) : null;
     } catch (e) { return null; }
   }
-  // ?date=YYYY-MM-DD opens the archived report of that date; otherwise the latest data.json.
-  var index = getJSON('history/index.json') || { latest: null, reports: [] };
+  // Every weekly report lives in Notion: api/data serves the report open this week (edge-cached ~60 s)
+  // and api/data?date=YYYY-MM-DD any other one. history/ and data.json, written hourly by GitHub
+  // Actions, stand in when Notion cannot be reached.
   var asked = (location.search.match(/[?&]date=(\\d{4}-\\d{2}-\\d{2})/) || [])[1] || null;
-  var viewDate = null, missingDate = null;
+  var viewDate = null, missingDate = null, source = null, apiURL = 'api/data';
+  function use(d, src, url) { if (d && d.manpower) { DATA = d; live = true; source = src; if (url) apiURL = url; return true; } return false; }
   if (asked) {
-    var snap = getJSON('history/' + asked + '.json');
-    if (snap && snap.manpower) { DATA = snap; live = true; viewDate = asked; } else { missingDate = asked; }
+    if (use(getJSON('api/data?date=' + asked, true), 'notion', 'api/data?date=' + asked) || use(getJSON('history/' + asked + '.json'), 'archive')) viewDate = asked;
+    else missingDate = asked;
   }
-  // Latest report: live from Notion through api/data (edge-cached ~60 s), else the last data.json.
-  var source = viewDate ? 'archive' : null;
-  if (!live) { var api = getJSON('api/data', true); if (api && api.manpower) { DATA = api; live = true; source = 'notion'; } }
-  if (!live) { var cur = getJSON('data.json'); if (cur && cur.manpower) { DATA = cur; live = true; source = 'file'; } }
-  // The report just before this one, for "change since last report" figures.
-  var prev = null, prevDate = null;
-  try {
-    var cur = ((DATA.meta || [])[0] || {}).report_date;
-    (index.reports || []).forEach(function (r) { if (cur && r.date < cur && (!prevDate || r.date > prevDate)) prevDate = r.date; });
-    if (prevDate) { prev = getJSON('history/' + prevDate + '.json'); if (!prev || !prev.manpower) { prev = null; prevDate = null; } }
-  } catch (e) {}
-  // Re-check Notion every minute; reload when someone has edited the data.
+  if (!live) use(getJSON('api/data', true), 'notion') || use(getJSON('data.json'), 'file');
+  var index = { latest: null, reports: [] };
+  if (DATA._reports) index = { latest: DATA._current, reports: DATA._reports.slice().reverse() };
+  else index = getJSON('history/index.json') || index;
+  var meta = (DATA.meta || [])[0] || {};
+  // The report just before this one, for "change since last report" figures; fetched after the page draws.
+  var prevDate = null;
+  (index.reports || []).forEach(function (r) { if (meta.report_date && r.date < meta.report_date && (!prevDate || r.date > prevDate)) prevDate = r.date; });
+  // Re-check Notion every minute; reload when someone has edited this report.
   if (source === 'notion') {
     setInterval(function () {
-      fetch('api/data').then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      fetch(apiURL).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
         if (j && j._updated_at && j._updated_at !== DATA._updated_at) location.reload();
       }).catch(function () {});
     }, 60000);
   }
   var res = {}, fns = [];
   function input(i) { return i in DATA ? DATA[i] : res[i]; }
-  return {
-    live: live, updatedAt: DATA._updated_at, source: source, prev: prev, prevDate: prevDate,
+  var api = {
+    live: live, updatedAt: DATA._updated_at, source: source, prev: null, prevDate: null,
     reports: index.reports || [], latestDate: index.latest, viewDate: viewDate, missingDate: missingDate,
-    archived: !!viewDate && viewDate !== index.latest,
+    archived: !!viewDate && viewDate !== index.latest, state: meta.state || null, carriedFrom: DATA._carried_from || null,
     data: function (id) { var d = input(id); return d === undefined ? { status: 'missing', data: [], meta: [] } : { status: 'ok', data: d, refreshing: false, meta: [] }; },
     calc: function (id, o) { try { res[id] = o.fn.apply(null, o.inputs.map(function (i) { return input(i) || []; })); } catch (e) { console.error('calc ' + id, e); } },
     loader: function () {},
@@ -141,6 +140,13 @@ window.dash = (function () {
     L: function (en, vi) { return lang === 'vi' ? vi : en; },
     D: function (s) { return lang === 'vi' && own(VI.data, s) ? VI.data[s] : s; }
   };
+  if (prevDate) {
+    var json = function (u) { return fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
+    json('api/data?date=' + prevDate).then(function (j) { return j && j.manpower ? j : json('history/' + prevDate + '.json'); }).then(function (j) {
+      if (j && j.manpower) { api.prev = j; api.prevDate = prevDate; api._redraw(); }
+    });
+  }
+  return api;
 })();
 var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __rt = setTimeout(dash._redraw, 150); });
 </script>""" % (json.dumps(data, ensure_ascii=False), json.dumps({'ui': VI['ui'], 'data': VI['data']}, ensure_ascii=False))
