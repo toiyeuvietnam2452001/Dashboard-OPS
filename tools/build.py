@@ -32,11 +32,15 @@ tokens = """
 --cds-pad-xs:4px;--cds-pad-sm:8px;--cds-pad-md:12px;--cds-pad-lg:20px;--cds-radius:8px;
 --cds-font-size-caption:12.5px;--cds-font-size-body:14.5px;--cds-font-size-heading:16px;--cds-font-size-title:30px;--cds-font-weight-medium:600;
 --cds-dur-slow:.3s;--brand:#2B3990;--brand-2:#00A14B;--brand-ink:#2B3990;--brand-tint:#EEF0FA;--brand-line:#C9CEEC;--rag-g:#1F7A4D;--rag-a:#B7791F;--rag-r:#C0392B;--rag-a-tint:#FDF6E7;--rag-a-line:#F0D9A8;--rag-r-tint:#FCEEEC;--rag-r-line:#F2C4BE;--led:#00A14B;--led-head:#00D26A;--font-anthropic-sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--font-anthropic-serif:'Source Serif 4',Georgia,serif;color-scheme:light}
-@media (prefers-color-scheme: dark){:root{--color-bg:#12161c;--color-panel:#1a2029;--color-fg:#e6eaf0;--color-fg-muted:#9aa5b4;--color-border-line:#2b3440;
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--color-bg:#12161c;--color-panel:#1a2029;--color-fg:#e6eaf0;--color-fg-muted:#9aa5b4;--color-border-line:#2b3440;
 --color-ok:#5cc28d;--color-warn:#e5a83b;--color-bad:#ef6f62;--s1:#5aa3e0;--s2:#4cc0b0;--s3:#f0c04a;--s4:#a58bd0;--s5:#ef6f62;--s6:#93b85a;--s7:#b89a8e;--s8:#90a4ae;
 --cds-chart-grid:#26303b;--cds-chart-axis:#46525f;--cds-chart-reference:#8b96a3;--cds-chart-muted:#6b7786;--cds-chart-status-critical:#ef6f62;
 --cds-surface-popover:#222a35;--cds-border:#36414e;--cds-shadow-popover:0 4px 16px rgba(0,0,0,.4);--cds-text-secondary:#9aa5b4;--brand:#4C5BC4;--brand-ink:#9EA8F0;--brand-tint:#1E2440;--brand-line:#34407A;--rag-g:#5CC28D;--rag-a:#E5A83B;--rag-r:#EF6F62;--rag-a-tint:#2A2414;--rag-a-line:#5A4A20;--rag-r-tint:#2C1A1A;--rag-r-line:#5E2C28;--led:#1FC46B;--led-head:#B4FAD2;color-scheme:dark}}
-@media print{:root{--color-bg:#ffffff;--color-panel:#ffffff;--color-fg:#1b2430;--color-fg-muted:#5d6878;--color-border-line:#d6dbe2;--brand-ink:#2B3990;--brand-tint:#EEF0FA;--rag-a-tint:#FDF6E7;--rag-r-tint:#FCEEEC;color-scheme:light}body{font-size:12px}}
+:root[data-theme="dark"]{--color-bg:#12161c;--color-panel:#1a2029;--color-fg:#e6eaf0;--color-fg-muted:#9aa5b4;--color-border-line:#2b3440;
+--color-ok:#5cc28d;--color-warn:#e5a83b;--color-bad:#ef6f62;--s1:#5aa3e0;--s2:#4cc0b0;--s3:#f0c04a;--s4:#a58bd0;--s5:#ef6f62;--s6:#93b85a;--s7:#b89a8e;--s8:#90a4ae;
+--cds-chart-grid:#26303b;--cds-chart-axis:#46525f;--cds-chart-reference:#8b96a3;--cds-chart-muted:#6b7786;--cds-chart-status-critical:#ef6f62;
+--cds-surface-popover:#222a35;--cds-border:#36414e;--cds-shadow-popover:0 4px 16px rgba(0,0,0,.4);--cds-text-secondary:#9aa5b4;--brand:#4C5BC4;--brand-ink:#9EA8F0;--brand-tint:#1E2440;--brand-line:#34407A;--rag-g:#5CC28D;--rag-a:#E5A83B;--rag-r:#EF6F62;--rag-a-tint:#2A2414;--rag-a-line:#5A4A20;--rag-r-tint:#2C1A1A;--rag-r-line:#5E2C28;--led:#1FC46B;--led-head:#B4FAD2;color-scheme:dark}
+@media print{:root,:root[data-theme]{--color-bg:#ffffff;--color-panel:#ffffff;--color-fg:#1b2430;--color-fg-muted:#5d6878;--color-border-line:#d6dbe2;--brand-ink:#2B3990;--brand-tint:#EEF0FA;--rag-a-tint:#FDF6E7;--rag-r-tint:#FCEEEC;color-scheme:light}body{font-size:12px}}
 html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans);font-size:14px}
 #dash-root{max-width:1280px;margin-inline:auto;padding-block:24px 40px;padding-left:max(var(--dash-gutter,16px),env(safe-area-inset-left,0px));padding-right:max(var(--dash-gutter,16px),env(safe-area-inset-right,0px))}
 .dash-skeleton{color:transparent!important;background:var(--cds-chart-grid);border-radius:4px}
@@ -54,6 +58,8 @@ window.dash = (function () {
   var VI = %s, lang = 'en';
   try { if (localStorage.getItem('ops-lang') === 'vi') lang = 'vi'; } catch (e) {}
   var qLang = (location.search.match(/[?&]lang=(en|vi)(?:&|$)/) || [])[1]; if (qLang) lang = qLang;
+  // Theme: the viewer's choice from the switch (bottom right), else the device setting.
+  try { var th = localStorage.getItem('ops-theme'); if (th === 'light' || th === 'dark') document.documentElement.setAttribute('data-theme', th); } catch (e) {}
   if (lang === 'vi') {
     document.documentElement.lang = 'vi';
     document.title = VI.ui[document.title] || document.title;

@@ -134,7 +134,12 @@
   "Planned start – finish. Green: completed (has an actual finish date); red: inside its planned window on the report date; amber: starts within the next 30 days.": "Bắt đầu – kết thúc theo kế hoạch. Xanh: đã hoàn thành (có ngày kết thúc thực tế); đỏ: đang trong khung kế hoạch tại ngày báo cáo; vàng: bắt đầu trong 30 ngày tới.",
   "Preservation, installation & commissioning": "Bảo quản, lắp đặt & chạy thử",
   "CPP start-up sequence": "Trình tự khởi động CPP",
-  "Summarised from the CPP start-up block diagram.": "Tóm tắt từ sơ đồ khối khởi động CPP."
+  "Summarised from the CPP start-up block diagram.": "Tóm tắt từ sơ đồ khối khởi động CPP.",
+  "Theme": "Giao diện",
+  "Light mode": "Giao diện sáng",
+  "Dark mode": "Giao diện tối",
+  "Light": "Sáng",
+  "Dark": "Tối"
  },
  "data": {
   "Manpower": "Nhân sự",
