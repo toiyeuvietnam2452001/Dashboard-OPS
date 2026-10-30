@@ -140,8 +140,22 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:
 .ops-code-S { background: color-mix(in srgb, var(--s1) 22%, transparent); color: var(--color-fg); }
 .ops-code-B { background: color-mix(in srgb, var(--s3) 45%, transparent); color: var(--color-fg); }
 .ops-check { color: var(--color-warn); }
-.ops-plan td.v { text-align: right; white-space: nowrap; }
-.ops-plan td.v small { display: block; font-size: 11px; }
+.ops-plan { border-collapse: separate; border-spacing: 0; }
+.ops-plan thead th { background: var(--brand-tint); color: var(--brand-ink); font-weight: 600; text-align: center; border-bottom: 2px solid var(--brand-line); padding: 8px; }
+.ops-plan thead th:first-child { text-align: left; border-top-left-radius: var(--cds-radius); }
+.ops-plan thead th:last-child { border-top-right-radius: var(--cds-radius); }
+.ops-plan td { vertical-align: middle; }
+.ops-plan td.t { font-weight: var(--cds-font-weight-medium); white-space: nowrap; }
+.ops-plan tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--brand-tint) 50%, transparent); }
+.ops-plan td.v { text-align: center; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ops-plan td.v .pl { font-weight: var(--cds-font-weight-medium); }
+.ops-plan .tag { display: inline-block; margin-top: 3px; padding: 1px 7px; border-radius: 999px; font-size: 11px; font-weight: 600; line-height: 1.5; white-space: nowrap; }
+.ops-plan .tag.ops-good { background: color-mix(in srgb, var(--color-ok) 14%, transparent); }
+.ops-plan .tag.ops-bad { background: color-mix(in srgb, var(--color-bad) 11%, transparent); }
+.ops-plan thead th.num { text-align: center; }
+#card-orr-plan .ops-tablebox { max-height: none; }
+.ops-plan tbody tr.total td { background: var(--brand-tint); border-top: 2px solid var(--brand-line); border-bottom: 0; font-weight: 600; }
+.ops-plan tbody tr.total td.t { color: var(--brand-ink); }
 .ops-sub2 { display: block; color: var(--color-fg-muted); font-size: 11px; line-height: 1.35; margin-top: 2px; }
 @media (max-width: 640px) { .ops-matrix .stick { min-width: 8.5rem; max-width: 9.5rem; font-size: 11px; } }
 .ops-figure { margin: 0; display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
@@ -1212,19 +1226,20 @@ function drawOrrPlan() {
   months.forEach((m) => head.append(H.el('th', 'num', H.fmtMonthShort(H.month(m)))));
   table.tHead.replaceChildren(head);
   const cellFor = (m, plan, actual) => {
-    const td = H.el('td', 'v', plan == null ? '—' : d3.format('.1~f')(plan) + '%');
-    if (actual != null) td.append(H.el('small', actual >= plan ? 'ops-good' : 'ops-bad', L('actual ', 'TT ') + d3.format('.1~f')(actual) + '%'));
+    const td = H.el('td', 'v');
+    td.append(H.el('div', 'pl', plan == null ? '—' : d3.format('.1~f')(plan) + '%'));
+    if (actual != null) td.append(H.el('span', 'tag ' + (actual >= plan ? 'ops-good' : 'ops-bad'), L('actual ', 'TT ') + d3.format('.1~f')(actual) + '%'));
     return td;
   };
   const rows = teams.map(([t, list]) => {
-    const tr = H.el('tr'); tr.append(H.el('td', null, t));
+    const tr = H.el('tr'); tr.append(H.el('td', 't', t));
     months.forEach((m) => { const r = list.find((x) => x.month === m); tr.append(cellFor(m, r && r.plan_pct, r && r.actual_pct)); });
     return tr;
   });
   if (curve.length) {
-    const tr = H.el('tr'); tr.append(H.el('td', null, L('Overall (weighted)', 'Tổng (có trọng số)')));
+    const tr = H.el('tr', 'total'); tr.append(H.el('td', 't', L('Overall (weighted)', 'Tổng (có trọng số)')));
     months.forEach((m) => { const r = curve.find((x) => x.month === m); tr.append(cellFor(m, r && r.plan_pct, r && r.actual_pct)); });
-    tr.style.fontWeight = 600; rows.push(tr);
+    rows.push(tr);
   }
   table.tBodies[0].replaceChildren(...rows);
 }
