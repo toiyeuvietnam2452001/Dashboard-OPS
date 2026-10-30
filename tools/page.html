@@ -109,7 +109,6 @@
 .ops-check { color: var(--color-warn); }
 .ops-plan td.v { text-align: right; white-space: nowrap; }
 .ops-plan td.v small { display: block; font-size: 11px; }
-.ops-plan th.now, .ops-plan td.now { box-shadow: inset 0 0 0 2px var(--color-fg); }
 .ops-sub2 { display: block; color: var(--color-fg-muted); font-size: 11px; line-height: 1.35; margin-top: 2px; }
 @media (max-width: 640px) { .ops-matrix .stick { min-width: 8.5rem; max-width: 9.5rem; font-size: 11px; } }
 .ops-figure { margin: 0; display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
@@ -1067,13 +1066,12 @@ function drawOrrPlan() {
   const order = (dash.data('orr_teams').data || []).map((r) => r.team);
   const teams = d3.groups(d.data, (r) => r.team).sort((a, b) => (order.indexOf(a[0]) + 1 || 99) - (order.indexOf(b[0]) + 1 || 99));
   const curve = dash.data('orr_curve').data || [];
-  const now = d3.utcFormat('%Y-%m')(H.REPORT_DATE);
   const head = H.el('tr'); head.append(H.el('th', null, L('Team', 'Team')));
-  months.forEach((m) => head.append(H.el('th', 'num' + (m === now ? ' now' : ''), H.fmtMonthShort(H.month(m)))));
+  months.forEach((m) => head.append(H.el('th', 'num', H.fmtMonthShort(H.month(m)))));
   table.tHead.replaceChildren(head);
   const shade = (v) => `color-mix(in srgb, var(--s1) ${Math.round(Math.max(0, Math.min(1, (v - 40) / 60)) * 45)}%, transparent)`;
   const cellFor = (m, plan, actual) => {
-    const td = H.el('td', 'v' + (m === now ? ' now' : ''), plan == null ? '—' : d3.format('.1~f')(plan) + '%');
+    const td = H.el('td', 'v', plan == null ? '—' : d3.format('.1~f')(plan) + '%');
     if (plan != null) td.style.background = shade(plan);
     if (actual != null) td.append(H.el('small', actual >= plan ? 'ops-good' : 'ops-bad', L('actual ', 'TT ') + d3.format('.1~f')(actual) + '%'));
     return td;
