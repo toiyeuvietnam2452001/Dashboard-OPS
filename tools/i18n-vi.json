@@ -167,7 +167,10 @@
   "Ref. no.": "Số hiệu",
   "Authority / responsible": "Cơ quan cấp / phụ trách",
   "Production profile: sales gas capability vs requirement": "Production profile: khả năng cấp khí bán so với nhu cầu",
-  "Chart from the weekly report of 21 Oct 2026. Light bars: total sales gas requirement; dark bars: O Mon I (one generator) gas; green line: SSF delivery capability, 73 MMscfd; dark line: delivery capability at 75%.": "Biểu đồ trong báo cáo tuần 21/10/2026. Cột nhạt: tổng nhu cầu khí bán; cột đậm: khí cho Ô Môn I (một tổ máy); đường xanh lá: khả năng cấp khí SSF, 73 MMscfd; đường sẫm: khả năng cấp khí ở mức 75%."
+  "Chart from the report of 21 Oct 2026. Light bars: total sales gas requirement; dark bars: O Mon I (one generator) gas; green line: SSF delivery capability, 73 MMscfd; dark line: delivery capability at 75%.": "Biểu đồ trong báo cáo 21/10/2026. Cột nhạt: tổng nhu cầu khí bán; cột đậm: khí cho Ô Môn I (một tổ máy); đường xanh lá: khả năng cấp khí SSF, 73 MMscfd; đường sẫm: khả năng cấp khí ở mức 75%.",
+  "Figures as of": "Số liệu ngày",
+  "Changes since the last saved day": "Thay đổi so với lần lưu trước",
+  "Every figure compared with the copy saved at the end of an earlier day, item by item. Figures are cumulative, so a change is what moved since then.": "So sánh từng chỉ tiêu với bản số liệu đã lưu cuối một ngày trước đó. Số liệu là lũy kế, nên phần thay đổi chính là những gì biến động kể từ ngày đó."
  },
  "data": {
   "Manpower": "Nhân sự",

@@ -234,7 +234,7 @@
 .ops-docctl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 4px 16px; padding: var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); font-size: var(--cds-font-size-caption); }
 .ops-docctl span { color: var(--color-fg-muted); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
 @media (max-width: 560px) { .ops-mast-side { width: 100%; } .ops-count { flex: 1; } .ops-lang { position: absolute; top: 10px; right: 10px; } .ops-mast-id { padding-right: 88px; } }
-/* Changes since last report */
+/* Changes since the last saved day */
 .ops-tab-n { display: inline-block; margin-left: 6px; min-width: 1.4em; padding: 0 6px; border-radius: 999px; font-size: 11px; font-weight: 600; line-height: 1.6; text-align: center; background: var(--rag-a-tint); color: var(--rag-a); border: 1px solid var(--rag-a-line); }
 .ops-chg-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--cds-gap-md); align-items: flex-start; }
 .ops-chg-stats { display: flex; flex-wrap: wrap; gap: var(--cds-gap-lg); }
@@ -292,7 +292,7 @@
       <div class="ops-mast-text">
         <span class="ops-eyebrow">PQPOC · Operations Department</span>
         <h1>Operations Readiness Dashboard</h1>
-        <span class="ops-mast-sub">Report <b class="ops-report-date">—</b><span class="ops-class ops-state" id="report-state" hidden></span><span class="ops-class" id="doc-class" hidden></span></span>
+        <span class="ops-mast-sub">Figures as of <b class="ops-report-date">—</b><span class="ops-class ops-state" id="report-state" hidden></span><span class="ops-class" id="doc-class" hidden></span></span>
       </div>
     </div>
     <div class="ops-mast-side">
@@ -313,7 +313,7 @@
         </div>
         <div class="ops-mast-actions">
           <div class="ops-picker" id="report-picker" hidden>
-            <label for="report-pick" data-vi="Kỳ báo cáo">Report</label>
+            <label for="report-pick" data-vi="Xem số liệu ngày">View figures of</label>
             <select id="report-pick"></select>
           </div>
           <button class="ops-btn" id="print-btn" type="button" title="Print or save as PDF">Print / PDF</button>
@@ -585,7 +585,7 @@
         <p class="ops-note" id="gas-profile-note">—</p>
         <figure class="ops-figure">
           <img src="assets/production-profile.png" width="1363" height="580" loading="lazy" alt="Chart of sales gas delivery capability against total sales gas requirement, July 2027 to January 2028, in MMscfd">
-          <figcaption class="ops-note">Chart from the weekly report of 21 Oct 2026. Light bars: total sales gas requirement; dark bars: O Mon I (one generator) gas; green line: SSF delivery capability, 73 MMscfd; dark line: delivery capability at 75%.</figcaption>
+          <figcaption class="ops-note">Chart from the report of 21 Oct 2026. Light bars: total sales gas requirement; dark bars: O Mon I (one generator) gas; green line: SSF delivery capability, 73 MMscfd; dark line: delivery capability at 75%.</figcaption>
         </figure>
       </div>
     </div>
@@ -617,8 +617,8 @@
   <section class="ops-page ops-chg" id="changes" data-page="changes" hidden>
     <div class="ops-card">
       <div class="ops-chg-head">
-        <div><h2 id="chg-title">Changes since last report</h2>
-        <p class="ops-note">Every figure in this report compared with the previous weekly report, item by item. Figures are cumulative, so a change is what moved during the week.</p></div>
+        <div><h2 id="chg-title">Changes since the last saved day</h2>
+        <p class="ops-note">Every figure compared with the copy saved at the end of an earlier day, item by item. Figures are cumulative, so a change is what moved since then.</p></div>
         <div class="ops-chg-stats" id="chg-stats"></div>
       </div>
       <div class="ops-chg-chips" id="chg-chips"></div>
@@ -1295,7 +1295,7 @@ const day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date
 if (dash.reports.length) {
   document.getElementById('report-picker').hidden = false;
   const label = (r) => (r.from ? window.opsH.period(r.from, r.date) : fmt(day(r.date)))
-    + (r.date === dash.latestDate ? (r.state === 'open' ? L(' · in progress', ' · đang cập nhật') : L(' · latest', ' · mới nhất')) : '');
+    + (r.date === dash.latestDate ? L(' · now', ' · hiện tại') : '');
   pick.replaceChildren(...dash.reports.map((r) => new Option(label(r), r.date === dash.latestDate ? '' : r.date)));
   pick.value = dash.archived ? dash.viewDate : '';
   pick.addEventListener('change', () => {
@@ -1307,24 +1307,21 @@ const stateEl = document.getElementById('report-state');
 if (dash.state === 'open' || dash.state === 'closed') {
   stateEl.hidden = false;
   stateEl.classList.toggle('open', dash.state === 'open');
-  stateEl.textContent = dash.state === 'open' ? L('In progress', 'Đang cập nhật') : L('Closed', 'Đã chốt');
-  stateEl.title = dash.state === 'open' ? L('This week’s report: figures update live as teams edit Notion.', 'Báo cáo tuần này: số liệu cập nhật trực tiếp khi các team sửa trên Notion.') : L('This report’s week has ended.', 'Tuần của báo cáo này đã kết thúc.');
+  stateEl.textContent = dash.state === 'open' ? L('Live', 'Trực tiếp') : L('Saved copy', 'Bản đã lưu');
+  stateEl.title = dash.state === 'open' ? L('Live: figures update about a minute after each edit in Notion.', 'Trực tiếp: số liệu cập nhật khoảng 1 phút sau mỗi lần sửa trên Notion.') : L('Figures saved at the end of that day.', 'Số liệu đã lưu cuối ngày đó.');
 }
 const note = document.getElementById('archived-note');
 const latestLink = () => {
   const q = new URLSearchParams(location.search); q.delete('date');
-  const a = document.createElement('a'); a.href = location.pathname + (q.toString() ? '?' + q : '') + location.hash; a.textContent = L('Open the latest report', 'Mở báo cáo mới nhất'); return a;
+  const a = document.createElement('a'); a.href = location.pathname + (q.toString() ? '?' + q : '') + location.hash; a.textContent = L('Back to the live figures', 'Về số liệu hiện tại'); return a;
 };
 if (dash.archived) {
   note.hidden = false;
   const r = dash.reports.find((x) => x.date === dash.viewDate) || {};
-  note.append(L('You are viewing the closed report ', 'Bạn đang xem báo cáo đã chốt ') + (r.from ? window.opsH.period(r.from, r.date) : fmt(day(dash.viewDate))) + '. ', latestLink());
-} else if (dash.carriedFrom) {
-  note.hidden = false;
-  note.append(L('This week’s report has just opened. Figures from the report of ', 'Báo cáo tuần này vừa mở. Đang hiển thị số liệu của báo cáo ngày ') + fmt(day(dash.carriedFrom)) + L(' are shown until they are copied in (within the hour).', ' cho tới khi hệ thống chép sang (trong vòng 1 giờ).'));
+  note.append(L('You are viewing the figures saved on ', 'Bạn đang xem số liệu đã lưu ngày ') + (r.from ? window.opsH.period(r.from, r.date) : fmt(day(dash.viewDate))) + '. ', latestLink());
 } else if (dash.missingDate) {
   note.hidden = false;
-  note.append(L('No archived report for ', 'Không có báo cáo lưu ngày ') + fmt(day(dash.missingDate)) + L('; showing the latest report instead. ', '; đang hiển thị báo cáo mới nhất. '));
+  note.append(L('No figures saved for ', 'Không có số liệu lưu ngày ') + fmt(day(dash.missingDate)) + L('; showing the live figures instead. ', '; đang hiển thị số liệu hiện tại. '));
 }
 </script>
 
@@ -1487,7 +1484,7 @@ function drawDeltas() {
     const d = cur - prev; el.hidden = false;
     el.className = 'ops-delta ' + (Math.abs(d) < 1e-9 ? 'flat' : d > 0 ? 'up' : 'down');
     if (id === 'kpi-pr') el.className = 'ops-delta ' + (d === 0 ? 'flat' : d < 0 ? 'up' : 'down');
-    el.textContent = (d > 0 ? '▲ +' : d < 0 ? '▼ −' : '● ') + fmt(d) + unit + L(' vs last report', ' so kỳ trước');
+    el.textContent = (d > 0 ? '▲ +' : d < 0 ? '▼ −' : '● ') + fmt(d) + unit + L(' vs last saved day', ' so lần lưu trước');
     el.title = L('Change since report of ', 'Thay đổi so với báo cáo ngày ') + H.fmtDay(H.day(dash.prevDate));
   };
   const c = metrics('cur'), p = metrics('prev');
@@ -1537,7 +1534,7 @@ window.addEventListener('afterprint', () => { if (printPage) goTab(printPage); }
 </script>
 
 <script>
-// Changes since last report: compares every row of every table with the previous weekly report.
+// Changes: compares every row of every table with the copy saved at the end of an earlier day.
 // Rows are matched on the columns that identify them (the same keys api/rollover uses).
 const H = window.opsH, L = dash.L, D = dash.D;
 const AREAS = [ // [table, area title EN, VI, tab]
@@ -1642,14 +1639,14 @@ function drawChanges() {
   document.querySelectorAll('.ops-tab .ops-tab-n').forEach((e) => e.remove());
   const byTab = {};
   (changes || []).forEach((c) => { const tab = AREAS.find((x) => x[0] === c.t)[3]; byTab[tab] = (byTab[tab] || 0) + 1; byTab.changes = (byTab.changes || 0) + 1; });
-  Object.entries(byTab).forEach(([tab, n]) => { const b = document.getElementById('tab-' + tab); if (b) { const s = H.el('span', 'ops-tab-n', String(n)); s.title = L(`${n} changes since last report`, `${n} thay đổi so với kỳ trước`); b.append(s); } });
+  Object.entries(byTab).forEach(([tab, n]) => { const b = document.getElementById('tab-' + tab); if (b) { const s = H.el('span', 'ops-tab-n', String(n)); s.title = L(`${n} changes since the last saved day`, `${n} thay đổi so với lần lưu trước`); b.append(s); } });
   const prevRep = dash.reports.find((r) => r.date === dash.prevDate);
   document.getElementById('chg-title').textContent = dash.prevDate
-    ? L('Changes since report ', 'Thay đổi so với báo cáo ') + (prevRep && prevRep.from ? H.period(prevRep.from, prevRep.date) : H.fmtDay(H.day(dash.prevDate)))
-    : L('Changes since last report', 'Thay đổi so với kỳ trước');
+    ? L('Changes since ', 'Thay đổi so với ngày ') + (prevRep && prevRep.from ? H.period(prevRep.from, prevRep.date) : H.fmtDay(H.day(dash.prevDate)))
+    : L('Changes since the last saved day', 'Thay đổi so với lần lưu trước');
   if (!changes) {
     stats.replaceChildren(); chips.replaceChildren();
-    list.replaceChildren(H.el('p', 'ops-note', L('No earlier report to compare with yet (or it is still loading).', 'Chưa có báo cáo trước để so sánh (hoặc đang tải).')));
+    list.replaceChildren(H.el('p', 'ops-note', L('No earlier saved day to compare with yet (or it is still loading).', 'Chưa có ngày lưu trước để so sánh (hoặc đang tải).')));
     return;
   }
   const n = (k) => changes.filter((c) => c.kind === k).length;
@@ -1658,7 +1655,7 @@ function drawChanges() {
     .map(([v, t]) => { const d = H.el('div'); d.append(H.el('b', null, H.num(v)), H.el('span', null, t)); return d; }));
   if (!changes.length) {
     chips.replaceChildren();
-    list.replaceChildren(H.el('p', 'ops-note', L('No figure has changed since the previous report.', 'Chưa có số liệu nào thay đổi so với báo cáo trước.')));
+    list.replaceChildren(H.el('p', 'ops-note', L('No figure has changed since then.', 'Chưa có số liệu nào thay đổi kể từ ngày đó.')));
     return;
   }
   const groups = AREAS.map(([t, en, vi, tab]) => ({ t, title: L(en, vi), tab, items: changes.filter((c) => c.t === t) })).filter((g) => g.items.length);
@@ -1669,7 +1666,7 @@ function drawChanges() {
     const go = H.el('button', 'ops-chg-more', L('Open tab', 'Mở tab')); go.type = 'button'; go.addEventListener('click', () => { document.getElementById('tab-' + g.tab).click(); window.scrollTo({ top: 0 }); });
     h.append(go);
     const box = H.el('div', 'ops-tablebox'), table = H.el('table'), thead = H.el('thead'), tr = H.el('tr');
-    [[L('Item', 'Mục')], [L('Figure', 'Chỉ tiêu')], [L('Last report', 'Kỳ trước')], [L('This report', 'Kỳ này')], [L('Change', 'Thay đổi'), 'num']].forEach(([t, c]) => tr.append(H.el('th', c || null, t)));
+    [[L('Item', 'Mục')], [L('Figure', 'Chỉ tiêu')], [L('Before', 'Trước')], [L('Now', 'Hiện tại')], [L('Change', 'Thay đổi'), 'num']].forEach(([t, c]) => tr.append(H.el('th', c || null, t)));
     thead.append(tr);
     const tb = H.el('tbody');
     g.items.forEach((c) => {

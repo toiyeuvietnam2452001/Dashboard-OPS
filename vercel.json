@@ -1,5 +1,0 @@
-{
-  "functions": {
-    "api/rollover.js": { "maxDuration": 60 }
-  }
-}

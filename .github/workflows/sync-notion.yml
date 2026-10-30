@@ -1,7 +1,8 @@
 name: Sync from Notion
 
-# Every hour: open this week's report if it is new (api/rollover), then copy the live Notion data
-# of the open report (api/data on Vercel) into data.json and history/<report_date>.json as a fallback.
+# Every hour: copy the live Notion data (api/data on Vercel) into data.json, and keep a copy of
+# each day's figures in history/<date>.json (the last sync of the day wins) for the Changes tab
+# and for looking back at an earlier day.
 on:
   schedule:
     - cron: "17 * * * *"
@@ -19,16 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Open this week's report
-        # A new weekly report starts empty; api/rollover copies last week's figures into it.
-        # It does nothing once the report is initialized, and copies in ~40 s chunks.
-        run: |
-          for i in $(seq 1 12); do
-            out=$(curl -s -X POST --max-time 75 https://ops-pqpoc.vercel.app/api/rollover || true)
-            echo "$out"
-            case "$out" in *'"done":true'*) break ;; esac
-            case "$out" in *'"error"'*) echo "::warning::rollover failed: $out"; break ;; esac
-          done
       - name: Fetch live data
         run: |
           code=$(curl -s -o /tmp/live.json -w '%{http_code}' https://ops-pqpoc.vercel.app/api/data)
