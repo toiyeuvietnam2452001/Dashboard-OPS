@@ -637,6 +637,89 @@
    "month": "2028-12"
   }
  ],
+ "orr_teams": [
+  {
+   "weight_pct": 25.5,
+   "completed": 57,
+   "actual_pct": 76.8,
+   "total_activities": 89,
+   "plan_pct": 69.5,
+   "plan_end_pct": 99,
+   "team": "Offshore"
+  },
+  {
+   "weight_pct": 13.2,
+   "completed": 23,
+   "actual_pct": 66.5,
+   "total_activities": 59,
+   "plan_pct": 71.3,
+   "plan_end_pct": 98,
+   "team": "Production OPS"
+  },
+  {
+   "weight_pct": 12.5,
+   "completed": 57,
+   "actual_pct": 70.6,
+   "total_activities": 80,
+   "plan_pct": 77.1,
+   "plan_end_pct": 94,
+   "team": "Manager OPS"
+  },
+  {
+   "weight_pct": 11.2,
+   "completed": 20,
+   "actual_pct": 64.4,
+   "total_activities": 53,
+   "plan_pct": 45.6,
+   "plan_end_pct": 89,
+   "team": "Asset Integrity"
+  },
+  {
+   "weight_pct": 9.1,
+   "completed": 21,
+   "actual_pct": 79.4,
+   "total_activities": 32,
+   "plan_pct": 65.7,
+   "plan_end_pct": 82,
+   "team": "E&I"
+  },
+  {
+   "weight_pct": 8.7,
+   "completed": 25,
+   "actual_pct": 63.9,
+   "total_activities": 48,
+   "plan_pct": 70.6,
+   "plan_end_pct": 98,
+   "team": "M&R"
+  },
+  {
+   "weight_pct": 6.9,
+   "completed": 10,
+   "actual_pct": 71.3,
+   "total_activities": 28,
+   "plan_pct": 67,
+   "plan_end_pct": 96,
+   "team": "Application Eng"
+  },
+  {
+   "weight_pct": 6.8,
+   "completed": 27,
+   "actual_pct": 71.1,
+   "total_activities": 49,
+   "plan_pct": 71.9,
+   "plan_end_pct": 95,
+   "team": "Marine"
+  },
+  {
+   "weight_pct": 6,
+   "completed": 14,
+   "actual_pct": 57.3,
+   "total_activities": 36,
+   "plan_pct": 60.6,
+   "plan_end_pct": 99,
+   "team": "Production Eng"
+  }
+ ],
  "mandatory": [
   {
    "planned": 72,
@@ -753,9 +836,28 @@
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
   }
  ],
- "orr_teams": [],
- "orr_elements": [],
- "orr_groups": [],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
+  }
+ ],
  "orr_curve": [
   {
    "actual_pct": 70.5,
@@ -801,6 +903,176 @@
    "actual_pct": null,
    "plan_pct": 95,
    "month": "2027-06"
+  }
+ ],
+ "orr_elements": [
+  {
+   "progress_pct": 64.3,
+   "items": 14,
+   "element": "Organization, Manning & Accountability",
+   "group": "PEOPLE",
+   "code": "PE-01"
+  },
+  {
+   "progress_pct": 59.9,
+   "items": 26,
+   "element": "Competency, Training & Authorization",
+   "group": "PEOPLE",
+   "code": "PE-02"
+  },
+  {
+   "progress_pct": 83.7,
+   "items": 3,
+   "element": "Personnel Mobilization & Fitness for Duty",
+   "group": "PEOPLE",
+   "code": "PE-03"
+  },
+  {
+   "progress_pct": 100,
+   "items": 5,
+   "element": "HR Policies, Employment Conditions & Retention",
+   "group": "PEOPLE",
+   "code": "PE-04"
+  },
+  {
+   "progress_pct": 77.2,
+   "items": 11,
+   "element": "Facilities, Process & Utilities Readiness",
+   "group": "PLANT",
+   "code": "PL-01"
+  },
+  {
+   "progress_pct": 80.2,
+   "items": 20,
+   "element": "Wells, Flowlines & Export Systems Readiness",
+   "group": "PLANT",
+   "code": "PL-02"
+  },
+  {
+   "progress_pct": 14.1,
+   "items": 8,
+   "element": "Asset Integrity & Safety Barrier Readiness",
+   "group": "PLANT",
+   "code": "PL-03"
+  },
+  {
+   "progress_pct": 61.8,
+   "items": 15,
+   "element": "Spares, Materials, Consumables & Tools Readiness",
+   "group": "PLANT",
+   "code": "PL-04"
+  },
+  {
+   "progress_pct": 0,
+   "items": 2,
+   "element": "Metering, Sampling, Analysers & Environmental Monitoring",
+   "group": "PLANT",
+   "code": "PL-05"
+  },
+  {
+   "progress_pct": 72.3,
+   "items": 4,
+   "element": "Onshore Base, Port & Support Infrastructure",
+   "group": "PLANT",
+   "code": "PL-06"
+  },
+  {
+   "progress_pct": 85.8,
+   "items": 18,
+   "element": "ORR Governance, Readiness Acceptance & Financial Readiness",
+   "group": "PROCESS",
+   "code": "PR-01"
+  },
+  {
+   "progress_pct": 81.5,
+   "items": 20,
+   "element": "Legal Compliance, Licences, Permits, Certification & Security",
+   "group": "PROCESS",
+   "code": "PR-02"
+  },
+  {
+   "progress_pct": 85.6,
+   "items": 104,
+   "element": "HSE, Process Safety & Control of Work",
+   "group": "PROCESS",
+   "code": "PR-03"
+  },
+  {
+   "progress_pct": 49.3,
+   "items": 29,
+   "element": "Emergency Response, Crisis Management & Continuity",
+   "group": "PROCESS",
+   "code": "PR-04"
+  },
+  {
+   "progress_pct": 45.4,
+   "items": 80,
+   "element": "Operations Management & Production Chemistry",
+   "group": "PROCESS",
+   "code": "PR-05"
+  },
+  {
+   "progress_pct": 63.6,
+   "items": 88,
+   "element": "Maintenance, Reliability & Integrity Management",
+   "group": "PROCESS",
+   "code": "PR-06"
+  },
+  {
+   "progress_pct": 59.4,
+   "items": 51,
+   "element": "Contracts, Procurement & Supply Chain",
+   "group": "PROCESS",
+   "code": "PR-07"
+  },
+  {
+   "progress_pct": 41.5,
+   "items": 13,
+   "element": "Integrated Coordination, Gas Dispatch, Metering & Commercial Interface",
+   "group": "PROCESS",
+   "code": "PR-08"
+  },
+  {
+   "progress_pct": 59.6,
+   "items": 40,
+   "element": "Technical Information, Data, Digital Systems & OT Security",
+   "group": "PROCESS",
+   "code": "PR-09"
+  },
+  {
+   "progress_pct": 58.5,
+   "items": 27,
+   "element": "Commissioning Interface, Handover, Start-up & Stabilization",
+   "group": "PROCESS",
+   "code": "PR-10"
+  },
+  {
+   "progress_pct": 70.1,
+   "items": 21,
+   "element": "Production Management, Well Surveillance & Hydrocarbon Accounting",
+   "group": "PROCESS",
+   "code": "PR-11"
+  },
+  {
+   "progress_pct": 68.8,
+   "items": 49,
+   "element": "Marine, Aviation & Logistics Operations",
+   "group": "PROCESS",
+   "code": "PR-12"
+  },
+  {
+   "progress_pct": 68,
+   "items": 22,
+   "element": "Performance Management, Assurance & Continuous Improvement",
+   "group": "PROCESS",
+   "code": "PR-13"
+  },
+  {
+   "progress_pct": 89.3,
+   "items": 22,
+   "element": "Design, Engineering, Operability & Maintainability Assurance",
+   "group": "PROCESS",
+   "code": "PR-14"
   }
  ],
  "pr_pipeline": [
@@ -1955,64 +2227,6 @@
    "item": "Offshore preservation"
   }
  ],
- "readiness": [
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
-  }
- ],
  "startup_sequence": [
   {
    "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
@@ -2211,6 +2425,106 @@
    "plan_finish": "2027-02-26",
    "plan_start": "2027-01-25",
    "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
+  }
+ ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
+  }
+ ],
+ "milestones": [
+  {
+   "plan_date": "2026-10-13",
+   "note": "Theo master plan pre-com (hoạt động sớm nhất)",
+   "is_target": false,
+   "actual_date": null,
+   "order": 1,
+   "milestone": "Pre-commissioning start (CPP Train 1)"
+  },
+  {
+   "plan_date": "2027-06-30",
+   "note": "Theo đường kế hoạch ORR (06/2027 = 95%)",
+   "is_target": false,
+   "actual_date": null,
+   "order": 2,
+   "milestone": "ORR plan 95%"
+  },
+  {
+   "plan_date": null,
+   "note": "Cần điền ngày kế hoạch",
+   "is_target": false,
+   "actual_date": null,
+   "order": 3,
+   "milestone": "Mechanical Completion"
+  },
+  {
+   "plan_date": null,
+   "note": "Cần điền ngày kế hoạch",
+   "is_target": false,
+   "actual_date": null,
+   "order": 4,
+   "milestone": "RFSU – Ready for Start-Up"
+  },
+  {
+   "plan_date": "2027-09-01",
+   "note": "Tạm theo production profile slide 16 (SSF 73 MMscfd từ 09/2027) – cần xác nhận ngày chính thức",
+   "is_target": true,
+   "actual_date": null,
+   "order": 5,
+   "milestone": "First Gas (sales gas)"
   }
  ],
  "cbta_modules": [
@@ -4592,48 +4906,6 @@
    "course": "Electrical safety"
   }
  ],
- "milestones": [
-  {
-   "plan_date": "2026-10-13",
-   "note": "Theo master plan pre-com (hoạt động sớm nhất)",
-   "is_target": false,
-   "actual_date": null,
-   "order": 1,
-   "milestone": "Pre-commissioning start (CPP Train 1)"
-  },
-  {
-   "plan_date": "2027-06-30",
-   "note": "Theo đường kế hoạch ORR (06/2027 = 95%)",
-   "is_target": false,
-   "actual_date": null,
-   "order": 2,
-   "milestone": "ORR plan 95%"
-  },
-  {
-   "plan_date": null,
-   "note": "Cần điền ngày kế hoạch",
-   "is_target": false,
-   "actual_date": null,
-   "order": 3,
-   "milestone": "Mechanical Completion"
-  },
-  {
-   "plan_date": null,
-   "note": "Cần điền ngày kế hoạch",
-   "is_target": false,
-   "actual_date": null,
-   "order": 4,
-   "milestone": "RFSU – Ready for Start-Up"
-  },
-  {
-   "plan_date": "2027-09-01",
-   "note": "Tạm theo production profile slide 16 (SSF 73 MMscfd từ 09/2027) – cần xác nhận ngày chính thức",
-   "is_target": true,
-   "actual_date": null,
-   "order": 5,
-   "milestone": "First Gas (sales gas)"
-  }
- ],
  "orr_team_plan": [
   {
    "month": "2026-10",
@@ -5140,18 +5412,6 @@
  ],
  "_reports": [
   {
-   "date": "2026-10-21",
-   "from": "2026-10-14",
-   "name": "Báo cáo 14/10 – 21/10/2026",
-   "state": "closed"
-  },
-  {
-   "date": "2026-10-28",
-   "from": "2026-10-21",
-   "name": "Báo cáo 21/10 – 28/10/2026",
-   "state": "closed"
-  },
-  {
    "date": "2026-11-04",
    "from": "2026-10-28",
    "name": "Báo cáo 28/10 – 04/11/2026",
@@ -5159,6 +5419,6 @@
   }
  ],
  "_current": "2026-11-04",
- "_updated_at": "2026-10-30T08:50:00.000Z",
+ "_updated_at": "2026-10-30T08:56:00.000Z",
  "_source": "notion"
 }
