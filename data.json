@@ -1,21 +1,4 @@
 {
- "staffing": [
-  {
-   "filled": 47,
-   "required": 50,
-   "group": "Offshore"
-  },
-  {
-   "filled": 32,
-   "required": 34,
-   "group": "Onshore"
-  },
-  {
-   "filled": 9,
-   "required": 38,
-   "group": "Outsource"
-  }
- ],
  "cbta": [
   {
    "ojt_modules": 11,
@@ -93,6 +76,23 @@
    "platform": "WHP",
    "modules": 21,
    "team": "P&P"
+  }
+ ],
+ "staffing": [
+  {
+   "filled": 47,
+   "required": 50,
+   "group": "Offshore"
+  },
+  {
+   "filled": 32,
+   "required": 34,
+   "group": "Onshore"
+  },
+  {
+   "filled": 9,
+   "required": 38,
+   "group": "Outsource"
   }
  ],
  "manpower": [
@@ -637,6 +637,89 @@
    "month": "2028-12"
   }
  ],
+ "orr_teams": [
+  {
+   "weight_pct": 25.5,
+   "completed": 57,
+   "actual_pct": 76.8,
+   "total_activities": 89,
+   "plan_pct": 69.5,
+   "plan_end_pct": 99,
+   "team": "Offshore"
+  },
+  {
+   "weight_pct": 13.2,
+   "completed": 23,
+   "actual_pct": 66.5,
+   "total_activities": 59,
+   "plan_pct": 71.3,
+   "plan_end_pct": 98,
+   "team": "Production OPS"
+  },
+  {
+   "weight_pct": 12.5,
+   "completed": 57,
+   "actual_pct": 70.6,
+   "total_activities": 80,
+   "plan_pct": 77.1,
+   "plan_end_pct": 94,
+   "team": "Manager OPS"
+  },
+  {
+   "weight_pct": 11.2,
+   "completed": 20,
+   "actual_pct": 64.4,
+   "total_activities": 53,
+   "plan_pct": 45.6,
+   "plan_end_pct": 89,
+   "team": "Asset Integrity"
+  },
+  {
+   "weight_pct": 9.1,
+   "completed": 21,
+   "actual_pct": 79.4,
+   "total_activities": 32,
+   "plan_pct": 65.7,
+   "plan_end_pct": 82,
+   "team": "E&I"
+  },
+  {
+   "weight_pct": 8.7,
+   "completed": 25,
+   "actual_pct": 63.9,
+   "total_activities": 48,
+   "plan_pct": 70.6,
+   "plan_end_pct": 98,
+   "team": "M&R"
+  },
+  {
+   "weight_pct": 6.9,
+   "completed": 10,
+   "actual_pct": 71.3,
+   "total_activities": 28,
+   "plan_pct": 67,
+   "plan_end_pct": 96,
+   "team": "Application Eng"
+  },
+  {
+   "weight_pct": 6.8,
+   "completed": 27,
+   "actual_pct": 71.1,
+   "total_activities": 49,
+   "plan_pct": 71.9,
+   "plan_end_pct": 95,
+   "team": "Marine"
+  },
+  {
+   "weight_pct": 6,
+   "completed": 14,
+   "actual_pct": 57.3,
+   "total_activities": 36,
+   "plan_pct": 60.6,
+   "plan_end_pct": 99,
+   "team": "Production Eng"
+  }
+ ],
  "vendor_training": [
   {
    "period": "2026-09",
@@ -753,87 +836,26 @@
    "team": "WHP team"
   }
  ],
- "orr_teams": [
+ "orr_groups": [
   {
-   "weight_pct": 25.5,
-   "completed": 57,
-   "actual_pct": 76.8,
-   "total_activities": 89,
-   "plan_pct": 69.5,
-   "plan_end_pct": 99,
-   "team": "Offshore"
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
   },
   {
-   "weight_pct": 13.2,
-   "completed": 23,
-   "actual_pct": 66.5,
-   "total_activities": 59,
-   "plan_pct": 71.3,
-   "plan_end_pct": 98,
-   "team": "Production OPS"
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
   },
   {
-   "weight_pct": 12.5,
-   "completed": 57,
-   "actual_pct": 70.6,
-   "total_activities": 80,
-   "plan_pct": 77.1,
-   "plan_end_pct": 94,
-   "team": "Manager OPS"
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
   },
   {
-   "weight_pct": 11.2,
-   "completed": 20,
-   "actual_pct": 64.4,
-   "total_activities": 53,
-   "plan_pct": 45.6,
-   "plan_end_pct": 89,
-   "team": "Asset Integrity"
-  },
-  {
-   "weight_pct": 9.1,
-   "completed": 21,
-   "actual_pct": 79.4,
-   "total_activities": 32,
-   "plan_pct": 65.7,
-   "plan_end_pct": 82,
-   "team": "E&I"
-  },
-  {
-   "weight_pct": 8.7,
-   "completed": 25,
-   "actual_pct": 63.9,
-   "total_activities": 48,
-   "plan_pct": 70.6,
-   "plan_end_pct": 98,
-   "team": "M&R"
-  },
-  {
-   "weight_pct": 6.9,
-   "completed": 10,
-   "actual_pct": 71.3,
-   "total_activities": 28,
-   "plan_pct": 67,
-   "plan_end_pct": 96,
-   "team": "Application Eng"
-  },
-  {
-   "weight_pct": 6.8,
-   "completed": 27,
-   "actual_pct": 71.1,
-   "total_activities": 49,
-   "plan_pct": 71.9,
-   "plan_end_pct": 95,
-   "team": "Marine"
-  },
-  {
-   "weight_pct": 6,
-   "completed": 14,
-   "actual_pct": 57.3,
-   "total_activities": 36,
-   "plan_pct": 60.6,
-   "plan_end_pct": 99,
-   "team": "Production Eng"
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
   }
  ],
  "orr_elements": [
@@ -1053,26 +1075,51 @@
    "month": "2027-06"
   }
  ],
- "orr_groups": [
+ "packages_no_pr": [
   {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
+   "count": 19,
+   "dimension": "status",
+   "category": "Open"
   },
   {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
+   "count": 7,
+   "dimension": "status",
+   "category": "PR Request"
   },
   {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
+   "count": 7,
+   "dimension": "status",
+   "category": "Screening"
   },
   {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
+   "count": 15,
+   "dimension": "priority",
+   "category": "Priority 3"
+  },
+  {
+   "count": 8,
+   "dimension": "priority",
+   "category": "Priority 2"
+  },
+  {
+   "count": 3,
+   "dimension": "priority",
+   "category": "Priority 1"
+  },
+  {
+   "count": 16,
+   "dimension": "scr_timing",
+   "category": "Not set"
+  },
+  {
+   "count": 2,
+   "dimension": "scr_timing",
+   "category": "Next month"
+  },
+  {
+   "count": 1,
+   "dimension": "scr_timing",
+   "category": "This month"
   }
  ],
  "pr_pipeline": [
@@ -1125,53 +1172,6 @@
    "count": 1,
    "status": "On time",
    "stage": "6 Contract Signing"
-  }
- ],
- "packages_no_pr": [
-  {
-   "count": 19,
-   "dimension": "status",
-   "category": "Open"
-  },
-  {
-   "count": 7,
-   "dimension": "status",
-   "category": "PR Request"
-  },
-  {
-   "count": 7,
-   "dimension": "status",
-   "category": "Screening"
-  },
-  {
-   "count": 15,
-   "dimension": "priority",
-   "category": "Priority 3"
-  },
-  {
-   "count": 8,
-   "dimension": "priority",
-   "category": "Priority 2"
-  },
-  {
-   "count": 3,
-   "dimension": "priority",
-   "category": "Priority 1"
-  },
-  {
-   "count": 16,
-   "dimension": "scr_timing",
-   "category": "Not set"
-  },
-  {
-   "count": 2,
-   "dimension": "scr_timing",
-   "category": "Next month"
-  },
-  {
-   "count": 1,
-   "dimension": "scr_timing",
-   "category": "This month"
   }
  ],
  "procedures": [
@@ -1957,16 +1957,91 @@
    "document": "Pressure cylinder management Procedure"
   }
  ],
- "cmms": [
+ "workstreams": [
   {
-   "actual_pct": 82.11,
-   "plan_pct": 85,
-   "package": "EPCI#2"
+   "area": "Manpower",
+   "status": "Document Control, OIM, HSE, FSO",
+   "item": "Vacant positions"
   },
   {
-   "actual_pct": 41.58,
-   "plan_pct": 42.3,
-   "package": "EPCI#1"
+   "area": "Applications",
+   "status": "TCEAR",
+   "item": "AIMS"
+  },
+  {
+   "area": "Applications",
+   "status": "Training and UAT phase 2 completed (Plant maintenance, Inventory & Warehouse); preparing phase 3 kick-off (KPI, reports)",
+   "item": "EAM/SAP"
+  },
+  {
+   "area": "Applications",
+   "status": "Platform built (production launch); preparing test and data population",
+   "item": "HRIS"
+  },
+  {
+   "area": "Applications",
+   "status": "Phase 1 blueprint completed; platform development continuing",
+   "item": "OMS"
+  },
+  {
+   "area": "Applications",
+   "status": "ITB",
+   "item": "OSCC"
+  },
+  {
+   "area": "Applications",
+   "status": "Technical evaluation",
+   "item": "PDMS"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "No update in report",
+   "item": "Catering services"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Raise PIA, PR",
+   "item": "Crew change service to Nam Can"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Combine with DCD's contract",
+   "item": "Helicopter"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Change to contract",
+   "item": "MGO"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "ITB",
+   "item": "Supply vessel, FCB, security boat"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Combine with DCD to 2030",
+   "item": "Vessel inspection"
+  },
+  {
+   "area": "Coordination",
+   "status": "Being split into 2 procedures; parties to review and complete by 31 Oct",
+   "item": "Coordination procedure"
+  },
+  {
+   "area": "Coordination",
+   "status": "Sales gas capability 73 MMscfd (SSF) from Sep-27, rising to about 170 MMscfd (75%) by Nov-27 vs total sales gas requirement",
+   "item": "Production profile"
+  },
+  {
+   "area": "Commissioning",
+   "status": "E-house, HVAC, Crane, FM200, LQ UPS",
+   "item": "Installation, pre-com, com"
+  },
+  {
+   "area": "Commissioning",
+   "status": "Findings → punch list → close out",
+   "item": "Offshore preservation"
   }
  ],
  "permits": [
@@ -2140,149 +2215,16 @@
    "permit": "UHF radio frequency license"
   }
  ],
- "workstreams": [
+ "cmms": [
   {
-   "area": "Manpower",
-   "status": "Document Control, OIM, HSE, FSO",
-   "item": "Vacant positions"
+   "actual_pct": 82.11,
+   "plan_pct": 85,
+   "package": "EPCI#2"
   },
   {
-   "area": "Applications",
-   "status": "TCEAR",
-   "item": "AIMS"
-  },
-  {
-   "area": "Applications",
-   "status": "Training and UAT phase 2 completed (Plant maintenance, Inventory & Warehouse); preparing phase 3 kick-off (KPI, reports)",
-   "item": "EAM/SAP"
-  },
-  {
-   "area": "Applications",
-   "status": "Platform built (production launch); preparing test and data population",
-   "item": "HRIS"
-  },
-  {
-   "area": "Applications",
-   "status": "Phase 1 blueprint completed; platform development continuing",
-   "item": "OMS"
-  },
-  {
-   "area": "Applications",
-   "status": "ITB",
-   "item": "OSCC"
-  },
-  {
-   "area": "Applications",
-   "status": "Technical evaluation",
-   "item": "PDMS"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "No update in report",
-   "item": "Catering services"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Raise PIA, PR",
-   "item": "Crew change service to Nam Can"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Combine with DCD's contract",
-   "item": "Helicopter"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Change to contract",
-   "item": "MGO"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "ITB",
-   "item": "Supply vessel, FCB, security boat"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Combine with DCD to 2030",
-   "item": "Vessel inspection"
-  },
-  {
-   "area": "Coordination",
-   "status": "Being split into 2 procedures; parties to review and complete by 31 Oct",
-   "item": "Coordination procedure"
-  },
-  {
-   "area": "Coordination",
-   "status": "Sales gas capability 73 MMscfd (SSF) from Sep-27, rising to about 170 MMscfd (75%) by Nov-27 vs total sales gas requirement",
-   "item": "Production profile"
-  },
-  {
-   "area": "Commissioning",
-   "status": "E-house, HVAC, Crane, FM200, LQ UPS",
-   "item": "Installation, pre-com, com"
-  },
-  {
-   "area": "Commissioning",
-   "status": "Findings → punch list → close out",
-   "item": "Offshore preservation"
-  }
- ],
- "readiness": [
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
+   "actual_pct": 41.58,
+   "plan_pct": 42.3,
+   "package": "EPCI#1"
   }
  ],
  "startup_sequence": [
@@ -2355,6 +2297,64 @@
    "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
    "step": 14,
    "phase": "Condensate & PW"
+  }
+ ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
   }
  ],
  "precom_plan": [
@@ -5399,7 +5399,7 @@
    "report_date": "2026-10-30",
    "as_of": "2026-10-30",
    "state": "open",
-   "name": "Báo cáo 28/10 – 04/11/2026",
+   "name": "Báo cáo OPS – cập nhật liên tục",
    "report_title": "Operations Readiness Preparation",
    "prepared_by": "OPS Department",
    "doc_no": null,
@@ -5409,6 +5409,6 @@
    "classification": "Internal"
   }
  ],
- "_updated_at": "2026-10-30T08:56:00.000Z",
+ "_updated_at": "2026-10-30T09:11:00.000Z",
  "_source": "notion"
 }
