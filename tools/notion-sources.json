@@ -78,5 +78,17 @@
  "milestones": {
   "database": "81220f3e6baf443a8865107b9b0d3d7e",
   "data_source": "c0757dbf-976a-4a86-9287-f69e98917620"
+ },
+ "hse_matrix": {
+  "database": "65a5aee4c98d4b36b680ec7c9ef34026",
+  "data_source": "aa4a7d0d-6c49-4660-b73e-502a4188fa50"
+ },
+ "cbta_modules": {
+  "database": "32fee8601006443689b8b9f43ab68478",
+  "data_source": "b741900a-ca52-4915-a4cf-d55aa62b2b33"
+ },
+ "orr_team_plan": {
+  "database": "56caef11d22b4e0083767eaa2ec3b5de",
+  "data_source": "0ac64527-93d6-4ea6-beb1-0cdd7b5cbf3c"
  }
 }

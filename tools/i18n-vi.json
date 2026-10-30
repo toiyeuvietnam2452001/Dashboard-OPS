@@ -142,7 +142,32 @@
   "Dark": "Tối",
   "Changes": "Thay đổi",
   "Changes since last report": "Thay đổi so với kỳ trước",
-  "Every figure in this report compared with the previous weekly report, item by item. Figures are cumulative, so a change is what moved during the week.": "So sánh từng chỉ tiêu của báo cáo này với báo cáo tuần trước. Số liệu là lũy kế, nên phần thay đổi chính là những gì biến động trong tuần."
+  "Every figure in this report compared with the previous weekly report, item by item. Figures are cumulative, so a change is what moved during the week.": "So sánh từng chỉ tiêu của báo cáo này với báo cáo tuần trước. Số liệu là lũy kế, nên phần thay đổi chính là những gì biến động trong tuần.",
+  "CBTA module register": "Danh mục module CBTA",
+  "Every defined module with its document number, status and author.": "Từng module đã xác định, kèm số tài liệu, trạng thái và người biên soạn.",
+  "Search module, document no., author…": "Tìm module, số tài liệu, người biên soạn…",
+  "Search modules": "Tìm module",
+  "Module status": "Trạng thái module",
+  "All teams": "Tất cả team",
+  "Review & Approval": "Đang soát xét",
+  "Developing": "Đang biên soạn",
+  "Not started": "Chưa bắt đầu",
+  "No.": "STT",
+  "Area": "Nhóm",
+  "Module": "Module",
+  "Document no.": "Số tài liệu",
+  "Author": "Người biên soạn",
+  "HSE training matrix": "Ma trận đào tạo HSE",
+  "Which HSE courses each position needs (PQ-MS-HSE-GDL-001-U01). Choose a position to list its courses.": "Các khoá đào tạo HSE mà từng vị trí cần (PQ-MS-HSE-GDL-001-U01). Chọn một vị trí để xem các khoá của vị trí đó.",
+  "Position": "Vị trí",
+  "All positions": "Tất cả vị trí",
+  "Plan by team to June 2027": "Kế hoạch theo team đến 06/2027",
+  "Cumulative plan % for each team by month; darker means further along. Months already reported also show the actual %, green when on or ahead of plan.": "% kế hoạch lũy kế của từng team theo tháng; màu càng đậm là càng gần hoàn thành. Các tháng đã báo cáo có thêm % thực tế, màu xanh khi đạt hoặc vượt kế hoạch.",
+  "Permits, reference number, issuing authority or responsible party, issue and expiry dates, and status.": "Giấy phép, số hiệu, cơ quan cấp hoặc đơn vị phụ trách, ngày cấp, ngày hết hạn và trạng thái.",
+  "Ref. no.": "Số hiệu",
+  "Authority / responsible": "Cơ quan cấp / phụ trách",
+  "Production profile: sales gas capability vs requirement": "Production profile: khả năng cấp khí bán so với nhu cầu",
+  "Chart from the weekly report of 21 Oct 2026. Light bars: total sales gas requirement; dark bars: O Mon I (one generator) gas; green line: SSF delivery capability, 73 MMscfd; dark line: delivery capability at 75%.": "Biểu đồ trong báo cáo tuần 21/10/2026. Cột nhạt: tổng nhu cầu khí bán; cột đậm: khí cho Ô Môn I (một tổ máy); đường xanh lá: khả năng cấp khí SSF, 73 MMscfd; đường sẫm: khả năng cấp khí ở mức 75%."
  },
  "data": {
   "Manpower": "Nhân sự",
@@ -208,6 +233,7 @@
   "Pre-commissioning start (CPP Train 1)": "Bắt đầu pre-commissioning (CPP Train 1)",
   "ORR plan 95%": "ORR đạt 95% theo kế hoạch",
   "First Gas (sales gas)": "First Gas (khí thương phẩm)",
-  "Vacant positions": "Vị trí còn trống"
+  "Vacant positions": "Vị trí còn trống",
+  "Electrical": "Điện"
  }
 }

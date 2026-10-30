@@ -90,7 +90,31 @@
 .ops-month { border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-sm) var(--cds-pad-md); display: flex; flex-direction: column; gap: 4px; font-size: var(--cds-font-size-caption); }
 .ops-month .m { font-weight: var(--cds-font-weight-medium); }
 .ops-month.past { opacity: .6; }
-.ops-empty { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.ops-matrixbox { max-height: none; }
+.ops-matrix { width: auto; border-collapse: separate; border-spacing: 0; }
+.ops-matrix th { position: static; }
+.ops-matrix th.rot { height: 14rem; vertical-align: bottom; padding: 4px 0; width: 1.7rem; min-width: 1.7rem; white-space: nowrap; text-align: center; }
+.ops-matrix th.rot > span { display: inline-block; writing-mode: vertical-rl; transform: rotate(180deg); font-weight: 400; max-height: 13.5rem; overflow: hidden; text-overflow: ellipsis; }
+.ops-matrix th.grp { text-align: center; color: var(--color-fg); border-left: 1px solid var(--color-border-line); }
+.ops-matrix td.c { text-align: center; padding: 3px 0; font-size: 11px; font-weight: 600; border-left: 1px solid var(--color-border-line); }
+.ops-matrix td.c.g0, .ops-matrix th.g0 { border-left: 2px solid var(--color-fg-muted); }
+.ops-matrix .stick { position: sticky; left: 0; z-index: 1; background: var(--color-panel); min-width: 15rem; max-width: 19rem; white-space: normal; }
+.ops-matrix td.n { color: var(--color-fg-muted); text-align: right; }
+.ops-matrix .on { outline: 2px solid var(--color-fg); outline-offset: -2px; }
+.ops-matrix tr.dim td { opacity: .35; }
+.ops-code-M { background: var(--s1); color: #fff; }
+.ops-code-C { background: var(--s2); color: #fff; }
+.ops-code-S { background: color-mix(in srgb, var(--s1) 22%, transparent); color: var(--color-fg); }
+.ops-code-B { background: color-mix(in srgb, var(--s3) 45%, transparent); color: var(--color-fg); }
+.ops-check { color: var(--color-warn); }
+.ops-plan td.v { text-align: right; white-space: nowrap; }
+.ops-plan td.v small { display: block; font-size: 11px; }
+.ops-plan th.now, .ops-plan td.now { box-shadow: inset 0 0 0 2px var(--color-fg); }
+.ops-sub2 { display: block; color: var(--color-fg-muted); font-size: 11px; line-height: 1.35; margin-top: 2px; }
+@media (max-width: 640px) { .ops-matrix .stick { min-width: 8.5rem; max-width: 9.5rem; font-size: 11px; } }
+.ops-figure { margin: 0; display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+.ops-figure img { width: 100%; height: auto; background: #ffffff; border-radius: var(--cds-radius); border: 1px solid var(--color-border-line); }
+.ops-empty {display: flex; align-items: center; justify-content: center; gap: 8px; min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
 .ops-empty::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
 [data-dash-source-state=empty] { color: transparent; }
 [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
@@ -418,10 +442,36 @@
           </table>
         </div>
       </div>
+      <div class="ops-card ops-wide" id="card-cbta-modules">
+        <h2>CBTA module register</h2>
+        <p class="ops-note">Every defined module with its document number, status and author.</p>
+        <div class="ops-tools">
+          <input type="search" id="mod-q" placeholder="Search module, document no., author…" aria-label="Search modules">
+          <select id="mod-team" aria-label="Team"><option value="">All teams</option></select>
+          <select id="mod-status" aria-label="Module status"><option value="">All statuses</option><option value="Completed">Completed</option><option value="Review & Approval">Review &amp; Approval</option><option value="Developing">Developing</option><option value="-">Not started</option></select>
+        </div>
+        <p class="ops-note ops-check" id="mod-check" hidden></p>
+        <div class="ops-tablebox">
+          <table id="table-cbta-modules" data-source="cbta_modules" data-row-key="platform,team,no">
+            <thead><tr><th data-field="team">Team</th><th class="num" data-field="no">No.</th><th class="hide-sm" data-field="area">Area</th><th data-field="module">Module</th><th class="hide-sm" data-field="doc_no">Document no.</th><th data-field="status">Status</th><th class="hide-sm" data-field="developer">Author</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
       <div class="ops-card ops-wide" id="card-vendor">
         <h2>Vendor training schedule</h2>
         <p class="ops-note">Courses by month. Past months are dimmed.</p>
         <div class="ops-months" id="vendor-months" data-source="vendor_training"></div>
+      </div>
+      <div class="ops-card ops-wide" id="card-hse-matrix">
+        <div class="ops-cardhead"><div>
+          <h2>HSE training matrix</h2>
+          <p class="ops-note">Which HSE courses each position needs (PQ-MS-HSE-GDL-001-U01). Choose a position to list its courses.</p>
+        </div>
+        <select id="hse-role" aria-label="Position"><option value="">All positions</option></select></div>
+        <div class="ops-legend" id="hse-legend"></div>
+        <p class="ops-note" id="hse-role-sum" hidden></p>
+        <div class="ops-tablebox ops-matrixbox" id="hse-matrix" data-source="hse_matrix"></div>
       </div>
     </div>
   </section>
@@ -448,6 +498,13 @@
             <thead><tr><th data-field="team">Team</th><th class="num" data-field="weight_pct">Weight</th><th class="num" data-field="total_activities">Activities</th><th class="num" data-field="completed">Completed</th><th class="num" data-field="plan_end_pct">Final plan</th></tr></thead>
             <tbody></tbody>
           </table>
+        </div>
+      </div>
+      <div class="ops-card ops-wide" id="card-orr-plan">
+        <h2>Plan by team to June 2027</h2>
+        <p class="ops-note">Cumulative plan % for each team by month; darker means further along. Months already reported also show the actual %, green when on or ahead of plan.</p>
+        <div class="ops-tablebox">
+          <table class="ops-plan" id="table-orr-plan" data-source="orr_team_plan"><thead></thead><tbody></tbody></table>
         </div>
       </div>
       <div class="ops-card ops-wide" id="card-orr-elements">
@@ -514,13 +571,22 @@
       </div>
       <div class="ops-card ops-wide" id="card-permits">
         <h2>Offshore platform permit register</h2>
-        <p class="ops-note">Permits, issuing authority, issue and expiry dates, and status.</p>
+        <p class="ops-note">Permits, reference number, issuing authority or responsible party, issue and expiry dates, and status.</p>
         <div class="ops-tablebox">
           <table id="table-permits" data-source="permits" data-row-key="permit">
-            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
+            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="ref_no">Ref. no.</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority / responsible</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
+        <p class="ops-note" id="permit-basis" hidden></p>
+      </div>
+      <div class="ops-card ops-wide" id="card-gas-profile">
+        <h2>Production profile: sales gas capability vs requirement</h2>
+        <p class="ops-note" id="gas-profile-note">—</p>
+        <figure class="ops-figure">
+          <img src="assets/production-profile.png" width="1363" height="580" loading="lazy" alt="Chart of sales gas delivery capability against total sales gas requirement, July 2027 to January 2028, in MMscfd">
+          <figcaption class="ops-note">Chart from the weekly report of 21 Oct 2026. Light bars: total sales gas requirement; dark bars: O Mon I (one generator) gas; green line: SSF delivery capability, 73 MMscfd; dark line: delivery capability at 75%.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -900,7 +966,131 @@ function drawVendor() {
   }));
 }
 
+const MOD_STATUS = { Completed: ['ops-good', 'Completed', 'Hoàn thành'], 'Review & Approval': ['ops-warn', 'Review & Approval', 'Đang soát xét'], Developing: ['ops-bad', 'Developing', 'Đang biên soạn'] };
+['mod-q', 'mod-team', 'mod-status'].forEach((id) => document.getElementById(id).addEventListener('input', drawCbtaModules));
+function drawCbtaModules() {
+  const tb = document.querySelector('#table-cbta-modules tbody'), check = document.getElementById('mod-check');
+  const d = dash.data('cbta_modules');
+  if (d.status !== 'ok') { tb.replaceChildren(); check.hidden = true; return; }
+  const teamSel = document.getElementById('mod-team'), teams = [...new Set(d.data.map((r) => `${r.platform} ${r.team}`))];
+  if (teamSel.options.length !== teams.length + 1) {
+    const keep = teamSel.value;
+    teamSel.replaceChildren(H.el('option', null, L('All teams', 'Tất cả team')), ...teams.map((t) => H.el('option', null, t)));
+    teamSel.options[0].value = ''; teamSel.value = teams.includes(keep) ? keep : '';
+  }
+  const q = document.getElementById('mod-q').value.trim().toLowerCase(), team = teamSel.value, st = document.getElementById('mod-status').value;
+  const rows = d.data.filter((r) => (!team || `${r.platform} ${r.team}` === team) && (!st || (st === '-' ? !r.status : r.status === st))
+    && (!q || [r.module, r.doc_no, r.developer, r.area].join(' ').toLowerCase().includes(q)));
+  tb.replaceChildren(...rows.map((r) => {
+    const tr = H.el('tr'), s = MOD_STATUS[r.status], td = H.el('td');
+    td.append(H.el('span', 'ops-pill ' + (s ? s[0] : ''), s ? L(s[1], s[2]) : L('Not started', 'Chưa bắt đầu')));
+    tr.append(H.el('td', null, `${r.platform} ${r.team}`), H.el('td', 'num', String(r.no)), H.el('td', 'hide-sm', r.area || ''), H.el('td', null, r.module),
+      H.el('td', 'hide-sm', r.doc_no || ''), td, H.el('td', 'hide-sm', r.developer || ''));
+    return tr;
+  }));
+  // The register and the team totals in the CBTA table are entered separately: say where they disagree.
+  const sum = dash.data('cbta').data || [], diffs = [];
+  d3.groups(d.data, (r) => r.platform, (r) => r.team).forEach(([p, ts]) => ts.forEach(([t, mods]) => {
+    const s = sum.find((x) => x.platform === p && x.team === t); if (!s) return;
+    const n = (k) => mods.filter((m) => m.status === k).length;
+    const got = [mods.length, n('Completed'), n('Review & Approval'), n('Developing')], want = [s.modules, s.completed, s.review || 0, s.developing || 0];
+    if (got.some((v, i) => v !== want[i])) diffs.push(`${p} ${t}: ` + L(`register ${got[1]} completed / ${got[2]} in review / ${got[3]} in development of ${got[0]}; team totals ${want[1]} / ${want[2]} / ${want[3]} of ${want[0]}`,
+      `danh mục ${got[1]} hoàn thành / ${got[2]} soát xét / ${got[3]} biên soạn trên ${got[0]}; bảng tổng ${want[1]} / ${want[2]} / ${want[3]} trên ${want[0]}`));
+  }));
+  check.hidden = !diffs.length;
+  check.textContent = diffs.length ? L('Register and CBTA team totals differ. ', 'Danh mục module và bảng tổng CBTA chưa khớp. ') + diffs.join('. ') + '.' : '';
+}
+
+// The positions of the HSE training matrix, in the order of the matrix, grouped as in its header.
+const HSE_GROUPS = [
+  [['Onshore', 'Trên bờ'], ['Onshore Management', 'Onshore HSE', 'Onshore Operations & Production', 'Onshore Drilling & Well Intervention', 'Other Office teams', 'Supply Base']],
+  [['Emergency teams', 'Đội ứng cứu'], ['Head Office & Supply Base Fire Warden Team (PCCC Cơ Sở & ATVSV)', 'Crisis Management Team (CMT)', 'Emergency Management Team (EMT)']],
+  [['Offshore – CPP', 'Ngoài khơi – CPP'], ['Offshore Installation Manager', 'Deputy Offshore Installation Manager', 'FSO Representative', 'Medic/Adm', 'HSE Supervisor', 'Senior Planning Engineer', 'Material Man',
+    'Maintenance & Reliability Supervisor', 'Maintenance & Reliability Assistant Supervisor', 'Senior Rotating Engineer', 'Senior Mechanical Engineer', 'Senior Mechanical Technician', 'Mechanical Technician',
+    'Electrical and Instrument Supervisor', 'Electrical and Instrument Assistant Supervisor', 'Senior Control Systems Engineer', 'Senior Instrument Engineer', 'Senior Instrument Technician', 'Instrument Technician',
+    'Senior Electrical Engineer', 'Senior Electrical Technician', 'Electrical Technician', 'Production and Process Supervisor', 'Production and Process Assistant Supervisor', 'Senior Control Room Engineer',
+    'Control Room Engineer', 'CPP Senior Production Ops Technician', 'CPP Production Ops Technician', 'Lab Technician', 'Deck Foreman / HLO', 'CPP Crane Operator', 'CPP Roust/Rigger/Fitter', 'Catering crew']],
+  [['Offshore – WHP', 'Ngoài khơi – WHP'], ['WHP Team Supervisor', 'WHP Production Supervisor', 'WHP Production Technician', 'WHP Maintenance & Reliability Supervisor', 'WHP Maintenance & Reliability Technician',
+    'WHP Electrical and Instrument Supervisor', 'WHP Electrical and Instrument Technician', 'WHP & CPP Crane Operator', 'WHP Roust/Rigger/Fitter']],
+];
+const HSE_CODES = [['M', 'Mandatory', 'Bắt buộc'], ['C', 'Core', 'Chuyên môn chính'], ['S', 'Supporting', 'Hỗ trợ'], ['B', 'Behavioral & soft skills', 'Kỹ năng mềm']];
+document.getElementById('hse-role').addEventListener('input', drawHseMatrix);
+function drawHseMatrix() {
+  const box = document.getElementById('hse-matrix'), sel = document.getElementById('hse-role'), sumEl = document.getElementById('hse-role-sum');
+  document.getElementById('hse-legend').replaceChildren(...HSE_CODES.map(([c, en, vi]) => { const sp = H.el('span'); sp.append(H.el('span', 'ops-pill ops-code-' + c, c), ' ' + L(en, vi)); return sp; }),
+    H.el('span', null, L('M1–M6: mandatory, numbered as in the matrix', 'M1–M6: bắt buộc, đánh số như ma trận gốc')));
+  const rows = H.state('hse_matrix', box);
+  if (!rows) { sumEl.hidden = true; return; }
+  const known = HSE_GROUPS.flatMap((g) => g[1]);
+  const extra = [...new Set(rows.flatMap((r) => Object.keys(r)))].filter((k) => k !== 'no' && k !== 'course' && !known.includes(k));
+  const groups = extra.length ? [...HSE_GROUPS, [['Other', 'Khác'], extra]] : HSE_GROUPS;
+  const roles = groups.flatMap((g) => g[1]);
+  if (sel.options.length !== roles.length + 1) {
+    const keep = sel.value;
+    sel.replaceChildren(H.el('option', null, L('All positions', 'Tất cả vị trí')), ...roles.map((r) => H.el('option', null, r)));
+    sel.options[0].value = ''; sel.value = roles.includes(keep) ? keep : '';
+  }
+  const role = sel.value, first = new Set(groups.map((g) => g[1][0]));
+  const table = H.el('table', 'ops-matrix'), thead = H.el('thead'), g1 = H.el('tr'), g2 = H.el('tr');
+  const c0 = H.el('th', 'stick', L('Course', 'Khoá học')); c0.rowSpan = 2; const cn = H.el('th', 'num hide-sm', L('Positions', 'Số vị trí')); cn.rowSpan = 2;
+  g1.append(c0, cn);
+  groups.forEach(([[en, vi], list]) => { const th = H.el('th', 'grp g0', L(en, vi)); th.colSpan = list.length; g1.append(th); });
+  roles.forEach((r) => { const th = H.el('th', 'rot' + (first.has(r) ? ' g0' : '') + (r === role ? ' on' : '')); th.title = r; th.append(H.el('span', null, r)); g2.append(th); });
+  thead.append(g1, g2);
+  const tbody = H.el('tbody');
+  rows.forEach((r) => {
+    const tr = H.el('tr'), n = roles.filter((x) => r[x]).length;
+    if (role && !r[role]) tr.className = 'dim';
+    tr.append(H.el('td', 'stick', `${r.no}. ${r.course}`), H.el('td', 'n hide-sm', String(n)));
+    roles.forEach((x) => {
+      const v = r[x] || '', td = H.el('td', 'c' + (first.has(x) ? ' g0' : '') + (v ? ' ops-code-' + v[0] : '') + (x === role ? ' on' : ''), v);
+      if (v) td.title = `${r.course} · ${x}: ${v}`;
+      tr.append(td);
+    });
+    tbody.append(tr);
+  });
+  table.append(thead, tbody);
+  box.replaceChildren(table);
+  sumEl.hidden = !role;
+  if (role) {
+    const need = rows.filter((r) => r[role]), by = (c) => need.filter((r) => r[role][0] === c).length;
+    sumEl.textContent = `${role}: ` + L(`${need.length} courses — ${by('M')} mandatory, ${by('C')} core, ${by('S')} supporting.`, `${need.length} khoá — ${by('M')} bắt buộc, ${by('C')} chuyên môn chính, ${by('S')} hỗ trợ.`);
+  }
+}
+
 // ---------- ORR ----------
+function drawOrrPlan() {
+  const table = document.getElementById('table-orr-plan');
+  const d = dash.data('orr_team_plan');
+  if (d.status !== 'ok') { table.tBodies[0].replaceChildren(); return; }
+  const months = [...new Set(d.data.map((r) => r.month))].sort();
+  const order = (dash.data('orr_teams').data || []).map((r) => r.team);
+  const teams = d3.groups(d.data, (r) => r.team).sort((a, b) => (order.indexOf(a[0]) + 1 || 99) - (order.indexOf(b[0]) + 1 || 99));
+  const curve = dash.data('orr_curve').data || [];
+  const now = d3.utcFormat('%Y-%m')(H.REPORT_DATE);
+  const head = H.el('tr'); head.append(H.el('th', null, L('Team', 'Team')));
+  months.forEach((m) => head.append(H.el('th', 'num' + (m === now ? ' now' : ''), H.fmtMonthShort(H.month(m)))));
+  table.tHead.replaceChildren(head);
+  const shade = (v) => `color-mix(in srgb, var(--s1) ${Math.round(Math.max(0, Math.min(1, (v - 40) / 60)) * 45)}%, transparent)`;
+  const cellFor = (m, plan, actual) => {
+    const td = H.el('td', 'v' + (m === now ? ' now' : ''), plan == null ? '—' : d3.format('.1~f')(plan) + '%');
+    if (plan != null) td.style.background = shade(plan);
+    if (actual != null) td.append(H.el('small', actual >= plan ? 'ops-good' : 'ops-bad', L('actual ', 'TT ') + d3.format('.1~f')(actual) + '%'));
+    return td;
+  };
+  const rows = teams.map(([t, list]) => {
+    const tr = H.el('tr'); tr.append(H.el('td', null, t));
+    months.forEach((m) => { const r = list.find((x) => x.month === m); tr.append(cellFor(m, r && r.plan_pct, r && r.actual_pct)); });
+    return tr;
+  });
+  if (curve.length) {
+    const tr = H.el('tr'); tr.append(H.el('td', null, L('Overall (weighted)', 'Tổng (có trọng số)')));
+    months.forEach((m) => { const r = curve.find((x) => x.month === m); tr.append(cellFor(m, r && r.plan_pct, r && r.actual_pct)); });
+    tr.style.fontWeight = 600; rows.push(tr);
+  }
+  table.tBodies[0].replaceChildren(...rows);
+}
+
 function drawOrrTeams() {
   const box = document.getElementById('bars-orr-teams');
   const data = H.state('orr_teams', box), gap = dash.data('orr_team_gap');
@@ -1025,9 +1215,20 @@ function drawPermits() {
     const c = r.status === 'Issued' ? 'ops-good' : r.status === 'Temporary' ? 'ops-warn' : r.status.startsWith('Waiting') ? 'ops-bad' : '';
     const td = H.el('td'); td.append(H.el('span', 'ops-pill ' + c, D(r.status)));
     const f = (s) => (s ? H.fmtDay(H.day(s)) : '—');
-    tr.append(H.el('td', null, r.permit), H.el('td', 'hide-sm', r.facility), H.el('td', 'hide-sm', r.authority), H.el('td', null, f(r.issue_date)), H.el('td', null, f(r.expiry_date)), H.el('td', 'hide-sm', f(r.renewal_date)), td);
+    const name = H.el('td', null, r.permit); if (r.description) name.append(H.el('span', 'ops-sub2', r.description));
+    const who = [r.authority, r.responsible].filter(Boolean).join(' · ');
+    tr.append(name, H.el('td', 'hide-sm', r.ref_no || '—'), H.el('td', 'hide-sm', r.facility), H.el('td', 'hide-sm', who || '—'), H.el('td', null, f(r.issue_date)), H.el('td', null, f(r.expiry_date)), H.el('td', 'hide-sm', f(r.renewal_date)), td);
     return tr;
   }));
+  // The legal basis is the same for whole families of permits: list each one once under the table.
+  const basis = d3.groups(d.data.filter((r) => r.compliance), (r) => r.compliance), note = document.getElementById('permit-basis');
+  note.hidden = !basis.length;
+  note.textContent = basis.map(([b, rs]) => L('Legal basis (', 'Căn cứ pháp lý (') + rs.length + L(' permits): ', ' giấy phép): ') + b).join(' · ');
+}
+
+function drawGasProfile() {
+  const d = dash.data('workstreams'), r = d.status === 'ok' && d.data.find((x) => x.item === 'Production profile');
+  document.getElementById('gas-profile-note').textContent = r ? D(r.status) : '—';
 }
 
 // ---------- startup ----------
@@ -1075,10 +1276,10 @@ function drawSteps() {
 function draw() {
   drawKpis();
   if (currentPage === 'overview') { drawManpower(); drawOrrCurve(); drawStaffing(); }
-  if (currentPage === 'people') { drawMandatory(); drawCbta(); drawVendor(); }
-  if (currentPage === 'orr') { drawOrrTeams(); drawOrrElements(); }
+  if (currentPage === 'people') { drawMandatory(); drawCbta(); drawCbtaModules(); drawVendor(); drawHseMatrix(); }
+  if (currentPage === 'orr') { drawOrrTeams(); drawOrrPlan(); drawOrrElements(); }
   if (currentPage === 'procedures') drawProcedures();
-  if (currentPage === 'contracts') { drawPr(); drawPackages(); drawWorkstreams(); drawCmms(); drawPermits(); }
+  if (currentPage === 'contracts') { drawPr(); drawPackages(); drawWorkstreams(); drawCmms(); drawPermits(); drawGasProfile(); }
   if (currentPage === 'startup') { drawGantt(); drawWorkstreams(); drawSteps(); }
 }
 dash.onData(draw);
@@ -1344,7 +1545,9 @@ const AREAS = [ // [table, area title EN, VI, tab]
   ['manpower', 'Manpower by month', 'Nhân sự theo tháng', 'overview'], ['staffing', 'Current staffing', 'Định biên', 'overview'],
   ['orr_curve', 'ORR by month', 'ORR theo tháng', 'overview'],
   ['mandatory', 'Mandatory training', 'Đào tạo bắt buộc', 'people'], ['cbta', 'CBTA', 'CBTA', 'people'], ['vendor_training', 'Vendor training', 'Đào tạo vendor', 'people'],
+  ['cbta_modules', 'CBTA modules', 'Module CBTA', 'people'], ['hse_matrix', 'HSE training matrix', 'Ma trận đào tạo HSE', 'people'],
   ['orr_teams', 'ORR by team', 'ORR theo team', 'orr'], ['orr_groups', 'ORR groups', 'ORR tổng nhóm', 'orr'], ['orr_elements', 'ORR elements', 'ORR hạng mục', 'orr'],
+  ['orr_team_plan', 'ORR plan by team', 'ORR kế hoạch theo team', 'orr'],
   ['procedures', 'Procedures', 'Quy trình', 'procedures'],
   ['pr_pipeline', 'PRs in progress', 'PR đang xử lý', 'contracts'], ['packages_no_pr', 'Packages without PR', 'Gói chưa có PR', 'contracts'], ['cmms', 'CMMS', 'CMMS', 'contracts'],
   ['workstreams', 'Workstreams', 'Trạng thái công việc', 'contracts'], ['permits', 'Permits', 'Giấy phép', 'contracts'],
@@ -1355,6 +1558,7 @@ const KEYS = {
   orr_teams: ['team'], pr_pipeline: ['stage', 'status'], packages_no_pr: ['dimension', 'category'], vendor_training: ['period', 'course'],
   precom_plan: ['activity'], cbta: ['platform', 'team'], mandatory: ['team'], staffing: ['group'], cmms: ['package'],
   workstreams: ['area', 'item'], permits: ['permit'], readiness: ['area'], milestones: ['milestone'],
+  hse_matrix: ['course'], cbta_modules: ['platform', 'team', 'no'], orr_team_plan: ['team', 'month'],
 };
 const FIELDS = {
   total_plan: ['Total plan', 'KH tổng'], total_actual: ['Total actual', 'TT tổng'], onshore_plan: ['Onshore plan', 'KH trên bờ'], onshore_actual: ['Onshore actual', 'TT trên bờ'],
@@ -1371,6 +1575,8 @@ const FIELDS = {
   actual_start: ['Actual start', 'Bắt đầu TT'], actual_finish: ['Actual finish', 'Kết thúc TT'], phase: ['Phase', 'Giai đoạn'], action: ['Action', 'Thao tác'],
   status_override: ['Status set by team', 'Màu do team chọn'], comment: ['Comment', 'Nhận xét'], owner: ['Owner', 'Phụ trách'], order: ['Order', 'Thứ tự'],
   plan_date: ['Plan date', 'Ngày KH'], actual_date: ['Actual date', 'Ngày đạt'], is_target: ['Countdown target', 'Mốc đếm ngược'], note: ['Note', 'Ghi chú'],
+  no: ['No.', 'STT'], area: ['Area', 'Nhóm'], module: ['Module', 'Module'], doc_no: ['Document no.', 'Số tài liệu'], developer: ['Author', 'Người biên soạn'],
+  ref_no: ['Ref. no.', 'Số hiệu'], description: ['Description', 'Mô tả'], compliance: ['Legal basis', 'Căn cứ pháp lý'], month: ['Month', 'Tháng'],
 };
 // Fields where a rise is progress (green) or a setback (red); other fields show a neutral arrow.
 const GOOD_UP = new Set(['total_actual', 'onshore_actual', 'offshore_actual', 'filled', 'completed', 'theory_pct', 'ojt_pct', 'earned', 'actual_pct', 'progress_pct', 'completion_pct']);
@@ -1382,6 +1588,8 @@ const rowLabel = {
   pr_pipeline: (r) => `${D(r.stage)} · ${L(r.status, { Late: 'Trễ hạn', 'Near-late': 'Sắp trễ', 'On time': 'Đúng hạn' }[r.status] || r.status)}`,
   packages_no_pr: (r) => D(r.category), vendor_training: (r) => `${r.period} · ${r.course}`, workstreams: (r) => D(r.item), readiness: (r) => D(r.area),
   milestones: (r) => D(r.milestone), startup_sequence: (r) => `${r.step}. ${D(r.phase)}`,
+  hse_matrix: (r) => `${r.no}. ${r.course}`, cbta_modules: (r) => `${r.platform} ${r.team} ${r.no} · ${r.module || ''}`,
+  orr_team_plan: (r) => `${r.team} · ${H.fmtMonth(H.month(r.month))}`,
 };
 const label = (t, r) => (rowLabel[t] ? rowLabel[t](r) : String(r[KEYS[t][0]] ?? '—'));
 const fieldName = (f) => (FIELDS[f] ? L(FIELDS[f][0], FIELDS[f][1]) : f);

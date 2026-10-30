@@ -11,7 +11,7 @@ Excel trên SharePoint ────┤
 
 ## Nạp dữ liệu qua Notion: báo cáo theo tuần
 
-Trên trang Notion **OPS Dashboard Data**, bảng **Kỳ báo cáo [reports]** có một dòng cho mỗi báo cáo tuần, **thứ Tư → thứ Tư** (ví dụ "Báo cáo 28/10 – 04/11/2026" nhận số đến hết ngày 04/11), đã tạo sẵn tới 30/12/2026. Mở một báo cáo là thấy đủ 19 hạng mục, chỉ chứa số của tuần đó. Mỗi dòng số liệu có cột `report` trỏ về báo cáo của nó, nên các tuần không bao giờ lẫn vào nhau. 19 bảng gốc (gộp mọi tuần) nằm trong trang con **Dữ liệu gốc – tất cả các tuần**.
+Trên trang Notion **OPS Dashboard Data**, bảng **Kỳ báo cáo [reports]** có một dòng cho mỗi báo cáo tuần, **thứ Tư → thứ Tư** (ví dụ "Báo cáo 28/10 – 04/11/2026" nhận số đến hết ngày 04/11), đã tạo sẵn tới 30/12/2026. Mở một báo cáo là thấy đủ 22 hạng mục, chỉ chứa số của tuần đó. Mỗi dòng số liệu có cột `report` trỏ về báo cáo của nó, nên các tuần không bao giờ lẫn vào nhau. 22 bảng gốc (gộp mọi tuần) nằm trong trang con **Dữ liệu gốc – tất cả các tuần**.
 
 ```
 Notion: báo cáo ✏️ Đang nhập ──> api/data trên Vercel (đệm 60 giây) ──> ops-pqpoc.vercel.app (tự làm mới mỗi phút)
@@ -36,6 +36,13 @@ GitHub Actions mỗi giờ ──> api/rollover (mở tuần mới) ──> data
 
 - **Trạng thái tổng thể [readiness]**: 8 mảng Xanh/Vàng/Đỏ. Dashboard tự tính màu theo ngưỡng; chỉ chọn `status_override` khi muốn ghi đè, và ghi lý do vào `comment`.
 - **Mốc tiến độ [milestones]**: các mốc MC, RFSU, First Gas… Tích `is_target` ở mốc dùng để đếm ngược trên đầu trang.
+**Bảng chi tiết** (thêm ngày 30/10/2026 từ báo cáo 21/10; các kỳ 21/10, 28/10, 04/11 được `api/rollover` tự điền, các kỳ sau được chép như mọi bảng khác):
+
+- **Ma trận đào tạo HSE [hse_matrix]**: mỗi dòng một khoá, mỗi cột một vị trí; ô ghi M / C / S / B (M1–M6 như ma trận gốc), để trống nếu vị trí không cần khoá đó.
+- **Module CBTA [cbta_modules]**: từng module, số tài liệu, `status` (Completed / Review & Approval / Developing, trống = chưa bắt đầu) và người biên soạn. Dashboard báo khi danh mục lệch với bảng tổng **CBTA [cbta]**.
+- **ORR kế hoạch theo team [orr_team_plan]**: % kế hoạch lũy kế từng team theo tháng đến 06/2027; `actual_pct` điền cho tháng đã báo cáo.
+- **Giấy phép [permits]** có thêm `ref_no`, `description`, `responsible`, `compliance`.
+
 - **Kỳ báo cáo [reports]**: mỗi báo cáo có `doc_no`, `revision`, `prepared_by`, `reviewed_by`, `approved_by`, `classification` riêng (in ở chân trang và bản PDF).
 
 Nút **Print / PDF** in toàn bộ dashboard ra A4 ngang.
