@@ -162,7 +162,7 @@
   "Position": "Vị trí",
   "All positions": "Tất cả vị trí",
   "Plan by team to June 2027": "Kế hoạch theo team đến 06/2027",
-  "Cumulative plan % for each team by month; darker means further along. Months already reported also show the actual %, green when on or ahead of plan.": "% kế hoạch lũy kế của từng team theo tháng; màu càng đậm là càng gần hoàn thành. Các tháng đã báo cáo có thêm % thực tế, màu xanh khi đạt hoặc vượt kế hoạch.",
+  "Cumulative plan % for each team by month, with the actual % below: green when on or ahead of plan, red when behind.": "% kế hoạch lũy kế của từng team theo tháng, kèm % thực tế bên dưới: xanh khi đạt hoặc vượt kế hoạch, đỏ khi chậm.",
   "Permits, reference number, issuing authority or responsible party, issue and expiry dates, and status.": "Giấy phép, số hiệu, cơ quan cấp hoặc đơn vị phụ trách, ngày cấp, ngày hết hạn và trạng thái.",
   "Ref. no.": "Số hiệu",
   "Authority / responsible": "Cơ quan cấp / phụ trách",

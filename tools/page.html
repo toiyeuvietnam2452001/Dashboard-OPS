@@ -501,7 +501,7 @@
       </div>
       <div class="ops-card ops-wide" id="card-orr-plan">
         <h2>Plan by team to June 2027</h2>
-        <p class="ops-note">Cumulative plan % for each team by month; darker means further along. Months already reported also show the actual %, green when on or ahead of plan.</p>
+        <p class="ops-note">Cumulative plan % for each team by month, with the actual % below: green when on or ahead of plan, red when behind.</p>
         <div class="ops-tablebox">
           <table class="ops-plan" id="table-orr-plan" data-source="orr_team_plan"><thead></thead><tbody></tbody></table>
         </div>
@@ -1069,10 +1069,8 @@ function drawOrrPlan() {
   const head = H.el('tr'); head.append(H.el('th', null, L('Team', 'Team')));
   months.forEach((m) => head.append(H.el('th', 'num', H.fmtMonthShort(H.month(m)))));
   table.tHead.replaceChildren(head);
-  const shade = (v) => `color-mix(in srgb, var(--s1) ${Math.round(Math.max(0, Math.min(1, (v - 40) / 60)) * 45)}%, transparent)`;
   const cellFor = (m, plan, actual) => {
     const td = H.el('td', 'v', plan == null ? '—' : d3.format('.1~f')(plan) + '%');
-    if (plan != null) td.style.background = shade(plan);
     if (actual != null) td.append(H.el('small', actual >= plan ? 'ops-good' : 'ops-bad', L('actual ', 'TT ') + d3.format('.1~f')(actual) + '%'));
     return td;
   };
