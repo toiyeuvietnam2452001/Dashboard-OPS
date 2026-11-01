@@ -720,44 +720,6 @@
    "team": "Production Eng"
   }
  ],
- "mandatory": [
-  {
-   "planned": 72,
-   "balance": 53,
-   "earned": 19,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 270,
-   "balance": 174,
-   "earned": 96,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 210,
-   "balance": 118,
-   "earned": 92,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 334,
-   "balance": 139,
-   "earned": 195,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 263,
-   "balance": 191,
-   "earned": 72,
-   "team": "Management"
-  },
-  {
-   "planned": 250,
-   "balance": 120,
-   "earned": 130,
-   "team": "WHP team"
-  }
- ],
  "vendor_training": [
   {
    "period": "2026-09",
@@ -836,6 +798,66 @@
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
   }
  ],
+ "mandatory": [
+  {
+   "planned": 72,
+   "balance": 53,
+   "earned": 19,
+   "team": "CPP Deck crew"
+  },
+  {
+   "planned": 270,
+   "balance": 174,
+   "earned": 96,
+   "team": "CPP E&I"
+  },
+  {
+   "planned": 210,
+   "balance": 118,
+   "earned": 92,
+   "team": "CPP M&R"
+  },
+  {
+   "planned": 334,
+   "balance": 139,
+   "earned": 195,
+   "team": "CPP P&P"
+  },
+  {
+   "planned": 263,
+   "balance": 191,
+   "earned": 72,
+   "team": "Management"
+  },
+  {
+   "planned": 250,
+   "balance": 120,
+   "earned": 130,
+   "team": "WHP team"
+  }
+ ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
+  }
+ ],
  "orr_curve": [
   {
    "actual_pct": 70.5,
@@ -881,28 +903,6 @@
    "actual_pct": null,
    "plan_pct": 95,
    "month": "2027-06"
-  }
- ],
- "orr_groups": [
-  {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
-  },
-  {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
-  },
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
-  },
-  {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
   }
  ],
  "orr_elements": [
@@ -1957,6 +1957,18 @@
    "document": "Pressure cylinder management Procedure"
   }
  ],
+ "cmms": [
+  {
+   "actual_pct": 82.11,
+   "plan_pct": 85,
+   "package": "EPCI#2"
+  },
+  {
+   "actual_pct": 41.58,
+   "plan_pct": 42.3,
+   "package": "EPCI#1"
+  }
+ ],
  "workstreams": [
   {
    "area": "Manpower",
@@ -2042,18 +2054,6 @@
    "area": "Commissioning",
    "status": "Findings → punch list → close out",
    "item": "Offshore preservation"
-  }
- ],
- "cmms": [
-  {
-   "actual_pct": 82.11,
-   "plan_pct": 85,
-   "package": "EPCI#2"
-  },
-  {
-   "actual_pct": 41.58,
-   "plan_pct": 42.3,
-   "package": "EPCI#1"
   }
  ],
  "permits": [
@@ -2285,78 +2285,6 @@
    "area": "Commissioning & Start-up"
   }
  ],
- "startup_sequence": [
-  {
-   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
-   "step": 1,
-   "phase": "Preparation"
-  },
-  {
-   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
-   "step": 2,
-   "phase": "Start up CPP"
-  },
-  {
-   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
-   "step": 3,
-   "phase": "First well"
-  },
-  {
-   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
-   "step": 4,
-   "phase": "Pressurize CPP"
-  },
-  {
-   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
-   "step": 5,
-   "phase": "Gas & fuel gas"
-  },
-  {
-   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
-   "step": 6,
-   "phase": "Second well"
-  },
-  {
-   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
-   "step": 7,
-   "phase": "GTG to fuel gas"
-  },
-  {
-   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
-   "step": 8,
-   "phase": "Third well"
-  },
-  {
-   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
-   "step": 9,
-   "phase": "Ramp up wells"
-  },
-  {
-   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
-   "step": 10,
-   "phase": "GTC & WHRU"
-  },
-  {
-   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
-   "step": 11,
-   "phase": "Dew point"
-  },
-  {
-   "action": "Start MRU; close bypass line when gas dew point is on spec",
-   "step": 12,
-   "phase": "MRU"
-  },
-  {
-   "action": "Export gas to export gas pipeline",
-   "step": 13,
-   "phase": "Export gas"
-  },
-  {
-   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
-   "step": 14,
-   "phase": "Condensate & PW"
-  }
- ],
  "precom_plan": [
   {
    "actual_start": null,
@@ -2485,46 +2413,76 @@
    "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
   }
  ],
- "milestones": [
+ "startup_sequence": [
   {
-   "plan_date": "2026-10-13",
-   "note": "Theo master plan pre-com (hoạt động sớm nhất)",
-   "is_target": false,
-   "actual_date": null,
-   "order": 1,
-   "milestone": "Pre-commissioning start (CPP Train 1)"
+   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
+   "step": 1,
+   "phase": "Preparation"
   },
   {
-   "plan_date": "2027-06-30",
-   "note": "Theo đường kế hoạch ORR (06/2027 = 95%)",
-   "is_target": false,
-   "actual_date": null,
-   "order": 2,
-   "milestone": "ORR plan 95%"
+   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
+   "step": 2,
+   "phase": "Start up CPP"
   },
   {
-   "plan_date": null,
-   "note": "Cần điền ngày kế hoạch",
-   "is_target": false,
-   "actual_date": null,
-   "order": 3,
-   "milestone": "Mechanical Completion"
+   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
+   "step": 3,
+   "phase": "First well"
   },
   {
-   "plan_date": null,
-   "note": "Cần điền ngày kế hoạch",
-   "is_target": false,
-   "actual_date": null,
-   "order": 4,
-   "milestone": "RFSU – Ready for Start-Up"
+   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
+   "step": 4,
+   "phase": "Pressurize CPP"
   },
   {
-   "plan_date": "2027-09-01",
-   "note": "Tạm theo production profile slide 16 (SSF 73 MMscfd từ 09/2027) – cần xác nhận ngày chính thức",
-   "is_target": true,
-   "actual_date": null,
-   "order": 5,
-   "milestone": "First Gas (sales gas)"
+   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
+   "step": 5,
+   "phase": "Gas & fuel gas"
+  },
+  {
+   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
+   "step": 6,
+   "phase": "Second well"
+  },
+  {
+   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
+   "step": 7,
+   "phase": "GTG to fuel gas"
+  },
+  {
+   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
+   "step": 8,
+   "phase": "Third well"
+  },
+  {
+   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
+   "step": 9,
+   "phase": "Ramp up wells"
+  },
+  {
+   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
+   "step": 10,
+   "phase": "GTC & WHRU"
+  },
+  {
+   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
+   "step": 11,
+   "phase": "Dew point"
+  },
+  {
+   "action": "Start MRU; close bypass line when gas dew point is on spec",
+   "step": 12,
+   "phase": "MRU"
+  },
+  {
+   "action": "Export gas to export gas pipeline",
+   "step": 13,
+   "phase": "Export gas"
+  },
+  {
+   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
+   "step": 14,
+   "phase": "Condensate & PW"
   }
  ],
  "hse_matrix": [
@@ -4906,6 +4864,48 @@
    "module": "Pig Laucher/ Receiver"
   }
  ],
+ "milestones": [
+  {
+   "plan_date": "2026-10-13",
+   "note": "Theo master plan pre-com (hoạt động sớm nhất)",
+   "is_target": false,
+   "actual_date": null,
+   "order": 1,
+   "milestone": "Pre-commissioning start (CPP Train 1)"
+  },
+  {
+   "plan_date": "2027-06-30",
+   "note": "Theo đường kế hoạch ORR (06/2027 = 95%)",
+   "is_target": false,
+   "actual_date": null,
+   "order": 2,
+   "milestone": "ORR plan 95%"
+  },
+  {
+   "plan_date": null,
+   "note": "Cần điền ngày kế hoạch",
+   "is_target": false,
+   "actual_date": null,
+   "order": 3,
+   "milestone": "Mechanical Completion"
+  },
+  {
+   "plan_date": null,
+   "note": "Cần điền ngày kế hoạch",
+   "is_target": false,
+   "actual_date": null,
+   "order": 4,
+   "milestone": "RFSU – Ready for Start-Up"
+  },
+  {
+   "plan_date": "2027-09-01",
+   "note": "Tạm theo production profile slide 16 (SSF 73 MMscfd từ 09/2027) – cần xác nhận ngày chính thức",
+   "is_target": true,
+   "actual_date": null,
+   "order": 5,
+   "milestone": "First Gas (sales gas)"
+  }
+ ],
  "orr_team_plan": [
   {
    "month": "2026-10",
@@ -5396,8 +5396,8 @@
  ],
  "meta": [
   {
-   "report_date": "2026-11-01",
-   "as_of": "2026-11-01",
+   "report_date": "2026-11-02",
+   "as_of": "2026-11-02",
    "state": "open",
    "name": "Báo cáo OPS – cập nhật liên tục",
    "report_title": "Operations Readiness Preparation",
