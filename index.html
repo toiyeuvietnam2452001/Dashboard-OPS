@@ -333,6 +333,14 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:
 .ops-proc .ops-pill.ops-warn { background: color-mix(in srgb, var(--color-warn) 12%, transparent); }
 .ops-proc .ops-pill.ops-bad { background: color-mix(in srgb, var(--color-bad) 11%, transparent); }
 .ops-proc .ops-pill.issued { background: var(--color-ok); border-color: var(--color-ok); color: var(--color-panel); }
+.ops-proc-card { border-top: 0; padding-top: 0; overflow: hidden; }
+.ops-card h2.ops-banner { margin: 0 calc(-1 * var(--cds-pad-lg)) var(--cds-gap-xs); padding: 14px var(--cds-pad-lg); display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: linear-gradient(90deg, var(--acc), color-mix(in srgb, var(--acc) 72%, var(--color-panel))); color: var(--color-panel);
+  font-size: 18px !important; font-weight: 700 !important; letter-spacing: .06em; text-transform: uppercase; }
+.ops-banner-t { flex: 1 1 auto; }
+.ops-banner-mark { width: 6px; align-self: stretch; min-height: 22px; border-radius: 3px; background: var(--color-panel); opacity: .85; }
+.ops-banner-n { margin-left: auto; white-space: nowrap; font-size: 12.5px; font-weight: 600; letter-spacing: .02em; text-transform: none; padding: 3px 10px; border-radius: 999px; background: color-mix(in srgb, var(--color-panel) 22%, transparent); }
+@media (max-width: 560px) { .ops-card h2.ops-banner { font-size: 15px !important; gap: 8px; } .ops-banner-t { flex-basis: calc(100% - 20px); } .ops-banner-n { margin-left: 14px; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -707,8 +715,8 @@ var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __
       <div class="ops-tile"><span class="ops-tile-label">HSE procedures · <span data-source="proc_summary" data-where="category=HSE" data-field="docs">—</span> documents</span><span class="ops-big" data-source="proc_summary" data-where="category=HSE" data-field="completion_pct">—</span><span class="ops-tile-note"><span data-source="proc_summary" data-where="category=HSE" data-field="open">—</span> not yet issued</span></div>
       <div class="ops-tile"><span class="ops-tile-label">General operations procedures · <span data-source="proc_summary" data-where="category=General%20operations" data-field="docs">—</span> documents</span><span class="ops-big" data-source="proc_summary" data-where="category=General%20operations" data-field="completion_pct">—</span><span class="ops-tile-note"><span data-source="proc_summary" data-where="category=General%20operations" data-field="open">—</span> not yet issued</span></div>
     </div>
-    <div class="ops-card" id="card-proc-hse">
-      <h2>HSE procedures</h2>
+    <div class="ops-card ops-proc-card" id="card-proc-hse">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">HSE procedures</span><span class="ops-banner-n"><span data-source="proc_summary" data-where="category=HSE" data-field="docs">—</span> <span>documents</span> · <span data-source="proc_summary" data-where="category=HSE" data-field="completion_pct">—</span></span></h2>
       <p class="ops-note">Sorted by % complete, lowest first, so open procedures sit at the top.</p>
       <div class="ops-tools">
         <input type="search" id="proc-hse-q" placeholder="Search name, owner, remark…" aria-label="Search procedures">
@@ -721,8 +729,8 @@ var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __
         </table>
       </div>
     </div>
-    <div class="ops-card" id="card-proc-gen">
-      <h2>General operation procedures</h2>
+    <div class="ops-card ops-proc-card" id="card-proc-gen">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">General operation procedures</span><span class="ops-banner-n"><span data-source="proc_summary" data-where="category=General%20operations" data-field="docs">—</span> <span>documents</span> · <span data-source="proc_summary" data-where="category=General%20operations" data-field="completion_pct">—</span></span></h2>
       <p class="ops-note">Sorted by % complete, lowest first, so open procedures sit at the top.</p>
       <div class="ops-tools">
         <input type="search" id="proc-gen-q" placeholder="Search name, owner, remark…" aria-label="Search procedures">
