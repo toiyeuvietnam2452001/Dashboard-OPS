@@ -296,10 +296,10 @@
 :where(.ops-page table:not(.ops-matrix) > tbody > tr:hover) > td { background: var(--acc-tint); }
 .ops-seg { border-color: var(--acc-line, var(--color-border-line)); }
 .ops-seg button[aria-pressed="true"] { background: var(--acc, var(--color-fg)); color: var(--color-panel); }
-#table-procedures .ops-pill { min-width: 3.2rem; text-align: center; font-weight: 600; }
-#table-procedures .ops-pill.ops-warn { background: color-mix(in srgb, var(--color-warn) 12%, transparent); }
-#table-procedures .ops-pill.ops-bad { background: color-mix(in srgb, var(--color-bad) 11%, transparent); }
-#table-procedures .ops-pill.issued { background: var(--color-ok); border-color: var(--color-ok); color: var(--color-panel); }
+.ops-proc .ops-pill { min-width: 3.2rem; text-align: center; font-weight: 600; }
+.ops-proc .ops-pill.ops-warn { background: color-mix(in srgb, var(--color-warn) 12%, transparent); }
+.ops-proc .ops-pill.ops-bad { background: color-mix(in srgb, var(--color-bad) 11%, transparent); }
+.ops-proc .ops-pill.issued { background: var(--color-ok); border-color: var(--color-ok); color: var(--color-panel); }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -568,17 +568,30 @@
       <div class="ops-tile"><span class="ops-tile-label">HSE procedures · <span data-source="proc_summary" data-where="category=HSE" data-field="docs">—</span> documents</span><span class="ops-big" data-source="proc_summary" data-where="category=HSE" data-field="completion_pct">—</span><span class="ops-tile-note"><span data-source="proc_summary" data-where="category=HSE" data-field="open">—</span> not yet issued</span></div>
       <div class="ops-tile"><span class="ops-tile-label">General operations procedures · <span data-source="proc_summary" data-where="category=General%20operations" data-field="docs">—</span> documents</span><span class="ops-big" data-source="proc_summary" data-where="category=General%20operations" data-field="completion_pct">—</span><span class="ops-tile-note"><span data-source="proc_summary" data-where="category=General%20operations" data-field="open">—</span> not yet issued</span></div>
     </div>
-    <div class="ops-card" id="card-procedures">
-      <h2>Procedure register</h2>
+    <div class="ops-card" id="card-proc-hse">
+      <h2>HSE procedures</h2>
       <p class="ops-note">Sorted by % complete, lowest first, so open procedures sit at the top.</p>
       <div class="ops-tools">
-        <input type="search" id="proc-q" placeholder="Search name, owner, remark…" aria-label="Search procedures">
-        <select id="proc-cat" aria-label="Procedure type"><option value="">All types</option><option value="HSE">HSE</option><option value="General operations">General operations</option></select>
-        <select id="proc-open" aria-label="Status"><option value="">All statuses</option><option value="open">Not issued</option><option value="done">Issued</option></select>
+        <input type="search" id="proc-hse-q" placeholder="Search name, owner, remark…" aria-label="Search procedures">
+        <select id="proc-hse-open" aria-label="Status"><option value="">All statuses</option><option value="open">Not issued</option><option value="done">Issued</option></select>
       </div>
       <div class="ops-tablebox">
-        <table id="table-procedures" data-source="procedures" data-row-key="id">
-          <thead><tr><th data-field="id">Code</th><th data-field="document">Document</th><th class="hide-sm" data-field="responsible">Owner</th><th data-field="expected">Due</th><th data-field="completion_pct">Completed</th><th class="hide-sm" data-field="remark">Remark</th></tr></thead>
+        <table class="ops-proc" id="table-proc-hse" data-category="HSE" data-source="procedures" data-row-key="id">
+          <thead><tr><th data-field="id">No.</th><th data-field="document">Document</th><th class="hide-sm" data-field="responsible">Owner</th><th data-field="expected">Due</th><th data-field="completion_pct">Completed</th><th class="hide-sm" data-field="remark">Remark</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="ops-card" id="card-proc-gen">
+      <h2>General operation procedures</h2>
+      <p class="ops-note">Sorted by % complete, lowest first, so open procedures sit at the top.</p>
+      <div class="ops-tools">
+        <input type="search" id="proc-gen-q" placeholder="Search name, owner, remark…" aria-label="Search procedures">
+        <select id="proc-gen-open" aria-label="Status"><option value="">All statuses</option><option value="open">Not issued</option><option value="done">Issued</option></select>
+      </div>
+      <div class="ops-tablebox">
+        <table class="ops-proc" id="table-proc-gen" data-category="General operations" data-source="procedures" data-row-key="id">
+          <thead><tr><th data-field="id">No.</th><th data-field="document">Document</th><th class="hide-sm" data-field="responsible">Owner</th><th data-field="expected">Due</th><th data-field="completion_pct">Completed</th><th class="hide-sm" data-field="remark">Remark</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -1166,24 +1179,28 @@ function drawOrrElements() {
 }
 
 // ---------- procedures ----------
-['proc-q', 'proc-cat', 'proc-open'].forEach((id) => document.getElementById(id).addEventListener('input', drawProcedures));
+['hse', 'gen'].forEach((k) => ['q', 'open'].forEach((f) => document.getElementById(`proc-${k}-${f}`).addEventListener('input', drawProcedures)));
+// The source file numbers each list from 1 (column "No."); show that number.
+const procNo = (r) => String(r.id ?? '').replace(/^(HSE|GEN)-0*/, '');
 function drawProcedures() {
-  const tb = document.querySelector('#table-procedures tbody');
   const d = dash.data('procedures');
-  if (d.status !== 'ok') { tb.replaceChildren(); return; }
-  const q = document.getElementById('proc-q').value.trim().toLowerCase();
-  const cat = document.getElementById('proc-cat').value, op = document.getElementById('proc-open').value;
-  const rows = d.data.filter((r) => (!cat || r.category === cat) && (!op || (op === 'open') === (r.issued !== 'Yes'))
-    && (!q || [r.document, r.responsible, r.remark, r.id].join(' ').toLowerCase().includes(q)))
-    .sort((a, b) => a.completion_pct - b.completion_pct || a.id.localeCompare(b.id));
-  tb.replaceChildren(...rows.map((r) => {
-    const tr = H.el('tr');
-    const c = r.completion_pct === 100 ? 'ops-good' : r.completion_pct === 0 ? 'ops-bad' : 'ops-warn';
-    const pill = H.el('span', 'ops-pill ' + c + (r.completion_pct === 100 ? ' issued' : ''), r.completion_pct === 100 ? '✓ ' + L('Issued', 'Đã ban hành') : r.completion_pct + '%');
-    const td = H.el('td'); td.append(pill);
-    tr.append(H.el('td', null, r.id), H.el('td', null, r.document), H.el('td', 'hide-sm', r.responsible), H.el('td', null, r.expected), td, H.el('td', 'hide-sm', r.remark));
-    return tr;
-  }));
+  ['hse', 'gen'].forEach((k) => {
+    const table = document.getElementById('table-proc-' + k), tb = table.tBodies[0];
+    if (d.status !== 'ok') { tb.replaceChildren(); return; }
+    const q = document.getElementById(`proc-${k}-q`).value.trim().toLowerCase();
+    const op = document.getElementById(`proc-${k}-open`).value;
+    const rows = d.data.filter((r) => r.category === table.dataset.category && (!op || (op === 'open') === (r.issued !== 'Yes'))
+      && (!q || [r.document, r.responsible, r.remark, procNo(r)].join(' ').toLowerCase().includes(q)))
+      .sort((a, b) => a.completion_pct - b.completion_pct || procNo(a) - procNo(b));
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = H.el('tr');
+      const c = r.completion_pct === 100 ? 'ops-good' : r.completion_pct === 0 ? 'ops-bad' : 'ops-warn';
+      const pill = H.el('span', 'ops-pill ' + c + (r.completion_pct === 100 ? ' issued' : ''), r.completion_pct === 100 ? '✓ ' + L('Issued', 'Đã ban hành') : r.completion_pct + '%');
+      const td = H.el('td'); td.append(pill);
+      tr.append(H.el('td', 'num', procNo(r)), H.el('td', null, r.document), H.el('td', 'hide-sm', r.responsible), H.el('td', null, r.expected), td, H.el('td', 'hide-sm', r.remark));
+      return tr;
+    }));
+  });
 }
 
 // ---------- contracts ----------
@@ -1459,8 +1476,8 @@ function drawAttention() {
     .forEach((r) => add('r', L('Pre-com overdue: ', 'Pre-com quá hạn: ') + `<b>${esc(r.activity)}</b> (` + L('plan finish ', 'kết thúc theo KH ') + `${H.fmtDay(H.day(r.plan_finish))})`, 'startup'));
   rows('cur', 'procedures').filter((r) => r.issued !== 'Yes').forEach((r) => {
     const due = endOfMonthText(r.expected);
-    if (due && due < R) add('r', L('Procedure overdue: ', 'Quy trình quá hạn: ') + `<b>${esc(r.id)}</b> ${esc(r.document)} (` + L('due ', 'hạn ') + `${esc(r.expected)}, ${r.completion_pct ?? 0}%)`, 'procedures');
-    else if (!r.completion_pct) add('a', L('Procedure not started: ', 'Quy trình chưa bắt đầu: ') + `<b>${esc(r.id)}</b> ${esc(r.document)} (` + L('due ', 'hạn ') + `${esc(r.expected)})`, 'procedures');
+    if (due && due < R) add('r', L('Procedure overdue: ', 'Quy trình quá hạn: ') + `<b>${esc((r.category === 'HSE' ? 'HSE' : L('General operation', 'Vận hành chung')) + ' · ' + L('No. ', 'STT ') + String(r.id ?? '').replace(/^(HSE|GEN)-0*/, ''))}</b> ${esc(r.document)} (` + L('due ', 'hạn ') + `${esc(r.expected)}, ${r.completion_pct ?? 0}%)`, 'procedures');
+    else if (!r.completion_pct) add('a', L('Procedure not started: ', 'Quy trình chưa bắt đầu: ') + `<b>${esc((r.category === 'HSE' ? 'HSE' : L('General operation', 'Vận hành chung')) + ' · ' + L('No. ', 'STT ') + String(r.id ?? '').replace(/^(HSE|GEN)-0*/, ''))}</b> ${esc(r.document)} (` + L('due ', 'hạn ') + `${esc(r.expected)})`, 'procedures');
   });
   rows('cur', 'permits').forEach((p) => {
     if (p.expiry_date && H.day(p.expiry_date) < R) add('r', L('Permit expired: ', 'Giấy phép đã hết hạn: ') + `<b>${esc(p.permit)}</b> (${H.fmtDay(H.day(p.expiry_date))})`, 'contracts');
@@ -1621,7 +1638,7 @@ const BAD_UP = new Set(['balance', 'developing']);
 const DATES = new Set(['issue_date', 'expiry_date', 'renewal_date', 'plan_start', 'plan_finish', 'actual_start', 'actual_finish', 'plan_date', 'actual_date']);
 const rowLabel = {
   manpower: (r) => H.fmtMonth(H.month(r.month)), orr_curve: (r) => H.fmtMonth(H.month(r.month)), staffing: (r) => D(r.group), orr_groups: (r) => D(r.group),
-  procedures: (r) => `${r.id} · ${r.document || ''}`, orr_elements: (r) => `${r.code} · ${r.element || ''}`, cbta: (r) => `${r.platform} ${r.team}`,
+  procedures: (r) => `${(r.category === 'HSE' ? 'HSE' : L('General operation', 'Vận hành chung')) + ' · ' + L('No. ', 'STT ') + String(r.id ?? '').replace(/^(HSE|GEN)-0*/, '')} · ${r.document || ''}`, orr_elements: (r) => `${r.code} · ${r.element || ''}`, cbta: (r) => `${r.platform} ${r.team}`,
   pr_pipeline: (r) => `${D(r.stage)} · ${L(r.status, { Late: 'Trễ hạn', 'Near-late': 'Sắp trễ', 'On time': 'Đúng hạn' }[r.status] || r.status)}`,
   packages_no_pr: (r) => D(r.category), vendor_training: (r) => `${r.period} · ${r.course}`, workstreams: (r) => D(r.item), readiness: (r) => D(r.area),
   milestones: (r) => D(r.milestone), startup_sequence: (r) => `${r.step}. ${D(r.phase)}`,
