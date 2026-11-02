@@ -296,6 +296,10 @@
 :where(.ops-page table:not(.ops-matrix) > tbody > tr:hover) > td { background: var(--acc-tint); }
 .ops-seg { border-color: var(--acc-line, var(--color-border-line)); }
 .ops-seg button[aria-pressed="true"] { background: var(--acc, var(--color-fg)); color: var(--color-panel); }
+#table-procedures .ops-pill { min-width: 3.2rem; text-align: center; font-weight: 600; }
+#table-procedures .ops-pill.ops-warn { background: color-mix(in srgb, var(--color-warn) 12%, transparent); }
+#table-procedures .ops-pill.ops-bad { background: color-mix(in srgb, var(--color-bad) 11%, transparent); }
+#table-procedures .ops-pill.issued { background: var(--color-ok); border-color: var(--color-ok); color: var(--color-panel); }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -1175,7 +1179,7 @@ function drawProcedures() {
   tb.replaceChildren(...rows.map((r) => {
     const tr = H.el('tr');
     const c = r.completion_pct === 100 ? 'ops-good' : r.completion_pct === 0 ? 'ops-bad' : 'ops-warn';
-    const pill = H.el('span', 'ops-pill ' + c, r.completion_pct === 100 ? L('Issued', 'Đã ban hành') : r.completion_pct + '%');
+    const pill = H.el('span', 'ops-pill ' + c + (r.completion_pct === 100 ? ' issued' : ''), r.completion_pct === 100 ? '✓ ' + L('Issued', 'Đã ban hành') : r.completion_pct + '%');
     const td = H.el('td'); td.append(pill);
     tr.append(H.el('td', null, r.id), H.el('td', null, r.document), H.el('td', 'hide-sm', r.responsible), H.el('td', null, r.expected), td, H.el('td', 'hide-sm', r.remark));
     return tr;
