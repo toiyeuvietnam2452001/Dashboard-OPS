@@ -1,21 +1,4 @@
 {
- "staffing": [
-  {
-   "filled": 47,
-   "required": 50,
-   "group": "Offshore"
-  },
-  {
-   "filled": 32,
-   "required": 34,
-   "group": "Onshore"
-  },
-  {
-   "filled": 9,
-   "required": 38,
-   "group": "Outsource"
-  }
- ],
  "cbta": [
   {
    "ojt_modules": 11,
@@ -93,6 +76,23 @@
    "platform": "WHP",
    "modules": 21,
    "team": "P&P"
+  }
+ ],
+ "staffing": [
+  {
+   "filled": 47,
+   "required": 50,
+   "group": "Offshore"
+  },
+  {
+   "filled": 32,
+   "required": 34,
+   "group": "Onshore"
+  },
+  {
+   "filled": 9,
+   "required": 38,
+   "group": "Outsource"
   }
  ],
  "manpower": [
@@ -637,6 +637,44 @@
    "month": "2028-12"
   }
  ],
+ "mandatory": [
+  {
+   "planned": 72,
+   "balance": 53,
+   "earned": 19,
+   "team": "CPP Deck crew"
+  },
+  {
+   "planned": 270,
+   "balance": 174,
+   "earned": 96,
+   "team": "CPP E&I"
+  },
+  {
+   "planned": 210,
+   "balance": 118,
+   "earned": 92,
+   "team": "CPP M&R"
+  },
+  {
+   "planned": 334,
+   "balance": 139,
+   "earned": 195,
+   "team": "CPP P&P"
+  },
+  {
+   "planned": 263,
+   "balance": 191,
+   "earned": 72,
+   "team": "Management"
+  },
+  {
+   "planned": 250,
+   "balance": 120,
+   "earned": 130,
+   "team": "WHP team"
+  }
+ ],
  "orr_teams": [
   {
    "weight_pct": 25.5,
@@ -796,66 +834,6 @@
   {
    "period": "2028",
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
-  }
- ],
- "mandatory": [
-  {
-   "planned": 72,
-   "balance": 53,
-   "earned": 19,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 270,
-   "balance": 174,
-   "earned": 96,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 210,
-   "balance": 118,
-   "earned": 92,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 334,
-   "balance": 139,
-   "earned": 195,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 263,
-   "balance": 191,
-   "earned": 72,
-   "team": "Management"
-  },
-  {
-   "planned": 250,
-   "balance": 120,
-   "earned": 130,
-   "team": "WHP team"
-  }
- ],
- "orr_groups": [
-  {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
-  },
-  {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
-  },
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
-  },
-  {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
   }
  ],
  "orr_curve": [
@@ -1073,6 +1051,28 @@
    "element": "Design, Engineering, Operability & Maintainability Assurance",
    "group": "PROCESS",
    "code": "PR-14"
+  }
+ ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
   }
  ],
  "packages_no_pr": [
@@ -1969,93 +1969,6 @@
    "package": "EPCI#1"
   }
  ],
- "workstreams": [
-  {
-   "area": "Manpower",
-   "status": "Document Control, OIM, HSE, FSO",
-   "item": "Vacant positions"
-  },
-  {
-   "area": "Applications",
-   "status": "TCEAR",
-   "item": "AIMS"
-  },
-  {
-   "area": "Applications",
-   "status": "Training and UAT phase 2 completed (Plant maintenance, Inventory & Warehouse); preparing phase 3 kick-off (KPI, reports)",
-   "item": "EAM/SAP"
-  },
-  {
-   "area": "Applications",
-   "status": "Platform built (production launch); preparing test and data population",
-   "item": "HRIS"
-  },
-  {
-   "area": "Applications",
-   "status": "Phase 1 blueprint completed; platform development continuing",
-   "item": "OMS"
-  },
-  {
-   "area": "Applications",
-   "status": "ITB",
-   "item": "OSCC"
-  },
-  {
-   "area": "Applications",
-   "status": "Technical evaluation",
-   "item": "PDMS"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "No update in report",
-   "item": "Catering services"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Raise PIA, PR",
-   "item": "Crew change service to Nam Can"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Combine with DCD's contract",
-   "item": "Helicopter"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Change to contract",
-   "item": "MGO"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "ITB",
-   "item": "Supply vessel, FCB, security boat"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Combine with DCD to 2030",
-   "item": "Vessel inspection"
-  },
-  {
-   "area": "Coordination",
-   "status": "Being split into 2 procedures; parties to review and complete by 31 Oct",
-   "item": "Coordination procedure"
-  },
-  {
-   "area": "Coordination",
-   "status": "Sales gas capability 73 MMscfd (SSF) from Sep-27, rising to about 170 MMscfd (75%) by Nov-27 vs total sales gas requirement",
-   "item": "Production profile"
-  },
-  {
-   "area": "Commissioning",
-   "status": "E-house, HVAC, Crane, FM200, LQ UPS",
-   "item": "Installation, pre-com, com"
-  },
-  {
-   "area": "Commissioning",
-   "status": "Findings → punch list → close out",
-   "item": "Offshore preservation"
-  }
- ],
  "permits": [
   {
    "facility": "Electrical",
@@ -2227,62 +2140,91 @@
    "permit": "UHF radio frequency license"
   }
  ],
- "readiness": [
+ "workstreams": [
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
+   "area": "Manpower",
+   "status": "Document Control, OIM, HSE, FSO",
+   "item": "Vacant positions"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
+   "area": "Applications",
+   "status": "TCEAR",
+   "item": "AIMS"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
+   "area": "Applications",
+   "status": "Training and UAT phase 2 completed (Plant maintenance, Inventory & Warehouse); preparing phase 3 kick-off (KPI, reports)",
+   "item": "EAM/SAP"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
+   "area": "Applications",
+   "status": "Platform built (production launch); preparing test and data population",
+   "item": "HRIS"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
+   "area": "Applications",
+   "status": "Phase 1 blueprint completed; platform development continuing",
+   "item": "OMS"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
+   "area": "Applications",
+   "status": "ITB",
+   "item": "OSCC"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
+   "area": "Applications",
+   "status": "Technical evaluation",
+   "item": "PDMS"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
+   "area": "Logistics & services",
+   "status": "No update in report",
+   "item": "Catering services"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Raise PIA, PR",
+   "item": "Crew change service to Nam Can"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Combine with DCD's contract",
+   "item": "Helicopter"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Change to contract",
+   "item": "MGO"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "ITB",
+   "item": "Supply vessel, FCB, security boat"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Combine with DCD to 2030",
+   "item": "Vessel inspection"
+  },
+  {
+   "area": "Coordination",
+   "status": "Being split into 2 procedures; parties to review and complete by 31 Oct",
+   "item": "Coordination procedure"
+  },
+  {
+   "area": "Coordination",
+   "status": "Sales gas capability 73 MMscfd (SSF) from Sep-27, rising to about 170 MMscfd (75%) by Nov-27 vs total sales gas requirement",
+   "item": "Production profile"
+  },
+  {
+   "area": "Commissioning",
+   "status": "E-house, HVAC, Crane, FM200, LQ UPS",
+   "item": "Installation, pre-com, com"
+  },
+  {
+   "area": "Commissioning",
+   "status": "Findings → punch list → close out",
+   "item": "Offshore preservation"
   }
  ],
  "precom_plan": [
@@ -2411,6 +2353,64 @@
    "plan_finish": "2027-02-26",
    "plan_start": "2027-01-25",
    "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
+  }
+ ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
   }
  ],
  "startup_sequence": [
@@ -4192,6 +4192,48 @@
    "course": "Electrical safety"
   }
  ],
+ "milestones": [
+  {
+   "plan_date": "2026-10-13",
+   "note": "Theo master plan pre-com (hoạt động sớm nhất)",
+   "is_target": false,
+   "actual_date": null,
+   "order": 1,
+   "milestone": "Pre-commissioning start (CPP Train 1)"
+  },
+  {
+   "plan_date": "2027-06-30",
+   "note": "Theo đường kế hoạch ORR (06/2027 = 95%)",
+   "is_target": false,
+   "actual_date": null,
+   "order": 2,
+   "milestone": "ORR plan 95%"
+  },
+  {
+   "plan_date": null,
+   "note": "Cần điền ngày kế hoạch",
+   "is_target": false,
+   "actual_date": null,
+   "order": 3,
+   "milestone": "Mechanical Completion"
+  },
+  {
+   "plan_date": null,
+   "note": "Cần điền ngày kế hoạch",
+   "is_target": false,
+   "actual_date": null,
+   "order": 4,
+   "milestone": "RFSU – Ready for Start-Up"
+  },
+  {
+   "plan_date": "2027-09-01",
+   "note": null,
+   "is_target": true,
+   "actual_date": null,
+   "order": 5,
+   "milestone": "First Gas (sales gas)"
+  }
+ ],
  "cbta_modules": [
   {
    "no": 1,
@@ -4864,48 +4906,6 @@
    "module": "Pig Laucher/ Receiver"
   }
  ],
- "milestones": [
-  {
-   "plan_date": "2026-10-13",
-   "note": "Theo master plan pre-com (hoạt động sớm nhất)",
-   "is_target": false,
-   "actual_date": null,
-   "order": 1,
-   "milestone": "Pre-commissioning start (CPP Train 1)"
-  },
-  {
-   "plan_date": "2027-06-30",
-   "note": "Theo đường kế hoạch ORR (06/2027 = 95%)",
-   "is_target": false,
-   "actual_date": null,
-   "order": 2,
-   "milestone": "ORR plan 95%"
-  },
-  {
-   "plan_date": null,
-   "note": "Cần điền ngày kế hoạch",
-   "is_target": false,
-   "actual_date": null,
-   "order": 3,
-   "milestone": "Mechanical Completion"
-  },
-  {
-   "plan_date": null,
-   "note": "Cần điền ngày kế hoạch",
-   "is_target": false,
-   "actual_date": null,
-   "order": 4,
-   "milestone": "RFSU – Ready for Start-Up"
-  },
-  {
-   "plan_date": "2027-09-01",
-   "note": "Tạm theo production profile slide 16 (SSF 73 MMscfd từ 09/2027) – cần xác nhận ngày chính thức",
-   "is_target": true,
-   "actual_date": null,
-   "order": 5,
-   "milestone": "First Gas (sales gas)"
-  }
- ],
  "orr_team_plan": [
   {
    "month": "2026-10",
@@ -5409,6 +5409,6 @@
    "classification": "Internal"
   }
  ],
- "_updated_at": "2026-10-30T09:19:00.000Z",
+ "_updated_at": "2026-11-02T05:36:00.000Z",
  "_source": "notion"
 }
