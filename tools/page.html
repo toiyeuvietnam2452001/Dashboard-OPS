@@ -63,6 +63,7 @@
 .ops-cell-bar { display: flex; align-items: center; gap: 8px; min-width: 8rem; }
 .ops-cell-bar .ops-track { flex: 1; height: 8px; }
 .ops-tools { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); }
+.ops select { max-width: 100%; }
 .ops input[type="search"], .ops select { font: inherit; font-size: var(--cds-font-size-caption); padding: 5px 8px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); }
 .ops input[type="search"] { flex: 1; min-width: 10rem; }
 .ops-list { display: flex; flex-direction: column; gap: var(--cds-gap-sm); margin: 0; padding: 0; list-style: none; }
@@ -106,7 +107,14 @@
 .ops-code-C { background: var(--s2); color: #fff; }
 .ops-code-S { background: color-mix(in srgb, var(--s1) 22%, transparent); color: var(--color-fg); }
 .ops-code-B { background: color-mix(in srgb, var(--s3) 45%, transparent); color: var(--color-fg); }
-.ops-check { color: var(--color-warn); }
+.ops-check { border: 1px solid var(--rag-a-line); background: var(--rag-a-tint); border-radius: var(--cds-radius); padding: 10px 12px; font-size: var(--cds-font-size-caption); line-height: 1.5; display: flex; flex-direction: column; gap: 6px; }
+.ops-check > b { color: var(--rag-a); }
+#mod-check table { display: block; max-width: 100%; overflow-x: auto; width: auto; }
+#mod-check { min-width: 0; overflow-wrap: anywhere; }
+#mod-check th, #mod-check td { white-space: nowrap; overflow-wrap: normal; background: transparent !important; color: var(--color-fg); border-bottom: 1px solid var(--rag-a-line); padding: 3px 10px 3px 0; position: static; font-weight: 400; }
+#mod-check th { color: var(--color-fg-muted); font-weight: 600; }
+#mod-check td.n { text-align: center; font-weight: 600; } #mod-check td.x { color: var(--rag-r); }
+.ops-check .mods { color: var(--color-fg-muted); }
 .ops-plan { border-collapse: separate; border-spacing: 0; }
 .ops-plan thead th { text-align: center; padding: 8px; }
 .ops-plan thead th:first-child { text-align: left; border-top-left-radius: var(--cds-radius); }
@@ -500,7 +508,7 @@
           <select id="mod-team" aria-label="Team"><option value="">All teams</option></select>
           <select id="mod-status" aria-label="Module status"><option value="">All statuses</option><option value="Completed">Completed</option><option value="Review & Approval">Review &amp; Approval</option><option value="Developing">Developing</option><option value="-">Not started</option></select>
         </div>
-        <p class="ops-note ops-check" id="mod-check" hidden></p>
+        <div class="ops-check" id="mod-check" hidden></div>
         <div class="ops-tablebox">
           <table id="table-cbta-modules" data-source="cbta_modules" data-row-key="platform,team,no">
             <thead><tr><th data-field="team">Team</th><th class="num" data-field="no">No.</th><th class="hide-sm" data-field="area">Area</th><th data-field="module">Module</th><th class="hide-sm" data-field="doc_no">Document no.</th><th data-field="status">Status</th><th class="hide-sm" data-field="developer">Author</th></tr></thead>
@@ -1051,17 +1059,35 @@ function drawCbtaModules() {
       H.el('td', 'hide-sm', r.doc_no || ''), td, H.el('td', 'hide-sm', r.developer || ''));
     return tr;
   }));
-  // The register and the team totals in the CBTA table are entered separately: say where they disagree.
+  // The register and the team totals in the CBTA table are entered separately: show side by side where they disagree.
   const sum = dash.data('cbta').data || [], diffs = [];
   d3.groups(d.data, (r) => r.platform, (r) => r.team).forEach(([p, ts]) => ts.forEach(([t, mods]) => {
     const s = sum.find((x) => x.platform === p && x.team === t); if (!s) return;
-    const n = (k) => mods.filter((m) => m.status === k).length;
-    const got = [mods.length, n('Completed'), n('Review & Approval'), n('Developing')], want = [s.modules, s.completed, s.review || 0, s.developing || 0];
-    if (got.some((v, i) => v !== want[i])) diffs.push(`${p} ${t}: ` + L(`register ${got[1]} completed / ${got[2]} in review / ${got[3]} in development of ${got[0]}; team totals ${want[1]} / ${want[2]} / ${want[3]} of ${want[0]}`,
-      `danh mục ${got[1]} hoàn thành / ${got[2]} soát xét / ${got[3]} biên soạn trên ${got[0]}; bảng tổng ${want[1]} / ${want[2]} / ${want[3]} trên ${want[0]}`));
+    const pick = (k) => mods.filter((m) => (m.status || null) === k);
+    const got = [pick('Completed').length, pick('Review & Approval').length, pick('Developing').length, pick(null).length];
+    const want = [s.completed, s.review || 0, s.developing || 0, s.modules - s.completed - (s.review || 0) - (s.developing || 0)];
+    if (mods.length === s.modules && got.every((v, i) => v === want[i])) return;
+    diffs.push({ team: `${p} ${t}`, got, want, list: [['Review & Approval', L('In review', 'Đang soát xét')], ['Developing', L('In development', 'Đang biên soạn')], [null, L('No status', 'Chưa có trạng thái')]]
+      .map(([k, lab]) => [lab, pick(k).map((m) => m.no)]).filter(([, ns]) => ns.length) });
   }));
   check.hidden = !diffs.length;
-  check.textContent = diffs.length ? L('Register and CBTA team totals differ. ', 'Danh mục module và bảng tổng CBTA chưa khớp. ') + diffs.join('. ') + '.' : '';
+  if (!diffs.length) { check.replaceChildren(); return; }
+  const head = H.el('tr');
+  [L('Team', 'Team'), L('Source', 'Nguồn'), L('Completed', 'Hoàn thành'), L('In review', 'Soát xét'), L('In development', 'Biên soạn'), L('No status', 'Chưa có TT')].forEach((h) => head.append(H.el('th', null, h)));
+  const table = H.el('table'); table.append(head);
+  diffs.forEach((x) => {
+    const r1 = H.el('tr'), r2 = H.el('tr');
+    const team = H.el('td', null, x.team); team.rowSpan = 2; team.style.fontWeight = 600;
+    r1.append(team, H.el('td', null, L('Module list (below)', 'Danh mục module (bên dưới)')));
+    r2.append(H.el('td', null, L('CBTA table (totals)', 'Bảng tổng CBTA')));
+    x.got.forEach((v, i) => r1.append(H.el('td', 'n' + (v !== x.want[i] ? ' x' : ''), String(v))));
+    x.want.forEach((v, i) => r2.append(H.el('td', 'n' + (v !== x.got[i] ? ' x' : ''), String(v))));
+    table.append(r1, r2);
+  });
+  const mods = diffs.map((x) => H.el('div', 'mods', `${x.team} – ` + L('modules not marked Completed in the list: ', 'các module chưa ghi Hoàn thành trong danh mục: ') + x.list.map(([lab, ns]) => `${lab} ${ns.join(', ')}`).join(' · ')));
+  check.replaceChildren(H.el('b', null, L('The module list and the CBTA totals table do not match', 'Danh mục module và bảng tổng CBTA chưa khớp nhau')), table, ...mods,
+    H.el('div', 'mods', L('Confirm the status with the team, then correct either the "Module CBTA" table or the "CBTA" table in Notion. This note disappears once they match.',
+      'Xác nhận trạng thái với team, rồi sửa bảng "Module CBTA" hoặc bảng "CBTA" trên Notion. Thông báo này tự ẩn khi hai bảng khớp nhau.')));
 }
 
 // The positions of the HSE training matrix, in the order of the matrix, grouped as in its header.
