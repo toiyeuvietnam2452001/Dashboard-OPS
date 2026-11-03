@@ -453,7 +453,9 @@ window.dash = (function () {
   var api = {
     live: live, updatedAt: DATA._updated_at, source: source, prev: null, prevDate: null,
     reports: index.reports || [], latestDate: index.latest, viewDate: viewDate, missingDate: missingDate,
-    archived: !!viewDate && viewDate !== index.latest, state: meta.state || null, carriedFrom: DATA._carried_from || null,
+    archived: !!viewDate && viewDate !== index.latest,
+    // A saved earlier day is never live, whatever state it was saved with.
+    state: viewDate && viewDate !== index.latest ? 'closed' : meta.state || null, carriedFrom: DATA._carried_from || null,
     data: function (id) { var d = input(id); return d === undefined ? { status: 'missing', data: [], meta: [] } : { status: 'ok', data: d, refreshing: false, meta: [] }; },
     calc: function (id, o) { try { res[id] = o.fn.apply(null, o.inputs.map(function (i) { return input(i) || []; })); } catch (e) { console.error('calc ' + id, e); } },
     loader: function () {},
