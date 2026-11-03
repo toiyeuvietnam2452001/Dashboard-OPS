@@ -206,17 +206,19 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:
 .ops-btn { white-space: nowrap; font: inherit; font-size: var(--cds-font-size-caption); padding: 6px 12px; border-radius: var(--cds-radius); border: 1px solid var(--brand); background: var(--brand); color: #fff; cursor: pointer; }
 .ops-btn:hover { filter: brightness(1.1); }
 .ops-btn:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
-/* First Gas card: a stream of gas flows clockwise round the outside of the border. The stream is drawn
-   in an SVG ring 4px outside the card (.ops-gas); script sizes the ring and moves the dashes along it. */
+/* First Gas card: gas flows clockwise round the outside of the border. The layers are drawn on an SVG ring
+   that hugs the card edge (.ops-gas): a faint haze all round, drifting smoke, and a bright stream with a fading tail.
+   Script sizes the ring and moves the dashes along it. */
 .ops-count { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; padding: 6px 14px; border-radius: var(--cds-radius); border: 1px solid transparent; min-width: 9rem;
-  --gas-a: #0284C7; --gas-b: #22D3EE; --gas-head: #67E8F9; --gas-pipe: rgba(2, 132, 199, .16); }
-:root[data-theme="dark"] .ops-count { --gas-a: #22D3EE; --gas-b: #A5F3FC; --gas-head: #F0FDFF; --gas-pipe: rgba(165, 243, 252, .13); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ops-count { --gas-a: #22D3EE; --gas-b: #A5F3FC; --gas-head: #F0FDFF; --gas-pipe: rgba(165, 243, 252, .13); } }
+  --gas-a: #0284C7; --gas-b: #22D3EE; --gas-head: #67E8F9; }
+:root[data-theme="dark"] .ops-count { --gas-a: #22D3EE; --gas-b: #A5F3FC; --gas-head: #F0FDFF; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ops-count { --gas-a: #22D3EE; --gas-b: #A5F3FC; --gas-head: #F0FDFF; } }
 .ops-count::before { content: ""; position: absolute; inset: -1px; border-radius: inherit; pointer-events: none; z-index: -1; border: 1px solid transparent;
   background: linear-gradient(var(--count-bg), var(--count-bg)) padding-box, linear-gradient(var(--count-ring), var(--count-ring)) border-box; }
 .ops-gas { position: absolute; left: -9px; top: -9px; width: calc(100% + 18px); height: calc(100% + 18px); overflow: visible; pointer-events: none; z-index: -2; }
 .ops-gas rect { fill: none; }
-.ops-gas .pipe { stroke: var(--gas-pipe); stroke-width: 1; }
+.ops-gas .haze { stroke: var(--gas-a); stroke-width: 4; opacity: .16; filter: url(#gas-glow); }
+.ops-gas .smoke { stroke: var(--gas-b); stroke-width: 3; stroke-linecap: round; opacity: .3; filter: url(#gas-smoke); }
 .ops-gas .plume { stroke: var(--gas-a); stroke-width: 8; stroke-linecap: round; opacity: .32; filter: url(#gas-glow); }
 .ops-gas .tail { stroke: url(#gas-grad); stroke-linecap: round; filter: url(#gas-soft); }
 .ops-gas .wisp { stroke: var(--gas-b); stroke-width: 1; stroke-linecap: round; opacity: .35; filter: url(#gas-soft); }
@@ -499,14 +501,21 @@ var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __
           <defs>
             <linearGradient id="gas-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color: var(--gas-a)"/><stop offset="1" style="stop-color: var(--gas-b)"/></linearGradient>
             <filter id="gas-soft" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation=".7"/></filter>
-            <filter id="gas-glow" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+            <filter id="gas-glow" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="3.5"/></filter>
+            <!-- Smoke: noise that slowly changes bends the stroke into drifting wisps -->
+            <filter id="gas-smoke" x="-8%" y="-30%" width="116%" height="160%">
+              <feTurbulence type="fractalNoise" baseFrequency=".022 .05" numOctaves="2" seed="9" result="n"><animate attributeName="baseFrequency" values=".022 .05;.03 .04;.02 .056;.022 .05" dur="9s" repeatCount="indefinite"/></feTurbulence>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+              <feGaussianBlur in="d" stdDeviation="2"/>
+            </filter>
           </defs>
-          <rect class="pipe"/>
-          <rect class="plume" data-len="20" data-dur="6500"/>
+          <rect class="haze"/>
+          <rect class="smoke" data-dash="14 6 9 10 18 7 6 12 16 8" data-dur="8000"/>
+          <rect class="plume" data-len="22" data-dur="6500"/>
           <rect class="wisp" data-len="16" data-end="-4" data-dur="10400"/>
-          <rect class="tail" data-len="30" data-dur="6500" style="stroke-width: 1.2; opacity: .22"/>
-          <rect class="tail" data-len="19" data-dur="6500" style="stroke-width: 2; opacity: .45"/>
-          <rect class="tail" data-len="10" data-dur="6500" style="stroke-width: 2.6; opacity: .8"/>
+          <rect class="tail" data-len="30" data-dur="6500" style="stroke-width: 1.4; opacity: .25"/>
+          <rect class="tail" data-len="19" data-dur="6500" style="stroke-width: 2.2; opacity: .5"/>
+          <rect class="tail" data-len="10" data-dur="6500" style="stroke-width: 2.8; opacity: .85"/>
           <rect class="head" data-len="3" data-dur="6500"/>
         </svg>
         <span class="ops-fx" aria-hidden="true">
@@ -1733,13 +1742,19 @@ function drawMilestones() {
   const box = document.getElementById('countdown'), svg = box && box.querySelector('.ops-gas');
   if (!svg || !window.ResizeObserver) return;
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) svg.querySelectorAll('animate').forEach((a) => a.remove());
   let anims = [], size = '';
   const lay = () => {
     const W = box.offsetWidth, Hh = box.offsetHeight;
     if (!W || size === W + 'x' + Hh) return; size = W + 'x' + Hh;
-    const gap = 4, x = 9 - gap, w = W + 2 * gap, h = Hh + 2 * gap, rx = 8 + gap, P = 2 * (w + h) - 8 * rx + 2 * Math.PI * rx;
+    const gap = 1.5, x = 9 - gap, w = W + 2 * gap, h = Hh + 2 * gap, rx = 8 + gap, P = 2 * (w + h) - 8 * rx + 2 * Math.PI * rx;
     svg.querySelectorAll('rect').forEach((r) => { r.setAttribute('x', x); r.setAttribute('y', x); r.setAttribute('width', w); r.setAttribute('height', h); r.setAttribute('rx', rx); });
     anims.forEach((a) => a.cancel()); anims = [];
+    svg.querySelectorAll('[data-dash]').forEach((r) => {
+      const parts = r.dataset.dash.split(' ').map(Number), sum = d3.sum(parts);
+      r.style.strokeDasharray = parts.map((v) => v / sum * P).join(' ');
+      if (!still) anims.push(r.animate([{ strokeDashoffset: 0 }, { strokeDashoffset: -P }], { duration: +r.dataset.dur, iterations: Infinity }));
+    });
     svg.querySelectorAll('[data-len]').forEach((r) => {
       const len = +r.dataset.len / 100 * P, end = (12 + (+r.dataset.end || 0)) / 100 * P, from = len - end;
       r.style.strokeDasharray = `${len} ${P - len}`; r.style.strokeDashoffset = from;
