@@ -836,53 +836,6 @@
    "team": "WHP team"
   }
  ],
- "orr_curve": [
-  {
-   "actual_pct": 70.5,
-   "plan_pct": 67.2,
-   "month": "2026-10"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 71,
-   "month": "2026-11"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 75,
-   "month": "2026-12"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 80,
-   "month": "2027-01"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 83,
-   "month": "2027-02"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 87,
-   "month": "2027-03"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 90,
-   "month": "2027-04"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 93,
-   "month": "2027-05"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 95,
-   "month": "2027-06"
-  }
- ],
  "orr_groups": [
   {
    "progress_pct": 66.3,
@@ -1073,6 +1026,53 @@
    "element": "Design, Engineering, Operability & Maintainability Assurance",
    "group": "PROCESS",
    "code": "PR-14"
+  }
+ ],
+ "orr_curve": [
+  {
+   "actual_pct": 70.5,
+   "plan_pct": 67.2,
+   "month": "2026-10"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 71,
+   "month": "2026-11"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 75,
+   "month": "2026-12"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 80,
+   "month": "2027-01"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 83,
+   "month": "2027-02"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 87,
+   "month": "2027-03"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 90,
+   "month": "2027-04"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 93,
+   "month": "2027-05"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 95,
+   "month": "2027-06"
   }
  ],
  "pr_pipeline": [
@@ -5396,8 +5396,8 @@
  ],
  "meta": [
   {
-   "report_date": "2026-11-05",
-   "as_of": "2026-11-05",
+   "report_date": "2026-11-06",
+   "as_of": "2026-11-06",
    "state": "open",
    "name": "Báo cáo OPS – cập nhật liên tục",
    "report_title": "Operations Readiness Preparation",
