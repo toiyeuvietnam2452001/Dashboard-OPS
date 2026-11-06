@@ -637,6 +637,44 @@
    "team": "P&P"
   }
  ],
+ "mandatory": [
+  {
+   "planned": 72,
+   "balance": 53,
+   "earned": 19,
+   "team": "CPP Deck crew"
+  },
+  {
+   "planned": 270,
+   "balance": 174,
+   "earned": 96,
+   "team": "CPP E&I"
+  },
+  {
+   "planned": 210,
+   "balance": 118,
+   "earned": 92,
+   "team": "CPP M&R"
+  },
+  {
+   "planned": 334,
+   "balance": 139,
+   "earned": 195,
+   "team": "CPP P&P"
+  },
+  {
+   "planned": 263,
+   "balance": 191,
+   "earned": 72,
+   "team": "Management"
+  },
+  {
+   "planned": 250,
+   "balance": 120,
+   "earned": 130,
+   "team": "WHP team"
+  }
+ ],
  "orr_teams": [
   {
    "weight_pct": 25.5,
@@ -796,44 +834,6 @@
   {
    "period": "2028",
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
-  }
- ],
- "mandatory": [
-  {
-   "planned": 72,
-   "balance": 53,
-   "earned": 19,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 270,
-   "balance": 174,
-   "earned": 96,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 210,
-   "balance": 118,
-   "earned": 92,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 334,
-   "balance": 139,
-   "earned": 195,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 263,
-   "balance": 191,
-   "earned": 72,
-   "team": "Management"
-  },
-  {
-   "planned": 250,
-   "balance": 120,
-   "earned": 130,
-   "team": "WHP team"
   }
  ],
  "orr_groups": [
@@ -1957,93 +1957,6 @@
    "document": "Pressure cylinder management Procedure"
   }
  ],
- "workstreams": [
-  {
-   "area": "Manpower",
-   "status": "Document Control, OIM, HSE, FSO",
-   "item": "Vacant positions"
-  },
-  {
-   "area": "Applications",
-   "status": "TCEAR",
-   "item": "AIMS"
-  },
-  {
-   "area": "Applications",
-   "status": "Training and UAT phase 2 completed (Plant maintenance, Inventory & Warehouse); preparing phase 3 kick-off (KPI, reports)",
-   "item": "EAM/SAP"
-  },
-  {
-   "area": "Applications",
-   "status": "Platform built (production launch); preparing test and data population",
-   "item": "HRIS"
-  },
-  {
-   "area": "Applications",
-   "status": "Phase 1 blueprint completed; platform development continuing",
-   "item": "OMS"
-  },
-  {
-   "area": "Applications",
-   "status": "ITB",
-   "item": "OSCC"
-  },
-  {
-   "area": "Applications",
-   "status": "Technical evaluation",
-   "item": "PDMS"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "No update in report",
-   "item": "Catering services"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Raise PIA, PR",
-   "item": "Crew change service to Nam Can"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Combine with DCD's contract",
-   "item": "Helicopter"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Change to contract",
-   "item": "MGO"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "ITB",
-   "item": "Supply vessel, FCB, security boat"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Combine with DCD to 2030",
-   "item": "Vessel inspection"
-  },
-  {
-   "area": "Coordination",
-   "status": "Being split into 2 procedures; parties to review and complete by 31 Oct",
-   "item": "Coordination procedure"
-  },
-  {
-   "area": "Coordination",
-   "status": "Sales gas capability 73 MMscfd (SSF) from Sep-27, rising to about 170 MMscfd (75%) by Nov-27 vs total sales gas requirement",
-   "item": "Production profile"
-  },
-  {
-   "area": "Commissioning",
-   "status": "E-house, HVAC, Crane, FM200, LQ UPS",
-   "item": "Installation, pre-com, com"
-  },
-  {
-   "area": "Commissioning",
-   "status": "Findings → punch list → close out",
-   "item": "Offshore preservation"
-  }
- ],
  "cmms": [
   {
    "actual_pct": 82.11,
@@ -2227,134 +2140,91 @@
    "permit": "UHF radio frequency license"
   }
  ],
- "readiness": [
+ "workstreams": [
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
+   "area": "Manpower",
+   "status": "Document Control, OIM, HSE, FSO",
+   "item": "Vacant positions"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
+   "area": "Applications",
+   "status": "TCEAR",
+   "item": "AIMS"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
+   "area": "Applications",
+   "status": "Training and UAT phase 2 completed (Plant maintenance, Inventory & Warehouse); preparing phase 3 kick-off (KPI, reports)",
+   "item": "EAM/SAP"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
+   "area": "Applications",
+   "status": "Platform built (production launch); preparing test and data population",
+   "item": "HRIS"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
+   "area": "Applications",
+   "status": "Phase 1 blueprint completed; platform development continuing",
+   "item": "OMS"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
+   "area": "Applications",
+   "status": "ITB",
+   "item": "OSCC"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
+   "area": "Applications",
+   "status": "Technical evaluation",
+   "item": "PDMS"
   },
   {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
-  }
- ],
- "startup_sequence": [
-  {
-   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
-   "step": 1,
-   "phase": "Preparation"
+   "area": "Logistics & services",
+   "status": "No update in report",
+   "item": "Catering services"
   },
   {
-   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
-   "step": 2,
-   "phase": "Start up CPP"
+   "area": "Logistics & services",
+   "status": "Raise PIA, PR",
+   "item": "Crew change service to Nam Can"
   },
   {
-   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
-   "step": 3,
-   "phase": "First well"
+   "area": "Logistics & services",
+   "status": "Combine with DCD's contract",
+   "item": "Helicopter"
   },
   {
-   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
-   "step": 4,
-   "phase": "Pressurize CPP"
+   "area": "Logistics & services",
+   "status": "Change to contract",
+   "item": "MGO"
   },
   {
-   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
-   "step": 5,
-   "phase": "Gas & fuel gas"
+   "area": "Logistics & services",
+   "status": "ITB",
+   "item": "Supply vessel, FCB, security boat"
   },
   {
-   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
-   "step": 6,
-   "phase": "Second well"
+   "area": "Logistics & services",
+   "status": "Combine with DCD to 2030",
+   "item": "Vessel inspection"
   },
   {
-   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
-   "step": 7,
-   "phase": "GTG to fuel gas"
+   "area": "Coordination",
+   "status": "Being split into 2 procedures; parties to review and complete by 31 Oct",
+   "item": "Coordination procedure"
   },
   {
-   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
-   "step": 8,
-   "phase": "Third well"
+   "area": "Coordination",
+   "status": "Sales gas capability 73 MMscfd (SSF) from Sep-27, rising to about 170 MMscfd (75%) by Nov-27 vs total sales gas requirement",
+   "item": "Production profile"
   },
   {
-   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
-   "step": 9,
-   "phase": "Ramp up wells"
+   "area": "Commissioning",
+   "status": "E-house, HVAC, Crane, FM200, LQ UPS",
+   "item": "Installation, pre-com, com"
   },
   {
-   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
-   "step": 10,
-   "phase": "GTC & WHRU"
-  },
-  {
-   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
-   "step": 11,
-   "phase": "Dew point"
-  },
-  {
-   "action": "Start MRU; close bypass line when gas dew point is on spec",
-   "step": 12,
-   "phase": "MRU"
-  },
-  {
-   "action": "Export gas to export gas pipeline",
-   "step": 13,
-   "phase": "Export gas"
-  },
-  {
-   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
-   "step": 14,
-   "phase": "Condensate & PW"
+   "area": "Commissioning",
+   "status": "Findings → punch list → close out",
+   "item": "Offshore preservation"
   }
  ],
  "precom_plan": [
@@ -2483,6 +2353,136 @@
    "plan_finish": "2027-02-26",
    "plan_start": "2027-01-25",
    "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
+  }
+ ],
+ "startup_sequence": [
+  {
+   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
+   "step": 1,
+   "phase": "Preparation"
+  },
+  {
+   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
+   "step": 2,
+   "phase": "Start up CPP"
+  },
+  {
+   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
+   "step": 3,
+   "phase": "First well"
+  },
+  {
+   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
+   "step": 4,
+   "phase": "Pressurize CPP"
+  },
+  {
+   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
+   "step": 5,
+   "phase": "Gas & fuel gas"
+  },
+  {
+   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
+   "step": 6,
+   "phase": "Second well"
+  },
+  {
+   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
+   "step": 7,
+   "phase": "GTG to fuel gas"
+  },
+  {
+   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
+   "step": 8,
+   "phase": "Third well"
+  },
+  {
+   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
+   "step": 9,
+   "phase": "Ramp up wells"
+  },
+  {
+   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
+   "step": 10,
+   "phase": "GTC & WHRU"
+  },
+  {
+   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
+   "step": 11,
+   "phase": "Dew point"
+  },
+  {
+   "action": "Start MRU; close bypass line when gas dew point is on spec",
+   "step": 12,
+   "phase": "MRU"
+  },
+  {
+   "action": "Export gas to export gas pipeline",
+   "step": 13,
+   "phase": "Export gas"
+  },
+  {
+   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
+   "step": 14,
+   "phase": "Condensate & PW"
+  }
+ ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
   }
  ],
  "milestones": [
@@ -5396,8 +5396,8 @@
  ],
  "meta": [
   {
-   "report_date": "2026-11-06",
-   "as_of": "2026-11-06",
+   "report_date": "2026-11-07",
+   "as_of": "2026-11-07",
    "state": "open",
    "name": "Báo cáo OPS – cập nhật liên tục",
    "report_title": "Operations Readiness Preparation",
