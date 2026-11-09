@@ -6,7 +6,6 @@
 .ops-logo { flex: none; height: 64px; width: auto; background: #ffffff; border-radius: var(--cds-radius); padding: 6px 8px; box-sizing: content-box; }
 @media (max-width: 560px) { .ops-logo { height: 44px; } }
 .ops-picker { margin-left: auto; display: flex; flex-direction: column; gap: 2px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); align-self: flex-start; }
-.ops-picker select { font: inherit; font-size: var(--cds-font-size-body); padding: 5px 8px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); color: var(--color-fg); }
 .ops-archived { margin: 0; padding: var(--cds-pad-sm) var(--cds-pad-md); border: 1px solid var(--color-warn); border-radius: var(--cds-radius); color: var(--color-fg); font-size: var(--cds-font-size-body); }
 .ops-archived a { color: inherit; font-weight: 600; }
 @media (max-width: 560px) { .ops-brand { flex-wrap: wrap; } .ops-picker { margin-left: 0; width: 100%; } }
@@ -316,6 +315,30 @@
 .ops-banner-mark { width: 6px; align-self: stretch; min-height: 22px; border-radius: 3px; background: var(--color-panel); opacity: .85; }
 .ops-banner-n { margin-left: auto; white-space: nowrap; font-size: 12.5px; font-weight: 600; letter-spacing: .02em; text-transform: none; padding: 3px 10px; border-radius: 999px; background: color-mix(in srgb, var(--color-panel) 22%, transparent); }
 @media (max-width: 560px) { .ops-card h2.ops-banner { font-size: 15px !important; gap: 8px; } .ops-banner-t { flex-basis: calc(100% - 20px); } .ops-banner-n { margin-left: 14px; } }
+.ops-cal { position: relative; }
+.ops-cal-btn { display: inline-flex; align-items: center; gap: 8px; font: inherit; font-size: var(--cds-font-size-body); padding: 5px 10px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); color: var(--color-fg); cursor: pointer; white-space: nowrap; }
+.ops-cal-btn:hover { border-color: var(--brand-line); }
+.ops-cal-btn svg { width: 15px; height: 15px; flex: none; color: var(--brand-ink); }
+.ops-cal-btn svg.chev { color: var(--color-fg-muted); }
+.ops-cal-pop { position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; width: 16.5rem; padding: 10px; background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: calc(var(--cds-radius) + 2px); box-shadow: 0 12px 32px rgba(15, 23, 42, .22); color: var(--color-fg); }
+.ops-cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; font-size: var(--cds-font-size-body); }
+.ops-cal-nav { font: inherit; font-size: 18px; line-height: 1; width: 28px; height: 28px; border: 0; border-radius: 50%; background: transparent; color: var(--color-fg); cursor: pointer; }
+.ops-cal-nav:hover:not(:disabled) { background: var(--brand-tint); }
+.ops-cal-nav:disabled { opacity: .3; cursor: default; }
+.ops-cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
+.ops-cal-grid .wd { font-size: 11px; font-weight: 600; color: var(--color-fg-muted); padding: 4px 0; }
+.ops-cal-grid .day { position: relative; font: inherit; font-size: 13px; height: 32px; border: 0; border-radius: 8px; background: var(--brand-tint); color: var(--brand-ink); font-weight: 600; cursor: pointer; }
+.ops-cal-grid .day:hover:not(:disabled) { background: var(--brand); color: #fff; }
+.ops-cal-grid .day:disabled { background: transparent; color: var(--color-fg-muted); font-weight: 400; opacity: .45; cursor: default; }
+.ops-cal-grid .day.sel { background: var(--brand); color: #fff; }
+.ops-cal-grid .day.now::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--brand-2); }
+.ops-cal-grid .day:focus-visible, .ops-cal-btn:focus-visible, .ops-cal-now:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 1px; }
+.ops-cal-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--color-border-line); font-size: 11.5px; color: var(--color-fg-muted); }
+.ops-cal-key { display: inline-flex; align-items: center; gap: 6px; }
+.ops-cal-key i { width: 12px; height: 12px; border-radius: 4px; background: var(--brand-tint); border: 1px solid var(--brand-line); }
+.ops-cal-now { font: inherit; font-size: 12px; font-weight: 600; padding: 4px 10px; border: 1px solid var(--brand-line); border-radius: 999px; background: transparent; color: var(--brand-ink); cursor: pointer; }
+.ops-cal-now:hover { background: var(--brand-tint); }
+@media (max-width: 560px) { .ops-cal-pop { left: 0; right: auto; } .ops-cal-btn { width: 100%; } .ops-cal-btn span { flex: 1; text-align: left; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -372,7 +395,14 @@
         <div class="ops-mast-actions">
           <div class="ops-picker" id="report-picker" hidden>
             <label for="report-pick" data-vi="Xem số liệu ngày">View figures of</label>
-            <select id="report-pick"></select>
+            <div class="ops-cal">
+              <button type="button" class="ops-cal-btn" id="report-pick" aria-haspopup="dialog" aria-expanded="false" aria-controls="report-cal"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span id="report-pick-text">—</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <div class="ops-cal-pop" id="report-cal" role="dialog" aria-label="Choose a saved day" hidden>
+                <div class="ops-cal-head"><button type="button" class="ops-cal-nav" id="cal-prev" aria-label="Previous month">‹</button><b id="cal-month">—</b><button type="button" class="ops-cal-nav" id="cal-next" aria-label="Next month">›</button></div>
+                <div class="ops-cal-grid" id="cal-grid"></div>
+                <div class="ops-cal-foot"><span class="ops-cal-key"><i></i><span id="cal-key">Saved day</span></span><button type="button" class="ops-cal-now" id="cal-now">Now</button></div>
+              </div>
+            </div>
           </div>
           <button class="ops-btn" id="print-btn" type="button" title="Print or save as PDF">Print / PDF</button>
         </div>
@@ -1379,20 +1409,53 @@ if (pages.includes(initial)) showPage(initial, false);
 </script>
 
 <script>
-// Report picker: lists archived reports (history/index.json) and reopens the page with ?date=.
-const pick = document.getElementById('report-pick'), L = dash.L;
+// Report picker: a calendar of saved days (history/index.json); picking one reopens the page with ?date=.
+const L = dash.L;
 const fmt = window.opsH.fmtDay;
 const day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d)); };
 if (dash.reports.length) {
+  // A month calendar instead of a long list: only days with saved figures can be picked.
   document.getElementById('report-picker').hidden = false;
-  const label = (r) => (r.from ? window.opsH.period(r.from, r.date) : fmt(day(r.date)))
-    + (r.date === dash.latestDate ? L(' · now', ' · hiện tại') : '');
-  pick.replaceChildren(...dash.reports.map((r) => new Option(label(r), r.date === dash.latestDate ? '' : r.date)));
-  pick.value = dash.archived ? dash.viewDate : '';
-  pick.addEventListener('change', () => {
-    const q = new URLSearchParams(location.search); if (pick.value) q.set('date', pick.value); else q.delete('date');
+  const saved = new Set(dash.reports.map((r) => r.date)), latest = dash.latestDate;
+  const current = dash.archived ? dash.viewDate : latest;
+  const sorted = [...saved].sort(), first = sorted[0], last = sorted.at(-1);
+  const pop = document.getElementById('report-cal'), grid = document.getElementById('cal-grid');
+  const ym = (s) => s.slice(0, 7), iso = (y, m, d) => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+  const go = (date) => {
+    const q = new URLSearchParams(location.search); if (date && date !== latest) q.set('date', date); else q.delete('date');
     location.assign(location.pathname + (q.toString() ? '?' + q : '') + location.hash);
-  });
+  };
+  document.getElementById('report-pick-text').textContent = fmt(day(current)) + (current === latest ? L(' · now', ' · hiện tại') : '');
+  document.getElementById('cal-key').textContent = L('Saved day', 'Ngày có số liệu');
+  document.getElementById('cal-now').textContent = L('Back to now', 'Về hiện tại');
+  pop.setAttribute('aria-label', L('Choose a saved day', 'Chọn ngày có số liệu'));
+  let shown = ym(current);
+  const draw = () => {
+    const [y, m] = shown.split('-').map(Number);
+    document.getElementById('cal-month').textContent = L(new Date(Date.UTC(y, m - 1, 1)).toLocaleString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' }), `Tháng ${m}/${y}`);
+    document.getElementById('cal-prev').disabled = shown <= ym(first);
+    document.getElementById('cal-next').disabled = shown >= ym(last);
+    const cells = L(['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN']).map((w) => H0('span', 'wd', w));
+    const lead = (new Date(Date.UTC(y, m - 1, 1)).getUTCDay() + 6) % 7, days = new Date(Date.UTC(y, m, 0)).getUTCDate();
+    for (let i = 0; i < lead; i++) cells.push(H0('span', 'pad', ''));
+    for (let d = 1; d <= days; d++) {
+      const date = iso(y, m, d), b = H0('button', 'day' + (date === current ? ' sel' : '') + (date === latest ? ' now' : ''), String(d));
+      b.type = 'button';
+      if (saved.has(date)) { b.title = fmt(day(date)); b.addEventListener('click', () => go(date)); } else b.disabled = true;
+      cells.push(b);
+    }
+    grid.replaceChildren(...cells);
+  };
+  const H0 = (tag, cls, text) => { const el = document.createElement(tag); el.className = cls; el.textContent = text; return el; };
+  const btn = document.getElementById('report-pick');
+  const open = (on) => { pop.hidden = !on; btn.setAttribute('aria-expanded', String(on)); if (on) { shown = ym(current); draw(); (grid.querySelector('.sel') || grid.querySelector('button:not([disabled])'))?.focus(); } };
+  btn.addEventListener('click', () => open(pop.hidden));
+  const step = (k) => { const [y, m] = shown.split('-').map(Number), dt = new Date(Date.UTC(y, m - 1 + k, 1)); shown = dt.toISOString().slice(0, 7); draw(); };
+  document.getElementById('cal-prev').addEventListener('click', () => step(-1));
+  document.getElementById('cal-next').addEventListener('click', () => step(1));
+  document.getElementById('cal-now').addEventListener('click', () => go(latest));
+  document.addEventListener('click', (ev) => { if (!pop.hidden && !ev.target.closest('.ops-cal')) open(false); });
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape' && !pop.hidden) { open(false); btn.focus(); } });
 }
 const stateEl = document.getElementById('report-state');
 if (dash.state === 'open' || dash.state === 'closed') {
