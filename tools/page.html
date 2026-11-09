@@ -278,13 +278,18 @@
 .ops-chg .tag.add { background: var(--brand-tint); color: var(--brand-ink); } .ops-chg .tag.del { background: var(--rag-r-tint); color: var(--rag-r); } .ops-chg .tag.edit { background: var(--cds-chart-grid); color: var(--color-fg-muted); }
 .ops-chg-more { font: inherit; font-size: var(--cds-font-size-caption); background: none; border: 0; padding: 0; color: var(--brand-ink); text-decoration: underline; cursor: pointer; }
 /* Page accents: each tab and its page share one colour (tab bar, card tops, KPI tiles, table headers) */
-[data-page="overview"]   { --acc-l: #2B3990; --acc-d: #8E9BF4; }
-[data-page="people"]     { --acc-l: #0E7C86; --acc-d: #4CC8C6; }
-[data-page="orr"]        { --acc-l: #5B3FB0; --acc-d: #AD97F4; }
-[data-page="procedures"] { --acc-l: #A86200; --acc-d: #EDB254; }
-[data-page="contracts"]  { --acc-l: #1565A8; --acc-d: #66B0EE; }
-[data-page="startup"]    { --acc-l: #0B8445; --acc-d: #4CD691; }
-[data-page="changes"]    { --acc-l: #A23B72; --acc-d: #E98FC1; }
+[data-page="overview"]     { --acc-l: #2B3990; --acc-d: #8E9BF4; }
+[data-page="manpower"]     { --acc-l: #0E7C86; --acc-d: #4CC8C6; }
+[data-page="training"]     { --acc-l: #C2410C; --acc-d: #F59A6B; }
+[data-page="apps"]         { --acc-l: #3949AB; --acc-d: #9FA8F5; }
+[data-page="permits"]      { --acc-l: #7C5A3A; --acc-d: #D2AE88; }
+[data-page="procedures"]   { --acc-l: #A86200; --acc-d: #EDB254; }
+[data-page="logistics"]    { --acc-l: #4D7C0F; --acc-d: #A3CF5A; }
+[data-page="contracts"]    { --acc-l: #1565A8; --acc-d: #66B0EE; }
+[data-page="coordination"] { --acc-l: #BE185D; --acc-d: #F28AB8; }
+[data-page="orr"]          { --acc-l: #5B3FB0; --acc-d: #AD97F4; }
+[data-page="startup"]      { --acc-l: #0B8445; --acc-d: #4CD691; }
+[data-page="changes"]      { --acc-l: #475569; --acc-d: #A3B1C6; }
 [data-page] { --acc: var(--acc-l); --mix: 9%; --acc-tint: color-mix(in srgb, var(--acc) var(--mix), var(--color-panel)); --acc-soft: color-mix(in srgb, var(--acc) calc(var(--mix) / 2.2), var(--color-panel)); --acc-line: color-mix(in srgb, var(--acc) 34%, var(--color-panel)); }
 :root[data-theme="dark"] [data-page] { --acc: var(--acc-d); --mix: 13%; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-page] { --acc: var(--acc-d); --mix: 13%; } }
@@ -423,11 +428,16 @@
 
   <nav class="ops-tabs" role="tablist" aria-label="Report sections">
     <button class="ops-tab" role="tab" id="tab-overview" data-page="overview" aria-selected="true">Overview</button>
-    <button class="ops-tab" role="tab" id="tab-people" data-page="people" aria-selected="false">Manpower &amp; training</button>
-    <button class="ops-tab" role="tab" id="tab-orr" data-page="orr" aria-selected="false">ORR checklist</button>
-    <button class="ops-tab" role="tab" id="tab-procedures" data-page="procedures" aria-selected="false">Procedures</button>
-    <button class="ops-tab" role="tab" id="tab-contracts" data-page="contracts" aria-selected="false">Contracts, applications &amp; permits</button>
-    <button class="ops-tab" role="tab" id="tab-startup" data-page="startup" aria-selected="false">Commissioning &amp; start-up</button>
+    <button class="ops-tab" role="tab" id="tab-manpower" data-page="manpower" aria-selected="false">1. Manpower</button>
+    <button class="ops-tab" role="tab" id="tab-training" data-page="training" aria-selected="false">2. Training</button>
+    <button class="ops-tab" role="tab" id="tab-apps" data-page="apps" aria-selected="false">3. Applications</button>
+    <button class="ops-tab" role="tab" id="tab-permits" data-page="permits" aria-selected="false">4. Certificates &amp; licenses</button>
+    <button class="ops-tab" role="tab" id="tab-procedures" data-page="procedures" aria-selected="false">5. Procedures</button>
+    <button class="ops-tab" role="tab" id="tab-logistics" data-page="logistics" aria-selected="false">6. Logistics &amp; services</button>
+    <button class="ops-tab" role="tab" id="tab-contracts" data-page="contracts" aria-selected="false">7. Contracts</button>
+    <button class="ops-tab" role="tab" id="tab-coordination" data-page="coordination" aria-selected="false">8. Coordination</button>
+    <button class="ops-tab" role="tab" id="tab-orr" data-page="orr" aria-selected="false">9. ORR checklist</button>
+    <button class="ops-tab" role="tab" id="tab-startup" data-page="startup" aria-selected="false">10. Preservation &amp; commissioning</button>
     <button class="ops-tab" role="tab" id="tab-changes" data-page="changes" aria-selected="false">Changes</button>
   </nav>
 
@@ -487,6 +497,10 @@
         <ol class="ops-ms" id="milestones" data-source="milestones"></ol>
       </div>
     </div>
+  </section>
+
+  <!-- 1 MANPOWER -->
+  <section class="ops-page" id="manpower" data-page="manpower" hidden>
     <div class="ops-grid">
       <div class="ops-card ops-wide" id="card-manpower">
         <div class="ops-cardhead">
@@ -499,11 +513,6 @@
         <div class="ops-legend" id="mp-legend"></div>
         <div class="ops-chart dash-skeleton" id="chart-manpower" data-source="manpower"></div>
       </div>
-      <div class="ops-card" id="card-orr-curve">
-        <h2>OPS teams ORR checklist vs plan</h2>
-        <p class="ops-note">Weighted % complete by month. Dashed line is plan, solid line is actual.</p>
-        <div class="ops-chart dash-skeleton" id="chart-orr-curve" data-source="orr_curve"></div>
-      </div>
       <div class="ops-card" id="card-staffing">
         <h2>Current staffing</h2>
         <p class="ops-note">Filled / required positions at the report date.</p>
@@ -513,31 +522,38 @@
     </div>
   </section>
 
-  <!-- PEOPLE -->
-  <section class="ops-page" id="people" data-page="people" hidden>
+  <!-- 2 TRAINING -->
+  <section class="ops-page" id="training" data-page="training" hidden>
+    <h2 class="ops-sec-title">2.1 Training matrix</h2>
     <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-hse-matrix">
+        <div class="ops-cardhead"><div>
+          <h2>HSE training matrix</h2>
+          <p class="ops-note">Which HSE courses each position needs (PQ-MS-HSE-GDL-001-U01). Choose a position to list its courses.</p>
+        </div>
+        <select id="hse-role" aria-label="Position"><option value="">All positions</option></select></div>
+        <div class="ops-legend" id="hse-legend"></div>
+        <p class="ops-note" id="hse-role-sum" hidden></p>
+        <div class="ops-tablebox ops-matrixbox" id="hse-matrix" data-source="hse_matrix"></div>
+      </div>
       <div class="ops-card" id="card-mandatory">
         <h2>Mandatory training – PQPOC offshore staff</h2>
         <p class="ops-note">Courses completed vs required by the HSE training matrix.</p>
         <div class="ops-bars" id="bars-mandatory" data-source="mandatory mandatory_summary"></div>
       </div>
-      <div class="ops-card" id="card-cbta-dev">
+      <div class="ops-card ops-wide" id="card-vendor">
+        <h2>Vendor training schedule</h2>
+        <p class="ops-note">Courses by month. Past months are dimmed.</p>
+        <div class="ops-months" id="vendor-months" data-source="vendor_training"></div>
+      </div>
+    </div>
+    <h2 class="ops-sec-title">2.2 CBTA development</h2>
+    <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-cbta-dev">
         <h2>CBTA module development</h2>
         <p class="ops-note">Modules by status: completed, in review, in development.</p>
         <div class="ops-legend" id="cbta-legend"></div>
         <div class="ops-bars" id="bars-cbta" data-source="cbta cbta_progress"></div>
-      </div>
-      <div class="ops-card ops-wide" id="card-cbta-table">
-        <h2>CBTA by team: development and assessment</h2>
-        <p class="ops-note">Module development and theory / OJT assessment progress for each team.</p>
-        <div class="ops-tablebox">
-          <table id="table-cbta" data-source="cbta" data-row-key="platform,team">
-            <thead><tr>
-              <th data-field="platform">Platform</th><th data-field="team">Team</th><th class="num" data-field="modules">Modules</th><th class="num" data-field="completed">Completed</th><th class="num hide-sm" data-field="developing">In development</th><th class="num hide-sm" data-field="review">In review</th><th class="num" data-source="cbta_progress" data-field="progress_pct">% developed</th><th class="num" data-field="theory_pct">% theory assessed</th><th class="num hide-sm" data-field="ojt_modules">OJT modules</th><th class="num" data-field="ojt_pct">% OJT</th>
-            </tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
       </div>
       <div class="ops-card ops-wide" id="card-cbta-modules">
         <h2>CBTA module register</h2>
@@ -555,64 +571,50 @@
           </table>
         </div>
       </div>
-      <div class="ops-card ops-wide" id="card-vendor">
-        <h2>Vendor training schedule</h2>
-        <p class="ops-note">Courses by month. Past months are dimmed.</p>
-        <div class="ops-months" id="vendor-months" data-source="vendor_training"></div>
-      </div>
-      <div class="ops-card ops-wide" id="card-hse-matrix">
-        <div class="ops-cardhead"><div>
-          <h2>HSE training matrix</h2>
-          <p class="ops-note">Which HSE courses each position needs (PQ-MS-HSE-GDL-001-U01). Choose a position to list its courses.</p>
+    </div>
+    <h2 class="ops-sec-title">2.3 Training and assessment progress</h2>
+    <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-cbta-table">
+        <h2>CBTA by team: development and assessment</h2>
+        <p class="ops-note">Module development and theory / OJT assessment progress for each team.</p>
+        <div class="ops-tablebox">
+          <table id="table-cbta" data-source="cbta" data-row-key="platform,team">
+            <thead><tr>
+              <th data-field="platform">Platform</th><th data-field="team">Team</th><th class="num" data-field="modules">Modules</th><th class="num" data-field="completed">Completed</th><th class="num hide-sm" data-field="developing">In development</th><th class="num hide-sm" data-field="review">In review</th><th class="num" data-source="cbta_progress" data-field="progress_pct">% developed</th><th class="num" data-field="theory_pct">% theory assessed</th><th class="num hide-sm" data-field="ojt_modules">OJT modules</th><th class="num" data-field="ojt_pct">% OJT</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
         </div>
-        <select id="hse-role" aria-label="Position"><option value="">All positions</option></select></div>
-        <div class="ops-legend" id="hse-legend"></div>
-        <p class="ops-note" id="hse-role-sum" hidden></p>
-        <div class="ops-tablebox ops-matrixbox" id="hse-matrix" data-source="hse_matrix"></div>
       </div>
     </div>
   </section>
 
-  <!-- ORR -->
-  <section class="ops-page" id="orr" data-page="orr" hidden>
-    <div class="ops-tiles">
-      <div class="ops-tile"><span class="ops-tile-label">Whole checklist · <span data-source="orr_groups" data-where="group=TOTAL" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=TOTAL" data-field="progress_pct">—</span></div>
-      <div class="ops-tile"><span class="ops-tile-label">People · <span data-source="orr_groups" data-where="group=PEOPLE" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PEOPLE" data-field="progress_pct">—</span></div>
-      <div class="ops-tile"><span class="ops-tile-label">Plant · <span data-source="orr_groups" data-where="group=PLANT" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PLANT" data-field="progress_pct">—</span></div>
-      <div class="ops-tile"><span class="ops-tile-label">Process · <span data-source="orr_groups" data-where="group=PROCESS" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PROCESS" data-field="progress_pct">—</span></div>
-    </div>
+  <!-- 3 APPLICATIONS -->
+  <section class="ops-page" id="apps" data-page="apps" hidden>
     <div class="ops-grid">
-      <div class="ops-card" id="card-orr-teams">
-        <h2>Progress by OPS team · <span class="ops-orr-month">—</span></h2>
-        <p class="ops-note">Bar is actual %, black tick is plan %. The figure on the right is the gap in percentage points.</p>
-        <div class="ops-bars" id="bars-orr-teams" data-source="orr_teams orr_team_gap"></div>
+      <div class="ops-card ops-wide" id="card-apps">
+        <h2>Applications</h2>
+        <p class="ops-note">Status of operations software systems.</p>
+        <ul class="ops-list" id="list-apps" data-source="workstreams"></ul>
+        <h3>CMMS (OA) – actual vs plan %</h3>
+        <div class="ops-bars" id="bars-cmms" data-source="cmms"></div>
       </div>
-      <div class="ops-card" id="card-orr-weights">
-        <h2>Weight and workload by team</h2>
-        <p class="ops-note">Total and completed activities; weights roll up into the overall %.</p>
+    </div>
+  </section>
+
+  <!-- 4 CERTIFICATES AND LICENSES -->
+  <section class="ops-page" id="permits" data-page="permits" hidden>
+    <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-permits">
+        <h2>Offshore platform permit register</h2>
+        <p class="ops-note">Permits, reference number, issuing authority or responsible party, issue and expiry dates, and status.</p>
         <div class="ops-tablebox">
-          <table id="table-orr-teams" data-source="orr_teams" data-row-key="team">
-            <thead><tr><th data-field="team">Team</th><th class="num" data-field="weight_pct">Weight</th><th class="num" data-field="total_activities">Activities</th><th class="num" data-field="completed">Completed</th><th class="num" data-field="plan_end_pct">Final plan</th></tr></thead>
+          <table id="table-permits" data-source="permits" data-row-key="permit">
+            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="ref_no">Ref. no.</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority / responsible</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
-      </div>
-      <div class="ops-card ops-wide" id="card-orr-plan">
-        <h2>Plan by team to June 2027</h2>
-        <p class="ops-note">Cumulative plan % for each team by month, with the actual % below: green when on or ahead of plan, red when behind.</p>
-        <div class="ops-tablebox">
-          <table class="ops-plan" id="table-orr-plan" data-source="orr_team_plan"><thead></thead><tbody></tbody></table>
-        </div>
-      </div>
-      <div class="ops-card ops-wide" id="card-orr-elements">
-        <h2>Checklist by element (People · Plant · Process)</h2>
-        <p class="ops-note">Sorted from lowest %. Elements below 50% are shown in red.</p>
-        <div class="ops-tablebox">
-          <table id="table-orr-elements" data-source="orr_elements" data-row-key="code">
-            <thead><tr><th data-field="code">Code</th><th data-field="element">Element</th><th class="hide-sm" data-field="group">Group</th><th class="num" data-field="items">Items</th><th data-field="progress_pct">Progress</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
+        <p class="ops-note" id="permit-basis" hidden></p>
       </div>
     </div>
   </section>
@@ -653,7 +655,18 @@
     </div>
   </section>
 
-  <!-- CONTRACTS / APPS / PERMITS -->
+  <!-- 6 LOGISTICS AND SERVICES -->
+  <section class="ops-page" id="logistics" data-page="logistics" hidden>
+    <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-logistics">
+        <h2>Logistics and services</h2>
+        <p class="ops-note">Contracting route and next step.</p>
+        <ul class="ops-list" id="list-logistics" data-source="workstreams"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 CONTRACTS -->
   <section class="ops-page" id="contracts" data-page="contracts" hidden>
     <div class="ops-grid">
       <div class="ops-card" id="card-pr">
@@ -667,29 +680,20 @@
         <p class="ops-note"><span data-source="packages_summary" data-field="total">—</span> packages in preparation, by status, priority and expected SCR timing.</p>
         <div id="packages" data-source="packages_no_pr"></div>
       </div>
-      <div class="ops-card" id="card-apps">
-        <h2>Applications</h2>
-        <p class="ops-note">Status of operations software systems.</p>
-        <ul class="ops-list" id="list-apps" data-source="workstreams"></ul>
-        <h3>CMMS (OA) – actual vs plan %</h3>
-        <div class="ops-bars" id="bars-cmms" data-source="cmms"></div>
+    </div>
+  </section>
+
+  <!-- 8 COORDINATION -->
+  <section class="ops-page" id="coordination" data-page="coordination" hidden>
+    <h2 class="ops-sec-title">8.1 Coordination procedure</h2>
+    <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-coordination">
+        <h2>Coordination procedure</h2>
+        <ul class="ops-list" id="list-coord" data-source="workstreams"></ul>
       </div>
-      <div class="ops-card" id="card-logistics">
-        <h2>Logistics, services &amp; coordination</h2>
-        <p class="ops-note">Contracting route and next step.</p>
-        <ul class="ops-list" id="list-logistics" data-source="workstreams"></ul>
-      </div>
-      <div class="ops-card ops-wide" id="card-permits">
-        <h2>Offshore platform permit register</h2>
-        <p class="ops-note">Permits, reference number, issuing authority or responsible party, issue and expiry dates, and status.</p>
-        <div class="ops-tablebox">
-          <table id="table-permits" data-source="permits" data-row-key="permit">
-            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="ref_no">Ref. no.</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority / responsible</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-        <p class="ops-note" id="permit-basis" hidden></p>
-      </div>
+    </div>
+    <h2 class="ops-sec-title">8.2 Production profile</h2>
+    <div class="ops-grid">
       <div class="ops-card ops-wide" id="card-gas-profile">
         <h2>Production profile: sales gas capability vs requirement</h2>
         <p class="ops-note" id="gas-profile-note">—</p>
@@ -701,9 +705,71 @@
     </div>
   </section>
 
-  <!-- STARTUP -->
-  <section class="ops-page" id="startup" data-page="startup" hidden>
+
+  <!-- ORR -->
+  <section class="ops-page" id="orr" data-page="orr" hidden>
+    <div class="ops-tiles">
+      <div class="ops-tile"><span class="ops-tile-label">Whole checklist · <span data-source="orr_groups" data-where="group=TOTAL" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=TOTAL" data-field="progress_pct">—</span></div>
+      <div class="ops-tile"><span class="ops-tile-label">People · <span data-source="orr_groups" data-where="group=PEOPLE" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PEOPLE" data-field="progress_pct">—</span></div>
+      <div class="ops-tile"><span class="ops-tile-label">Plant · <span data-source="orr_groups" data-where="group=PLANT" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PLANT" data-field="progress_pct">—</span></div>
+      <div class="ops-tile"><span class="ops-tile-label">Process · <span data-source="orr_groups" data-where="group=PROCESS" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PROCESS" data-field="progress_pct">—</span></div>
+    </div>
     <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-orr-curve">
+        <h2>OPS teams ORR checklist vs plan</h2>
+        <p class="ops-note">Weighted % complete by month. Dashed line is plan, solid line is actual.</p>
+        <div class="ops-chart dash-skeleton" id="chart-orr-curve" data-source="orr_curve"></div>
+      </div>
+      <div class="ops-card" id="card-orr-teams">
+        <h2>Progress by OPS team · <span class="ops-orr-month">—</span></h2>
+        <p class="ops-note">Bar is actual %, black tick is plan %. The figure on the right is the gap in percentage points.</p>
+        <div class="ops-bars" id="bars-orr-teams" data-source="orr_teams orr_team_gap"></div>
+      </div>
+      <div class="ops-card" id="card-orr-weights">
+        <h2>Weight and workload by team</h2>
+        <p class="ops-note">Total and completed activities; weights roll up into the overall %.</p>
+        <div class="ops-tablebox">
+          <table id="table-orr-teams" data-source="orr_teams" data-row-key="team">
+            <thead><tr><th data-field="team">Team</th><th class="num" data-field="weight_pct">Weight</th><th class="num" data-field="total_activities">Activities</th><th class="num" data-field="completed">Completed</th><th class="num" data-field="plan_end_pct">Final plan</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="ops-card ops-wide" id="card-orr-plan">
+        <h2>Plan by team to June 2027</h2>
+        <p class="ops-note">Cumulative plan % for each team by month, with the actual % below: green when on or ahead of plan, red when behind.</p>
+        <div class="ops-tablebox">
+          <table class="ops-plan" id="table-orr-plan" data-source="orr_team_plan"><thead></thead><tbody></tbody></table>
+        </div>
+      </div>
+      <div class="ops-card ops-wide" id="card-orr-elements">
+        <h2>Checklist by element (People · Plant · Process)</h2>
+        <p class="ops-note">Sorted from lowest %. Elements below 50% are shown in red.</p>
+        <div class="ops-tablebox">
+          <table id="table-orr-elements" data-source="orr_elements" data-row-key="code">
+            <thead><tr><th data-field="code">Code</th><th data-field="element">Element</th><th class="hide-sm" data-field="group">Group</th><th class="num" data-field="items">Items</th><th data-field="progress_pct">Progress</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 PRESERVATION, FAT, INSTALLATION, PRE-COM, COMMISSIONING -->
+  <section class="ops-page" id="startup" data-page="startup" hidden>
+    <h2 class="ops-sec-title">10.1 Preservation</h2>
+    <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-commissioning">
+        <h2>Preservation: status</h2>
+        <ul class="ops-list" id="list-com" data-source="workstreams"></ul>
+      </div>
+    </div>
+    <h2 class="ops-sec-title">10.2 Installation, pre-com, commissioning</h2>
+    <div class="ops-grid">
+      <div class="ops-card ops-wide" id="card-installation">
+        <h2>Installation, pre-com &amp; commissioning: status</h2>
+        <ul class="ops-list" id="list-com-inst" data-source="workstreams"></ul>
+      </div>
       <div class="ops-card ops-wide" id="card-precom">
         <div class="ops-cardhead"><div>
           <h2>CPP pre-commissioning master plan (Train 1)</h2>
@@ -711,11 +777,7 @@
         </div></div>
         <div class="ops-gantt" id="gantt" data-source="precom_plan"></div>
       </div>
-      <div class="ops-card" id="card-commissioning">
-        <h2>Preservation, installation &amp; commissioning</h2>
-        <ul class="ops-list" id="list-com" data-source="workstreams"></ul>
-      </div>
-      <div class="ops-card" id="card-startup-seq">
+      <div class="ops-card ops-wide" id="card-startup-seq">
         <h2>CPP start-up sequence</h2>
         <p class="ops-note">Summarised from the CPP start-up block diagram.</p>
         <ol class="ops-steps" id="steps" data-source="startup_sequence"></ol>
@@ -894,9 +956,11 @@ H.bar = (label, frac, color, val, tickFrac) => {
 const H = window.opsH, L = dash.L, D = dash.D;
 let mpKey = 'total';
 let currentPage = 'overview';
-const pages = ['overview', 'people', 'orr', 'procedures', 'contracts', 'startup', 'changes'];
+const pages = ['overview', 'manpower', 'training', 'apps', 'permits', 'procedures', 'logistics', 'contracts', 'coordination', 'orr', 'startup', 'changes'];
+const OLD_PAGES = { people: 'training' }; // links saved before the tabs followed the report's sections
 
 function showPage(p, push) {
+  p = OLD_PAGES[p] || p;
   if (!pages.includes(p)) return;
   currentPage = p;
   document.querySelectorAll('.ops-tab').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.page === p)));
@@ -1319,11 +1383,17 @@ function listInto(id, rows) {
 }
 function drawWorkstreams() {
   const d = dash.data('workstreams');
-  ['list-apps', 'list-logistics', 'list-com'].forEach((id) => { const el = document.getElementById(id); if (d.status !== 'ok') el.replaceChildren(); });
-  if (d.status !== 'ok') return;
-  listInto('list-apps', d.data.filter((r) => r.area === 'Applications'));
-  listInto('list-logistics', d.data.filter((r) => r.area === 'Logistics & services' || r.area === 'Coordination'));
-  listInto('list-com', d.data.filter((r) => r.area === 'Commissioning'));
+  // Each list shows its own rows; the production profile row is the note under 8.2, and commissioning splits
+  // into preservation (10.1) and the rest (10.2).
+  const pres = (r) => /preserv/i.test(r.item || '');
+  const lists = {
+    'list-apps': (r) => r.area === 'Applications',
+    'list-logistics': (r) => r.area === 'Logistics & services',
+    'list-coord': (r) => r.area === 'Coordination' && r.item !== 'Production profile',
+    'list-com': (r) => r.area === 'Commissioning' && pres(r),
+    'list-com-inst': (r) => r.area === 'Commissioning' && !pres(r),
+  };
+  Object.entries(lists).forEach(([id, keep]) => { if (d.status === 'ok') listInto(id, d.data.filter(keep)); else document.getElementById(id).replaceChildren(); });
 }
 
 function drawCmms() {
@@ -1405,16 +1475,20 @@ function drawSteps() {
 
 function draw() {
   drawKpis();
-  if (currentPage === 'overview') { drawManpower(); drawOrrCurve(); drawStaffing(); }
-  if (currentPage === 'people') { drawMandatory(); drawCbta(); drawCbtaModules(); drawVendor(); drawHseMatrix(); }
-  if (currentPage === 'orr') { drawOrrTeams(); drawOrrPlan(); drawOrrElements(); }
+  if (currentPage === 'manpower') { drawManpower(); drawStaffing(); }
+  if (currentPage === 'training') { drawHseMatrix(); drawMandatory(); drawVendor(); drawCbta(); drawCbtaModules(); }
+  if (currentPage === 'apps') { drawWorkstreams(); drawCmms(); }
+  if (currentPage === 'permits') drawPermits();
   if (currentPage === 'procedures') drawProcedures();
-  if (currentPage === 'contracts') { drawPr(); drawPackages(); drawWorkstreams(); drawCmms(); drawPermits(); drawGasProfile(); }
-  if (currentPage === 'startup') { drawGantt(); drawWorkstreams(); drawSteps(); }
+  if (currentPage === 'logistics') drawWorkstreams();
+  if (currentPage === 'contracts') { drawPr(); drawPackages(); }
+  if (currentPage === 'coordination') { drawWorkstreams(); drawGasProfile(); }
+  if (currentPage === 'orr') { drawOrrCurve(); drawOrrTeams(); drawOrrPlan(); drawOrrElements(); }
+  if (currentPage === 'startup') { drawWorkstreams(); drawGantt(); drawSteps(); }
 }
 dash.onData(draw);
 const initial = location.hash.slice(1);
-if (pages.includes(initial)) showPage(initial, false);
+if (pages.includes(OLD_PAGES[initial] || initial)) showPage(initial, false);
 </script>
 
 <script>
@@ -1557,9 +1631,9 @@ function rag() {
   const orrGap = m.orr != null && m.orrPlan != null ? m.orr - m.orrPlan : null;
   return {
     'Manpower': { s: lvl(mpPct, 0.9, 0.75), why: `<em>${m.manpower ?? '—'} / ${m.manpowerPlan ?? '—'}</em> ` + L(`people · ${pctTxt(mpPct)} of plan`, `người · ${pctTxt(mpPct)} kế hoạch`),
-      rule: L('Green ≥ 90% of plan, amber ≥ 75%', 'Xanh ≥ 90% kế hoạch, vàng ≥ 75%'), tab: 'overview' },
+      rule: L('Green ≥ 90% of plan, amber ≥ 75%', 'Xanh ≥ 90% kế hoạch, vàng ≥ 75%'), tab: 'manpower' },
     'Training & Competence': { s: lvl(m.mandatory, 0.8, 0.5), why: L(`Mandatory <em>${pctTxt(m.mandatory)}</em> · CBTA developed ${pctTxt(m.cbta)}`, `Bắt buộc <em>${pctTxt(m.mandatory)}</em> · CBTA đã biên soạn ${pctTxt(m.cbta)}`),
-      rule: L('Mandatory training: green ≥ 80%, amber ≥ 50%', 'Đào tạo bắt buộc: xanh ≥ 80%, vàng ≥ 50%'), tab: 'people' },
+      rule: L('Mandatory training: green ≥ 80%, amber ≥ 50%', 'Đào tạo bắt buộc: xanh ≥ 80%, vàng ≥ 50%'), tab: 'training' },
     'ORR Checklist': { s: lvl(orrGap, 0, -5), why: `<em>${p1(m.orr)}</em> ` + L('vs plan', 'so với KH') + ` ${p1(m.orrPlan)} (${ptsTxt(orrGap)})`,
       rule: L('Green on or ahead of plan, amber up to 5 pts behind', 'Xanh khi đạt hoặc vượt kế hoạch, vàng khi chậm tối đa 5 điểm'), tab: 'orr' },
     'Procedures': { s: lvl(m.procedures, 0.95, 0.85), why: `<em>${pctTxt(m.procedures)}</em> ` + L('average completion', 'hoàn thành trung bình') + ` · ${rows('cur', 'procedures').filter((r) => r.issued !== 'Yes').length} ` + L('not issued', 'chưa ban hành'),
@@ -1568,9 +1642,9 @@ function rag() {
       rule: L('Green no late PR, amber 1–2 late', 'Xanh khi không có PR trễ, vàng khi trễ 1–2'), tab: 'contracts' },
     'Permits & Licences': { s: expired ? 'r' : (soon || waiting) ? 'a' : permits.length ? 'g' : 'n',
       why: (expired ? `<em>${expired}</em> ` + L('expired', 'đã hết hạn') + ' · ' : '') + `<em>${waiting}</em> ` + L(`waiting · ${soon} expiring ≤ 6 months`, `đang chờ · ${soon} hết hạn trong ≤ 6 tháng`),
-      rule: L('Red if any expired, amber if waiting or expiring within 6 months', 'Đỏ nếu có giấy phép hết hạn, vàng nếu đang chờ hoặc hết hạn trong 6 tháng'), tab: 'contracts' },
+      rule: L('Red if any expired, amber if waiting or expiring within 6 months', 'Đỏ nếu có giấy phép hết hạn, vàng nếu đang chờ hoặc hết hạn trong 6 tháng'), tab: 'permits' },
     'Applications & Systems': { s: lvl(cmGap, 0, -5), why: L('CMMS worst gap ', 'CMMS chênh lệch lớn nhất ') + `<em>${ptsTxt(cmGap)}</em> ` + L('vs plan', 'so với KH'),
-      rule: L('CMMS: green on plan, amber up to 5 pts behind', 'CMMS: xanh khi đúng kế hoạch, vàng khi chậm tối đa 5 điểm'), tab: 'contracts' },
+      rule: L('CMMS: green on plan, amber up to 5 pts behind', 'CMMS: xanh khi đúng kế hoạch, vàng khi chậm tối đa 5 điểm'), tab: 'apps' },
     'Commissioning & Start-up': { s: pc.length ? lvl(pcLate, 0, 2, false) : 'n', why: `<em>${pcLate}</em> ` + L('pre-com activities past planned finish', 'hoạt động pre-com quá ngày kết thúc kế hoạch'),
       rule: L('Green none overdue, amber 1–2 overdue', 'Xanh khi không có hạng mục quá hạn, vàng khi quá hạn 1–2'), tab: 'startup' },
   };
@@ -1600,7 +1674,7 @@ function drawAttention() {
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const m = metrics('cur');
   if (m.manpower != null && m.manpowerPlan && m.manpower / m.manpowerPlan < 0.75) add('r', L(`Manpower at <b>${d3.format('.0%')(m.manpower / m.manpowerPlan)}</b> of plan — <b>${m.manpowerPlan - m.manpower}</b> people short`,
-    `Nhân sự đạt <b>${d3.format('.0%')(m.manpower / m.manpowerPlan)}</b> kế hoạch — thiếu <b>${m.manpowerPlan - m.manpower}</b> người`), 'overview');
+    `Nhân sự đạt <b>${d3.format('.0%')(m.manpower / m.manpowerPlan)}</b> kế hoạch — thiếu <b>${m.manpowerPlan - m.manpower}</b> người`), 'manpower');
   d3.rollups(rows('cur', 'pr_pipeline').filter((r) => r.status === 'Late'), (v) => d3.sum(v, (r) => r.count), (r) => r.stage)
     .forEach(([stage, n]) => add('r', L(`<b>${n}</b> PR late at stage <b>${esc(stage)}</b>`, `<b>${n}</b> PR trễ hạn ở bước <b>${esc(D(stage))}</b>`), 'contracts'));
   rows('cur', 'precom_plan').filter((r) => r.plan_finish && !r.actual_finish && H.day(r.plan_finish) < R)
@@ -1611,9 +1685,9 @@ function drawAttention() {
     else if (!r.completion_pct) add('a', L('Procedure not started: ', 'Quy trình chưa bắt đầu: ') + `<b>${esc((r.category === 'HSE' ? 'HSE' : L('General operation', 'Vận hành chung')) + ' · ' + L('No. ', 'STT ') + String(r.id ?? '').replace(/^(HSE|GEN)-0*/, ''))}</b> ${esc(r.document)} (` + L('due ', 'hạn ') + `${esc(r.expected)})`, 'procedures');
   });
   rows('cur', 'permits').forEach((p) => {
-    if (p.expiry_date && H.day(p.expiry_date) < R) add('r', L('Permit expired: ', 'Giấy phép đã hết hạn: ') + `<b>${esc(p.permit)}</b> (${H.fmtDay(H.day(p.expiry_date))})`, 'contracts');
-    else if (p.expiry_date && (H.day(p.expiry_date) - R) / DAY <= 180) add('a', L('Permit expires ', 'Giấy phép hết hạn ngày ') + `${H.fmtDay(H.day(p.expiry_date))}: <b>${esc(p.permit)}</b>`, 'contracts');
-    else if (/waiting/i.test(p.status || '')) add('a', L('Permit pending: ', 'Giấy phép đang chờ: ') + `<b>${esc(p.permit)}</b> — ${esc(D(p.status))}`, 'contracts');
+    if (p.expiry_date && H.day(p.expiry_date) < R) add('r', L('Permit expired: ', 'Giấy phép đã hết hạn: ') + `<b>${esc(p.permit)}</b> (${H.fmtDay(H.day(p.expiry_date))})`, 'permits');
+    else if (p.expiry_date && (H.day(p.expiry_date) - R) / DAY <= 180) add('a', L('Permit expires ', 'Giấy phép hết hạn ngày ') + `${H.fmtDay(H.day(p.expiry_date))}: <b>${esc(p.permit)}</b>`, 'permits');
+    else if (/waiting/i.test(p.status || '')) add('a', L('Permit pending: ', 'Giấy phép đang chờ: ') + `<b>${esc(p.permit)}</b> — ${esc(D(p.status))}`, 'permits');
   });
   rows('cur', 'orr_teams').forEach((t) => {
     const g = (t.actual_pct ?? 0) - (t.plan_pct ?? 0);
@@ -1623,7 +1697,7 @@ function drawAttention() {
   rows('cur', 'orr_elements').filter((e) => (e.progress_pct ?? 0) < 50).forEach((e) => add((e.progress_pct ?? 0) < 25 ? 'r' : 'a',
     L('ORR element ', 'Hạng mục ORR ') + `<b>${esc(e.code)}</b> ${esc(e.element)} ` + L('at', 'đạt') + ` <b>${H.f1(e.progress_pct ?? 0).replace(/[.,]0$/, '')}%</b>`, 'orr'));
   rows('cur', 'mandatory').filter((r) => r.planned && r.earned / r.planned < 0.3).forEach((r) => add('r',
-    L('Mandatory training ', 'Đào tạo bắt buộc ') + `<b>${esc(r.team)}</b> ` + L('at', 'đạt') + ` <b>${d3.format('.0%')(r.earned / r.planned)}</b>`, 'people'));
+    L('Mandatory training ', 'Đào tạo bắt buộc ') + `<b>${esc(r.team)}</b> ` + L('at', 'đạt') + ` <b>${d3.format('.0%')(r.earned / r.planned)}</b>`, 'training'));
   items.sort((a, b) => (a.sev === b.sev ? 0 : a.sev === 'r' ? -1 : 1));
   const ul = document.getElementById('attention');
   const red = items.filter((i) => i.sev === 'r').length;
@@ -1727,15 +1801,15 @@ window.addEventListener('afterprint', () => { if (printPage) goTab(printPage); }
 const H = window.opsH, L = dash.L, D = dash.D;
 const AREAS = [ // [table, area title EN, VI, tab]
   ['readiness', 'Readiness status', 'Trạng thái tổng thể', 'overview'], ['milestones', 'Key milestones', 'Mốc tiến độ', 'overview'],
-  ['manpower', 'Manpower by month', 'Nhân sự theo tháng', 'overview'], ['staffing', 'Current staffing', 'Định biên', 'overview'],
-  ['orr_curve', 'ORR by month', 'ORR theo tháng', 'overview'],
-  ['mandatory', 'Mandatory training', 'Đào tạo bắt buộc', 'people'], ['cbta', 'CBTA', 'CBTA', 'people'], ['vendor_training', 'Vendor training', 'Đào tạo vendor', 'people'],
-  ['cbta_modules', 'CBTA modules', 'Module CBTA', 'people'], ['hse_matrix', 'HSE training matrix', 'Ma trận đào tạo HSE', 'people'],
+  ['manpower', 'Manpower by month', 'Nhân sự theo tháng', 'manpower'], ['staffing', 'Current staffing', 'Định biên', 'manpower'],
+  ['orr_curve', 'ORR by month', 'ORR theo tháng', 'orr'],
+  ['mandatory', 'Mandatory training', 'Đào tạo bắt buộc', 'training'], ['cbta', 'CBTA', 'CBTA', 'training'], ['vendor_training', 'Vendor training', 'Đào tạo vendor', 'training'],
+  ['cbta_modules', 'CBTA modules', 'Module CBTA', 'training'], ['hse_matrix', 'HSE training matrix', 'Ma trận đào tạo HSE', 'training'],
   ['orr_teams', 'ORR by team', 'ORR theo team', 'orr'], ['orr_groups', 'ORR groups', 'ORR tổng nhóm', 'orr'], ['orr_elements', 'ORR elements', 'ORR hạng mục', 'orr'],
   ['orr_team_plan', 'ORR plan by team', 'ORR kế hoạch theo team', 'orr'],
   ['procedures', 'Procedures', 'Quy trình', 'procedures'],
-  ['pr_pipeline', 'PRs in progress', 'PR đang xử lý', 'contracts'], ['packages_no_pr', 'Packages without PR', 'Gói chưa có PR', 'contracts'], ['cmms', 'CMMS', 'CMMS', 'contracts'],
-  ['workstreams', 'Workstreams', 'Trạng thái công việc', 'contracts'], ['permits', 'Permits', 'Giấy phép', 'contracts'],
+  ['pr_pipeline', 'PRs in progress', 'PR đang xử lý', 'contracts'], ['packages_no_pr', 'Packages without PR', 'Gói chưa có PR', 'contracts'], ['cmms', 'CMMS', 'CMMS', 'apps'],
+  ['workstreams', 'Workstreams', 'Trạng thái công việc', 'apps'], ['permits', 'Permits', 'Giấy phép', 'permits'],
   ['precom_plan', 'Pre-commissioning', 'Pre-com', 'startup'], ['startup_sequence', 'Start-up sequence', 'Trình tự khởi động', 'startup'],
 ];
 const KEYS = {
