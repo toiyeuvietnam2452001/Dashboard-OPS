@@ -70,7 +70,7 @@
   "Key milestones": "Mốc tiến độ chính",
   "Plan dates from the milestones table. Dates still to be confirmed show as TBC.": "Ngày kế hoạch lấy từ bảng mốc tiến độ. Mốc chưa có ngày hiển thị là “Chưa chốt”.",
   "Manpower ramp-up: plan vs actual": "Tăng cường nhân sự: kế hoạch và thực tế",
-  "Headcount by month. Dashed line is plan; the vertical marker is the report date.": "Số người theo tháng. Đường đứt nét là kế hoạch; vạch dọc là ngày báo cáo.",
+  "Headcount by month. Dashed line is plan; the vertical marker is the report date. A month not yet reported keeps the latest actual (dotted).": "Số người theo tháng. Đường đứt nét là kế hoạch; vạch dọc là ngày báo cáo. Tháng chưa cập nhật giữ số thực tế gần nhất (nét chấm).",
   "Staff group": "Nhóm nhân sự",
   "Total": "Tổng",
   "Onshore": "Trên bờ",

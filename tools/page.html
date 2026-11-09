@@ -505,7 +505,7 @@
       <div class="ops-card ops-wide" id="card-manpower">
         <div class="ops-cardhead">
           <div><h2>Manpower ramp-up: plan vs actual</h2>
-          <p class="ops-note">Headcount by month. Dashed line is plan; the vertical marker is the report date.</p></div>
+          <p class="ops-note">Headcount by month. Dashed line is plan; the vertical marker is the report date. A month not yet reported keeps the latest actual (dotted).</p></div>
           <div class="ops-seg" role="group" aria-label="Staff group" id="mp-seg">
             <button data-k="total" aria-pressed="true">Total</button><button data-k="onshore" aria-pressed="false">Onshore</button><button data-k="offshore" aria-pressed="false">Offshore</button>
           </div>
@@ -999,7 +999,12 @@ function lineChart(box, { rows, xKey, series, xDomain, yMax, yFmt, tickFmt, tick
   const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${Hh}`).attr('height', Hh);
   const y = d3.scaleLinear([0, yMax], [Hh - 28, 12]).nice();
   const ml = d3.max(y.ticks(5), (t) => H.textW(svg, yFmt(t))) + 10;
-  const endLabels = series.map((s) => { const last = rows.filter((r) => r[s.key] != null).at(-1); return last ? `${s.short} ${yFmt(last[s.key])}` : ''; });
+  // A series with carryTo keeps its last reported value up to that date (dotted), so a month not yet
+  // reported shows the latest figure instead of the line stopping short.
+  const lastOf = (s) => rows.filter((r) => r[s.key] != null).at(-1);
+  const carried = (s) => { const last = lastOf(s); return s.carryTo && last && last[xKey] < s.carryTo ? last : null; };
+  const endLabels = series.map((s) => { const last = lastOf(s); if (!last) return ''; const c = carried(s);
+    return `${s.short} ${yFmt(last[s.key])}` + (c ? ` (${H.fmtMonthShort(c[xKey])})` : ''); });
   const mr = d3.max(endLabels, (l) => H.textW(svg, l)) + 14;
   const x = d3.scaleUtc(xDomain, [ml, W - mr]);
   const g = svg.append('g');
@@ -1020,6 +1025,13 @@ function lineChart(box, { rows, xKey, series, xDomain, yMax, yFmt, tickFmt, tick
     if (last) {
       g.append('circle').attr('cx', x(last[xKey])).attr('cy', y(last[s.key])).attr('r', 3.5).attr('fill', s.color);
       s._endY = y(last[s.key]); s._endX = x(last[xKey]); s._label = endLabels[i];
+      if (carried(s)) {
+        const x2 = x(s.carryTo);
+        g.append('line').attr('x1', x(last[xKey])).attr('x2', x2).attr('y1', y(last[s.key])).attr('y2', y(last[s.key]))
+          .attr('stroke', s.color).attr('stroke-width', 2).attr('stroke-dasharray', '1 4').attr('stroke-linecap', 'round');
+        g.append('circle').attr('cx', x2).attr('cy', y(last[s.key])).attr('r', 3.5).attr('fill', 'var(--color-panel)').attr('stroke', s.color).attr('stroke-width', 1.5);
+        s._endX = x2;
+      }
     }
   });
   // end labels, nudged apart
@@ -1038,7 +1050,11 @@ function lineChart(box, { rows, xKey, series, xDomain, yMax, yFmt, tickFmt, tick
       dot.selectAll('*').remove();
       dot.append('line').attr('x1', x(r[xKey])).attr('x2', x(r[xKey])).attr('y1', 12).attr('y2', y(0)).attr('stroke', 'var(--cds-chart-axis)');
       const lines = [];
-      series.forEach((s) => { if (r[s.key] != null) { dot.append('circle').attr('cx', x(r[xKey])).attr('cy', y(r[s.key])).attr('r', 4).attr('fill', s.color); lines.push([s.color, s.label, yFmt(r[s.key])]); } });
+      series.forEach((s) => {
+        if (r[s.key] != null) { dot.append('circle').attr('cx', x(r[xKey])).attr('cy', y(r[s.key])).attr('r', 4).attr('fill', s.color); lines.push([s.color, s.label, yFmt(r[s.key])]); return; }
+        const c = carried(s);
+        if (c && r[xKey] > c[xKey] && r[xKey] <= s.carryTo) lines.push([s.color, s.label + L(` (latest: ${H.fmtMonthShort(c[xKey])})`, ` (gần nhất: ${H.fmtMonthShort(c[xKey])})`), yFmt(c[s.key])]);
+      });
       tip.show(x(r[xKey]), d3.min(series, (s) => (r[s.key] != null ? y(r[s.key]) : Hh)), H.fmtMonth(r[xKey]), lines);
     })
     .on('pointerleave', () => { dot.selectAll('*').remove(); tip.hide(); });
@@ -1052,7 +1068,7 @@ function drawManpower() {
   const rows = data.map((d) => ({ ...d, m: H.month(d.month) }));
   const series = [
     { key: mpKey + '_plan', label: L('Plan', 'Kế hoạch'), short: L('Plan', 'KH'), color: 'var(--cds-chart-muted)', dashed: true },
-    { key: mpKey + '_actual', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0] },
+    { key: mpKey + '_actual', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0], carryTo: H.REPORT_DATE },
   ];
   leg.replaceChildren(...series.map((s) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = s.color; sp.append(sw, s.label); return sp; }));
   lineChart(box, {
@@ -1070,7 +1086,7 @@ function drawOrrCurve() {
     rows, xKey: 'm', xDomain: d3.extent(rows, (r) => r.m), yMax: 100, yFmt: (v) => d3.format('.0f')(v) + '%',
     tickFmt: H.fmtMonthShort, ticks: d3.utcMonth.every(box.clientWidth < 420 ? 2 : 1),
     series: [{ key: 'plan_pct', label: L('Plan', 'Kế hoạch'), short: L('Plan', 'KH'), color: 'var(--cds-chart-muted)', dashed: true },
-             { key: 'actual_pct', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0] }],
+             { key: 'actual_pct', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0], carryTo: H.REPORT_DATE }],
   });
 }
 
