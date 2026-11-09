@@ -1,11 +1,13 @@
 name: Sync from Notion
 
-# Every hour: copy the live Notion data (api/data on Vercel) into data.json, and keep a copy of
-# each day's figures in history/<date>.json (the last sync of the day wins) for the Changes tab
-# and for looking back at an earlier day.
+# Every 15 minutes: copy the live Notion data (api/data on Vercel) into data.json. tools/archive.py
+# keeps each day's latest figures in history/<date>.json and every change as its own version in
+# history/<date>/<HHMM>.json, for the Changes tab and for looking back at any saved day and time.
+# Apart from the first sync of each day, nothing is committed (and Vercel does not redeploy)
+# when Notion has not changed.
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
 permissions:

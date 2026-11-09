@@ -15,11 +15,12 @@ Trên trang Notion **OPS Dashboard Data** chỉ có **một báo cáo**, "Báo c
 
 ```
 Notion (22 bảng) ──> api/data trên Vercel (đệm 60 giây) ──> ops-pqpoc.vercel.app (tự làm mới mỗi phút)
-GitHub Actions mỗi giờ ──> data.json (dự phòng) + history/<ngày hôm nay>.json (bản lưu mỗi ngày)
+GitHub Actions 15 phút/lần ──> data.json (dự phòng) + history/<ngày>.json + history/<ngày>/<giờphút>.json (mỗi lần thay đổi)
 ```
 
 - Ngày trên dashboard ("Số liệu ngày") là ngày hôm nay theo giờ Việt Nam.
-- Bản lưu mỗi ngày dùng cho ô **Xem số liệu ngày** (xem lại số của ngày trước) và tab **Thay đổi** (so với ngày lưu trước đó). Trong ngày, bản lưu được ghi đè mỗi giờ, nên mỗi ngày giữ số cuối ngày.
+- Mỗi lần số liệu trên Notion thay đổi, lần đồng bộ kế tiếp (≤ 15 phút) lưu một phiên bản riêng `history/<ngày>/<giờphút>.json` (giờ Việt Nam của lần sửa); `history/<ngày>.json` giữ số mới nhất của ngày đó. Không có thay đổi thì không lưu thêm.
+- Ô lịch **Xem số liệu ngày** mở được từ 01/2026 đến 12/2027: ngày có số liệu bấm được, và ngày đang xem liệt kê các giờ đã cập nhật để mở lại đúng phiên bản (`?date=2026-11-09&at=1052`). Tab **Thay đổi** so với ngày lưu trước đó.
 
 **Cài một lần**
 1. Vào <https://www.notion.so/profile/integrations> → **New integration** → tên `OPS Dashboard`, workspace của anh, loại **Internal** → **Save**. Ở tab **Capabilities** tích **Read content** (dashboard chỉ đọc). Copy **Internal Integration Secret** (`ntn_…`).

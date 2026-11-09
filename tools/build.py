@@ -95,14 +95,16 @@ window.dash = (function () {
       return x.status === 200 ? JSON.parse(x.responseText) : null;
     } catch (e) { return null; }
   }
-  // Every weekly report lives in Notion: api/data serves the report open this week (edge-cached ~60 s)
-  // and api/data?date=YYYY-MM-DD any other one. history/ and data.json, written hourly by GitHub
-  // Actions, stand in when Notion cannot be reached.
+  // The live figures come from api/data (Notion, edge-cached ~60 s); data.json, written by GitHub Actions,
+  // stands in when Notion cannot be reached. Earlier days and versions are read from history/.
   var asked = (location.search.match(/[?&]date=(\\d{4}-\\d{2}-\\d{2})/) || [])[1] || null;
-  var viewDate = null, missingDate = null, source = null, apiURL = 'api/data';
+  var askedAt = asked && ((location.search.match(/[?&]at=(\\d{4})/) || [])[1] || null);
+  var viewDate = null, viewAt = null, missingDate = null, source = null, apiURL = 'api/data';
   function use(d, src, url) { if (d && d.manpower) { DATA = d; live = true; source = src; if (url) apiURL = url; return true; } return false; }
+  // An earlier day: history/<date>.json (its latest figures) or, with ?at=HHMM, one saved version of it.
   if (asked) {
-    if (use(getJSON('api/data?date=' + asked, true), 'notion', 'api/data?date=' + asked) || use(getJSON('history/' + asked + '.json'), 'archive')) viewDate = asked;
+    if (askedAt && use(getJSON('history/' + asked + '/' + askedAt + '.json'), 'archive')) { viewDate = asked; viewAt = askedAt; }
+    else if (use(getJSON('history/' + asked + '.json'), 'archive')) viewDate = asked;
     else missingDate = asked;
   }
   if (!live) use(getJSON('api/data', true), 'notion') || use(getJSON('data.json'), 'file');
@@ -125,10 +127,10 @@ window.dash = (function () {
   function input(i) { return i in DATA ? DATA[i] : res[i]; }
   var api = {
     live: live, updatedAt: DATA._updated_at, source: source, prev: null, prevDate: null,
-    reports: index.reports || [], latestDate: index.latest, viewDate: viewDate, missingDate: missingDate,
-    archived: !!viewDate && viewDate !== index.latest,
+    reports: index.reports || [], latestDate: index.latest, viewDate: viewDate, viewAt: viewAt, missingDate: missingDate,
+    archived: !!viewDate && (viewDate !== index.latest || !!viewAt),
     // A saved earlier day is never live, whatever state it was saved with.
-    state: viewDate && viewDate !== index.latest ? 'closed' : meta.state || null, carriedFrom: DATA._carried_from || null,
+    state: viewDate && (viewDate !== index.latest || viewAt) ? 'closed' : meta.state || null, carriedFrom: DATA._carried_from || null,
     data: function (id) { var d = input(id); return d === undefined ? { status: 'missing', data: [], meta: [] } : { status: 'ok', data: d, refreshing: false, meta: [] }; },
     calc: function (id, o) { try { res[id] = o.fn.apply(null, o.inputs.map(function (i) { return input(i) || []; })); } catch (e) { console.error('calc ' + id, e); } },
     loader: function () {},

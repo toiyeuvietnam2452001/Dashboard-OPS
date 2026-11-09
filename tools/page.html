@@ -339,6 +339,14 @@
 .ops-cal-now { font: inherit; font-size: 12px; font-weight: 600; padding: 4px 10px; border: 1px solid var(--brand-line); border-radius: 999px; background: transparent; color: var(--brand-ink); cursor: pointer; }
 .ops-cal-now:hover { background: var(--brand-tint); }
 @media (max-width: 560px) { .ops-cal-pop { left: 0; right: auto; } .ops-cal-btn { width: 100%; } .ops-cal-btn span { flex: 1; text-align: left; } }
+.ops-cal-head select { font: inherit; font-size: var(--cds-font-size-body); font-weight: 600; padding: 3px 6px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--color-fg); cursor: pointer; }
+.ops-cal-head select:hover { border-color: var(--color-border-line); }
+.ops-cal-grid .day.later:disabled { opacity: .25; }
+.ops-cal-times { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--color-border-line); max-height: 7.5rem; overflow: auto; }
+.ops-cal-times .lbl { width: 100%; font-size: 11.5px; color: var(--color-fg-muted); margin-bottom: 2px; }
+.ops-cal-time { font: inherit; font-size: 12px; padding: 3px 9px; border: 1px solid var(--brand-line); border-radius: 999px; background: transparent; color: var(--brand-ink); cursor: pointer; font-variant-numeric: tabular-nums; }
+.ops-cal-time:hover { background: var(--brand-tint); }
+.ops-cal-time.on { background: var(--brand); border-color: var(--brand); color: #fff; }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -398,8 +406,9 @@
             <div class="ops-cal">
               <button type="button" class="ops-cal-btn" id="report-pick" aria-haspopup="dialog" aria-expanded="false" aria-controls="report-cal"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span id="report-pick-text">—</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
               <div class="ops-cal-pop" id="report-cal" role="dialog" aria-label="Choose a saved day" hidden>
-                <div class="ops-cal-head"><button type="button" class="ops-cal-nav" id="cal-prev" aria-label="Previous month">‹</button><b id="cal-month">—</b><button type="button" class="ops-cal-nav" id="cal-next" aria-label="Next month">›</button></div>
+                <div class="ops-cal-head"><button type="button" class="ops-cal-nav" id="cal-prev" aria-label="Previous month">‹</button><select id="cal-month" aria-label="Month"></select><button type="button" class="ops-cal-nav" id="cal-next" aria-label="Next month">›</button></div>
                 <div class="ops-cal-grid" id="cal-grid"></div>
+                <div class="ops-cal-times" id="cal-times" hidden></div>
                 <div class="ops-cal-foot"><span class="ops-cal-key"><i></i><span id="cal-key">Saved day</span></span><button type="button" class="ops-cal-now" id="cal-now">Now</button></div>
               </div>
             </div>
@@ -1414,45 +1423,69 @@ const L = dash.L;
 const fmt = window.opsH.fmtDay;
 const day = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d)); };
 if (dash.reports.length) {
-  // A month calendar instead of a long list: only days with saved figures can be picked.
+  // A month calendar (Jan 2026 to Dec 2027) instead of a long list: only days with saved figures can be
+  // picked; the day being viewed also lists each saved version (history/<date>/<HHMM>.json) by time.
   document.getElementById('report-picker').hidden = false;
-  const saved = new Set(dash.reports.map((r) => r.date)), latest = dash.latestDate;
-  const current = dash.archived ? dash.viewDate : latest;
-  const sorted = [...saved].sort(), first = sorted[0], last = sorted.at(-1);
-  const pop = document.getElementById('report-cal'), grid = document.getElementById('cal-grid');
+  const byDate = new Map(dash.reports.map((r) => [r.date, r])), latest = dash.latestDate;
+  const current = dash.viewDate || latest, at = dash.viewAt || null;
+  const sorted = [...byDate.keys()].sort();
   const ym = (s) => s.slice(0, 7), iso = (y, m, d) => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-  const go = (date) => {
-    const q = new URLSearchParams(location.search); if (date && date !== latest) q.set('date', date); else q.delete('date');
+  const hhmm = (s) => `${s.slice(0, 2)}:${s.slice(2)}`;
+  const lo = [ym(sorted[0]), '2026-01'].sort()[0], hi = [ym(sorted.at(-1)), '2027-12'].sort().at(-1);
+  const months = []; for (let [y, m] = lo.split('-').map(Number); iso(y, m, 1) <= hi + '-01'; m === 12 ? (y++, m = 1) : m++) months.push(iso(y, m, 1).slice(0, 7));
+  const pop = document.getElementById('report-cal'), grid = document.getElementById('cal-grid'), times = document.getElementById('cal-times');
+  const sel = document.getElementById('cal-month');
+  const el = (tag, cls, text) => { const x = document.createElement(tag); x.className = cls; x.textContent = text; return x; };
+  const go = (date, time) => {
+    const q = new URLSearchParams(location.search); q.delete('at');
+    if (date && (date !== latest || time)) q.set('date', date); else q.delete('date');
+    if (time) q.set('at', time);
     location.assign(location.pathname + (q.toString() ? '?' + q : '') + location.hash);
   };
-  document.getElementById('report-pick-text').textContent = fmt(day(current)) + (current === latest ? L(' · now', ' · hiện tại') : '');
+  document.getElementById('report-pick-text').textContent = fmt(day(current)) + (at ? ' · ' + hhmm(at) : current === latest ? L(' · now', ' · hiện tại') : '');
   document.getElementById('cal-key').textContent = L('Saved day', 'Ngày có số liệu');
   document.getElementById('cal-now').textContent = L('Back to now', 'Về hiện tại');
   pop.setAttribute('aria-label', L('Choose a saved day', 'Chọn ngày có số liệu'));
+  sel.setAttribute('aria-label', L('Month', 'Tháng'));
+  sel.replaceChildren(...months.map((s) => { const [y, m] = s.split('-').map(Number); return new Option(L(new Date(Date.UTC(y, m - 1, 1)).toLocaleString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' }), `Tháng ${m}/${y}`), s); }));
   let shown = ym(current);
   const draw = () => {
     const [y, m] = shown.split('-').map(Number);
-    document.getElementById('cal-month').textContent = L(new Date(Date.UTC(y, m - 1, 1)).toLocaleString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' }), `Tháng ${m}/${y}`);
-    document.getElementById('cal-prev').disabled = shown <= ym(first);
-    document.getElementById('cal-next').disabled = shown >= ym(last);
-    const cells = L(['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN']).map((w) => H0('span', 'wd', w));
+    sel.value = shown;
+    document.getElementById('cal-prev').disabled = shown <= months[0];
+    document.getElementById('cal-next').disabled = shown >= months.at(-1);
+    const cells = L(['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN']).map((w) => el('span', 'wd', w));
     const lead = (new Date(Date.UTC(y, m - 1, 1)).getUTCDay() + 6) % 7, days = new Date(Date.UTC(y, m, 0)).getUTCDate();
-    for (let i = 0; i < lead; i++) cells.push(H0('span', 'pad', ''));
+    for (let i = 0; i < lead; i++) cells.push(el('span', 'pad', ''));
     for (let d = 1; d <= days; d++) {
-      const date = iso(y, m, d), b = H0('button', 'day' + (date === current ? ' sel' : '') + (date === latest ? ' now' : ''), String(d));
+      const date = iso(y, m, d), r = byDate.get(date);
+      const b = el('button', 'day' + (date === current ? ' sel' : '') + (date === latest ? ' now' : '') + (date > latest ? ' later' : ''), String(d));
       b.type = 'button';
-      if (saved.has(date)) { b.title = fmt(day(date)); b.addEventListener('click', () => go(date)); } else b.disabled = true;
+      if (r) {
+        const n = (r.versions || []).length;
+        b.title = fmt(day(date)) + (n ? L(` · ${n} update${n > 1 ? 's' : ''}`, ` · ${n} lần cập nhật`) : '');
+        b.addEventListener('click', () => go(date));
+      } else b.disabled = true;
       cells.push(b);
     }
     grid.replaceChildren(...cells);
   };
-  const H0 = (tag, cls, text) => { const el = document.createElement(tag); el.className = cls; el.textContent = text; return el; };
+  // Times saved on the day being viewed: the day's latest figures first, then each version.
+  const vers = (byDate.get(current) || {}).versions || [];
+  if (vers.length) {
+    times.hidden = false;
+    const chip = (label, time, on) => { const b = el('button', 'ops-cal-time' + (on ? ' on' : ''), label); b.type = 'button'; b.addEventListener('click', () => go(current, time)); return b; };
+    times.replaceChildren(el('span', 'lbl', L(`Updates on ${fmt(day(current))}`, `Các lần cập nhật ngày ${fmt(day(current))}`)),
+      chip(current === latest ? L('Now', 'Hiện tại') : L('End of day', 'Cuối ngày'), null, !at),
+      ...vers.slice().reverse().map((v) => chip(hhmm(v), v, v === at)));
+  }
   const btn = document.getElementById('report-pick');
   const open = (on) => { pop.hidden = !on; btn.setAttribute('aria-expanded', String(on)); if (on) { shown = ym(current); draw(); (grid.querySelector('.sel') || grid.querySelector('button:not([disabled])'))?.focus(); } };
   btn.addEventListener('click', () => open(pop.hidden));
-  const step = (k) => { const [y, m] = shown.split('-').map(Number), dt = new Date(Date.UTC(y, m - 1 + k, 1)); shown = dt.toISOString().slice(0, 7); draw(); };
+  const step = (k) => { const i = months.indexOf(shown) + k; if (i >= 0 && i < months.length) { shown = months.at(i); draw(); } };
   document.getElementById('cal-prev').addEventListener('click', () => step(-1));
   document.getElementById('cal-next').addEventListener('click', () => step(1));
+  sel.addEventListener('change', () => { shown = sel.value; draw(); });
   document.getElementById('cal-now').addEventListener('click', () => go(latest));
   document.addEventListener('click', (ev) => { if (!pop.hidden && !ev.target.closest('.ops-cal')) open(false); });
   document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape' && !pop.hidden) { open(false); btn.focus(); } });
@@ -1472,7 +1505,8 @@ const latestLink = () => {
 if (dash.archived) {
   note.hidden = false;
   const r = dash.reports.find((x) => x.date === dash.viewDate) || {};
-  note.append(L('You are viewing the figures saved on ', 'Bạn đang xem số liệu đã lưu ngày ') + (r.from ? window.opsH.period(r.from, r.date) : fmt(day(dash.viewDate))) + '. ', latestLink());
+  const when = fmt(day(dash.viewDate)) + (dash.viewAt ? L(' at ', ' lúc ') + dash.viewAt.slice(0, 2) + ':' + dash.viewAt.slice(2) : '');
+  note.append(L('You are viewing the figures saved on ', 'Bạn đang xem số liệu đã lưu ngày ') + (r.from ? window.opsH.period(r.from, r.date) : when) + '. ', latestLink());
 } else if (dash.missingDate) {
   note.hidden = false;
   note.append(L('No figures saved for ', 'Không có số liệu lưu ngày ') + fmt(day(dash.missingDate)) + L('; showing the live figures instead. ', '; đang hiển thị số liệu hiện tại. '));
