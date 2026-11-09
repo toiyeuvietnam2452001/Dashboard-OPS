@@ -505,7 +505,7 @@
       <div class="ops-card ops-wide" id="card-manpower">
         <div class="ops-cardhead">
           <div><h2>Manpower ramp-up: plan vs actual</h2>
-          <p class="ops-note">Headcount by month. Dashed line is plan; the vertical marker is the report date. A month not yet reported keeps the latest actual (dotted).</p></div>
+          <p class="ops-note">Headcount by month. Dashed line is plan; the vertical marker is the report date. A month not yet reported keeps the latest actual.</p></div>
           <div class="ops-seg" role="group" aria-label="Staff group" id="mp-seg">
             <button data-k="total" aria-pressed="true">Total</button><button data-k="onshore" aria-pressed="false">Onshore</button><button data-k="offshore" aria-pressed="false">Offshore</button>
           </div>
@@ -999,7 +999,7 @@ function lineChart(box, { rows, xKey, series, xDomain, yMax, yFmt, tickFmt, tick
   const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${Hh}`).attr('height', Hh);
   const y = d3.scaleLinear([0, yMax], [Hh - 28, 12]).nice();
   const ml = d3.max(y.ticks(5), (t) => H.textW(svg, yFmt(t))) + 10;
-  // A series with carryTo keeps its last reported value up to that date (dotted), so a month not yet
+  // A series with carryTo keeps its last reported value up to that date (solid, like the line), so a month not yet
   // reported shows the latest figure instead of the line stopping short.
   const lastOf = (s) => rows.filter((r) => r[s.key] != null).at(-1);
   const carried = (s) => { const last = lastOf(s); return s.carryTo && last && last[xKey] < s.carryTo ? last : null; };
@@ -1023,13 +1023,13 @@ function lineChart(box, { rows, xKey, series, xDomain, yMax, yFmt, tickFmt, tick
       .attr('stroke-dasharray', s.dashed ? '5 4' : null).attr('d', d3.line((r) => x(r[xKey]), (r) => y(r[s.key])));
     const last = pts.at(-1);
     if (last) {
-      g.append('circle').attr('cx', x(last[xKey])).attr('cy', y(last[s.key])).attr('r', 3.5).attr('fill', s.color);
+      if (!carried(s)) g.append('circle').attr('cx', x(last[xKey])).attr('cy', y(last[s.key])).attr('r', 3.5).attr('fill', s.color);
       s._endY = y(last[s.key]); s._endX = x(last[xKey]); s._label = endLabels[i];
       if (carried(s)) {
         const x2 = x(s.carryTo);
         g.append('line').attr('x1', x(last[xKey])).attr('x2', x2).attr('y1', y(last[s.key])).attr('y2', y(last[s.key]))
-          .attr('stroke', s.color).attr('stroke-width', 2).attr('stroke-dasharray', '1 4').attr('stroke-linecap', 'round');
-        g.append('circle').attr('cx', x2).attr('cy', y(last[s.key])).attr('r', 3.5).attr('fill', 'var(--color-panel)').attr('stroke', s.color).attr('stroke-width', 1.5);
+          .attr('stroke', s.color).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+        g.append('circle').attr('cx', x2).attr('cy', y(last[s.key])).attr('r', 3.5).attr('fill', s.color);
         s._endX = x2;
       }
     }
