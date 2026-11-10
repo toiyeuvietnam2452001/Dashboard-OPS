@@ -353,6 +353,13 @@
 .ops-cal-time:hover { background: var(--brand-tint); }
 .ops-cal-time.on { background: var(--brand); border-color: var(--brand); color: #fff; }
 .ops-none { color: var(--color-fg-muted); font-style: italic; }
+.ops-owner { display: flex; justify-content: flex-end; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ops-owner-btn { font: inherit; font-size: 12px; padding: 4px 10px; border: 1px solid var(--color-border-line); border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
+.ops-owner-btn:hover { color: var(--color-fg); border-color: var(--brand-line); }
+.ops-owner-form { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ops-owner-form input { font: inherit; font-size: 13px; padding: 5px 8px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); color: var(--color-fg); }
+.ops-owner-form button { font: inherit; font-size: 12px; font-weight: 600; padding: 5px 12px; border: 0; border-radius: var(--cds-radius); background: var(--brand); color: #fff; cursor: pointer; }
+@media print { .ops-owner { display: none !important; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -439,7 +446,7 @@
     <button class="ops-tab" role="tab" id="tab-coordination" data-page="coordination" aria-selected="false">8. Coordination</button>
     <button class="ops-tab" role="tab" id="tab-orr" data-page="orr" aria-selected="false">9. ORR checklist</button>
     <button class="ops-tab" role="tab" id="tab-startup" data-page="startup" aria-selected="false">10. Preservation &amp; commissioning</button>
-    <button class="ops-tab" role="tab" id="tab-changes" data-page="changes" aria-selected="false">Changes</button>
+    <button class="ops-tab" role="tab" id="tab-changes" data-page="changes" aria-selected="false" hidden>Changes</button>
   </nav>
 
   <!-- OVERVIEW -->
@@ -798,6 +805,14 @@
     </div>
     <div class="ops-chg-list" id="chg-list"></div>
   </section>
+  <div class="ops-owner">
+    <form class="ops-owner-form" id="owner-form" hidden>
+      <input type="password" autocomplete="current-password" placeholder="Password" aria-label="Owner password">
+      <button type="submit">Sign in</button>
+      <span id="owner-msg" class="ops-note" role="status"></span>
+    </form>
+    <button type="button" class="ops-owner-btn" id="owner-btn">🔒 Owner sign-in</button>
+  </div>
 </div>
 
 <div class="ops-theme" id="theme-switch" role="group" aria-label="Theme">
@@ -962,7 +977,7 @@ const OLD_PAGES = { people: 'training' }; // links saved before the tabs followe
 
 function showPage(p, push) {
   p = OLD_PAGES[p] || p;
-  if (!pages.includes(p)) return;
+  if (!pages.includes(p) || document.getElementById('tab-' + p).hidden) return; // Changes stays hidden until the owner signs in
   currentPage = p;
   document.querySelectorAll('.ops-tab').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.page === p)));
   document.querySelectorAll('section.ops-page').forEach((s) => (s.hidden = s.dataset.page !== p));
@@ -970,6 +985,7 @@ function showPage(p, push) {
   draw();
 }
 document.querySelectorAll('.ops-tab').forEach((b) => b.addEventListener('click', () => showPage(b.dataset.page, true)));
+window.opsPage = { show: showPage, current: () => currentPage }; // for the owner sign-in in a later script
 document.querySelectorAll('#mp-seg button').forEach((b) => b.addEventListener('click', () => {
   mpKey = b.dataset.k;
   document.querySelectorAll('#mp-seg button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
@@ -1918,11 +1934,13 @@ function deltaCell(c) {
   return td;
 }
 
+let owner = false; // set by the owner sign-in below
 function drawChanges() {
   const list = document.getElementById('chg-list'), stats = document.getElementById('chg-stats'), chips = document.getElementById('chg-chips');
-  const changes = diff();
-  // count badge on each tab
+  // count badge on each tab; badges and the tab itself only for the owner
   document.querySelectorAll('.ops-tab .ops-tab-n').forEach((e) => e.remove());
+  if (!owner) return;
+  const changes = diff();
   const byTab = {};
   (changes || []).forEach((c) => { const tab = AREAS.find((x) => x[0] === c.t)[3]; byTab[tab] = (byTab[tab] || 0) + 1; byTab.changes = (byTab.changes || 0) + 1; });
   Object.entries(byTab).forEach(([tab, n]) => { const b = document.getElementById('tab-' + tab); if (b) { const s = H.el('span', 'ops-tab-n', String(n)); s.title = L(`${n} changes since the last saved day`, `${n} thay đổi so với lần lưu trước`); b.append(s); } });
@@ -1968,4 +1986,40 @@ function drawChanges() {
   }));
 }
 dash.onData(drawChanges);
+
+// Owner sign-in: the Changes tab shows only after api/owner accepts the password (Vercel variable
+// OWNER_PASSWORD). The token it returns is kept in this browser for 30 days.
+const OWNER_KEY = 'ops-owner-token';
+const ownerBtn = document.getElementById('owner-btn'), ownerForm = document.getElementById('owner-form');
+const store = { get: () => { try { return localStorage.getItem(OWNER_KEY); } catch (e) { return null; } },
+  set: (v) => { try { v ? localStorage.setItem(OWNER_KEY, v) : localStorage.removeItem(OWNER_KEY); } catch (e) { /* private window */ } } };
+function setOwner(on) {
+  owner = on;
+  document.getElementById('tab-changes').hidden = !on;
+  ownerBtn.textContent = on ? L('🔓 Owner · sign out', '🔓 Chủ sở hữu · đăng xuất') : L('🔒 Owner sign-in', '🔒 Đăng nhập chủ sở hữu');
+  if (!on && window.opsPage.current() === 'changes') window.opsPage.show('overview', true);
+  drawChanges();
+}
+ownerBtn.addEventListener('click', () => {
+  if (owner) { store.set(null); setOwner(false); return; }
+  ownerForm.hidden = !ownerForm.hidden;
+  if (!ownerForm.hidden) ownerForm.querySelector('input').focus();
+});
+ownerForm.addEventListener('submit', (ev) => {
+  ev.preventDefault();
+  const input = ownerForm.querySelector('input'), msg = document.getElementById('owner-msg');
+  msg.textContent = L('Checking…', 'Đang kiểm tra…');
+  fetch('api/owner', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: input.value }) })
+    .then((r) => r.json().then((j) => [r.status, j]))
+    .then(([code, j]) => {
+      if (j.ok && j.token) { store.set(j.token); input.value = ''; msg.textContent = ''; ownerForm.hidden = true; setOwner(true); window.opsPage.show('changes', true); }
+      else msg.textContent = code === 503 ? L('The owner password is not set on Vercel yet.', 'Chưa cài mật khẩu chủ sở hữu trên Vercel.') : L('Wrong password.', 'Sai mật khẩu.');
+    })
+    .catch(() => { msg.textContent = L('Could not reach the server.', 'Không kết nối được máy chủ.'); });
+});
+setOwner(false);
+const saved = store.get();
+if (saved) fetch('api/owner?token=' + encodeURIComponent(saved)).then((r) => r.json()).then((j) => {
+  if (j.ok) { setOwner(true); if (location.hash === '#changes') window.opsPage.show('changes', false); } else store.set(null);
+}).catch(() => {});
 </script>

@@ -75,6 +75,7 @@ Sửa số sau khi đã đẩy: giữ nguyên `report_date`, sửa số, bấm l
 | `automation/day-so-lieu-len-dashboard.ts` | Office Script: bấm là đẩy số liệu từ Excel lên GitHub, trang Vercel tự cập nhật (không cần Power Automate). |
 | `automation/xuat-du-lieu-dashboard.ts` | Office Script đọc các bảng Excel và xuất JSON cho dashboard web. Chỉ đọc Excel Table, nên bỏ qua các sheet dashboard. |
 | `api/data.js` | Hàm Vercel đọc mọi dòng của 22 bảng trên Notion, trả về cùng dạng `data.json`. Cần biến môi trường `NOTION_TOKEN`. |
+| `api/owner.js` | Mở tab **Changes** cho chủ sở hữu: kiểm tra mật khẩu là biến môi trường `OWNER_PASSWORD` trên Vercel, trả về mã đăng nhập có hạn 30 ngày. Đổi mật khẩu là mọi trình duyệt bị đăng xuất. |
 | `lib/notion.js` | Phần dùng chung: gọi Notion API, thứ tự dòng của từng bảng. |
 | `.github/workflows/sync-notion.yml` | Mỗi giờ chép số liệu từ `api/data` vào `data.json` và `history/<ngày hôm nay>.json`. |
 | `tools/` | Mã dựng lại `index.html` và file Excel; `tools/archive.py` tạo bản lưu lịch sử (xem cuối trang). |
