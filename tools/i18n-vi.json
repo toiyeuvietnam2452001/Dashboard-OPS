@@ -17,6 +17,8 @@
   "PRs late.": "PR trễ hạn.",
   "Report sections": "Các phần báo cáo",
   "Overview": "Tổng quan",
+  "Tender schedule": "Tiến độ đấu thầu",
+  "Planned dates from the tender plan; actual date once a step is done. Steps whose planned date has passed without an actual date are marked.": "Ngày kế hoạch theo văn bản kế hoạch đấu thầu; ngày thực tế điền khi bước đó hoàn thành. Bước đã qua ngày kế hoạch mà chưa có ngày thực tế được đánh dấu.",
   "Offshore platform permit-license register list": "Danh mục giấy phép – chứng chỉ giàn khai thác",
   "By team, in the order of the register. Dates as recorded; text such as “Not expired” or “not issued yet” is shown as written.": "Theo từng team, đúng thứ tự trong file. Ngày ghi như trong file; các ghi chú như “Not expired”, “not issued yet” giữ nguyên.",
   "License / permit": "Giấy phép / chứng chỉ",

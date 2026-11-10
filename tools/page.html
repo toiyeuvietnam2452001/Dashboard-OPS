@@ -363,6 +363,8 @@
 .ops-permits tr.ops-grp td { background: var(--acc-tint) !important; color: var(--acc); font-weight: 700; letter-spacing: .02em; padding-top: 10px; }
 .ops-permits tr.ops-subgrp td { font-weight: 600; color: var(--color-fg-muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; }
 .ops-permits td.nm span:first-child { white-space: pre-line; }
+.ops-tender + .ops-tender { margin-top: 12px; }
+.ops-tender h3 { margin: 4px 0 6px; }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -673,6 +675,11 @@
         <h2>Logistics and services</h2>
         <p class="ops-note">Contracting route and next step.</p>
         <ul class="ops-list" id="list-logistics" data-source="workstreams"></ul>
+      </div>
+      <div class="ops-card ops-wide" id="card-tender">
+        <h2>Tender schedule</h2>
+        <p class="ops-note">Planned dates from the tender plan; actual date once a step is done. Steps whose planned date has passed without an actual date are marked.</p>
+        <div id="tender" data-source="tender_schedule"></div>
       </div>
     </div>
   </section>
@@ -1449,6 +1456,32 @@ function drawCmms() {
   }));
 }
 
+// Tender plans, one table per package, steps in order. A planned date already passed with no actual date
+// is flagged as a fact about the plan; nothing is said about why.
+function drawTender() {
+  const box = document.getElementById('tender');
+  const d = dash.data('tender_schedule');
+  if (d.status !== 'ok' || !d.data.length) { box.replaceChildren(H.el('p', 'ops-note', L('No tender schedule entered yet.', 'Chưa có tiến độ đấu thầu.'))); return; }
+  const today = H.REPORT_DATE, f = (s) => (s ? H.fmtDay(H.day(s)) : '—');
+  box.replaceChildren(...d3.groups(d.data, (r) => r.package).map(([pkg, rows]) => {
+    const wrap = H.el('div', 'ops-tender');
+    const src = rows.find((r) => r.source_doc);
+    wrap.append(H.el('h3', null, (pkg || L('Package', 'Gói')) + (src ? ` · ${src.source_doc}` : '')));
+    const table = H.el('table'), head = H.el('tr');
+    [L('No.', 'STT'), L('Activity', 'Hoạt động'), L('Duration (working days)', 'Thời gian (ngày làm việc)'), L('Planned date', 'Ngày kế hoạch'), L('Actual date', 'Ngày thực tế')]
+      .forEach((h, i) => head.append(H.el('th', i === 0 || i === 2 ? 'num' : null, h)));
+    const thead = H.el('thead'); thead.append(head);
+    const tb = H.el('tbody');
+    rows.slice().sort((a, b) => (a.no ?? 0) - (b.no ?? 0)).forEach((r) => {
+      const tr = H.el('tr'), plan = H.el('td', null, f(r.planned_date));
+      if (!r.actual_date && r.planned_date && H.day(r.planned_date) < today) plan.append(' ', H.el('span', 'ops-pill ops-warn', L('date passed', 'đã qua ngày KH')));
+      tr.append(H.el('td', 'num', r.no ?? ''), H.el('td', null, r.activity), H.el('td', 'num', r.duration_days ?? ''), plan, H.el('td', r.actual_date ? 'ops-good' : null, f(r.actual_date)));
+      tb.append(tr);
+    });
+    table.append(thead, tb); wrap.append(table); return wrap;
+  }));
+}
+
 function drawPermits() {
   const tb = document.querySelector('#table-permits tbody');
   const d = dash.data('permits');
@@ -1532,7 +1565,7 @@ function draw() {
   if (currentPage === 'apps') { drawWorkstreams(); drawCmms(); }
   if (currentPage === 'permits') drawPermits();
   if (currentPage === 'procedures') drawProcedures();
-  if (currentPage === 'logistics') drawWorkstreams();
+  if (currentPage === 'logistics') { drawWorkstreams(); drawTender(); }
   if (currentPage === 'contracts') { drawPr(); drawPackages(); }
   if (currentPage === 'coordination') { drawWorkstreams(); drawGasProfile(); }
   if (currentPage === 'orr') { drawOrrCurve(); drawOrrTeams(); drawOrrPlan(); drawOrrElements(); }
@@ -1861,14 +1894,14 @@ const AREAS = [ // [table, area title EN, VI, tab]
   ['orr_team_plan', 'ORR plan by team', 'ORR kế hoạch theo team', 'orr'],
   ['procedures', 'Procedures', 'Quy trình', 'procedures'],
   ['pr_pipeline', 'PRs in progress', 'PR đang xử lý', 'contracts'], ['packages_no_pr', 'Packages without PR', 'Gói chưa có PR', 'contracts'], ['cmms', 'CMMS', 'CMMS', 'apps'],
-  ['workstreams', 'Workstreams', 'Trạng thái công việc', 'apps'], ['permits', 'Permits', 'Giấy phép', 'permits'],
+  ['workstreams', 'Workstreams', 'Trạng thái công việc', 'apps'], ['permits', 'Permits', 'Giấy phép', 'permits'], ['tender_schedule', 'Tender schedule', 'Tiến độ đấu thầu', 'logistics'],
   ['precom_plan', 'Pre-commissioning', 'Pre-com', 'startup'], ['startup_sequence', 'Start-up sequence', 'Trình tự khởi động', 'startup'],
 ];
 const KEYS = {
   manpower: ['month'], orr_curve: ['month'], startup_sequence: ['step'], procedures: ['id'], orr_elements: ['code'], orr_groups: ['group'],
   orr_teams: ['team'], pr_pipeline: ['stage', 'status'], packages_no_pr: ['dimension', 'category'], vendor_training: ['period', 'course'],
   precom_plan: ['activity'], cbta: ['platform', 'team'], mandatory: ['team'], staffing: ['group'], cmms: ['package'],
-  workstreams: ['area', 'item'], permits: ['team', 'permit', 'facility', 'description'], readiness: ['area'], milestones: ['milestone'],
+  workstreams: ['area', 'item'], permits: ['team', 'permit', 'facility', 'description'], tender_schedule: ['package', 'no'], readiness: ['area'], milestones: ['milestone'],
   hse_matrix: ['course'], cbta_modules: ['platform', 'team', 'no'], orr_team_plan: ['team', 'month'],
 };
 const FIELDS = {
@@ -1894,6 +1927,7 @@ const GOOD_UP = new Set(['total_actual', 'onshore_actual', 'offshore_actual', 'f
 const BAD_UP = new Set(['balance', 'developing']);
 const DATES = new Set(['issue_date', 'expiry_date', 'renewal_date', 'plan_start', 'plan_finish', 'actual_start', 'actual_finish', 'plan_date', 'actual_date']);
 const rowLabel = {
+  tender_schedule: (r) => `${r.package || ''} · ${r.no}. ${r.activity}`,
   permits: (r) => r.permit + (r.facility ? ` (${r.facility})` : r.description ? ` · ${r.description}` : ''),
   manpower: (r) => H.fmtMonth(H.month(r.month)), orr_curve: (r) => H.fmtMonth(H.month(r.month)), staffing: (r) => D(r.group), orr_groups: (r) => D(r.group),
   procedures: (r) => `${(r.category === 'HSE' ? 'HSE' : L('General operation', 'Vận hành chung')) + ' · ' + L('No. ', 'STT ') + String(r.id ?? '').replace(/^(HSE|GEN)-0*/, '')} · ${r.document || ''}`, orr_elements: (r) => `${r.code} · ${r.element || ''}`, cbta: (r) => `${r.platform} ${r.team}`,

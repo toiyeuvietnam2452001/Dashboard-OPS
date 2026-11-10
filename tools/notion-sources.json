@@ -90,5 +90,9 @@
  "orr_team_plan": {
   "database": "56caef11d22b4e0083767eaa2ec3b5de",
   "data_source": "0ac64527-93d6-4ea6-beb1-0cdd7b5cbf3c"
+ },
+ "tender_schedule": {
+  "database": "99cec02949654eb3845eadcae9da189e",
+  "data_source": "78ffbe46-456d-48e5-a29d-83624149e616"
  }
 }
