@@ -352,6 +352,7 @@
 .ops-cal-time { font: inherit; font-size: 12px; padding: 3px 9px; border: 1px solid var(--brand-line); border-radius: 999px; background: transparent; color: var(--brand-ink); cursor: pointer; font-variant-numeric: tabular-nums; }
 .ops-cal-time:hover { background: var(--brand-tint); }
 .ops-cal-time.on { background: var(--brand); border-color: var(--brand); color: #fff; }
+.ops-none { color: var(--color-fg-muted); font-style: italic; }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -517,7 +518,7 @@
         <h2>Current staffing</h2>
         <p class="ops-note">Filled / required positions at the report date.</p>
         <div class="ops-bars" id="bars-staffing" data-source="staffing"></div>
-        <p class="ops-note" id="vacant">Vacant positions: <span id="vacant-list" data-source="workstreams" data-where="item=Vacant%20positions" data-field="status">—</span>.</p>
+        <p class="ops-note" id="vacant">Vacant positions: <span id="vacant-list" data-source="workstreams" data-where="item=Vacant%20positions" data-field="status">—</span></p>
       </div>
     </div>
   </section>
@@ -596,7 +597,7 @@
         <h2>Applications</h2>
         <p class="ops-note">Status of operations software systems.</p>
         <ul class="ops-list" id="list-apps" data-source="workstreams"></ul>
-        <h3>CMMS (OA) – actual vs plan %</h3>
+        <h3>3.6 CMMS (OA) – actual vs plan %</h3>
         <div class="ops-bars" id="bars-cmms" data-source="cmms"></div>
       </div>
     </div>
@@ -1393,9 +1394,16 @@ function drawPackages() {
   }));
 }
 
+// Rows in report order (column "no", e.g. 3.1 … 3.7); a row the report gives no status for says so.
+const itemNo = (r) => (r.no || '').split('.').map(Number);
 function listInto(id, rows) {
   const ul = document.getElementById(id);
-  ul.replaceChildren(...rows.map((r) => { const li = H.el('li'); li.append(H.el('span', 'k', D(r.item)), H.el('span', null, D(r.status))); return li; }));
+  const sorted = rows.slice().sort((a, b) => { const x = itemNo(a), y = itemNo(b); return (x[0] || 99) - (y[0] || 99) || (x[1] || 0) - (y[1] || 0); });
+  ul.replaceChildren(...sorted.map((r) => {
+    const li = H.el('li');
+    li.append(H.el('span', 'k', (r.no ? r.no + ' ' : '') + D(r.item)), r.status ? H.el('span', null, D(r.status)) : H.el('span', 'ops-none', L('No information yet', 'Chưa có thông tin')));
+    return li;
+  }));
 }
 function drawWorkstreams() {
   const d = dash.data('workstreams');
@@ -1444,7 +1452,7 @@ function drawPermits() {
 
 function drawGasProfile() {
   const d = dash.data('workstreams'), r = d.status === 'ok' && d.data.find((x) => x.item === 'Production profile');
-  document.getElementById('gas-profile-note').textContent = r ? D(r.status) : '—';
+  document.getElementById('gas-profile-note').textContent = r && r.status ? D(r.status) : '';
 }
 
 // ---------- startup ----------
