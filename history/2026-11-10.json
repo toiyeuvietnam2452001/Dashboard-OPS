@@ -1,4 +1,83 @@
 {
+ "cbta": [
+  {
+   "ojt_modules": 11,
+   "theory_pct": 6.25,
+   "developing": 0,
+   "review": 0,
+   "completed": 11,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 11,
+   "team": "Deck crew"
+  },
+  {
+   "ojt_modules": 39,
+   "theory_pct": 7.85,
+   "developing": 1,
+   "review": null,
+   "completed": 35,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 39,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 38,
+   "theory_pct": 1.48,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 38,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 36,
+   "theory_pct": 3.87,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 36,
+   "team": "P&P"
+  },
+  {
+   "ojt_modules": 35,
+   "theory_pct": 0,
+   "developing": 2,
+   "review": 2,
+   "completed": 20,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 24,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 31,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 1,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 22,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 29,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 0,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 21,
+   "team": "P&P"
+  }
+ ],
  "staffing": [
   {
    "filled": 47,
@@ -558,85 +637,6 @@
    "month": "2028-12"
   }
  ],
- "cbta": [
-  {
-   "ojt_modules": 11,
-   "theory_pct": 6.25,
-   "developing": 0,
-   "review": 0,
-   "completed": 11,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 11,
-   "team": "Deck crew"
-  },
-  {
-   "ojt_modules": 39,
-   "theory_pct": 7.85,
-   "developing": 1,
-   "review": null,
-   "completed": 35,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 39,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 38,
-   "theory_pct": 1.48,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 38,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 36,
-   "theory_pct": 3.87,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 36,
-   "team": "P&P"
-  },
-  {
-   "ojt_modules": 35,
-   "theory_pct": 0,
-   "developing": 2,
-   "review": 2,
-   "completed": 20,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 24,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 31,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 1,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 22,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 29,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 0,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 21,
-   "team": "P&P"
-  }
- ],
  "mandatory": [
   {
    "planned": 72,
@@ -673,6 +673,84 @@
    "balance": 120,
    "earned": 130,
    "team": "WHP team"
+  }
+ ],
+ "vendor_training": [
+  {
+   "period": "2026-09",
+   "course": "ICSS – EPCI#2"
+  },
+  {
+   "period": "2026-10",
+   "course": "Asset Integrity Management"
+  },
+  {
+   "period": "2026-10",
+   "course": "E-house"
+  },
+  {
+   "period": "2026-10",
+   "course": "Gas Conditioning and Processing – G-4"
+  },
+  {
+   "period": "2026-11",
+   "course": "Gas Purification Technology: Mercury Removal"
+  },
+  {
+   "period": "2026-11",
+   "course": "ICSS – EPCI#1"
+  },
+  {
+   "period": "2026-12",
+   "course": "E-house"
+  },
+  {
+   "period": "2026-12",
+   "course": "ICSS – EPCI#1"
+  },
+  {
+   "period": "2027-01",
+   "course": "Telecom System (CPC0-TEL001)"
+  },
+  {
+   "period": "2027-03",
+   "course": "HVAC system (MEL 41 – HVAC)"
+  },
+  {
+   "period": "2027-04",
+   "course": "Analyser – Water in Oil & Gas Chromatography (CPC0-ICS017)"
+  },
+  {
+   "period": "2027-04",
+   "course": "Mark CS O&M"
+  },
+  {
+   "period": "2027-05",
+   "course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)"
+  },
+  {
+   "period": "2027-05",
+   "course": "Metering Skid (CPPT-ICS001)"
+  },
+  {
+   "period": "2027-11",
+   "course": "ECPI#2 – Gas booster compressor"
+  },
+  {
+   "period": "2027-12",
+   "course": "EDG (CLQU-MEC005)"
+  },
+  {
+   "period": "2028",
+   "course": "Gas Turbine Generator (GTG, MER 02)"
+  },
+  {
+   "period": "2028",
+   "course": "Turbo Expander (CPPT-MEC003)"
+  },
+  {
+   "period": "2028",
+   "course": "Vapour Recovery Compressor (CPPT-MEC005)"
   }
  ],
  "orr_teams": [
@@ -758,84 +836,6 @@
    "team": "Production Eng"
   }
  ],
- "vendor_training": [
-  {
-   "period": "2026-09",
-   "course": "ICSS – EPCI#2"
-  },
-  {
-   "period": "2026-10",
-   "course": "Asset Integrity Management"
-  },
-  {
-   "period": "2026-10",
-   "course": "E-house"
-  },
-  {
-   "period": "2026-10",
-   "course": "Gas Conditioning and Processing – G-4"
-  },
-  {
-   "period": "2026-11",
-   "course": "Gas Purification Technology: Mercury Removal"
-  },
-  {
-   "period": "2026-11",
-   "course": "ICSS – EPCI#1"
-  },
-  {
-   "period": "2026-12",
-   "course": "E-house"
-  },
-  {
-   "period": "2026-12",
-   "course": "ICSS – EPCI#1"
-  },
-  {
-   "period": "2027-01",
-   "course": "Telecom System (CPC0-TEL001)"
-  },
-  {
-   "period": "2027-03",
-   "course": "HVAC system (MEL 41 – HVAC)"
-  },
-  {
-   "period": "2027-04",
-   "course": "Analyser – Water in Oil & Gas Chromatography (CPC0-ICS017)"
-  },
-  {
-   "period": "2027-04",
-   "course": "Mark CS O&M"
-  },
-  {
-   "period": "2027-05",
-   "course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)"
-  },
-  {
-   "period": "2027-05",
-   "course": "Metering Skid (CPPT-ICS001)"
-  },
-  {
-   "period": "2027-11",
-   "course": "ECPI#2 – Gas booster compressor"
-  },
-  {
-   "period": "2027-12",
-   "course": "EDG (CLQU-MEC005)"
-  },
-  {
-   "period": "2028",
-   "course": "Gas Turbine Generator (GTG, MER 02)"
-  },
-  {
-   "period": "2028",
-   "course": "Turbo Expander (CPPT-MEC003)"
-  },
-  {
-   "period": "2028",
-   "course": "Vapour Recovery Compressor (CPPT-MEC005)"
-  }
- ],
  "orr_groups": [
   {
    "progress_pct": 66.3,
@@ -856,53 +856,6 @@
    "progress_pct": 65.6,
    "items": 698,
    "group": "TOTAL"
-  }
- ],
- "orr_curve": [
-  {
-   "actual_pct": 71.3,
-   "plan_pct": 66.7,
-   "month": "2026-10"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 71,
-   "month": "2026-11"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 75,
-   "month": "2026-12"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 79,
-   "month": "2027-01"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 83,
-   "month": "2027-02"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 87,
-   "month": "2027-03"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 90,
-   "month": "2027-04"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 93,
-   "month": "2027-05"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 95,
-   "month": "2027-06"
   }
  ],
  "orr_elements": [
@@ -1073,6 +1026,105 @@
    "element": "Design, Engineering, Operability & Maintainability Assurance",
    "group": "PROCESS",
    "code": "PR-14"
+  }
+ ],
+ "orr_curve": [
+  {
+   "actual_pct": 71.3,
+   "plan_pct": 66.7,
+   "month": "2026-10"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 71,
+   "month": "2026-11"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 75,
+   "month": "2026-12"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 79,
+   "month": "2027-01"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 83,
+   "month": "2027-02"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 87,
+   "month": "2027-03"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 90,
+   "month": "2027-04"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 93,
+   "month": "2027-05"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 95,
+   "month": "2027-06"
+  }
+ ],
+ "pr_pipeline": [
+  {
+   "count": 1,
+   "status": "Near-late",
+   "stage": "1 CSP Preparation"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "1 CSP Preparation"
+  },
+  {
+   "count": 1,
+   "status": "Late",
+   "stage": "2 CSP Approval"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "2 CSP Approval"
+  },
+  {
+   "count": 1,
+   "status": "Near-late",
+   "stage": "3 Bidding"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "3 Bidding"
+  },
+  {
+   "count": 1,
+   "status": "Late",
+   "stage": "4 Evaluation"
+  },
+  {
+   "count": 2,
+   "status": "On time",
+   "stage": "4 Evaluation"
+  },
+  {
+   "count": 1,
+   "status": "Late",
+   "stage": "5 TCEAR Approval"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "6 Contract Signing"
   }
  ],
  "procedures": [
@@ -1903,58 +1955,6 @@
    "count": 1,
    "dimension": "scr_timing",
    "category": "This month"
-  }
- ],
- "pr_pipeline": [
-  {
-   "count": 1,
-   "status": "Near-late",
-   "stage": "1 CSP Preparation"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "1 CSP Preparation"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "2 CSP Approval"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "2 CSP Approval"
-  },
-  {
-   "count": 1,
-   "status": "Near-late",
-   "stage": "3 Bidding"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "3 Bidding"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "4 Evaluation"
-  },
-  {
-   "count": 2,
-   "status": "On time",
-   "stage": "4 Evaluation"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "5 TCEAR Approval"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "6 Contract Signing"
   }
  ],
  "cmms": [
@@ -3505,64 +3505,6 @@
    "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
   }
  ],
- "readiness": [
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
-  }
- ],
  "startup_sequence": [
   {
    "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
@@ -3633,6 +3575,64 @@
    "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
    "step": 14,
    "phase": "Condensate & PW"
+  }
+ ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
   }
  ],
  "milestones": [
@@ -6056,6 +6056,98 @@
    "module": "Pig Laucher/ Receiver"
   }
  ],
+ "tender_schedule": [
+  {
+   "planned_date": "2026-10-13",
+   "actual_date": null,
+   "no": 1,
+   "duration_days": 5,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s endorsement of CSP"
+  },
+  {
+   "planned_date": "2026-10-27",
+   "actual_date": null,
+   "no": 2,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Contractor Parties’ approval of Bidder List"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 3,
+   "duration_days": 14,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "PETROVIETNAM’s approval of Bidder List and ITB"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 4,
+   "duration_days": 0,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Issuance"
+  },
+  {
+   "planned_date": "2026-12-30",
+   "actual_date": null,
+   "no": 5,
+   "duration_days": 30,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Submission Deadline"
+  },
+  {
+   "planned_date": "2026-12-31",
+   "actual_date": null,
+   "no": 6,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Bid Opening"
+  },
+  {
+   "planned_date": "2027-01-29",
+   "actual_date": null,
+   "no": 7,
+   "duration_days": 20,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Evaluation"
+  },
+  {
+   "planned_date": "2027-02-03",
+   "actual_date": null,
+   "no": 8,
+   "duration_days": 3,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s approval of Technical Evaluation Report"
+  },
+  {
+   "planned_date": "2027-02-11",
+   "actual_date": null,
+   "no": 9,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Bid Opening"
+  },
+  {
+   "planned_date": "2027-02-25",
+   "actual_date": null,
+   "no": 10,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Evaluation"
+  }
+ ],
  "orr_departments": [
   {
    "order": 1,
@@ -6188,98 +6280,6 @@
    "actual_pct": 66.3,
    "weight_pct": 100,
    "department": "TOTAL"
-  }
- ],
- "tender_schedule": [
-  {
-   "planned_date": "2026-10-13",
-   "actual_date": null,
-   "no": 1,
-   "duration_days": 5,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Tender Committee’s endorsement of CSP"
-  },
-  {
-   "planned_date": "2026-10-27",
-   "actual_date": null,
-   "no": 2,
-   "duration_days": 10,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Contractor Parties’ approval of Bidder List"
-  },
-  {
-   "planned_date": "2026-11-16",
-   "actual_date": null,
-   "no": 3,
-   "duration_days": 14,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "PETROVIETNAM’s approval of Bidder List and ITB"
-  },
-  {
-   "planned_date": "2026-11-16",
-   "actual_date": null,
-   "no": 4,
-   "duration_days": 0,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Bid Issuance"
-  },
-  {
-   "planned_date": "2026-12-30",
-   "actual_date": null,
-   "no": 5,
-   "duration_days": 30,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Bid Submission Deadline"
-  },
-  {
-   "planned_date": "2026-12-31",
-   "actual_date": null,
-   "no": 6,
-   "duration_days": 1,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Technical Bid Opening"
-  },
-  {
-   "planned_date": "2027-01-29",
-   "actual_date": null,
-   "no": 7,
-   "duration_days": 20,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Technical Evaluation"
-  },
-  {
-   "planned_date": "2027-02-03",
-   "actual_date": null,
-   "no": 8,
-   "duration_days": 3,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Tender Committee’s approval of Technical Evaluation Report"
-  },
-  {
-   "planned_date": "2027-02-11",
-   "actual_date": null,
-   "no": 9,
-   "duration_days": 1,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Commercial Bid Opening"
-  },
-  {
-   "planned_date": "2027-02-25",
-   "actual_date": null,
-   "no": 10,
-   "duration_days": 10,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Commercial Evaluation"
   }
  ],
  "orr_team_plan": [
@@ -7058,6 +7058,398 @@
    "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
   }
  ],
+ "contract_packages": [
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 1,
+   "current_status": "Contract Signed",
+   "remarks": null,
+   "pic": null,
+   "seq": 2,
+   "ros_required": null,
+   "status": null,
+   "package": "V-SAT"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 1,
+   "current_status": "Contract Signing",
+   "remarks": null,
+   "pic": "AOI_HieuNV",
+   "seq": 3,
+   "ros_required": "2027-09-01",
+   "status": "Contract document review.",
+   "package": "AIMS"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 4,
+   "current_status": "Technical evaluation",
+   "remarks": "Preparing Technical Evaluation report",
+   "pic": "PE_ThuyNTP",
+   "seq": 4,
+   "ros_required": "2027-06-01",
+   "status": null,
+   "package": "PDMS"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 4,
+   "current_status": "Technical evaluation",
+   "remarks": "Waiting for alternative Corrosion Inbibitor submission",
+   "pic": "PE_BacNV",
+   "seq": 5,
+   "ros_required": "2027-06-01",
+   "status": null,
+   "package": "Production Chemical"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 4,
+   "current_status": "Technical evaluation",
+   "remarks": null,
+   "pic": "AOI_HieuNV",
+   "seq": 6,
+   "ros_required": "2027-09-01",
+   "status": "Technical evaluation is on-going. Waiting for Bidder response on TC No.1-R5 and MOM for TC.No.2. Due date for response is 10th Nov.",
+   "package": "Provision of Independent Assessment and Classification Support Service (IVB)"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 4,
+   "current_status": "Technical evaluation",
+   "remarks": null,
+   "pic": "EnI_PhongPT",
+   "seq": 7,
+   "ros_required": "2027-07-31",
+   "status": "TBE ongoing",
+   "package": "Provision of E&I Equipment & Tools for First Gas and Operations (E&I Tools of GAP ECPI#1)"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 2,
+   "current_status": "ITB/Bid Submission",
+   "remarks": null,
+   "pic": "MECH_HoangVD",
+   "seq": 8,
+   "ros_required": "2027-09-01",
+   "status": null,
+   "package": "LTSA for GTG"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 2,
+   "current_status": "ITB/Bid Submission",
+   "remarks": null,
+   "pic": "MECH_HieuNV",
+   "seq": 9,
+   "ros_required": "2027-07-30",
+   "status": null,
+   "package": "Supply of Storage Lifting Gear Containers"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 2,
+   "current_status": "ITB/Bid Submission",
+   "remarks": "ITB issued 06 Nov 26",
+   "pic": "APP_HungPH",
+   "seq": 10,
+   "ros_required": "2027-09-01",
+   "status": null,
+   "package": "OSCC"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 3,
+   "current_status": "CSP Approval",
+   "remarks": "Waiting PVN approval (16 Nov)",
+   "pic": "Marine_ThanhNN",
+   "seq": 11,
+   "ros_required": "2027-06-01",
+   "status": null,
+   "package": "Vessel / Security Boat / Fast Crew Boat"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 3,
+   "current_status": "CSP Approval",
+   "remarks": null,
+   "pic": "EnI_BienNH",
+   "seq": 12,
+   "ros_required": "2027-07-31",
+   "status": "Waiting for Bid Submission",
+   "package": "Provision of Calibration and Carrier Gas"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 3,
+   "current_status": "CSP Approval",
+   "remarks": "waiting for CSP approval",
+   "pic": "PE_BacNV",
+   "seq": 13,
+   "ros_required": "2027-07-01",
+   "status": null,
+   "package": "Lab equipment and consumables (DDP)"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "CSP preparation",
+   "remarks": null,
+   "pic": "AOI_HieuNV",
+   "seq": 14,
+   "ros_required": "2027-09-01",
+   "status": "CSP preparation - Waiting for SCM & HSE to input.",
+   "package": "Topside Facilities Inspection"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "CSP preparation",
+   "remarks": null,
+   "pic": "PO_HungND",
+   "seq": 15,
+   "ros_required": "2027-06-01",
+   "status": null,
+   "package": "Offshore Catering Services"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "CSP preparation",
+   "remarks": null,
+   "pic": "EnI_ChinhLT\nSCM_Hà",
+   "seq": 16,
+   "ros_required": "2027-08-15",
+   "status": "CSP under preparation (DDP Term approved on 5-Nov-26)",
+   "package": "Provision of Telecom, Fire & Gas Equipment and Tools (DDP)"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "CSP preparation",
+   "remarks": null,
+   "pic": "MECH_HoangVD\nSCM_Hà",
+   "seq": 17,
+   "ros_required": "2027-07-10",
+   "status": null,
+   "package": "Supply of Tools, Safety Equipment and Consumable  for First Gas Activity (DAP)"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": "DEV comment: L.O cho GTCs / GTGs cần mua đúng Spec mà Maker required DEV để đủ điều kiện Warranty",
+   "stage_qty": 5,
+   "current_status": "CSP preparation",
+   "remarks": null,
+   "pic": "MECH_HieuNV",
+   "seq": 18,
+   "ros_required": "2027-07-01",
+   "status": null,
+   "package": "General Consumables & Lubricating Oils (Frame contract)"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 3,
+   "current_status": "PR processing",
+   "remarks": "Budget.\nConsider to separate Waste Container and mercury waste tempoary storage  in other contracts",
+   "pic": "PE_ThuyNTP",
+   "seq": 19,
+   "ros_required": "2027-08-01",
+   "status": null,
+   "package": "Mercury Handling Services"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 3,
+   "current_status": "PR processing",
+   "remarks": null,
+   "pic": "EnI_NamNH",
+   "seq": 20,
+   "ros_required": "2027-08-31",
+   "status": "Technical Specifications for Material Items (around 1,000) under preparation",
+   "package": "Provision of Maint. Consumables + Tubing & Fitting"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 3,
+   "current_status": "PR processing",
+   "remarks": null,
+   "pic": "PO_QuyNT",
+   "seq": 21,
+   "ros_required": "2027-06-01",
+   "status": null,
+   "package": "Offshore Medical Services"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "Bidder screening",
+   "remarks": "PR date forecast",
+   "pic": "AOI_HieuNV",
+   "seq": 22,
+   "ros_required": "2028-01-01",
+   "status": "Screening invitation sent out to all vendors. Waiting for Vendor to provide data.",
+   "package": "Facility Engineering and Process Safety Studies Services"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "Bidder screening",
+   "remarks": "Backup: Use FSR from DEV (120 Days after FG)",
+   "pic": "MECH_HoangVD",
+   "seq": 23,
+   "ros_required": "2028-01-01",
+   "status": null,
+   "package": "LTSA for GTCs"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "Bidder screening",
+   "remarks": "Backup: Use FSR from DEV (120 Days after FG)",
+   "pic": "EnI_HuyNV",
+   "seq": 24,
+   "ros_required": "2028-01-01",
+   "status": "Bidder Screening under reviewed and approved",
+   "package": "LTSA for WHP/HUB - ICSS"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "Bidder screening",
+   "remarks": "PR date forecast 20/11/26",
+   "pic": "MECH_GiangDT",
+   "seq": 25,
+   "ros_required": "2027-07-10",
+   "status": null,
+   "package": "Supply of Mechanical Tools & Material Handling Equipment  for First Gas"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "Bidder screening",
+   "remarks": "PR date forecast 20/11/26",
+   "pic": "MECH_GiangDT",
+   "seq": 26,
+   "ros_required": "2027-07-10",
+   "status": null,
+   "package": "Supply of Production, Hydraulic Tools & Equipment for First Gas Activity"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "SOW / PIA Preparation",
+   "remarks": "PR date forecast",
+   "pic": "PO_QuyNT",
+   "seq": 27,
+   "ros_required": "2027-09-15",
+   "status": null,
+   "package": "Provision of pigging services for pipeline"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "SOW / PIA Preparation",
+   "remarks": "Backup: Use FSR from DEV (120 Days after FG)\nHSE risk assessment preparation\nCompleted simplified SOW\nBudget: updating with vendors (PI, Cyber security)",
+   "pic": "EnI_HuyNV",
+   "seq": 28,
+   "ros_required": "2027-09-01",
+   "status": "IRA under review by HSE\nCost Model under preparation",
+   "package": "LTSA for CPP/LQ- ICSS"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": "DEV: L.O cho GTCs / GTGs cần test theo criteria mà Maker required DEV để đủ điều kiện Warranty",
+   "stage_qty": 5,
+   "current_status": "SOW / PIA Preparation",
+   "remarks": "HSE risk assessment under review by HSE\nCompleted simplified SOW, cost model",
+   "pic": "PE_BacNV",
+   "seq": 29,
+   "ros_required": "2027-08-01",
+   "status": null,
+   "package": "Provision of Onshore Lab Analysis"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "SOW / PIA Preparation",
+   "remarks": "HSE risk assessment under review by HSE\nCompleted simplified SOW, cost model",
+   "pic": "MECH",
+   "seq": 30,
+   "ros_required": "2027-09-01",
+   "status": "Cost Model/PIA ngồi cùng LĐP + NamVH sáng ngày 12 Nov",
+   "package": "Mechanical Equipment Maintenance Services  & Manpower Support"
+  },
+  {
+   "loa_required": null,
+   "step_due_date": null,
+   "package_note": null,
+   "stage_qty": 5,
+   "current_status": "SOW / PIA Preparation",
+   "remarks": "On hold, Waiting DTD confirm Starlink.",
+   "pic": "APP_HungPH",
+   "seq": 31,
+   "ros_required": "2027-06-01",
+   "status": null,
+   "package": "CMMS Replicator <Offshore Facility> (CMMS.REPA)"
+  }
+ ],
  "meta": [
   {
    "report_date": "2026-11-10",
@@ -7073,6 +7465,6 @@
    "classification": "Internal"
   }
  ],
- "_updated_at": "2026-11-10T09:12:00.000Z",
+ "_updated_at": "2026-11-10T09:40:00.000Z",
  "_source": "notion"
 }
