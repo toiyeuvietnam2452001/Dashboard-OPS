@@ -1436,8 +1436,8 @@ function drawPermits() {
   if (d.status !== 'ok') { tb.replaceChildren(); return; }
   tb.replaceChildren(...d.data.map((r) => {
     const tr = H.el('tr');
-    const c = r.status === 'Issued' ? 'ops-good' : r.status === 'Temporary' ? 'ops-warn' : r.status.startsWith('Waiting') ? 'ops-bad' : '';
-    const td = H.el('td'); td.append(H.el('span', 'ops-pill ' + c, D(r.status)));
+    const c = r.status === 'Issued' ? 'ops-good' : r.status === 'Temporary' ? 'ops-warn' : (r.status || '').startsWith('Waiting') ? 'ops-bad' : '';
+    const td = H.el('td'); td.append(r.status ? H.el('span', 'ops-pill ' + c, D(r.status)) : H.el('span', 'ops-none', L('No information yet', 'Chưa có thông tin')));
     const f = (s) => (s ? H.fmtDay(H.day(s)) : '—');
     const name = H.el('td', null, r.permit); if (r.description) name.append(H.el('span', 'ops-sub2', r.description));
     const who = [r.authority, r.responsible].filter(Boolean).join(' · ');
