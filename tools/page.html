@@ -360,6 +360,9 @@
 .ops-owner-form input { font: inherit; font-size: 13px; padding: 5px 8px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); color: var(--color-fg); }
 .ops-owner-form button { font: inherit; font-size: 12px; font-weight: 600; padding: 5px 12px; border: 0; border-radius: var(--cds-radius); background: var(--brand); color: #fff; cursor: pointer; }
 @media print { .ops-owner { display: none !important; } }
+.ops-permits tr.ops-grp td { background: var(--acc-tint) !important; color: var(--acc); font-weight: 700; letter-spacing: .02em; padding-top: 10px; }
+.ops-permits tr.ops-subgrp td { font-weight: 600; color: var(--color-fg-muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; }
+.ops-permits td.nm span:first-child { white-space: pre-line; }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -614,11 +617,11 @@
   <section class="ops-page" id="permits" data-page="permits" hidden>
     <div class="ops-grid">
       <div class="ops-card ops-wide" id="card-permits">
-        <h2>Offshore platform permit register</h2>
-        <p class="ops-note">Permits, reference number, issuing authority or responsible party, issue and expiry dates, and status.</p>
+        <h2>Offshore platform permit-license register list</h2>
+        <p class="ops-note">By team, in the order of the register. Dates as recorded; text such as “Not expired” or “not issued yet” is shown as written.</p>
         <div class="ops-tablebox">
-          <table id="table-permits" data-source="permits" data-row-key="permit">
-            <thead><tr><th data-field="permit">Permit</th><th class="hide-sm" data-field="ref_no">Ref. no.</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority / responsible</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th></tr></thead>
+          <table class="ops-permits" id="table-permits" data-source="permits" data-row-key="team,permit,facility,description">
+            <thead><tr><th data-field="no">No.</th><th data-field="permit">License / permit</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority / responsible</th><th class="hide-sm" data-field="ref_no">Ref. no.</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th><th class="hide-sm" data-field="remark">Remark</th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
@@ -1450,16 +1453,25 @@ function drawPermits() {
   const tb = document.querySelector('#table-permits tbody');
   const d = dash.data('permits');
   if (d.status !== 'ok') { tb.replaceChildren(); return; }
-  tb.replaceChildren(...d.data.map((r) => {
+  // Rows come in register order (seq); a team or sub-group heading row starts each block.
+  const cols = 10, out = [];
+  let team = null, group = null;
+  const head = (cls, text) => { const tr = H.el('tr', cls); const td = H.el('td', null, text); td.colSpan = cols; tr.append(td); return tr; };
+  const when = (date, text) => (date ? H.fmtDay(H.day(date)) : text || '—');
+  d.data.forEach((r) => {
+    if (r.team !== team) { team = r.team; group = null; out.push(head('ops-grp', D(team || L('No team', 'Chưa có team')))); }
+    if (r.group && r.group !== group) { group = r.group; out.push(head('ops-subgrp', D(group))); }
     const tr = H.el('tr');
     const c = r.status === 'Issued' ? 'ops-good' : r.status === 'Temporary' ? 'ops-warn' : (r.status || '').startsWith('Waiting') ? 'ops-bad' : '';
-    const td = H.el('td'); td.append(r.status ? H.el('span', 'ops-pill ' + c, D(r.status)) : H.el('span', 'ops-none', L('No information yet', 'Chưa có thông tin')));
-    const f = (s) => (s ? H.fmtDay(H.day(s)) : '—');
-    const name = H.el('td', null, r.permit); if (r.description) name.append(H.el('span', 'ops-sub2', r.description));
+    const st = H.el('td'); st.append(r.status ? H.el('span', 'ops-pill ' + c, D(r.status)) : document.createTextNode('—'));
+    const name = H.el('td', 'nm'); name.append(H.el('span', null, r.permit)); if (r.description) name.append(H.el('span', 'ops-sub2', r.description));
     const who = [r.authority, r.responsible].filter(Boolean).join(' · ');
-    tr.append(name, H.el('td', 'hide-sm', r.ref_no || '—'), H.el('td', 'hide-sm', r.facility), H.el('td', 'hide-sm', who || '—'), H.el('td', null, f(r.issue_date)), H.el('td', null, f(r.expiry_date)), H.el('td', 'hide-sm', f(r.renewal_date)), td);
-    return tr;
-  }));
+    const exp = H.el('td', r.expiry_date && H.day(r.expiry_date) < H.REPORT_DATE ? 'ops-bad' : null, when(r.expiry_date, r.expiry_text));
+    tr.append(H.el('td', 'num', r.no || ''), name, H.el('td', 'hide-sm', r.facility || '—'), H.el('td', 'hide-sm', who || '—'), H.el('td', 'hide-sm', r.ref_no || '—'),
+      H.el('td', null, when(r.issue_date, r.issue_text)), exp, H.el('td', 'hide-sm', when(r.renewal_date, r.renewal_text)), st, H.el('td', 'hide-sm', r.remark || ''));
+    out.push(tr);
+  });
+  tb.replaceChildren(...out);
   // The legal basis is the same for whole families of permits: list each one once under the table.
   const basis = d3.groups(d.data.filter((r) => r.compliance), (r) => r.compliance), note = document.getElementById('permit-basis');
   note.hidden = !basis.length;
@@ -1660,7 +1672,7 @@ function rag() {
   const permits = rows('cur', 'permits');
   const expired = permits.filter((p) => p.expiry_date && H.day(p.expiry_date) < R).length;
   const soon = permits.filter((p) => p.expiry_date && H.day(p.expiry_date) >= R && (H.day(p.expiry_date) - R) / DAY <= 180).length;
-  const waiting = permits.filter((p) => /waiting/i.test(p.status || '')).length;
+  const waiting = permits.filter((p) => /waiting/i.test((p.status || '') + ' ' + (p.remark || ''))).length;
   const cm = rows('cur', 'cmms'), cmGap = cm.length ? Math.min(...cm.map((r) => (r.actual_pct ?? 0) - (r.plan_pct ?? 0))) : null;
   const pc = rows('cur', 'precom_plan'), pcLate = pc.filter((r) => r.plan_finish && !r.actual_finish && H.day(r.plan_finish) < R).length;
   const lvl = (v, g, a, higherIsBetter = true) => v == null ? 'n' : higherIsBetter ? (v >= g ? 'g' : v >= a ? 'a' : 'r') : (v <= g ? 'g' : v <= a ? 'a' : 'r');
@@ -1727,7 +1739,7 @@ function drawAttention() {
   rows('cur', 'permits').forEach((p) => {
     if (p.expiry_date && H.day(p.expiry_date) < R) add('r', L('Permit expired: ', 'Giấy phép đã hết hạn: ') + `<b>${esc(p.permit)}</b> (${H.fmtDay(H.day(p.expiry_date))})`, 'permits');
     else if (p.expiry_date && (H.day(p.expiry_date) - R) / DAY <= 180) add('a', L('Permit expires ', 'Giấy phép hết hạn ngày ') + `${H.fmtDay(H.day(p.expiry_date))}: <b>${esc(p.permit)}</b>`, 'permits');
-    else if (/waiting/i.test(p.status || '')) add('a', L('Permit pending: ', 'Giấy phép đang chờ: ') + `<b>${esc(p.permit)}</b> — ${esc(D(p.status))}`, 'permits');
+    else if (/waiting/i.test((p.status || '') + ' ' + (p.remark || ''))) add('a', L('Permit pending: ', 'Giấy phép đang chờ: ') + `<b>${esc(p.permit)}</b> — ${esc(D(/waiting/i.test(p.status || '') ? p.status : p.remark))}`, 'permits');
   });
   rows('cur', 'orr_teams').forEach((t) => {
     const g = (t.actual_pct ?? 0) - (t.plan_pct ?? 0);
@@ -1856,7 +1868,7 @@ const KEYS = {
   manpower: ['month'], orr_curve: ['month'], startup_sequence: ['step'], procedures: ['id'], orr_elements: ['code'], orr_groups: ['group'],
   orr_teams: ['team'], pr_pipeline: ['stage', 'status'], packages_no_pr: ['dimension', 'category'], vendor_training: ['period', 'course'],
   precom_plan: ['activity'], cbta: ['platform', 'team'], mandatory: ['team'], staffing: ['group'], cmms: ['package'],
-  workstreams: ['area', 'item'], permits: ['permit'], readiness: ['area'], milestones: ['milestone'],
+  workstreams: ['area', 'item'], permits: ['team', 'permit', 'facility', 'description'], readiness: ['area'], milestones: ['milestone'],
   hse_matrix: ['course'], cbta_modules: ['platform', 'team', 'no'], orr_team_plan: ['team', 'month'],
 };
 const FIELDS = {
@@ -1882,6 +1894,7 @@ const GOOD_UP = new Set(['total_actual', 'onshore_actual', 'offshore_actual', 'f
 const BAD_UP = new Set(['balance', 'developing']);
 const DATES = new Set(['issue_date', 'expiry_date', 'renewal_date', 'plan_start', 'plan_finish', 'actual_start', 'actual_finish', 'plan_date', 'actual_date']);
 const rowLabel = {
+  permits: (r) => r.permit + (r.facility ? ` (${r.facility})` : r.description ? ` · ${r.description}` : ''),
   manpower: (r) => H.fmtMonth(H.month(r.month)), orr_curve: (r) => H.fmtMonth(H.month(r.month)), staffing: (r) => D(r.group), orr_groups: (r) => D(r.group),
   procedures: (r) => `${(r.category === 'HSE' ? 'HSE' : L('General operation', 'Vận hành chung')) + ' · ' + L('No. ', 'STT ') + String(r.id ?? '').replace(/^(HSE|GEN)-0*/, '')} · ${r.document || ''}`, orr_elements: (r) => `${r.code} · ${r.element || ''}`, cbta: (r) => `${r.platform} ${r.team}`,
   pr_pipeline: (r) => `${D(r.stage)} · ${L(r.status, { Late: 'Trễ hạn', 'Near-late': 'Sắp trễ', 'On time': 'Đúng hạn' }[r.status] || r.status)}`,
