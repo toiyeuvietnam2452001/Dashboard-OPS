@@ -457,6 +457,68 @@
 :root[data-theme="dark"] .ops-coord-key .ln-d { background: #8FA9D6; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ops-coord-key .ln-d { background: #8FA9D6; } }
 @media (max-width: 560px) { .ops-coord-fig a { padding: 6px; } .ops-coord-steps .x { font-size: var(--cds-font-size-caption); } }
+/* 9. ORR: tile meters, team table, element codes */
+.ops-tile-meter { height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--acc) 14%, var(--color-panel)); overflow: hidden; order: 4; margin-top: 4px; }
+.ops-tile-meter i { display: block; height: 100%; border-radius: 3px; background: var(--acc); }
+.ops-orrt td.tm { font-weight: 600; white-space: nowrap; }
+.ops-orrt .ops-cell-bar { min-width: 14rem; }
+.ops-orrt .ops-cell-bar .ops-track { height: 10px; }
+.ops-orrt .v { white-space: nowrap; font-variant-numeric: tabular-nums; } .ops-orrt .v small { color: var(--color-fg-muted); font-size: 11.5px; }
+.ops-gap { display: inline-block; min-width: 4.6rem; text-align: center; padding: 1px 8px; border-radius: 999px; font-weight: 600; font-size: 12px; white-space: nowrap; }
+.ops-gap.up { color: var(--color-ok); background: color-mix(in srgb, var(--color-ok) 12%, transparent); }
+.ops-gap.down { color: var(--color-bad); background: color-mix(in srgb, var(--color-bad) 11%, transparent); }
+.ops-code { display: inline-block; font-weight: 700; font-size: 12px; letter-spacing: .03em; padding: 1px 7px; border-radius: 6px; border: 1px solid var(--acc-line); color: var(--acc); background: var(--color-panel); white-space: nowrap; }
+.ops-grp-chip { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .05em; padding: 1px 8px; border-radius: 999px; background: var(--acc-tint); color: var(--acc); }
+@media (max-width: 560px) { .ops-orrt .ops-cell-bar { min-width: 6.5rem; } .ops-orrt .v small { display: none; } .ops-orrt th, .ops-orrt td { padding-left: 5px; padding-right: 5px; } .ops-gap { min-width: 0; padding: 1px 6px; font-size: 11.5px; } }
+/* 10. Preservation & commissioning */
+.ops-com-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: var(--cds-gap-md); }
+.ops-com-card { display: flex; flex-direction: column; gap: 14px; padding: 16px 18px 18px; border: 1px solid var(--color-border-line); border-left: 4px solid var(--acc); border-radius: var(--cds-radius); background: linear-gradient(135deg, var(--acc-tint), var(--color-panel) 65%); box-shadow: var(--shadow-card); }
+.ops-com-card .h { display: flex; gap: 14px; align-items: center; }
+.ops-com-card .lab { display: block; font-size: var(--cds-font-size-caption); font-weight: 600; color: var(--acc); letter-spacing: .02em; }
+.ops-com-card h3 { margin: 2px 0 0; font-size: 16px; font-weight: 650; }
+.ops-com-card .tx { margin: 0; font-size: var(--cds-font-size-body); line-height: 1.55; }
+.ops-com-card.empty { border-left-color: var(--color-border-line); background: var(--color-panel); }
+.ops-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ops-flow .st { padding: 6px 12px; border-radius: 8px; background: var(--color-panel); border: 1px solid var(--acc-line); font-weight: 600; font-size: 13px; }
+.ops-flow .ar { color: var(--acc); font-weight: 700; }
+.ops-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ops-chips .chip { padding: 5px 12px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--acc-line); color: var(--acc); font-weight: 600; font-size: 13px; }
+.ops-precom-sum { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 10px; }
+.ops-precom-sum .it { display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; border-radius: var(--cds-radius); border: 1px solid var(--color-border-line); border-left: 4px solid var(--cds-chart-muted); background: var(--color-panel); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.ops-precom-sum .it b { font-size: 20px; font-weight: 650; color: var(--color-fg); line-height: 1.2; }
+.ops-precom-sum .it.done { border-left-color: var(--color-ok); } .ops-precom-sum .it.now { border-left-color: var(--gnow); } .ops-precom-sum .it.soon { border-left-color: var(--color-warn); }
+.ops-precom-sum .it.win b { font-size: 15px; padding-top: 4px; }
+.ops .gk { display: inline-block; width: 18px; height: 8px; border-radius: 4px; background: var(--cds-chart-muted); }
+#startup { --gnow: #1565A8; }
+:root[data-theme="dark"] #startup { --gnow: #66B0EE; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #startup { --gnow: #66B0EE; } }
+.ops .gk.done { background: var(--color-ok); } .ops .gk.now { background: var(--gnow, var(--acc)); } .ops .gk.soon { background: var(--color-warn); }
+#startup .ops-gantt { gap: 0; }
+#startup .ops-grow { grid-template-columns: minmax(12rem, 26rem) 1fr; gap: 14px; padding: 7px 0; border-bottom: 1px solid var(--color-border-line); }
+#startup .ops-grow:last-child { border-bottom: 0; }
+#startup .ops-grow.head { padding: 6px 0; border-bottom: 2px solid var(--acc-line); background: var(--acc-tint); font-weight: 600; color: var(--acc); }
+#startup .ops-grow.head .gl { padding-left: 10px; }
+#startup .ops-grow.now { background: color-mix(in srgb, var(--gnow) 6%, var(--color-panel)); }
+#startup .ops-grow .gl { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+#startup .ops-grow .nm { font-weight: 500; color: var(--color-fg); line-height: 1.35; }
+#startup .ops-grow .mt { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; color: var(--color-fg-muted); font-size: 11.5px; }
+#startup .ops-grow .code { font-weight: 700; letter-spacing: .03em; padding: 0 6px; border-radius: 5px; border: 1px solid var(--acc-line); color: var(--acc); background: var(--color-panel); }
+#startup .ops-glane { height: 100%; min-height: 22px; }
+#startup .ops-gbar { top: 50%; height: 12px; margin-top: -6px; border-radius: 6px; }
+#startup .ops-gbar.now { background: var(--gnow); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gnow) 22%, transparent); }
+#startup .ops-gbar.soon { background: var(--color-warn); } #startup .ops-gbar.done { background: var(--color-ok); } #startup .ops-gbar.later { background: var(--cds-chart-muted); }
+#startup .ops-gline { top: -7px; bottom: -7px; background: none; border-left: 1px dotted var(--acc-line); width: 0; }
+#startup .ops-gtoday { top: -7px; bottom: -7px; width: 0; border-left: 2px solid var(--rag-r, var(--color-bad)); background: none; opacity: .75; }
+#startup .ops-gaxis { height: 18px; color: var(--acc); font-size: 11.5px; }
+#startup .ops-gaxis .ops-gline, #startup .ops-gaxis .ops-gtoday { top: -6px; bottom: -6px; }
+#startup .ops-tl-legend .ln { width: 2px; height: 14px; background: var(--rag-r, var(--color-bad)); }
+.ops-seq { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); gap: 12px; counter-reset: none; }
+.ops-seq li { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 12px 14px 14px; border: 1px solid var(--color-border-line); border-top: 3px solid var(--acc); border-radius: var(--cds-radius); background: linear-gradient(180deg, var(--acc-soft), var(--color-panel) 60%); }
+.ops-seq .h { display: flex; align-items: center; gap: 10px; }
+.ops-seq .n { width: 28px; height: 28px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--acc); color: var(--color-panel); font-weight: 700; font-size: 13px; }
+.ops-seq .p { font-weight: 650; font-size: 14.5px; }
+.ops-seq .a { font-size: var(--cds-font-size-caption); line-height: 1.5; color: var(--color-fg); }
+@media (max-width: 760px) { #startup .ops-grow { grid-template-columns: 1fr; gap: 6px; } #startup .ops-grow.head .gl { display: none; } #startup .ops-glane { min-height: 16px; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -825,74 +887,54 @@
       <div class="ops-tile"><span class="ops-tile-label">Plant · <span data-source="orr_groups" data-where="group=PLANT" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PLANT" data-field="progress_pct">—</span></div>
       <div class="ops-tile"><span class="ops-tile-label">Process · <span data-source="orr_groups" data-where="group=PROCESS" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PROCESS" data-field="progress_pct">—</span></div>
     </div>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-orr-curve">
-        <h2>OPS teams ORR checklist vs plan</h2>
-        <p class="ops-note">Weighted % complete by month. Dashed line is plan, solid line is actual.</p>
-        <div class="ops-chart dash-skeleton" id="chart-orr-curve" data-source="orr_curve"></div>
+    <div class="ops-card ops-bcard" id="card-orr-curve">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">ORR checklist vs plan</span><span class="ops-banner-n" id="orr-curve-n">—</span></h2>
+      <p class="ops-note">Weighted % complete by month. Dashed line is plan, solid line is actual.</p>
+      <div class="ops-chart dash-skeleton" id="chart-orr-curve" data-source="orr_curve"></div>
+    </div>
+    <div class="ops-card ops-bcard" id="card-orr-teams">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Progress by OPS team</span><span class="ops-banner-n"><span class="ops-orr-month">—</span></span></h2>
+      <p class="ops-note">Bar is actual %, black tick is plan %; gap in percentage points. Weights roll up into the overall %.</p>
+      <div class="ops-tablebox" style="max-height:none">
+        <table class="ops-orrt" id="table-orr-teams" data-source="orr_teams orr_team_gap" data-row-key="team">
+          <thead><tr><th data-field="team">Team</th><th class="num hide-sm" data-field="weight_pct">Weight</th><th class="num hide-sm" data-field="total_activities">Activities</th><th class="num hide-sm" data-field="completed">Completed</th><th data-field="actual_pct">Actual vs plan</th><th class="num" data-field="gap_pts">Gap</th><th class="num hide-sm" data-field="plan_end_pct">Final plan</th></tr></thead>
+          <tbody></tbody>
+        </table>
       </div>
-      <div class="ops-card" id="card-orr-teams">
-        <h2>Progress by OPS team · <span class="ops-orr-month">—</span></h2>
-        <p class="ops-note">Bar is actual %, black tick is plan %. The figure on the right is the gap in percentage points.</p>
-        <div class="ops-bars" id="bars-orr-teams" data-source="orr_teams orr_team_gap"></div>
+    </div>
+    <div class="ops-card ops-bcard" id="card-orr-plan">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Plan by team to June 2027</span><span class="ops-banner-n" id="orr-plan-n">—</span></h2>
+      <p class="ops-note">Cumulative plan % for each team by month, with the actual % below: green when on or ahead of plan, red when behind.</p>
+      <div class="ops-tablebox">
+        <table class="ops-plan" id="table-orr-plan" data-source="orr_team_plan"><thead></thead><tbody></tbody></table>
       </div>
-      <div class="ops-card" id="card-orr-weights">
-        <h2>Weight and workload by team</h2>
-        <p class="ops-note">Total and completed activities; weights roll up into the overall %.</p>
-        <div class="ops-tablebox">
-          <table id="table-orr-teams" data-source="orr_teams" data-row-key="team">
-            <thead><tr><th data-field="team">Team</th><th class="num" data-field="weight_pct">Weight</th><th class="num" data-field="total_activities">Activities</th><th class="num" data-field="completed">Completed</th><th class="num" data-field="plan_end_pct">Final plan</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="ops-card ops-wide" id="card-orr-plan">
-        <h2>Plan by team to June 2027</h2>
-        <p class="ops-note">Cumulative plan % for each team by month, with the actual % below: green when on or ahead of plan, red when behind.</p>
-        <div class="ops-tablebox">
-          <table class="ops-plan" id="table-orr-plan" data-source="orr_team_plan"><thead></thead><tbody></tbody></table>
-        </div>
-      </div>
-      <div class="ops-card ops-wide" id="card-orr-elements">
-        <h2>Checklist by element (People · Plant · Process)</h2>
-        <p class="ops-note">Sorted from lowest %. Elements below 50% are shown in red.</p>
-        <div class="ops-tablebox">
-          <table id="table-orr-elements" data-source="orr_elements" data-row-key="code">
-            <thead><tr><th data-field="code">Code</th><th data-field="element">Element</th><th class="hide-sm" data-field="group">Group</th><th class="num" data-field="items">Items</th><th data-field="progress_pct">Progress</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
+    </div>
+    <div class="ops-card ops-bcard" id="card-orr-elements">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Checklist by element</span><span class="ops-banner-n" id="orr-el-n">—</span></h2>
+      <p class="ops-note">Sorted from lowest %. Elements below 50% are shown in red.</p>
+      <div class="ops-tools"><div class="ops-seg" id="orr-el-group" role="group" aria-label="Group"><button type="button" aria-pressed="true" data-g="">All</button><button type="button" aria-pressed="false" data-g="PEOPLE">People</button><button type="button" aria-pressed="false" data-g="PLANT">Plant</button><button type="button" aria-pressed="false" data-g="PROCESS">Process</button></div></div>
+      <div class="ops-tablebox" style="max-height:none">
+        <table id="table-orr-elements" data-source="orr_elements" data-row-key="code">
+          <thead><tr><th data-field="code">Code</th><th data-field="element">Element</th><th class="hide-sm" data-field="group">Group</th><th class="num" data-field="items">Items</th><th data-field="progress_pct">Progress</th></tr></thead>
+          <tbody></tbody>
+        </table>
       </div>
     </div>
   </section>
 
   <!-- 10 PRESERVATION, FAT, INSTALLATION, PRE-COM, COMMISSIONING -->
   <section class="ops-page" id="startup" data-page="startup" hidden>
-    <h2 class="ops-sec-title">10.1 Preservation</h2>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-commissioning">
-        <h2>Preservation: status</h2>
-        <ul class="ops-list" id="list-com" data-source="workstreams"></ul>
-      </div>
+    <div class="ops-com-top" id="com-top" data-source="workstreams"></div>
+    <div class="ops-card ops-bcard" id="card-precom">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">CPP pre-commissioning master plan (Train 1)</span><span class="ops-banner-n" id="precom-n">—</span></h2>
+      <div class="ops-precom-sum" id="precom-sum"></div>
+      <div class="ops-tl-legend" aria-hidden="true"><span><i class="gk done"></i>Completed (actual finish entered)</span><span><i class="gk now"></i>Planned to be under way on the report date</span><span><i class="gk soon"></i>Planned to start within 30 days</span><span><i class="gk later"></i>Later</span><span><i class="ln"></i>Report date</span></div>
+      <div class="ops-gantt" id="gantt" data-source="precom_plan"></div>
     </div>
-    <h2 class="ops-sec-title">10.2 Installation, pre-com, commissioning</h2>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-installation">
-        <h2>Installation, pre-com &amp; commissioning: status</h2>
-        <ul class="ops-list" id="list-com-inst" data-source="workstreams"></ul>
-      </div>
-      <div class="ops-card ops-wide" id="card-precom">
-        <div class="ops-cardhead"><div>
-          <h2>CPP pre-commissioning master plan (Train 1)</h2>
-          <p class="ops-note">Planned start – finish. Green: completed (has an actual finish date); red: inside its planned window on the report date; amber: starts within the next 30 days.</p>
-        </div></div>
-        <div class="ops-gantt" id="gantt" data-source="precom_plan"></div>
-      </div>
-      <div class="ops-card ops-wide" id="card-startup-seq">
-        <h2>CPP start-up sequence</h2>
-        <p class="ops-note">Summarised from the CPP start-up block diagram.</p>
-        <ol class="ops-steps" id="steps" data-source="startup_sequence"></ol>
-      </div>
+    <div class="ops-card ops-bcard" id="card-startup-seq">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">CPP start-up sequence</span><span class="ops-banner-n" id="steps-n">—</span></h2>
+      <p class="ops-note">Summarised from the CPP start-up block diagram.</p>
+      <ol class="ops-seq" id="steps" data-source="startup_sequence"></ol>
     </div>
   </section>
 
@@ -1130,7 +1172,10 @@ function lineChart(box, { rows, xKey, series, xDomain, yMax, yFmt, tickFmt, tick
   const g = svg.append('g');
   g.selectAll('line.grid').data(y.ticks(5)).join('line').attr('x1', ml).attr('x2', W - mr).attr('y1', (d) => y(d)).attr('y2', (d) => y(d)).attr('stroke', 'var(--cds-chart-grid)');
   g.selectAll('text.yt').data(y.ticks(5)).join('text').attr('x', ml - 8).attr('y', (d) => y(d)).attr('dy', '0.32em').attr('text-anchor', 'end').text(yFmt);
-  const xt = x.ticks(ticks);
+  // Drop every other month label until they fit (phones).
+  let xt = x.ticks(ticks);
+  const lw = d3.max(xt, (d) => H.textW(svg, tickFmt(d))) + 12;
+  while (xt.length > 2 && xt.length * lw > W - mr - ml) xt = xt.filter((_, i) => i % 2 === 0);
   g.selectAll('text.xt').data(xt).join('text').attr('x', (d) => x(d)).attr('y', Hh - 8).attr('text-anchor', 'middle').text(tickFmt);
   g.append('line').attr('x1', ml).attr('x2', W - mr).attr('y1', y(0)).attr('y2', y(0)).attr('stroke', 'var(--cds-chart-axis)');
   if (refX) {
@@ -1417,36 +1462,69 @@ function drawOrrPlan() {
   table.tBodies[0].replaceChildren(...rows);
 }
 
+// One table per team: weight and workload, then actual against plan for the latest month, gap in points.
 function drawOrrTeams() {
-  const box = document.getElementById('bars-orr-teams');
-  const data = H.state('orr_teams', box), gap = dash.data('orr_team_gap');
-  if (!data || gap.status !== 'ok') return;
-  box.replaceChildren(...data.map((d) => {
-    const g = gap.data.find((r) => r.team === d.team).gap_pts;
-    const v = H.el('span'); v.append(H.el('b', null, H.p100(d.actual_pct)), ' ');
-    v.append(H.el('span', g >= 0 ? 'ops-good' : 'ops-bad', H.signPts(g)));
-    return H.bar(d.team, d.actual_pct / 100, g >= 0 ? dash.colors[0] : 'var(--cds-chart-status-critical)', v, d.plan_pct / 100);
-  }));
   const tb = document.querySelector('#table-orr-teams tbody');
-  tb.replaceChildren(...data.map((d) => {
-    const tr = H.el('tr');
-    tr.append(H.el('td', null, d.team), H.el('td', 'num', H.p100(d.weight_pct)), H.el('td', 'num', H.num(d.total_activities)), H.el('td', 'num', H.num(d.completed)), H.el('td', 'num', H.p100(d.plan_end_pct)));
+  const d = dash.data('orr_teams'), gap = dash.data('orr_team_gap');
+  if (d.status !== 'ok') { tb.replaceChildren(); return; }
+  const gapOf = (t) => { const r = gap.status === 'ok' && gap.data.find((x) => x.team === t); return r ? r.gap_pts : null; };
+  tb.replaceChildren(...d.data.map((r) => {
+    const g = gapOf(r.team) ?? (r.actual_pct != null && r.plan_pct != null ? +(r.actual_pct - r.plan_pct).toFixed(1) : null);
+    const tr = H.el('tr'), cell = H.el('td'), bar = H.el('div', 'ops-cell-bar');
+    const t = H.el('div', 'ops-track'), f = H.el('div', 'ops-fill');
+    f.style.width = Math.min(100, r.actual_pct || 0) + '%'; f.style.background = g == null || g >= 0 ? 'var(--acc)' : 'var(--cds-chart-status-critical)'; t.append(f);
+    if (r.plan_pct != null) { const k = H.el('div', 'ops-tick'); k.style.left = `calc(${Math.min(100, r.plan_pct)}% - 1px)`; k.title = L('Plan ', 'Kế hoạch ') + H.p100(r.plan_pct); t.append(k); }
+    const v = H.el('span', 'v'); v.append(H.el('b', null, H.p100(r.actual_pct)), H.el('small', null, L(' / plan ', ' / KH ') + H.p100(r.plan_pct)));
+    bar.append(t, v); cell.append(bar);
+    const gp = H.el('td', 'num'); if (g != null) gp.append(H.el('span', 'ops-gap ' + (g >= 0 ? 'up' : 'down'), H.signPts(g))); else gp.textContent = '—';
+    tr.append(H.el('td', 'tm', r.team), H.el('td', 'num hide-sm', H.p100(r.weight_pct)), H.el('td', 'num hide-sm', H.num(r.total_activities)),
+      H.el('td', 'num hide-sm', H.num(r.completed)), cell, gp, H.el('td', 'num hide-sm', H.p100(r.plan_end_pct)));
     return tr;
   }));
 }
 
+// Banner figures for tab 9, and a progress bar under each group tile.
+function drawOrrHead() {
+  const c = dash.data('orr_curve'), cur = c.status === 'ok' ? c.data.filter((r) => r.actual_pct != null).sort((a, b) => (a.month < b.month ? -1 : 1)).at(-1) : null;
+  document.getElementById('orr-curve-n').textContent = cur
+    ? L(`${H.fmtMonth(H.month(cur.month))}: actual ${H.p100(cur.actual_pct)} · plan ${H.p100(cur.plan_pct)}`, `${H.fmtMonth(H.month(cur.month))}: thực tế ${H.p100(cur.actual_pct)} · KH ${H.p100(cur.plan_pct)}`) : '—';
+  const pl = dash.data('orr_team_plan');
+  if (pl.status === 'ok' && pl.data.length) {
+    const ms = [...new Set(pl.data.map((r) => r.month))].sort(), teams = new Set(pl.data.map((r) => r.team)).size;
+    document.getElementById('orr-plan-n').textContent = L(`${teams} rows · ${H.fmtMonth(H.month(ms[0]))} – ${H.fmtMonth(H.month(ms.at(-1)))}`, `${teams} dòng · ${H.fmtMonth(H.month(ms[0]))} – ${H.fmtMonth(H.month(ms.at(-1)))}`);
+  } else document.getElementById('orr-plan-n').textContent = '—';
+  const el = dash.data('orr_elements');
+  document.getElementById('orr-el-n').textContent = el.status === 'ok'
+    ? L(`${el.data.length} elements · ${el.data.filter((r) => r.progress_pct < 50).length} below 50%`, `${el.data.length} hạng mục · ${el.data.filter((r) => r.progress_pct < 50).length} dưới 50%`) : '—';
+  const g = dash.data('orr_groups');
+  const tiles = document.querySelectorAll('#orr > .ops-tiles .ops-tile'), keys = ['TOTAL', 'PEOPLE', 'PLANT', 'PROCESS'];
+  tiles.forEach((t, i) => {
+    const r = g.status === 'ok' && g.data.find((x) => x.group === keys[i]);
+    let m = t.querySelector('.ops-tile-meter'); if (!m) { m = H.el('div', 'ops-tile-meter'); m.append(H.el('i')); t.append(m); }
+    m.firstChild.style.width = (r ? Math.min(100, r.progress_pct) : 0) + '%';
+  });
+}
+
+let orrGroup = '';
+document.querySelectorAll('#orr-el-group button').forEach((btn) => btn.addEventListener('click', () => {
+  orrGroup = btn.dataset.g;
+  document.querySelectorAll('#orr-el-group button').forEach((x) => x.setAttribute('aria-pressed', String(x === btn)));
+  drawOrrElements();
+}));
 function drawOrrElements() {
   const tb = document.querySelector('#table-orr-elements tbody');
   const d = dash.data('orr_elements');
   if (d.status !== 'ok') { tb.replaceChildren(); return; }
-  const rows = [...d.data].sort((a, b) => a.progress_pct - b.progress_pct);
+  const rows = d.data.filter((r) => !orrGroup || r.group === orrGroup).sort((a, b) => a.progress_pct - b.progress_pct);
   tb.replaceChildren(...rows.map((r) => {
     const tr = H.el('tr');
     const bar = H.el('div', 'ops-cell-bar'); const t = H.el('div', 'ops-track'); const f = H.el('div', 'ops-fill');
-    f.style.width = r.progress_pct + '%'; f.style.background = r.progress_pct < 50 ? 'var(--cds-chart-status-critical)' : dash.colors[0]; t.append(f);
+    f.style.width = r.progress_pct + '%'; f.style.background = r.progress_pct < 50 ? 'var(--cds-chart-status-critical)' : 'var(--acc)'; t.append(f);
     bar.append(t, H.el('span', r.progress_pct < 50 ? 'ops-bad' : null, H.p100(r.progress_pct)));
     const td = H.el('td'); td.append(bar);
-    tr.append(H.el('td', null, r.code), H.el('td', null, r.element), H.el('td', 'hide-sm', D(r.group)), H.el('td', 'num', H.num(r.items)), td);
+    const code = H.el('td'); code.append(H.el('span', 'ops-code g-' + String(r.group || '').toLowerCase(), r.code));
+    const grp = H.el('td', 'hide-sm'); grp.append(H.el('span', 'ops-grp-chip g-' + String(r.group || '').toLowerCase(), D(r.group)));
+    tr.append(code, H.el('td', null, r.element), grp, H.el('td', 'num', H.num(r.items)), td);
     return tr;
   }));
 }
@@ -1531,8 +1609,6 @@ function drawWorkstreams() {
   const pres = (r) => /preserv/i.test(r.item || '');
   const lists = {
     'list-apps': (r) => r.area === 'Applications',
-    'list-com': (r) => r.area === 'Commissioning' && pres(r),
-    'list-com-inst': (r) => r.area === 'Commissioning' && !pres(r),
   };
   Object.entries(lists).forEach(([id, keep]) => { if (d.status === 'ok') listInto(id, d.data.filter(keep)); else document.getElementById(id).replaceChildren(); });
 }
@@ -1773,31 +1849,87 @@ function drawCoordination() {
 }
 
 // ---------- startup ----------
+// 10.1 / 10.2 cards. The report's status is shown as written: "A -> B -> C" is drawn as a flow and a short
+// comma list as chips; anything else as plain text. Nothing is added.
+const COM_ICONS = {
+  '10.1': '<path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/>',
+  '10.2': '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>',
+};
+function statusBody(text) {
+  const t = String(text).trim();
+  if (/->|→/.test(t)) {
+    const flow = H.el('div', 'ops-flow');
+    t.split(/\s*(?:->|→)\s*/).filter(Boolean).forEach((x, i, all) => {
+      flow.append(H.el('span', 'st', i === all.length - 1 ? x.replace(/\.$/, '') : x));
+      if (i < all.length - 1) flow.append(H.el('span', 'ar', '→'));
+    });
+    return flow;
+  }
+  const parts = t.replace(/\.$/, '').split(/\s*,\s*/);
+  if (parts.length > 2 && parts.every((x) => x && x.split(/\s+/).length <= 3)) {
+    const box = H.el('div', 'ops-chips'); box.append(...parts.map((x) => H.el('span', 'chip', x))); return box;
+  }
+  return H.el('p', 'tx', t);
+}
+function drawCommissioning() {
+  const d = dash.data('workstreams');
+  const rows = d.status === 'ok' ? d.data.filter((r) => r.area === 'Commissioning') : [];
+  const pres = (r) => /preserv/i.test(r.item || '');
+  const spec = [['10.1', L('10.1 Preservation', '10.1 Bảo quản'), rows.find(pres)], ['10.2', L('10.2 Installation, pre-com, commissioning', '10.2 Lắp đặt, tiền chạy thử, chạy thử'), rows.find((r) => !pres(r))]];
+  document.getElementById('com-top').replaceChildren(...spec.map(([no, sec, r]) => {
+    const card = H.el('article', 'ops-com-card' + (r && r.status ? '' : ' empty'));
+    const head = H.el('div', 'h'), ic = H.el('span', 'ops-coord-ic'); ic.setAttribute('aria-hidden', 'true');
+    ic.innerHTML = `<svg viewBox="0 0 24 24">${COM_ICONS[no]}</svg>`;
+    const tt = H.el('div'); tt.append(H.el('span', 'lab', sec), H.el('h3', null, r ? D(r.item) : '—'));
+    head.append(ic, tt);
+    card.append(head, r && r.status ? statusBody(D(r.status)) : H.el('p', 'tx ops-none', L('No information yet', 'Chưa có thông tin')));
+    return card;
+  }));
+}
+
+// Pre-commissioning plan as a Gantt chart. A bar's state comes from its dates only.
 function drawGantt() {
-  const box = document.getElementById('gantt');
+  const box = document.getElementById('gantt'), sum = document.getElementById('precom-sum'), n = document.getElementById('precom-n');
   const data = H.state('precom_plan', box);
-  if (!data) return;
-  const rows = data.map((d) => ({ ...d, s: H.day(d.plan_start), f: H.day(d.plan_finish) })).sort((a, b) => a.s - b.s || a.f - b.f);
-  const lo = d3.utcMonth.floor(d3.min(rows, (r) => r.s)), hi = d3.utcMonth.ceil(d3.max(rows, (r) => r.f));
+  if (!data) { sum.replaceChildren(); n.textContent = '—'; return; }
+  const today = H.REPORT_DATE, soon = d3.utcDay.offset(today, 30);
+  const rows = data.map((d) => {
+    const s = H.day(d.plan_start), f = H.day(d.plan_finish);
+    const state = d.actual_finish ? 'done' : s <= today && f >= today ? 'now' : s > today && s <= soon ? 'soon' : 'later';
+    return { ...d, s, f, state };
+  }).sort((a, b) => a.s - b.s || a.f - b.f);
+  const lo = d3.utcMonth.floor(d3.min(rows, (r) => r.s)), hi = d3.utcMonth.ceil(d3.utcDay.offset(d3.max(rows, (r) => r.f), 1));
   const pos = (t) => ((t - lo) / (hi - lo)) * 100;
   const months = d3.utcMonth.range(lo, hi);
-  const soon = d3.utcDay.offset(H.REPORT_DATE, 30);
-  const axisRow = H.el('div', 'ops-grow'); axisRow.append(H.el('div'));
+  const cnt = (k) => rows.filter((r) => r.state === k).length;
+  n.textContent = L(`${rows.length} activities`, `${rows.length} hạng mục`);
+  const stat = (cls, big, label) => { const e = H.el('div', 'it ' + cls); e.append(H.el('b', null, big), H.el('span', null, label)); return e; };
+  sum.replaceChildren(
+    stat('done', String(cnt('done')), L('completed', 'đã hoàn thành')),
+    stat('now', String(cnt('now')), L('planned under way on the report date', 'theo KH đang thực hiện tại ngày báo cáo')),
+    stat('soon', String(cnt('soon')), L('planned to start within 30 days', 'theo KH bắt đầu trong 30 ngày tới')),
+    stat('win', `${H.fmtDay(rows[0].s)} – ${H.fmtDay(d3.max(rows, (r) => r.f))}`, L('planned window, first start to last finish', 'khung kế hoạch, từ ngày bắt đầu sớm nhất đến ngày kết thúc muộn nhất')));
+  const lines = () => months.slice(1).map((m) => { const l = H.el('div', 'ops-gline'); l.style.left = pos(m) + '%'; return l; });
+  const todayLine = () => { const t = H.el('div', 'ops-gtoday'); t.style.left = pos(today) + '%'; return t; };
+  const axisRow = H.el('div', 'ops-grow head'); axisRow.append(H.el('div', 'gl', L('Activity', 'Hạng mục')));
   const axis = H.el('div', 'ops-gaxis');
-  months.forEach((m) => { const s = H.el('span', null, H.fmtMonthShort(m)); s.style.left = pos(d3.utcDay.offset(m, 15)) + '%'; axis.append(s); });
+  months.forEach((m) => { const sp = H.el('span', null, H.fmtMonthShort(m)); sp.style.left = pos(d3.utcDay.offset(m, 15)) + '%'; axis.append(sp); });
+  axis.append(...lines(), todayLine());
   axisRow.append(axis);
+  const CODE = /\s*\(([A-Z]{2,}[A-Z0-9]*-[\d-]+)\)/;
   box.replaceChildren(axisRow, ...rows.map((r) => {
-    const row = H.el('div', 'ops-grow');
+    const row = H.el('div', 'ops-grow ' + r.state);
     const lane = H.el('div', 'ops-glane');
-    months.forEach((m) => { const l = H.el('div', 'ops-gline'); l.style.left = pos(m) + '%'; lane.append(l); });
-    const b = H.el('div', 'ops-gbar' + (r.actual_finish ? ' done' : r.s <= H.REPORT_DATE && r.f >= H.REPORT_DATE ? ' now' : r.s > H.REPORT_DATE && r.s <= soon ? ' soon' : ''));
+    const b = H.el('div', 'ops-gbar ' + r.state);
     b.style.left = pos(r.s) + '%'; b.style.width = Math.max(0.8, pos(d3.utcDay.offset(r.f, 1)) - pos(r.s)) + '%';
     b.title = L('Plan ', 'Kế hoạch ') + `${H.fmtDay(r.s)} – ${H.fmtDay(r.f)}` + (r.actual_finish ? L(' · done ', ' · xong ') + H.fmtDay(H.day(r.actual_finish)) : '');
-    const t = H.el('div', 'ops-gtoday'); t.style.left = pos(H.REPORT_DATE) + '%';
-    lane.append(b, t);
-    const lab = H.el('div', null, r.activity);
-    const dd = H.el('span', 'ops-note', `  ${H.fmtDay(r.s)} – ${H.fmtDay(r.f)}`); dd.style.display = 'inline';
-    lab.append(dd);
+    lane.append(...lines(), todayLine(), b);
+    const lab = H.el('div', 'gl'), m = (r.activity || '').match(CODE);
+    const name = H.el('span', 'nm', m ? r.activity.replace(CODE, '') : r.activity);
+    const meta = H.el('span', 'mt');
+    if (m) meta.append(H.el('span', 'code', m[1]));
+    meta.append(H.el('span', 'dd', `${H.fmtDay(r.s)} – ${H.fmtDay(r.f)}`));
+    lab.append(name, meta);
     row.append(lab, lane);
     return row;
   }));
@@ -1806,11 +1938,12 @@ function drawGantt() {
 function drawSteps() {
   const ol = document.getElementById('steps');
   const data = H.state('startup_sequence', ol);
+  document.getElementById('steps-n').textContent = data ? L(`${data.length} steps`, `${data.length} bước`) : '—';
   if (!data) return;
   ol.replaceChildren(...data.map((r) => {
-    const li = H.el('li'); const body = H.el('div');
-    body.append(H.el('div', 'p', D(r.phase)), H.el('div', null, r.action));
-    li.append(H.el('span', 'n', String(r.step)), body); return li;
+    const li = H.el('li'), top = H.el('div', 'h');
+    top.append(H.el('span', 'n', String(r.step)), H.el('span', 'p', D(r.phase)));
+    li.append(top, H.el('div', 'a', r.action)); return li;
   }));
 }
 
@@ -1824,8 +1957,8 @@ function draw() {
   if (currentPage === 'logistics') { drawServices(); drawTender(); }
   if (currentPage === 'contracts') { drawPr(); drawPackages(); }
   if (currentPage === 'coordination') drawCoordination();
-  if (currentPage === 'orr') { drawOrrCurve(); drawOrrTeams(); drawOrrPlan(); drawOrrElements(); }
-  if (currentPage === 'startup') { drawWorkstreams(); drawGantt(); drawSteps(); }
+  if (currentPage === 'orr') { drawOrrHead(); drawOrrCurve(); drawOrrTeams(); drawOrrPlan(); drawOrrElements(); }
+  if (currentPage === 'startup') { drawCommissioning(); drawGantt(); drawSteps(); }
 }
 dash.onData(draw);
 const initial = location.hash.slice(1);
