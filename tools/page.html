@@ -421,6 +421,42 @@
 .ops-tl-axis .today { border-left: 2px solid var(--rag-r, var(--color-bad)); opacity: .75; }
 @media (max-width: 760px) { .ops-tender .tl { display: none; } .ops-tender-h .prog { margin-left: 0; } }
 @media (max-width: 560px) { .ops-tender td.act { min-width: 8rem; } .ops-tender .hide-xs, .ops-tender .st .lbl { display: none; } .ops-tender th, .ops-tender td { padding: 8px 6px; } }
+/* 8. Coordination: two summary cards, the 8.1 status line by line, the 8.2 chart framed */
+.ops-coord-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: var(--cds-gap-md); }
+.ops-coord-sum { position: relative; display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border: 1px solid var(--color-border-line); border-left: 4px solid var(--acc); border-radius: var(--cds-radius); background: linear-gradient(135deg, var(--acc-tint), var(--color-panel) 65%); box-shadow: var(--shadow-card); color: inherit; text-decoration: none; transition: border-color var(--cds-dur-slow), transform var(--cds-dur-slow); }
+.ops-coord-sum:hover { border-color: var(--acc-line); border-left-color: var(--acc); transform: translateY(-1px); }
+.ops-coord-sum .b { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ops-coord-sum .lab { font-size: var(--cds-font-size-caption); font-weight: 600; letter-spacing: .02em; color: var(--acc); }
+.ops-coord-sum .t { font-size: 16px; font-weight: 650; color: var(--color-fg); }
+.ops-coord-sum .s { font-size: var(--cds-font-size-caption); line-height: 1.5; color: var(--color-fg-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.ops-coord-sum .go { margin-left: auto; align-self: center; color: var(--acc); font-size: 18px; }
+.ops-coord-ic { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 10px; background: var(--acc); color: var(--color-panel); }
+.ops-coord-ic svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ops-coord-steps { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; }
+.ops-coord-steps li { position: relative; display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 0 0 18px; }
+.ops-coord-steps li:last-child { padding-bottom: 0; }
+.ops-coord-steps li::before { content: ""; position: absolute; left: 14px; top: 30px; bottom: 2px; width: 2px; background: var(--acc-line); }
+.ops-coord-steps li:last-child::before { display: none; }
+.ops-coord-steps .n { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--acc-tint); border: 2px solid var(--acc); color: var(--acc); font-size: 13px; font-weight: 700; }
+.ops-coord-steps .x { padding-top: 4px; font-size: var(--cds-font-size-body); line-height: 1.6; color: var(--color-fg); }
+.ops .party { display: inline-block; padding: 0 7px; margin: 1px 0; border-radius: 6px; background: var(--acc-tint); border: 1px solid var(--acc-line); color: var(--acc); font-weight: 650; font-size: .92em; line-height: 1.55; }
+.ops-coord-call { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: var(--cds-radius); background: var(--acc-soft); border: 1px solid var(--acc-line); font-weight: 600; }
+.ops-coord-call .ops-coord-ic { width: 34px; height: 34px; } .ops-coord-call .ops-coord-ic svg { width: 18px; height: 18px; }
+.ops-coord-call.empty { font-weight: 400; font-style: italic; color: var(--color-fg-muted); }
+.ops-coord-fig { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.ops-coord-fig a { display: block; padding: 12px; background: #fff; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); box-shadow: var(--shadow-card); cursor: zoom-in; }
+.ops-coord-fig img { display: block; width: 100%; height: auto; }
+.ops-coord-fig figcaption { display: flex; flex-direction: column; gap: 8px; }
+.ops-coord-key { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: var(--cds-font-size-caption); color: var(--color-fg); }
+.ops-coord-key span { display: inline-flex; align-items: center; gap: 7px; }
+.ops-coord-key .sw { display: inline-block; flex: none; }
+.ops-coord-key .bar-l { width: 12px; height: 12px; border-radius: 2px; background: #FE9794; }
+.ops-coord-key .bar-d { width: 12px; height: 12px; border-radius: 2px; background: #7B2443; }
+.ops-coord-key .ln-g { width: 18px; height: 3px; border-radius: 2px; background: #00B050; }
+.ops-coord-key .ln-d { width: 18px; height: 3px; border-radius: 2px; background: #1F3864; }
+:root[data-theme="dark"] .ops-coord-key .ln-d { background: #8FA9D6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ops-coord-key .ln-d { background: #8FA9D6; } }
+@media (max-width: 560px) { .ops-coord-fig a { padding: 6px; } .ops-coord-steps .x { font-size: var(--cds-font-size-caption); } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -761,23 +797,22 @@
 
   <!-- 8 COORDINATION -->
   <section class="ops-page" id="coordination" data-page="coordination" hidden>
-    <h2 class="ops-sec-title">8.1 Coordination procedure</h2>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-coordination">
-        <h2>Coordination procedure</h2>
-        <ul class="ops-list" id="list-coord" data-source="workstreams"></ul>
-      </div>
+    <div class="ops-coord-top" id="coord-top" data-source="workstreams"></div>
+    <div class="ops-card ops-bcard" id="card-coordination">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">8.1 Coordination procedure</span><span class="ops-banner-n">Report status</span></h2>
+      <p class="ops-note">As written in the report, one line per sentence. Party names are highlighted.</p>
+      <ol class="ops-coord-steps" id="list-coord" data-source="workstreams"></ol>
     </div>
-    <h2 class="ops-sec-title">8.2 Production profile</h2>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-gas-profile">
-        <h2>Production profile: sales gas capability vs requirement</h2>
-        <p class="ops-note" id="gas-profile-note">—</p>
-        <figure class="ops-figure">
-          <img src="assets/production-profile.png" width="1363" height="580" loading="lazy" alt="Chart of sales gas delivery capability against total sales gas requirement, July 2027 to January 2028, in MMscfd">
-          <figcaption class="ops-note">Chart from the report of 21 Oct 2026. Light bars: total sales gas requirement; dark bars: O Mon I (one generator) gas; green line: SSF delivery capability, 73 MMscfd; dark line: delivery capability at 75%.</figcaption>
-        </figure>
-      </div>
+    <div class="ops-card ops-bcard" id="card-gas-profile">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">8.2 Production profile</span><span class="ops-banner-n">Sales gas capability vs requirement</span></h2>
+      <div class="ops-coord-call" id="gas-profile-call"><span class="ops-coord-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z"/><path d="M11.5 13.5L20 4"/></svg></span><span id="gas-profile-note">—</span></div>
+      <figure class="ops-coord-fig">
+        <a href="assets/production-profile.png" target="_blank" rel="noopener" title="Open full size"><img src="assets/production-profile.png" width="1363" height="580" loading="lazy" alt="Chart of sales gas delivery capability against total sales gas requirement, July 2027 to January 2028, in MMscfd"></a>
+        <figcaption>
+          <div class="ops-coord-key" aria-hidden="true"><span><i class="sw bar-l"></i>Total sales gas requirement</span><span><i class="sw bar-d"></i>O Mon I (one generator) gas</span><span><i class="sw ln-g"></i>SSF delivery capability, 73 MMscfd</span><span><i class="sw ln-d"></i>Delivery capability at 75%</span></div>
+          <span class="ops-note">Chart from the report of 21 Oct 2026. Click the chart to open it full size.</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -1496,7 +1531,6 @@ function drawWorkstreams() {
   const pres = (r) => /preserv/i.test(r.item || '');
   const lists = {
     'list-apps': (r) => r.area === 'Applications',
-    'list-coord': (r) => r.area === 'Coordination' && r.item !== 'Production profile',
     'list-com': (r) => r.area === 'Commissioning' && pres(r),
     'list-com-inst': (r) => r.area === 'Commissioning' && !pres(r),
   };
@@ -1688,9 +1722,54 @@ function drawPermits() {
   note.textContent = basis.map(([b, rs]) => L('Legal basis (', 'Căn cứ pháp lý (') + rs.length + L(' permits): ', ' giấy phép): ') + b).join(' · ');
 }
 
-function drawGasProfile() {
-  const d = dash.data('workstreams'), r = d.status === 'ok' && d.data.find((x) => x.item === 'Production profile');
-  document.getElementById('gas-profile-note').textContent = r && r.status ? D(r.status) : '';
+// 8. Coordination. The report's status text is shown as written, split only at sentence ends; names written
+// in capitals (SWPOC, PVN, EVNGENCO2/NĐCT …) are highlighted, nothing is added or reworded.
+const COORD_ICONS = {
+  '8.1': '<path d="M8 4h8M9 2.5h6v3H9zM6 4H5a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-1"/><path d="M8 11h8M8 15h5"/>',
+  '8.2': '<path d="M4 20V10M9.5 20V6M15 20v-8M20.5 20V4M3 20.5h18"/>',
+};
+const PARTY = /(^|[\s(,;])((?:[A-ZĐ][A-Z0-9Đ]{2,})(?:\/[A-ZĐ][A-Z0-9Đ]+)*)(?=$|[\s),.;:])/gu;
+function partyText(text) {
+  const out = []; let last = 0, m;
+  PARTY.lastIndex = 0;
+  while ((m = PARTY.exec(text))) {
+    const at = m.index + m[1].length;
+    out.push(text.slice(last, at), H.el('span', 'party', m[2])); last = at + m[2].length;
+  }
+  out.push(text.slice(last));
+  return out.filter((x) => x !== '');
+}
+const sentences = (t) => t.split(/(?<=[.!?])\s+(?=[A-ZĐ(])/u).map((x) => x.trim()).filter(Boolean);
+function drawCoordination() {
+  const d = dash.data('workstreams');
+  const rows = d.status === 'ok' ? d.data.filter((r) => r.area === 'Coordination') : [];
+  const byNo = (no) => rows.find((r) => r.no === no);
+  const proc = byNo('8.1') || rows.find((r) => r.item === 'Coordination procedure');
+  const prof = byNo('8.2') || rows.find((r) => r.item === 'Production profile');
+
+  const top = document.getElementById('coord-top');
+  top.replaceChildren(...[[proc, '8.1', 'card-coordination', 'Coordination procedure'], [prof, '8.2', 'card-gas-profile', 'Production profile']].map(([r, no, target, item]) => {
+    const a = H.el('a', 'ops-coord-sum'); a.href = '#' + target;
+    a.addEventListener('click', (e) => { e.preventDefault(); document.getElementById(target).scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    const ic = H.el('span', 'ops-coord-ic'); ic.setAttribute('aria-hidden', 'true'); ic.innerHTML = `<svg viewBox="0 0 24 24">${COORD_ICONS[no]}</svg>`;
+    const b = H.el('span', 'b');
+    b.append(H.el('span', 'lab', no), H.el('span', 't', D((r && r.item) || item)),
+      r && r.status ? H.el('span', 's', D(r.status)) : H.el('span', 's ops-none', L('No information yet', 'Chưa có thông tin')));
+    a.append(ic, b, H.el('span', 'go', '↓'));
+    return a;
+  }));
+
+  const ol = document.getElementById('list-coord');
+  if (proc && proc.status) {
+    ol.replaceChildren(...sentences(D(proc.status)).map((t, i) => {
+      const li = H.el('li'), x = H.el('div', 'x');
+      x.append(...partyText(t)); li.append(H.el('span', 'n', String(i + 1)), x); return li;
+    }));
+  } else ol.replaceChildren(H.el('li', 'ops-none', L('No information yet', 'Chưa có thông tin')));
+
+  const call = document.getElementById('gas-profile-call');
+  call.classList.toggle('empty', !(prof && prof.status));
+  document.getElementById('gas-profile-note').textContent = prof && prof.status ? D(prof.status) : L('No information yet', 'Chưa có thông tin');
 }
 
 // ---------- startup ----------
@@ -1744,7 +1823,7 @@ function draw() {
   if (currentPage === 'procedures') drawProcedures();
   if (currentPage === 'logistics') { drawServices(); drawTender(); }
   if (currentPage === 'contracts') { drawPr(); drawPackages(); }
-  if (currentPage === 'coordination') { drawWorkstreams(); drawGasProfile(); }
+  if (currentPage === 'coordination') drawCoordination();
   if (currentPage === 'orr') { drawOrrCurve(); drawOrrTeams(); drawOrrPlan(); drawOrrElements(); }
   if (currentPage === 'startup') { drawWorkstreams(); drawGantt(); drawSteps(); }
 }

@@ -41,7 +41,7 @@
   "2.2 CBTA development": "2.2 Xây dựng CBTA",
   "2.3 Training and assessment progress": "2.3 Tiến độ đào tạo và đánh giá",
   "8.1 Coordination procedure": "8.1 Quy trình phối hợp",
-  "8.2 Production profile": "8.2 Biểu đồ sản lượng",
+  "8.2 Production profile": "8.2 Biểu đồ khai thác",
   "10.1 Preservation": "10.1 Bảo quản",
   "10.2 Installation, pre-com, commissioning": "10.2 Lắp đặt, pre-com, chạy thử",
   "Logistics and services": "Hậu cần và dịch vụ",
@@ -208,7 +208,16 @@
   "Planned date passed": "Đã qua ngày kế hoạch",
   "Next step": "Bước tiếp theo",
   "Upcoming": "Sắp tới",
-  "Report date": "Ngày báo cáo"
+  "Report date": "Ngày báo cáo",
+  "Report status": "Tình trạng theo báo cáo",
+  "As written in the report, one line per sentence. Party names are highlighted.": "Ghi đúng như trong báo cáo, mỗi câu một dòng. Tên các bên được tô nổi bật.",
+  "Sales gas capability vs requirement": "Khả năng cấp khí bán so với nhu cầu",
+  "Total sales gas requirement": "Tổng nhu cầu khí bán",
+  "O Mon I (one generator) gas": "Khí cho Ô Môn I (một tổ máy)",
+  "SSF delivery capability, 73 MMscfd": "Khả năng cấp khí SSF, 73 MMscfd",
+  "Delivery capability at 75%": "Khả năng cấp khí ở mức 75%",
+  "Open full size": "Mở ảnh kích thước đầy đủ",
+  "Chart from the report of 21 Oct 2026. Click the chart to open it full size.": "Biểu đồ trong báo cáo 21/10/2026. Bấm vào biểu đồ để xem kích thước đầy đủ."
  },
  "data": {
   "Manpower": "Nhân sự",
