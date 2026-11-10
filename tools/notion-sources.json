@@ -94,5 +94,13 @@
  "tender_schedule": {
   "database": "99cec02949654eb3845eadcae9da189e",
   "data_source": "78ffbe46-456d-48e5-a29d-83624149e616"
+ },
+ "orr_departments": {
+  "database": "8a9df8c9cc194633a189c55ea9571a5c",
+  "data_source": "a8657db3-2462-48bd-a043-94d72c2c9b07"
+ },
+ "orr_risks": {
+  "database": "29f3b5776dd9440f98d2ab49f7e30059",
+  "data_source": "6094027d-fb8e-45ec-81c7-2bda281c9a80"
  }
 }

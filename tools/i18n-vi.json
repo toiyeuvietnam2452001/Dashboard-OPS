@@ -231,7 +231,22 @@
   "Completed (actual finish entered)": "Hoàn thành (đã có ngày kết thúc thực tế)",
   "Planned to be under way on the report date": "Theo KH đang thực hiện tại ngày báo cáo",
   "Planned to start within 30 days": "Theo KH bắt đầu trong 30 ngày tới",
-  "Later": "Sau đó"
+  "Later": "Sau đó",
+  "ORR checklist by department": "ORR checklist theo phòng ban",
+  "From the Summary sheet of the ORR file: the \"ORR Check List Report\" table and the \"Accumulate Progress\" table, each shown as written. Bar is accumulated actual, black tick is accumulated plan.": "Lấy từ sheet Summary của file ORR: bảng \"ORR Check List Report\" và bảng \"Accumulate Progress\", giữ nguyên số trong file. Thanh là % thực tế lũy kế, vạch đen là % kế hoạch lũy kế.",
+  "Department": "Phòng ban",
+  "Total activities": "Tổng hoạt động",
+  "Weightage": "Trọng số",
+  "Risk assessment by root cause": "Đánh giá rủi ro theo nguyên nhân gốc",
+  "Each root cause scored 1–5 in the ORR Check list file, with the average score, risk status and action plan as written there.": "Mỗi nguyên nhân gốc được chấm 1–5 trong file ORR Check list; điểm trung bình, trạng thái rủi ro và kế hoạch hành động giữ nguyên như trong file.",
+  "Yellow & red": "Vàng & đỏ",
+  "Not scored": "Chưa chấm",
+  "Item": "Item",
+  "Activity": "Hoạt động",
+  "Avg. score": "Điểm TB",
+  "Risk status": "Trạng thái rủi ro",
+  "Action plan": "Kế hoạch hành động",
+  "How the risk is scored (Root cause sheet)": "Cách chấm điểm rủi ro (sheet Root cause)"
  },
  "data": {
   "Manpower": "Nhân sự",

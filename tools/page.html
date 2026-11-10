@@ -519,6 +519,45 @@
 .ops-seq .p { font-weight: 650; font-size: 14.5px; }
 .ops-seq .a { font-size: var(--cds-font-size-caption); line-height: 1.5; color: var(--color-fg); }
 @media (max-width: 760px) { #startup .ops-grow { grid-template-columns: 1fr; gap: 6px; } #startup .ops-grow.head .gl { display: none; } #startup .ops-glane { min-height: 16px; } }
+/* 9. ORR by department and risk assessment */
+.ops-dept thead tr.grp th { border-bottom: 1px solid var(--acc-line); }
+.ops-dept th.c { text-align: center; }
+.ops-dept td.dp { font-weight: 650; letter-spacing: .02em; }
+.ops-dept .ops-cell-bar { min-width: 11rem; } .ops-dept .ops-cell-bar .ops-track { height: 10px; }
+.ops-dept tr.tot > td { background: var(--acc-tint) !important; font-weight: 700; border-top: 2px solid var(--acc-line); color: var(--acc); }
+.ops-dept-diff { padding: 8px 12px; border-radius: var(--cds-radius); border: 1px solid color-mix(in srgb, var(--color-warn) 45%, transparent); background: color-mix(in srgb, var(--color-warn) 9%, var(--color-panel)); color: var(--color-fg); }
+.ops-risk-sum { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: 10px; }
+.ops-risk-sum .it { display: flex; align-items: baseline; gap: 8px; padding: 10px 14px; border-radius: var(--cds-radius); border: 1px solid var(--color-border-line); border-left: 4px solid var(--cds-chart-muted); background: var(--color-panel); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-weight: 600; }
+.ops-risk-sum .it b { font-size: 22px; color: var(--color-fg); }
+.ops-risk-sum .it.RED { border-left-color: var(--color-bad); } .ops-risk-sum .it.YELLOW { border-left-color: var(--color-warn); } .ops-risk-sum .it.GREEN { border-left-color: var(--color-ok); }
+.ops-risk td.act { min-width: 16rem; } .ops-risk td.act .nm { display: block; font-weight: 500; }
+.ops-risk td.act .nw { display: block; font-size: 11.5px; color: var(--color-fg-muted); margin-top: 2px; }
+.ops-risk td.act .ap-sm { display: none; font-size: 11.5px; color: var(--color-fg); margin-top: 4px; }
+.ops-risk th.sc, .ops-risk td.sc { text-align: center; width: 4.6rem; }
+.ops-risk td.avg { font-weight: 700; font-variant-numeric: tabular-nums; }
+.ops-risk td.ap { min-width: 14rem; font-size: var(--cds-font-size-caption); }
+.ops-risk tr.rs-YELLOW > td:first-child { box-shadow: inset 3px 0 0 var(--color-warn); } .ops-risk tr.rs-RED > td:first-child { box-shadow: inset 3px 0 0 var(--color-bad); }
+.ops-risk tr.rs-none > td { color: var(--color-fg-muted); }
+.ops .ops-sc { display: inline-grid; place-items: center; width: 26px; height: 22px; border-radius: 6px; font-weight: 700; font-size: 12px; }
+.ops .ops-sc.s1 { background: color-mix(in srgb, var(--color-ok) 12%, transparent); color: var(--color-ok); }
+.ops .ops-sc.s2 { background: color-mix(in srgb, var(--color-ok) 24%, transparent); color: var(--color-ok); }
+.ops .ops-sc.s3 { background: color-mix(in srgb, var(--color-warn) 22%, transparent); color: var(--color-warn); }
+.ops .ops-sc.s4 { background: color-mix(in srgb, #EA580C 26%, transparent); color: #C2410C; }
+.ops .ops-sc.s5 { background: var(--color-bad); color: var(--color-panel); }
+:root[data-theme="dark"] .ops .ops-sc.s4 { color: #FDBA74; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ops .ops-sc.s4 { color: #FDBA74; } }
+.ops .ops-rs { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 12px; letter-spacing: .03em; padding: 2px 10px 2px 8px; border-radius: 999px; white-space: nowrap; }
+.ops .ops-rs::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: currentColor; }
+.ops .ops-rs.GREEN { color: var(--color-ok); background: color-mix(in srgb, var(--color-ok) 12%, transparent); }
+.ops .ops-rs.YELLOW { color: var(--color-warn); background: color-mix(in srgb, var(--color-warn) 14%, transparent); }
+.ops .ops-rs.RED { color: var(--color-bad); background: color-mix(in srgb, var(--color-bad) 12%, transparent); }
+.ops-risk-how { border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--acc-soft); }
+.ops-risk-how summary { cursor: pointer; padding: 10px 14px; font-weight: 600; color: var(--acc); }
+.ops-risk-how-b { padding: 0 14px 14px; display: flex; flex-direction: column; gap: 12px; }
+.ops-rc { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); background: var(--color-panel); }
+.ops-rc th, .ops-rc td { padding: 7px 10px; border: 1px solid var(--color-border-line); text-align: left; vertical-align: top; line-height: 1.45; }
+.ops-rc-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 12px; align-items: start; }
+@media (max-width: 560px) { .ops-risk .ops-rs { font-size: 0; padding: 5px; gap: 0; } .ops-risk .ns { font-size: 0; } .ops-risk .ns::after { content: '—'; font-size: 13px; } .ops-risk th, .ops-risk td { padding-left: 5px; padding-right: 5px; } .ops-risk td.act .ap-sm { display: block; } .ops-risk td.act { min-width: 8rem; } .ops-dept .ops-cell-bar { min-width: 5rem; } .ops-dept th, .ops-dept td { padding-left: 5px; padding-right: 5px; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -908,6 +947,68 @@
       <div class="ops-tablebox">
         <table class="ops-plan" id="table-orr-plan" data-source="orr_team_plan"><thead></thead><tbody></tbody></table>
       </div>
+    </div>
+    <div class="ops-card ops-bcard" id="card-orr-dept">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">ORR checklist by department</span><span class="ops-banner-n" id="orr-dept-n">—</span></h2>
+      <p class="ops-note">From the Summary sheet of the ORR file: the "ORR Check List Report" table and the "Accumulate Progress" table, each shown as written. Bar is accumulated actual, black tick is accumulated plan.</p>
+      <div class="ops-tablebox" style="max-height:none">
+        <table class="ops-dept" id="table-orr-dept" data-source="orr_departments" data-row-key="department">
+          <thead>
+            <tr class="grp"><th rowspan="2">Department</th><th rowspan="2" class="num">Total activities</th><th rowspan="2" class="num hide-sm">Weightage</th><th rowspan="2" class="num hide-sm">Completed</th><th colspan="2" class="c hide-sm">ORR Check List Report</th><th colspan="2" class="c">Accumulate Progress</th></tr>
+            <tr><th class="num hide-sm">% Plan</th><th class="num hide-sm">% Actual</th><th class="num">Plan</th><th>Actual</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="ops-note ops-dept-diff" id="orr-dept-diff" hidden></p>
+    </div>
+    <div class="ops-card ops-bcard" id="card-orr-risk">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Risk assessment by root cause</span><span class="ops-banner-n" id="orr-risk-n">—</span></h2>
+      <p class="ops-note">Each root cause scored 1–5 in the ORR Check list file, with the average score, risk status and action plan as written there.</p>
+      <div class="ops-risk-sum" id="orr-risk-sum"></div>
+      <div class="ops-tools"><div class="ops-seg" id="orr-risk-filter" role="group" aria-label="Risk status"><button type="button" aria-pressed="true" data-f="">All</button><button type="button" aria-pressed="false" data-f="flag">Yellow &amp; red</button><button type="button" aria-pressed="false" data-f="none">Not scored</button></div></div>
+      <div class="ops-tablebox" style="max-height:none">
+        <table class="ops-risk" id="table-orr-risk" data-source="orr_risks" data-row-key="item">
+          <thead><tr><th class="num">Item</th><th>Activity</th><th class="sc hide-sm" title="Resource Constraints">Resource</th><th class="sc hide-sm" title="Interface Issues">Interface</th><th class="sc hide-sm" title="Scope Changes">Scope</th><th class="sc hide-sm" title="Vendor / Contractor">Vendor</th><th class="sc hide-sm" title="Contract / Budget / Approval">Contract</th><th class="num">Avg. score</th><th>Risk status</th><th class="hide-sm">Action plan</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <details class="ops-risk-how">
+        <summary>How the risk is scored (Root cause sheet)</summary>
+        <div class="ops-risk-how-b">
+          <table class="ops-rc">
+            <thead><tr><th class="num">No.</th><th>Root Cause</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td class="num">1</td><td><b>Resource Constraints</b></td><td>- Insufficient manpower or resources not allocated at the required time.<br>- Applications/ systems have not been ready yet.</td></tr>
+              <tr><td class="num">2</td><td><b>Interface Issues</b></td><td>- Pending information, data, documents, or approvals from other departments, Vendors/ contractors, or stakeholders.<br>- Preceding activities have not been completed, preventing the subsequent activities from proceeding as planned.</td></tr>
+              <tr><td class="num">3</td><td><b>Scope Changes</b></td><td>- Changes to design, scope of work, technical requirements, or Client/Partner requirements.<br>- Additional or unforeseen work has been identified, requiring the planned activities or documents to be revised or reworked.</td></tr>
+              <tr><td class="num">4</td><td><b>Vendor / Contractor Issues</b></td><td>Vendor/Contractor has not met the agreed schedule, deliverable requirements, mobilization plan, or other contractual commitments, resulting in delays to the planned activity.</td></tr>
+              <tr><td class="num">5</td><td><b>Contract / Budget / Approval</b></td><td>Budget, contract, procurement, commercial arrangements, or required approvals/decisions have not been finalized within the planned time frame, preventing the activity from proceeding as scheduled.</td></tr>
+            </tbody>
+          </table>
+          <div class="ops-rc-two">
+            <table class="ops-rc">
+              <thead><tr><th class="num">Score</th><th>Mức độ</th><th>Ý nghĩa</th></tr></thead>
+              <tbody>
+                <tr><td class="num"><span class="ops-sc s1">1</span></td><td><b>Negligible</b></td><td>Không có trở ngại đáng kể; hoàn toàn trong kiểm soát</td></tr>
+                <tr><td class="num"><span class="ops-sc s2">2</span></td><td><b>Low</b></td><td>Có vấn đề nhỏ nhưng đã kiểm soát; không ảnh hưởng target date</td></tr>
+                <tr><td class="num"><span class="ops-sc s3">3</span></td><td><b>Moderate</b></td><td>Có rủi ro thực sự; cần action/mitigation để bảo đảm tiến độ</td></tr>
+                <tr><td class="num"><span class="ops-sc s4">4</span></td><td><b>High</b></td><td>Rủi ro đáng kể; khả năng trễ cao nếu không có intervention/recovery</td></tr>
+                <tr><td class="num"><span class="ops-sc s5">5</span></td><td><b>Critical / Blocked</b></td><td>Đang bị blocked hoặc không có credible path để hoàn thành đúng hạn</td></tr>
+              </tbody>
+            </table>
+            <table class="ops-rc">
+              <thead><tr><th>Status</th><th>Điều kiện</th></tr></thead>
+              <tbody>
+                <tr><td><span class="ops-rs RED">RED</span></td><td>Có root cause = 5, hoặc có từ 3 root cause = 4 trở lên</td></tr>
+                <tr><td><span class="ops-rs YELLOW">YELLOW</span></td><td>Không thỏa RED và có ít nhất một root cause = 3 hoặc 4</td></tr>
+                <tr><td><span class="ops-rs GREEN">GREEN</span></td><td>Cả 5 root cause ≤ 2</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ops-note">Average Risk Score = trung bình 5 điểm, từ 1,0 đến 5,0; dùng để xếp ưu tiên trong cùng một màu. Action Plan: hướng giải quyết cho các root cause ≥ 3.</p>
+        </div>
+      </details>
     </div>
     <div class="ops-card ops-bcard" id="card-orr-elements">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Checklist by element</span><span class="ops-banner-n" id="orr-el-n">—</span></h2>
@@ -1477,8 +1578,8 @@ function drawOrrTeams() {
     const v = H.el('span', 'v'); v.append(H.el('b', null, H.p100(r.actual_pct)), H.el('small', null, L(' / plan ', ' / KH ') + H.p100(r.plan_pct)));
     bar.append(t, v); cell.append(bar);
     const gp = H.el('td', 'num'); if (g != null) gp.append(H.el('span', 'ops-gap ' + (g >= 0 ? 'up' : 'down'), H.signPts(g))); else gp.textContent = '—';
-    tr.append(H.el('td', 'tm', r.team), H.el('td', 'num hide-sm', H.p100(r.weight_pct)), H.el('td', 'num hide-sm', H.num(r.total_activities)),
-      H.el('td', 'num hide-sm', H.num(r.completed)), cell, gp, H.el('td', 'num hide-sm', H.p100(r.plan_end_pct)));
+    tr.append(H.el('td', 'tm', r.team), H.el('td', 'num hide-sm', H.p100(r.weight_pct)), H.el('td', 'num hide-sm', r.total_activities == null ? '—' : H.num(r.total_activities)),
+      H.el('td', 'num hide-sm', r.completed == null ? '—' : H.num(r.completed)), cell, gp, H.el('td', 'num hide-sm', H.p100(r.plan_end_pct)));
     return tr;
   }));
 }
@@ -1503,6 +1604,67 @@ function drawOrrHead() {
     let m = t.querySelector('.ops-tile-meter'); if (!m) { m = H.el('div', 'ops-tile-meter'); m.append(H.el('i')); t.append(m); }
     m.firstChild.style.width = (r ? Math.min(100, r.progress_pct) : 0) + '%';
   });
+}
+
+// ORR by department (Summary sheet). Both tables of the sheet are shown as written; where they disagree
+// beyond rounding, the note under the table names the departments.
+function drawOrrDept() {
+  const tb = document.querySelector('#table-orr-dept tbody'), n = document.getElementById('orr-dept-n'), diff = document.getElementById('orr-dept-diff');
+  const d = dash.data('orr_departments');
+  if (d.status !== 'ok' || !d.data.length) { tb.replaceChildren(); n.textContent = '—'; diff.hidden = true; return; }
+  const rows = d.data.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  const tot = rows.find((r) => r.department === 'TOTAL'), m = rows.find((r) => r.month)?.month;
+  n.textContent = (m ? H.fmtMonth(H.month(m)) + ' · ' : '') + L(`${rows.filter((r) => r !== tot).length} departments`, `${rows.filter((r) => r !== tot).length} phòng ban`);
+  const pct = (v) => (v == null ? '—' : (Number.isInteger(v) ? v : d3.format('.1f')(v)) + '%');
+  tb.replaceChildren(...rows.map((r) => {
+    const tr = H.el('tr', r === tot ? 'tot' : null), cell = H.el('td'), bar = H.el('div', 'ops-cell-bar');
+    const t = H.el('div', 'ops-track'), f = H.el('div', 'ops-fill');
+    const ahead = r.acc_actual_pct != null && r.acc_plan_pct != null && r.acc_actual_pct >= r.acc_plan_pct;
+    f.style.width = Math.min(100, r.acc_actual_pct || 0) + '%'; f.style.background = ahead ? 'var(--acc)' : 'var(--cds-chart-status-critical)'; t.append(f);
+    if (r.acc_plan_pct != null) { const k = H.el('div', 'ops-tick'); k.style.left = `calc(${Math.min(100, r.acc_plan_pct)}% - 1px)`; t.append(k); }
+    bar.append(t, H.el('b', ahead ? null : 'ops-bad', pct(r.acc_actual_pct))); cell.append(bar);
+    tr.append(H.el('td', 'dp', r.department), H.el('td', 'num', H.num(r.total_activities ?? 0)), H.el('td', 'num hide-sm', r.weight_pct == null ? '—' : d3.format('.2f')(r.weight_pct).replace(/\.00$/, '') + '%'),
+      H.el('td', 'num hide-sm', r.completed ?? '—'), H.el('td', 'num hide-sm', H.p100(r.plan_pct)), H.el('td', 'num hide-sm', H.p100(r.actual_pct)), H.el('td', 'num', pct(r.acc_plan_pct)), cell);
+    return tr;
+  }));
+  // Same figure to the precision the accumulated table uses (whole % or one decimal).
+  const same = (a, b) => a == null || b == null || (Number.isInteger(b) ? Math.round(a) === b : a.toFixed(1) === b.toFixed(1));
+  const off = rows.flatMap((r) => [
+    !same(r.plan_pct, r.acc_plan_pct) && `${r.department} ${L('plan', 'KH')} ${H.p100(r.plan_pct)} / ${pct(r.acc_plan_pct)}`,
+    !same(r.actual_pct, r.acc_actual_pct) && `${r.department} ${L('actual', 'thực tế')} ${H.p100(r.actual_pct)} / ${pct(r.acc_actual_pct)}`]).filter(Boolean);
+  diff.hidden = !off.length;
+  diff.textContent = L('The two tables in the file differ: ', 'Hai bảng trong file lệch nhau: ') + off.join(' · ') + L(' (ORR Check List Report / Accumulate Progress).', ' (ORR Check List Report / Accumulate Progress).');
+}
+
+// ORR risk assessment: five root-cause scores per activity, average, status and action plan as in the file.
+let riskFilter = '';
+document.querySelectorAll('#orr-risk-filter button').forEach((btn) => btn.addEventListener('click', () => {
+  riskFilter = btn.dataset.f;
+  document.querySelectorAll('#orr-risk-filter button').forEach((x) => x.setAttribute('aria-pressed', String(x === btn)));
+  drawOrrRisk();
+}));
+const RC = ['resource', 'interface', 'scope', 'vendor', 'contract'];
+function drawOrrRisk() {
+  const tb = document.querySelector('#table-orr-risk tbody'), sum = document.getElementById('orr-risk-sum'), n = document.getElementById('orr-risk-n');
+  const d = dash.data('orr_risks');
+  if (d.status !== 'ok' || !d.data.length) { tb.replaceChildren(); sum.replaceChildren(); n.textContent = '—'; return; }
+  const all = d.data.slice().sort((a, b) => (a.item ?? 0) - (b.item ?? 0));
+  const cnt = (s) => all.filter((r) => r.risk_status === s).length, none = all.filter((r) => !r.risk_status).length;
+  n.textContent = L(`${all.length} activities`, `${all.length} hạng mục`);
+  const chip = (cls, v, label) => { const e = H.el('div', 'it ' + cls); e.append(H.el('b', null, String(v)), H.el('span', null, label)); return e; };
+  sum.replaceChildren(chip('RED', cnt('RED'), 'RED'), chip('YELLOW', cnt('YELLOW'), 'YELLOW'), chip('GREEN', cnt('GREEN'), 'GREEN'), chip('none', none, L('not scored in the file', 'chưa chấm điểm trong file')));
+  const rows = all.filter((r) => !riskFilter || (riskFilter === 'flag' ? ['RED', 'YELLOW'].includes(r.risk_status) : !r.risk_status));
+  if (!rows.length) { const tr = H.el('tr'), td = H.el('td', 'ops-none', L('No activities', 'Không có hạng mục')); td.colSpan = 10; tr.append(td); tb.replaceChildren(tr); return; }
+  tb.replaceChildren(...rows.map((r) => {
+    const tr = H.el('tr', r.risk_status ? 'rs-' + r.risk_status : 'rs-none');
+    const act = H.el('td', 'act'); act.append(H.el('span', 'nm', r.activity || ''));
+    if (r.new_activity_name) act.append(H.el('span', 'nw', L('New name: ', 'Tên mới: ') + r.new_activity_name));
+    if (r.action_plan) act.append(H.el('span', 'ap-sm', '→ ' + r.action_plan));
+    const scores = RC.map((k) => { const td = H.el('td', 'sc hide-sm'); if (r[k] != null) td.append(H.el('span', 'ops-sc s' + Math.min(5, Math.max(1, Math.round(r[k]))), String(r[k]))); else td.textContent = '—'; return td; });
+    const st = H.el('td'); st.append(r.risk_status ? H.el('span', 'ops-rs ' + r.risk_status, r.risk_status) : H.el('span', 'ops-none ns', L('Not scored', 'Chưa chấm')));
+    tr.append(H.el('td', 'num', r.item ?? ''), act, ...scores, H.el('td', 'num avg', r.avg_score == null ? '—' : d3.format('.1f')(r.avg_score)), st, H.el('td', 'ap hide-sm', r.action_plan || ''));
+    return tr;
+  }));
 }
 
 let orrGroup = '';
@@ -1957,7 +2119,7 @@ function draw() {
   if (currentPage === 'logistics') { drawServices(); drawTender(); }
   if (currentPage === 'contracts') { drawPr(); drawPackages(); }
   if (currentPage === 'coordination') drawCoordination();
-  if (currentPage === 'orr') { drawOrrHead(); drawOrrCurve(); drawOrrTeams(); drawOrrPlan(); drawOrrElements(); }
+  if (currentPage === 'orr') { drawOrrHead(); drawOrrCurve(); drawOrrTeams(); drawOrrPlan(); drawOrrDept(); drawOrrRisk(); drawOrrElements(); }
   if (currentPage === 'startup') { drawCommissioning(); drawGantt(); drawSteps(); }
 }
 dash.onData(draw);
@@ -2281,6 +2443,7 @@ const AREAS = [ // [table, area title EN, VI, tab]
   ['cbta_modules', 'CBTA modules', 'Module CBTA', 'training'], ['hse_matrix', 'HSE training matrix', 'Ma trận đào tạo HSE', 'training'],
   ['orr_teams', 'ORR by team', 'ORR theo team', 'orr'], ['orr_groups', 'ORR groups', 'ORR tổng nhóm', 'orr'], ['orr_elements', 'ORR elements', 'ORR hạng mục', 'orr'],
   ['orr_team_plan', 'ORR plan by team', 'ORR kế hoạch theo team', 'orr'],
+  ['orr_departments', 'ORR by department', 'ORR theo phòng ban', 'orr'], ['orr_risks', 'ORR risk assessment', 'Đánh giá rủi ro ORR', 'orr'],
   ['procedures', 'Procedures', 'Quy trình', 'procedures'],
   ['pr_pipeline', 'PRs in progress', 'PR đang xử lý', 'contracts'], ['packages_no_pr', 'Packages without PR', 'Gói chưa có PR', 'contracts'], ['cmms', 'CMMS', 'CMMS', 'apps'],
   ['workstreams', 'Workstreams', 'Trạng thái công việc', 'apps'], ['permits', 'Permits', 'Giấy phép', 'permits'], ['tender_schedule', 'Tender schedule', 'Tiến độ đấu thầu', 'logistics'],
@@ -2291,7 +2454,7 @@ const KEYS = {
   orr_teams: ['team'], pr_pipeline: ['stage', 'status'], packages_no_pr: ['dimension', 'category'], vendor_training: ['period', 'course'],
   precom_plan: ['activity'], cbta: ['platform', 'team'], mandatory: ['team'], staffing: ['group'], cmms: ['package'],
   workstreams: ['area', 'item'], permits: ['team', 'permit', 'facility', 'description'], tender_schedule: ['package', 'no'], readiness: ['area'], milestones: ['milestone'],
-  hse_matrix: ['course'], cbta_modules: ['platform', 'team', 'no'], orr_team_plan: ['team', 'month'],
+  hse_matrix: ['course'], cbta_modules: ['platform', 'team', 'no'], orr_team_plan: ['team', 'month'], orr_departments: ['department', 'month'], orr_risks: ['item'],
 };
 const FIELDS = {
   total_plan: ['Total plan', 'KH tổng'], total_actual: ['Total actual', 'TT tổng'], onshore_plan: ['Onshore plan', 'KH trên bờ'], onshore_actual: ['Onshore actual', 'TT trên bờ'],
@@ -2325,6 +2488,8 @@ const rowLabel = {
   milestones: (r) => D(r.milestone), startup_sequence: (r) => `${r.step}. ${D(r.phase)}`,
   hse_matrix: (r) => `${r.no}. ${r.course}`, cbta_modules: (r) => `${r.platform} ${r.team} ${r.no} · ${r.module || ''}`,
   orr_team_plan: (r) => `${r.team} · ${H.fmtMonth(H.month(r.month))}`,
+  orr_departments: (r) => `${r.department}${r.month ? ' · ' + H.fmtMonth(H.month(r.month)) : ''}`,
+  orr_risks: (r) => `${r.item}. ${r.activity || ''}`,
 };
 const label = (t, r) => (rowLabel[t] ? rowLabel[t](r) : String(r[KEYS[t][0]] ?? '—'));
 const fieldName = (f) => (FIELDS[f] ? L(FIELDS[f][0], FIELDS[f][1]) : f);
