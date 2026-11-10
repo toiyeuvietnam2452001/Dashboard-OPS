@@ -1,83 +1,4 @@
 {
- "cbta": [
-  {
-   "ojt_modules": 11,
-   "theory_pct": 6.25,
-   "developing": 0,
-   "review": 0,
-   "completed": 11,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 11,
-   "team": "Deck crew"
-  },
-  {
-   "ojt_modules": 39,
-   "theory_pct": 7.85,
-   "developing": 1,
-   "review": null,
-   "completed": 35,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 39,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 38,
-   "theory_pct": 1.48,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 38,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 36,
-   "theory_pct": 3.87,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 36,
-   "team": "P&P"
-  },
-  {
-   "ojt_modules": 35,
-   "theory_pct": 0,
-   "developing": 2,
-   "review": 2,
-   "completed": 20,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 24,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 31,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 1,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 22,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 29,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 0,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 21,
-   "team": "P&P"
-  }
- ],
  "staffing": [
   {
    "filled": 47,
@@ -637,6 +558,85 @@
    "month": "2028-12"
   }
  ],
+ "cbta": [
+  {
+   "ojt_modules": 11,
+   "theory_pct": 6.25,
+   "developing": 0,
+   "review": 0,
+   "completed": 11,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 11,
+   "team": "Deck crew"
+  },
+  {
+   "ojt_modules": 39,
+   "theory_pct": 7.85,
+   "developing": 1,
+   "review": null,
+   "completed": 35,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 39,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 38,
+   "theory_pct": 1.48,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 38,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 36,
+   "theory_pct": 3.87,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 36,
+   "team": "P&P"
+  },
+  {
+   "ojt_modules": 35,
+   "theory_pct": 0,
+   "developing": 2,
+   "review": 2,
+   "completed": 20,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 24,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 31,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 1,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 22,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 29,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 0,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 21,
+   "team": "P&P"
+  }
+ ],
  "mandatory": [
   {
    "planned": 72,
@@ -673,6 +673,89 @@
    "balance": 120,
    "earned": 130,
    "team": "WHP team"
+  }
+ ],
+ "orr_teams": [
+  {
+   "weight_pct": 27.3,
+   "completed": null,
+   "actual_pct": 75.1,
+   "total_activities": null,
+   "plan_pct": 69.7,
+   "plan_end_pct": null,
+   "team": "Offshore"
+  },
+  {
+   "weight_pct": 12.3,
+   "completed": 57,
+   "actual_pct": 73,
+   "total_activities": 78,
+   "plan_pct": 78.4,
+   "plan_end_pct": 95,
+   "team": "Manager OPS"
+  },
+  {
+   "weight_pct": 12.2,
+   "completed": 21,
+   "actual_pct": 66.1,
+   "total_activities": 56,
+   "plan_pct": 46.4,
+   "plan_end_pct": 89,
+   "team": "Asset Integrity"
+  },
+  {
+   "weight_pct": 11,
+   "completed": null,
+   "actual_pct": 74.1,
+   "total_activities": null,
+   "plan_pct": 73.9,
+   "plan_end_pct": null,
+   "team": "Production OPS"
+  },
+  {
+   "weight_pct": 10.4,
+   "completed": 22,
+   "actual_pct": 73.8,
+   "total_activities": 37,
+   "plan_pct": 65.7,
+   "plan_end_pct": 83,
+   "team": "E&I"
+  },
+  {
+   "weight_pct": 7.1,
+   "completed": 10,
+   "actual_pct": 71.6,
+   "total_activities": 28,
+   "plan_pct": 67,
+   "plan_end_pct": 96,
+   "team": "Application Eng"
+  },
+  {
+   "weight_pct": 6.7,
+   "completed": 23,
+   "actual_pct": 69.6,
+   "total_activities": 40,
+   "plan_pct": 61.2,
+   "plan_end_pct": 93,
+   "team": "M&R"
+  },
+  {
+   "weight_pct": 6.7,
+   "completed": 27,
+   "actual_pct": 72.7,
+   "total_activities": 47,
+   "plan_pct": 72.5,
+   "plan_end_pct": 95,
+   "team": "Marine"
+  },
+  {
+   "weight_pct": 6.1,
+   "completed": 13,
+   "actual_pct": 54.3,
+   "total_activities": 36,
+   "plan_pct": 60.6,
+   "plan_end_pct": 99,
+   "team": "Production Eng"
   }
  ],
  "vendor_training": [
@@ -753,89 +836,6 @@
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
   }
  ],
- "orr_teams": [
-  {
-   "weight_pct": 25.5,
-   "completed": 57,
-   "actual_pct": 76.8,
-   "total_activities": 89,
-   "plan_pct": 69.5,
-   "plan_end_pct": 99,
-   "team": "Offshore"
-  },
-  {
-   "weight_pct": 13.2,
-   "completed": 23,
-   "actual_pct": 66.5,
-   "total_activities": 59,
-   "plan_pct": 71.3,
-   "plan_end_pct": 98,
-   "team": "Production OPS"
-  },
-  {
-   "weight_pct": 12.5,
-   "completed": 57,
-   "actual_pct": 70.6,
-   "total_activities": 80,
-   "plan_pct": 77.1,
-   "plan_end_pct": 94,
-   "team": "Manager OPS"
-  },
-  {
-   "weight_pct": 11.2,
-   "completed": 20,
-   "actual_pct": 64.4,
-   "total_activities": 53,
-   "plan_pct": 45.6,
-   "plan_end_pct": 89,
-   "team": "Asset Integrity"
-  },
-  {
-   "weight_pct": 9.1,
-   "completed": 21,
-   "actual_pct": 79.4,
-   "total_activities": 32,
-   "plan_pct": 65.7,
-   "plan_end_pct": 82,
-   "team": "E&I"
-  },
-  {
-   "weight_pct": 8.7,
-   "completed": 25,
-   "actual_pct": 63.9,
-   "total_activities": 48,
-   "plan_pct": 70.6,
-   "plan_end_pct": 98,
-   "team": "M&R"
-  },
-  {
-   "weight_pct": 6.9,
-   "completed": 10,
-   "actual_pct": 71.3,
-   "total_activities": 28,
-   "plan_pct": 67,
-   "plan_end_pct": 96,
-   "team": "Application Eng"
-  },
-  {
-   "weight_pct": 6.8,
-   "completed": 27,
-   "actual_pct": 71.1,
-   "total_activities": 49,
-   "plan_pct": 71.9,
-   "plan_end_pct": 95,
-   "team": "Marine"
-  },
-  {
-   "weight_pct": 6,
-   "completed": 14,
-   "actual_pct": 57.3,
-   "total_activities": 36,
-   "plan_pct": 60.6,
-   "plan_end_pct": 99,
-   "team": "Production Eng"
-  }
- ],
  "orr_groups": [
   {
    "progress_pct": 66.3,
@@ -856,6 +856,53 @@
    "progress_pct": 65.6,
    "items": 698,
    "group": "TOTAL"
+  }
+ ],
+ "orr_curve": [
+  {
+   "actual_pct": 71.3,
+   "plan_pct": 66.7,
+   "month": "2026-10"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 71,
+   "month": "2026-11"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 75,
+   "month": "2026-12"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 79,
+   "month": "2027-01"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 83,
+   "month": "2027-02"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 87,
+   "month": "2027-03"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 90,
+   "month": "2027-04"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 93,
+   "month": "2027-05"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 95,
+   "month": "2027-06"
   }
  ],
  "orr_elements": [
@@ -1026,152 +1073,6 @@
    "element": "Design, Engineering, Operability & Maintainability Assurance",
    "group": "PROCESS",
    "code": "PR-14"
-  }
- ],
- "orr_curve": [
-  {
-   "actual_pct": 70.5,
-   "plan_pct": 67.2,
-   "month": "2026-10"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 71,
-   "month": "2026-11"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 75,
-   "month": "2026-12"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 80,
-   "month": "2027-01"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 83,
-   "month": "2027-02"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 87,
-   "month": "2027-03"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 90,
-   "month": "2027-04"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 93,
-   "month": "2027-05"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 95,
-   "month": "2027-06"
-  }
- ],
- "pr_pipeline": [
-  {
-   "count": 1,
-   "status": "Near-late",
-   "stage": "1 CSP Preparation"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "1 CSP Preparation"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "2 CSP Approval"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "2 CSP Approval"
-  },
-  {
-   "count": 1,
-   "status": "Near-late",
-   "stage": "3 Bidding"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "3 Bidding"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "4 Evaluation"
-  },
-  {
-   "count": 2,
-   "status": "On time",
-   "stage": "4 Evaluation"
-  },
-  {
-   "count": 1,
-   "status": "Late",
-   "stage": "5 TCEAR Approval"
-  },
-  {
-   "count": 1,
-   "status": "On time",
-   "stage": "6 Contract Signing"
-  }
- ],
- "packages_no_pr": [
-  {
-   "count": 19,
-   "dimension": "status",
-   "category": "Open"
-  },
-  {
-   "count": 7,
-   "dimension": "status",
-   "category": "PR Request"
-  },
-  {
-   "count": 7,
-   "dimension": "status",
-   "category": "Screening"
-  },
-  {
-   "count": 15,
-   "dimension": "priority",
-   "category": "Priority 3"
-  },
-  {
-   "count": 8,
-   "dimension": "priority",
-   "category": "Priority 2"
-  },
-  {
-   "count": 3,
-   "dimension": "priority",
-   "category": "Priority 1"
-  },
-  {
-   "count": 16,
-   "dimension": "scr_timing",
-   "category": "Not set"
-  },
-  {
-   "count": 2,
-   "dimension": "scr_timing",
-   "category": "Next month"
-  },
-  {
-   "count": 1,
-   "dimension": "scr_timing",
-   "category": "This month"
   }
  ],
  "procedures": [
@@ -1955,6 +1856,105 @@
    "id": "HSE-40",
    "remark": "Issued",
    "document": "Pressure cylinder management Procedure"
+  }
+ ],
+ "packages_no_pr": [
+  {
+   "count": 19,
+   "dimension": "status",
+   "category": "Open"
+  },
+  {
+   "count": 7,
+   "dimension": "status",
+   "category": "PR Request"
+  },
+  {
+   "count": 7,
+   "dimension": "status",
+   "category": "Screening"
+  },
+  {
+   "count": 15,
+   "dimension": "priority",
+   "category": "Priority 3"
+  },
+  {
+   "count": 8,
+   "dimension": "priority",
+   "category": "Priority 2"
+  },
+  {
+   "count": 3,
+   "dimension": "priority",
+   "category": "Priority 1"
+  },
+  {
+   "count": 16,
+   "dimension": "scr_timing",
+   "category": "Not set"
+  },
+  {
+   "count": 2,
+   "dimension": "scr_timing",
+   "category": "Next month"
+  },
+  {
+   "count": 1,
+   "dimension": "scr_timing",
+   "category": "This month"
+  }
+ ],
+ "pr_pipeline": [
+  {
+   "count": 1,
+   "status": "Near-late",
+   "stage": "1 CSP Preparation"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "1 CSP Preparation"
+  },
+  {
+   "count": 1,
+   "status": "Late",
+   "stage": "2 CSP Approval"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "2 CSP Approval"
+  },
+  {
+   "count": 1,
+   "status": "Near-late",
+   "stage": "3 Bidding"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "3 Bidding"
+  },
+  {
+   "count": 1,
+   "status": "Late",
+   "stage": "4 Evaluation"
+  },
+  {
+   "count": 2,
+   "status": "On time",
+   "stage": "4 Evaluation"
+  },
+  {
+   "count": 1,
+   "status": "Late",
+   "stage": "5 TCEAR Approval"
+  },
+  {
+   "count": 1,
+   "status": "On time",
+   "stage": "6 Contract Signing"
   }
  ],
  "cmms": [
@@ -3377,78 +3377,6 @@
    "permit": "Fire Protection Approval (PCCC)"
   }
  ],
- "startup_sequence": [
-  {
-   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
-   "step": 1,
-   "phase": "Preparation"
-  },
-  {
-   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
-   "step": 2,
-   "phase": "Start up CPP"
-  },
-  {
-   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
-   "step": 3,
-   "phase": "First well"
-  },
-  {
-   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
-   "step": 4,
-   "phase": "Pressurize CPP"
-  },
-  {
-   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
-   "step": 5,
-   "phase": "Gas & fuel gas"
-  },
-  {
-   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
-   "step": 6,
-   "phase": "Second well"
-  },
-  {
-   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
-   "step": 7,
-   "phase": "GTG to fuel gas"
-  },
-  {
-   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
-   "step": 8,
-   "phase": "Third well"
-  },
-  {
-   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
-   "step": 9,
-   "phase": "Ramp up wells"
-  },
-  {
-   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
-   "step": 10,
-   "phase": "GTC & WHRU"
-  },
-  {
-   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
-   "step": 11,
-   "phase": "Dew point"
-  },
-  {
-   "action": "Start MRU; close bypass line when gas dew point is on spec",
-   "step": 12,
-   "phase": "MRU"
-  },
-  {
-   "action": "Export gas to export gas pipeline",
-   "step": 13,
-   "phase": "Export gas"
-  },
-  {
-   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
-   "step": 14,
-   "phase": "Condensate & PW"
-  }
- ],
  "precom_plan": [
   {
    "actual_start": null,
@@ -3633,6 +3561,78 @@
    "status_override": null,
    "order": 8,
    "area": "Commissioning & Start-up"
+  }
+ ],
+ "startup_sequence": [
+  {
+   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
+   "step": 1,
+   "phase": "Preparation"
+  },
+  {
+   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
+   "step": 2,
+   "phase": "Start up CPP"
+  },
+  {
+   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
+   "step": 3,
+   "phase": "First well"
+  },
+  {
+   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
+   "step": 4,
+   "phase": "Pressurize CPP"
+  },
+  {
+   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
+   "step": 5,
+   "phase": "Gas & fuel gas"
+  },
+  {
+   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
+   "step": 6,
+   "phase": "Second well"
+  },
+  {
+   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
+   "step": 7,
+   "phase": "GTG to fuel gas"
+  },
+  {
+   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
+   "step": 8,
+   "phase": "Third well"
+  },
+  {
+   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
+   "step": 9,
+   "phase": "Ramp up wells"
+  },
+  {
+   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
+   "step": 10,
+   "phase": "GTC & WHRU"
+  },
+  {
+   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
+   "step": 11,
+   "phase": "Dew point"
+  },
+  {
+   "action": "Start MRU; close bypass line when gas dew point is on spec",
+   "step": 12,
+   "phase": "MRU"
+  },
+  {
+   "action": "Export gas to export gas pipeline",
+   "step": 13,
+   "phase": "Export gas"
+  },
+  {
+   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
+   "step": 14,
+   "phase": "Condensate & PW"
   }
  ],
  "milestones": [
@@ -6056,6 +6056,140 @@
    "module": "Pig Laucher/ Receiver"
   }
  ],
+ "orr_departments": [
+  {
+   "order": 1,
+   "acc_actual_pct": 71,
+   "plan_pct": 67,
+   "month": "2026-10",
+   "total_activities": 463,
+   "acc_plan_pct": 67,
+   "completed": 255,
+   "actual_pct": 68,
+   "weight_pct": 67.35,
+   "department": "OPS"
+  },
+  {
+   "order": 2,
+   "acc_actual_pct": 40,
+   "plan_pct": 29.6,
+   "month": "2026-10",
+   "total_activities": 131,
+   "acc_plan_pct": 30,
+   "completed": 33,
+   "actual_pct": 40.4,
+   "weight_pct": 17.76,
+   "department": "DEV"
+  },
+  {
+   "order": 3,
+   "acc_actual_pct": 91,
+   "plan_pct": 85.3,
+   "month": "2026-10",
+   "total_activities": 64,
+   "acc_plan_pct": 85,
+   "completed": 58,
+   "actual_pct": 90.5,
+   "weight_pct": 8.67,
+   "department": "HSE"
+  },
+  {
+   "order": 4,
+   "acc_actual_pct": 95,
+   "plan_pct": 97.8,
+   "month": "2026-10",
+   "total_activities": 18,
+   "acc_plan_pct": 98,
+   "completed": 16,
+   "actual_pct": 95,
+   "weight_pct": 2.45,
+   "department": "DCD"
+  },
+  {
+   "order": 5,
+   "acc_actual_pct": 81,
+   "plan_pct": 64.7,
+   "month": "2026-10",
+   "total_activities": 14,
+   "acc_plan_pct": 65,
+   "completed": 6,
+   "actual_pct": 81,
+   "weight_pct": 1.36,
+   "department": "SSF"
+  },
+  {
+   "order": 6,
+   "acc_actual_pct": 75,
+   "plan_pct": 66.7,
+   "month": "2026-10",
+   "total_activities": 6,
+   "acc_plan_pct": 67,
+   "completed": 2,
+   "actual_pct": 75,
+   "weight_pct": 0.82,
+   "department": "SCM"
+  },
+  {
+   "order": 7,
+   "acc_actual_pct": 71,
+   "plan_pct": 71,
+   "month": "2026-10",
+   "total_activities": 2,
+   "acc_plan_pct": 71,
+   "completed": 0,
+   "actual_pct": 71,
+   "weight_pct": 0.36,
+   "department": "DTD"
+  },
+  {
+   "order": 8,
+   "acc_actual_pct": 97,
+   "plan_pct": 87,
+   "month": "2026-10",
+   "total_activities": 3,
+   "acc_plan_pct": 87,
+   "completed": 2,
+   "actual_pct": 96.7,
+   "weight_pct": 0.41,
+   "department": "EPD"
+  },
+  {
+   "order": 9,
+   "acc_actual_pct": 100,
+   "plan_pct": 100,
+   "month": "2026-10",
+   "total_activities": 3,
+   "acc_plan_pct": 100,
+   "completed": 3,
+   "actual_pct": 100,
+   "weight_pct": 0.41,
+   "department": "HRA"
+  },
+  {
+   "order": 10,
+   "acc_actual_pct": 83,
+   "plan_pct": 82,
+   "month": "2026-10",
+   "total_activities": 3,
+   "acc_plan_pct": 82,
+   "completed": 1,
+   "actual_pct": 82.7,
+   "weight_pct": 0.41,
+   "department": "LCD"
+  },
+  {
+   "order": 99,
+   "acc_actual_pct": 68.5,
+   "plan_pct": 63,
+   "month": "2026-10",
+   "total_activities": 707,
+   "acc_plan_pct": 62.8,
+   "completed": 376,
+   "actual_pct": 66.3,
+   "weight_pct": 100,
+   "department": "TOTAL"
+  }
+ ],
  "tender_schedule": [
   {
    "planned_date": "2026-10-13",
@@ -6152,391 +6286,391 @@
   {
    "month": "2026-10",
    "plan_pct": 67,
-   "actual_pct": 71.3,
+   "actual_pct": 71.6,
    "team": "Application Eng"
   },
   {
    "month": "2026-11",
    "plan_pct": 70,
-   "actual_pct": 35,
+   "actual_pct": 73,
    "team": "Application Eng"
   },
   {
    "month": "2026-12",
    "plan_pct": 73,
-   "actual_pct": 35,
+   "actual_pct": 38,
    "team": "Application Eng"
   },
   {
    "month": "2027-01",
    "plan_pct": 76,
-   "actual_pct": 35,
+   "actual_pct": 38,
    "team": "Application Eng"
   },
   {
    "month": "2027-02",
    "plan_pct": 80,
-   "actual_pct": 35,
+   "actual_pct": 38,
    "team": "Application Eng"
   },
   {
    "month": "2027-03",
    "plan_pct": 85,
-   "actual_pct": 35,
+   "actual_pct": 38,
    "team": "Application Eng"
   },
   {
    "month": "2027-04",
    "plan_pct": 89,
-   "actual_pct": 35,
+   "actual_pct": 38,
    "team": "Application Eng"
   },
   {
    "month": "2027-05",
    "plan_pct": 93,
-   "actual_pct": 35,
+   "actual_pct": 38,
    "team": "Application Eng"
   },
   {
    "month": "2027-06",
    "plan_pct": 96,
-   "actual_pct": 35,
+   "actual_pct": 38,
    "team": "Application Eng"
   },
   {
    "month": "2026-10",
-   "plan_pct": 45.6,
-   "actual_pct": 64.4,
+   "plan_pct": 46.4,
+   "actual_pct": 66.1,
    "team": "Asset Integrity"
   },
   {
    "month": "2026-11",
    "plan_pct": 50,
-   "actual_pct": 32,
+   "actual_pct": 66,
    "team": "Asset Integrity"
   },
   {
    "month": "2026-12",
-   "plan_pct": 54,
-   "actual_pct": 32,
+   "plan_pct": 55,
+   "actual_pct": 30,
    "team": "Asset Integrity"
   },
   {
    "month": "2027-01",
    "plan_pct": 61,
-   "actual_pct": 32,
+   "actual_pct": 30,
    "team": "Asset Integrity"
   },
   {
    "month": "2027-02",
-   "plan_pct": 66,
-   "actual_pct": 32,
+   "plan_pct": 67,
+   "actual_pct": 30,
    "team": "Asset Integrity"
   },
   {
    "month": "2027-03",
-   "plan_pct": 72,
-   "actual_pct": 32,
+   "plan_pct": 73,
+   "actual_pct": 30,
    "team": "Asset Integrity"
   },
   {
    "month": "2027-04",
-   "plan_pct": 77,
-   "actual_pct": 32,
+   "plan_pct": 78,
+   "actual_pct": 30,
    "team": "Asset Integrity"
   },
   {
    "month": "2027-05",
-   "plan_pct": 83,
-   "actual_pct": 32,
+   "plan_pct": 84,
+   "actual_pct": 30,
    "team": "Asset Integrity"
   },
   {
    "month": "2027-06",
    "plan_pct": 89,
-   "actual_pct": 32,
+   "actual_pct": 30,
    "team": "Asset Integrity"
   },
   {
    "month": "2026-10",
    "plan_pct": 65.7,
-   "actual_pct": 79.4,
+   "actual_pct": 73.8,
    "team": "E&I"
   },
   {
    "month": "2026-11",
    "plan_pct": 69,
-   "actual_pct": 68,
+   "actual_pct": 74,
    "team": "E&I"
   },
   {
    "month": "2026-12",
    "plan_pct": 72,
-   "actual_pct": 64,
+   "actual_pct": 60,
    "team": "E&I"
   },
   {
    "month": "2027-01",
-   "plan_pct": 74,
-   "actual_pct": 64,
+   "plan_pct": 75,
+   "actual_pct": 60,
    "team": "E&I"
   },
   {
    "month": "2027-02",
    "plan_pct": 76,
-   "actual_pct": 64,
+   "actual_pct": 60,
    "team": "E&I"
   },
   {
    "month": "2027-03",
-   "plan_pct": 77,
-   "actual_pct": 64,
+   "plan_pct": 78,
+   "actual_pct": 60,
    "team": "E&I"
   },
   {
    "month": "2027-04",
-   "plan_pct": 79,
-   "actual_pct": 64,
+   "plan_pct": 80,
+   "actual_pct": 60,
    "team": "E&I"
   },
   {
    "month": "2027-05",
-   "plan_pct": 80,
-   "actual_pct": 64,
+   "plan_pct": 82,
+   "actual_pct": 60,
    "team": "E&I"
   },
   {
    "month": "2027-06",
-   "plan_pct": 82,
-   "actual_pct": 64,
+   "plan_pct": 83,
+   "actual_pct": 60,
    "team": "E&I"
   },
   {
    "month": "2026-10",
-   "plan_pct": 70.6,
-   "actual_pct": 63.9,
+   "plan_pct": 61.2,
+   "actual_pct": 69.6,
    "team": "M&R"
+  },
+  {
+   "month": "2026-11",
+   "plan_pct": 66,
+   "actual_pct": 73,
+   "team": "M&R"
+  },
+  {
+   "month": "2026-12",
+   "plan_pct": 70,
+   "actual_pct": 37,
+   "team": "M&R"
+  },
+  {
+   "month": "2027-01",
+   "plan_pct": 74,
+   "actual_pct": 37,
+   "team": "M&R"
+  },
+  {
+   "month": "2027-02",
+   "plan_pct": 78,
+   "actual_pct": 37,
+   "team": "M&R"
+  },
+  {
+   "month": "2027-03",
+   "plan_pct": 82,
+   "actual_pct": 37,
+   "team": "M&R"
+  },
+  {
+   "month": "2027-04",
+   "plan_pct": 86,
+   "actual_pct": 37,
+   "team": "M&R"
+  },
+  {
+   "month": "2027-05",
+   "plan_pct": 90,
+   "actual_pct": 37,
+   "team": "M&R"
+  },
+  {
+   "month": "2027-06",
+   "plan_pct": 93,
+   "actual_pct": 37,
+   "team": "M&R"
+  },
+  {
+   "month": "2026-10",
+   "plan_pct": 78.4,
+   "actual_pct": 73,
+   "team": "Manager OPS"
+  },
+  {
+   "month": "2026-11",
+   "plan_pct": 80,
+   "actual_pct": 74,
+   "team": "Manager OPS"
+  },
+  {
+   "month": "2026-12",
+   "plan_pct": 83,
+   "actual_pct": 70,
+   "team": "Manager OPS"
+  },
+  {
+   "month": "2027-01",
+   "plan_pct": 86,
+   "actual_pct": 70,
+   "team": "Manager OPS"
+  },
+  {
+   "month": "2027-02",
+   "plan_pct": 90,
+   "actual_pct": 70,
+   "team": "Manager OPS"
+  },
+  {
+   "month": "2027-03",
+   "plan_pct": 93,
+   "actual_pct": 70,
+   "team": "Manager OPS"
+  },
+  {
+   "month": "2027-04",
+   "plan_pct": 94,
+   "actual_pct": 70,
+   "team": "Manager OPS"
+  },
+  {
+   "month": "2027-05",
+   "plan_pct": 95,
+   "actual_pct": 70,
+   "team": "Manager OPS"
+  },
+  {
+   "month": "2027-06",
+   "plan_pct": 95,
+   "actual_pct": 70,
+   "team": "Manager OPS"
+  },
+  {
+   "month": "2026-10",
+   "plan_pct": 72.5,
+   "actual_pct": 72.7,
+   "team": "Marine"
   },
   {
    "month": "2026-11",
    "plan_pct": 75,
-   "actual_pct": 31,
-   "team": "M&R"
-  },
-  {
-   "month": "2026-12",
-   "plan_pct": 79,
-   "actual_pct": 31,
-   "team": "M&R"
-  },
-  {
-   "month": "2027-01",
-   "plan_pct": 83,
-   "actual_pct": 31,
-   "team": "M&R"
-  },
-  {
-   "month": "2027-02",
-   "plan_pct": 86,
-   "actual_pct": 31,
-   "team": "M&R"
-  },
-  {
-   "month": "2027-03",
-   "plan_pct": 90,
-   "actual_pct": 31,
-   "team": "M&R"
-  },
-  {
-   "month": "2027-04",
-   "plan_pct": 93,
-   "actual_pct": 31,
-   "team": "M&R"
-  },
-  {
-   "month": "2027-05",
-   "plan_pct": 96,
-   "actual_pct": 31,
-   "team": "M&R"
-  },
-  {
-   "month": "2027-06",
-   "plan_pct": 98,
-   "actual_pct": 31,
-   "team": "M&R"
-  },
-  {
-   "month": "2026-10",
-   "plan_pct": 77.1,
-   "actual_pct": 70.6,
-   "team": "Manager OPS"
-  },
-  {
-   "month": "2026-11",
-   "plan_pct": 79,
-   "actual_pct": 68,
-   "team": "Manager OPS"
-  },
-  {
-   "month": "2026-12",
-   "plan_pct": 82,
-   "actual_pct": 68,
-   "team": "Manager OPS"
-  },
-  {
-   "month": "2027-01",
-   "plan_pct": 85,
-   "actual_pct": 68,
-   "team": "Manager OPS"
-  },
-  {
-   "month": "2027-02",
-   "plan_pct": 88,
-   "actual_pct": 68,
-   "team": "Manager OPS"
-  },
-  {
-   "month": "2027-03",
-   "plan_pct": 92,
-   "actual_pct": 68,
-   "team": "Manager OPS"
-  },
-  {
-   "month": "2027-04",
-   "plan_pct": 93,
-   "actual_pct": 68,
-   "team": "Manager OPS"
-  },
-  {
-   "month": "2027-05",
-   "plan_pct": 93,
-   "actual_pct": 68,
-   "team": "Manager OPS"
-  },
-  {
-   "month": "2027-06",
-   "plan_pct": 94,
-   "actual_pct": 68,
-   "team": "Manager OPS"
-  },
-  {
-   "month": "2026-10",
-   "plan_pct": 71.9,
-   "actual_pct": 71.1,
-   "team": "Marine"
-  },
-  {
-   "month": "2026-11",
-   "plan_pct": 74,
-   "actual_pct": 53,
+   "actual_pct": 73,
    "team": "Marine"
   },
   {
    "month": "2026-12",
-   "plan_pct": 77,
-   "actual_pct": 53,
+   "plan_pct": 78,
+   "actual_pct": 56,
    "team": "Marine"
   },
   {
    "month": "2027-01",
-   "plan_pct": 80,
-   "actual_pct": 53,
+   "plan_pct": 81,
+   "actual_pct": 56,
    "team": "Marine"
   },
   {
    "month": "2027-02",
-   "plan_pct": 83,
-   "actual_pct": 53,
+   "plan_pct": 84,
+   "actual_pct": 56,
    "team": "Marine"
   },
   {
    "month": "2027-03",
-   "plan_pct": 88,
-   "actual_pct": 53,
+   "plan_pct": 89,
+   "actual_pct": 56,
    "team": "Marine"
   },
   {
    "month": "2027-04",
    "plan_pct": 91,
-   "actual_pct": 53,
+   "actual_pct": 56,
    "team": "Marine"
   },
   {
    "month": "2027-05",
-   "plan_pct": 93,
-   "actual_pct": 53,
+   "plan_pct": 94,
+   "actual_pct": 56,
    "team": "Marine"
   },
   {
    "month": "2027-06",
    "plan_pct": 95,
-   "actual_pct": 53,
+   "actual_pct": 56,
    "team": "Marine"
   },
   {
    "month": "2026-10",
-   "plan_pct": 69.5,
-   "actual_pct": 76.8,
+   "plan_pct": 69.7,
+   "actual_pct": 75.1,
    "team": "Offshore"
   },
   {
    "month": "2026-11",
-   "plan_pct": 75,
-   "actual_pct": 58,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Offshore"
   },
   {
    "month": "2026-12",
-   "plan_pct": 81,
-   "actual_pct": 58,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Offshore"
   },
   {
    "month": "2027-01",
-   "plan_pct": 87,
-   "actual_pct": 58,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Offshore"
   },
   {
    "month": "2027-02",
-   "plan_pct": 91,
-   "actual_pct": 58,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Offshore"
   },
   {
    "month": "2027-03",
-   "plan_pct": 94,
-   "actual_pct": 58,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Offshore"
   },
   {
    "month": "2027-04",
-   "plan_pct": 96,
-   "actual_pct": 58,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Offshore"
   },
   {
    "month": "2027-05",
-   "plan_pct": 99,
-   "actual_pct": 58,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Offshore"
   },
   {
    "month": "2027-06",
-   "plan_pct": 99,
-   "actual_pct": 58,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Offshore"
   },
   {
    "month": "2026-10",
    "plan_pct": 60.6,
-   "actual_pct": 57.3,
+   "actual_pct": 54.3,
    "team": "Production Eng"
   },
   {
    "month": "2026-11",
    "plan_pct": 65,
-   "actual_pct": 33,
+   "actual_pct": 54,
    "team": "Production Eng"
   },
   {
@@ -6583,57 +6717,345 @@
   },
   {
    "month": "2026-10",
-   "plan_pct": 71.3,
-   "actual_pct": 66.5,
+   "plan_pct": 73.9,
+   "actual_pct": 74.1,
    "team": "Production OPS"
   },
   {
    "month": "2026-11",
-   "plan_pct": 75,
-   "actual_pct": 39,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Production OPS"
   },
   {
    "month": "2026-12",
-   "plan_pct": 79,
-   "actual_pct": 39,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Production OPS"
   },
   {
    "month": "2027-01",
-   "plan_pct": 82,
-   "actual_pct": 39,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Production OPS"
   },
   {
    "month": "2027-02",
-   "plan_pct": 85,
-   "actual_pct": 39,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Production OPS"
   },
   {
    "month": "2027-03",
-   "plan_pct": 89,
-   "actual_pct": 39,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Production OPS"
   },
   {
    "month": "2027-04",
-   "plan_pct": 92,
-   "actual_pct": 39,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Production OPS"
   },
   {
    "month": "2027-05",
-   "plan_pct": 95,
-   "actual_pct": 39,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Production OPS"
   },
   {
    "month": "2027-06",
-   "plan_pct": 98,
-   "actual_pct": 39,
+   "plan_pct": null,
+   "actual_pct": null,
    "team": "Production OPS"
+  }
+ ],
+ "orr_risks": [
+  {
+   "resource": 2,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 241,
+   "interface": 2,
+   "new_activity_name": "Intergrated Plan",
+   "vendor": 1,
+   "activity": "OPS master schedule"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 332,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Operations Excellence Dashboard Updating Procedure"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 458,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Identify spares based on 2 year operations spares from Project and recommend by OPS"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 481,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Vendor training & roll out"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 491,
+   "interface": 2,
+   "new_activity_name": "Develop training system (HRIS)",
+   "vendor": 1,
+   "activity": "Training delivery"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": "Expedite POS to recruit personnel",
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 495,
+   "interface": 2,
+   "new_activity_name": "Recruitment offshore outsource manpower",
+   "vendor": 2,
+   "activity": "Review manpower contract and evaluate the performance"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 506,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Contractors Performance Review Meeting (Production, HSE, OPEX, and other milestone,...)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 511,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Incident reporting follow Incident investigation procedure (Incident Reporting and Investigation Procedure)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 515,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Internal and external audit program (PTW, IC, overside work, ..audit, Aviation fuel audit, ISO14001 audit,.....)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 522,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Implement preservation maintenance programme"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 524,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Develop Logistic Plan for commissioning Team (transfers to and from offshore)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 547,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Additional Operating Spares to be purchased beyond Development purchased 2YOS"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 549,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "What monitoring equipment does Rig have and Safety Equipment"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 576,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "IT equipment"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Study / lesson learnt from Thailand Field. Contact Potetial Vendor/Supplier",
+   "avg_score": 2,
+   "scope": 4,
+   "contract": 1,
+   "item": 582,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Provision of chemical pigging services for pipeline"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 610,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Provision of special PPE"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 631,
+   "interface": 2,
+   "new_activity_name": "Provision of Offshore Catering Services",
+   "vendor": 2,
+   "activity": "Catering contract Food/Drinking water/Fresh Water/cooking utensa…"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 632,
+   "interface": 2,
+   "new_activity_name": "Provision of Medical Services contract",
+   "vendor": 2,
+   "activity": "Provision of Offshore Medical Services"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 649,
+   "interface": 2,
+   "new_activity_name": "2027+4 WPB",
+   "vendor": 2,
+   "activity": "Operations WP&B"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 651,
+   "interface": 2,
+   "new_activity_name": "Operations Coordination Procedure",
+   "vendor": 1,
+   "activity": "TOSA(Coordination procedure)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 681,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Recruitment & Training  Coordination (base on training matrix)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 682,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
   }
  ],
  "meta": [
@@ -6651,6 +7073,6 @@
    "classification": "Internal"
   }
  ],
- "_updated_at": "2026-11-10T06:42:00.000Z",
+ "_updated_at": "2026-11-10T09:12:00.000Z",
  "_source": "notion"
 }
