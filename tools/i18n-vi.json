@@ -202,7 +202,13 @@
   "Chart from the report of 21 Oct 2026. Light bars: total sales gas requirement; dark bars: O Mon I (one generator) gas; green line: SSF delivery capability, 73 MMscfd; dark line: delivery capability at 75%.": "Biểu đồ trong báo cáo 21/10/2026. Cột nhạt: tổng nhu cầu khí bán; cột đậm: khí cho Ô Môn I (một tổ máy); đường xanh lá: khả năng cấp khí SSF, 73 MMscfd; đường sẫm: khả năng cấp khí ở mức 75%.",
   "Figures as of": "Số liệu ngày",
   "Changes since the last saved day": "Thay đổi so với lần lưu trước",
-  "Every figure compared with the copy saved at the end of an earlier day, item by item. Figures are cumulative, so a change is what moved since then.": "So sánh từng chỉ tiêu với bản số liệu đã lưu cuối một ngày trước đó. Số liệu là lũy kế, nên phần thay đổi chính là những gì biến động kể từ ngày đó."
+  "Every figure compared with the copy saved at the end of an earlier day, item by item. Figures are cumulative, so a change is what moved since then.": "So sánh từng chỉ tiêu với bản số liệu đã lưu cuối một ngày trước đó. Số liệu là lũy kế, nên phần thay đổi chính là những gì biến động kể từ ngày đó.",
+  "Status of each service as written in the report.": "Tình trạng từng dịch vụ, ghi đúng như trong báo cáo.",
+  "Done": "Hoàn thành",
+  "Planned date passed": "Đã qua ngày kế hoạch",
+  "Next step": "Bước tiếp theo",
+  "Upcoming": "Sắp tới",
+  "Report date": "Ngày báo cáo"
  },
  "data": {
   "Manpower": "Nhân sự",
@@ -270,6 +276,7 @@
   "ORR plan 95%": "ORR đạt 95% theo kế hoạch",
   "First Gas (sales gas)": "First Gas (khí thương phẩm)",
   "Vacant positions": "Vị trí còn trống",
-  "Electrical": "Điện"
+  "Electrical": "Điện",
+  "Medical services": "Dịch vụ y tế"
  }
 }

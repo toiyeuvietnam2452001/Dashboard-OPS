@@ -365,6 +365,62 @@
 .ops-permits td.nm span:first-child { white-space: pre-line; }
 .ops-tender + .ops-tender { margin-top: 12px; }
 .ops-tender h3 { margin: 4px 0 6px; }
+/* 6. Logistics: service cards and the tender milestone table */
+.ops-bcard { border-top: 0; padding-top: 0; overflow: hidden; }
+.ops-svc { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); gap: var(--cds-gap-md); }
+.ops-svc-card { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 14px 16px 16px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: linear-gradient(160deg, var(--acc-tint), var(--color-panel) 55%); box-shadow: var(--shadow-card); transition: border-color var(--cds-dur-slow), transform var(--cds-dur-slow); }
+.ops-svc-card::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 0 3px 3px 0; background: var(--acc); }
+.ops-svc-card:hover { border-color: var(--acc-line); transform: translateY(-1px); }
+.ops-svc-head { display: flex; align-items: center; gap: 10px; }
+.ops-svc-ic { width: 38px; height: 38px; flex: none; display: grid; place-items: center; border-radius: 10px; background: var(--acc); color: var(--color-panel); }
+.ops-svc-ic svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ops-svc-no { font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--acc); padding: 2px 8px; border: 1px solid var(--acc-line); border-radius: 999px; background: var(--color-panel); }
+.ops-svc-card h3 { margin: 0; font-size: 15px; font-weight: 650; line-height: 1.3; color: var(--color-fg); }
+.ops-svc-card p { margin: 0; font-size: var(--cds-font-size-caption); line-height: 1.5; color: var(--color-fg); padding-top: 8px; border-top: 1px dashed var(--acc-line); }
+.ops-svc-card.empty { background: var(--color-panel); border-style: dashed; }
+.ops-svc-card.empty::before { background: var(--color-border-line); }
+.ops-svc-card.empty .ops-svc-ic { background: var(--color-border-line); color: var(--color-fg-muted); }
+.ops-svc-card.empty .ops-svc-no { color: var(--color-fg-muted); border-color: var(--color-border-line); }
+.ops-svc-card.empty p { color: var(--color-fg-muted); font-style: italic; border-top-color: var(--color-border-line); }
+.ops-tile .ops-big.ops-warn { color: var(--color-warn); }
+.ops-tl-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.ops-tl-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.ops-tl-legend .ln { width: 2px; height: 14px; background: var(--rag-r, var(--color-bad)); border-radius: 1px; }
+.ops .mk { display: inline-block; width: 10px; height: 10px; transform: rotate(45deg); border-radius: 2px; box-sizing: border-box; flex: none; }
+.ops .mk.done { background: var(--color-ok); }
+.ops .mk.late { background: var(--color-warn); }
+.ops .mk.next { background: var(--acc); box-shadow: 0 0 0 3px color-mix(in srgb, var(--acc) 28%, transparent); }
+.ops .mk.todo { background: var(--color-panel); border: 2px solid var(--acc); }
+.ops .mk.ghost { background: transparent; border: 1.5px dashed var(--color-fg-muted); }
+.ops-tender + .ops-tender { margin-top: var(--cds-gap-lg); }
+.ops-tender-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 8px; }
+.ops-tender-h h3 { margin: 0; font-size: 15px; font-weight: 650; }
+.ops-tender-h .src { font-size: 12px; color: var(--color-fg-muted); padding: 1px 8px; border: 1px solid var(--color-border-line); border-radius: 999px; }
+.ops-tender-h .prog { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.ops-tender-h .prog .bar { width: 120px; height: 6px; border-radius: 3px; background: var(--acc-tint); overflow: hidden; }
+.ops-tender-h .prog .bar i { display: block; height: 100%; background: var(--color-ok); }
+.ops-tender table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); }
+.ops-tender th, .ops-tender td { padding: 8px 10px; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--color-border-line); }
+.ops-tender td.num, .ops-tender th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.ops-tender td.dt { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ops-tender td.act { min-width: 14rem; font-weight: 500; }
+.ops-tender tr.is-next > td { background: var(--acc-tint) !important; }
+.ops-tender tr.is-next > td:first-child { box-shadow: inset 3px 0 0 var(--acc); }
+.ops-tender .st { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-weight: 600; font-size: 12px; }
+.ops-tender .st.done { color: var(--color-ok); } .ops-tender .st.late { color: var(--color-warn); } .ops-tender .st.next { color: var(--acc); } .ops-tender .st.todo { color: var(--color-fg-muted); font-weight: 500; }
+.ops-tender .st small { font-weight: 500; color: var(--color-fg-muted); }
+.ops-tender th.tl, .ops-tender td.tl { width: 34%; min-width: 220px; padding-left: 4px; padding-right: 14px; }
+.ops-tl { position: relative; height: 18px; }
+.ops-tl .m { position: absolute; top: -9px; bottom: -9px; width: 0; border-left: 1px dotted var(--color-border-line); }
+.ops-tl .today { position: absolute; top: -9px; bottom: -9px; width: 0; border-left: 2px solid var(--rag-r, var(--color-bad)); opacity: .75; }
+.ops-tl .mk { position: absolute; top: 4px; margin-left: -5px; }
+.ops-tl-axis { position: relative; height: 16px; font-weight: 600; }
+.ops-tl-axis > span:not(.m):not(.today) { position: absolute; top: 0; transform: translateX(-50%); font-size: 11px; white-space: nowrap; }
+.ops-tl-axis .m, .ops-tl-axis .today { position: absolute; top: -8px; bottom: -8px; width: 0; }
+.ops-tl-axis .m { border-left: 1px dotted var(--acc-line); }
+.ops-tl-axis .today { border-left: 2px solid var(--rag-r, var(--color-bad)); opacity: .75; }
+@media (max-width: 760px) { .ops-tender .tl { display: none; } .ops-tender-h .prog { margin-left: 0; } }
+@media (max-width: 560px) { .ops-tender td.act { min-width: 8rem; } .ops-tender .hide-xs, .ops-tender .st .lbl { display: none; } .ops-tender th, .ops-tender td { padding: 8px 6px; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -670,17 +726,19 @@
 
   <!-- 6 LOGISTICS AND SERVICES -->
   <section class="ops-page" id="logistics" data-page="logistics" hidden>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-logistics">
-        <h2>Logistics and services</h2>
-        <p class="ops-note">Contracting route and next step.</p>
-        <ul class="ops-list" id="list-logistics" data-source="workstreams"></ul>
+    <div class="ops-tiles" id="log-kpis"></div>
+    <div class="ops-card ops-bcard" id="card-logistics">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Logistics and services</span><span class="ops-banner-n" id="log-count">—</span></h2>
+      <p class="ops-note">Status of each service as written in the report.</p>
+      <div class="ops-svc" id="list-logistics" data-source="workstreams"></div>
+    </div>
+    <div class="ops-card ops-bcard" id="card-tender">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Tender schedule</span><span class="ops-banner-n" id="tender-count">—</span></h2>
+      <p class="ops-note">Planned dates from the tender plan; actual date once a step is done. Steps whose planned date has passed without an actual date are marked.</p>
+      <div class="ops-tl-legend" aria-hidden="true">
+        <span><i class="mk done"></i>Done</span><span><i class="mk late"></i>Planned date passed</span><span><i class="mk next"></i>Next step</span><span><i class="mk todo"></i>Upcoming</span><span><i class="ln"></i>Report date</span>
       </div>
-      <div class="ops-card ops-wide" id="card-tender">
-        <h2>Tender schedule</h2>
-        <p class="ops-note">Planned dates from the tender plan; actual date once a step is done. Steps whose planned date has passed without an actual date are marked.</p>
-        <div id="tender" data-source="tender_schedule"></div>
-      </div>
+      <div id="tender" data-source="tender_schedule"></div>
     </div>
   </section>
 
@@ -1438,7 +1496,6 @@ function drawWorkstreams() {
   const pres = (r) => /preserv/i.test(r.item || '');
   const lists = {
     'list-apps': (r) => r.area === 'Applications',
-    'list-logistics': (r) => r.area === 'Logistics & services',
     'list-coord': (r) => r.area === 'Coordination' && r.item !== 'Production profile',
     'list-com': (r) => r.area === 'Commissioning' && pres(r),
     'list-com-inst': (r) => r.area === 'Commissioning' && !pres(r),
@@ -1456,29 +1513,149 @@ function drawCmms() {
   }));
 }
 
-// Tender plans, one table per package, steps in order. A planned date already passed with no actual date
-// is flagged as a fact about the plan; nothing is said about why.
+// 6. Logistics. One card per service in report order (6.1 …), the status shown as written; a service the
+// report gives no status for says so.
+const SVC_ICONS = [
+  [/helicopter/i, '<path d="M3 5h16M11 5v3M6 8h8a4 4 0 0 1 0 8H9a3 3 0 0 1-3-3V8zM18 12h3M9 16v2.5M14 16v2.5M6 18.5h11"/>'],
+  [/inspection/i, '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3L21 21M7.7 10.6l2 2 3.6-3.7"/>'],
+  [/vessel|boat|fcb/i, '<path d="M3 14.5h18l-2.2 4.5H5.2zM7 14.5V9h7l3 5.5M10 9V5.5M3 21.5c1.5 0 1.5-.8 3-.8s1.5.8 3 .8 1.5-.8 3-.8 1.5.8 3 .8 1.5-.8 3-.8 1.5.8 3 .8"/>'],
+  [/mgo|fuel|diesel/i, '<path d="M12 3c3.2 4.2 6 7.3 6 11a6 6 0 0 1-12 0c0-3.7 2.8-6.8 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/>'],
+  [/crew/i, '<circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.6"/><path d="M15.6 14.1A5 5 0 0 1 21 19"/>'],
+  [/cater|food|meal/i, '<path d="M6 3v6a2 2 0 0 0 4 0V3M8 11v10M17 21V3c-2.4 1.6-3 4.6-3 7.5 0 1.7.9 2.5 3 2.5"/>'],
+  [/medic|health|clinic/i, '<rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M12 8v8M8 12h8"/>'],
+];
+const svcIcon = (name) => {
+  const hit = SVC_ICONS.find(([re]) => re.test(name || ''));
+  const ic = H.el('span', 'ops-svc-ic'); ic.setAttribute('aria-hidden', 'true');
+  ic.innerHTML = `<svg viewBox="0 0 24 24">${hit ? hit[1] : '<rect x="4" y="4" width="16" height="16" rx="3"/>'}</svg>`;
+  return ic;
+};
+function logRows() {
+  const d = dash.data('workstreams');
+  if (d.status !== 'ok') return null;
+  return d.data.filter((r) => r.area === 'Logistics & services')
+    .sort((a, b) => { const x = itemNo(a), y = itemNo(b); return (x[0] || 99) - (y[0] || 99) || (x[1] || 0) - (y[1] || 0); });
+}
+function drawServices() {
+  const box = document.getElementById('list-logistics');
+  const rows = logRows();
+  if (!rows) { box.replaceChildren(); document.getElementById('log-count').textContent = '—'; return; }
+  box.replaceChildren(...rows.map((r) => {
+    const card = H.el('article', 'ops-svc-card' + (r.status ? '' : ' empty'));
+    const head = H.el('div', 'ops-svc-head');
+    head.append(svcIcon(r.item), H.el('span', 'ops-svc-no', r.no || '—'));
+    card.append(head, H.el('h3', null, D(r.item)), H.el('p', null, r.status ? D(r.status) : L('No information yet', 'Chưa có thông tin')));
+    return card;
+  }));
+  const n = rows.filter((r) => r.status).length;
+  document.getElementById('log-count').textContent = L(`${rows.length} services · ${n} with a status`, `${rows.length} dịch vụ · ${n} có cập nhật`);
+}
+
+// Tender plans, one table per package, steps in order. Each step gets a state from its dates only: done
+// (actual date entered), planned date passed (no actual date, planned date before the report date), next
+// (first step still ahead), upcoming. Nothing is said about why a step is late.
+const DAY_MS = 864e5;
+function tenderSteps() {
+  const d = dash.data('tender_schedule');
+  if (d.status !== 'ok' || !d.data.length) return null;
+  const today = H.REPORT_DATE;
+  return d3.groups(d.data, (r) => r.package).map(([pkg, rows]) => {
+    const steps = rows.slice().sort((a, b) => (a.no ?? 0) - (b.no ?? 0)).map((r) => ({
+      ...r, plan: r.planned_date ? H.day(r.planned_date) : null, act: r.actual_date ? H.day(r.actual_date) : null,
+    }));
+    steps.forEach((s) => { s.state = s.act ? 'done' : s.plan && s.plan < today ? 'late' : 'todo'; });
+    const next = steps.find((s) => s.state === 'todo' && s.plan);
+    if (next) next.state = 'next';
+    return { pkg, steps, src: (rows.find((r) => r.source_doc) || {}).source_doc };
+  });
+}
+function drawLogKpis(groups) {
+  const box = document.getElementById('log-kpis');
+  const rows = logRows() || [];
+  const tile = (label, big, note, cls) => {
+    const t = H.el('div', 'ops-tile');
+    t.append(H.el('span', 'ops-tile-label', label), H.el('span', 'ops-big' + (cls ? ' ' + cls : ''), big), H.el('span', 'ops-tile-note', note));
+    return t;
+  };
+  const n = rows.filter((r) => r.status).length;
+  const out = [tile(L('Services tracked', 'Dịch vụ theo dõi'), String(rows.length || '—'),
+    L(`${n} with a status · ${rows.length - n} no information yet`, `${n} có cập nhật · ${rows.length - n} chưa có thông tin`))];
+  if (groups) {
+    const all = groups.flatMap((g) => g.steps.map((s) => ({ ...s, pkg: g.pkg })));
+    const today = H.REPORT_DATE, f = (d) => H.fmtDay(d);
+    const next = all.filter((s) => s.state === 'next').sort((a, b) => a.plan - b.plan)[0];
+    if (next) {
+      const days = Math.round((next.plan - today) / DAY_MS);
+      out.push(tile(L(`Next tender step · ${next.pkg}`, `Bước đấu thầu tiếp theo · ${next.pkg}`), f(next.plan),
+        L(`Step ${next.no} · ${next.activity} · ${days === 0 ? 'today' : `in ${days} days`}`, `Bước ${next.no} · ${next.activity} · ${days === 0 ? 'hôm nay' : `còn ${days} ngày`}`)));
+    }
+    const late = all.filter((s) => s.state === 'late');
+    out.push(tile(L('Planned date passed', 'Đã qua ngày kế hoạch'), String(late.length),
+      late.length ? L(`No actual date entered: step ${late.map((s) => s.no).join(', ')}`, `Chưa có ngày thực tế: bước ${late.map((s) => s.no).join(', ')}`)
+        : L('Every step before the report date has an actual date', 'Các bước trước ngày báo cáo đều có ngày thực tế'), late.length ? 'ops-warn' : ''));
+    const last = all.filter((s) => s.plan).sort((a, b) => b.plan - a.plan)[0];
+    if (last) out.push(tile(L('Last planned step', 'Bước cuối theo kế hoạch'), f(last.plan),
+      L(`Step ${last.no} · ${last.activity}`, `Bước ${last.no} · ${last.activity}`)));
+  }
+  box.replaceChildren(...out);
+}
 function drawTender() {
   const box = document.getElementById('tender');
-  const d = dash.data('tender_schedule');
-  if (d.status !== 'ok' || !d.data.length) { box.replaceChildren(H.el('p', 'ops-note', L('No tender schedule entered yet.', 'Chưa có tiến độ đấu thầu.'))); return; }
-  const today = H.REPORT_DATE, f = (s) => (s ? H.fmtDay(H.day(s)) : '—');
-  box.replaceChildren(...d3.groups(d.data, (r) => r.package).map(([pkg, rows]) => {
+  const groups = tenderSteps();
+  drawLogKpis(groups);
+  const count = document.getElementById('tender-count');
+  if (!groups) { count.textContent = '—'; box.replaceChildren(H.el('p', 'ops-note', L('No tender schedule entered yet.', 'Chưa có tiến độ đấu thầu.'))); return; }
+  const total = d3.sum(groups, (g) => g.steps.length), done = d3.sum(groups, (g) => g.steps.filter((s) => s.act).length);
+  count.textContent = L(`${total} steps · ${done} done`, `${total} bước · ${done} hoàn thành`);
+  const today = H.REPORT_DATE, f = (d) => (d ? H.fmtDay(d) : '—');
+  const STATE = { done: L('Done', 'Hoàn thành'), late: L('Planned date passed', 'Đã qua ngày KH'), next: L('Next step', 'Bước tiếp theo'), todo: L('Upcoming', 'Sắp tới') };
+  box.replaceChildren(...groups.map(({ pkg, steps, src }) => {
+    // One time axis per package, whole months, wide enough for every date and the report date.
+    const dates = steps.flatMap((s) => [s.plan, s.act]).filter(Boolean).concat([today]);
+    const t0 = d3.utcMonth.floor(d3.min(dates)), t1 = d3.utcMonth.offset(d3.utcMonth.floor(d3.max(dates)), 1);
+    const x = (d) => `${((d - t0) / (t1 - t0)) * 100}%`;
+    const months = d3.utcMonth.range(t0, t1);
+    const lines = () => months.slice(1).map((m) => { const e = H.el('span', 'm'); e.style.left = x(m); return e; });
+    const todayLine = () => { const e = H.el('span', 'today'); e.style.left = x(today); return e; };
+
     const wrap = H.el('div', 'ops-tender');
-    const src = rows.find((r) => r.source_doc);
-    wrap.append(H.el('h3', null, (pkg || L('Package', 'Gói')) + (src ? ` · ${src.source_doc}` : '')));
-    const table = H.el('table'), head = H.el('tr');
-    [L('No.', 'STT'), L('Activity', 'Hoạt động'), L('Duration (working days)', 'Thời gian (ngày làm việc)'), L('Planned date', 'Ngày kế hoạch'), L('Actual date', 'Ngày thực tế')]
-      .forEach((h, i) => head.append(H.el('th', i === 0 || i === 2 ? 'num' : null, h)));
-    const thead = H.el('thead'); thead.append(head);
+    const head = H.el('div', 'ops-tender-h');
+    head.append(H.el('h3', null, pkg || L('Package', 'Gói')));
+    if (src) head.append(H.el('span', 'src', src));
+    const nDone = steps.filter((s) => s.act).length;
+    const prog = H.el('span', 'prog'), bar = H.el('span', 'bar'), fill = H.el('i');
+    fill.style.width = `${(nDone / steps.length) * 100}%`; bar.append(fill);
+    prog.append(bar, L(`${nDone} of ${steps.length} steps done`, `${nDone}/${steps.length} bước hoàn thành`));
+    head.append(prog);
+
+    const tableBox = H.el('div', 'ops-tablebox'); tableBox.style.maxHeight = 'none';
+    const table = H.el('table'), thead = H.el('thead'), hr = H.el('tr');
+    [[L('No.', 'STT'), 'num'], [L('Activity', 'Hoạt động'), null], [L('Working days', 'Ngày làm việc'), 'num hide-xs'],
+      [L('Planned', 'Kế hoạch'), null], [L('Actual', 'Thực tế'), 'hide-xs'], [L('Status', 'Trạng thái'), null]].forEach(([h, c]) => hr.append(H.el('th', c, h)));
+    const axisTh = H.el('th', 'tl'), axis = H.el('div', 'ops-tl-axis');
+    months.forEach((m) => { const e = H.el('span', null, H.fmtMonthShort(m)); e.style.left = x(new Date(+m + (d3.utcMonth.offset(m, 1) - m) / 2)); axis.append(e); });
+    axis.append(...lines(), todayLine());
+    axisTh.append(axis); hr.append(axisTh); thead.append(hr);
+
     const tb = H.el('tbody');
-    rows.slice().sort((a, b) => (a.no ?? 0) - (b.no ?? 0)).forEach((r) => {
-      const tr = H.el('tr'), plan = H.el('td', null, f(r.planned_date));
-      if (!r.actual_date && r.planned_date && H.day(r.planned_date) < today) plan.append(' ', H.el('span', 'ops-pill ops-warn', L('date passed', 'đã qua ngày KH')));
-      tr.append(H.el('td', 'num', r.no ?? ''), H.el('td', null, r.activity), H.el('td', 'num', r.duration_days ?? ''), plan, H.el('td', r.actual_date ? 'ops-good' : null, f(r.actual_date)));
+    steps.forEach((s) => {
+      const tr = H.el('tr', s.state === 'next' ? 'is-next' : null);
+      const st = H.el('span', 'st ' + s.state); st.append(H.el('i', 'mk ' + s.state), H.el('span', 'lbl', STATE[s.state])); st.title = STATE[s.state];
+      if (s.state === 'next' && s.plan) { const dd = Math.round((s.plan - today) / DAY_MS); st.append(H.el('small', null, dd === 0 ? L('today', 'hôm nay') : L(`in ${dd} d`, `còn ${dd} ngày`))); }
+      if (s.state === 'late') { const dd = Math.round((today - s.plan) / DAY_MS); st.append(H.el('small', null, L(`${dd} d`, `${dd} ngày`))); }
+      const tl = H.el('td', 'tl'), lane = H.el('div', 'ops-tl');
+      lane.append(...lines(), todayLine());
+      const mark = (d, cls, tip) => { const e = H.el('i', 'mk ' + cls); e.style.left = x(d); e.title = tip; lane.append(e); };
+      if (s.act && s.plan && +s.act !== +s.plan) mark(s.plan, 'ghost', L('Planned ', 'Kế hoạch ') + f(s.plan));
+      if (s.act) mark(s.act, 'done', L('Actual ', 'Thực tế ') + f(s.act));
+      else if (s.plan) mark(s.plan, s.state, L('Planned ', 'Kế hoạch ') + f(s.plan));
+      tl.append(lane);
+      const stTd = H.el('td'); stTd.append(st);
+      tr.append(H.el('td', 'num', s.no ?? ''), H.el('td', 'act', s.activity || ''), H.el('td', 'num hide-xs', s.duration_days ?? ''),
+        H.el('td', 'dt', f(s.plan)), H.el('td', 'dt hide-xs' + (s.act ? ' ops-good' : ''), f(s.act)), stTd, tl);
       tb.append(tr);
     });
-    table.append(thead, tb); wrap.append(table); return wrap;
+    table.append(thead, tb); tableBox.append(table); wrap.append(head, tableBox); return wrap;
   }));
 }
 
@@ -1565,7 +1742,7 @@ function draw() {
   if (currentPage === 'apps') { drawWorkstreams(); drawCmms(); }
   if (currentPage === 'permits') drawPermits();
   if (currentPage === 'procedures') drawProcedures();
-  if (currentPage === 'logistics') { drawWorkstreams(); drawTender(); }
+  if (currentPage === 'logistics') { drawServices(); drawTender(); }
   if (currentPage === 'contracts') { drawPr(); drawPackages(); }
   if (currentPage === 'coordination') { drawWorkstreams(); drawGasProfile(); }
   if (currentPage === 'orr') { drawOrrCurve(); drawOrrTeams(); drawOrrPlan(); drawOrrElements(); }
