@@ -836,53 +836,6 @@
    "team": "Production Eng"
   }
  ],
- "orr_curve": [
-  {
-   "actual_pct": 70.5,
-   "plan_pct": 67.2,
-   "month": "2026-10"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 71,
-   "month": "2026-11"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 75,
-   "month": "2026-12"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 80,
-   "month": "2027-01"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 83,
-   "month": "2027-02"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 87,
-   "month": "2027-03"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 90,
-   "month": "2027-04"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 93,
-   "month": "2027-05"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 95,
-   "month": "2027-06"
-  }
- ],
  "orr_groups": [
   {
    "progress_pct": 66.3,
@@ -1073,6 +1026,53 @@
    "element": "Design, Engineering, Operability & Maintainability Assurance",
    "group": "PROCESS",
    "code": "PR-14"
+  }
+ ],
+ "orr_curve": [
+  {
+   "actual_pct": 70.5,
+   "plan_pct": 67.2,
+   "month": "2026-10"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 71,
+   "month": "2026-11"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 75,
+   "month": "2026-12"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 80,
+   "month": "2027-01"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 83,
+   "month": "2027-02"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 87,
+   "month": "2027-03"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 90,
+   "month": "2027-04"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 93,
+   "month": "2027-05"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 95,
+   "month": "2027-06"
   }
  ],
  "pr_pipeline": [
@@ -2038,7 +2038,7 @@
   },
   {
    "area": "Logistics & services",
-   "status": "change to contract",
+   "status": "đã raise PR",
    "no": "6.4",
    "item": "MGO"
   },
@@ -2050,7 +2050,7 @@
   },
   {
    "area": "Logistics & services",
-   "status": "combine with DCD to 2030",
+   "status": "Combine with DEV, DCD",
    "no": "6.3",
    "item": "Vessel inspection"
   },
@@ -3377,6 +3377,78 @@
    "permit": "Fire Protection Approval (PCCC)"
   }
  ],
+ "startup_sequence": [
+  {
+   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
+   "step": 1,
+   "phase": "Preparation"
+  },
+  {
+   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
+   "step": 2,
+   "phase": "Start up CPP"
+  },
+  {
+   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
+   "step": 3,
+   "phase": "First well"
+  },
+  {
+   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
+   "step": 4,
+   "phase": "Pressurize CPP"
+  },
+  {
+   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
+   "step": 5,
+   "phase": "Gas & fuel gas"
+  },
+  {
+   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
+   "step": 6,
+   "phase": "Second well"
+  },
+  {
+   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
+   "step": 7,
+   "phase": "GTG to fuel gas"
+  },
+  {
+   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
+   "step": 8,
+   "phase": "Third well"
+  },
+  {
+   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
+   "step": 9,
+   "phase": "Ramp up wells"
+  },
+  {
+   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
+   "step": 10,
+   "phase": "GTC & WHRU"
+  },
+  {
+   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
+   "step": 11,
+   "phase": "Dew point"
+  },
+  {
+   "action": "Start MRU; close bypass line when gas dew point is on spec",
+   "step": 12,
+   "phase": "MRU"
+  },
+  {
+   "action": "Export gas to export gas pipeline",
+   "step": 13,
+   "phase": "Export gas"
+  },
+  {
+   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
+   "step": 14,
+   "phase": "Condensate & PW"
+  }
+ ],
  "precom_plan": [
   {
    "actual_start": null,
@@ -3561,78 +3633,6 @@
    "status_override": null,
    "order": 8,
    "area": "Commissioning & Start-up"
-  }
- ],
- "startup_sequence": [
-  {
-   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
-   "step": 1,
-   "phase": "Preparation"
-  },
-  {
-   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
-   "step": 2,
-   "phase": "Start up CPP"
-  },
-  {
-   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
-   "step": 3,
-   "phase": "First well"
-  },
-  {
-   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
-   "step": 4,
-   "phase": "Pressurize CPP"
-  },
-  {
-   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
-   "step": 5,
-   "phase": "Gas & fuel gas"
-  },
-  {
-   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
-   "step": 6,
-   "phase": "Second well"
-  },
-  {
-   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
-   "step": 7,
-   "phase": "GTG to fuel gas"
-  },
-  {
-   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
-   "step": 8,
-   "phase": "Third well"
-  },
-  {
-   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
-   "step": 9,
-   "phase": "Ramp up wells"
-  },
-  {
-   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
-   "step": 10,
-   "phase": "GTC & WHRU"
-  },
-  {
-   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
-   "step": 11,
-   "phase": "Dew point"
-  },
-  {
-   "action": "Start MRU; close bypass line when gas dew point is on spec",
-   "step": 12,
-   "phase": "MRU"
-  },
-  {
-   "action": "Export gas to export gas pipeline",
-   "step": 13,
-   "phase": "Export gas"
-  },
-  {
-   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
-   "step": 14,
-   "phase": "Condensate & PW"
   }
  ],
  "milestones": [
@@ -6056,6 +6056,98 @@
    "module": "Pig Laucher/ Receiver"
   }
  ],
+ "tender_schedule": [
+  {
+   "planned_date": "2026-10-13",
+   "actual_date": null,
+   "no": 1,
+   "duration_days": 5,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s endorsement of CSP"
+  },
+  {
+   "planned_date": "2026-10-27",
+   "actual_date": null,
+   "no": 2,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Contractor Parties’ approval of Bidder List"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 3,
+   "duration_days": 14,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "PETROVIETNAM’s approval of Bidder List and ITB"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 4,
+   "duration_days": 0,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Issuance"
+  },
+  {
+   "planned_date": "2026-12-30",
+   "actual_date": null,
+   "no": 5,
+   "duration_days": 30,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Submission Deadline"
+  },
+  {
+   "planned_date": "2026-12-31",
+   "actual_date": null,
+   "no": 6,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Bid Opening"
+  },
+  {
+   "planned_date": "2027-01-29",
+   "actual_date": null,
+   "no": 7,
+   "duration_days": 20,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Evaluation"
+  },
+  {
+   "planned_date": "2027-02-03",
+   "actual_date": null,
+   "no": 8,
+   "duration_days": 3,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s approval of Technical Evaluation Report"
+  },
+  {
+   "planned_date": "2027-02-11",
+   "actual_date": null,
+   "no": 9,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Bid Opening"
+  },
+  {
+   "planned_date": "2027-02-25",
+   "actual_date": null,
+   "no": 10,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Evaluation"
+  }
+ ],
  "orr_team_plan": [
   {
    "month": "2026-10",
@@ -6559,6 +6651,6 @@
    "classification": "Internal"
   }
  ],
- "_updated_at": "2026-11-10T04:17:00.000Z",
+ "_updated_at": "2026-11-10T06:42:00.000Z",
  "_source": "notion"
 }
