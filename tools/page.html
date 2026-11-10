@@ -558,6 +558,37 @@
 .ops-rc th, .ops-rc td { padding: 7px 10px; border: 1px solid var(--color-border-line); text-align: left; vertical-align: top; line-height: 1.45; }
 .ops-rc-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 12px; align-items: start; }
 @media (max-width: 560px) { .ops-risk .ops-rs { font-size: 0; padding: 5px; gap: 0; } .ops-risk .ns { font-size: 0; } .ops-risk .ns::after { content: '—'; font-size: 13px; } .ops-risk th, .ops-risk td { padding-left: 5px; padding-right: 5px; } .ops-risk td.act .ap-sm { display: block; } .ops-risk td.act { min-width: 8rem; } .ops-dept .ops-cell-bar { min-width: 5rem; } .ops-dept th, .ops-dept td { padding-left: 5px; padding-right: 5px; } }
+/* 7. Contract packages */
+.ops-cp-flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; }
+.ops-cp-flow .st { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 6.6rem; flex: 1 1 6.6rem; padding: 10px 12px 12px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); color: var(--color-fg); font: inherit; text-align: left; cursor: pointer; box-shadow: var(--shadow-card); transition: border-color var(--cds-dur-slow), transform var(--cds-dur-slow); }
+.ops-cp-flow .st:hover { border-color: var(--acc-line); transform: translateY(-1px); }
+.ops-cp-flow .st b { font-size: 22px; line-height: 1.1; }
+.ops-cp-flow .st span { font-size: 12px; font-weight: 600; color: var(--color-fg-muted); line-height: 1.3; }
+.ops-cp-flow .st i { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; border-radius: 0 0 var(--cds-radius) var(--cds-radius); }
+.ops-cp-flow .st.on { border-color: var(--acc); box-shadow: 0 0 0 2px color-mix(in srgb, var(--acc) 30%, transparent); }
+.ops-cp-flow .st.on span { color: var(--acc); }
+.ops-cp-flow .ar { align-self: center; color: var(--acc); font-weight: 700; font-size: 18px; }
+.ops-cp-group + .ops-cp-group { margin-top: var(--cds-gap-md); }
+.ops-cp-group .h { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.ops-cp-group .h i { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+.ops-cp-group .h h3 { margin: 0; font-size: 15px; font-weight: 650; }
+.ops-cp-group .h .c { font-size: 12px; color: var(--color-fg-muted); padding: 1px 8px; border: 1px solid var(--color-border-line); border-radius: 999px; }
+.ops-cp { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); table-layout: fixed; }
+.ops-cp th, .ops-cp td { padding: 8px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-border-line); line-height: 1.45; overflow-wrap: anywhere; }
+.ops-cp .c-package { width: 34%; } .ops-cp .c-pic { width: 13%; } .ops-cp .c-ros_required, .ops-cp .c-loa_required, .ops-cp .c-step_due_date { width: 10%; white-space: nowrap; } .ops-cp .c-remarks, .ops-cp .c-status { width: 21.5%; }
+.ops-cp td.c-package .nm { display: block; font-weight: 600; }
+.ops-cp td.c-package .nt { display: block; margin-top: 3px; font-size: 11.5px; color: var(--color-bad); }
+.ops-cp td.c-package .sm { display: none; margin-top: 4px; font-size: 11.5px; color: var(--color-fg-muted); }
+.ops-cp-ros .cols { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 10px; height: 220px; align-items: end; padding-top: 6px; }
+.ops-cp-ros .col { display: flex; flex-direction: column; align-items: center; height: 100%; gap: 4px; min-width: 0; }
+.ops-cp-ros .col > b { font-size: 13px; }
+.ops-cp-ros .bar { flex: 1; width: 100%; display: flex; align-items: flex-end; justify-content: center; border-bottom: 2px solid var(--acc-line); }
+.ops-cp-ros .stack { width: min(46px, 80%); display: flex; flex-direction: column-reverse; gap: 2px; }
+.ops-cp-ros .stack i { flex: 1; min-height: 6px; border-radius: 3px; cursor: default; }
+.ops-cp-ros .m { font-size: 11.5px; color: var(--color-fg-muted); white-space: nowrap; }
+.ops-cp-ros .ops-tl-legend { margin-top: 12px; }
+.ops-cp-ros .ops-tl-legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+@media (max-width: 560px) { .ops-cp-flow .ar { display: none; } .ops-cp-flow .st { flex-basis: calc(50% - 6px); } .ops-cp td.c-package .sm { display: block; } .ops-cp .c-package { width: auto; } .ops-cp .c-ros_required { width: 6.5rem; } .ops-cp-ros .cols { gap: 4px; } .ops-cp-ros .m { font-size: 10px; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -881,15 +912,30 @@
 
   <!-- 7 CONTRACTS -->
   <section class="ops-page" id="contracts" data-page="contracts" hidden>
+    <div class="ops-tiles" id="cp-kpis"></div>
+    <div class="ops-card ops-bcard" id="card-cp">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Contract packages by current status</span><span class="ops-banner-n" id="cp-n">—</span></h2>
+      <p class="ops-note">From the Overview sheet of the procurement file, one row per package in the file's order. Click a status to show only its packages.</p>
+      <div class="ops-cp-flow" id="cp-flow" role="group" aria-label="Current status"></div>
+      <p class="ops-note ops-dept-diff" id="cp-qty" hidden></p>
+      <div class="ops-tools"><input type="search" id="cp-q" placeholder="Search package, PIC, remark…" aria-label="Search packages"></div>
+      <div id="cp-list" data-source="contract_packages"></div>
+      <p class="ops-note" id="cp-empty-cols" hidden></p>
+    </div>
+    <div class="ops-card ops-bcard" id="card-cp-ros">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">ROS required by month</span><span class="ops-banner-n" id="cp-ros-n">—</span></h2>
+      <p class="ops-note">Each block is one package, coloured by its current status. Hover a block for the package name.</p>
+      <div class="ops-cp-ros" id="cp-ros" data-source="contract_packages"></div>
+    </div>
     <div class="ops-grid">
-      <div class="ops-card" id="card-pr">
-        <h2>PRs in progress by stage</h2>
+      <div class="ops-card ops-bcard" id="card-pr">
+        <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">PRs in progress by stage</span></h2>
         <p class="ops-note"><span data-source="pr_summary" data-field="total">—</span> PRs. Each block is one PR, coloured by schedule status.</p>
         <div class="ops-legend" id="pr-legend"></div>
         <div class="ops-bars" id="bars-pr" data-source="pr_pipeline"></div>
       </div>
-      <div class="ops-card" id="card-packages">
-        <h2>Packages without PR</h2>
+      <div class="ops-card ops-bcard" id="card-packages">
+        <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Packages without PR</span></h2>
         <p class="ops-note"><span data-source="packages_summary" data-field="total">—</span> packages in preparation, by status, priority and expected SCR timing.</p>
         <div id="packages" data-source="packages_no_pr"></div>
       </div>
@@ -2010,6 +2056,106 @@ function drawCoordination() {
   document.getElementById('gas-profile-note').textContent = prof && prof.status ? D(prof.status) : L('No information yet', 'Chưa có thông tin');
 }
 
+// 7. Contract packages (Overview sheet). The statuses are taken in the file's order, which runs from
+// "Contract Signed" down to "SOW / PIA Preparation"; the flow shows them the other way round, earliest first.
+const CP_STAGES = ['Contract Signed', 'Contract Signing', 'Technical evaluation', 'ITB/Bid Submission', 'CSP Approval', 'CSP preparation', 'PR processing', 'Bidder screening', 'SOW / PIA Preparation'];
+const CP_RAMP = d3.interpolateRgbBasis(['#94A3B8', '#E0A526', '#E07A3A', '#14A3A0', '#2F6FD6', '#1E9E5A']);
+const cpColor = (st) => { const i = CP_STAGES.length - 1 - Math.max(0, CP_STAGES.indexOf(st)); return CP_RAMP(i / (CP_STAGES.length - 1)); };
+let cpStage = '';
+document.getElementById('cp-q').addEventListener('input', () => drawContracts());
+function cpRows() {
+  const d = dash.data('contract_packages');
+  return d.status === 'ok' ? d.data.slice().sort((a, b) => (a.seq ?? 0) - (b.seq ?? 0)) : null;
+}
+const multi = (t) => { const out = []; String(t).split('\n').forEach((x, i) => { if (i) out.push(H.el('br')); out.push(document.createTextNode(x)); }); return out; };
+function drawContracts() {
+  const rows = cpRows(), list = document.getElementById('cp-list');
+  const kp = document.getElementById('cp-kpis'), flow = document.getElementById('cp-flow');
+  if (!rows || !rows.length) { [list, kp, flow, document.getElementById('cp-ros')].forEach((e) => e.replaceChildren()); document.getElementById('cp-n').textContent = '—'; return; }
+  const stages = CP_STAGES.filter((s) => rows.some((r) => r.current_status === s)).concat([...new Set(rows.map((r) => r.current_status))].filter((s) => s && !CP_STAGES.includes(s)));
+  const count = (s) => rows.filter((r) => r.current_status === s).length;
+  document.getElementById('cp-n').textContent = L(`${rows.length} packages · ${stages.length} statuses`, `${rows.length} gói · ${stages.length} trạng thái`);
+
+  // Tiles: counts and dates straight from the rows.
+  const tile = (label, big, note) => { const t = H.el('div', 'ops-tile'); t.append(H.el('span', 'ops-tile-label', label), H.el('span', 'ops-big', big), H.el('span', 'ops-tile-note', note)); return t; };
+  const ros = rows.filter((r) => r.ros_required).map((r) => r.ros_required).sort();
+  const nAt = (d) => rows.filter((r) => r.ros_required === d).length;
+  kp.replaceChildren(
+    tile(L('Packages in the overview', 'Gói thầu trong bảng tổng hợp'), String(rows.length), L(`${stages.length} current statuses`, `${stages.length} trạng thái hiện tại`)),
+    tile(L('Contract signed / signing', 'Đã ký / đang ký hợp đồng'), `${count('Contract Signed')} / ${count('Contract Signing')}`, rows.filter((r) => /^Contract Sign/.test(r.current_status || '')).map((r) => r.package).join(' · ') || '—'),
+    ros.length ? tile(L('Earliest ROS required', 'ROS sớm nhất'), H.fmtDay(H.day(ros[0])), L(`${nAt(ros[0])} packages`, `${nAt(ros[0])} gói`)) : tile(L('Earliest ROS required', 'ROS sớm nhất'), '—', ''),
+    ros.length ? tile(L('Latest ROS required', 'ROS muộn nhất'), H.fmtDay(H.day(ros.at(-1))), L(`${nAt(ros.at(-1))} packages`, `${nAt(ros.at(-1))} gói`)) : tile(L('Latest ROS required', 'ROS muộn nhất'), '—', ''));
+
+  // Status flow, earliest status first; a click filters the list below.
+  const order = stages.slice().reverse();
+  flow.replaceChildren(...order.flatMap((st, i) => {
+    const b = H.el('button', 'st' + (cpStage === st ? ' on' : '')); b.type = 'button'; b.setAttribute('aria-pressed', String(cpStage === st));
+    const dot = H.el('i'); dot.style.background = cpColor(st);
+    b.append(H.el('b', null, String(count(st))), H.el('span', null, D(st)), dot);
+    b.addEventListener('click', () => { cpStage = cpStage === st ? '' : st; drawContracts(); });
+    return i < order.length - 1 ? [b, H.el('span', 'ar', '›')] : [b];
+  }));
+  // Where the file's Q'TY differs from the packages listed under that status, say so.
+  const qtyOff = stages.filter((st) => { const q = rows.find((r) => r.current_status === st && r.stage_qty != null); return q && q.stage_qty !== count(st); });
+  const qn = document.getElementById('cp-qty'); qn.hidden = !qtyOff.length;
+  qn.textContent = qtyOff.map((st) => L(`${st}: Q'TY in the file is ${rows.find((r) => r.current_status === st).stage_qty}, ${count(st)} packages are listed under it.`, `${st}: cột Q'TY trong file ghi ${rows.find((r) => r.current_status === st).stage_qty}, nhưng có ${count(st)} gói được liệt kê.`)).join(' ');
+
+  // Package list, grouped by status in the file's order. Columns that are empty for every row are left out.
+  const q = document.getElementById('cp-q').value.trim().toLowerCase();
+  const show = rows.filter((r) => (!cpStage || r.current_status === cpStage) && (!q || [r.package, r.package_note, r.pic, r.remarks, r.status].some((x) => (x || '').toLowerCase().includes(q))));
+  const has = (k) => rows.some((r) => r[k]);
+  const cols = [['package', L('Package', 'Gói thầu')], ['pic', 'PIC'], ['loa_required', 'LOA required'], ['ros_required', 'ROS required'], ['step_due_date', 'Step due date'], ['remarks', 'Remarks'], ['status', 'Status']].filter(([k]) => k === 'package' || has(k));
+  const empty = ['loa_required', 'step_due_date'].filter((k) => !has(k)), en = document.getElementById('cp-empty-cols');
+  en.hidden = !empty.length; en.textContent = L(`Columns empty in the file for every package: ${empty.map((k) => k === 'loa_required' ? 'LOA required' : 'Step due date').join(', ')}.`, `Cột để trống ở tất cả các gói trong file: ${empty.map((k) => k === 'loa_required' ? 'LOA required' : 'Step due date').join(', ')}.`);
+  if (!show.length) { list.replaceChildren(H.el('p', 'ops-none', L('No package matches.', 'Không có gói phù hợp.'))); }
+  else list.replaceChildren(...stages.filter((st) => show.some((r) => r.current_status === st)).map((st) => {
+    const g = H.el('div', 'ops-cp-group'), h = H.el('div', 'h'), dot = H.el('i'); dot.style.background = cpColor(st);
+    h.append(dot, H.el('h3', null, D(st)), H.el('span', 'c', L(`${count(st)} package${count(st) === 1 ? '' : 's'}`, `${count(st)} gói`)));
+    const box = H.el('div', 'ops-tablebox'); box.style.maxHeight = 'none';
+    const table = H.el('table', 'ops-cp'), thead = H.el('thead'), tr0 = H.el('tr');
+    cols.forEach(([k, t]) => tr0.append(H.el('th', 'c-' + k + (['remarks', 'status', 'pic'].includes(k) ? ' hide-sm' : ''), t))); thead.append(tr0);
+    const tb = H.el('tbody');
+    show.filter((r) => r.current_status === st).forEach((r) => {
+      const tr = H.el('tr');
+      cols.forEach(([k]) => {
+        const td = H.el('td', 'c-' + k + (['remarks', 'status', 'pic'].includes(k) ? ' hide-sm' : ''));
+        if (k === 'package') {
+          td.append(H.el('span', 'nm', r.package || ''));
+          if (r.package_note) td.append(H.el('span', 'nt', r.package_note));
+          const sm = [r.pic, r.remarks, r.status].filter(Boolean);
+          if (sm.length) { const e = H.el('span', 'sm'); e.append(...multi(sm.join('\n'))); td.append(e); }
+        } else if (k === 'ros_required' || k === 'step_due_date') td.textContent = r[k] ? H.fmtDay(H.day(r[k])) : '—';
+        else if (r[k]) td.append(...multi(r[k])); else td.textContent = '—';
+        tr.append(td);
+      });
+      tb.append(tr);
+    });
+    table.append(thead, tb); box.append(table); g.append(h, box); return g;
+  }));
+  drawCpRos(rows, stages);
+}
+function drawCpRos(rows, stages) {
+  const box = document.getElementById('cp-ros'), n = document.getElementById('cp-ros-n');
+  const dated = rows.filter((r) => r.ros_required), none = rows.length - dated.length;
+  if (!dated.length) { box.replaceChildren(); n.textContent = '—'; return; }
+  const ms = d3.utcMonth.range(d3.utcMonth.floor(H.day(dated.map((r) => r.ros_required).sort()[0])), d3.utcMonth.offset(d3.utcMonth.floor(H.day(dated.map((r) => r.ros_required).sort().at(-1))), 1));
+  const byM = (m) => dated.filter((r) => +d3.utcMonth.floor(H.day(r.ros_required)) === +m).sort((a, b) => CP_STAGES.indexOf(b.current_status) - CP_STAGES.indexOf(a.current_status) || (a.seq ?? 0) - (b.seq ?? 0));
+  const max = d3.max(ms, (m) => byM(m).length) || 1;
+  n.textContent = L(`${dated.length} packages with a ROS date`, `${dated.length} gói có ngày ROS`) + (none ? L(` · ${none} without`, ` · ${none} chưa có`) : '');
+  const cols = H.el('div', 'cols');
+  ms.forEach((m) => {
+    const ps = byM(m), col = H.el('div', 'col'), stack = H.el('div', 'stack');
+    stack.style.height = `${(ps.length / max) * 100}%`;
+    ps.forEach((r) => { const b = H.el('i'); b.style.background = cpColor(r.current_status); b.title = `${r.package} · ${D(r.current_status)} · ROS ${H.fmtDay(H.day(r.ros_required))}`; stack.append(b); });
+    col.append(H.el('b', null, ps.length ? String(ps.length) : ''), H.el('div', 'bar'), H.el('span', 'm', H.fmtMonthShort(m)));
+    col.querySelector('.bar').append(stack);
+    cols.append(col);
+  });
+  const key = H.el('div', 'ops-tl-legend');
+  stages.slice().reverse().forEach((st) => { const s = H.el('span'), i = H.el('i', 'sw'); i.style.background = cpColor(st); s.append(i, D(st)); key.append(s); });
+  box.replaceChildren(cols, key);
+}
+
 // ---------- startup ----------
 // 10.1 / 10.2 cards. The report's status is shown as written: "A -> B -> C" is drawn as a flow and a short
 // comma list as chips; anything else as plain text. Nothing is added.
@@ -2117,7 +2263,7 @@ function draw() {
   if (currentPage === 'permits') drawPermits();
   if (currentPage === 'procedures') drawProcedures();
   if (currentPage === 'logistics') { drawServices(); drawTender(); }
-  if (currentPage === 'contracts') { drawPr(); drawPackages(); }
+  if (currentPage === 'contracts') { drawContracts(); drawPr(); drawPackages(); }
   if (currentPage === 'coordination') drawCoordination();
   if (currentPage === 'orr') { drawOrrHead(); drawOrrCurve(); drawOrrTeams(); drawOrrPlan(); drawOrrDept(); drawOrrRisk(); drawOrrElements(); }
   if (currentPage === 'startup') { drawCommissioning(); drawGantt(); drawSteps(); }
@@ -2443,7 +2589,7 @@ const AREAS = [ // [table, area title EN, VI, tab]
   ['cbta_modules', 'CBTA modules', 'Module CBTA', 'training'], ['hse_matrix', 'HSE training matrix', 'Ma trận đào tạo HSE', 'training'],
   ['orr_teams', 'ORR by team', 'ORR theo team', 'orr'], ['orr_groups', 'ORR groups', 'ORR tổng nhóm', 'orr'], ['orr_elements', 'ORR elements', 'ORR hạng mục', 'orr'],
   ['orr_team_plan', 'ORR plan by team', 'ORR kế hoạch theo team', 'orr'],
-  ['orr_departments', 'ORR by department', 'ORR theo phòng ban', 'orr'], ['orr_risks', 'ORR risk assessment', 'Đánh giá rủi ro ORR', 'orr'],
+  ['orr_departments', 'ORR by department', 'ORR theo phòng ban', 'orr'], ['contract_packages', 'Contract packages', 'Gói thầu hợp đồng', 'contracts'], ['orr_risks', 'ORR risk assessment', 'Đánh giá rủi ro ORR', 'orr'],
   ['procedures', 'Procedures', 'Quy trình', 'procedures'],
   ['pr_pipeline', 'PRs in progress', 'PR đang xử lý', 'contracts'], ['packages_no_pr', 'Packages without PR', 'Gói chưa có PR', 'contracts'], ['cmms', 'CMMS', 'CMMS', 'apps'],
   ['workstreams', 'Workstreams', 'Trạng thái công việc', 'apps'], ['permits', 'Permits', 'Giấy phép', 'permits'], ['tender_schedule', 'Tender schedule', 'Tiến độ đấu thầu', 'logistics'],
@@ -2454,7 +2600,7 @@ const KEYS = {
   orr_teams: ['team'], pr_pipeline: ['stage', 'status'], packages_no_pr: ['dimension', 'category'], vendor_training: ['period', 'course'],
   precom_plan: ['activity'], cbta: ['platform', 'team'], mandatory: ['team'], staffing: ['group'], cmms: ['package'],
   workstreams: ['area', 'item'], permits: ['team', 'permit', 'facility', 'description'], tender_schedule: ['package', 'no'], readiness: ['area'], milestones: ['milestone'],
-  hse_matrix: ['course'], cbta_modules: ['platform', 'team', 'no'], orr_team_plan: ['team', 'month'], orr_departments: ['department', 'month'], orr_risks: ['item'],
+  hse_matrix: ['course'], cbta_modules: ['platform', 'team', 'no'], orr_team_plan: ['team', 'month'], orr_departments: ['department', 'month'], orr_risks: ['item'], contract_packages: ['package'],
 };
 const FIELDS = {
   total_plan: ['Total plan', 'KH tổng'], total_actual: ['Total actual', 'TT tổng'], onshore_plan: ['Onshore plan', 'KH trên bờ'], onshore_actual: ['Onshore actual', 'TT trên bờ'],
@@ -2490,6 +2636,7 @@ const rowLabel = {
   orr_team_plan: (r) => `${r.team} · ${H.fmtMonth(H.month(r.month))}`,
   orr_departments: (r) => `${r.department}${r.month ? ' · ' + H.fmtMonth(H.month(r.month)) : ''}`,
   orr_risks: (r) => `${r.item}. ${r.activity || ''}`,
+  contract_packages: (r) => `${r.package} · ${r.current_status || ''}`,
 };
 const label = (t, r) => (rowLabel[t] ? rowLabel[t](r) : String(r[KEYS[t][0]] ?? '—'));
 const fieldName = (f) => (FIELDS[f] ? L(FIELDS[f][0], FIELDS[f][1]) : f);

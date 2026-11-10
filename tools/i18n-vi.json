@@ -246,7 +246,13 @@
   "Avg. score": "Điểm TB",
   "Risk status": "Trạng thái rủi ro",
   "Action plan": "Kế hoạch hành động",
-  "How the risk is scored (Root cause sheet)": "Cách chấm điểm rủi ro (sheet Root cause)"
+  "How the risk is scored (Root cause sheet)": "Cách chấm điểm rủi ro (sheet Root cause)",
+  "Contract packages by current status": "Gói thầu theo trạng thái hiện tại",
+  "From the Overview sheet of the procurement file, one row per package in the file's order. Click a status to show only its packages.": "Lấy từ sheet Overview của file mua sắm, mỗi gói một dòng theo đúng thứ tự trong file. Bấm vào một trạng thái để chỉ xem các gói ở trạng thái đó.",
+  "Search package, PIC, remark…": "Tìm gói thầu, PIC, ghi chú…",
+  "Search packages": "Tìm gói thầu",
+  "ROS required by month": "ROS yêu cầu theo tháng",
+  "Each block is one package, coloured by its current status. Hover a block for the package name.": "Mỗi ô là một gói thầu, tô màu theo trạng thái hiện tại. Rê chuột vào ô để xem tên gói."
  },
  "data": {
   "Manpower": "Nhân sự",
