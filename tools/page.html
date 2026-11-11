@@ -764,12 +764,12 @@
       <div class="ops-cardhead">
         <p class="ops-note">Headcount by month from the Ramp Up Chart of the mobilisation file. Dashed line is plan; the vertical marker is the report date. A month not yet reported keeps the latest actual.</p>
         <div class="ops-seg ops-seg-wrap" role="group" aria-label="Staff group" id="mp-seg">
-          <button data-k="total" aria-pressed="true">Total</button><button data-k="onshore" aria-pressed="false">Onshore</button><button data-k="s:off" aria-pressed="false">Offshore</button><button data-k="g:CPP" aria-pressed="false">CPP</button><button data-k="g:WHP" aria-pressed="false">WHP</button><button data-k="g:OOSS Contractors" aria-pressed="false">OOSS Contractors</button><button data-k="g:Services Contract" aria-pressed="false">Services Contract</button>
+          <button data-k="total" aria-pressed="true">Total</button><button data-k="onshore" aria-pressed="false">Onshore</button><button data-k="offshore" aria-pressed="false">Offshore</button><button data-k="g:CPP" aria-pressed="false">CPP</button><button data-k="g:WHP" aria-pressed="false">WHP</button><button data-k="g:OOSS Contractors" aria-pressed="false">OOSS Contractors</button><button data-k="g:Services Contract" aria-pressed="false">Services Contract</button>
         </div>
       </div>
       <div class="ops-legend" id="mp-legend"></div>
       <div class="ops-chart dash-skeleton" id="chart-manpower" data-source="manpower manpower_groups"></div>
-      <p class="ops-note ops-mp-def"><b>Offshore</b> = CPP + WHP + FSO + OOSS Contractors + Services Contract, as in the formula of the Offshore row in the Ramp Up Chart (FSO is 0 in every month of the file).</p>
+      <p class="ops-note ops-mp-def"><b>Source:</b> Mob Plan and Actual OPS 11Nov2026, sheet Ramp Up Chart_02. Offshore is the Offshore row of the file; its formula is CPP + WHP + FSO + OOSS Contractors + Services Contract.</p>
       <p class="ops-note ops-dept-diff" id="mp-check" hidden></p>
     </div>
     <div class="ops-grid">
@@ -1444,8 +1444,8 @@ function drawManpower() {
   if (m && mp.status === 'ok' && gr.status === 'ok') {
     const r = mp.data.find((x) => x.month === m), g = (n) => gr.data.find((x) => x.month === m && x.group === n)?.actual;
     const off = ['CPP', 'WHP', 'OOSS Contractors', 'Services Contract'].reduce((a, n) => a + (g(n) ?? 0), 0);
-    if (r.offshore_actual != null && r.offshore_actual !== off) msgs.push(L(`the Offshore (Actual) cell in the file holds ${r.offshore_actual} (typed), while CPP ${g('CPP') ?? 0} + WHP ${g('WHP') ?? 0} + OOSS Contractors ${g('OOSS Contractors') ?? 0} + Services Contract ${g('Services Contract') ?? 0} = ${off}. The dashboard shows the sum, as the formula does in the other months`, `ô Offshore (Actual) trong file ghi ${r.offshore_actual} (gõ tay), trong khi CPP ${g('CPP') ?? 0} + WHP ${g('WHP') ?? 0} + OOSS Contractors ${g('OOSS Contractors') ?? 0} + Services Contract ${g('Services Contract') ?? 0} = ${off}. Dashboard hiển thị tổng này, như công thức ở các tháng khác`));
-    if (r.total_actual != null && r.onshore_actual != null && r.total_actual !== r.onshore_actual + off) msgs.push(L(`Grand Total actual is ${r.total_actual}, while Onshore + Offshore = ${r.onshore_actual + off}`, `Grand Total thực tế ghi ${r.total_actual}, trong khi Onshore + Offshore = ${r.onshore_actual + off}`));
+    if (r.offshore_actual != null && r.offshore_actual !== off) msgs.push(L(`the Offshore (Actual) cell in the file holds ${r.offshore_actual} (typed), while CPP ${g('CPP') ?? 0} + WHP ${g('WHP') ?? 0} + OOSS Contractors ${g('OOSS Contractors') ?? 0} + Services Contract ${g('Services Contract') ?? 0} = ${off}. The dashboard shows the file's figure (${r.offshore_actual}); the formula used in the other months would give the sum`, `ô Offshore (Actual) trong file ghi ${r.offshore_actual} (gõ tay), trong khi CPP ${g('CPP') ?? 0} + WHP ${g('WHP') ?? 0} + OOSS Contractors ${g('OOSS Contractors') ?? 0} + Services Contract ${g('Services Contract') ?? 0} = ${off}. Dashboard hiển thị đúng số trong file; nếu dùng công thức như các tháng khác sẽ ra tổng trên`));
+    if (r.total_actual != null && r.onshore_actual != null && r.offshore_actual != null && r.total_actual !== r.onshore_actual + r.offshore_actual) msgs.push(L(`Grand Total actual is ${r.total_actual} (formula: Onshore + CPP + WHP + FSO + OOSS Contractors + Services Contract), while Onshore ${r.onshore_actual} + Offshore ${r.offshore_actual} = ${r.onshore_actual + r.offshore_actual}`, `Grand Total thực tế ghi ${r.total_actual} (công thức: Onshore + CPP + WHP + FSO + OOSS Contractors + Services Contract), trong khi Onshore ${r.onshore_actual} + Offshore ${r.offshore_actual} = ${r.onshore_actual + r.offshore_actual}`));
     document.getElementById('mp-n').textContent = L(`Actual to ${H.fmtMonth(H.month(m))}`, `Thực tế đến ${H.fmtMonth(H.month(m))}`);
   }
   chk.hidden = !msgs.length;
@@ -1468,7 +1468,7 @@ function drawMpKpis() {
   const out = [tile('Grand Total', r.total_actual, r.total_plan), tile('Onshore', r.onshore_actual, r.onshore_plan)];
   if (gr.status === 'ok') {
     const s = (k, f) => mpSum(gr.data, m, MP_SETS[k], f);
-    const t = tile('Offshore', s('off', 'actual'), s('off', 'plan')); t.classList.add('mp-off');
+    const t = tile('Offshore', r.offshore_actual, r.offshore_plan); t.classList.add('mp-off');
     out.push(t);
     MP_SETS.off.forEach((n) => { const x = gr.data.find((y) => y.month === m && y.group === n); if (x && (x.plan || x.actual)) out.push(tile(D(n), x.actual, x.plan)); });
   }
@@ -1484,14 +1484,14 @@ function drawStaffing() {
   const box = document.getElementById('bars-staffing'), vac = document.getElementById('vacant-list');
   const ws = dash.data('workstreams');
   vac.textContent = ws.status === 'ok' ? (ws.data.find((r) => r.item === 'Vacant positions')?.status ?? '—') : '—';
-  const gr = dash.data('manpower_groups'), m = mpLatest();
+  const gr = dash.data('manpower_groups'), mp = dash.data('manpower'), m = mpLatest();
   document.getElementById('mp-grp-n').textContent = m ? H.fmtMonth(H.month(m)) : '—';
   if (gr.status !== 'ok' || !m) { box.replaceChildren(); return; }
   const bar = (label, a, p) => { const v = H.el('span'); v.append(H.el('b', null, H.num(a ?? 0)), ' / ' + H.num(p)); const f = p ? (a ?? 0) / p : 0; return H.bar(label, f, f < 0.5 ? 'var(--cds-chart-status-critical)' : 'var(--acc)', v, 1); };
   const one = (n) => gr.data.find((y) => y.month === m && y.group === n);
   const head = (t, a, p) => { const h = H.el('div', 'ops-mp-h'); h.append(H.el('span', null, t), H.el('b', null, `${a ?? '—'} / ${p ?? '—'}`)); return h; };
   const out = [head('Onshore', one('Onshore')?.actual, one('Onshore')?.plan), bar('Onshore', one('Onshore')?.actual, one('Onshore')?.plan),
-    head('Offshore', mpSum(gr.data, m, MP_SETS.off, 'actual'), mpSum(gr.data, m, MP_SETS.off, 'plan'))];
+    head('Offshore', mp.data.find((y) => y.month === m)?.offshore_actual, mp.data.find((y) => y.month === m)?.offshore_plan)];
   MP_SETS.off.map(one).filter((x) => x && (x.plan || x.actual)).forEach((x) => { const b = bar(D(x.group), x.actual, x.plan); b.classList.add('sub'); out.push(b); });
   const os = mpOutsource();
   if (os) {
@@ -1511,7 +1511,7 @@ function drawMpTable() {
   const g1 = (n) => (x) => { const r = gr.data.find((y) => y.month === x && y.group === n); return r && [r.plan, r.actual]; };
   const gs = (k) => (x) => [mpSum(gr.data, x, MP_SETS[k], 'plan'), mpSum(gr.data, x, MP_SETS[k], 'actual')];
   const lines = [['Grand Total', (x) => { const r = mp.data.find((y) => y.month === x); return r && [r.total_plan, r.total_actual]; }, 'tot']]
-    .concat(gr.status === 'ok' ? [['Onshore', g1('Onshore'), 'lv1'], ['Offshore', gs('off'), 'lv1 off'], ['CPP', g1('CPP'), 'lv2'], ['WHP', g1('WHP'), 'lv2'],
+    .concat(gr.status === 'ok' ? [['Onshore', g1('Onshore'), 'lv1'], ['Offshore', (x) => { const r = mp.data.find((y) => y.month === x); return r && [r.offshore_plan, r.offshore_actual]; }, 'lv1 off'], ['CPP', g1('CPP'), 'lv2'], ['WHP', g1('WHP'), 'lv2'],
       ['OOSS Contractors', g1('OOSS Contractors'), 'lv2'], ['Services Contract', g1('Services Contract'), 'lv2']] : []);
   t.tBodies[0].replaceChildren(...lines.map(([n, get, cls]) => {
     const tr = H.el('tr', cls || null); tr.append(H.el('td', 'nm', D(n)));
