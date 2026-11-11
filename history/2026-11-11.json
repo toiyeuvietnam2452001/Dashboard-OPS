@@ -1,21 +1,4 @@
 {
- "staffing": [
-  {
-   "filled": 47,
-   "required": 50,
-   "group": "Offshore"
-  },
-  {
-   "filled": 32,
-   "required": 34,
-   "group": "Onshore"
-  },
-  {
-   "filled": 9,
-   "required": 38,
-   "group": "Outsource (Offshore)"
-  }
- ],
  "cbta": [
   {
    "ojt_modules": 11,
@@ -93,6 +76,23 @@
    "platform": "WHP",
    "modules": 21,
    "team": "P&P"
+  }
+ ],
+ "staffing": [
+  {
+   "filled": 47,
+   "required": 50,
+   "group": "Offshore"
+  },
+  {
+   "filled": 32,
+   "required": 34,
+   "group": "Onshore"
+  },
+  {
+   "filled": 9,
+   "required": 38,
+   "group": "Outsource (Offshore)"
   }
  ],
  "manpower": [
@@ -340,301 +340,339 @@
    "month": "2026-03"
   },
   {
-   "offshore_plan": 35,
+   "offshore_plan": 34,
    "onshore_actual": 24,
    "total_plan": 68,
    "offshore_actual": 25,
-   "onshore_plan": 33,
+   "onshore_plan": 34,
    "total_actual": 49,
    "month": "2026-04"
   },
   {
-   "offshore_plan": 35,
+   "offshore_plan": 34,
    "onshore_actual": 24,
    "total_plan": 68,
    "offshore_actual": 32,
-   "onshore_plan": 33,
+   "onshore_plan": 34,
    "total_actual": 56,
    "month": "2026-05"
   },
   {
-   "offshore_plan": 35,
+   "offshore_plan": 34,
    "onshore_actual": 28,
    "total_plan": 68,
    "offshore_actual": 36,
-   "onshore_plan": 33,
+   "onshore_plan": 34,
    "total_actual": 64,
    "month": "2026-06"
   },
   {
-   "offshore_plan": 50,
+   "offshore_plan": 49,
    "onshore_actual": 28,
    "total_plan": 84,
    "offshore_actual": 39,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": 67,
    "month": "2026-07"
   },
   {
-   "offshore_plan": 88,
+   "offshore_plan": 87,
    "onshore_actual": 29,
    "total_plan": 122,
    "offshore_actual": 42,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": 71,
    "month": "2026-08"
   },
   {
-   "offshore_plan": 88,
+   "offshore_plan": 87,
    "onshore_actual": 33,
    "total_plan": 122,
-   "offshore_actual": 46,
-   "onshore_plan": 34,
-   "total_actual": 79,
+   "offshore_actual": 53,
+   "onshore_plan": 35,
+   "total_actual": 86,
    "month": "2026-09"
   },
   {
-   "offshore_plan": 88,
+   "offshore_plan": 87,
    "onshore_actual": 32,
    "total_plan": 122,
    "offshore_actual": 47,
-   "onshore_plan": 34,
-   "total_actual": 78,
+   "onshore_plan": 35,
+   "total_actual": 94,
    "month": "2026-10"
   },
   {
-   "offshore_plan": 88,
+   "offshore_plan": 87,
    "onshore_actual": null,
    "total_plan": 122,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": null,
    "month": "2026-11"
   },
   {
-   "offshore_plan": 88,
+   "offshore_plan": 87,
    "onshore_actual": null,
    "total_plan": 122,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": null,
    "month": "2026-12"
   },
   {
-   "offshore_plan": 99,
+   "offshore_plan": 98,
    "onshore_actual": null,
    "total_plan": 133,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": null,
    "month": "2027-01"
   },
   {
-   "offshore_plan": 99,
+   "offshore_plan": 98,
    "onshore_actual": null,
    "total_plan": 133,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": null,
    "month": "2027-02"
   },
   {
-   "offshore_plan": 119,
+   "offshore_plan": 118,
    "onshore_actual": null,
    "total_plan": 153,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": null,
    "month": "2027-03"
   },
   {
-   "offshore_plan": 131,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 165,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": null,
    "month": "2027-04"
   },
   {
-   "offshore_plan": 131,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 165,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": null,
    "month": "2027-05"
   },
   {
-   "offshore_plan": 131,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 165,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 35,
    "total_actual": null,
    "month": "2027-06"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2027-07"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2027-08"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2027-09"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2027-10"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2027-11"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2027-12"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-01"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-02"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-03"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-04"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-05"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-06"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-07"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-08"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-09"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-10"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-11"
   },
   {
-   "offshore_plan": 132,
+   "offshore_plan": 130,
    "onshore_actual": null,
    "total_plan": 166,
    "offshore_actual": null,
-   "onshore_plan": 34,
+   "onshore_plan": 36,
    "total_actual": null,
    "month": "2028-12"
+  }
+ ],
+ "mandatory": [
+  {
+   "planned": 72,
+   "balance": 53,
+   "earned": 19,
+   "team": "CPP Deck crew"
+  },
+  {
+   "planned": 270,
+   "balance": 174,
+   "earned": 96,
+   "team": "CPP E&I"
+  },
+  {
+   "planned": 210,
+   "balance": 118,
+   "earned": 92,
+   "team": "CPP M&R"
+  },
+  {
+   "planned": 334,
+   "balance": 139,
+   "earned": 195,
+   "team": "CPP P&P"
+  },
+  {
+   "planned": 263,
+   "balance": 191,
+   "earned": 72,
+   "team": "Management"
+  },
+  {
+   "planned": 250,
+   "balance": 120,
+   "earned": 130,
+   "team": "WHP team"
   }
  ],
  "vendor_training": [
@@ -796,113 +834,6 @@
    "plan_pct": 60.6,
    "plan_end_pct": 99,
    "team": "Production Eng"
-  }
- ],
- "mandatory": [
-  {
-   "planned": 72,
-   "balance": 53,
-   "earned": 19,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 270,
-   "balance": 174,
-   "earned": 96,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 210,
-   "balance": 118,
-   "earned": 92,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 334,
-   "balance": 139,
-   "earned": 195,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 263,
-   "balance": 191,
-   "earned": 72,
-   "team": "Management"
-  },
-  {
-   "planned": 250,
-   "balance": 120,
-   "earned": 130,
-   "team": "WHP team"
-  }
- ],
- "orr_curve": [
-  {
-   "actual_pct": 71.3,
-   "plan_pct": 66.7,
-   "month": "2026-10"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 71,
-   "month": "2026-11"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 75,
-   "month": "2026-12"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 79,
-   "month": "2027-01"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 83,
-   "month": "2027-02"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 87,
-   "month": "2027-03"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 90,
-   "month": "2027-04"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 93,
-   "month": "2027-05"
-  },
-  {
-   "actual_pct": null,
-   "plan_pct": 95,
-   "month": "2027-06"
-  }
- ],
- "orr_groups": [
-  {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
-  },
-  {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
-  },
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
-  },
-  {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
   }
  ],
  "orr_elements": [
@@ -1075,6 +1006,122 @@
    "code": "PR-14"
   }
  ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
+  }
+ ],
+ "orr_curve": [
+  {
+   "actual_pct": 71.3,
+   "plan_pct": 66.7,
+   "month": "2026-10"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 71,
+   "month": "2026-11"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 75,
+   "month": "2026-12"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 79,
+   "month": "2027-01"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 83,
+   "month": "2027-02"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 87,
+   "month": "2027-03"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 90,
+   "month": "2027-04"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 93,
+   "month": "2027-05"
+  },
+  {
+   "actual_pct": null,
+   "plan_pct": 95,
+   "month": "2027-06"
+  }
+ ],
+ "packages_no_pr": [
+  {
+   "count": 19,
+   "dimension": "status",
+   "category": "Open"
+  },
+  {
+   "count": 7,
+   "dimension": "status",
+   "category": "PR Request"
+  },
+  {
+   "count": 7,
+   "dimension": "status",
+   "category": "Screening"
+  },
+  {
+   "count": 15,
+   "dimension": "priority",
+   "category": "Priority 3"
+  },
+  {
+   "count": 8,
+   "dimension": "priority",
+   "category": "Priority 2"
+  },
+  {
+   "count": 3,
+   "dimension": "priority",
+   "category": "Priority 1"
+  },
+  {
+   "count": 16,
+   "dimension": "scr_timing",
+   "category": "Not set"
+  },
+  {
+   "count": 2,
+   "dimension": "scr_timing",
+   "category": "Next month"
+  },
+  {
+   "count": 1,
+   "dimension": "scr_timing",
+   "category": "This month"
+  }
+ ],
  "pr_pipeline": [
   {
    "count": 1,
@@ -1125,53 +1172,6 @@
    "count": 1,
    "status": "On time",
    "stage": "6 Contract Signing"
-  }
- ],
- "packages_no_pr": [
-  {
-   "count": 19,
-   "dimension": "status",
-   "category": "Open"
-  },
-  {
-   "count": 7,
-   "dimension": "status",
-   "category": "PR Request"
-  },
-  {
-   "count": 7,
-   "dimension": "status",
-   "category": "Screening"
-  },
-  {
-   "count": 15,
-   "dimension": "priority",
-   "category": "Priority 3"
-  },
-  {
-   "count": 8,
-   "dimension": "priority",
-   "category": "Priority 2"
-  },
-  {
-   "count": 3,
-   "dimension": "priority",
-   "category": "Priority 1"
-  },
-  {
-   "count": 16,
-   "dimension": "scr_timing",
-   "category": "Not set"
-  },
-  {
-   "count": 2,
-   "dimension": "scr_timing",
-   "category": "Next month"
-  },
-  {
-   "count": 1,
-   "dimension": "scr_timing",
-   "category": "This month"
   }
  ],
  "procedures": [
@@ -1955,6 +1955,18 @@
    "id": "HSE-40",
    "remark": "Issued",
    "document": "Pressure cylinder management Procedure"
+  }
+ ],
+ "cmms": [
+  {
+   "actual_pct": 82.11,
+   "plan_pct": 85,
+   "package": "EPCI#2"
+  },
+  {
+   "actual_pct": 41.58,
+   "plan_pct": 42.3,
+   "package": "EPCI#1"
   }
  ],
  "workstreams": [
@@ -3365,16 +3377,62 @@
    "permit": "Fire Protection Approval (PCCC)"
   }
  ],
- "cmms": [
+ "readiness": [
   {
-   "actual_pct": 82.11,
-   "plan_pct": 85,
-   "package": "EPCI#2"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
   },
   {
-   "actual_pct": 41.58,
-   "plan_pct": 42.3,
-   "package": "EPCI#1"
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
   }
  ],
  "precom_plan": [
@@ -3577,64 +3635,6 @@
    "phase": "Condensate & PW"
   }
  ],
- "readiness": [
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
-  }
- ],
  "milestones": [
   {
    "plan_date": "2026-10-13",
@@ -3675,6 +3675,678 @@
    "actual_date": null,
    "order": 5,
    "milestone": "First Gas (sales gas)"
+  }
+ ],
+ "cbta_modules": [
+  {
+   "no": 1,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-01",
+   "module": "WHP Process and Facilities Overview"
+  },
+  {
+   "no": 2,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-02",
+   "module": "Wellheads, Manifolds and Test Separator System"
+  },
+  {
+   "no": 3,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-03",
+   "module": "Gas Process, Receiving and Export System"
+  },
+  {
+   "no": 4,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-04",
+   "module": "Gas Booster Compresor System"
+  },
+  {
+   "no": 5,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-05",
+   "module": "Water Injection System"
+  },
+  {
+   "no": 6,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-06",
+   "module": "Gas Analyzer System"
+  },
+  {
+   "no": 7,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-07",
+   "module": "WHCP and HPU System"
+  },
+  {
+   "no": 8,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-08",
+   "module": "Vent System"
+  },
+  {
+   "no": 9,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-09",
+   "module": "Drain System"
+  },
+  {
+   "no": 10,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-10",
+   "module": "Chemical Injection System"
+  },
+  {
+   "no": 11,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Utility CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-11",
+   "module": "Utility and Instrument Air System"
+  },
+  {
+   "no": 12,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Utility CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-12",
+   "module": "Utility and Instrument Gas System"
+  },
+  {
+   "no": 13,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Utility CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-13",
+   "module": "Diesel Storage and Distribution"
+  },
+  {
+   "no": 14,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Utility CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-14",
+   "module": "Utility Fresh Water And Sanitary System"
+  },
+  {
+   "no": 15,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-15",
+   "module": "Process Control System"
+  },
+  {
+   "no": 16,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-16",
+   "module": "Communication And Surveillance System"
+  },
+  {
+   "no": 17,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-17",
+   "module": "Emergency Shutdown System"
+  },
+  {
+   "no": 18,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-18",
+   "module": "Platform Control Shutdown"
+  },
+  {
+   "no": 19,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-19",
+   "module": "Platform Start Up"
+  },
+  {
+   "no": 20,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-20",
+   "module": "SIMOP for P&P"
+  },
+  {
+   "no": 21,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-21",
+   "module": "Emergency Response"
+  },
+  {
+   "no": 1,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-01",
+   "module": "Hazardous Area Classification"
+  },
+  {
+   "no": 2,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-02",
+   "module": "Electrical Safety"
+  },
+  {
+   "no": 3,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "ICSS System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-03",
+   "module": "ICSS System Overview"
+  },
+  {
+   "no": 4,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "ICSS System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-04",
+   "module": "ICSS Software System"
+  },
+  {
+   "no": 5,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "ICSS System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-05",
+   "module": "ICSS Hardware System and Communication Network"
+  },
+  {
+   "no": 6,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-06",
+   "module": "Electrical System Overview"
+  },
+  {
+   "no": 7,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-07",
+   "module": "Diesel Engine Generator"
+  },
+  {
+   "no": 8,
+   "status": null,
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-08",
+   "module": "Gas Engine Generator"
+  },
+  {
+   "no": 9,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-09",
+   "module": "Electrical Black Start"
+  },
+  {
+   "no": 10,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-10",
+   "module": "Navigation Aid and Fog Horn System"
+  },
+  {
+   "no": 11,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-11",
+   "module": "LV Switchgear and Distribution system"
+  },
+  {
+   "no": 12,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-12",
+   "module": "24VDC UPS System"
+  },
+  {
+   "no": 13,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-13",
+   "module": "WHCP and HPU System"
+  },
+  {
+   "no": 14,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-14",
+   "module": "Choke, SDV, Control Valve"
+  },
+  {
+   "no": 15,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-15",
+   "module": "Fire & Gas System"
+  },
+  {
+   "no": 16,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-16",
+   "module": "Level/Pressure/Temperature and Flow Meter Transmitters"
+  },
+  {
+   "no": 17,
+   "status": "Review & Approval",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-17",
+   "module": "Emergency Shutdown System"
+  },
+  {
+   "no": 18,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-18",
+   "module": "Utility and Instrument Gas System"
+  },
+  {
+   "no": 19,
+   "status": "Developing",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Telecom System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-19",
+   "module": "Telecom System Overview"
+  },
+  {
+   "no": 20,
+   "status": "Developing",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Telecom System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-20",
+   "module": "Communication, CCTV And Surveillance System"
+  },
+  {
+   "no": 21,
+   "status": null,
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Package Maintenance",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-21",
+   "module": "Gas Booster Compressor Maintenance"
+  },
+  {
+   "no": 22,
+   "status": null,
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Package Maintenance",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-22",
+   "module": "Crane Maintenance"
+  },
+  {
+   "no": 23,
+   "status": "Review & Approval",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Package Maintenance",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-23",
+   "module": "Gas Chromatograph System"
+  },
+  {
+   "no": 24,
+   "status": "Review & Approval",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Package Maintenance",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-24",
+   "module": "AQWA PAGA System"
+  },
+  {
+   "no": 1,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-01",
+   "module": "Spool- Flanges, Bolts, Fittings and Gaskets"
+  },
+  {
+   "no": 2,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-02",
+   "module": "Lubrication Fundamental"
+  },
+  {
+   "no": 3,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-03",
+   "module": "Mechanical Measuring Tools"
+  },
+  {
+   "no": 4,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-04",
+   "module": "Coupling Aligment"
+  },
+  {
+   "no": 5,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-05",
+   "module": "Filters"
+  },
+  {
+   "no": 6,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-06",
+   "module": "Power Tooling"
+  },
+  {
+   "no": 7,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-07",
+   "module": "Valves Operation and Maintenance"
+  },
+  {
+   "no": 8,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-08",
+   "module": "Pressure Safety Valve"
+  },
+  {
+   "no": 9,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-09",
+   "module": "Choke Valve"
+  },
+  {
+   "no": 10,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-10",
+   "module": "Portable Water System"
+  },
+  {
+   "no": 11,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-11",
+   "module": "Diesel Storage and Distribution"
+  },
+  {
+   "no": 12,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-12",
+   "module": "Safety Equipment"
+  },
+  {
+   "no": 13,
+   "status": "Review & Approval",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-13",
+   "module": "Chemical Storage and Distribution System"
+  },
+  {
+   "no": 14,
+   "status": "Developing",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-14",
+   "module": "Mechanical Handling System"
+  },
+  {
+   "no": 15,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-15",
+   "module": "Positive Displacement Pump"
+  },
+  {
+   "no": 16,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-16",
+   "module": "Diesel Engine Generator"
+  },
+  {
+   "no": 17,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-17",
+   "module": "Gas Engine Generator"
+  },
+  {
+   "no": 18,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-18",
+   "module": "Gas Booster Compressor"
+  },
+  {
+   "no": 19,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-19",
+   "module": "Cooling & Exhaust Fans"
+  },
+  {
+   "no": 20,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Static Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-20",
+   "module": "Air Fin Coolers"
+  },
+  {
+   "no": 21,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Static Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-21",
+   "module": "Drums & Vessels"
+  },
+  {
+   "no": 22,
+   "status": "Developing",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Static Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-22",
+   "module": "Pig Laucher/ Receiver"
   }
  ],
  "hse_matrix": [
@@ -5384,678 +6056,6 @@
    "course": "Electrical safety"
   }
  ],
- "cbta_modules": [
-  {
-   "no": 1,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-01",
-   "module": "WHP Process and Facilities Overview"
-  },
-  {
-   "no": 2,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-02",
-   "module": "Wellheads, Manifolds and Test Separator System"
-  },
-  {
-   "no": 3,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-03",
-   "module": "Gas Process, Receiving and Export System"
-  },
-  {
-   "no": 4,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-04",
-   "module": "Gas Booster Compresor System"
-  },
-  {
-   "no": 5,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-05",
-   "module": "Water Injection System"
-  },
-  {
-   "no": 6,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-06",
-   "module": "Gas Analyzer System"
-  },
-  {
-   "no": 7,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-07",
-   "module": "WHCP and HPU System"
-  },
-  {
-   "no": 8,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-08",
-   "module": "Vent System"
-  },
-  {
-   "no": 9,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-09",
-   "module": "Drain System"
-  },
-  {
-   "no": 10,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-10",
-   "module": "Chemical Injection System"
-  },
-  {
-   "no": 11,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Utility CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-11",
-   "module": "Utility and Instrument Air System"
-  },
-  {
-   "no": 12,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Utility CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-12",
-   "module": "Utility and Instrument Gas System"
-  },
-  {
-   "no": 13,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Utility CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-13",
-   "module": "Diesel Storage and Distribution"
-  },
-  {
-   "no": 14,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Utility CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-14",
-   "module": "Utility Fresh Water And Sanitary System"
-  },
-  {
-   "no": 15,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-15",
-   "module": "Process Control System"
-  },
-  {
-   "no": 16,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-16",
-   "module": "Communication And Surveillance System"
-  },
-  {
-   "no": 17,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-17",
-   "module": "Emergency Shutdown System"
-  },
-  {
-   "no": 18,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-18",
-   "module": "Platform Control Shutdown"
-  },
-  {
-   "no": 19,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-19",
-   "module": "Platform Start Up"
-  },
-  {
-   "no": 20,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-20",
-   "module": "SIMOP for P&P"
-  },
-  {
-   "no": 21,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-21",
-   "module": "Emergency Response"
-  },
-  {
-   "no": 1,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-01",
-   "module": "Hazardous Area Classification"
-  },
-  {
-   "no": 2,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-02",
-   "module": "Electrical Safety"
-  },
-  {
-   "no": 3,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "ICSS System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-03",
-   "module": "ICSS System Overview"
-  },
-  {
-   "no": 4,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "ICSS System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-04",
-   "module": "ICSS Software System"
-  },
-  {
-   "no": 5,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "ICSS System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-05",
-   "module": "ICSS Hardware System and Communication Network"
-  },
-  {
-   "no": 6,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-06",
-   "module": "Electrical System Overview"
-  },
-  {
-   "no": 7,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-07",
-   "module": "Diesel Engine Generator"
-  },
-  {
-   "no": 8,
-   "status": null,
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-08",
-   "module": "Gas Engine Generator"
-  },
-  {
-   "no": 9,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-09",
-   "module": "Electrical Black Start"
-  },
-  {
-   "no": 10,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-10",
-   "module": "Navigation Aid and Fog Horn System"
-  },
-  {
-   "no": 11,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-11",
-   "module": "LV Switchgear and Distribution system"
-  },
-  {
-   "no": 12,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-12",
-   "module": "24VDC UPS System"
-  },
-  {
-   "no": 13,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-13",
-   "module": "WHCP and HPU System"
-  },
-  {
-   "no": 14,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-14",
-   "module": "Choke, SDV, Control Valve"
-  },
-  {
-   "no": 15,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-15",
-   "module": "Fire & Gas System"
-  },
-  {
-   "no": 16,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-16",
-   "module": "Level/Pressure/Temperature and Flow Meter Transmitters"
-  },
-  {
-   "no": 17,
-   "status": "Review & Approval",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-17",
-   "module": "Emergency Shutdown System"
-  },
-  {
-   "no": 18,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-18",
-   "module": "Utility and Instrument Gas System"
-  },
-  {
-   "no": 19,
-   "status": "Developing",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Telecom System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-19",
-   "module": "Telecom System Overview"
-  },
-  {
-   "no": 20,
-   "status": "Developing",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Telecom System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-20",
-   "module": "Communication, CCTV And Surveillance System"
-  },
-  {
-   "no": 21,
-   "status": null,
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Package Maintenance",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-21",
-   "module": "Gas Booster Compressor Maintenance"
-  },
-  {
-   "no": 22,
-   "status": null,
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Package Maintenance",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-22",
-   "module": "Crane Maintenance"
-  },
-  {
-   "no": 23,
-   "status": "Review & Approval",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Package Maintenance",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-23",
-   "module": "Gas Chromatograph System"
-  },
-  {
-   "no": 24,
-   "status": "Review & Approval",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Package Maintenance",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-24",
-   "module": "AQWA PAGA System"
-  },
-  {
-   "no": 1,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-01",
-   "module": "Spool- Flanges, Bolts, Fittings and Gaskets"
-  },
-  {
-   "no": 2,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-02",
-   "module": "Lubrication Fundamental"
-  },
-  {
-   "no": 3,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-03",
-   "module": "Mechanical Measuring Tools"
-  },
-  {
-   "no": 4,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-04",
-   "module": "Coupling Aligment"
-  },
-  {
-   "no": 5,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-05",
-   "module": "Filters"
-  },
-  {
-   "no": 6,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-06",
-   "module": "Power Tooling"
-  },
-  {
-   "no": 7,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-07",
-   "module": "Valves Operation and Maintenance"
-  },
-  {
-   "no": 8,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-08",
-   "module": "Pressure Safety Valve"
-  },
-  {
-   "no": 9,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-09",
-   "module": "Choke Valve"
-  },
-  {
-   "no": 10,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-10",
-   "module": "Portable Water System"
-  },
-  {
-   "no": 11,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-11",
-   "module": "Diesel Storage and Distribution"
-  },
-  {
-   "no": 12,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-12",
-   "module": "Safety Equipment"
-  },
-  {
-   "no": 13,
-   "status": "Review & Approval",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-13",
-   "module": "Chemical Storage and Distribution System"
-  },
-  {
-   "no": 14,
-   "status": "Developing",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-14",
-   "module": "Mechanical Handling System"
-  },
-  {
-   "no": 15,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-15",
-   "module": "Positive Displacement Pump"
-  },
-  {
-   "no": 16,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-16",
-   "module": "Diesel Engine Generator"
-  },
-  {
-   "no": 17,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-17",
-   "module": "Gas Engine Generator"
-  },
-  {
-   "no": 18,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-18",
-   "module": "Gas Booster Compressor"
-  },
-  {
-   "no": 19,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-19",
-   "module": "Cooling & Exhaust Fans"
-  },
-  {
-   "no": 20,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Static Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-20",
-   "module": "Air Fin Coolers"
-  },
-  {
-   "no": 21,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Static Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-21",
-   "module": "Drums & Vessels"
-  },
-  {
-   "no": 22,
-   "status": "Developing",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Static Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-22",
-   "module": "Pig Laucher/ Receiver"
-  }
- ],
  "tender_schedule": [
   {
    "planned_date": "2026-10-13",
@@ -7450,6 +7450,2408 @@
    "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
   }
  ],
+ "manpower_groups": [
+  {
+   "group": "Onshore",
+   "plan": 5,
+   "month": "2024-01",
+   "order": 1,
+   "actual": 5,
+   "key": "Onshore 2024-01"
+  },
+  {
+   "group": "Onshore",
+   "plan": 5,
+   "month": "2024-02",
+   "order": 1,
+   "actual": 5,
+   "key": "Onshore 2024-02"
+  },
+  {
+   "group": "Onshore",
+   "plan": 5,
+   "month": "2024-03",
+   "order": 1,
+   "actual": 5,
+   "key": "Onshore 2024-03"
+  },
+  {
+   "group": "Onshore",
+   "plan": 5,
+   "month": "2024-04",
+   "order": 1,
+   "actual": 5,
+   "key": "Onshore 2024-04"
+  },
+  {
+   "group": "Onshore",
+   "plan": 5,
+   "month": "2024-05",
+   "order": 1,
+   "actual": 5,
+   "key": "Onshore 2024-05"
+  },
+  {
+   "group": "Onshore",
+   "plan": 5,
+   "month": "2024-06",
+   "order": 1,
+   "actual": 5,
+   "key": "Onshore 2024-06"
+  },
+  {
+   "group": "Onshore",
+   "plan": 7,
+   "month": "2024-07",
+   "order": 1,
+   "actual": 7,
+   "key": "Onshore 2024-07"
+  },
+  {
+   "group": "Onshore",
+   "plan": 8,
+   "month": "2024-08",
+   "order": 1,
+   "actual": 8,
+   "key": "Onshore 2024-08"
+  },
+  {
+   "group": "Onshore",
+   "plan": 11,
+   "month": "2024-09",
+   "order": 1,
+   "actual": 11,
+   "key": "Onshore 2024-09"
+  },
+  {
+   "group": "Onshore",
+   "plan": 13,
+   "month": "2024-10",
+   "order": 1,
+   "actual": 13,
+   "key": "Onshore 2024-10"
+  },
+  {
+   "group": "Onshore",
+   "plan": 13,
+   "month": "2024-11",
+   "order": 1,
+   "actual": 13,
+   "key": "Onshore 2024-11"
+  },
+  {
+   "group": "Onshore",
+   "plan": 13,
+   "month": "2024-12",
+   "order": 1,
+   "actual": 13,
+   "key": "Onshore 2024-12"
+  },
+  {
+   "group": "Onshore",
+   "plan": 18,
+   "month": "2025-01",
+   "order": 1,
+   "actual": 13,
+   "key": "Onshore 2025-01"
+  },
+  {
+   "group": "Onshore",
+   "plan": 18,
+   "month": "2025-02",
+   "order": 1,
+   "actual": 13,
+   "key": "Onshore 2025-02"
+  },
+  {
+   "group": "Onshore",
+   "plan": 18,
+   "month": "2025-03",
+   "order": 1,
+   "actual": 16,
+   "key": "Onshore 2025-03"
+  },
+  {
+   "group": "Onshore",
+   "plan": 19,
+   "month": "2025-04",
+   "order": 1,
+   "actual": 16,
+   "key": "Onshore 2025-04"
+  },
+  {
+   "group": "Onshore",
+   "plan": 19,
+   "month": "2025-05",
+   "order": 1,
+   "actual": 16,
+   "key": "Onshore 2025-05"
+  },
+  {
+   "group": "Onshore",
+   "plan": 20,
+   "month": "2025-06",
+   "order": 1,
+   "actual": 18,
+   "key": "Onshore 2025-06"
+  },
+  {
+   "group": "Onshore",
+   "plan": 20,
+   "month": "2025-07",
+   "order": 1,
+   "actual": 20,
+   "key": "Onshore 2025-07"
+  },
+  {
+   "group": "Onshore",
+   "plan": 20,
+   "month": "2025-08",
+   "order": 1,
+   "actual": 20,
+   "key": "Onshore 2025-08"
+  },
+  {
+   "group": "Onshore",
+   "plan": 21,
+   "month": "2025-09",
+   "order": 1,
+   "actual": 20,
+   "key": "Onshore 2025-09"
+  },
+  {
+   "group": "Onshore",
+   "plan": 21,
+   "month": "2025-10",
+   "order": 1,
+   "actual": 20,
+   "key": "Onshore 2025-10"
+  },
+  {
+   "group": "Onshore",
+   "plan": 21,
+   "month": "2025-11",
+   "order": 1,
+   "actual": 18,
+   "key": "Onshore 2025-11"
+  },
+  {
+   "group": "Onshore",
+   "plan": 21,
+   "month": "2025-12",
+   "order": 1,
+   "actual": 19,
+   "key": "Onshore 2025-12"
+  },
+  {
+   "group": "Onshore",
+   "plan": 29,
+   "month": "2026-01",
+   "order": 1,
+   "actual": 18,
+   "key": "Onshore 2026-01"
+  },
+  {
+   "group": "Onshore",
+   "plan": 29,
+   "month": "2026-02",
+   "order": 1,
+   "actual": 19,
+   "key": "Onshore 2026-02"
+  },
+  {
+   "group": "Onshore",
+   "plan": 29,
+   "month": "2026-03",
+   "order": 1,
+   "actual": 23,
+   "key": "Onshore 2026-03"
+  },
+  {
+   "group": "Onshore",
+   "plan": 34,
+   "month": "2026-04",
+   "order": 1,
+   "actual": 24,
+   "key": "Onshore 2026-04"
+  },
+  {
+   "group": "Onshore",
+   "plan": 34,
+   "month": "2026-05",
+   "order": 1,
+   "actual": 24,
+   "key": "Onshore 2026-05"
+  },
+  {
+   "group": "Onshore",
+   "plan": 34,
+   "month": "2026-06",
+   "order": 1,
+   "actual": 28,
+   "key": "Onshore 2026-06"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2026-07",
+   "order": 1,
+   "actual": 28,
+   "key": "Onshore 2026-07"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2026-08",
+   "order": 1,
+   "actual": 29,
+   "key": "Onshore 2026-08"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2026-09",
+   "order": 1,
+   "actual": 33,
+   "key": "Onshore 2026-09"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2026-10",
+   "order": 1,
+   "actual": 32,
+   "key": "Onshore 2026-10"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2026-11",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2026-11"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2026-12",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2026-12"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2027-01",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-01"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2027-02",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-02"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2027-03",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-03"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2027-04",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-04"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2027-05",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-05"
+  },
+  {
+   "group": "Onshore",
+   "plan": 35,
+   "month": "2027-06",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-06"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2027-07",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-07"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2027-08",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-08"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2027-09",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-09"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2027-10",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-10"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2027-11",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-11"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2027-12",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2027-12"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-01",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-01"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-02",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-02"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-03",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-03"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-04",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-04"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-05",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-05"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-06",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-06"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-07",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-07"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-08",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-08"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-09",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-09"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-10",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-10"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-11",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-11"
+  },
+  {
+   "group": "Onshore",
+   "plan": 36,
+   "month": "2028-12",
+   "order": 1,
+   "actual": null,
+   "key": "Onshore 2028-12"
+  },
+  {
+   "group": "CPP",
+   "plan": 1,
+   "month": "2024-01",
+   "order": 2,
+   "actual": 1,
+   "key": "CPP 2024-01"
+  },
+  {
+   "group": "CPP",
+   "plan": 1,
+   "month": "2024-02",
+   "order": 2,
+   "actual": 1,
+   "key": "CPP 2024-02"
+  },
+  {
+   "group": "CPP",
+   "plan": 1,
+   "month": "2024-03",
+   "order": 2,
+   "actual": 1,
+   "key": "CPP 2024-03"
+  },
+  {
+   "group": "CPP",
+   "plan": 1,
+   "month": "2024-04",
+   "order": 2,
+   "actual": 1,
+   "key": "CPP 2024-04"
+  },
+  {
+   "group": "CPP",
+   "plan": 1,
+   "month": "2024-05",
+   "order": 2,
+   "actual": 1,
+   "key": "CPP 2024-05"
+  },
+  {
+   "group": "CPP",
+   "plan": 1,
+   "month": "2024-06",
+   "order": 2,
+   "actual": 1,
+   "key": "CPP 2024-06"
+  },
+  {
+   "group": "CPP",
+   "plan": 1,
+   "month": "2024-07",
+   "order": 2,
+   "actual": 1,
+   "key": "CPP 2024-07"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2024-08",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2024-08"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2024-09",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2024-09"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2024-10",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2024-10"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2024-11",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2024-11"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2024-12",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2024-12"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-01",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-01"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-02",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-02"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-03",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-03"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-04",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-04"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-05",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-05"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-06",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-06"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-07",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-07"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-08",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-08"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-09",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-09"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-10",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-10"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-11",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-11"
+  },
+  {
+   "group": "CPP",
+   "plan": 5,
+   "month": "2025-12",
+   "order": 2,
+   "actual": 5,
+   "key": "CPP 2025-12"
+  },
+  {
+   "group": "CPP",
+   "plan": 19,
+   "month": "2026-01",
+   "order": 2,
+   "actual": 6,
+   "key": "CPP 2026-01"
+  },
+  {
+   "group": "CPP",
+   "plan": 19,
+   "month": "2026-02",
+   "order": 2,
+   "actual": 10,
+   "key": "CPP 2026-02"
+  },
+  {
+   "group": "CPP",
+   "plan": 19,
+   "month": "2026-03",
+   "order": 2,
+   "actual": 13,
+   "key": "CPP 2026-03"
+  },
+  {
+   "group": "CPP",
+   "plan": 26,
+   "month": "2026-04",
+   "order": 2,
+   "actual": 17,
+   "key": "CPP 2026-04"
+  },
+  {
+   "group": "CPP",
+   "plan": 26,
+   "month": "2026-05",
+   "order": 2,
+   "actual": 24,
+   "key": "CPP 2026-05"
+  },
+  {
+   "group": "CPP",
+   "plan": 26,
+   "month": "2026-06",
+   "order": 2,
+   "actual": 28,
+   "key": "CPP 2026-06"
+  },
+  {
+   "group": "CPP",
+   "plan": 41,
+   "month": "2026-07",
+   "order": 2,
+   "actual": 31,
+   "key": "CPP 2026-07"
+  },
+  {
+   "group": "CPP",
+   "plan": 41,
+   "month": "2026-08",
+   "order": 2,
+   "actual": 34,
+   "key": "CPP 2026-08"
+  },
+  {
+   "group": "CPP",
+   "plan": 41,
+   "month": "2026-09",
+   "order": 2,
+   "actual": 38,
+   "key": "CPP 2026-09"
+  },
+  {
+   "group": "CPP",
+   "plan": 41,
+   "month": "2026-10",
+   "order": 2,
+   "actual": 38,
+   "key": "CPP 2026-10"
+  },
+  {
+   "group": "CPP",
+   "plan": 41,
+   "month": "2026-11",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2026-11"
+  },
+  {
+   "group": "CPP",
+   "plan": 41,
+   "month": "2026-12",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2026-12"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-01",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-01"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-02",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-02"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-03",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-03"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-04",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-04"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-05",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-05"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-06",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-06"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-07",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-07"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-08",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-08"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-09",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-09"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-10",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-10"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-11",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-11"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2027-12",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2027-12"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-01",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-01"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-02",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-02"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-03",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-03"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-04",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-04"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-05",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-05"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-06",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-06"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-07",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-07"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-08",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-08"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-09",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-09"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-10",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-10"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-11",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-11"
+  },
+  {
+   "group": "CPP",
+   "plan": 42,
+   "month": "2028-12",
+   "order": 2,
+   "actual": null,
+   "key": "CPP 2028-12"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-01",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-01"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-02",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-02"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-03",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-03"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-04",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-04"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-05",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-05"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-06",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-06"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-07",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-07"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-08",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-08"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-09",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-09"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-10",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-10"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-11",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-11"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2024-12",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2024-12"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2025-01",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2025-01"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2025-02",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2025-02"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2025-03",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2025-03"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2025-04",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2025-04"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2025-05",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2025-05"
+  },
+  {
+   "group": "WHP",
+   "plan": 1,
+   "month": "2025-06",
+   "order": 3,
+   "actual": 1,
+   "key": "WHP 2025-06"
+  },
+  {
+   "group": "WHP",
+   "plan": 2,
+   "month": "2025-07",
+   "order": 3,
+   "actual": 2,
+   "key": "WHP 2025-07"
+  },
+  {
+   "group": "WHP",
+   "plan": 2,
+   "month": "2025-08",
+   "order": 3,
+   "actual": 2,
+   "key": "WHP 2025-08"
+  },
+  {
+   "group": "WHP",
+   "plan": 2,
+   "month": "2025-09",
+   "order": 3,
+   "actual": 2,
+   "key": "WHP 2025-09"
+  },
+  {
+   "group": "WHP",
+   "plan": 2,
+   "month": "2025-10",
+   "order": 3,
+   "actual": 2,
+   "key": "WHP 2025-10"
+  },
+  {
+   "group": "WHP",
+   "plan": 2,
+   "month": "2025-11",
+   "order": 3,
+   "actual": 2,
+   "key": "WHP 2025-11"
+  },
+  {
+   "group": "WHP",
+   "plan": 2,
+   "month": "2025-12",
+   "order": 3,
+   "actual": 3,
+   "key": "WHP 2025-12"
+  },
+  {
+   "group": "WHP",
+   "plan": 4,
+   "month": "2026-01",
+   "order": 3,
+   "actual": 3,
+   "key": "WHP 2026-01"
+  },
+  {
+   "group": "WHP",
+   "plan": 4,
+   "month": "2026-02",
+   "order": 3,
+   "actual": 6,
+   "key": "WHP 2026-02"
+  },
+  {
+   "group": "WHP",
+   "plan": 4,
+   "month": "2026-03",
+   "order": 3,
+   "actual": 7,
+   "key": "WHP 2026-03"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2026-04",
+   "order": 3,
+   "actual": 8,
+   "key": "WHP 2026-04"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2026-05",
+   "order": 3,
+   "actual": 8,
+   "key": "WHP 2026-05"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2026-06",
+   "order": 3,
+   "actual": 8,
+   "key": "WHP 2026-06"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2026-07",
+   "order": 3,
+   "actual": 8,
+   "key": "WHP 2026-07"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2026-08",
+   "order": 3,
+   "actual": 8,
+   "key": "WHP 2026-08"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2026-09",
+   "order": 3,
+   "actual": 8,
+   "key": "WHP 2026-09"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2026-10",
+   "order": 3,
+   "actual": 8,
+   "key": "WHP 2026-10"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2026-11",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2026-11"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2026-12",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2026-12"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-01",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-01"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-02",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-02"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-03",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-03"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-04",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-04"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-05",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-05"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-06",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-06"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-07",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-07"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-08",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-08"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-09",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-09"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-10",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-10"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-11",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-11"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2027-12",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2027-12"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-01",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-01"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-02",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-02"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-03",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-03"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-04",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-04"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-05",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-05"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-06",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-06"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-07",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-07"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-08",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-08"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-09",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-09"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-10",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-10"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-11",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-11"
+  },
+  {
+   "group": "WHP",
+   "plan": 8,
+   "month": "2028-12",
+   "order": 3,
+   "actual": null,
+   "key": "WHP 2028-12"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-01",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-01"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-02",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-02"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-03",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-03"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-04",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-04"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-05",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-05"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-06",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-06"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-07",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-07"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-08",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-08"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-09",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-09"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-10",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-10"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-11",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-11"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2024-12",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2024-12"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-01",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-01"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-02",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-02"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-03",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-03"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-04",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-04"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-05",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-05"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-06",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-06"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-07",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-07"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-08",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-08"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-09",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-09"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-10",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-10"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-11",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-11"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2025-12",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2025-12"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2026-01",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2026-01"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2026-02",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2026-02"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2026-03",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2026-03"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2026-04",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2026-04"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2026-05",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2026-05"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2026-06",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2026-06"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 0,
+   "month": "2026-07",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2026-07"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 38,
+   "month": "2026-08",
+   "order": 4,
+   "actual": 0,
+   "key": "OOSS Contractors 2026-08"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 38,
+   "month": "2026-09",
+   "order": 4,
+   "actual": 7,
+   "key": "OOSS Contractors 2026-09"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 38,
+   "month": "2026-10",
+   "order": 4,
+   "actual": 16,
+   "key": "OOSS Contractors 2026-10"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 38,
+   "month": "2026-11",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2026-11"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 38,
+   "month": "2026-12",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2026-12"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 48,
+   "month": "2027-01",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-01"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 48,
+   "month": "2027-02",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-02"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 48,
+   "month": "2027-03",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-03"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2027-04",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-04"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2027-05",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-05"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2027-06",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-06"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2027-07",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-07"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2027-08",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-08"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2027-09",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-09"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2027-10",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-10"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2027-11",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-11"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2027-12",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2027-12"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-01",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-01"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-02",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-02"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-03",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-03"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-04",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-04"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-05",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-05"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-06",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-06"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-07",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-07"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-08",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-08"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-09",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-09"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-10",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-10"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-11",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-11"
+  },
+  {
+   "group": "OOSS Contractors",
+   "plan": 58,
+   "month": "2028-12",
+   "order": 4,
+   "actual": null,
+   "key": "OOSS Contractors 2028-12"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-01",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-01"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-02",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-02"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-03",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-03"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-04",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-04"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-05",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-05"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-06",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-06"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-07",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-07"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-08",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-08"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-09",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-09"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-10",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-10"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-11",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-11"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2024-12",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2024-12"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-01",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-01"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-02",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-02"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-03",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-03"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-04",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-04"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-05",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-05"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-06",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-06"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-07",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-07"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-08",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-08"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-09",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-09"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-10",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-10"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-11",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-11"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2025-12",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2025-12"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-01",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-01"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-02",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-02"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-03",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-03"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-04",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-04"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-05",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-05"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-06",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-06"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-07",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-07"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-08",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-08"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-09",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-09"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-10",
+   "order": 5,
+   "actual": 0,
+   "key": "Services Contract 2026-10"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-11",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2026-11"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2026-12",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2026-12"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2027-01",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-01"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 0,
+   "month": "2027-02",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-02"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 20,
+   "month": "2027-03",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-03"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2027-04",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-04"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2027-05",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-05"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2027-06",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-06"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2027-07",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-07"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2027-08",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-08"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2027-09",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-09"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2027-10",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-10"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2027-11",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-11"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2027-12",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2027-12"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-01",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-01"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-02",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-02"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-03",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-03"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-04",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-04"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-05",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-05"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-06",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-06"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-07",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-07"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-08",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-08"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-09",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-09"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-10",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-10"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-11",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-11"
+  },
+  {
+   "group": "Services Contract",
+   "plan": 22,
+   "month": "2028-12",
+   "order": 5,
+   "actual": null,
+   "key": "Services Contract 2028-12"
+  }
+ ],
  "meta": [
   {
    "report_date": "2026-11-11",
@@ -7465,6 +9867,6 @@
    "classification": "Internal"
   }
  ],
- "_updated_at": "2026-11-10T09:40:00.000Z",
+ "_updated_at": "2026-11-11T02:29:00.000Z",
  "_source": "notion"
 }
