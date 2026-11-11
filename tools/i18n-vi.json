@@ -257,7 +257,8 @@
   "Headcount by group": "Nhân sự theo nhóm",
   "Actual / plan for the latest month with actual figures. Bar is actual, black tick is plan.": "Thực tế / kế hoạch của tháng gần nhất có số thực tế. Thanh là thực tế, vạch đen là kế hoạch.",
   "Plan and actual by month": "Kế hoạch và thực tế theo tháng",
-  "Plan on top, actual below (green when on or above plan, red when below). Months without actual figures show the plan only.": "Kế hoạch ở trên, thực tế ở dưới (xanh khi đạt hoặc vượt kế hoạch, đỏ khi thấp hơn). Tháng chưa có số thực tế chỉ hiện kế hoạch."
+  "Plan on top, actual below (green when on or above plan, red when below). Months without actual figures show the plan only.": "Kế hoạch ở trên, thực tế ở dưới (xanh khi đạt hoặc vượt kế hoạch, đỏ khi thấp hơn). Tháng chưa có số thực tế chỉ hiện kế hoạch.",
+  "(OOSS Contractors + Services Contract). Outsource is part of Offshore; Offshore is not all Outsource.": "(OOSS Contractors + Services Contract). Outsource thuộc Offshore, nhưng Offshore không phải toàn bộ là Outsource."
  },
  "data": {
   "Manpower": "Nhân sự",
