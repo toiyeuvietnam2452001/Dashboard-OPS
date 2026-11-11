@@ -641,6 +641,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:
 #manpower .ops-tile.mp-off { border-left-width: 6px; }
 .ops-mpt tr.lv1 > td.nm { font-weight: 700; } .ops-mpt tr.off > td { border-top: 2px solid var(--acc-line); }
 .ops-mpt tr.lv2 > td.nm { padding-left: 24px; font-weight: 500; color: var(--color-fg-muted); }
+#manpower .ops-tile.mp-os { border-left-style: dashed; }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -900,7 +901,7 @@ var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __
 
   <!-- 1 MANPOWER -->
   <section class="ops-page" id="manpower" data-page="manpower" hidden>
-    <div class="ops-tiles" id="mp-kpis" data-source="manpower manpower_groups"></div>
+    <div class="ops-tiles" id="mp-kpis" data-source="manpower manpower_groups staffing"></div>
     <div class="ops-card ops-bcard" id="card-manpower">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Manpower ramp-up: plan vs actual</span><span class="ops-banner-n" id="mp-n">—</span></h2>
       <div class="ops-cardhead">
@@ -918,7 +919,7 @@ var __rt; window.addEventListener('resize', function () { clearTimeout(__rt); __
       <div class="ops-card ops-bcard ops-wide" id="card-staffing">
         <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Headcount by group</span><span class="ops-banner-n" id="mp-grp-n">—</span></h2>
         <p class="ops-note">Actual / plan for the latest month with actual figures. Bar is actual, black tick is plan.</p>
-        <div class="ops-bars" id="bars-staffing" data-source="manpower_groups"></div>
+        <div class="ops-bars" id="bars-staffing" data-source="manpower_groups staffing"></div>
         <p class="ops-note" id="vacant">Vacant positions: <span id="vacant-list" data-source="workstreams" data-where="item=Vacant%20positions" data-field="status">—</span></p>
       </div>
       <div class="ops-card ops-bcard ops-wide" id="card-mp-table">
@@ -1596,6 +1597,9 @@ function drawManpower() {
   chk.hidden = !msgs.length;
   chk.textContent = msgs.length ? (H.fmtMonth(H.month(m)) + ': ' + msgs.join('; ') + '.') : '';
 }
+// Outsource is taken from the presentation slide (staffing table, group "Outsource (Offshore)") until the
+// mobilisation file says which rows it covers; it is shown on its own, not added into Offshore.
+const mpOutsource = () => { const d = dash.data('staffing'); return d.status === 'ok' ? d.data.find((r) => /^outsource/i.test(r.group || '')) : null; };
 function drawMpKpis() {
   const box = document.getElementById('mp-kpis'), m = mpLatest(), mp = dash.data('manpower'), gr = dash.data('manpower_groups');
   if (!m || mp.status !== 'ok') { box.replaceChildren(); return; }
@@ -1614,6 +1618,12 @@ function drawMpKpis() {
     out.push(t);
     MP_SETS.off.forEach((n) => { const x = gr.data.find((y) => y.month === m && y.group === n); if (x && (x.plan || x.actual)) out.push(tile(D(n), x.actual, x.plan)); });
   }
+  const os = mpOutsource();
+  if (os) {
+    const t = tile(D(os.group), os.filled, os.required); t.classList.add('mp-os');
+    t.querySelector('.ops-tile-note').textContent = L('Source: presentation slide "1. Manpower ramp up"', 'Nguồn: slide "1. Manpower ramp up" của file Presentation');
+    out.push(t);
+  }
   box.replaceChildren(...out);
 }
 function drawStaffing() {
@@ -1629,6 +1639,11 @@ function drawStaffing() {
   const out = [head('Onshore', one('Onshore')?.actual, one('Onshore')?.plan), bar('Onshore', one('Onshore')?.actual, one('Onshore')?.plan),
     head('Offshore', mpSum(gr.data, m, MP_SETS.off, 'actual'), mpSum(gr.data, m, MP_SETS.off, 'plan'))];
   MP_SETS.off.map(one).filter((x) => x && (x.plan || x.actual)).forEach((x) => { const b = bar(D(x.group), x.actual, x.plan); b.classList.add('sub'); out.push(b); });
+  const os = mpOutsource();
+  if (os) {
+    out.push(head(D(os.group) + L(' · from the presentation', ' · theo file Presentation'), os.filled, os.required));
+    const b = bar(D(os.group), os.filled, os.required); b.classList.add('sub'); out.push(b);
+  }
   box.replaceChildren(...out);
 }
 // A window of months around the latest actual: three before it, then the plan for the next eight.
