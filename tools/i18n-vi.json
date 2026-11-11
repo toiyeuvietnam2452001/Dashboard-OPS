@@ -252,7 +252,12 @@
   "Search package, PIC, remark…": "Tìm gói thầu, PIC, ghi chú…",
   "Search packages": "Tìm gói thầu",
   "ROS required by month": "ROS yêu cầu theo tháng",
-  "Each block is one package, coloured by its current status. Hover a block for the package name.": "Mỗi ô là một gói thầu, tô màu theo trạng thái hiện tại. Rê chuột vào ô để xem tên gói."
+  "Each block is one package, coloured by its current status. Hover a block for the package name.": "Mỗi ô là một gói thầu, tô màu theo trạng thái hiện tại. Rê chuột vào ô để xem tên gói.",
+  "Headcount by month from the Ramp Up Chart of the mobilisation file. Dashed line is plan; the vertical marker is the report date. A month not yet reported keeps the latest actual.": "Số người theo tháng, lấy từ sheet Ramp Up Chart của file huy động nhân sự. Nét đứt là kế hoạch; vạch dọc là ngày báo cáo. Tháng chưa có số giữ số thực tế gần nhất.",
+  "Headcount by group": "Nhân sự theo nhóm",
+  "Actual / plan for the latest month with actual figures. Bar is actual, black tick is plan.": "Thực tế / kế hoạch của tháng gần nhất có số thực tế. Thanh là thực tế, vạch đen là kế hoạch.",
+  "Plan and actual by month": "Kế hoạch và thực tế theo tháng",
+  "Plan on top, actual below (green when on or above plan, red when below). Months without actual figures show the plan only.": "Kế hoạch ở trên, thực tế ở dưới (xanh khi đạt hoặc vượt kế hoạch, đỏ khi thấp hơn). Tháng chưa có số thực tế chỉ hiện kế hoạch."
  },
  "data": {
   "Manpower": "Nhân sự",

@@ -106,5 +106,9 @@
  "contract_packages": {
   "database": "4ff16fd422bb472ab30c8bc05de875f8",
   "data_source": "614ad415-14fe-46ac-b8e5-55f08ae027bd"
+ },
+ "manpower_groups": {
+  "database": "0bc7a81ffdb74f16a724791f82c01bd1",
+  "data_source": "b97a9c3b-5b9c-483c-acd6-2efa6e2d4e12"
  }
 }

@@ -589,6 +589,18 @@
 .ops-cp-ros .ops-tl-legend { margin-top: 12px; }
 .ops-cp-ros .ops-tl-legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
 @media (max-width: 560px) { .ops-cp-flow .ar { display: none; } .ops-cp-flow .st { flex-basis: calc(50% - 6px); } .ops-cp td.c-package .sm { display: block; } .ops-cp .c-package { width: auto; } .ops-cp .c-ros_required { width: 6.5rem; } .ops-cp-ros .cols { gap: 4px; } .ops-cp-ros .m { font-size: 10px; } }
+/* 1. Manpower */
+.ops-seg-wrap { flex-wrap: wrap; }
+#manpower .ops-tile .ops-big small { font-size: .5em; color: var(--color-fg-muted); font-family: inherit; }
+.ops-mpt th.cur { background: var(--acc); color: var(--color-panel); }
+.ops-mpt td.cur { box-shadow: inset 2px 0 0 var(--acc), inset -2px 0 0 var(--acc); }
+.ops-mpt td { text-align: center; } .ops-mpt td.nm { text-align: left; font-weight: 600; white-space: nowrap; }
+.ops-mpt td .p { font-weight: 600; }
+.ops-mpt .tag { display: inline-block; margin-top: 2px; padding: 0 6px; border-radius: 999px; font-size: 10.5px; font-weight: 600; white-space: nowrap; }
+.ops-mpt .tag.ok { color: var(--color-ok); background: color-mix(in srgb, var(--color-ok) 12%, transparent); }
+.ops-mpt .tag.bad { color: var(--color-bad); background: color-mix(in srgb, var(--color-bad) 11%, transparent); }
+.ops-mpt tr.tot > td { background: var(--acc-tint) !important; border-bottom: 2px solid var(--acc-line); }
+#card-manpower .ops-cardhead { align-items: flex-start; gap: var(--cds-gap-sm); flex-wrap: wrap; }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -738,23 +750,30 @@
 
   <!-- 1 MANPOWER -->
   <section class="ops-page" id="manpower" data-page="manpower" hidden>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-manpower">
-        <div class="ops-cardhead">
-          <div><h2>Manpower ramp-up: plan vs actual</h2>
-          <p class="ops-note">Headcount by month. Dashed line is plan; the vertical marker is the report date. A month not yet reported keeps the latest actual.</p></div>
-          <div class="ops-seg" role="group" aria-label="Staff group" id="mp-seg">
-            <button data-k="total" aria-pressed="true">Total</button><button data-k="onshore" aria-pressed="false">Onshore</button><button data-k="offshore" aria-pressed="false">Offshore</button>
-          </div>
+    <div class="ops-tiles" id="mp-kpis" data-source="manpower manpower_groups"></div>
+    <div class="ops-card ops-bcard" id="card-manpower">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Manpower ramp-up: plan vs actual</span><span class="ops-banner-n" id="mp-n">—</span></h2>
+      <div class="ops-cardhead">
+        <p class="ops-note">Headcount by month from the Ramp Up Chart of the mobilisation file. Dashed line is plan; the vertical marker is the report date. A month not yet reported keeps the latest actual.</p>
+        <div class="ops-seg ops-seg-wrap" role="group" aria-label="Staff group" id="mp-seg">
+          <button data-k="total" aria-pressed="true">Total</button><button data-k="onshore" aria-pressed="false">Onshore</button><button data-k="offshore" aria-pressed="false">Offshore</button><button data-k="g:CPP" aria-pressed="false">CPP</button><button data-k="g:WHP" aria-pressed="false">WHP</button><button data-k="g:OOSS Contractors" aria-pressed="false">OOSS Contractors</button><button data-k="g:Services Contract" aria-pressed="false">Services Contract</button>
         </div>
-        <div class="ops-legend" id="mp-legend"></div>
-        <div class="ops-chart dash-skeleton" id="chart-manpower" data-source="manpower"></div>
       </div>
-      <div class="ops-card" id="card-staffing">
-        <h2>Current staffing</h2>
-        <p class="ops-note">Filled / required positions at the report date.</p>
-        <div class="ops-bars" id="bars-staffing" data-source="staffing"></div>
+      <div class="ops-legend" id="mp-legend"></div>
+      <div class="ops-chart dash-skeleton" id="chart-manpower" data-source="manpower manpower_groups"></div>
+      <p class="ops-note ops-dept-diff" id="mp-check" hidden></p>
+    </div>
+    <div class="ops-grid">
+      <div class="ops-card ops-bcard ops-wide" id="card-staffing">
+        <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Headcount by group</span><span class="ops-banner-n" id="mp-grp-n">—</span></h2>
+        <p class="ops-note">Actual / plan for the latest month with actual figures. Bar is actual, black tick is plan.</p>
+        <div class="ops-bars" id="bars-staffing" data-source="manpower_groups"></div>
         <p class="ops-note" id="vacant">Vacant positions: <span id="vacant-list" data-source="workstreams" data-where="item=Vacant%20positions" data-field="status">—</span></p>
+      </div>
+      <div class="ops-card ops-bcard ops-wide" id="card-mp-table">
+        <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Plan and actual by month</span><span class="ops-banner-n" id="mp-tab-n">—</span></h2>
+        <p class="ops-note">Plan on top, actual below (green when on or above plan, red when below). Months without actual figures show the plan only.</p>
+        <div class="ops-tablebox" style="max-height:none"><table class="ops-plan ops-mpt" id="table-mp" data-source="manpower manpower_groups"><thead></thead><tbody></tbody></table></div>
       </div>
     </div>
   </section>
@@ -1372,21 +1391,98 @@ function lineChart(box, { rows, xKey, series, xDomain, yMax, yFmt, tickFmt, tick
     .on('pointerleave', () => { dot.selectAll('*').remove(); tip.hide(); });
 }
 
+// Manpower. Total / Onshore / Offshore come from the manpower table (rows of the Ramp Up Chart);
+// CPP, WHP, OOSS Contractors and Services Contract from manpower_groups. Nothing is added up here
+// except to point out where the file's own rows do not add up.
+const MP_GROUPS = ['Onshore', 'CPP', 'WHP', 'OOSS Contractors', 'Services Contract'];
+function mpRows(key) {
+  if (key.startsWith('g:')) {
+    const d = dash.data('manpower_groups'); if (d.status !== 'ok') return null;
+    const g = key.slice(2);
+    return d.data.filter((r) => r.group === g).map((r) => ({ month: r.month, m: H.month(r.month), v_plan: r.plan, v_actual: r.actual }));
+  }
+  const d = dash.data('manpower'); if (d.status !== 'ok') return null;
+  return d.data.map((r) => ({ month: r.month, m: H.month(r.month), v_plan: r[key + '_plan'], v_actual: r[key + '_actual'] }));
+}
+function mpLatest() {
+  const d = dash.data('manpower'); if (d.status !== 'ok') return null;
+  return d.data.filter((r) => r.total_actual != null).map((r) => r.month).sort().at(-1) || null;
+}
 function drawManpower() {
-  const box = document.getElementById('chart-manpower');
-  const data = H.state('manpower', box);
-  const leg = document.getElementById('mp-legend');
-  if (!data) { leg.replaceChildren(); box.querySelectorAll('svg').forEach((s) => s.remove()); return; }
-  const rows = data.map((d) => ({ ...d, m: H.month(d.month) }));
+  const box = document.getElementById('chart-manpower'), leg = document.getElementById('mp-legend');
+  const rows = mpRows(mpKey);
+  box.classList.remove('dash-skeleton');
+  if (!rows || !rows.length) { leg.replaceChildren(); box.querySelectorAll('svg').forEach((s) => s.remove()); return; }
   const series = [
-    { key: mpKey + '_plan', label: L('Plan', 'Kế hoạch'), short: L('Plan', 'KH'), color: 'var(--cds-chart-muted)', dashed: true },
-    { key: mpKey + '_actual', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0], carryTo: H.REPORT_DATE },
+    { key: 'v_plan', label: L('Plan', 'Kế hoạch'), short: L('Plan', 'KH'), color: 'var(--cds-chart-muted)', dashed: true },
+    { key: 'v_actual', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: 'var(--acc)', carryTo: H.REPORT_DATE },
   ];
   leg.replaceChildren(...series.map((s) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = s.color; sp.append(sw, s.label); return sp; }));
   lineChart(box, {
-    rows, xKey: 'm', series, xDomain: d3.extent(rows, (r) => r.m), yMax: d3.max(rows, (r) => Math.max(r[series[0].key] ?? 0, r[series[1].key] ?? 0)),
+    rows, xKey: 'm', series, xDomain: d3.extent(rows, (r) => r.m), yMax: Math.max(1, d3.max(rows, (r) => Math.max(r.v_plan ?? 0, r.v_actual ?? 0))),
     yFmt: H.num, tickFmt: d3.utcFormat('%Y'), ticks: d3.utcYear.every(1), refX: H.REPORT_DATE, refLabel: (dash.state === 'open' ? L('Today ', 'Hôm nay ') : L('Report ', 'Báo cáo ')) + H.fmtDay(H.REPORT_DATE),
   });
+  // Where the file's rows do not add up for the latest month, say so (the figures are shown as written).
+  const m = mpLatest(), chk = document.getElementById('mp-check'), mp = dash.data('manpower'), gr = dash.data('manpower_groups');
+  const msgs = [];
+  if (m && mp.status === 'ok' && gr.status === 'ok') {
+    const r = mp.data.find((x) => x.month === m), g = (n) => gr.data.find((x) => x.month === m && x.group === n)?.actual;
+    const off = ['CPP', 'WHP', 'OOSS Contractors', 'Services Contract'].reduce((a, n) => a + (g(n) ?? 0), 0);
+    if (r.offshore_actual != null && r.offshore_actual !== off) msgs.push(L(`Offshore actual is ${r.offshore_actual} in the file, while CPP + WHP + OOSS Contractors + Services Contract = ${off}`, `Offshore thực tế ghi ${r.offshore_actual} trong file, trong khi CPP + WHP + OOSS Contractors + Services Contract = ${off}`));
+    if (r.total_actual != null && r.onshore_actual != null && r.offshore_actual != null && r.total_actual !== r.onshore_actual + r.offshore_actual) msgs.push(L(`Grand Total actual is ${r.total_actual}, while Onshore + Offshore = ${r.onshore_actual + r.offshore_actual}`, `Grand Total thực tế ghi ${r.total_actual}, trong khi Onshore + Offshore = ${r.onshore_actual + r.offshore_actual}`));
+    document.getElementById('mp-n').textContent = L(`Actual to ${H.fmtMonth(H.month(m))}`, `Thực tế đến ${H.fmtMonth(H.month(m))}`);
+  }
+  chk.hidden = !msgs.length;
+  chk.textContent = msgs.length ? (H.fmtMonth(H.month(m)) + ': ' + msgs.join('; ') + L('. Figures are shown as written in the file.', '. Số liệu hiển thị đúng như trong file.')) : '';
+}
+function drawMpKpis() {
+  const box = document.getElementById('mp-kpis'), m = mpLatest(), mp = dash.data('manpower'), gr = dash.data('manpower_groups');
+  if (!m || mp.status !== 'ok') { box.replaceChildren(); return; }
+  const r = mp.data.find((x) => x.month === m);
+  const tile = (label, a, p) => {
+    const t = H.el('div', 'ops-tile'), big = H.el('span', 'ops-big');
+    big.append(String(a ?? '—'), H.el('small', null, ' / ' + (p ?? '—')));
+    const meter = H.el('div', 'ops-tile-meter'), i = H.el('i'); i.style.width = (p ? Math.min(100, (a / p) * 100) : 0) + '%'; meter.append(i);
+    t.append(H.el('span', 'ops-tile-label', label), big, H.el('span', 'ops-tile-note', p ? L(`${Math.round((a / p) * 100)}% of plan · ${H.fmtMonth(H.month(m))}`, `${Math.round((a / p) * 100)}% kế hoạch · ${H.fmtMonth(H.month(m))}`) : H.fmtMonth(H.month(m))), meter);
+    return t;
+  };
+  const out = [tile('Grand Total', r.total_actual, r.total_plan)];
+  if (gr.status === 'ok') MP_GROUPS.forEach((n) => { const x = gr.data.find((y) => y.month === m && y.group === n); if (x && (x.plan || x.actual)) out.push(tile(D(n), x.actual, x.plan)); });
+  box.replaceChildren(...out);
+}
+function drawStaffing() {
+  const box = document.getElementById('bars-staffing'), vac = document.getElementById('vacant-list');
+  const ws = dash.data('workstreams');
+  vac.textContent = ws.status === 'ok' ? (ws.data.find((r) => r.item === 'Vacant positions')?.status ?? '—') : '—';
+  const gr = dash.data('manpower_groups'), m = mpLatest();
+  document.getElementById('mp-grp-n').textContent = m ? H.fmtMonth(H.month(m)) : '—';
+  if (gr.status !== 'ok' || !m) { box.replaceChildren(); return; }
+  box.replaceChildren(...MP_GROUPS.map((n) => gr.data.find((y) => y.month === m && y.group === n)).filter((x) => x && (x.plan || x.actual)).map((d) => {
+    const v = H.el('span'); v.append(H.el('b', null, H.num(d.actual ?? 0)), ' / ' + H.num(d.plan));
+    const f = d.plan ? d.actual / d.plan : 0;
+    return H.bar(D(d.group), f, f < 0.5 ? 'var(--cds-chart-status-critical)' : 'var(--acc)', v, 1);
+  }));
+}
+// A window of months around the latest actual: three before it, then the plan for the next eight.
+function drawMpTable() {
+  const t = document.getElementById('table-mp'), mp = dash.data('manpower'), gr = dash.data('manpower_groups'), m = mpLatest();
+  if (mp.status !== 'ok' || !m) { t.tHead.replaceChildren(); t.tBodies[0].replaceChildren(); return; }
+  const all = mp.data.map((r) => r.month).sort(), i = all.indexOf(m), ms = all.slice(Math.max(0, i - 3), i + 9);
+  document.getElementById('mp-tab-n').textContent = `${H.fmtMonthShort(H.month(ms[0]))} – ${H.fmtMonthShort(H.month(ms.at(-1)))}`;
+  const hr = H.el('tr'); hr.append(H.el('th', null, L('Group', 'Nhóm')), ...ms.map((x) => H.el('th', x === m ? 'cur' : null, H.fmtMonthShort(H.month(x)))));
+  t.tHead.replaceChildren(hr);
+  const lines = [['Grand Total', (x) => { const r = mp.data.find((y) => y.month === x); return r && [r.total_plan, r.total_actual]; }, 'tot']]
+    .concat(gr.status === 'ok' ? MP_GROUPS.map((n) => [n, (x) => { const r = gr.data.find((y) => y.month === x && y.group === n); return r && [r.plan, r.actual]; }]) : []);
+  t.tBodies[0].replaceChildren(...lines.map(([n, get, cls]) => {
+    const tr = H.el('tr', cls || null); tr.append(H.el('td', 'nm', D(n)));
+    ms.forEach((x) => {
+      const v = get(x) || [null, null], td = H.el('td', x === m ? 'cur' : null);
+      td.append(H.el('div', 'p', v[0] == null ? '—' : String(v[0])));
+      if (v[1] != null) td.append(H.el('span', 'tag ' + (v[1] >= v[0] ? 'ok' : 'bad'), L('actual ', 'TT ') + v[1]));
+      tr.append(td);
+    });
+    return tr;
+  }));
 }
 
 function drawOrrCurve() {
@@ -1400,19 +1496,6 @@ function drawOrrCurve() {
     series: [{ key: 'plan_pct', label: L('Plan', 'Kế hoạch'), short: L('Plan', 'KH'), color: 'var(--cds-chart-muted)', dashed: true },
              { key: 'actual_pct', label: L('Actual', 'Thực tế'), short: L('Actual', 'TT'), color: dash.colors[0], carryTo: H.REPORT_DATE }],
   });
-}
-
-function drawStaffing() {
-  const box = document.getElementById('bars-staffing');
-  const data = H.state('staffing', box);
-  const vac = document.getElementById('vacant-list');
-  const ws = dash.data('workstreams');
-  vac.textContent = ws.status === 'ok' ? (ws.data.find((r) => r.item === 'Vacant positions')?.status ?? '—') : '—';
-  if (!data) return;
-  box.replaceChildren(...data.map((d) => {
-    const v = H.el('span'); v.append(H.el('b', null, H.num(d.filled)), ' / ' + H.num(d.required));
-    return H.bar(D(d.group), d.filled / d.required, d.filled / d.required < 0.5 ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
-  }));
 }
 
 // ---------- people ----------
@@ -2257,7 +2340,7 @@ function drawSteps() {
 
 function draw() {
   drawKpis();
-  if (currentPage === 'manpower') { drawManpower(); drawStaffing(); }
+  if (currentPage === 'manpower') { drawMpKpis(); drawManpower(); drawStaffing(); drawMpTable(); }
   if (currentPage === 'training') { drawHseMatrix(); drawMandatory(); drawVendor(); drawCbta(); drawCbtaModules(); }
   if (currentPage === 'apps') { drawWorkstreams(); drawCmms(); }
   if (currentPage === 'permits') drawPermits();
@@ -2583,7 +2666,7 @@ window.addEventListener('afterprint', () => { if (printPage) goTab(printPage); }
 const H = window.opsH, L = dash.L, D = dash.D;
 const AREAS = [ // [table, area title EN, VI, tab]
   ['readiness', 'Readiness status', 'Trạng thái tổng thể', 'overview'], ['milestones', 'Key milestones', 'Mốc tiến độ', 'overview'],
-  ['manpower', 'Manpower by month', 'Nhân sự theo tháng', 'manpower'], ['staffing', 'Current staffing', 'Định biên', 'manpower'],
+  ['manpower', 'Manpower by month', 'Nhân sự theo tháng', 'manpower'], ['staffing', 'Current staffing', 'Định biên', 'manpower'], ['manpower_groups', 'Manpower by group', 'Nhân sự theo nhóm', 'manpower'],
   ['orr_curve', 'ORR by month', 'ORR theo tháng', 'orr'],
   ['mandatory', 'Mandatory training', 'Đào tạo bắt buộc', 'training'], ['cbta', 'CBTA', 'CBTA', 'training'], ['vendor_training', 'Vendor training', 'Đào tạo vendor', 'training'],
   ['cbta_modules', 'CBTA modules', 'Module CBTA', 'training'], ['hse_matrix', 'HSE training matrix', 'Ma trận đào tạo HSE', 'training'],
@@ -2598,7 +2681,7 @@ const AREAS = [ // [table, area title EN, VI, tab]
 const KEYS = {
   manpower: ['month'], orr_curve: ['month'], startup_sequence: ['step'], procedures: ['id'], orr_elements: ['code'], orr_groups: ['group'],
   orr_teams: ['team'], pr_pipeline: ['stage', 'status'], packages_no_pr: ['dimension', 'category'], vendor_training: ['period', 'course'],
-  precom_plan: ['activity'], cbta: ['platform', 'team'], mandatory: ['team'], staffing: ['group'], cmms: ['package'],
+  precom_plan: ['activity'], cbta: ['platform', 'team'], mandatory: ['team'], staffing: ['group'], manpower_groups: ['group', 'month'], cmms: ['package'],
   workstreams: ['area', 'item'], permits: ['team', 'permit', 'facility', 'description'], tender_schedule: ['package', 'no'], readiness: ['area'], milestones: ['milestone'],
   hse_matrix: ['course'], cbta_modules: ['platform', 'team', 'no'], orr_team_plan: ['team', 'month'], orr_departments: ['department', 'month'], orr_risks: ['item'], contract_packages: ['package'],
 };
@@ -2627,7 +2710,7 @@ const DATES = new Set(['issue_date', 'expiry_date', 'renewal_date', 'plan_start'
 const rowLabel = {
   tender_schedule: (r) => `${r.package || ''} · ${r.no}. ${r.activity}`,
   permits: (r) => r.permit + (r.facility ? ` (${r.facility})` : r.description ? ` · ${r.description}` : ''),
-  manpower: (r) => H.fmtMonth(H.month(r.month)), orr_curve: (r) => H.fmtMonth(H.month(r.month)), staffing: (r) => D(r.group), orr_groups: (r) => D(r.group),
+  manpower: (r) => H.fmtMonth(H.month(r.month)), orr_curve: (r) => H.fmtMonth(H.month(r.month)), staffing: (r) => D(r.group), manpower_groups: (r) => `${D(r.group)} · ${H.fmtMonth(H.month(r.month))}`, orr_groups: (r) => D(r.group),
   procedures: (r) => `${(r.category === 'HSE' ? 'HSE' : L('General operation', 'Vận hành chung')) + ' · ' + L('No. ', 'STT ') + String(r.id ?? '').replace(/^(HSE|GEN)-0*/, '')} · ${r.document || ''}`, orr_elements: (r) => `${r.code} · ${r.element || ''}`, cbta: (r) => `${r.platform} ${r.team}`,
   pr_pipeline: (r) => `${D(r.stage)} · ${L(r.status, { Late: 'Trễ hạn', 'Near-late': 'Sắp trễ', 'On time': 'Đúng hạn' }[r.status] || r.status)}`,
   packages_no_pr: (r) => D(r.category), vendor_training: (r) => `${r.period} · ${r.course}`, workstreams: (r) => D(r.item), readiness: (r) => D(r.area),
