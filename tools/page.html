@@ -816,6 +816,7 @@
     <div class="ops-grid">
       <div class="ops-card ops-wide" id="card-cbta-dev">
         <h2>CBTA module development</h2>
+        <div class="ops-coord-call" id="cbta-update" data-source="workstreams" hidden><span class="ops-coord-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z"/><path d="M11.5 13.5L20 4"/></svg></span><span><b>Latest update:</b> <span id="cbta-update-t"></span></span></div>
         <p class="ops-note">Modules by status: completed, in review, in development.</p>
         <div class="ops-legend" id="cbta-legend"></div>
         <div class="ops-bars" id="bars-cbta" data-source="cbta cbta_progress"></div>
@@ -1539,6 +1540,13 @@ function drawOrrCurve() {
 }
 
 // ---------- people ----------
+// Latest CBTA progress as written in the update (workstreams, area Training, item CBTA).
+function drawCbtaUpdate() {
+  const box = document.getElementById('cbta-update'), d = dash.data('workstreams');
+  const r = d.status === 'ok' ? d.data.find((x) => x.area === 'Training' && x.item === 'CBTA') : null;
+  box.hidden = !(r && r.status);
+  document.getElementById('cbta-update-t').textContent = r && r.status ? D(r.status) : '';
+}
 function drawMandatory() {
   const box = document.getElementById('bars-mandatory');
   const data = H.state('mandatory', box), sum = dash.data('mandatory_summary');
@@ -2381,7 +2389,7 @@ function drawSteps() {
 function draw() {
   drawKpis();
   if (currentPage === 'manpower') { drawMpKpis(); drawManpower(); drawStaffing(); drawMpTable(); }
-  if (currentPage === 'training') { drawHseMatrix(); drawMandatory(); drawVendor(); drawCbta(); drawCbtaModules(); }
+  if (currentPage === 'training') { drawCbtaUpdate(); drawHseMatrix(); drawMandatory(); drawVendor(); drawCbta(); drawCbtaModules(); }
   if (currentPage === 'apps') { drawWorkstreams(); drawCmms(); }
   if (currentPage === 'permits') drawPermits();
   if (currentPage === 'procedures') drawProcedures();

@@ -259,7 +259,8 @@
   "Plan and actual by month": "Kế hoạch và thực tế theo tháng",
   "Plan on top, actual below (green when on or above plan, red when below). Months without actual figures show the plan only.": "Kế hoạch ở trên, thực tế ở dưới (xanh khi đạt hoặc vượt kế hoạch, đỏ khi thấp hơn). Tháng chưa có số thực tế chỉ hiện kế hoạch.",
   "Mob Plan and Actual OPS 11Nov2026, sheet Ramp Up Chart_02. Offshore is the Offshore row of the file; its formula is CPP + WHP + FSO + OOSS Contractors + Services Contract.": "Mob Plan and Actual OPS 11Nov2026, sheet Ramp Up Chart_02. Offshore là dòng Offshore của file; công thức của dòng này là CPP + WHP + FSO + OOSS Contractors + Services Contract.",
-  "Source:": "Nguồn:"
+  "Source:": "Nguồn:",
+  "Latest update:": "Cập nhật mới nhất:"
  },
  "data": {
   "Manpower": "Nhân sự",
