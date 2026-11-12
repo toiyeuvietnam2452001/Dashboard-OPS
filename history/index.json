@@ -3,9 +3,11 @@
  "reports": [
   {
    "date": "2026-11-12",
-   "updated_at": "2026-11-11T03:50:00.000Z",
+   "updated_at": "2026-11-12T01:25:00.000Z",
    "title": "Operations Readiness Preparation",
-   "versions": []
+   "versions": [
+    "0825"
+   ]
   },
   {
    "date": "2026-11-11",
