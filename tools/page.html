@@ -609,6 +609,40 @@
 .ops-mpt tr.lv1 > td.nm { font-weight: 700; } .ops-mpt tr.off > td { border-top: 2px solid var(--acc-line); }
 .ops-mpt tr.lv2 > td.nm { padding-left: 24px; font-weight: 500; color: var(--color-fg-muted); }
 #manpower .ops-tile.mp-os { border-left-style: dashed; }
+/* 7. Contracts v2: stepper and single table */
+.ops-cp-stepbox { overflow-x: auto; padding: 4px 2px 8px; }
+.ops-cp-steps { display: grid; grid-template-columns: repeat(var(--n, 9), minmax(84px, 1fr)); min-width: 720px; position: relative; }
+.ops-cp-steps::before { content: ""; position: absolute; left: calc(100% / var(--n, 9) / 2); right: calc(100% / var(--n, 9) / 2); top: 21px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #94A3B8, #E0A526, #E07A3A, #14A3A0, #2F6FD6, #1E9E5A); opacity: .55; }
+.ops-cp-steps .step { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 4px; background: none; border: 0; font: inherit; color: var(--color-fg); cursor: pointer; text-align: center; }
+.ops-cp-steps .dot { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--color-panel); border: 3px solid var(--c); color: var(--color-fg); font-size: 18px; font-weight: 700; box-shadow: var(--shadow-card); transition: transform var(--cds-dur-slow); position: relative; z-index: 1; }
+.ops-cp-steps .step:hover .dot { transform: scale(1.06); }
+.ops-cp-steps .step.on .dot { background: var(--c); color: #fff; }
+.ops-cp-steps .step.dim { opacity: .45; }
+.ops-cp-steps .lab { font-size: 12px; font-weight: 650; line-height: 1.25; }
+.ops-cp-steps .no { font-size: 10.5px; color: var(--color-fg-muted); letter-spacing: .04em; text-transform: uppercase; }
+.ops-cp-tools { align-items: center; }
+.ops-cp-tools input[type=search] { flex: 1 1 16rem; }
+.ops-cp-count { margin-left: auto; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); white-space: nowrap; }
+.ops-cpt { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); table-layout: fixed; }
+.ops-cpt th, .ops-cpt td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-border-line); line-height: 1.45; overflow-wrap: anywhere; }
+.ops-cpt .c-pkg { width: 30%; } .ops-cpt .c-st { width: 17%; } .ops-cpt .c-pic { width: 14%; } .ops-cpt .c-ros { width: 12%; } .ops-cpt .c-up { width: 27%; }
+.ops-cpt tr.grp td { background: color-mix(in srgb, var(--c) 12%, var(--color-panel)) !important; border-bottom: 2px solid var(--c); padding: 8px 12px; }
+.ops-cpt tr.grp td i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--c); margin-right: 8px; }
+.ops-cpt tr.grp .t { font-weight: 700; font-size: 13px; } .ops-cpt tr.grp .c { margin-left: 10px; font-size: 11.5px; color: var(--color-fg-muted); }
+.ops-cpt td.c-pkg .nm { display: block; font-weight: 600; font-size: 13px; color: var(--color-fg); }
+.ops-cpt td.c-pkg .nt { display: block; margin-top: 4px; padding: 4px 8px; border-left: 3px solid var(--color-bad); background: color-mix(in srgb, var(--color-bad) 7%, transparent); font-size: 11.5px; color: var(--color-fg); }
+.ops-cpt td.c-pkg .sm { display: none; margin-top: 6px; font-size: 11.5px; color: var(--color-fg-muted); }
+.ops-cp-pill { display: inline-flex; align-items: center; gap: 6px; font-weight: 650; font-size: 12px; }
+.ops-cp-pill i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); flex: none; }
+.ops-cp-mini { display: flex; gap: 2px; margin-top: 6px; max-width: 120px; }
+.ops-cp-mini i { flex: 1; height: 5px; border-radius: 2px; background: var(--color-border-line); }
+.ops-cp-chip { display: inline-block; margin: 0 4px 4px 0; padding: 1px 7px; border-radius: 6px; border: 1px solid var(--color-border-line); background: var(--color-panel); font-size: 11.5px; white-space: nowrap; }
+.ops-cp-chip b { color: var(--acc); }
+.ops-cpt td.c-ros b { display: block; font-size: 12.5px; white-space: nowrap; } .ops-cpt td.c-ros .in { font-size: 11px; color: var(--color-fg-muted); }
+.ops-cpt td.c-up .u + .u { margin-top: 6px; }
+.ops-cpt td.c-up .k { display: inline-block; margin-right: 6px; padding: 0 6px; border-radius: 4px; background: var(--acc-tint); color: var(--acc); font-size: 10.5px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; vertical-align: 1px; }
+.ops-cpt tbody tr:not(.grp):hover > td { background: var(--acc-soft); }
+@media (max-width: 560px) { .ops-cpt { table-layout: auto; } .ops-cpt td.c-pkg .sm { display: block; } .ops-cpt .c-pkg { width: 50%; } .ops-cpt .c-st { width: 28%; } .ops-cpt .c-ros { width: 22%; } .ops-cp-mini { max-width: 70px; } .ops-cp-pill { font-size: 11px; } .ops-cpt th, .ops-cpt td { padding: 8px 6px; } .ops-cp-count { margin-left: 0; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -944,11 +978,16 @@
     <div class="ops-tiles" id="cp-kpis"></div>
     <div class="ops-card ops-bcard" id="card-cp">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Contract packages by current status</span><span class="ops-banner-n" id="cp-n">—</span></h2>
-      <p class="ops-note">From the Overview sheet of the procurement file, one row per package in the file's order. Click a status to show only its packages.</p>
-      <div class="ops-cp-flow" id="cp-flow" role="group" aria-label="Current status"></div>
+      <p class="ops-note">From the Overview sheet of the procurement file. The steps run from SOW / PIA preparation to contract signed; click a step to show only its packages.</p>
+      <div class="ops-cp-stepbox"><div class="ops-cp-steps" id="cp-flow" role="group" aria-label="Current status"></div></div>
       <p class="ops-note ops-dept-diff" id="cp-qty" hidden></p>
-      <div class="ops-tools"><input type="search" id="cp-q" placeholder="Search package, PIC, remark…" aria-label="Search packages"></div>
-      <div id="cp-list" data-source="contract_packages"></div>
+      <div class="ops-tools ops-cp-tools">
+        <input type="search" id="cp-q" placeholder="Search package, PIC, remark…" aria-label="Search packages">
+        <select id="cp-pic" aria-label="PIC"><option value="">All PICs</option></select>
+        <div class="ops-seg" id="cp-sort" role="group" aria-label="Order"><button type="button" aria-pressed="true" data-s="file">File order</button><button type="button" aria-pressed="false" data-s="ros">By ROS date</button></div>
+        <span class="ops-cp-count" id="cp-count"></span>
+      </div>
+      <div class="ops-tablebox" style="max-height:none"><table class="ops-cpt" id="cp-list" data-source="contract_packages"><thead><tr><th class="c-pkg">Package</th><th class="c-st">Current status</th><th class="c-pic hide-sm">PIC</th><th class="c-ros">ROS required</th><th class="c-up hide-sm">Latest update (Remarks / Status)</th></tr></thead><tbody></tbody></table></div>
       <p class="ops-note" id="cp-empty-cols" hidden></p>
     </div>
     <div class="ops-card ops-bcard" id="card-cp-ros">
@@ -2192,22 +2231,30 @@ function drawCoordination() {
 const CP_STAGES = ['Contract Signed', 'Contract Signing', 'Technical evaluation', 'ITB/Bid Submission', 'CSP Approval', 'CSP preparation', 'PR processing', 'Bidder screening', 'SOW / PIA Preparation'];
 const CP_RAMP = d3.interpolateRgbBasis(['#94A3B8', '#E0A526', '#E07A3A', '#14A3A0', '#2F6FD6', '#1E9E5A']);
 const cpColor = (st) => { const i = CP_STAGES.length - 1 - Math.max(0, CP_STAGES.indexOf(st)); return CP_RAMP(i / (CP_STAGES.length - 1)); };
-let cpStage = '';
+let cpStage = '', cpSort = 'file', cpPic = '';
 document.getElementById('cp-q').addEventListener('input', () => drawContracts());
+document.getElementById('cp-pic').addEventListener('change', (e) => { cpPic = e.target.value; drawContracts(); });
+document.querySelectorAll('#cp-sort button').forEach((b) => b.addEventListener('click', () => {
+  cpSort = b.dataset.s; document.querySelectorAll('#cp-sort button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); drawContracts();
+}));
 function cpRows() {
   const d = dash.data('contract_packages');
   return d.status === 'ok' ? d.data.slice().sort((a, b) => (a.seq ?? 0) - (b.seq ?? 0)) : null;
 }
 const multi = (t) => { const out = []; String(t).split('\n').forEach((x, i) => { if (i) out.push(H.el('br')); out.push(document.createTextNode(x)); }); return out; };
+// PIC codes are written GROUP_Name in the file (e.g. MECH_HoangVD); the part before "_" is used for the filter.
+const picCodes = (r) => String(r.pic || '').split('\n').map((x) => x.trim()).filter(Boolean);
+const picGroup = (code) => code.split('_')[0];
 function drawContracts() {
-  const rows = cpRows(), list = document.getElementById('cp-list');
+  const rows = cpRows(), tb = document.querySelector('#cp-list tbody');
   const kp = document.getElementById('cp-kpis'), flow = document.getElementById('cp-flow');
-  if (!rows || !rows.length) { [list, kp, flow, document.getElementById('cp-ros')].forEach((e) => e.replaceChildren()); document.getElementById('cp-n').textContent = '—'; return; }
+  if (!rows || !rows.length) { [tb, kp, flow, document.getElementById('cp-ros')].forEach((e) => e.replaceChildren()); document.getElementById('cp-n').textContent = '—'; return; }
   const stages = CP_STAGES.filter((s) => rows.some((r) => r.current_status === s)).concat([...new Set(rows.map((r) => r.current_status))].filter((s) => s && !CP_STAGES.includes(s)));
   const count = (s) => rows.filter((r) => r.current_status === s).length;
+  const stepOf = (st) => CP_STAGES.length - CP_STAGES.indexOf(st); // 1 = SOW / PIA Preparation … 9 = Contract Signed
   document.getElementById('cp-n').textContent = L(`${rows.length} packages · ${stages.length} statuses`, `${rows.length} gói · ${stages.length} trạng thái`);
 
-  // Tiles: counts and dates straight from the rows.
+  // Tiles
   const tile = (label, big, note) => { const t = H.el('div', 'ops-tile'); t.append(H.el('span', 'ops-tile-label', label), H.el('span', 'ops-big', big), H.el('span', 'ops-tile-note', note)); return t; };
   const ros = rows.filter((r) => r.ros_required).map((r) => r.ros_required).sort();
   const nAt = (d) => rows.filter((r) => r.ros_required === d).length;
@@ -2217,52 +2264,77 @@ function drawContracts() {
     ros.length ? tile(L('Earliest ROS required', 'ROS sớm nhất'), H.fmtDay(H.day(ros[0])), L(`${nAt(ros[0])} packages`, `${nAt(ros[0])} gói`)) : tile(L('Earliest ROS required', 'ROS sớm nhất'), '—', ''),
     ros.length ? tile(L('Latest ROS required', 'ROS muộn nhất'), H.fmtDay(H.day(ros.at(-1))), L(`${nAt(ros.at(-1))} packages`, `${nAt(ros.at(-1))} gói`)) : tile(L('Latest ROS required', 'ROS muộn nhất'), '—', ''));
 
-  // Status flow, earliest status first; a click filters the list below.
+  // Stepper, earliest status first; a click filters the table.
   const order = stages.slice().reverse();
-  flow.replaceChildren(...order.flatMap((st, i) => {
-    const b = H.el('button', 'st' + (cpStage === st ? ' on' : '')); b.type = 'button'; b.setAttribute('aria-pressed', String(cpStage === st));
-    const dot = H.el('i'); dot.style.background = cpColor(st);
-    b.append(H.el('b', null, String(count(st))), H.el('span', null, D(st)), dot);
+  flow.style.setProperty('--n', order.length);
+  flow.replaceChildren(...order.map((st, i) => {
+    const b = H.el('button', 'step' + (cpStage === st ? ' on' : '') + (cpStage && cpStage !== st ? ' dim' : '')); b.type = 'button'; b.setAttribute('aria-pressed', String(cpStage === st));
+    b.style.setProperty('--c', cpColor(st));
+    const dot = H.el('span', 'dot', String(count(st)));
+    b.append(dot, H.el('span', 'lab', D(st)), H.el('span', 'no', L(`Step ${i + 1}`, `Bước ${i + 1}`)));
+    b.title = L(`${count(st)} packages · click to filter`, `${count(st)} gói · bấm để lọc`);
     b.addEventListener('click', () => { cpStage = cpStage === st ? '' : st; drawContracts(); });
-    return i < order.length - 1 ? [b, H.el('span', 'ar', '›')] : [b];
+    return b;
   }));
-  // Where the file's Q'TY differs from the packages listed under that status, say so.
   const qtyOff = stages.filter((st) => { const q = rows.find((r) => r.current_status === st && r.stage_qty != null); return q && q.stage_qty !== count(st); });
   const qn = document.getElementById('cp-qty'); qn.hidden = !qtyOff.length;
   qn.textContent = qtyOff.map((st) => L(`${st}: Q'TY in the file is ${rows.find((r) => r.current_status === st).stage_qty}, ${count(st)} packages are listed under it.`, `${st}: cột Q'TY trong file ghi ${rows.find((r) => r.current_status === st).stage_qty}, nhưng có ${count(st)} gói được liệt kê.`)).join(' ');
 
-  // Package list, grouped by status in the file's order. Columns that are empty for every row are left out.
+  // PIC filter options
+  const sel = document.getElementById('cp-pic');
+  const groups = [...new Set(rows.flatMap((r) => picCodes(r).map(picGroup)))].sort();
+  if (sel.options.length !== groups.length + 1) sel.replaceChildren(new Option(L('All PICs', 'Tất cả PIC'), ''), ...groups.map((g) => new Option(g, g)));
+  sel.value = cpPic;
+
+  // Table
   const q = document.getElementById('cp-q').value.trim().toLowerCase();
-  const show = rows.filter((r) => (!cpStage || r.current_status === cpStage) && (!q || [r.package, r.package_note, r.pic, r.remarks, r.status].some((x) => (x || '').toLowerCase().includes(q))));
+  let show = rows.filter((r) => (!cpStage || r.current_status === cpStage) && (!cpPic || picCodes(r).some((c) => picGroup(c) === cpPic))
+    && (!q || [r.package, r.package_note, r.pic, r.remarks, r.status].some((x) => (x || '').toLowerCase().includes(q))));
+  if (cpSort === 'ros') show = show.slice().sort((a, b) => (a.ros_required || '9999') < (b.ros_required || '9999') ? -1 : (a.ros_required || '9999') > (b.ros_required || '9999') ? 1 : (a.seq ?? 0) - (b.seq ?? 0));
+  document.getElementById('cp-count').textContent = L(`${show.length} of ${rows.length} packages`, `${show.length}/${rows.length} gói`);
+  const today = H.REPORT_DATE;
+  const row = (r) => {
+    const tr = H.el('tr');
+    const pk = H.el('td', 'c-pkg'); pk.append(H.el('span', 'nm', r.package || ''));
+    if (r.package_note) pk.append(H.el('span', 'nt', r.package_note));
+    const sm = H.el('span', 'sm'); // phone: PIC and update under the name
+    if (r.pic) sm.append(H.el('b', null, picCodes(r).join(' · ')));
+    [r.remarks, r.status].filter(Boolean).forEach((t) => { sm.append(H.el('br')); sm.append(...multi(t)); });
+    if (sm.childNodes.length) pk.append(sm);
+    const st = H.el('td', 'c-st'), pill = H.el('span', 'ops-cp-pill'); pill.style.setProperty('--c', cpColor(r.current_status));
+    pill.append(H.el('i'), D(r.current_status || '—')); st.append(pill);
+    const n = stepOf(r.current_status), bar = H.el('span', 'ops-cp-mini'); bar.title = L(`Step ${n} of ${CP_STAGES.length}`, `Bước ${n}/${CP_STAGES.length}`);
+    for (let k = 1; k <= CP_STAGES.length; k++) { const seg = H.el('i', k <= n ? 'on' : null); if (k <= n) seg.style.background = cpColor(r.current_status); bar.append(seg); }
+    st.append(bar);
+    const pc = H.el('td', 'c-pic hide-sm');
+    picCodes(r).forEach((c) => { const chip = H.el('span', 'ops-cp-chip'); const [g, ...rest] = c.split('_'); chip.append(H.el('b', null, g), rest.length ? '_' + rest.join('_') : ''); pc.append(chip); });
+    if (!picCodes(r).length) pc.append(H.el('span', 'ops-none', '—'));
+    const rs = H.el('td', 'c-ros');
+    if (r.ros_required) {
+      const d = H.day(r.ros_required), mo = d3.utcMonth.count(d3.utcMonth.floor(today), d3.utcMonth.floor(d));
+      rs.append(H.el('b', null, H.fmtDay(d)), H.el('span', 'in', mo > 0 ? L(`in ${mo} months`, `còn ${mo} tháng`) : mo === 0 ? L('this month', 'tháng này') : L(`${-mo} months ago`, `${-mo} tháng trước`)));
+    } else rs.append(H.el('span', 'ops-none', '—'));
+    const up = H.el('td', 'c-up hide-sm');
+    const items = [['Remarks', r.remarks], ['Status', r.status]].filter(([, t]) => t);
+    if (!items.length) up.append(H.el('span', 'ops-none', L('No remark in the file', 'File chưa có ghi chú')));
+    items.forEach(([k, t]) => { const line = H.el('div', 'u'); line.append(H.el('span', 'k', k), H.el('span', 'v')); line.lastChild.append(...multi(t)); up.append(line); });
+    tr.append(pk, st, pc, rs, up);
+    return tr;
+  };
+  const out = [];
+  if (!show.length) { const tr = H.el('tr'), td = H.el('td', 'ops-none', L('No package matches.', 'Không có gói phù hợp.')); td.colSpan = 5; tr.append(td); out.push(tr); }
+  else if (cpSort === 'file') {
+    stages.filter((st) => show.some((r) => r.current_status === st)).forEach((st) => {
+      const tr = H.el('tr', 'grp'), td = H.el('td'); td.colSpan = 5; td.style.setProperty('--c', cpColor(st));
+      td.append(H.el('i'), H.el('span', 't', D(st)), H.el('span', 'c', L(`${count(st)} package${count(st) === 1 ? '' : 's'}`, `${count(st)} gói`)));
+      tr.append(td); out.push(tr);
+      show.filter((r) => r.current_status === st).forEach((r) => out.push(row(r)));
+    });
+  } else show.forEach((r) => out.push(row(r)));
+  tb.replaceChildren(...out);
   const has = (k) => rows.some((r) => r[k]);
-  const cols = [['package', L('Package', 'Gói thầu')], ['pic', 'PIC'], ['loa_required', 'LOA required'], ['ros_required', 'ROS required'], ['step_due_date', 'Step due date'], ['remarks', 'Remarks'], ['status', 'Status']].filter(([k]) => k === 'package' || has(k));
   const empty = ['loa_required', 'step_due_date'].filter((k) => !has(k)), en = document.getElementById('cp-empty-cols');
   en.hidden = !empty.length; en.textContent = L(`Columns empty in the file for every package: ${empty.map((k) => k === 'loa_required' ? 'LOA required' : 'Step due date').join(', ')}.`, `Cột để trống ở tất cả các gói trong file: ${empty.map((k) => k === 'loa_required' ? 'LOA required' : 'Step due date').join(', ')}.`);
-  if (!show.length) { list.replaceChildren(H.el('p', 'ops-none', L('No package matches.', 'Không có gói phù hợp.'))); }
-  else list.replaceChildren(...stages.filter((st) => show.some((r) => r.current_status === st)).map((st) => {
-    const g = H.el('div', 'ops-cp-group'), h = H.el('div', 'h'), dot = H.el('i'); dot.style.background = cpColor(st);
-    h.append(dot, H.el('h3', null, D(st)), H.el('span', 'c', L(`${count(st)} package${count(st) === 1 ? '' : 's'}`, `${count(st)} gói`)));
-    const box = H.el('div', 'ops-tablebox'); box.style.maxHeight = 'none';
-    const table = H.el('table', 'ops-cp'), thead = H.el('thead'), tr0 = H.el('tr');
-    cols.forEach(([k, t]) => tr0.append(H.el('th', 'c-' + k + (['remarks', 'status', 'pic'].includes(k) ? ' hide-sm' : ''), t))); thead.append(tr0);
-    const tb = H.el('tbody');
-    show.filter((r) => r.current_status === st).forEach((r) => {
-      const tr = H.el('tr');
-      cols.forEach(([k]) => {
-        const td = H.el('td', 'c-' + k + (['remarks', 'status', 'pic'].includes(k) ? ' hide-sm' : ''));
-        if (k === 'package') {
-          td.append(H.el('span', 'nm', r.package || ''));
-          if (r.package_note) td.append(H.el('span', 'nt', r.package_note));
-          const sm = [r.pic, r.remarks, r.status].filter(Boolean);
-          if (sm.length) { const e = H.el('span', 'sm'); e.append(...multi(sm.join('\n'))); td.append(e); }
-        } else if (k === 'ros_required' || k === 'step_due_date') td.textContent = r[k] ? H.fmtDay(H.day(r[k])) : '—';
-        else if (r[k]) td.append(...multi(r[k])); else td.textContent = '—';
-        tr.append(td);
-      });
-      tb.append(tr);
-    });
-    table.append(thead, tb); box.append(table); g.append(h, box); return g;
-  }));
   drawCpRos(rows, stages);
 }
 function drawCpRos(rows, stages) {

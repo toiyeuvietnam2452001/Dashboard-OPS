@@ -260,7 +260,15 @@
   "Plan on top, actual below (green when on or above plan, red when below). Months without actual figures show the plan only.": "Kế hoạch ở trên, thực tế ở dưới (xanh khi đạt hoặc vượt kế hoạch, đỏ khi thấp hơn). Tháng chưa có số thực tế chỉ hiện kế hoạch.",
   "Mob Plan and Actual OPS 11Nov2026, sheet Ramp Up Chart_02. Offshore is the Offshore row of the file; its formula is CPP + WHP + FSO + OOSS Contractors + Services Contract.": "Mob Plan and Actual OPS 11Nov2026, sheet Ramp Up Chart_02. Offshore là dòng Offshore của file; công thức của dòng này là CPP + WHP + FSO + OOSS Contractors + Services Contract.",
   "Source:": "Nguồn:",
-  "Latest update:": "Cập nhật mới nhất:"
+  "Latest update:": "Cập nhật mới nhất:",
+  "From the Overview sheet of the procurement file. The steps run from SOW / PIA preparation to contract signed; click a step to show only its packages.": "Lấy từ sheet Overview của file mua sắm. Các bước đi từ SOW / PIA preparation đến khi ký hợp đồng; bấm vào một bước để chỉ xem các gói ở bước đó.",
+  "All PICs": "Tất cả PIC",
+  "File order": "Theo thứ tự file",
+  "By ROS date": "Theo ngày ROS",
+  "Current status": "Trạng thái hiện tại",
+  "ROS required": "ROS yêu cầu",
+  "Latest update (Remarks / Status)": "Cập nhật (Remarks / Status)",
+  "Package": "Gói thầu"
  },
  "data": {
   "Manpower": "Nhân sự",
