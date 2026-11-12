@@ -16,6 +16,8 @@ VI = json.load(open(os.path.join(G, 'i18n-vi.json'), encoding='utf-8'))
 
 page = open(os.path.join(G, 'page.html')).read()
 import base64
+FAVICON = base64.b64encode(open(os.path.join(G, 'favicon.png'), 'rb').read()).decode()  # leaf mark of tools/logo.png
+TOUCHICON = base64.b64encode(open(os.path.join(G, 'apple-touch-icon.png'), 'rb').read()).decode()
 page = page.replace('{{LOGO}}', 'data:image/png;base64,' + base64.b64encode(open(os.path.join(G, 'logo.png'), 'rb').read()).decode())
 style, body = page.split('</style>', 1)
 style = style.replace('<style>', '')
@@ -177,6 +179,9 @@ html = f"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>OPS Readiness Dashboard</title>
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,{FAVICON}">
+<link rel="apple-touch-icon" href="data:image/png;base64,{TOUCHICON}">
+<meta name="theme-color" content="#0B5D3B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
 <style>{tokens}{style}</style>
