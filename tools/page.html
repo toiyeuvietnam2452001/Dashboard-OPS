@@ -718,6 +718,17 @@
 @media (max-width: 1150px) { .ov-sections { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 860px) { .ov-hero, .ov-lower { grid-template-columns: 1fr; } .ov-sections { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .ov-sections { grid-template-columns: 1fr; } .ov-panel { padding: 16px; } .ov-bg { inset: -12px -8px; } }
+/* Tab change: sliding pill and page entrance */
+.ops-tabs.has-ind { position: sticky; }
+.ops-tab-ind { position: absolute; left: 0; top: 0; width: 0; height: 0; border-radius: var(--cds-radius); z-index: 0; pointer-events: none;
+  box-shadow: 0 6px 16px -8px rgba(15, 23, 42, .45); transition: left .38s cubic-bezier(.3, .8, .2, 1), top .38s cubic-bezier(.3, .8, .2, 1), width .38s cubic-bezier(.3, .8, .2, 1), height .38s cubic-bezier(.3, .8, .2, 1), background-color .38s ease; }
+.ops-tabs.has-ind .ops-tab { position: relative; z-index: 1; }
+.ops-tabs.has-ind .ops-tab[aria-selected="true"] { background: transparent; transition: color .25s ease; }
+.ops-page.ops-enter > * { animation: ops-page-in .5s cubic-bezier(.2, .75, .2, 1) both; animation-delay: calc(var(--k, 0) * 55ms); }
+.ops-page.ops-enter.from-r > * { --dx: 18px; } .ops-page.ops-enter.from-l > * { --dx: -18px; }
+@keyframes ops-page-in { from { opacity: 0; transform: translate(var(--dx, 0), 10px); filter: blur(2px); } }
+@media (prefers-reduced-motion: reduce) { .ops-tab-ind { transition: none; } .ops-page.ops-enter > * { animation: none; } }
+@media print { .ops-page.ops-enter > * { animation: none; } .ops-tab-ind { display: none; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -1388,12 +1399,38 @@ const OLD_PAGES = { people: 'training' }; // links saved before the tabs followe
 function showPage(p, push) {
   p = OLD_PAGES[p] || p;
   if (!pages.includes(p) || document.getElementById('tab-' + p).hidden) return; // Changes stays hidden until the owner signs in
-  currentPage = p;
+  const from = currentPage; currentPage = p;
   document.querySelectorAll('.ops-tab').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.page === p)));
   document.querySelectorAll('section.ops-page').forEach((s) => (s.hidden = s.dataset.page !== p));
   if (push) dash.setLink(p);
   draw();
+  tabTransition(from, p, push);
 }
+// Tab change: a pill slides to the new tab in that tab's colour, the page enters from the side of the tab
+// it came from, its blocks rise in one after another, and the view returns to the top of the content.
+const tabMotion = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+const tabBar = document.querySelector('.ops-tabs'), tabInd = document.createElement('span');
+tabInd.className = 'ops-tab-ind'; tabInd.setAttribute('aria-hidden', 'true'); tabBar.prepend(tabInd); tabBar.classList.add('has-ind');
+function placeTabInd(animate) {
+  const b = tabBar.querySelector('.ops-tab[aria-selected="true"]'); if (!b || !b.offsetWidth) return;
+  if (!animate) tabInd.style.transition = 'none';
+  Object.assign(tabInd.style, { left: b.offsetLeft + 'px', top: b.offsetTop + 'px', width: b.offsetWidth + 'px', height: b.offsetHeight + 'px', background: getComputedStyle(b).getPropertyValue('--acc').trim() || 'var(--brand)' });
+  if (!animate) { void tabInd.offsetWidth; tabInd.style.transition = ''; }
+}
+function tabTransition(from, to, byUser) {
+  placeTabInd(byUser && tabMotion);
+  const sec = document.getElementById(to); if (!sec || !tabMotion || from === to) return;
+  sec.classList.remove('ops-enter', 'from-l', 'from-r'); void sec.offsetWidth;
+  sec.classList.add('ops-enter', pages.indexOf(to) >= pages.indexOf(from) ? 'from-r' : 'from-l');
+  [...sec.children].forEach((c, i) => c.style.setProperty('--k', Math.min(i, 8)));
+  if (byUser) {
+    const y = sec.getBoundingClientRect().top + window.scrollY - tabBar.offsetHeight - 24;
+    if (window.scrollY > y) window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  }
+}
+window.addEventListener('resize', () => placeTabInd(false));
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => placeTabInd(false));
+setTimeout(() => placeTabInd(false), 0);
 document.querySelectorAll('.ops-tab').forEach((b) => b.addEventListener('click', () => showPage(b.dataset.page, true)));
 window.opsPage = { show: showPage, current: () => currentPage }; // for the owner sign-in in a later script
 document.querySelectorAll('#mp-seg button').forEach((b) => b.addEventListener('click', () => {
