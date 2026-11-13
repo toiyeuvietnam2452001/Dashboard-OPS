@@ -383,6 +383,101 @@
 .ops-svc-card.empty .ops-svc-no { color: var(--color-fg-muted); border-color: var(--color-border-line); }
 .ops-svc-card.empty p { color: var(--color-fg-muted); font-style: italic; border-top-color: var(--color-border-line); }
 .ops-tile .ops-big.ops-warn { color: var(--color-warn); }
+/* Tabs 2–4: section divider, banner sub-head */
+.ops-sec { display: flex; align-items: center; gap: 10px; margin: 8px 0 -2px; font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--acc); }
+.ops-sec .n { display: inline-grid; place-items: center; min-width: 36px; height: 24px; padding: 0 9px; border-radius: 999px; background: var(--acc); color: var(--color-panel); font-size: 12px; letter-spacing: .02em; }
+.ops-sec::after { content: ""; flex: 1; height: 2px; border-radius: 1px; background: linear-gradient(90deg, var(--acc-line), transparent); }
+.ops-bhead { display: flex; align-items: center; justify-content: space-between; gap: var(--cds-gap-sm) var(--cds-gap-md); flex-wrap: wrap; }
+.ops-bhead .ops-note { margin: 0; flex: 1 1 18rem; }
+/* 2. Mandatory training rings */
+.ops-rings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--cds-gap-md); }
+@media (max-width: 960px) { .ops-rings { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .ops-rings { grid-template-columns: 1fr; } }
+.ops-ring-card { --rc: var(--acc); display: flex; align-items: center; gap: 16px; padding: 14px 16px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius);
+  background: linear-gradient(160deg, var(--acc-tint), var(--color-panel) 62%); box-shadow: var(--shadow-card); transition: border-color var(--cds-dur-slow), transform var(--cds-dur-slow); }
+.ops-ring-card:hover { border-color: var(--acc-line); transform: translateY(-1px); }
+.ops-ring-card.low { --rc: var(--color-bad); background: linear-gradient(160deg, color-mix(in srgb, var(--color-bad) 9%, var(--color-panel)), var(--color-panel) 62%); }
+.ops-ring { position: relative; width: 78px; height: 78px; flex: none; }
+.ops-ring svg { width: 100%; height: 100%; display: block; }
+.ops-ring circle { fill: none; stroke-width: 9; }
+.ops-ring .bg { stroke: color-mix(in srgb, var(--rc) 15%, var(--color-panel)); }
+.ops-ring .fg { stroke: var(--rc); stroke-linecap: round; }
+.ops-ring .v { position: absolute; inset: 0; display: grid; place-items: center; font-size: 17px; font-weight: 750; color: var(--rc); font-variant-numeric: tabular-nums; }
+.ops-ring-card h3 { margin: 0 0 6px; font-size: 14.5px; font-weight: 650; color: var(--color-fg); }
+.ops-ring-card .l { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.55; }
+.ops-ring-card .l b { color: var(--color-fg); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+/* 2. Vendor training timeline */
+.ops-vt { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); gap: 30px 0; padding-top: 12px; }
+.ops-vt-m { min-width: 0; }
+.ops-vt-h { position: relative; display: flex; align-items: center; gap: 8px; padding: 0 12px 11px 0; margin-bottom: 11px; }
+.ops-vt-h::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--acc-line); }
+.ops-vt-h .dot { position: absolute; left: 0; bottom: -5.5px; z-index: 1; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--acc); background: var(--color-panel); box-sizing: border-box; }
+.ops-vt-h .m { font-weight: 700; font-size: 13.5px; color: var(--color-fg); white-space: nowrap; }
+.ops-vt-h .c { font-size: 11px; font-weight: 700; color: var(--acc); background: var(--acc-tint); border-radius: 999px; padding: 1px 8px; }
+.ops-vt-h .tag { position: absolute; left: 0; top: -21px; white-space: nowrap; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--color-panel); background: var(--acc); border-radius: 999px; padding: 2px 8px; }
+.ops-vt-m.now .ops-vt-h::after { background: var(--acc); }
+.ops-vt-m.now .dot { background: var(--acc); box-shadow: 0 0 0 5px var(--acc-tint); }
+.ops-vt-m.past { opacity: .55; }
+.ops-vt-m.past .dot { background: var(--acc-line); border-color: var(--acc-line); }
+.ops-vt-m ul { margin: 0; padding: 0 12px 0 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.ops-vt-m li { font-size: var(--cds-font-size-caption); line-height: 1.4; padding: 7px 10px; border-radius: 8px; background: var(--color-panel); border: 1px solid var(--color-border-line); border-left: 3px solid var(--acc); color: var(--color-fg); box-shadow: var(--shadow-card); }
+.ops-vt-m.now li { background: var(--acc-tint); border-color: var(--acc-line); border-left-color: var(--acc); font-weight: 600; }
+.ops-vt-m.past li { border-left-color: var(--acc-line); box-shadow: none; }
+/* 2. CBTA by platform */
+.ops-cbta { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 27rem), 1fr)); gap: var(--cds-gap-md); }
+.ops-cbta-g { display: flex; flex-direction: column; gap: 10px; padding: 12px 14px 14px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: linear-gradient(160deg, var(--acc-soft), var(--color-panel) 60%); box-shadow: var(--shadow-card); }
+.ops-cbta-gh { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding-bottom: 9px; border-bottom: 1px dashed var(--acc-line); }
+.ops-cbta-gh .p { font-weight: 800; font-size: 15px; letter-spacing: .05em; color: var(--acc); }
+.ops-cbta-gh .n { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.ops-cbta-gh .n b { color: var(--color-fg); font-size: 13.5px; }
+.ops-cbta .ops-bar { grid-template-columns: minmax(4.5rem, 6.5rem) 1fr auto; }
+.ops-cbta .ops-bar-label { font-weight: 600; }
+.ops-cbta .ops-bar-val { min-width: 5.5rem; }
+.ops-cbta .ops-stack { height: 18px; border-radius: 9px; }
+.ops-cbta .ops-stack > div { display: grid; place-items: center; overflow: hidden; font-size: 10.5px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
+.ops-cbta .ops-stack > div.s1 { color: #3a2600; }
+.ops-cbta .ops-stack > div.s2 { color: var(--color-fg); }
+.ops-cbtat td.pl { font-weight: 700; color: var(--acc); }
+.ops-cbtat th.pc { text-align: right; }
+.ops-pc { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.ops-pc .bar { flex: 1 1 auto; max-width: 5.5rem; min-width: 2.5rem; height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--acc) 15%, var(--color-panel)); overflow: hidden; }
+.ops-pc .bar i { display: block; height: 100%; border-radius: 3px; background: var(--acc); }
+.ops-pc .v { min-width: 3.3rem; text-align: right; font-variant-numeric: tabular-nums; }
+/* 3. Applications: CMMS card */
+.ops-cm { display: flex; flex-direction: column; gap: 12px; padding-top: 10px; border-top: 1px dashed var(--acc-line); }
+.ops-cm-r .t { display: flex; justify-content: space-between; gap: 8px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-bottom: 5px; }
+.ops-cm-r .t .k { font-weight: 700; color: var(--color-fg); }
+.ops-cm-r .t b { color: var(--color-fg); font-size: 13px; }
+.ops-cm-track { position: relative; height: 10px; border-radius: 5px; background: color-mix(in srgb, var(--acc) 15%, var(--color-panel)); }
+.ops-cm-track i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px; background: var(--acc); }
+.ops-cm-track u { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; border-radius: 1px; background: var(--color-fg); }
+.ops-cm-r .d { margin-top: 4px; font-size: 11px; font-weight: 600; color: var(--color-ok); }
+.ops-cm-r .d.neg { color: var(--color-bad); }
+/* 4. Permits */
+.ops-pm-teams { display: flex; flex-wrap: wrap; gap: 8px; }
+.ops-pm-teams button { font: inherit; font-size: 12.5px; display: inline-flex; align-items: center; gap: 8px; padding: 5px 6px 5px 12px; border-radius: 999px; border: 1px solid var(--acc-line);
+  background: var(--color-panel); color: var(--color-fg); cursor: pointer; transition: background var(--cds-dur-slow), color var(--cds-dur-slow), border-color var(--cds-dur-slow); }
+.ops-pm-teams button b { min-width: 24px; padding: 1px 7px; border-radius: 999px; font-size: 11px; text-align: center; background: var(--acc-tint); color: var(--acc); }
+.ops-pm-teams button:hover { background: var(--acc-tint); }
+.ops-pm-teams button[aria-pressed="true"] { background: var(--acc); border-color: var(--acc); color: var(--color-panel); }
+.ops-pm-teams button[aria-pressed="true"] b { background: color-mix(in srgb, var(--color-panel) 25%, transparent); color: var(--color-panel); }
+.ops-pm-teams button:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+.ops-permits tr.ops-grp td { border-bottom: 2px solid var(--acc-line); }
+.ops-permits tr.ops-grp .t { font-size: 13px; }
+.ops-permits tr.ops-grp .c { margin-left: 10px; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0; background: var(--color-panel); color: var(--acc); }
+.ops-permits .dt { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ops-permits small.rel { display: block; margin-top: 2px; font-size: 11px; color: var(--color-fg-muted); white-space: nowrap; }
+.ops-permits td.ops-bad small.rel { color: inherit; font-weight: 600; }
+.ops-permits .ops-pill.ops-txt { background: var(--acc-soft); border-color: var(--acc-line); color: var(--color-fg); white-space: nowrap; }
+.ops-permits td.ref { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ops-basis { margin: 0; padding: 10px 12px; border-left: 3px solid var(--acc); border-radius: 0 8px 8px 0; background: var(--acc-soft); color: var(--color-fg); }
+@media (max-width: 560px) {
+  .ops-ring-card { gap: 12px; } .ops-ring { width: 66px; height: 66px; } .ops-ring .v { font-size: 15px; }
+  .ops-pc .bar { display: none; }
+  .ops-pm-teams { flex-wrap: nowrap; overflow-x: auto; margin: 0 -2px; padding: 2px 2px 6px; scrollbar-width: thin; }
+  .ops-pm-teams button { flex: none; font-size: 12px; }
+}
+
 .ops-tl-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
 .ops-tl-legend span { display: inline-flex; align-items: center; gap: 7px; }
 .ops-tl-legend .ln { width: 2px; height: 14px; background: var(--rag-r, var(--color-bad)); border-radius: 1px; }
@@ -884,99 +979,96 @@
 
   <!-- 2 TRAINING -->
   <section class="ops-page" id="training" data-page="training" hidden>
-    <h2 class="ops-sec-title">2.1 Training matrix</h2>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-hse-matrix">
-        <div class="ops-cardhead"><div>
-          <h2>HSE training matrix</h2>
-          <p class="ops-note">Which HSE courses each position needs (PQ-MS-HSE-GDL-001-U01). Choose a position to list its courses.</p>
-        </div>
-        <select id="hse-role" aria-label="Position"><option value="">All positions</option></select></div>
-        <div class="ops-legend" id="hse-legend"></div>
-        <p class="ops-note" id="hse-role-sum" hidden></p>
-        <div class="ops-tablebox ops-matrixbox" id="hse-matrix" data-source="hse_matrix"></div>
+    <div class="ops-tiles" id="trn-kpis"></div>
+    <h2 class="ops-sec"><span class="n">2.1</span><span class="t">Training matrix</span></h2>
+    <div class="ops-card ops-bcard" id="card-hse-matrix">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">HSE training matrix</span><span class="ops-banner-n" id="hse-count">—</span></h2>
+      <div class="ops-bhead">
+        <p class="ops-note">Which HSE courses each position needs (PQ-MS-HSE-GDL-001-U01). Choose a position to list its courses.</p>
+        <select id="hse-role" aria-label="Position"><option value="">All positions</option></select>
       </div>
-      <div class="ops-card" id="card-mandatory">
-        <h2>Mandatory training – PQPOC offshore staff</h2>
-        <p class="ops-note">Courses completed vs required by the HSE training matrix.</p>
-        <div class="ops-bars" id="bars-mandatory" data-source="mandatory mandatory_summary"></div>
-      </div>
-      <div class="ops-card ops-wide" id="card-vendor">
-        <h2>Vendor training schedule</h2>
-        <p class="ops-note">Courses by month. Past months are dimmed.</p>
-        <div class="ops-months" id="vendor-months" data-source="vendor_training"></div>
-      </div>
+      <div class="ops-legend" id="hse-legend"></div>
+      <p class="ops-note" id="hse-role-sum" hidden></p>
+      <div class="ops-tablebox ops-matrixbox" id="hse-matrix" data-source="hse_matrix"></div>
     </div>
-    <h2 class="ops-sec-title">2.2 CBTA development</h2>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-cbta-dev">
-        <h2>CBTA module development</h2>
-        <div class="ops-coord-call" id="cbta-update" data-source="workstreams" hidden><span class="ops-coord-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z"/><path d="M11.5 13.5L20 4"/></svg></span><span><b>Latest update:</b> <span id="cbta-update-t"></span></span></div>
-        <p class="ops-note">Modules by status: completed, in review, in development.</p>
+    <div class="ops-card ops-bcard" id="card-mandatory">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Mandatory training – PQPOC offshore staff</span><span class="ops-banner-n" id="mand-count">—</span></h2>
+      <p class="ops-note">Courses completed vs required by the HSE training matrix, by team. Teams below 30% are shown in red.</p>
+      <div class="ops-rings" id="bars-mandatory" data-source="mandatory mandatory_summary"></div>
+    </div>
+    <div class="ops-card ops-bcard" id="card-vendor">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Vendor training schedule</span><span class="ops-banner-n" id="vendor-count">—</span></h2>
+      <p class="ops-note">Courses by month, in the order of the schedule. The current month is highlighted; past months are dimmed.</p>
+      <div class="ops-vt" id="vendor-months" data-source="vendor_training"></div>
+    </div>
+    <h2 class="ops-sec"><span class="n">2.2</span><span class="t">CBTA development</span></h2>
+    <div class="ops-card ops-bcard" id="card-cbta-dev">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">CBTA module development</span><span class="ops-banner-n" id="cbta-count">—</span></h2>
+      <div class="ops-coord-call" id="cbta-update" data-source="workstreams" hidden><span class="ops-coord-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z"/><path d="M11.5 13.5L20 4"/></svg></span><span><b>Latest update:</b> <span id="cbta-update-t"></span></span></div>
+      <div class="ops-bhead">
+        <p class="ops-note">Modules by status for each team: completed, in review, in development.</p>
         <div class="ops-legend" id="cbta-legend"></div>
-        <div class="ops-bars" id="bars-cbta" data-source="cbta cbta_progress"></div>
       </div>
-      <div class="ops-card ops-wide" id="card-cbta-modules">
-        <h2>CBTA module register</h2>
-        <p class="ops-note">Every defined module with its document number, status and author.</p>
-        <div class="ops-tools">
-          <input type="search" id="mod-q" placeholder="Search module, document no., author…" aria-label="Search modules">
-          <select id="mod-team" aria-label="Team"><option value="">All teams</option></select>
-          <select id="mod-status" aria-label="Module status"><option value="">All statuses</option><option value="Completed">Completed</option><option value="Review & Approval">Review &amp; Approval</option><option value="Developing">Developing</option><option value="-">Not started</option></select>
-        </div>
-        <div class="ops-check" id="mod-check" hidden></div>
-        <div class="ops-tablebox">
-          <table id="table-cbta-modules" data-source="cbta_modules" data-row-key="platform,team,no">
-            <thead><tr><th data-field="team">Team</th><th class="num" data-field="no">No.</th><th class="hide-sm" data-field="area">Area</th><th data-field="module">Module</th><th class="hide-sm" data-field="doc_no">Document no.</th><th data-field="status">Status</th><th class="hide-sm" data-field="developer">Author</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
+      <div class="ops-cbta" id="bars-cbta" data-source="cbta cbta_progress"></div>
+    </div>
+    <div class="ops-card ops-bcard" id="card-cbta-modules">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">CBTA module register</span><span class="ops-banner-n" id="mod-count">—</span></h2>
+      <p class="ops-note">Every defined module with its document number, status and author.</p>
+      <div class="ops-tools">
+        <input type="search" id="mod-q" placeholder="Search module, document no., author…" aria-label="Search modules">
+        <select id="mod-team" aria-label="Team"><option value="">All teams</option></select>
+        <select id="mod-status" aria-label="Module status"><option value="">All statuses</option><option value="Completed">Completed</option><option value="Review & Approval">Review &amp; Approval</option><option value="Developing">Developing</option><option value="-">Not started</option></select>
+      </div>
+      <div class="ops-check" id="mod-check" hidden></div>
+      <div class="ops-tablebox">
+        <table id="table-cbta-modules" data-source="cbta_modules" data-row-key="platform,team,no">
+          <thead><tr><th data-field="team">Team</th><th class="num" data-field="no">No.</th><th class="hide-sm" data-field="area">Area</th><th data-field="module">Module</th><th class="hide-sm" data-field="doc_no">Document no.</th><th data-field="status">Status</th><th class="hide-sm" data-field="developer">Author</th></tr></thead>
+          <tbody></tbody>
+        </table>
       </div>
     </div>
-    <h2 class="ops-sec-title">2.3 Training and assessment progress</h2>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-cbta-table">
-        <h2>CBTA by team: development and assessment</h2>
-        <p class="ops-note">Module development and theory / OJT assessment progress for each team.</p>
-        <div class="ops-tablebox">
-          <table id="table-cbta" data-source="cbta" data-row-key="platform,team">
-            <thead><tr>
-              <th data-field="platform">Platform</th><th data-field="team">Team</th><th class="num" data-field="modules">Modules</th><th class="num" data-field="completed">Completed</th><th class="num hide-sm" data-field="developing">In development</th><th class="num hide-sm" data-field="review">In review</th><th class="num" data-source="cbta_progress" data-field="progress_pct">% developed</th><th class="num" data-field="theory_pct">% theory assessed</th><th class="num hide-sm" data-field="ojt_modules">OJT modules</th><th class="num" data-field="ojt_pct">% OJT</th>
-            </tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
+    <h2 class="ops-sec"><span class="n">2.3</span><span class="t">Training and assessment progress</span></h2>
+    <div class="ops-card ops-bcard" id="card-cbta-table">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">CBTA by team: development and assessment</span><span class="ops-banner-n" id="cbta-t-count">—</span></h2>
+      <p class="ops-note">Module development and theory / OJT assessment progress for each team.</p>
+      <div class="ops-tablebox">
+        <table class="ops-cbtat" id="table-cbta" data-source="cbta" data-row-key="platform,team">
+          <thead><tr>
+            <th data-field="platform">Platform</th><th data-field="team">Team</th><th class="num" data-field="modules">Modules</th><th class="num" data-field="completed">Completed</th><th class="num hide-sm" data-field="developing">In development</th><th class="num hide-sm" data-field="review">In review</th><th class="pc" data-source="cbta_progress" data-field="progress_pct">% developed</th><th class="pc" data-field="theory_pct">% theory assessed</th><th class="num hide-sm" data-field="ojt_modules">OJT modules</th><th class="pc" data-field="ojt_pct">% OJT</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
       </div>
     </div>
   </section>
 
   <!-- 3 APPLICATIONS -->
   <section class="ops-page" id="apps" data-page="apps" hidden>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-apps">
-        <h2>Applications</h2>
-        <p class="ops-note">Status of operations software systems.</p>
-        <ul class="ops-list" id="list-apps" data-source="workstreams"></ul>
-        <h3>3.6 CMMS (OA) – actual vs plan %</h3>
-        <div class="ops-bars" id="bars-cmms" data-source="cmms"></div>
-      </div>
+    <div class="ops-tiles" id="app-kpis"></div>
+    <div class="ops-card ops-bcard" id="card-apps">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Applications</span><span class="ops-banner-n" id="app-count">—</span></h2>
+      <p class="ops-note">Status of each operations software system as written in the report. CMMS (OA) shows actual vs plan % for each EPCI package.</p>
+      <div class="ops-svc ops-app" id="list-apps" data-source="workstreams cmms"></div>
     </div>
   </section>
 
   <!-- 4 CERTIFICATES AND LICENSES -->
   <section class="ops-page" id="permits" data-page="permits" hidden>
-    <div class="ops-grid">
-      <div class="ops-card ops-wide" id="card-permits">
-        <h2>Offshore platform permit-license register list</h2>
-        <p class="ops-note">By team, in the order of the register. Dates as recorded; text such as “Not expired” or “not issued yet” is shown as written.</p>
-        <div class="ops-tablebox">
-          <table class="ops-permits" id="table-permits" data-source="permits" data-row-key="team,permit,facility,description">
-            <thead><tr><th data-field="no">No.</th><th data-field="permit">License / permit</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority / responsible</th><th class="hide-sm" data-field="ref_no">Ref. no.</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th><th class="hide-sm" data-field="remark">Remark</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-        <p class="ops-note" id="permit-basis" hidden></p>
+    <div class="ops-tiles" id="pm-kpis"></div>
+    <div class="ops-card ops-bcard" id="card-permits">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Offshore platform permit-license register list</span><span class="ops-banner-n" id="pm-count">—</span></h2>
+      <p class="ops-note">By team, in the order of the register. Dates as recorded; text such as “Not expired” or “not issued yet” is shown as written.</p>
+      <div class="ops-pm-teams" id="pm-teams" role="group" aria-label="Team"></div>
+      <div class="ops-tools">
+        <input type="search" id="pm-q" placeholder="Search permit, facility, authority, ref. no.…" aria-label="Search permits">
       </div>
+      <div class="ops-tablebox">
+        <table class="ops-permits" id="table-permits" data-source="permits" data-row-key="team,permit,facility,description">
+          <thead><tr><th class="num" data-field="no">No.</th><th data-field="permit">License / permit</th><th class="hide-sm" data-field="facility">Applies to</th><th class="hide-sm" data-field="authority">Authority / responsible</th><th class="hide-sm" data-field="ref_no">Ref. no.</th><th data-field="issue_date" data-vi="Ngày cấp">Issued</th><th data-field="expiry_date">Expires</th><th class="hide-sm" data-field="renewal_date">Renew by</th><th data-field="status">Status</th><th class="hide-sm" data-field="remark">Remark</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="ops-note ops-basis" id="permit-basis" hidden></p>
     </div>
   </section>
 
@@ -1673,55 +1765,118 @@ function drawCbtaUpdate() {
   box.hidden = !(r && r.status);
   document.getElementById('cbta-update-t').textContent = r && r.status ? D(r.status) : '';
 }
+// A KPI tile in the shared style of the section pages; frac adds a meter under the note.
+function kpiTile(label, big, note, opt = {}) {
+  const t = H.el('div', 'ops-tile');
+  t.append(H.el('span', 'ops-tile-label', label), H.el('span', 'ops-big' + (opt.cls ? ' ' + opt.cls : ''), big), H.el('span', 'ops-tile-note', note));
+  if (opt.frac != null && isFinite(opt.frac)) { const m = H.el('span', 'ops-tile-meter'), i = H.el('i'); i.style.width = Math.max(0, Math.min(1, opt.frac)) * 100 + '%'; m.append(i); t.append(m); }
+  return t;
+}
+const vtKey = d3.utcFormat('%Y-%m');
+function drawTrnKpis() {
+  const out = [];
+  const ms = dash.data('mandatory_summary'), tot = ms.status === 'ok' ? ms.data.find((r) => r.team === 'Total') : null;
+  out.push(kpiTile(L('Mandatory training · offshore staff', 'Đào tạo bắt buộc · nhân sự offshore'), tot ? H.pct(tot.pct) : '—',
+    tot ? L(`${H.num(tot.earned)} of ${H.num(tot.planned)} required courses completed, all teams`, `Đã hoàn thành ${H.num(tot.earned)}/${H.num(tot.planned)} khóa bắt buộc, tất cả các team`) : '', { frac: tot && tot.pct }));
+  const cs = dash.data('cbta_summary'), cg = (p) => (cs.status === 'ok' ? cs.data.find((r) => r.platform === p) : null);
+  const o = cg('Overall'), c = cg('CPP'), w = cg('WHP');
+  out.push(kpiTile(L('CBTA modules developed', 'Module CBTA đã biên soạn'), o ? H.pct(o.progress_pct) : '—',
+    c && w ? L(`CPP ${c.completed}/${c.modules} · WHP ${w.completed}/${w.modules} modules completed`, `CPP ${c.completed}/${c.modules} · WHP ${w.completed}/${w.modules} module hoàn thành`) : '', { frac: o && o.progress_pct }));
+  const vt = dash.data('vendor_training');
+  if (vt.status === 'ok') {
+    const key = vtKey(H.REPORT_DATE), now = vt.data.filter((r) => r.period === key);
+    const nextKey = now.length ? null : vt.data.map((r) => r.period).filter((p) => p.length > 4 && p > key).sort()[0];
+    const pick = now.length ? now : vt.data.filter((r) => r.period === nextKey);
+    out.push(kpiTile(now.length ? L(`Vendor courses this month · ${H.fmtMonth(H.month(key))}`, `Khóa vendor tháng này · ${H.fmtMonth(H.month(key))}`)
+      : L('Next vendor courses' + (nextKey ? ` · ${H.fmtMonth(H.month(nextKey))}` : ''), 'Khóa vendor tiếp theo' + (nextKey ? ` · ${H.fmtMonth(H.month(nextKey))}` : '')),
+      String(pick.length), pick.map((r) => r.course).join(' · ') || L('No course scheduled', 'Chưa có khóa nào')));
+  }
+  const hm = dash.data('hse_matrix'), npos = HSE_GROUPS.reduce((n, g) => n + g[1].length, 0);
+  out.push(kpiTile(L('HSE training matrix · courses', 'Ma trận đào tạo HSE · khóa học'), hm.status === 'ok' ? String(hm.data.length) : '—',
+    L(`${npos} positions: onshore, emergency teams, offshore CPP and WHP`, `${npos} vị trí: trên bờ, đội ứng cứu, ngoài khơi CPP và WHP`)));
+  document.getElementById('trn-kpis').replaceChildren(...out);
+}
 function drawMandatory() {
-  const box = document.getElementById('bars-mandatory');
+  const box = document.getElementById('bars-mandatory'), count = document.getElementById('mand-count');
   const data = H.state('mandatory', box), sum = dash.data('mandatory_summary');
-  if (!data || sum.status !== 'ok') return;
+  if (!data || sum.status !== 'ok') { count.textContent = '—'; return; }
+  const tot = sum.data.find((r) => r.team === 'Total');
+  count.textContent = L(`${H.num(tot.earned)} / ${H.num(tot.planned)} courses · ${H.pct(tot.pct)}`, `${H.num(tot.earned)} / ${H.num(tot.planned)} khóa · ${H.pct(tot.pct)}`);
+  const R = 34, C = 2 * Math.PI * R;
   box.replaceChildren(...data.map((d) => {
-    const s = sum.data.find((r) => r.team === d.team);
-    const v = H.el('span'); v.append(H.el('b', null, H.pct0(s.pct)), ` · ${H.num(d.earned)}/${H.num(d.planned)}`);
-    return H.bar(d.team, d.earned / d.planned, s.pct < 0.3 ? 'var(--cds-chart-status-critical)' : dash.colors[0], v);
+    const s = sum.data.find((r) => r.team === d.team), f = Math.max(0, Math.min(1, s.pct));
+    const card = H.el('div', 'ops-ring-card' + (s.pct < 0.3 ? ' low' : ''));
+    const ring = H.el('div', 'ops-ring');
+    ring.innerHTML = `<svg viewBox="0 0 84 84" aria-hidden="true"><circle class="bg" cx="42" cy="42" r="${R}"/><circle class="fg" cx="42" cy="42" r="${R}" stroke-dasharray="${C * f} ${C}" transform="rotate(-90 42 42)"/></svg>`;
+    ring.append(H.el('span', 'v', H.pct0(s.pct)));
+    const body = H.el('div', 'b'), l1 = H.el('div', 'l'), l2 = H.el('div', 'l');
+    l1.append(H.el('b', null, H.num(d.earned)), L(` / ${H.num(d.planned)} courses completed`, ` / ${H.num(d.planned)} khóa đã hoàn thành`));
+    l2.append(H.el('b', null, H.num(d.balance ?? d.planned - d.earned)), L(' remaining', ' còn lại'));
+    body.append(H.el('h3', null, d.team), l1, l2);
+    card.append(ring, body);
+    return card;
   }));
 }
 
 function drawCbta() {
-  const box = document.getElementById('bars-cbta');
-  const data = H.state('cbta', box), prog = dash.data('cbta_progress');
+  const box = document.getElementById('bars-cbta'), count = document.getElementById('cbta-count');
+  const data = H.state('cbta', box), prog = dash.data('cbta_progress'), cs = dash.data('cbta_summary');
   const cols = [dash.colors[0], dash.colors[2], 'var(--cds-chart-muted)'];
   document.getElementById('cbta-legend').replaceChildren(...[L('Completed', 'Hoàn thành'), L('In review', 'Đang soát xét'), L('In development', 'Đang biên soạn')].map((n, i) => { const sp = H.el('span'); const sw = H.el('span', 'ops-sw'); sw.style.background = cols[i]; sp.append(sw, n); return sp; }));
-  if (!data || prog.status !== 'ok') return;
-  box.replaceChildren(...data.map((d) => {
-    const row = H.el('div', 'ops-bar');
-    const st = H.el('div', 'ops-stack');
-    [d.completed, d.review || 0, d.developing || 0].forEach((n, i) => { const s = H.el('div'); s.style.width = (n / d.modules) * 100 + '%'; s.style.background = cols[i]; st.append(s); });
-    const p = prog.data.find((r) => r.platform === d.platform && r.team === d.team);
-    const v = H.el('div', 'ops-bar-val'); v.append(H.el('b', null, H.pct0(p.progress_pct)), ` · ${d.completed}/${d.modules}`);
-    row.append(H.el('div', 'ops-bar-label', `${d.platform} ${d.team}`), st, v);
-    return row;
+  if (!data || prog.status !== 'ok') { count.textContent = '—'; return; }
+  const sumOf = (p) => (cs.status === 'ok' ? cs.data.find((r) => r.platform === p) : null), all = sumOf('Overall');
+  count.textContent = all ? L(`${all.completed} / ${all.modules} modules completed`, `${all.completed} / ${all.modules} module hoàn thành`) : '—';
+  box.replaceChildren(...d3.groups(data, (d) => d.platform).map(([plat, rows]) => {
+    const g = H.el('div', 'ops-cbta-g'), gh = H.el('div', 'ops-cbta-gh'), s = sumOf(plat), n = H.el('span', 'n');
+    if (s) n.append(H.el('b', null, H.pct(s.progress_pct)), L(` · ${s.completed}/${s.modules} modules completed`, ` · ${s.completed}/${s.modules} module hoàn thành`));
+    gh.append(H.el('span', 'p', plat), n);
+    g.append(gh, ...rows.map((d) => {
+      const row = H.el('div', 'ops-bar'), st = H.el('div', 'ops-stack');
+      [d.completed, d.review || 0, d.developing || 0].forEach((v, i) => {
+        const seg = H.el('div', 's' + i); seg.style.width = (v / d.modules) * 100 + '%'; seg.style.background = cols[i];
+        if (v && v / d.modules >= 0.07) seg.textContent = v;
+        seg.title = `${[L('Completed', 'Hoàn thành'), L('In review', 'Đang soát xét'), L('In development', 'Đang biên soạn')][i]}: ${v}`;
+        st.append(seg);
+      });
+      const p = prog.data.find((r) => r.platform === d.platform && r.team === d.team);
+      const v = H.el('div', 'ops-bar-val'); v.append(H.el('b', null, H.pct0(p.progress_pct)), ` · ${d.completed}/${d.modules}`);
+      row.append(H.el('div', 'ops-bar-label', d.team), st, v);
+      return row;
+    }));
+    return g;
   }));
+  document.getElementById('cbta-t-count').textContent = L(`${data.length} teams · CPP and WHP`, `${data.length} team · CPP và WHP`);
   const tb = document.querySelector('#table-cbta tbody');
   tb.replaceChildren(...data.map((d) => {
     const tr = H.el('tr');
     tr.dataset.key = [d.platform, d.team].map(encodeURIComponent).join(',');
     const p = prog.data.find((r) => r.platform === d.platform && r.team === d.team);
-    [[d.platform], [d.team], [H.num(d.modules), 'num'], [H.num(d.completed), 'num'], [d.developing ?? '—', 'num hide-sm'], [d.review ?? '—', 'num hide-sm'],
-     [H.pct(p.progress_pct), 'num'], [H.p100(d.theory_pct), 'num'], [H.num(d.ojt_modules), 'num hide-sm'], [H.p100(d.ojt_pct), 'num']]
+    const pc = (f, txt) => {
+      const td = H.el('td', 'pc'), w = H.el('span', 'ops-pc'), bar = H.el('span', 'bar'), i = H.el('i');
+      i.style.width = Math.max(0, Math.min(1, f || 0)) * 100 + '%'; bar.append(i); w.append(bar, H.el('span', 'v', txt)); td.append(w); return td;
+    };
+    [[d.platform, 'pl'], [d.team], [H.num(d.modules), 'num'], [H.num(d.completed), 'num'], [d.developing ?? '—', 'num hide-sm'], [d.review ?? '—', 'num hide-sm']]
       .forEach(([t, c]) => tr.append(H.el('td', c, String(t))));
+    tr.append(pc(p.progress_pct, H.pct(p.progress_pct)), pc(d.theory_pct / 100, H.p100(d.theory_pct)), H.el('td', 'num hide-sm', H.num(d.ojt_modules)), pc(d.ojt_pct / 100, H.p100(d.ojt_pct)));
     return tr;
   }));
 }
 
 function drawVendor() {
-  const box = document.getElementById('vendor-months');
+  const box = document.getElementById('vendor-months'), count = document.getElementById('vendor-count');
   const data = H.state('vendor_training', box);
-  if (!data) return;
-  const groups = d3.groups(data, (d) => d.period);
+  if (!data) { count.textContent = '—'; return; }
+  const groups = d3.groups(data, (d) => d.period), cur = d3.utcMonth.floor(H.REPORT_DATE);
+  count.textContent = L(`${data.length} courses · ${groups.length} periods`, `${data.length} khóa · ${groups.length} mốc thời gian`);
   box.replaceChildren(...groups.map(([p, rows]) => {
-    const card = H.el('div', 'ops-month');
-    const label = p.length === 4 ? L('Year ', 'Năm ') + p : H.fmtMonth(H.month(p));
-    if (p.length > 4 && d3.utcMonth.offset(H.month(p), 1) <= d3.utcMonth.floor(H.REPORT_DATE)) card.classList.add('past');
-    card.append(H.el('span', 'm', label), ...rows.map((r) => H.el('span', null, r.course)));
-    return card;
+    const year = p.length === 4, m = year ? null : H.month(p);
+    const state = year ? 'later' : +m === +cur ? 'now' : m < cur ? 'past' : 'later';
+    const col = H.el('div', 'ops-vt-m ' + state), head = H.el('div', 'ops-vt-h');
+    head.append(H.el('i', 'dot'), H.el('span', 'm', year ? L('Year ', 'Năm ') + p : H.fmtMonth(m)), H.el('span', 'c', String(rows.length)));
+    if (state === 'now') head.append(H.el('span', 'tag', L('This month', 'Tháng này')));
+    const ul = H.el('ul'); rows.forEach((r) => ul.append(H.el('li', null, r.course)));
+    col.append(head, ul);
+    return col;
   }));
 }
 
@@ -1730,7 +1885,7 @@ const MOD_STATUS = { Completed: ['ops-good', 'Completed', 'Hoàn thành'], 'Revi
 function drawCbtaModules() {
   const tb = document.querySelector('#table-cbta-modules tbody'), check = document.getElementById('mod-check');
   const d = dash.data('cbta_modules');
-  if (d.status !== 'ok') { tb.replaceChildren(); check.hidden = true; return; }
+  if (d.status !== 'ok') { tb.replaceChildren(); check.hidden = true; document.getElementById('mod-count').textContent = '—'; return; }
   const teamSel = document.getElementById('mod-team'), teams = [...new Set(d.data.map((r) => `${r.platform} ${r.team}`))];
   if (teamSel.options.length !== teams.length + 1) {
     const keep = teamSel.value;
@@ -1740,6 +1895,8 @@ function drawCbtaModules() {
   const q = document.getElementById('mod-q').value.trim().toLowerCase(), team = teamSel.value, st = document.getElementById('mod-status').value;
   const rows = d.data.filter((r) => (!team || `${r.platform} ${r.team}` === team) && (!st || (st === '-' ? !r.status : r.status === st))
     && (!q || [r.module, r.doc_no, r.developer, r.area].join(' ').toLowerCase().includes(q)));
+  document.getElementById('mod-count').textContent = rows.length === d.data.length ? L(`${d.data.length} modules`, `${d.data.length} module`)
+    : L(`${rows.length} of ${d.data.length} modules`, `${rows.length}/${d.data.length} module`);
   tb.replaceChildren(...rows.map((r) => {
     const tr = H.el('tr'), s = MOD_STATUS[r.status], td = H.el('td');
     td.append(H.el('span', 'ops-pill ' + (s ? s[0] : ''), s ? L(s[1], s[2]) : L('Not started', 'Chưa bắt đầu')));
@@ -1802,6 +1959,7 @@ function drawHseMatrix() {
   const extra = [...new Set(rows.flatMap((r) => Object.keys(r)))].filter((k) => k !== 'no' && k !== 'course' && !known.includes(k));
   const groups = extra.length ? [...HSE_GROUPS, [['Other', 'Khác'], extra]] : HSE_GROUPS;
   const roles = groups.flatMap((g) => g[1]);
+  document.getElementById('hse-count').textContent = L(`${rows.length} courses · ${roles.length} positions`, `${rows.length} khóa học · ${roles.length} vị trí`);
   if (sel.options.length !== roles.length + 1) {
     const keep = sel.value;
     sel.replaceChildren(H.el('option', null, L('All positions', 'Tất cả vị trí')), ...roles.map((r) => H.el('option', null, r)));
@@ -2056,36 +2214,66 @@ function drawPackages() {
   }));
 }
 
-// Rows in report order (column "no", e.g. 3.1 … 3.7); a row the report gives no status for says so.
+// Report order comes from column "no" (e.g. 3.1 … 3.7).
 const itemNo = (r) => (r.no || '').split('.').map(Number);
-function listInto(id, rows) {
-  const ul = document.getElementById(id);
-  const sorted = rows.slice().sort((a, b) => { const x = itemNo(a), y = itemNo(b); return (x[0] || 99) - (y[0] || 99) || (x[1] || 0) - (y[1] || 0); });
-  ul.replaceChildren(...sorted.map((r) => {
-    const li = H.el('li');
-    li.append(H.el('span', 'k', (r.no ? r.no + ' ' : '') + D(r.item)), r.status ? H.el('span', null, D(r.status)) : H.el('span', 'ops-none', L('No information yet', 'Chưa có thông tin')));
-    return li;
-  }));
+// 3. Applications. One card per system in report order; the status is shown as written. CMMS (OA) is the
+// 3.6 card and shows actual vs plan % for each EPCI package.
+const APP_ICONS = [
+  [/pdms/i, '<ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/>'],
+  [/aims/i, '<path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6z"/><path d="M8.6 12.2l2.3 2.3 4.6-4.8"/>'],
+  [/oscc/i, '<rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M8.5 20.5h7M12 16.5v4M6.5 12.5l3-3.2 2.6 2.4 4.4-4.4"/>'],
+  [/hris/i, '<rect x="3.5" y="5" width="17" height="14" rx="2.5"/><circle cx="9" cy="11" r="2.3"/><path d="M5.8 16.2a3.5 3.5 0 0 1 6.4 0M14.5 10h3.5M14.5 13.5h3.5"/>'],
+  [/eam|sap/i, '<circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.6M12 18.6v2.6M21.2 12h-2.6M5.4 12H2.8M18.5 5.5l-1.8 1.8M7.3 16.7l-1.8 1.8M18.5 18.5l-1.8-1.8M7.3 7.3L5.5 5.5"/>'],
+  [/cmms/i, '<path d="M14.7 6.3a4 4 0 0 0-5.2 5.2l-6 6a1.8 1.8 0 0 0 2.6 2.6l6-6a4 4 0 0 0 5.2-5.2l-2.5 2.5-2.4-.6-.6-2.4z"/>'],
+  [/oms/i, '<path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5M3 16.5L12 21l9-4.5"/>'],
+];
+function appItems() {
+  const d = dash.data('workstreams'), cm = dash.data('cmms');
+  if (d.status !== 'ok') return null;
+  const items = d.data.filter((r) => r.area === 'Applications').map((r) => ({ no: r.no, item: r.item, status: r.status }));
+  if (cm.status === 'ok' && cm.data.length) items.push({ no: '3.6', item: 'CMMS (OA)', cmms: cm.data.slice().sort((a, b) => (a.package < b.package ? -1 : 1)) });
+  return items.sort((a, b) => { const x = itemNo(a), y = itemNo(b); return (x[0] || 99) - (y[0] || 99) || (x[1] || 0) - (y[1] || 0); });
 }
 function drawWorkstreams() {
-  const d = dash.data('workstreams');
-  // Each list shows its own rows; the production profile row is the note under 8.2, and commissioning splits
-  // into preservation (10.1) and the rest (10.2).
-  const pres = (r) => /preserv/i.test(r.item || '');
-  const lists = {
-    'list-apps': (r) => r.area === 'Applications',
-  };
-  Object.entries(lists).forEach(([id, keep]) => { if (d.status === 'ok') listInto(id, d.data.filter(keep)); else document.getElementById(id).replaceChildren(); });
-}
-
-function drawCmms() {
-  const box = document.getElementById('bars-cmms');
-  const data = H.state('cmms', box);
-  if (!data) return;
-  box.replaceChildren(...data.map((d) => {
-    const v = H.el('span'); v.append(H.el('b', null, H.p100(d.actual_pct)), L(' / plan ', ' / KH ') + H.p100(d.plan_pct));
-    return H.bar(d.package, d.actual_pct / 100, dash.colors[0], v, d.plan_pct / 100);
+  const box = document.getElementById('list-apps'), count = document.getElementById('app-count'), kpis = document.getElementById('app-kpis');
+  const items = appItems();
+  if (!items) { box.replaceChildren(); kpis.replaceChildren(); count.textContent = '—'; return; }
+  const pts = (r) => r.actual_pct - r.plan_pct, fpts = (v) => (v > 0 ? '+' : v < 0 ? '−' : '') + H.f1(Math.abs(v));
+  box.replaceChildren(...items.map((r) => {
+    const has = r.status || r.cmms, card = H.el('article', 'ops-svc-card' + (has ? '' : ' empty'));
+    const head = H.el('div', 'ops-svc-head'), hit = APP_ICONS.find(([re]) => re.test(r.item || ''));
+    const ic = H.el('span', 'ops-svc-ic'); ic.setAttribute('aria-hidden', 'true');
+    ic.innerHTML = `<svg viewBox="0 0 24 24">${hit ? hit[1] : '<rect x="4" y="4" width="16" height="16" rx="3"/>'}</svg>`;
+    head.append(ic, H.el('span', 'ops-svc-no', r.no || '—'));
+    card.append(head, H.el('h3', null, r.item));
+    if (r.cmms) {
+      const cm = H.el('div', 'ops-cm');
+      r.cmms.forEach((c) => {
+        const row = H.el('div', 'ops-cm-r'), t = H.el('div', 't'), v = H.el('span');
+        v.append(H.el('b', null, H.p100(c.actual_pct)), L(` / plan ${H.p100(c.plan_pct)}`, ` / KH ${H.p100(c.plan_pct)}`));
+        t.append(H.el('span', 'k', c.package), v);
+        const tr = H.el('div', 'ops-cm-track'), fill = H.el('i'), tick = H.el('u');
+        fill.style.width = Math.min(100, c.actual_pct) + '%'; tick.style.left = Math.min(100, c.plan_pct) + '%'; tick.title = L('Plan ', 'Kế hoạch ') + H.p100(c.plan_pct);
+        tr.append(fill, tick);
+        const dv = pts(c);
+        row.append(t, tr, H.el('div', 'd' + (dv < 0 ? ' neg' : ''), L(`${fpts(dv)} pts vs plan`, `${fpts(dv)} điểm % so với KH`)));
+        cm.append(row);
+      });
+      card.append(cm);
+    } else card.append(H.el('p', null, r.status ? D(r.status) : L('No information yet', 'Chưa có thông tin')));
+    return card;
   }));
+  const n = items.filter((r) => r.status || r.cmms).length;
+  count.textContent = L(`${items.length} systems · ${n} with a status`, `${items.length} hệ thống · ${n} có cập nhật`);
+  const out = [kpiTile(L('Systems tracked', 'Hệ thống theo dõi'), String(items.length), n === items.length
+    ? L('Every system has a status in the report', 'Tất cả hệ thống đều có cập nhật trong báo cáo')
+    : L(`${n} with a status · ${items.length - n} no information yet`, `${n} có cập nhật · ${items.length - n} chưa có thông tin`))];
+  (items.find((r) => r.cmms) || { cmms: [] }).cmms.forEach((c) => {
+    const dv = pts(c);
+    out.push(kpiTile(`CMMS (OA) · ${c.package}`, H.p100(c.actual_pct),
+      L(`Plan ${H.p100(c.plan_pct)} · ${fpts(dv)} pts vs plan`, `Kế hoạch ${H.p100(c.plan_pct)} · ${fpts(dv)} điểm % so với KH`), { frac: c.actual_pct / 100 }));
+  });
+  kpis.replaceChildren(...out);
 }
 
 // 6. Logistics. One card per service in report order (6.1 …), the status shown as written; a service the
@@ -2234,31 +2422,89 @@ function drawTender() {
   }));
 }
 
+// 4. Permits. Register order (seq) with a team / sub-group heading row before each block. Team buttons and
+// the search box only filter the rows; dates and texts are shown as recorded.
+let pmTeam = '';
+document.getElementById('pm-q').addEventListener('input', drawPermits);
+document.getElementById('pm-teams').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  pmTeam = b.dataset.team; drawPermits();
+});
 function drawPermits() {
-  const tb = document.querySelector('#table-permits tbody');
+  const tb = document.querySelector('#table-permits tbody'), count = document.getElementById('pm-count');
   const d = dash.data('permits');
-  if (d.status !== 'ok') { tb.replaceChildren(); return; }
-  // Rows come in register order (seq); a team or sub-group heading row starts each block.
+  if (d.status !== 'ok') { tb.replaceChildren(); count.textContent = '—'; document.getElementById('pm-kpis').replaceChildren(); return; }
+  const all = d.data, R = H.REPORT_DATE, DAY = 864e5;
+  const teams = d3.groups(all, (r) => r.team || '');
+  if (pmTeam && !teams.some(([t]) => t === pmTeam)) pmTeam = '';
+
+  // KPIs
+  const nIss = all.filter((r) => r.issue_date).length, nNotIss = all.filter((r) => /not issued/i.test(r.issue_text || '')).length;
+  const nExp = all.filter((r) => r.expiry_date).length, nNotExp = all.filter((r) => /not expired/i.test(r.expiry_text || '')).length;
+  const dated = all.filter((r) => r.expiry_date).map((r) => ({ r, d: H.day(r.expiry_date) })).sort((a, b) => a.d - b.d);
+  const expired = dated.filter((x) => x.d < R), soon = dated.filter((x) => x.d >= R && (x.d - R) / DAY <= 180);
+  const first = dated.find((x) => x.d >= R);
+  document.getElementById('pm-kpis').replaceChildren(
+    kpiTile(L('Permits in register', 'Giấy phép trong danh mục'), String(all.length), L(`${teams.length} teams`, `${teams.length} team`)),
+    kpiTile(L('Issue date recorded', 'Đã ghi ngày cấp'), `${nIss} / ${all.length}`,
+      nNotIss ? L(`${nNotIss} recorded as “not issued yet”`, `${nNotIss} ghi “not issued yet”`) : L('As recorded in the register', 'Theo danh mục'), { frac: nIss / all.length }),
+    kpiTile(L('Expiry date recorded', 'Đã ghi ngày hết hạn'), `${nExp} / ${all.length}`,
+      nNotExp ? L(`${nNotExp} recorded as “Not expired”`, `${nNotExp} ghi “Not expired”`) : L('As recorded in the register', 'Theo danh mục'), { frac: nExp / all.length }),
+    kpiTile(expired.length ? L('Expired · or expiring within 6 months', 'Đã hết hạn · hoặc hết hạn trong 6 tháng') : L('Expiring within 6 months', 'Hết hạn trong 6 tháng'),
+      expired.length ? `${expired.length} · ${soon.length}` : String(soon.length),
+      first ? L(`Earliest recorded expiry: ${H.fmtDay(first.d)} · ${first.r.permit.trim()}`, `Ngày hết hạn sớm nhất: ${H.fmtDay(first.d)} · ${first.r.permit.trim()}`) : L('No future expiry date recorded', 'Chưa có ngày hết hạn sắp tới'),
+      { cls: expired.length || soon.length ? 'ops-warn' : '' }));
+
+  // Team filter
+  const btn = (team, label, n) => {
+    const b = H.el('button'); b.type = 'button'; b.dataset.team = team; b.setAttribute('aria-pressed', String(pmTeam === team));
+    b.append(H.el('span', null, label), H.el('b', null, String(n))); return b;
+  };
+  document.getElementById('pm-teams').replaceChildren(btn('', L('All teams', 'Tất cả team'), all.length), ...teams.map(([t, rs]) => btn(t, D(t || L('No team', 'Chưa có team')), rs.length)));
+
+  const q = document.getElementById('pm-q').value.trim().toLowerCase();
+  const rows = all.filter((r) => (!pmTeam || (r.team || '') === pmTeam)
+    && (!q || [r.permit, r.description, r.facility, r.authority, r.responsible, r.ref_no, r.remark, r.group].join(' ').toLowerCase().includes(q)));
+  count.textContent = rows.length === all.length ? L(`${all.length} permits · ${teams.length} teams`, `${all.length} giấy phép · ${teams.length} team`)
+    : L(`${rows.length} of ${all.length} permits`, `${rows.length}/${all.length} giấy phép`);
+
   const cols = 10, out = [];
   let team = null, group = null;
-  const head = (cls, text) => { const tr = H.el('tr', cls); const td = H.el('td', null, text); td.colSpan = cols; tr.append(td); return tr; };
-  const when = (date, text) => (date ? H.fmtDay(H.day(date)) : text || '—');
-  d.data.forEach((r) => {
-    if (r.team !== team) { team = r.team; group = null; out.push(head('ops-grp', D(team || L('No team', 'Chưa có team')))); }
+  const head = (cls, text, n) => {
+    const tr = H.el('tr', cls), td = H.el('td'); td.colSpan = cols;
+    td.append(H.el('span', 't', text)); if (n != null) td.append(H.el('span', 'c', L(`${n} permits`, `${n} giấy phép`)));
+    tr.append(td); return tr;
+  };
+  const when = (date, text, cls) => {
+    const td = H.el('td', cls || null);
+    if (date) td.append(H.el('span', 'dt', H.fmtDay(H.day(date))));
+    else if (text) td.append(H.el('span', 'ops-pill ops-txt', text));
+    else td.textContent = '—';
+    return td;
+  };
+  const perTeam = d3.rollup(rows, (v) => v.length, (r) => r.team || '');
+  rows.forEach((r) => {
+    if (r.team !== team) { team = r.team; group = null; out.push(head('ops-grp', D(team || L('No team', 'Chưa có team')), perTeam.get(team || ''))); }
     if (r.group && r.group !== group) { group = r.group; out.push(head('ops-subgrp', D(group))); }
     const tr = H.el('tr');
     const c = r.status === 'Issued' ? 'ops-good' : r.status === 'Temporary' ? 'ops-warn' : (r.status || '').startsWith('Waiting') ? 'ops-bad' : '';
     const st = H.el('td'); st.append(r.status ? H.el('span', 'ops-pill ' + c, D(r.status)) : document.createTextNode('—'));
     const name = H.el('td', 'nm'); name.append(H.el('span', null, r.permit)); if (r.description) name.append(H.el('span', 'ops-sub2', r.description));
     const who = [r.authority, r.responsible].filter(Boolean).join(' · ');
-    const exp = H.el('td', r.expiry_date && H.day(r.expiry_date) < H.REPORT_DATE ? 'ops-bad' : null, when(r.expiry_date, r.expiry_text));
-    tr.append(H.el('td', 'num', r.no || ''), name, H.el('td', 'hide-sm', r.facility || '—'), H.el('td', 'hide-sm', who || '—'), H.el('td', 'hide-sm', r.ref_no || '—'),
-      H.el('td', null, when(r.issue_date, r.issue_text)), exp, H.el('td', 'hide-sm', when(r.renewal_date, r.renewal_text)), st, H.el('td', 'hide-sm', r.remark || ''));
+    const ex = r.expiry_date ? H.day(r.expiry_date) : null;
+    const exp = when(r.expiry_date, r.expiry_text, ex && ex < R ? 'ops-bad' : null);
+    if (ex) {
+      const mo = Math.round((ex - R) / DAY / 30.44);
+      exp.append(H.el('small', 'rel', ex < R ? L('expired', 'đã hết hạn') : mo < 1 ? L('within a month', 'trong tháng tới') : L(`in ${mo} months`, `còn ${mo} tháng`)));
+    }
+    tr.append(H.el('td', 'num', r.no || ''), name, H.el('td', 'hide-sm', r.facility || '—'), H.el('td', 'hide-sm', who || '—'), H.el('td', 'hide-sm ref', r.ref_no || '—'),
+      when(r.issue_date, r.issue_text), exp, when(r.renewal_date, r.renewal_text, 'hide-sm'), st, H.el('td', 'hide-sm', r.remark || ''));
     out.push(tr);
   });
+  if (!rows.length) out.push(head('ops-subgrp', L('No permit matches the filter.', 'Không có giấy phép nào khớp bộ lọc.')));
   tb.replaceChildren(...out);
   // The legal basis is the same for whole families of permits: list each one once under the table.
-  const basis = d3.groups(d.data.filter((r) => r.compliance), (r) => r.compliance), note = document.getElementById('permit-basis');
+  const basis = d3.groups(all.filter((r) => r.compliance), (r) => r.compliance), note = document.getElementById('permit-basis');
   note.hidden = !basis.length;
   note.textContent = basis.map(([b, rs]) => L('Legal basis (', 'Căn cứ pháp lý (') + rs.length + L(' permits): ', ' giấy phép): ') + b).join(' · ');
 }
@@ -2550,8 +2796,8 @@ function drawSteps() {
 function draw() {
   drawKpis();
   if (currentPage === 'manpower') { drawMpKpis(); drawManpower(); drawStaffing(); drawMpTable(); }
-  if (currentPage === 'training') { drawCbtaUpdate(); drawHseMatrix(); drawMandatory(); drawVendor(); drawCbta(); drawCbtaModules(); }
-  if (currentPage === 'apps') { drawWorkstreams(); drawCmms(); }
+  if (currentPage === 'training') { drawTrnKpis(); drawCbtaUpdate(); drawHseMatrix(); drawMandatory(); drawVendor(); drawCbta(); drawCbtaModules(); }
+  if (currentPage === 'apps') drawWorkstreams();
   if (currentPage === 'permits') drawPermits();
   if (currentPage === 'procedures') drawProcedures();
   if (currentPage === 'logistics') { drawServices(); drawTender(); }

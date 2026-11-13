@@ -271,7 +271,16 @@
   "Package": "Gói thầu",
   "ORR checklist · OPS teams": "ORR checklist · các team OPS",
   "Manpower ramp-up": "Tăng cường nhân sự",
-  "Readiness by section": "Mức độ sẵn sàng theo hạng mục"
+  "Readiness by section": "Mức độ sẵn sàng theo hạng mục",
+  "Training matrix": "Ma trận đào tạo",
+  "CBTA development": "Xây dựng CBTA",
+  "Training and assessment progress": "Tiến độ đào tạo và đánh giá",
+  "Courses completed vs required by the HSE training matrix, by team. Teams below 30% are shown in red.": "Số khóa đã hoàn thành so với yêu cầu của HSE training matrix, theo từng team. Các team dưới 30% được thể hiện bằng màu đỏ.",
+  "Courses by month, in the order of the schedule. The current month is highlighted; past months are dimmed.": "Khóa đào tạo theo tháng, theo thứ tự của lịch đào tạo. Tháng hiện tại được làm nổi bật; các tháng đã qua được làm mờ.",
+  "Modules by status for each team: completed, in review, in development.": "Số module theo trạng thái của từng team: hoàn thành, đang soát xét, đang biên soạn.",
+  "Status of each operations software system as written in the report. CMMS (OA) shows actual vs plan % for each EPCI package.": "Tình trạng từng hệ thống phần mềm vận hành, giữ nguyên nội dung báo cáo. CMMS (OA) thể hiện % thực tế so với kế hoạch của từng gói EPCI.",
+  "Search permit, facility, authority, ref. no.…": "Tìm theo giấy phép, công trình, cơ quan cấp, số hiệu…",
+  "Search permits": "Tìm giấy phép"
  },
  "data": {
   "Manpower": "Nhân sự",
