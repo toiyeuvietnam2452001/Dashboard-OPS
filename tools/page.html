@@ -849,6 +849,49 @@
   .ops-count > span { transition: none !important; }
   .ops-count-label { color: var(--brand-ink); } .ops-count-num, .ops-count-date { color: var(--color-fg-muted); } .ops-count-num b { color: var(--color-fg); }
 }
+
+/* Glass look for the ten section pages, in the language of the overview: a soft tinted backdrop in the
+   page's own colour, frosted cards and tiles, a translucent colour band on card titles. */
+.ops-page.gl { position: relative; isolation: isolate; margin-inline: -14px; padding: 16px 14px 22px; border-radius: 28px;
+  background:
+    radial-gradient(640px 500px at 0 0, color-mix(in srgb, var(--acc) 34%, transparent), transparent 72%),
+    radial-gradient(560px 460px at 100% 360px, color-mix(in srgb, #0E9F6E 17%, transparent), transparent 72%),
+    radial-gradient(520px 420px at 72% 0, color-mix(in srgb, var(--acc) 16%, transparent), transparent 72%),
+    radial-gradient(620px 480px at 18% 1250px, color-mix(in srgb, #E0A526 15%, transparent), transparent 72%),
+    radial-gradient(600px 480px at 96% 2100px, color-mix(in srgb, var(--acc) 22%, transparent), transparent 72%),
+    radial-gradient(620px 480px at 10% 3000px, color-mix(in srgb, #0E9F6E 14%, transparent), transparent 72%),
+    radial-gradient(640px 480px at 80% 3900px, color-mix(in srgb, #E0A526 14%, transparent), transparent 72%),
+    radial-gradient(640px 420px at 40% 100%, color-mix(in srgb, var(--acc) 16%, transparent), transparent 72%),
+    linear-gradient(170deg, color-mix(in srgb, var(--acc) 8%, var(--color-bg)), var(--color-bg) 40%, color-mix(in srgb, var(--brand) 5%, var(--color-bg))); }
+.gl {
+  --gl-bg: color-mix(in srgb, var(--color-panel) 66%, transparent);
+  --gl-bg2: color-mix(in srgb, var(--color-panel) 52%, transparent);
+  --gl-line: color-mix(in srgb, #ffffff 58%, transparent);
+  --gl-hi: inset 0 1px 0 color-mix(in srgb, #ffffff 72%, transparent);
+  --gl-shadow: 0 22px 48px -28px rgba(15, 23, 42, .42);
+}
+:root[data-theme="dark"] .gl { --gl-bg: color-mix(in srgb, var(--color-panel) 58%, transparent); --gl-bg2: color-mix(in srgb, var(--color-panel) 44%, transparent);
+  --gl-line: color-mix(in srgb, #ffffff 10%, transparent); --gl-hi: inset 0 1px 0 color-mix(in srgb, #ffffff 12%, transparent); --gl-shadow: 0 22px 48px -28px rgba(0, 0, 0, .7); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .gl { --gl-bg: color-mix(in srgb, var(--color-panel) 58%, transparent); --gl-bg2: color-mix(in srgb, var(--color-panel) 44%, transparent);
+  --gl-line: color-mix(in srgb, #ffffff 10%, transparent); --gl-hi: inset 0 1px 0 color-mix(in srgb, #ffffff 12%, transparent); --gl-shadow: 0 22px 48px -28px rgba(0, 0, 0, .7); } }
+.gl .ops-card, .gl .ops-tile { position: relative; background: var(--gl-bg); -webkit-backdrop-filter: blur(18px) saturate(1.35); backdrop-filter: blur(18px) saturate(1.35);
+  border: 1px solid var(--gl-line); border-radius: 20px; box-shadow: var(--gl-hi), var(--gl-shadow); }
+.gl .ops-card:not(.ops-bcard):not(.ops-proc-card)::before, .gl .ops-tile::before { content: ""; position: absolute; left: 18px; right: 18px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--acc); }
+.gl .ops-tile { overflow: hidden; }
+.gl .ops-card.ops-bcard, .gl .ops-card.ops-proc-card { overflow: hidden; }
+.gl .ops-card h2.ops-banner { background: linear-gradient(100deg, color-mix(in srgb, var(--acc) 90%, transparent), color-mix(in srgb, var(--acc) 58%, transparent));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 28%, transparent), inset 0 -1px 0 color-mix(in srgb, #000000 8%, transparent); }
+.gl :is(.ops-svc-card, .ops-ring-card, .ops-cbta-g, .ops-coord-sum, .ops-com-card, .ops-month, .ops-rag-tile, .ops-seq li, .ops-tender) {
+  background: linear-gradient(160deg, color-mix(in srgb, var(--acc) 9%, transparent), var(--gl-bg2) 60%); border-color: var(--gl-line); border-radius: 16px; box-shadow: var(--gl-hi), 0 14px 30px -24px rgba(15, 23, 42, .4); }
+.gl .ops-ring-card.low { background: linear-gradient(160deg, color-mix(in srgb, var(--color-bad) 10%, transparent), var(--gl-bg2) 60%); }
+.gl .ops-svc-card.empty { background: var(--gl-bg2); }
+.gl .ops-vt-m li { background: var(--gl-bg2); border-color: var(--gl-line); }
+.gl .ops-vt-m.now li { background: color-mix(in srgb, var(--acc) 14%, transparent); }
+.gl .ops-tablebox { border-radius: 14px; }
+.gl :is(input[type="search"], select) { background: var(--gl-bg2); border-color: var(--gl-line); }
+.ops-svc-head h3 { flex: 1 1 auto; min-width: 0; }
+@media (max-width: 560px) { .ops-page.gl { margin-inline: -8px; padding: 10px 8px 16px; border-radius: 22px; } }
+@media print { .ops-page.gl { background: none; margin: 0; padding: 0; } .gl .ops-card, .gl .ops-tile { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--color-panel); box-shadow: none; } }
 </style>
 
 <div class="ops">
@@ -900,16 +943,16 @@
 
   <nav class="ops-tabs" role="tablist" aria-label="Report sections">
     <button class="ops-tab" role="tab" id="tab-overview" data-page="overview" aria-selected="true">Overview</button>
-    <button class="ops-tab" role="tab" id="tab-manpower" data-page="manpower" aria-selected="false">1. Manpower</button>
-    <button class="ops-tab" role="tab" id="tab-training" data-page="training" aria-selected="false">2. Training</button>
-    <button class="ops-tab" role="tab" id="tab-apps" data-page="apps" aria-selected="false">3. Applications</button>
-    <button class="ops-tab" role="tab" id="tab-permits" data-page="permits" aria-selected="false">4. Certificates &amp; licenses</button>
-    <button class="ops-tab" role="tab" id="tab-procedures" data-page="procedures" aria-selected="false">5. Procedures</button>
-    <button class="ops-tab" role="tab" id="tab-logistics" data-page="logistics" aria-selected="false">6. Logistics &amp; services</button>
-    <button class="ops-tab" role="tab" id="tab-contracts" data-page="contracts" aria-selected="false">7. Contracts</button>
-    <button class="ops-tab" role="tab" id="tab-coordination" data-page="coordination" aria-selected="false">8. Coordination</button>
-    <button class="ops-tab" role="tab" id="tab-orr" data-page="orr" aria-selected="false">9. ORR checklist</button>
-    <button class="ops-tab" role="tab" id="tab-startup" data-page="startup" aria-selected="false">10. Preservation &amp; commissioning</button>
+    <button class="ops-tab" role="tab" id="tab-manpower" data-page="manpower" aria-selected="false">Manpower</button>
+    <button class="ops-tab" role="tab" id="tab-training" data-page="training" aria-selected="false">Training</button>
+    <button class="ops-tab" role="tab" id="tab-apps" data-page="apps" aria-selected="false">Applications</button>
+    <button class="ops-tab" role="tab" id="tab-permits" data-page="permits" aria-selected="false">Certificates &amp; licenses</button>
+    <button class="ops-tab" role="tab" id="tab-procedures" data-page="procedures" aria-selected="false">Procedures</button>
+    <button class="ops-tab" role="tab" id="tab-logistics" data-page="logistics" aria-selected="false">Logistics &amp; services</button>
+    <button class="ops-tab" role="tab" id="tab-contracts" data-page="contracts" aria-selected="false">Contracts</button>
+    <button class="ops-tab" role="tab" id="tab-coordination" data-page="coordination" aria-selected="false">Coordination</button>
+    <button class="ops-tab" role="tab" id="tab-orr" data-page="orr" aria-selected="false">ORR checklist</button>
+    <button class="ops-tab" role="tab" id="tab-startup" data-page="startup" aria-selected="false">Preservation &amp; commissioning</button>
     <button class="ops-tab" role="tab" id="tab-changes" data-page="changes" aria-selected="false" hidden>Changes</button>
   </nav>
 
@@ -947,7 +990,7 @@
   </section>
 
   <!-- 1 MANPOWER -->
-  <section class="ops-page" id="manpower" data-page="manpower" hidden>
+  <section class="ops-page gl" id="manpower" data-page="manpower" hidden>
     <div class="ops-tiles" id="mp-kpis" data-source="manpower manpower_groups staffing"></div>
     <div class="ops-card ops-bcard" id="card-manpower">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Manpower ramp-up: plan vs actual</span><span class="ops-banner-n" id="mp-n">—</span></h2>
@@ -978,9 +1021,9 @@
   </section>
 
   <!-- 2 TRAINING -->
-  <section class="ops-page" id="training" data-page="training" hidden>
+  <section class="ops-page gl" id="training" data-page="training" hidden>
     <div class="ops-tiles" id="trn-kpis"></div>
-    <h2 class="ops-sec"><span class="n">2.1</span><span class="t">Training matrix</span></h2>
+    <h2 class="ops-sec"><span class="t">Training matrix</span></h2>
     <div class="ops-card ops-bcard" id="card-hse-matrix">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">HSE training matrix</span><span class="ops-banner-n" id="hse-count">—</span></h2>
       <div class="ops-bhead">
@@ -1001,7 +1044,7 @@
       <p class="ops-note">Courses by month, in the order of the schedule. The current month is highlighted; past months are dimmed.</p>
       <div class="ops-vt" id="vendor-months" data-source="vendor_training"></div>
     </div>
-    <h2 class="ops-sec"><span class="n">2.2</span><span class="t">CBTA development</span></h2>
+    <h2 class="ops-sec"><span class="t">CBTA development</span></h2>
     <div class="ops-card ops-bcard" id="card-cbta-dev">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">CBTA module development</span><span class="ops-banner-n" id="cbta-count">—</span></h2>
       <div class="ops-coord-call" id="cbta-update" data-source="workstreams" hidden><span class="ops-coord-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z"/><path d="M11.5 13.5L20 4"/></svg></span><span><b>Latest update:</b> <span id="cbta-update-t"></span></span></div>
@@ -1027,7 +1070,7 @@
         </table>
       </div>
     </div>
-    <h2 class="ops-sec"><span class="n">2.3</span><span class="t">Training and assessment progress</span></h2>
+    <h2 class="ops-sec"><span class="t">Training and assessment progress</span></h2>
     <div class="ops-card ops-bcard" id="card-cbta-table">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">CBTA by team: development and assessment</span><span class="ops-banner-n" id="cbta-t-count">—</span></h2>
       <p class="ops-note">Module development and theory / OJT assessment progress for each team.</p>
@@ -1043,7 +1086,7 @@
   </section>
 
   <!-- 3 APPLICATIONS -->
-  <section class="ops-page" id="apps" data-page="apps" hidden>
+  <section class="ops-page gl" id="apps" data-page="apps" hidden>
     <div class="ops-tiles" id="app-kpis"></div>
     <div class="ops-card ops-bcard" id="card-apps">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Applications</span><span class="ops-banner-n" id="app-count">—</span></h2>
@@ -1053,7 +1096,7 @@
   </section>
 
   <!-- 4 CERTIFICATES AND LICENSES -->
-  <section class="ops-page" id="permits" data-page="permits" hidden>
+  <section class="ops-page gl" id="permits" data-page="permits" hidden>
     <div class="ops-tiles" id="pm-kpis"></div>
     <div class="ops-card ops-bcard" id="card-permits">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Offshore platform permit-license register list</span><span class="ops-banner-n" id="pm-count">—</span></h2>
@@ -1073,7 +1116,7 @@
   </section>
 
   <!-- PROCEDURES -->
-  <section class="ops-page" id="procedures" data-page="procedures" hidden>
+  <section class="ops-page gl" id="procedures" data-page="procedures" hidden>
     <div class="ops-tiles">
       <div class="ops-tile"><span class="ops-tile-label">HSE procedures · <span data-source="proc_summary" data-where="category=HSE" data-field="docs">—</span> documents</span><span class="ops-big" data-source="proc_summary" data-where="category=HSE" data-field="completion_pct">—</span><span class="ops-tile-note"><span data-source="proc_summary" data-where="category=HSE" data-field="open">—</span> not yet issued</span></div>
       <div class="ops-tile"><span class="ops-tile-label">General operations procedures · <span data-source="proc_summary" data-where="category=General%20operations" data-field="docs">—</span> documents</span><span class="ops-big" data-source="proc_summary" data-where="category=General%20operations" data-field="completion_pct">—</span><span class="ops-tile-note"><span data-source="proc_summary" data-where="category=General%20operations" data-field="open">—</span> not yet issued</span></div>
@@ -1109,7 +1152,7 @@
   </section>
 
   <!-- 6 LOGISTICS AND SERVICES -->
-  <section class="ops-page" id="logistics" data-page="logistics" hidden>
+  <section class="ops-page gl" id="logistics" data-page="logistics" hidden>
     <div class="ops-tiles" id="log-kpis"></div>
     <div class="ops-card ops-bcard" id="card-logistics">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Logistics and services</span><span class="ops-banner-n" id="log-count">—</span></h2>
@@ -1127,7 +1170,7 @@
   </section>
 
   <!-- 7 CONTRACTS -->
-  <section class="ops-page" id="contracts" data-page="contracts" hidden>
+  <section class="ops-page gl" id="contracts" data-page="contracts" hidden>
     <div class="ops-tiles" id="cp-kpis"></div>
     <div class="ops-card ops-bcard" id="card-cp">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Contract packages by current status</span><span class="ops-banner-n" id="cp-n">—</span></h2>
@@ -1164,15 +1207,15 @@
   </section>
 
   <!-- 8 COORDINATION -->
-  <section class="ops-page" id="coordination" data-page="coordination" hidden>
+  <section class="ops-page gl" id="coordination" data-page="coordination" hidden>
     <div class="ops-coord-top" id="coord-top" data-source="workstreams"></div>
     <div class="ops-card ops-bcard" id="card-coordination">
-      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">8.1 Coordination procedure</span><span class="ops-banner-n">Report status</span></h2>
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Coordination procedure</span><span class="ops-banner-n">Report status</span></h2>
       <p class="ops-note">As written in the report, one line per sentence. Party names are highlighted.</p>
       <ol class="ops-coord-steps" id="list-coord" data-source="workstreams"></ol>
     </div>
     <div class="ops-card ops-bcard" id="card-gas-profile">
-      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">8.2 Production profile</span><span class="ops-banner-n">Sales gas capability vs requirement</span></h2>
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Production profile</span><span class="ops-banner-n">Sales gas capability vs requirement</span></h2>
       <div class="ops-coord-call" id="gas-profile-call"><span class="ops-coord-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z"/><path d="M11.5 13.5L20 4"/></svg></span><span id="gas-profile-note">—</span></div>
       <figure class="ops-coord-fig">
         <a href="assets/production-profile.png" target="_blank" rel="noopener" title="Open full size"><img src="assets/production-profile.png" width="1363" height="580" loading="lazy" alt="Chart of sales gas delivery capability against total sales gas requirement, July 2027 to January 2028, in MMscfd"></a>
@@ -1186,7 +1229,7 @@
 
 
   <!-- ORR -->
-  <section class="ops-page" id="orr" data-page="orr" hidden>
+  <section class="ops-page gl" id="orr" data-page="orr" hidden>
     <div class="ops-tiles">
       <div class="ops-tile"><span class="ops-tile-label">Whole checklist · <span data-source="orr_groups" data-where="group=TOTAL" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=TOTAL" data-field="progress_pct">—</span></div>
       <div class="ops-tile"><span class="ops-tile-label">People · <span data-source="orr_groups" data-where="group=PEOPLE" data-field="items">—</span> items</span><span class="ops-big" data-source="orr_groups" data-where="group=PEOPLE" data-field="progress_pct">—</span></div>
@@ -1291,7 +1334,7 @@
   </section>
 
   <!-- 10 PRESERVATION, FAT, INSTALLATION, PRE-COM, COMMISSIONING -->
-  <section class="ops-page" id="startup" data-page="startup" hidden>
+  <section class="ops-page gl" id="startup" data-page="startup" hidden>
     <div class="ops-com-top" id="com-top" data-source="workstreams"></div>
     <div class="ops-card ops-bcard" id="card-precom">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">CPP pre-commissioning master plan (Train 1)</span><span class="ops-banner-n" id="precom-n">—</span></h2>
@@ -2244,8 +2287,8 @@ function drawWorkstreams() {
     const head = H.el('div', 'ops-svc-head'), hit = APP_ICONS.find(([re]) => re.test(r.item || ''));
     const ic = H.el('span', 'ops-svc-ic'); ic.setAttribute('aria-hidden', 'true');
     ic.innerHTML = `<svg viewBox="0 0 24 24">${hit ? hit[1] : '<rect x="4" y="4" width="16" height="16" rx="3"/>'}</svg>`;
-    head.append(ic, H.el('span', 'ops-svc-no', r.no || '—'));
-    card.append(head, H.el('h3', null, r.item));
+    head.append(ic, H.el('h3', null, r.item));
+    card.append(head);
     if (r.cmms) {
       const cm = H.el('div', 'ops-cm');
       r.cmms.forEach((c) => {
@@ -2306,8 +2349,8 @@ function drawServices() {
   box.replaceChildren(...rows.map((r) => {
     const card = H.el('article', 'ops-svc-card' + (r.status ? '' : ' empty'));
     const head = H.el('div', 'ops-svc-head');
-    head.append(svcIcon(r.item), H.el('span', 'ops-svc-no', r.no || '—'));
-    card.append(head, H.el('h3', null, D(r.item)), H.el('p', null, r.status ? D(r.status) : L('No information yet', 'Chưa có thông tin')));
+    head.append(svcIcon(r.item), H.el('h3', null, D(r.item)));
+    card.append(head, H.el('p', null, r.status ? D(r.status) : L('No information yet', 'Chưa có thông tin')));
     return card;
   }));
   const n = rows.filter((r) => r.status).length;
@@ -2425,6 +2468,7 @@ function drawTender() {
 // 4. Permits. Register order (seq) with a team / sub-group heading row before each block. Team buttons and
 // the search box only filter the rows; dates and texts are shown as recorded.
 let pmTeam = '';
+const teamName = (t) => (t ? D(t).replace(/^\s*\d+\s*[.)]\s*/, '') : L('No team', 'Chưa có team'));
 document.getElementById('pm-q').addEventListener('input', drawPermits);
 document.getElementById('pm-teams').addEventListener('click', (e) => {
   const b = e.target.closest('button'); if (!b) return;
@@ -2460,7 +2504,7 @@ function drawPermits() {
     const b = H.el('button'); b.type = 'button'; b.dataset.team = team; b.setAttribute('aria-pressed', String(pmTeam === team));
     b.append(H.el('span', null, label), H.el('b', null, String(n))); return b;
   };
-  document.getElementById('pm-teams').replaceChildren(btn('', L('All teams', 'Tất cả team'), all.length), ...teams.map(([t, rs]) => btn(t, D(t || L('No team', 'Chưa có team')), rs.length)));
+  document.getElementById('pm-teams').replaceChildren(btn('', L('All teams', 'Tất cả team'), all.length), ...teams.map(([t, rs]) => btn(t, teamName(t), rs.length)));
 
   const q = document.getElementById('pm-q').value.trim().toLowerCase();
   const rows = all.filter((r) => (!pmTeam || (r.team || '') === pmTeam)
@@ -2484,7 +2528,7 @@ function drawPermits() {
   };
   const perTeam = d3.rollup(rows, (v) => v.length, (r) => r.team || '');
   rows.forEach((r) => {
-    if (r.team !== team) { team = r.team; group = null; out.push(head('ops-grp', D(team || L('No team', 'Chưa có team')), perTeam.get(team || ''))); }
+    if (r.team !== team) { team = r.team; group = null; out.push(head('ops-grp', teamName(team), perTeam.get(team || ''))); }
     if (r.group && r.group !== group) { group = r.group; out.push(head('ops-subgrp', D(group))); }
     const tr = H.el('tr');
     const c = r.status === 'Issued' ? 'ops-good' : r.status === 'Temporary' ? 'ops-warn' : (r.status || '').startsWith('Waiting') ? 'ops-bad' : '';
@@ -2540,7 +2584,7 @@ function drawCoordination() {
     a.addEventListener('click', (e) => { e.preventDefault(); document.getElementById(target).scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     const ic = H.el('span', 'ops-coord-ic'); ic.setAttribute('aria-hidden', 'true'); ic.innerHTML = `<svg viewBox="0 0 24 24">${COORD_ICONS[no]}</svg>`;
     const b = H.el('span', 'b');
-    b.append(H.el('span', 'lab', no), H.el('span', 't', D((r && r.item) || item)),
+    b.append(H.el('span', 't', D((r && r.item) || item)),
       r && r.status ? H.el('span', 's', D(r.status)) : H.el('span', 's ops-none', L('No information yet', 'Chưa có thông tin')));
     a.append(ic, b, H.el('span', 'go', '↓'));
     return a;
@@ -2721,7 +2765,7 @@ function drawCommissioning() {
   const d = dash.data('workstreams');
   const rows = d.status === 'ok' ? d.data.filter((r) => r.area === 'Commissioning') : [];
   const pres = (r) => /preserv/i.test(r.item || '');
-  const spec = [['10.1', L('10.1 Preservation', '10.1 Bảo quản'), rows.find(pres)], ['10.2', L('10.2 Installation, pre-com, commissioning', '10.2 Lắp đặt, tiền chạy thử, chạy thử'), rows.find((r) => !pres(r))]];
+  const spec = [['10.1', L('Preservation', 'Bảo quản'), rows.find(pres)], ['10.2', L('Installation, pre-com, commissioning', 'Lắp đặt, tiền chạy thử, chạy thử'), rows.find((r) => !pres(r))]];
   document.getElementById('com-top').replaceChildren(...spec.map(([no, sec, r]) => {
     const card = H.el('article', 'ops-com-card' + (r && r.status ? '' : ' empty'));
     const head = H.el('div', 'h'), ic = H.el('span', 'ops-coord-ic'); ic.setAttribute('aria-hidden', 'true');
@@ -3085,7 +3129,7 @@ function drawOverview() {
       sub: L(`${cps.filter((r) => r.current_status === 'Contract Signed').length} signed · ${cps.filter((r) => r.current_status === 'Contract Signing').length} signing` + (cpRos[0] ? ` · earliest ROS ${H.fmtDay(H.day(cpRos[0]))}` : ''),
         `${cps.filter((r) => r.current_status === 'Contract Signed').length} đã ký · ${cps.filter((r) => r.current_status === 'Contract Signing').length} đang ký` + (cpRos[0] ? ` · ROS sớm nhất ${H.fmtDay(H.day(cpRos[0]))}` : '')) },
     { no: 8, tab: 'coordination', t: L('Coordination', 'Điều phối'), big: null,
-      lines: wsArea('Coordination').slice().sort((a, b) => (a.no < b.no ? -1 : 1)).map((r) => [r.no, D(r.status || '')]) },
+      lines: wsArea('Coordination').slice().sort((a, b) => (a.no < b.no ? -1 : 1)).map((r) => [D(r.item || '') + ':', D(r.status || '')]) },
     { no: 9, tab: 'orr', t: L('ORR checklist', 'ORR checklist'), area: 'ORR Checklist', big: oc ? p1(oc.actual_pct) : '—', frac: oc ? oc.actual_pct / 100 : null,
       sub: oc ? L(`Plan ${p1(oc.plan_pct)} · ${(gap >= 0 ? '+' : '−') + H.f1(Math.abs(gap))} pts`, `KH ${p1(oc.plan_pct)} · ${(gap >= 0 ? '+' : '−') + H.f1(Math.abs(gap))} điểm`) : '' },
     { no: 10, tab: 'startup', t: L('Preservation & commissioning', 'Bảo quản & chạy thử'), area: 'Commissioning & Start-up', big: `${pre.length}<small> ${L('pre-com activities', 'hạng mục pre-com')}</small>`,
@@ -3096,7 +3140,7 @@ function drawOverview() {
     const el = document.createElement('button'); el.type = 'button'; el.className = 'ov-glass ov-sec ov-reveal'; el.dataset.page = c.tab; el.style.setProperty('--i', 3 + i);
     el.addEventListener('click', () => goTab(c.tab));
     const top = H.el('span', 'top'), ic = H.el('span', 'ic'); ic.innerHTML = ovSvg(c.tab); ic.setAttribute('aria-hidden', 'true');
-    top.append(ic, H.el('span', 'no', String(c.no)));
+    top.append(ic);
     const st = status(c.area); if (st) { const chip = H.el('span', 'rag ' + st); chip.append(H.el('i'), STATE2[st]); top.append(chip); }
     el.append(top, H.el('span', 't', c.t));
     if (c.big != null) { const b = H.el('span', 'big'); b.innerHTML = c.big; el.append(b); }

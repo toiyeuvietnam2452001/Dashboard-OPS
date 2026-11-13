@@ -280,7 +280,15 @@
   "Modules by status for each team: completed, in review, in development.": "Số module theo trạng thái của từng team: hoàn thành, đang soát xét, đang biên soạn.",
   "Status of each operations software system as written in the report. CMMS (OA) shows actual vs plan % for each EPCI package.": "Tình trạng từng hệ thống phần mềm vận hành, giữ nguyên nội dung báo cáo. CMMS (OA) thể hiện % thực tế so với kế hoạch của từng gói EPCI.",
   "Search permit, facility, authority, ref. no.…": "Tìm theo giấy phép, công trình, cơ quan cấp, số hiệu…",
-  "Search permits": "Tìm giấy phép"
+  "Search permits": "Tìm giấy phép",
+  "Manpower": "Nhân sự",
+  "Training": "Đào tạo",
+  "Certificates & licenses": "Chứng chỉ & giấy phép",
+  "Logistics & services": "Hậu cần & dịch vụ",
+  "Contracts": "Hợp đồng",
+  "Coordination": "Điều phối",
+  "Preservation & commissioning": "Bảo quản & chạy thử",
+  "Production profile": "Biểu đồ khai thác"
  },
  "data": {
   "Manpower": "Nhân sự",
