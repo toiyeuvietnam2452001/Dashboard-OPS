@@ -268,7 +268,10 @@
   "Current status": "Trạng thái hiện tại",
   "ROS required": "ROS yêu cầu",
   "Latest update (Remarks / Status)": "Cập nhật (Remarks / Status)",
-  "Package": "Gói thầu"
+  "Package": "Gói thầu",
+  "ORR checklist · OPS teams": "ORR checklist · các team OPS",
+  "Manpower ramp-up": "Tăng cường nhân sự",
+  "Readiness by section": "Mức độ sẵn sàng theo hạng mục"
  },
  "data": {
   "Manpower": "Nhân sự",

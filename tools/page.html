@@ -643,6 +643,81 @@
 .ops-cpt td.c-up .k { display: inline-block; margin-right: 6px; padding: 0 6px; border-radius: 4px; background: var(--acc-tint); color: var(--acc); font-size: 10.5px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; vertical-align: 1px; }
 .ops-cpt tbody tr:not(.grp):hover > td { background: var(--acc-soft); }
 @media (max-width: 560px) { .ops-cpt { table-layout: auto; } .ops-cpt td.c-pkg .sm { display: block; } .ops-cpt .c-pkg { width: 50%; } .ops-cpt .c-st { width: 28%; } .ops-cpt .c-ros { width: 22%; } .ops-cp-mini { max-width: 70px; } .ops-cp-pill { font-size: 11px; } .ops-cpt th, .ops-cpt td { padding: 8px 6px; } .ops-cp-count { margin-left: 0; } }
+/* Overview: glass concept */
+.ov { position: relative; isolation: isolate; gap: 18px; padding: 6px 2px 4px; --ov-acc: var(--brand); }
+.ov-bg { position: absolute; inset: -24px -16px; z-index: -1; overflow: hidden; border-radius: 28px; pointer-events: none;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--brand) 10%, var(--color-bg)), var(--color-bg) 55%, color-mix(in srgb, #0B8445 9%, var(--color-bg))); }
+.ov-bg i { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; }
+.ov-bg .b1 { width: 46%; height: 52%; left: -6%; top: -8%; background: color-mix(in srgb, var(--brand) 45%, transparent); }
+.ov-bg .b2 { width: 40%; height: 46%; right: -4%; top: 6%; background: color-mix(in srgb, #0E9F6E 40%, transparent); }
+.ov-bg .b3 { width: 50%; height: 40%; left: 28%; bottom: -10%; background: color-mix(in srgb, #E0A526 28%, transparent); }
+.ov-glass { position: relative; border-radius: 20px; color: var(--color-fg); text-align: left; font: inherit;
+  background: color-mix(in srgb, var(--color-panel) 66%, transparent); -webkit-backdrop-filter: blur(18px) saturate(1.35); backdrop-filter: blur(18px) saturate(1.35);
+  border: 1px solid color-mix(in srgb, #ffffff 55%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 70%, transparent), 0 22px 48px -28px rgba(15, 23, 42, .45); }
+:root[data-theme="dark"] .ov-glass { border-color: color-mix(in srgb, #ffffff 10%, transparent); box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 12%, transparent), 0 22px 48px -28px rgba(0, 0, 0, .7); background: color-mix(in srgb, var(--color-panel) 58%, transparent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ov-glass { border-color: color-mix(in srgb, #ffffff 10%, transparent); box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 12%, transparent), 0 22px 48px -28px rgba(0, 0, 0, .7); background: color-mix(in srgb, var(--color-panel) 58%, transparent); } }
+:root[data-theme="dark"] .ov-bg i { opacity: .32; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ov-bg i { opacity: .32; } }
+.ov-panel { padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+.ov-hero { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.5fr); gap: 16px; }
+.ov-hero > button { cursor: pointer; transition: transform var(--cds-dur-slow), box-shadow var(--cds-dur-slow); }
+.ov-hero > button:hover, .ov-sec:hover { transform: translateY(-2px); }
+.ov-ptitle { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; font-weight: 600; color: var(--color-fg-muted); letter-spacing: .02em; }
+.ov-ico { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 10px; background: color-mix(in srgb, var(--ov-acc) 14%, transparent); color: var(--ov-acc); }
+.ov-ico svg, .ov-sec .ic svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ov-bignum { font-family: var(--font-anthropic-serif); font-size: clamp(38px, 4.2vw, 56px); line-height: 1.05; letter-spacing: -.02em; }
+.ov-meta { font-size: 12.5px; color: var(--color-fg-muted); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.ov-chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-weight: 700; font-size: 12px; }
+.ov-chip.up { color: var(--color-ok); background: color-mix(in srgb, var(--color-ok) 14%, transparent); }
+.ov-chip.down { color: var(--color-bad); background: color-mix(in srgb, var(--color-bad) 13%, transparent); }
+.ov-spark, .ov-area { display: block; width: 100%; margin-top: auto; }
+.ov-foot { font-size: 11.5px; color: var(--color-fg-muted); }
+.ov-sum { display: flex; flex-wrap: wrap; gap: 8px 30px; }
+.ov-sum .it { display: flex; flex-direction: column; gap: 2px; }
+.ov-sum .k { font-size: 11px; color: var(--color-fg-muted); display: inline-flex; align-items: center; gap: 6px; }
+.ov-sum .it.a .k::before, .ov-sum .it.p .k::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ov-acc); }
+.ov-sum .it.p .k::before { background: var(--color-fg-muted); }
+.ov-sum b { font-size: 24px; font-weight: 600; letter-spacing: -.02em; }
+.ov svg .ov-grid { stroke: currentColor; opacity: .1; stroke-dasharray: 3 5; }
+.ov svg .ov-plan { fill: none; stroke: var(--color-fg-muted); stroke-width: 1.8; stroke-dasharray: 5 4; opacity: .8; }
+.ov svg .ov-act { fill: none; stroke: var(--ov-acc); stroke-width: 2.6; stroke-linecap: round; }
+.ov svg .ov-dot { fill: var(--ov-acc); stroke: var(--color-panel); stroke-width: 2; }
+.ov svg .ov-today { stroke: var(--rag-r, var(--color-bad)); stroke-width: 1.5; opacity: .6; stroke-dasharray: 2 3; }
+.ov-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.ov-head h2 { margin: 0; font-size: 15px; font-weight: 650; letter-spacing: .01em; }
+.ov-sections { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.ov-sec { padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: transform var(--cds-dur-slow), border-color var(--cds-dur-slow); min-width: 0; }
+.ov-sec::before { content: ""; position: absolute; left: 16px; right: 16px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--acc); }
+.ov-sec .top { display: flex; align-items: center; gap: 8px; }
+.ov-sec .ic { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; background: color-mix(in srgb, var(--acc) 15%, transparent); color: var(--acc); flex: none; }
+.ov-sec .no { font-size: 11px; font-weight: 700; color: var(--acc); padding: 1px 7px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--acc) 35%, transparent); }
+.ov-sec .rag { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 650; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.ov-sec .rag i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.ov-sec .rag.g { color: var(--rag-g); background: color-mix(in srgb, var(--rag-g) 13%, transparent); }
+.ov-sec .rag.a { color: var(--rag-a); background: color-mix(in srgb, var(--rag-a) 14%, transparent); }
+.ov-sec .rag.r { color: var(--rag-r); background: color-mix(in srgb, var(--rag-r) 12%, transparent); }
+.ov-sec .rag.n { color: var(--color-fg-muted); background: color-mix(in srgb, var(--color-fg-muted) 12%, transparent); }
+.ov-sec .t { font-size: 13.5px; font-weight: 650; margin-top: 4px; }
+.ov-sec .big { font-family: var(--font-anthropic-serif); font-size: 26px; line-height: 1.15; letter-spacing: -.01em; }
+.ov-sec .big small { font-family: var(--font-anthropic-sans); font-size: 12px; color: var(--color-fg-muted); letter-spacing: 0; }
+.ov-sec .meter { height: 5px; border-radius: 3px; background: color-mix(in srgb, var(--acc) 14%, transparent); overflow: hidden; }
+.ov-sec .meter i { display: block; height: 100%; border-radius: 3px; background: var(--acc); }
+.ov-sec .sub, .ov-sec .line { font-size: 11.5px; line-height: 1.45; color: var(--color-fg-muted); }
+.ov-sec .line { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.ov-sec .line b { color: var(--acc); }
+.ov-sec .go { margin-top: auto; padding-top: 6px; font-size: 11.5px; font-weight: 650; color: var(--acc); opacity: .85; }
+.ov-lower { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 16px; }
+.ov-lower .ov-panel h2 { font-size: 15px; font-weight: 650; margin: 0; }
+.ov .ops-attn li { background: color-mix(in srgb, var(--color-panel) 70%, transparent); border: 1px solid color-mix(in srgb, var(--color-border-line) 70%, transparent); border-radius: 10px; padding: 8px 10px; }
+.ov-reveal { animation: ov-in .55s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 45ms); }
+@keyframes ov-in { from { opacity: 0; transform: translateY(12px); filter: blur(3px); } }
+@media print { .ov-reveal { animation: none; } .ov-glass { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--color-panel); } .ov-bg { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ov-reveal { animation: none; } .ov-hero > button:hover, .ov-sec:hover { transform: none; } }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .ov-glass { background: var(--color-panel); } }
+@media (max-width: 1150px) { .ov-sections { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .ov-hero, .ov-lower { grid-template-columns: 1fr; } .ov-sections { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .ov-sections { grid-template-columns: 1fr; } .ov-panel { padding: 16px; } .ov-bg { inset: -12px -8px; } }
 /* Light / dark switch, fixed to the bottom-right corner */
 .ops-theme { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--color-panel); border: 1px solid var(--color-border-line); box-shadow: 0 6px 20px rgba(15, 23, 42, .18); }
 .ops-theme button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--color-fg-muted); cursor: pointer; }
@@ -733,56 +808,31 @@
   </nav>
 
   <!-- OVERVIEW -->
-  <section class="ops-page" id="overview" data-page="overview">
-    <div class="ops-sec-head"><h2 class="ops-sec-title">Readiness status</h2><span class="ops-legend-rag"><i class="g"></i>On track <i class="a"></i>At risk <i class="r"></i>Off track <i class="n"></i>Not assessed</span></div>
-    <div class="ops-rag" id="rag" data-source="readiness"></div>
-    <h2 class="ops-sec-title">Key figures</h2>
-    <div class="ops-tiles" id="kpis">
-      <div class="ops-tile" id="kpi-manpower">
-        <span class="ops-delta" data-delta="kpi-manpower" hidden></span>
-        <span class="ops-tile-label">OPS manpower · <span class="ops-mp-month">—</span></span>
-        <span class="ops-big"><span data-source="kpi_manpower" data-field="total_actual" class="dash-skeleton">—</span><span class="ops-tile-note"> / <span data-source="kpi_manpower" data-field="total_plan">—</span></span></span>
-        <span class="ops-tile-note"><span data-source="kpi_manpower" data-field="pct_of_plan" class="dash-skeleton">—</span> of monthly plan</span>
-      </div>
-      <div class="ops-tile" id="kpi-orr">
-        <span class="ops-delta" data-delta="kpi-orr" hidden></span>
-        <span class="ops-tile-label">OPS teams ORR checklist · <span class="ops-orr-month">—</span></span>
-        <span class="ops-big" data-source="kpi_orr" data-field="actual_pct">—</span>
-        <span class="ops-tile-note">Plan <span data-source="kpi_orr" data-field="plan_pct">—</span> · <b data-source="kpi_orr" data-field="gap_pts" class="kpi-gap">—</b></span>
-      </div>
-      <div class="ops-tile" id="kpi-cbta">
-        <span class="ops-delta" data-delta="kpi-cbta" hidden></span>
-        <span class="ops-tile-label">CBTA development (CPP &amp; WHP)</span>
-        <span class="ops-big" data-source="cbta_summary" data-where="platform=Overall" data-field="progress_pct">—</span>
-        <span class="ops-tile-note">Theory assessment <span data-source="cbta_summary" data-where="platform=Overall" data-field="theory_pct">—</span> · OJT <span data-source="cbta_summary" data-where="platform=Overall" data-field="ojt_pct">—</span></span>
-      </div>
-      <div class="ops-tile" id="kpi-mandatory">
-        <span class="ops-delta" data-delta="kpi-mandatory" hidden></span>
-        <span class="ops-tile-label">Mandatory training · offshore</span>
-        <span class="ops-big" data-source="mandatory_summary" data-where="team=Total" data-field="pct">—</span>
-        <span class="ops-tile-note"><span data-source="mandatory_summary" data-where="team=Total" data-field="earned">—</span> / <span data-source="mandatory_summary" data-where="team=Total" data-field="planned">—</span> courses completed</span>
-      </div>
-      <div class="ops-tile" id="kpi-proc">
-        <span class="ops-delta" data-delta="kpi-proc" hidden></span>
-        <span class="ops-tile-label">HSE · general operations procedures</span>
-        <span class="ops-big"><span data-source="proc_summary" data-where="category=HSE" data-field="completion_pct">—</span><span class="ops-tile-note"> · </span><span data-source="proc_summary" data-where="category=General%20operations" data-field="completion_pct">—</span></span>
-        <span class="ops-tile-note"><span data-source="proc_summary" data-where="category=All" data-field="open">—</span> procedures not yet issued</span>
-      </div>
-      <div class="ops-tile" id="kpi-pr">
-        <span class="ops-delta" data-delta="kpi-pr" hidden></span>
-        <span class="ops-tile-label">PRs in progress</span>
-        <span class="ops-big" data-source="pr_summary" data-field="total">—</span>
-        <span class="ops-tile-note"><b class="ops-bad" data-source="pr_summary" data-field="late">—</b> late · <b class="ops-warn" data-source="pr_summary" data-field="near_late">—</b> near-late · <span data-source="packages_summary" data-field="total">—</span> packages without PR</span>
-      </div>
+  <section class="ops-page ov" id="overview" data-page="overview">
+    <div class="ov-bg" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+    <div class="ov-hero">
+      <button type="button" class="ov-glass ov-panel ov-stat ov-reveal" id="ov-orr" style="--i:0" data-go="orr" data-source="orr_curve">
+        <span class="ov-ptitle"><span>ORR checklist · OPS teams</span><span class="ov-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span></span>
+        <span class="ov-bignum" id="ov-orr-v">—</span>
+        <span class="ov-meta" id="ov-orr-m">—</span>
+        <span class="ov-spark" id="ov-orr-chart"></span>
+        <span class="ov-foot" id="ov-orr-f">—</span>
+      </button>
+      <button type="button" class="ov-glass ov-panel ov-flow ov-reveal" id="ov-mp" style="--i:1" data-go="manpower" data-source="manpower">
+        <span class="ov-ptitle"><span>Manpower ramp-up</span><span class="ov-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.6"/><path d="M15.6 14.1A5 5 0 0 1 21 19"/></svg></span></span>
+        <span class="ov-sum" id="ov-mp-sum"></span>
+        <span class="ov-area" id="ov-mp-chart"></span>
+      </button>
     </div>
-
-    <div class="ops-grid ops-grid-2">
-      <div class="ops-card" id="card-attention">
+    <div class="ov-head ov-reveal" style="--i:2"><h2>Readiness by section</h2><span class="ops-legend-rag"><i class="g"></i>On track <i class="a"></i>At risk <i class="r"></i>Off track <i class="n"></i>Not assessed</span></div>
+    <div class="ov-sections" id="ov-sections" data-source="readiness"></div>
+    <div class="ov-lower">
+      <div class="ov-glass ov-panel ov-reveal" id="card-attention" style="--i:13">
         <div class="ops-cardhead"><div><h2>Attention required</h2>
         <p class="ops-note">Items picked automatically from the data: late, overdue, expiring or below threshold.</p></div><span class="ops-count-pill" id="attention-count">—</span></div>
         <ul class="ops-attn" id="attention"></ul>
       </div>
-      <div class="ops-card" id="card-milestones">
+      <div class="ov-glass ov-panel ov-reveal" id="card-milestones" style="--i:14">
         <h2>Key milestones</h2>
         <p class="ops-note">Plan dates from the milestones table. Dates still to be confirmed show as TBC.</p>
         <ol class="ops-ms" id="milestones" data-source="milestones"></ol>
@@ -2640,6 +2690,7 @@ function rag() {
 const STATE = { g: L('On track', 'Đúng tiến độ'), a: L('At risk', 'Có rủi ro'), r: L('Off track', 'Chậm tiến độ'), n: L('Not assessed', 'Chưa đánh giá') };
 function drawRag() {
   const box = document.getElementById('rag'), auto = rag();
+  if (!box) return; // the overview shows readiness on the section cards
   const over = rows('cur', 'readiness');
   const areas = over.length ? over.map((r) => r.area) : Object.keys(auto);
   box.replaceChildren(...areas.filter((a) => auto[a] || over.find((r) => r.area === a)).map((area) => {
@@ -2655,6 +2706,124 @@ function drawRag() {
   }));
 }
 
+// ---------- Overview (glass) ----------
+let ovW = 0; // width the overview charts were last drawn at
+const OV_ICONS = {
+  manpower: '<circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.6"/><path d="M15.6 14.1A5 5 0 0 1 21 19"/>',
+  training: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+  apps: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+  permits: '<path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/>',
+  procedures: '<path d="M8 4h8M9 2.5h6v3H9zM6 4H5a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-1"/><path d="M8 11h8M8 15h5"/>',
+  logistics: '<path d="M3 14.5h18l-2.2 4.5H5.2zM7 14.5V9h7l3 5.5M10 9V5.5"/>',
+  contracts: '<path d="M6 3h9l3 3v15H6z"/><path d="M9 13l2 2 4-4"/>',
+  coordination: '<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.3 10.8l7.4-3.6M8.3 13.2l7.4 3.6"/>',
+  orr: '<path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/>',
+  startup: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>',
+};
+const ovSvg = (k) => `<svg viewBox="0 0 24 24">${OV_ICONS[k] || ''}</svg>`;
+function ovSpark(box, rows, { plan, actual, x, yMax, h = 92, fmt }) {
+  box.replaceChildren();
+  const W = Math.max(240, box.clientWidth || 480), pad = 4;
+  const xs = d3.scaleUtc(d3.extent(rows, x), [pad, W - pad]), ys = d3.scaleLinear([0, yMax], [h - 6, 8]);
+  const svg = d3.select(box).append('svg').attr('viewBox', `0 0 ${W} ${h}`).attr('width', '100%').attr('height', h).attr('preserveAspectRatio', 'none');
+  const id = 'g' + Math.random().toString(36).slice(2, 8);
+  const gr = svg.append('defs').append('linearGradient').attr('id', id).attr('x1', 0).attr('x2', 0).attr('y1', 0).attr('y2', 1);
+  gr.append('stop').attr('offset', 0).attr('stop-color', 'var(--ov-acc)').attr('stop-opacity', 0.28);
+  gr.append('stop').attr('offset', 1).attr('stop-color', 'var(--ov-acc)').attr('stop-opacity', 0);
+  [0.25, 0.5, 0.75].forEach((f) => svg.append('line').attr('x1', 0).attr('x2', W).attr('y1', 8 + (h - 14) * f).attr('y2', 8 + (h - 14) * f).attr('class', 'ov-grid'));
+  const pr = rows.filter((r) => plan(r) != null), ar = rows.filter((r) => actual(r) != null);
+  svg.append('path').attr('d', d3.line().x((r) => xs(x(r))).y((r) => ys(plan(r))).curve(d3.curveMonotoneX)(pr)).attr('class', 'ov-plan');
+  if (ar.length) {
+    svg.append('path').attr('d', d3.area().x((r) => xs(x(r))).y0(h).y1((r) => ys(actual(r))).curve(d3.curveMonotoneX)(ar)).attr('fill', `url(#${id})`);
+    svg.append('path').attr('d', d3.line().x((r) => xs(x(r))).y((r) => ys(actual(r))).curve(d3.curveMonotoneX)(ar)).attr('class', 'ov-act');
+    const last = ar.at(-1); svg.append('circle').attr('cx', xs(x(last))).attr('cy', ys(actual(last))).attr('r', 4).attr('class', 'ov-dot');
+  }
+  const t = H.REPORT_DATE; if (t >= xs.domain()[0] && t <= xs.domain()[1]) svg.append('line').attr('x1', xs(t)).attr('x2', xs(t)).attr('y1', 0).attr('y2', h).attr('class', 'ov-today');
+}
+function drawOvCharts() {
+  const orr = rows('cur', 'orr_curve'), mp = rows('cur', 'manpower');
+  ovW = document.getElementById('overview').clientWidth;
+  if (orr.length) ovSpark(document.getElementById('ov-orr-chart'), orr, { x: (r) => H.month(r.month), plan: (r) => r.plan_pct, actual: (r) => r.actual_pct, yMax: 100 });
+  if (mp.length) ovSpark(document.getElementById('ov-mp-chart'), mp, { x: (r) => H.month(r.month), plan: (r) => r.total_plan, actual: (r) => r.total_actual, yMax: d3.max(mp, (r) => r.total_plan) * 1.08, h: 118 });
+}
+function drawOverview() {
+  const R = H.REPORT_DATE, auto = rag(), over = rows('cur', 'readiness');
+  const status = (area) => { if (!area) return null; const o = over.find((r) => r.area === area) || {}; return { Green: 'g', Amber: 'a', Red: 'r' }[o.status_override] || (auto[area] || {}).s || 'n'; };
+  const pct = (v) => (v == null || !isFinite(v) ? '—' : d3.format('.0%')(v));
+  const p1 = (v) => (v == null ? '—' : H.f1(v) + '%');
+  // Hero: ORR
+  const orr = rows('cur', 'orr_curve'), oc = orr.filter((r) => r.actual_pct != null).at(-1);
+  document.getElementById('ov-orr-v').textContent = oc ? p1(oc.actual_pct) : '—';
+  const gap = oc ? oc.actual_pct - oc.plan_pct : null;
+  const om = document.getElementById('ov-orr-m'); om.replaceChildren();
+  if (oc) { om.append(H.el('span', 'ov-chip ' + (gap >= 0 ? 'up' : 'down'), (gap >= 0 ? '+' : '−') + H.f1(Math.abs(gap)) + L(' pts vs plan', ' điểm so với KH')), L(` Plan ${p1(oc.plan_pct)} · ${H.fmtMonth(H.month(oc.month))}`, ` KH ${p1(oc.plan_pct)} · ${H.fmtMonth(H.month(oc.month))}`)); }
+
+  const lastPlan = orr.filter((r) => r.plan_pct != null).at(-1);
+  document.getElementById('ov-orr-f').textContent = lastPlan ? L(`Plan reaches ${p1(lastPlan.plan_pct)} in ${H.fmtMonth(H.month(lastPlan.month))}`, `Kế hoạch đạt ${p1(lastPlan.plan_pct)} vào ${H.fmtMonth(H.month(lastPlan.month))}`) : '';
+  // Hero: manpower
+  const mp = rows('cur', 'manpower'), mc = mp.filter((r) => r.total_actual != null).at(-1);
+  const sum = document.getElementById('ov-mp-sum'); sum.replaceChildren();
+  if (mc) {
+    const it = (label, v, cls) => { const e = H.el('span', 'it ' + (cls || '')); e.append(H.el('span', 'k', label), H.el('b', null, v)); return e; };
+    const maxPlan = d3.max(mp, (r) => r.total_plan);
+    sum.append(it(L('Actual', 'Thực tế') + ' · ' + H.fmtMonth(H.month(mc.month)), String(mc.total_actual), 'a'), it(L('Plan', 'Kế hoạch'), String(mc.total_plan), 'p'),
+      it(L('Of plan', 'Đạt KH'), pct(mc.total_actual / mc.total_plan)), it(L('Plan peak', 'KH cao nhất'), String(maxPlan)));
+  }
+  drawOvCharts();
+  // Sections
+  const ws = rows('cur', 'workstreams'), wsArea = (a) => ws.filter((r) => r.area === a);
+  const md = rows('cur', 'mandatory'), mPlan = d3.sum(md, (r) => r.planned), mEarn = d3.sum(md, (r) => r.earned);
+  const cb = rows('cur', 'cbta_summary').find((r) => r.platform === 'Overall');
+  const cm = rows('cur', 'cmms');
+  const permits = rows('cur', 'permits'), DAY = 864e5;
+  const waiting = permits.filter((p) => /waiting/i.test((p.status || '') + ' ' + (p.remark || ''))).length;
+  const soon = permits.filter((p) => p.expiry_date && H.day(p.expiry_date) >= R && (H.day(p.expiry_date) - R) / DAY <= 180).length;
+  const ps = rows('cur', 'proc_summary'), pc = (c) => ps.find((r) => r.category === c);
+  const tender = rows('cur', 'tender_schedule').filter((r) => !r.actual_date && r.planned_date && H.day(r.planned_date) >= R).sort((a, b) => (a.planned_date < b.planned_date ? -1 : 1))[0];
+  const cps = rows('cur', 'contract_packages'), cpRos = cps.map((r) => r.ros_required).filter(Boolean).sort();
+  const pre = rows('cur', 'precom_plan');
+  const preNow = pre.filter((r) => !r.actual_finish && H.day(r.plan_start) <= R && H.day(r.plan_finish) >= R).length;
+  const preLate = pre.filter((r) => r.plan_finish && !r.actual_finish && H.day(r.plan_finish) < R).length;
+  const mpg = rows('cur', 'manpower_groups');
+  const S = [
+    { no: 1, tab: 'manpower', t: L('Manpower', 'Nhân sự'), area: 'Manpower', big: mc ? `${mc.total_actual}<small> / ${mc.total_plan}</small>` : '—', frac: mc ? mc.total_actual / mc.total_plan : null,
+      sub: mc ? L(`${H.fmtMonth(H.month(mc.month))} · Onshore ${mc.onshore_actual}/${mc.onshore_plan} · Offshore ${mc.offshore_actual}/${mc.offshore_plan}`, `${H.fmtMonth(H.month(mc.month))} · Onshore ${mc.onshore_actual}/${mc.onshore_plan} · Offshore ${mc.offshore_actual}/${mc.offshore_plan}`) : '' },
+    { no: 2, tab: 'training', t: L('Training', 'Đào tạo'), area: 'Training & Competence', big: mPlan ? pct(mEarn / mPlan) : '—', frac: mPlan ? mEarn / mPlan : null,
+      sub: L(`Mandatory ${mEarn}/${mPlan} courses · CBTA modules ${cb ? pct(cb.progress_pct) : '—'}`, `Bắt buộc ${mEarn}/${mPlan} khóa · Module CBTA ${cb ? pct(cb.progress_pct) : '—'}`) },
+    { no: 3, tab: 'apps', t: L('Applications', 'Ứng dụng'), area: 'Applications & Systems', big: `${wsArea('Applications').length + (cm.length ? 1 : 0)}<small> ${L('systems', 'hệ thống')}</small>`,
+      sub: cm.length ? 'CMMS ' + cm.slice().sort((a, b) => (a.package < b.package ? -1 : 1)).map((r) => `${r.package} ${H.f1(r.actual_pct)}% / ${H.f1(r.plan_pct)}%`).join(' · ') : '' },
+    { no: 4, tab: 'permits', t: L('Certificates & licenses', 'Chứng chỉ & giấy phép'), area: 'Permits & Licences', big: `${permits.length}<small> ${L('in register', 'trong danh mục')}</small>`,
+      sub: L(`${waiting} waiting · ${soon} expiring within 6 months`, `${waiting} đang chờ · ${soon} hết hạn trong 6 tháng`) },
+    { no: 5, tab: 'procedures', t: L('Procedures', 'Quy trình'), area: 'Procedures', big: pc('HSE') ? `${pct(pc('HSE').completion_pct)}<small> HSE</small> · ${pct(pc('General operations').completion_pct)}<small> GEN</small>` : '—',
+      frac: pc('All') ? pc('All').completion_pct : null, sub: pc('All') ? L(`${pc('All').docs} documents · ${pc('All').open} not yet issued`, `${pc('All').docs} tài liệu · ${pc('All').open} chưa ban hành`) : '' },
+    { no: 6, tab: 'logistics', t: L('Logistics & services', 'Hậu cần & dịch vụ'), big: `${wsArea('Logistics & services').length}<small> ${L('services', 'dịch vụ')}</small>`,
+      sub: tender ? L(`Next tender step ${H.fmtDay(H.day(tender.planned_date))} · step ${tender.no}`, `Bước đấu thầu tiếp theo ${H.fmtDay(H.day(tender.planned_date))} · bước ${tender.no}`) : '' },
+    { no: 7, tab: 'contracts', t: L('Contracts', 'Hợp đồng'), area: 'Contracts & Procurement', big: `${cps.length}<small> ${L('packages', 'gói')}</small>`,
+      sub: L(`${cps.filter((r) => r.current_status === 'Contract Signed').length} signed · ${cps.filter((r) => r.current_status === 'Contract Signing').length} signing` + (cpRos[0] ? ` · earliest ROS ${H.fmtDay(H.day(cpRos[0]))}` : ''),
+        `${cps.filter((r) => r.current_status === 'Contract Signed').length} đã ký · ${cps.filter((r) => r.current_status === 'Contract Signing').length} đang ký` + (cpRos[0] ? ` · ROS sớm nhất ${H.fmtDay(H.day(cpRos[0]))}` : '')) },
+    { no: 8, tab: 'coordination', t: L('Coordination', 'Điều phối'), big: null,
+      lines: wsArea('Coordination').slice().sort((a, b) => (a.no < b.no ? -1 : 1)).map((r) => [r.no, D(r.status || '')]) },
+    { no: 9, tab: 'orr', t: L('ORR checklist', 'ORR checklist'), area: 'ORR Checklist', big: oc ? p1(oc.actual_pct) : '—', frac: oc ? oc.actual_pct / 100 : null,
+      sub: oc ? L(`Plan ${p1(oc.plan_pct)} · ${(gap >= 0 ? '+' : '−') + H.f1(Math.abs(gap))} pts`, `KH ${p1(oc.plan_pct)} · ${(gap >= 0 ? '+' : '−') + H.f1(Math.abs(gap))} điểm`) : '' },
+    { no: 10, tab: 'startup', t: L('Preservation & commissioning', 'Bảo quản & chạy thử'), area: 'Commissioning & Start-up', big: `${pre.length}<small> ${L('pre-com activities', 'hạng mục pre-com')}</small>`,
+      sub: L(`${preNow} planned under way · ${preLate} past planned finish`, `${preNow} đang thực hiện theo KH · ${preLate} quá ngày kết thúc KH`) },
+  ];
+  const STATE2 = { g: L('On track', 'Đúng tiến độ'), a: L('At risk', 'Có rủi ro'), r: L('Off track', 'Chậm tiến độ'), n: L('Not assessed', 'Chưa đánh giá') };
+  document.getElementById('ov-sections').replaceChildren(...S.map((c, i) => {
+    const el = document.createElement('button'); el.type = 'button'; el.className = 'ov-glass ov-sec ov-reveal'; el.dataset.page = c.tab; el.style.setProperty('--i', 3 + i);
+    el.addEventListener('click', () => goTab(c.tab));
+    const top = H.el('span', 'top'), ic = H.el('span', 'ic'); ic.innerHTML = ovSvg(c.tab); ic.setAttribute('aria-hidden', 'true');
+    top.append(ic, H.el('span', 'no', String(c.no)));
+    const st = status(c.area); if (st) { const chip = H.el('span', 'rag ' + st); chip.append(H.el('i'), STATE2[st]); top.append(chip); }
+    el.append(top, H.el('span', 't', c.t));
+    if (c.big != null) { const b = H.el('span', 'big'); b.innerHTML = c.big; el.append(b); }
+    if (c.frac != null && isFinite(c.frac)) { const m = H.el('span', 'meter'), f = H.el('i'); f.style.width = Math.min(100, c.frac * 100) + '%'; m.append(f); el.append(m); }
+    if (c.sub) el.append(H.el('span', 'sub', c.sub));
+    if (c.lines) c.lines.forEach(([no, t]) => { const l = H.el('span', 'line'); l.append(H.el('b', null, no + ' '), t); el.append(l); });
+    el.append(H.el('span', 'go', L('Open', 'Xem') + ' →'));
+    return el;
+  }));
+}
 function drawAttention() {
   const R = H.REPORT_DATE, DAY = 86400000, items = [];
   const add = (sev, html, tab) => items.push({ sev, html, tab });
@@ -2747,7 +2916,10 @@ function drawDeltas() {
   show('kpi-pr', c.prLate, p.prLate, (d) => String(Math.abs(d)), L(' late', ' PR trễ'));
 }
 
-dash.onData(() => { drawRag(); drawAttention(); drawMilestones(); drawDeltas(); });
+dash.onData(() => { drawRag(); drawOverview(); drawAttention(); drawMilestones(); drawDeltas(); });
+document.querySelectorAll('#overview [data-go]').forEach((b) => b.addEventListener('click', () => goTab(b.dataset.go)));
+// On resize only the two small charts are redrawn (the cards are not rebuilt, so they do not animate again).
+window.addEventListener('resize', () => { const w = document.getElementById('overview').clientWidth; if (w && Math.abs(w - ovW) > 40) { ovW = w; drawOvCharts(); } });
 // A page left open (e.g. on a control-room screen) ticks over at midnight Vietnam time.
 let shownDay = +vnToday();
 setInterval(() => { if (+vnToday() !== shownDay) { shownDay = +vnToday(); drawMilestones(); drawAttention(); } }, 60000);
