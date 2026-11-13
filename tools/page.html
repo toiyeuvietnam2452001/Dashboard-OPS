@@ -2824,6 +2824,33 @@ function drawOverview() {
     return el;
   }));
 }
+// Count-up for the overview figures: every number in the element runs from 0 to its value and ends on the
+// exact text that was rendered (same decimals, separators and units). Bars grow from 0 at the same time.
+const ovReduce = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
+function ovCountUp(root, ms = 1400) {
+  if (ovReduce.matches || !root) return;
+  const nodes = [];
+  root.querySelectorAll('.ov-bignum, .ov-sum b, .ov-sec .big').forEach((el) => {
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n;
+    while ((n = w.nextNode())) if (/\d/.test(n.nodeValue)) nodes.push({ n, text: n.nodeValue });
+  });
+  const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2); // ease-in-out
+  const fmt = (text, f) => text.replace(/\d+(?:[.,]\d+)?/g, (m) => {
+    const sep = /[.,]/.exec(m), dec = sep ? m.length - sep.index - 1 : 0;
+    const v = parseFloat(m.replace(',', '.')) * f;
+    const out = v.toFixed(dec); return sep ? out.replace('.', sep[0]) : out;
+  });
+  const meters = [...root.querySelectorAll('.ov-sec .meter i')].map((i) => ({ i, w: i.style.width }));
+  meters.forEach(({ i }) => { i.style.transition = 'none'; i.style.width = '0%'; });
+  requestAnimationFrame(() => meters.forEach(({ i, w }) => { i.style.transition = `width ${ms}ms cubic-bezier(.2,.7,.2,1)`; i.style.width = w; }));
+  const t0 = performance.now();
+  const step = (now) => {
+    const t = Math.min(1, (now - t0) / ms), f = ease(t);
+    nodes.forEach(({ n, text }) => { n.nodeValue = t < 1 ? fmt(text, f) : text; });
+    if (t < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
 function drawAttention() {
   const R = H.REPORT_DATE, DAY = 86400000, items = [];
   const add = (sev, html, tab) => items.push({ sev, html, tab });
@@ -2916,7 +2943,9 @@ function drawDeltas() {
   show('kpi-pr', c.prLate, p.prLate, (d) => String(Math.abs(d)), L(' late', ' PR trễ'));
 }
 
-dash.onData(() => { drawRag(); drawOverview(); drawAttention(); drawMilestones(); drawDeltas(); });
+dash.onData(() => { drawRag(); drawOverview(); drawAttention(); drawMilestones(); drawDeltas(); if (!document.getElementById('overview').hidden) ovCountUp(document.getElementById('overview')); });
+// Run the count again each time the Overview tab is opened.
+document.getElementById('tab-overview')?.addEventListener('click', () => setTimeout(() => ovCountUp(document.getElementById('overview')), 0));
 document.querySelectorAll('#overview [data-go]').forEach((b) => b.addEventListener('click', () => goTab(b.dataset.go)));
 // On resize only the two small charts are redrawn (the cards are not rebuilt, so they do not animate again).
 window.addEventListener('resize', () => { const w = document.getElementById('overview').clientWidth; if (w && Math.abs(w - ovW) > 40) { ovW = w; drawOvCharts(); } });
