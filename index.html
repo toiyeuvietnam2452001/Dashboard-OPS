@@ -1689,7 +1689,76 @@ function showPage(p, push) {
   if (push) dash.setLink(p);
   draw();
   tabTransition(from, p, push);
+  if (p !== 'overview') pageCountUp(document.getElementById(p));
 }
+// Count-up on the section pages, in the same motion as the overview: figures run from 0 to the value that was
+// rendered (same decimals, separators and units) and bars, meters and rings grow from 0. Each block starts when
+// it scrolls into view. Dates are left as they are. Anything still waiting is finished at once when the page
+// changes or is printed, so no figure can stay at 0.
+const cuReduce = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
+const CU_NUM = '.ops-tile .ops-big, .ops-ring .v, .ops-ring-card .l b, .ops-cbta-gh .n b, .ops-cm-r .t b, .ops-banner-n, .ops-pc .v';
+const CU_BAR = '.ops-tile-meter i, .ops-fill, .ops-cm-track i, .ops-pc .bar i, .ops-cbta .ops-stack > div';
+const CU_DATE = /\b(?:19|20)\d{2}\b|\d+\/\d+\/\d+/;
+let cuObs = null, cuPending = new Set();
+function cuFmt(text, f) {
+  const vi = L(false, true), dec = vi ? ',' : '.', th = vi ? '.' : ',';
+  const re = vi ? /\d{1,3}(?:\.\d{3})+(?:,\d+)?|\d+(?:,\d+)?/g : /\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?/g;
+  return text.replace(re, (m) => {
+    const grouped = m.includes(th), parts = m.split(dec), nd = parts[1] ? parts[1].length : 0;
+    const v = parseFloat(parts[0].split(th).join('') + (nd ? '.' + parts[1] : '')) * f;
+    let [i, d] = v.toFixed(nd).split('.');
+    if (grouped) i = i.replace(/\B(?=(\d{3})+(?!\d))/g, th);
+    return d ? i + dec + d : i;
+  });
+}
+function cuFinish(el) {
+  cuPending.delete(el);
+  if (el._cu) { el._cu.forEach(({ n, text }) => (n.nodeValue = text)); el._cu = null; }
+  if (el.dataset.cuW != null) { el.style.transition = 'none'; el.style.width = el.dataset.cuW; delete el.dataset.cuW; }
+  if (el.dataset.cuD != null) { el.style.transition = 'none'; el.style.strokeDasharray = ''; delete el.dataset.cuD; }
+}
+function cuRun(el, ms) {
+  cuPending.delete(el);
+  const curve = 'cubic-bezier(.65,0,.35,1)'; // same ease-in-out as the figures, so bars and numbers move together
+  if (el.dataset.cuW != null) { el.style.transition = `width ${ms}ms ${curve}`; el.style.width = el.dataset.cuW; delete el.dataset.cuW; return; }
+  if (el.dataset.cuD != null) { el.style.transition = `stroke-dasharray ${ms}ms ${curve}`; el.style.strokeDasharray = el.dataset.cuD; delete el.dataset.cuD; return; }
+  const nodes = el._cu; if (!nodes) return; el._cu = null;
+  const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2), t0 = performance.now();
+  const step = (now) => {
+    const t = Math.min(1, (now - t0) / ms), f = ease(t);
+    nodes.forEach(({ n, text }) => { n.nodeValue = t < 1 ? cuFmt(text, f) : text; });
+    if (t < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+function cuFinishAll() { if (cuObs) cuObs.disconnect(); [...cuPending].forEach(cuFinish); }
+function pageCountUp(sec, ms = 1300) {
+  cuFinishAll();
+  if (!sec || cuReduce.matches || sec.id === 'overview' || !('IntersectionObserver' in window)) return false;
+  const items = [];
+  sec.querySelectorAll(CU_NUM).forEach((el) => {
+    const nodes = [], w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n;
+    while ((n = w.nextNode())) if (/\d/.test(n.nodeValue) && !CU_DATE.test(n.nodeValue)) nodes.push({ n, text: n.nodeValue });
+    if (!nodes.length) return;
+    nodes.forEach((x) => (x.n.nodeValue = cuFmt(x.text, 0)));
+    el._cu = nodes; items.push(el);
+  });
+  sec.querySelectorAll(CU_BAR).forEach((el) => {
+    if (!el.style.width || el.style.width === '0%') return;
+    el.dataset.cuW = el.style.width; el.style.transition = 'none'; el.style.width = '0%'; items.push(el);
+  });
+  sec.querySelectorAll('.ops-ring .fg').forEach((c) => {
+    const d = c.getAttribute('stroke-dasharray'); if (!d) return;
+    c.dataset.cuD = d; c.style.transition = 'none'; c.style.strokeDasharray = '0 ' + d.split(' ')[1]; items.push(c);
+  });
+  if (!items.length) return false;
+  void sec.offsetWidth;
+  items.forEach((el) => cuPending.add(el));
+  cuObs = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { cuObs.unobserve(e.target); cuRun(e.target, ms); } }), { rootMargin: '0px 0px -6% 0px' });
+  items.forEach((el) => cuObs.observe(el));
+  return true;
+}
+window.addEventListener('beforeprint', cuFinishAll);
 // Tab change: a pill slides to the new tab in that tab's colour, the page enters from the side of the tab
 // it came from, its blocks rise in one after another, and the view returns to the top of the content.
 const tabMotion = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -3000,6 +3069,8 @@ function draw() {
   if (currentPage === 'startup') { drawCommissioning(); drawGantt(); drawSteps(); }
 }
 dash.onData(draw);
+let cuFirst = false;
+dash.onData(() => { if (!cuFirst && currentPage !== 'overview') cuFirst = pageCountUp(document.getElementById(currentPage)); });
 const initial = location.hash.slice(1);
 if (pages.includes(OLD_PAGES[initial] || initial)) showPage(initial, false);
 
