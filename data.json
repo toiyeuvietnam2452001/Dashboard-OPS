@@ -1,4 +1,21 @@
 {
+ "staffing": [
+  {
+   "filled": 47,
+   "required": 50,
+   "group": "Offshore"
+  },
+  {
+   "filled": 32,
+   "required": 34,
+   "group": "Onshore"
+  },
+  {
+   "filled": 9,
+   "required": 38,
+   "group": "Outsource (Offshore)"
+  }
+ ],
  "cbta": [
   {
    "ojt_modules": 11,
@@ -620,23 +637,6 @@
    "month": "2028-12"
   }
  ],
- "staffing": [
-  {
-   "filled": 47,
-   "required": 50,
-   "group": "Offshore"
-  },
-  {
-   "filled": 32,
-   "required": 34,
-   "group": "Onshore"
-  },
-  {
-   "filled": 9,
-   "required": 38,
-   "group": "Outsource (Offshore)"
-  }
- ],
  "mandatory": [
   {
    "planned": 72,
@@ -834,6 +834,28 @@
   {
    "period": "2028",
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
+  }
+ ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
   }
  ],
  "orr_curve": [
@@ -1053,75 +1075,6 @@
    "code": "PR-14"
   }
  ],
- "orr_groups": [
-  {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
-  },
-  {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
-  },
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
-  },
-  {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
-  }
- ],
- "packages_no_pr": [
-  {
-   "count": 19,
-   "dimension": "status",
-   "category": "Open"
-  },
-  {
-   "count": 7,
-   "dimension": "status",
-   "category": "PR Request"
-  },
-  {
-   "count": 7,
-   "dimension": "status",
-   "category": "Screening"
-  },
-  {
-   "count": 15,
-   "dimension": "priority",
-   "category": "Priority 3"
-  },
-  {
-   "count": 8,
-   "dimension": "priority",
-   "category": "Priority 2"
-  },
-  {
-   "count": 3,
-   "dimension": "priority",
-   "category": "Priority 1"
-  },
-  {
-   "count": 16,
-   "dimension": "scr_timing",
-   "category": "Not set"
-  },
-  {
-   "count": 2,
-   "dimension": "scr_timing",
-   "category": "Next month"
-  },
-  {
-   "count": 1,
-   "dimension": "scr_timing",
-   "category": "This month"
-  }
- ],
  "pr_pipeline": [
   {
    "count": 1,
@@ -1172,6 +1125,53 @@
    "count": 1,
    "status": "On time",
    "stage": "6 Contract Signing"
+  }
+ ],
+ "packages_no_pr": [
+  {
+   "count": 19,
+   "dimension": "status",
+   "category": "Open"
+  },
+  {
+   "count": 7,
+   "dimension": "status",
+   "category": "PR Request"
+  },
+  {
+   "count": 7,
+   "dimension": "status",
+   "category": "Screening"
+  },
+  {
+   "count": 15,
+   "dimension": "priority",
+   "category": "Priority 3"
+  },
+  {
+   "count": 8,
+   "dimension": "priority",
+   "category": "Priority 2"
+  },
+  {
+   "count": 3,
+   "dimension": "priority",
+   "category": "Priority 1"
+  },
+  {
+   "count": 16,
+   "dimension": "scr_timing",
+   "category": "Not set"
+  },
+  {
+   "count": 2,
+   "dimension": "scr_timing",
+   "category": "Next month"
+  },
+  {
+   "count": 1,
+   "dimension": "scr_timing",
+   "category": "This month"
   }
  ],
  "procedures": [
@@ -3383,6 +3383,64 @@
    "permit": "Fire Protection Approval (PCCC)"
   }
  ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
+  }
+ ],
  "startup_sequence": [
   {
    "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
@@ -3453,64 +3511,6 @@
    "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
    "step": 14,
    "phase": "Condensate & PW"
-  }
- ],
- "readiness": [
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
   }
  ],
  "precom_plan": [
@@ -6154,140 +6154,6 @@
    "activity": "Commercial Evaluation"
   }
  ],
- "orr_departments": [
-  {
-   "order": 1,
-   "acc_actual_pct": 71,
-   "plan_pct": 67,
-   "month": "2026-10",
-   "total_activities": 463,
-   "acc_plan_pct": 67,
-   "completed": 255,
-   "actual_pct": 68,
-   "weight_pct": 67.35,
-   "department": "OPS"
-  },
-  {
-   "order": 2,
-   "acc_actual_pct": 40,
-   "plan_pct": 29.6,
-   "month": "2026-10",
-   "total_activities": 131,
-   "acc_plan_pct": 30,
-   "completed": 33,
-   "actual_pct": 40.4,
-   "weight_pct": 17.76,
-   "department": "DEV"
-  },
-  {
-   "order": 3,
-   "acc_actual_pct": 91,
-   "plan_pct": 85.3,
-   "month": "2026-10",
-   "total_activities": 64,
-   "acc_plan_pct": 85,
-   "completed": 58,
-   "actual_pct": 90.5,
-   "weight_pct": 8.67,
-   "department": "HSE"
-  },
-  {
-   "order": 4,
-   "acc_actual_pct": 95,
-   "plan_pct": 97.8,
-   "month": "2026-10",
-   "total_activities": 18,
-   "acc_plan_pct": 98,
-   "completed": 16,
-   "actual_pct": 95,
-   "weight_pct": 2.45,
-   "department": "DCD"
-  },
-  {
-   "order": 5,
-   "acc_actual_pct": 81,
-   "plan_pct": 64.7,
-   "month": "2026-10",
-   "total_activities": 14,
-   "acc_plan_pct": 65,
-   "completed": 6,
-   "actual_pct": 81,
-   "weight_pct": 1.36,
-   "department": "SSF"
-  },
-  {
-   "order": 6,
-   "acc_actual_pct": 75,
-   "plan_pct": 66.7,
-   "month": "2026-10",
-   "total_activities": 6,
-   "acc_plan_pct": 67,
-   "completed": 2,
-   "actual_pct": 75,
-   "weight_pct": 0.82,
-   "department": "SCM"
-  },
-  {
-   "order": 7,
-   "acc_actual_pct": 71,
-   "plan_pct": 71,
-   "month": "2026-10",
-   "total_activities": 2,
-   "acc_plan_pct": 71,
-   "completed": 0,
-   "actual_pct": 71,
-   "weight_pct": 0.36,
-   "department": "DTD"
-  },
-  {
-   "order": 8,
-   "acc_actual_pct": 97,
-   "plan_pct": 87,
-   "month": "2026-10",
-   "total_activities": 3,
-   "acc_plan_pct": 87,
-   "completed": 2,
-   "actual_pct": 96.7,
-   "weight_pct": 0.41,
-   "department": "EPD"
-  },
-  {
-   "order": 9,
-   "acc_actual_pct": 100,
-   "plan_pct": 100,
-   "month": "2026-10",
-   "total_activities": 3,
-   "acc_plan_pct": 100,
-   "completed": 3,
-   "actual_pct": 100,
-   "weight_pct": 0.41,
-   "department": "HRA"
-  },
-  {
-   "order": 10,
-   "acc_actual_pct": 83,
-   "plan_pct": 82,
-   "month": "2026-10",
-   "total_activities": 3,
-   "acc_plan_pct": 82,
-   "completed": 1,
-   "actual_pct": 82.7,
-   "weight_pct": 0.41,
-   "department": "LCD"
-  },
-  {
-   "order": 99,
-   "acc_actual_pct": 68.5,
-   "plan_pct": 63,
-   "month": "2026-10",
-   "total_activities": 707,
-   "acc_plan_pct": 62.8,
-   "completed": 376,
-   "actual_pct": 66.3,
-   "weight_pct": 100,
-   "department": "TOTAL"
-  }
- ],
  "orr_team_plan": [
   {
    "month": "2026-10",
@@ -6776,6 +6642,428 @@
    "team": "Production OPS"
   }
  ],
+ "orr_departments": [
+  {
+   "order": 1,
+   "acc_actual_pct": 71,
+   "plan_pct": 67,
+   "month": "2026-10",
+   "total_activities": 463,
+   "acc_plan_pct": 67,
+   "completed": 255,
+   "actual_pct": 68,
+   "weight_pct": 67.35,
+   "department": "OPS"
+  },
+  {
+   "order": 2,
+   "acc_actual_pct": 40,
+   "plan_pct": 29.6,
+   "month": "2026-10",
+   "total_activities": 131,
+   "acc_plan_pct": 30,
+   "completed": 33,
+   "actual_pct": 40.4,
+   "weight_pct": 17.76,
+   "department": "DEV"
+  },
+  {
+   "order": 3,
+   "acc_actual_pct": 91,
+   "plan_pct": 85.3,
+   "month": "2026-10",
+   "total_activities": 64,
+   "acc_plan_pct": 85,
+   "completed": 58,
+   "actual_pct": 90.5,
+   "weight_pct": 8.67,
+   "department": "HSE"
+  },
+  {
+   "order": 4,
+   "acc_actual_pct": 95,
+   "plan_pct": 97.8,
+   "month": "2026-10",
+   "total_activities": 18,
+   "acc_plan_pct": 98,
+   "completed": 16,
+   "actual_pct": 95,
+   "weight_pct": 2.45,
+   "department": "DCD"
+  },
+  {
+   "order": 5,
+   "acc_actual_pct": 81,
+   "plan_pct": 64.7,
+   "month": "2026-10",
+   "total_activities": 14,
+   "acc_plan_pct": 65,
+   "completed": 6,
+   "actual_pct": 81,
+   "weight_pct": 1.36,
+   "department": "SSF"
+  },
+  {
+   "order": 6,
+   "acc_actual_pct": 75,
+   "plan_pct": 66.7,
+   "month": "2026-10",
+   "total_activities": 6,
+   "acc_plan_pct": 67,
+   "completed": 2,
+   "actual_pct": 75,
+   "weight_pct": 0.82,
+   "department": "SCM"
+  },
+  {
+   "order": 7,
+   "acc_actual_pct": 71,
+   "plan_pct": 71,
+   "month": "2026-10",
+   "total_activities": 2,
+   "acc_plan_pct": 71,
+   "completed": 0,
+   "actual_pct": 71,
+   "weight_pct": 0.36,
+   "department": "DTD"
+  },
+  {
+   "order": 8,
+   "acc_actual_pct": 97,
+   "plan_pct": 87,
+   "month": "2026-10",
+   "total_activities": 3,
+   "acc_plan_pct": 87,
+   "completed": 2,
+   "actual_pct": 96.7,
+   "weight_pct": 0.41,
+   "department": "EPD"
+  },
+  {
+   "order": 9,
+   "acc_actual_pct": 100,
+   "plan_pct": 100,
+   "month": "2026-10",
+   "total_activities": 3,
+   "acc_plan_pct": 100,
+   "completed": 3,
+   "actual_pct": 100,
+   "weight_pct": 0.41,
+   "department": "HRA"
+  },
+  {
+   "order": 10,
+   "acc_actual_pct": 83,
+   "plan_pct": 82,
+   "month": "2026-10",
+   "total_activities": 3,
+   "acc_plan_pct": 82,
+   "completed": 1,
+   "actual_pct": 82.7,
+   "weight_pct": 0.41,
+   "department": "LCD"
+  },
+  {
+   "order": 99,
+   "acc_actual_pct": 68.5,
+   "plan_pct": 63,
+   "month": "2026-10",
+   "total_activities": 707,
+   "acc_plan_pct": 62.8,
+   "completed": 376,
+   "actual_pct": 66.3,
+   "weight_pct": 100,
+   "department": "TOTAL"
+  }
+ ],
+ "orr_risks": [
+  {
+   "resource": 2,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 241,
+   "interface": 2,
+   "new_activity_name": "Intergrated Plan",
+   "vendor": 1,
+   "activity": "OPS master schedule"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 332,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Operations Excellence Dashboard Updating Procedure"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 458,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Identify spares based on 2 year operations spares from Project and recommend by OPS"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 481,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Vendor training & roll out"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 491,
+   "interface": 2,
+   "new_activity_name": "Develop training system (HRIS)",
+   "vendor": 1,
+   "activity": "Training delivery"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": "Expedite POS to recruit personnel",
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 495,
+   "interface": 2,
+   "new_activity_name": "Recruitment offshore outsource manpower",
+   "vendor": 2,
+   "activity": "Review manpower contract and evaluate the performance"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 506,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Contractors Performance Review Meeting (Production, HSE, OPEX, and other milestone,...)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 511,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Incident reporting follow Incident investigation procedure (Incident Reporting and Investigation Procedure)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 515,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Internal and external audit program (PTW, IC, overside work, ..audit, Aviation fuel audit, ISO14001 audit,.....)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 522,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Implement preservation maintenance programme"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 524,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Develop Logistic Plan for commissioning Team (transfers to and from offshore)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 547,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Additional Operating Spares to be purchased beyond Development purchased 2YOS"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 549,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "What monitoring equipment does Rig have and Safety Equipment"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 576,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "IT equipment"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Study / lesson learnt from Thailand Field. Contact Potetial Vendor/Supplier",
+   "avg_score": 2,
+   "scope": 4,
+   "contract": 1,
+   "item": 582,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Provision of chemical pigging services for pipeline"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 610,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Provision of special PPE"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 631,
+   "interface": 2,
+   "new_activity_name": "Provision of Offshore Catering Services",
+   "vendor": 2,
+   "activity": "Catering contract Food/Drinking water/Fresh Water/cooking utensa…"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 632,
+   "interface": 2,
+   "new_activity_name": "Provision of Medical Services contract",
+   "vendor": 2,
+   "activity": "Provision of Offshore Medical Services"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 649,
+   "interface": 2,
+   "new_activity_name": "2027+4 WPB",
+   "vendor": 2,
+   "activity": "Operations WP&B"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 651,
+   "interface": 2,
+   "new_activity_name": "Operations Coordination Procedure",
+   "vendor": 1,
+   "activity": "TOSA(Coordination procedure)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 681,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Recruitment & Training  Coordination (base on training matrix)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 682,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
+  }
+ ],
  "contract_packages": [
   {
    "loa_required": null,
@@ -7166,294 +7454,6 @@
    "ros_required": "2027-06-01",
    "status": null,
    "package": "CMMS Replicator <Offshore Facility> (CMMS.REPA)"
-  }
- ],
- "orr_risks": [
-  {
-   "resource": 2,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 241,
-   "interface": 2,
-   "new_activity_name": "Intergrated Plan",
-   "vendor": 1,
-   "activity": "OPS master schedule"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 332,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Operations Excellence Dashboard Updating Procedure"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
-   "avg_score": 1.6,
-   "scope": 1,
-   "contract": 1,
-   "item": 458,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 3,
-   "activity": "Identify spares based on 2 year operations spares from Project and recommend by OPS"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 481,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Vendor training & roll out"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 2,
-   "contract": 1,
-   "item": 491,
-   "interface": 2,
-   "new_activity_name": "Develop training system (HRIS)",
-   "vendor": 1,
-   "activity": "Training delivery"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": "Expedite POS to recruit personnel",
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 495,
-   "interface": 2,
-   "new_activity_name": "Recruitment offshore outsource manpower",
-   "vendor": 2,
-   "activity": "Review manpower contract and evaluate the performance"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 506,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Contractors Performance Review Meeting (Production, HSE, OPEX, and other milestone,...)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 511,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Incident reporting follow Incident investigation procedure (Incident Reporting and Investigation Procedure)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 515,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Internal and external audit program (PTW, IC, overside work, ..audit, Aviation fuel audit, ISO14001 audit,.....)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 522,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Implement preservation maintenance programme"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 524,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Develop Logistic Plan for commissioning Team (transfers to and from offshore)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
-   "avg_score": 1.6,
-   "scope": 1,
-   "contract": 1,
-   "item": 547,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 3,
-   "activity": "Additional Operating Spares to be purchased beyond Development purchased 2YOS"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 549,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "What monitoring equipment does Rig have and Safety Equipment"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 576,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "IT equipment"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Study / lesson learnt from Thailand Field. Contact Potetial Vendor/Supplier",
-   "avg_score": 2,
-   "scope": 4,
-   "contract": 1,
-   "item": 582,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Provision of chemical pigging services for pipeline"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 2,
-   "contract": 1,
-   "item": 610,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Provision of special PPE"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 631,
-   "interface": 2,
-   "new_activity_name": "Provision of Offshore Catering Services",
-   "vendor": 2,
-   "activity": "Catering contract Food/Drinking water/Fresh Water/cooking utensa…"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 632,
-   "interface": 2,
-   "new_activity_name": "Provision of Medical Services contract",
-   "vendor": 2,
-   "activity": "Provision of Offshore Medical Services"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 649,
-   "interface": 2,
-   "new_activity_name": "2027+4 WPB",
-   "vendor": 2,
-   "activity": "Operations WP&B"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 651,
-   "interface": 2,
-   "new_activity_name": "Operations Coordination Procedure",
-   "vendor": 1,
-   "activity": "TOSA(Coordination procedure)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 681,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Recruitment & Training  Coordination (base on training matrix)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 682,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
   }
  ],
  "manpower_groups": [
@@ -9860,8 +9860,8 @@
  ],
  "meta": [
   {
-   "report_date": "2026-11-14",
-   "as_of": "2026-11-14",
+   "report_date": "2026-11-15",
+   "as_of": "2026-11-15",
    "state": "open",
    "name": "Báo cáo OPS – cập nhật liên tục",
    "report_title": "Operations Readiness Preparation",
