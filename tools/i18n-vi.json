@@ -288,7 +288,15 @@
   "Contracts": "Hợp đồng",
   "Coordination": "Điều phối",
   "Preservation & commissioning": "Bảo quản & chạy thử",
-  "Production profile": "Biểu đồ khai thác"
+  "Production profile": "Biểu đồ khai thác",
+  "EDMS Portal implementation": "Triển khai EDMS Portal",
+  "Progress by phase": "Tiến độ theo giai đoạn",
+  "Project schedule": "Lịch dự án",
+  "Weighted % complete of each phase as written in the contractor's weekly report. Phase weights add up to 100% of the contract scope.": "% hoàn thành có trọng số của từng giai đoạn, theo báo cáo tuần của nhà thầu. Tổng trọng số các giai đoạn bằng 100% phạm vi hợp đồng.",
+  "Bar: scheduled start to scheduled end. Diamond: completed date. A task whose scheduled end has passed without a completed date is marked.": "Thanh: từ ngày bắt đầu đến ngày kết thúc theo kế hoạch. Hình thoi: ngày hoàn thành. Công việc đã qua ngày kết thúc kế hoạch mà chưa có ngày hoàn thành được đánh dấu.",
+  "In progress": "Đang thực hiện",
+  "In progress, scheduled end passed": "Đang thực hiện, đã qua hạn KH",
+  "Completed date": "Ngày hoàn thành"
  },
  "data": {
   "Manpower": "Nhân sự",

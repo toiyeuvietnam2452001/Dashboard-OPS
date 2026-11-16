@@ -453,6 +453,69 @@
 .ops-cm-track u { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; border-radius: 1px; background: var(--color-fg); }
 .ops-cm-r .d { margin-top: 4px; font-size: 11px; font-weight: 600; color: var(--color-ok); }
 .ops-cm-r .d.neg { color: var(--color-bad); }
+/* 3. EDMS Portal */
+.ops-ed-go { align-self: flex-start; font-size: 12px; font-weight: 600; color: var(--acc); text-decoration: none; }
+.ops-ed-go:hover { text-decoration: underline; }
+.ops-cm-r .d.ed { color: var(--color-fg-muted); font-weight: 500; }
+.ops-ed-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.ops-ed-meta .it { display: inline-flex; align-items: baseline; gap: 8px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--acc-line); background: var(--acc-soft); font-size: 12px; }
+.ops-ed-meta .k { color: var(--color-fg-muted); } .ops-ed-meta b { font-weight: 600; color: var(--color-fg); }
+.ops-card h3.ops-ed-h { margin: 10px 0 0; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--acc); display: flex; align-items: center; gap: 10px; }
+.ops-card h3.ops-ed-h::after { content: ""; flex: 1; height: 2px; border-radius: 1px; background: linear-gradient(90deg, var(--acc-line), transparent); }
+.ops-ed-phases { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr)); gap: 10px 22px; }
+.ops-ed-ph { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "h h" "b v" "w w"; gap: 5px 12px; align-items: center; padding: 10px 14px; border-radius: 14px; border: 1px solid var(--color-border-line); background: color-mix(in srgb, var(--color-panel) 55%, transparent); }
+.ops-ed-ph .h { grid-area: h; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.ops-ed-ph .t { font-size: 12px; font-weight: 700; letter-spacing: .03em; color: var(--color-fg); }
+.ops-ed-ph .w { font-size: 11px; color: var(--color-fg-muted); white-space: nowrap; }
+.ops-ed-ph .ops-track { grid-area: b; height: 10px; border-radius: 5px; }
+.ops-ed-ph .ops-fill { border-radius: 5px; background: var(--acc); }
+.ops-ed-ph.done .ops-fill { background: var(--color-ok); }
+.ops-ed-ph .v { grid-area: v; min-width: 4.2rem; text-align: right; font-weight: 700; font-size: 14px; font-variant-numeric: tabular-nums; }
+.ops-ed-ph.done .v { color: var(--color-ok); } .ops-ed-ph.todo .v { color: var(--color-fg-muted); }
+.ops-ed-ph .when { grid-area: w; font-size: 11px; color: var(--color-fg-muted); }
+.ops-ed-wait { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 14px; border: 1px solid color-mix(in srgb, var(--color-warn) 40%, transparent); background: color-mix(in srgb, var(--color-warn) 8%, transparent); }
+.ops-ed-wait[hidden] { display: none; }
+.ops-ed-wait .ops-coord-ic { background: var(--color-warn); }
+.ops-ed-wait .ttl { font-weight: 700; color: var(--color-warn); margin-bottom: 4px; }
+.ops-ed-wait ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: var(--cds-font-size-caption); line-height: 1.45; }
+.ops-ed-wait li { display: flex; flex-direction: column; gap: 1px; }
+.ops-ed-wait .m { color: var(--color-fg-muted); } .ops-ed-wait .n { font-style: italic; }
+.ops-ed-weeks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 14px; }
+.ops-ed-weeks .col { padding: 12px 14px; border-radius: 14px; border: 1px solid var(--color-border-line); background: linear-gradient(160deg, color-mix(in srgb, var(--acc) 8%, transparent), color-mix(in srgb, var(--color-panel) 50%, transparent) 60%); }
+.ops-ed-weeks .ttl { font-weight: 700; font-size: 13px; color: var(--acc); padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px dashed var(--acc-line); }
+.ops-ed-weeks ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.ops-ed-weeks li { display: flex; flex-direction: column; gap: 3px; padding-left: 12px; border-left: 3px solid var(--acc-line); font-size: var(--cds-font-size-caption); line-height: 1.45; }
+.ops-ed-weeks .top { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.ops-ed-weeks .g { font-size: 11px; font-weight: 600; color: var(--acc); }
+.ops-ed-weeks .a { font-weight: 600; color: var(--color-fg); }
+.ops-ed-weeks .m { color: var(--color-fg-muted); }
+.ops-ed-st { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 650; white-space: nowrap; color: var(--color-fg-muted); background: color-mix(in srgb, var(--color-fg-muted) 12%, transparent); }
+.ops-ed-st.done { color: var(--color-ok); background: color-mix(in srgb, var(--color-ok) 13%, transparent); }
+.ops-ed-st.prog { color: var(--acc); background: color-mix(in srgb, var(--acc) 14%, transparent); }
+.ops-ed-sched td small.lag { display: block; margin-top: 2px; font-size: 11px; font-weight: 600; color: var(--color-warn); white-space: normal; }
+.ops-ed-sched tr.ed-ph td { background: var(--acc-tint) !important; border-bottom: 2px solid var(--acc-line); padding-top: 9px; }
+.ops-ed-sched tr.ed-ph .t { font-weight: 700; font-size: 12px; letter-spacing: .03em; color: var(--acc); }
+.ops-ed-sched tr.ed-ph .c { margin-left: 10px; font-size: 11px; font-weight: 600; color: var(--color-fg-muted); }
+.ops-ed-sched td.act { min-width: 16rem; }
+.ops-ed-sched td.act .nm { display: block; font-weight: 600; }
+.ops-ed-sched td.act .wt { display: block; font-size: 11px; color: var(--color-fg-muted); margin-top: 1px; }
+.ops-ed-sched td.act .note { display: block; margin-top: 4px; padding: 3px 8px; border-left: 3px solid var(--acc-line); background: var(--acc-soft); font-size: 11.5px; font-style: italic; }
+.ops-ed-sched tr.ed-late td.act .note { border-left-color: var(--color-warn); background: color-mix(in srgb, var(--color-warn) 8%, transparent); }
+.ops-ed-sched tr.ed-sub td.act { padding-left: 26px; } .ops-ed-sched tr.ed-sub td.act .nm { font-weight: 500; font-style: italic; color: var(--color-fg-muted); }
+.ops-ed-sched tr.ed-sub td { font-size: 11.5px; }
+.ops-ed-sched .ops-tl { height: 20px; }
+.ed-bar { position: absolute; top: 5px; height: 10px; border-radius: 5px; background: var(--cds-chart-muted); opacity: .9; }
+.ed-bar.done { background: color-mix(in srgb, var(--color-ok) 55%, transparent); }
+.ed-bar.prog { background: var(--acc); }
+.ed-bar.late { background: var(--color-warn); }
+.ed-bar.todo { background: color-mix(in srgb, var(--acc) 16%, transparent); border: 1.5px solid color-mix(in srgb, var(--acc) 55%, transparent); box-sizing: border-box; }
+.ed-bar.clip { border-top-right-radius: 0; border-bottom-right-radius: 0; -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent); mask-image: linear-gradient(90deg, #000 70%, transparent); }
+.ops-ed-sched .ops-tl .mk { top: 5px; z-index: 1; }
+.ops-tl-legend .ed-sw { display: inline-block; width: 18px; height: 8px; border-radius: 4px; }
+.ops-tl-legend .ed-sw.done { background: color-mix(in srgb, var(--color-ok) 55%, transparent); } .ops-tl-legend .ed-sw.prog { background: var(--acc); }
+.ops-tl-legend .ed-sw.late { background: var(--color-warn); } .ops-tl-legend .ed-sw.todo { background: color-mix(in srgb, var(--acc) 16%, transparent); border: 1.5px solid color-mix(in srgb, var(--acc) 55%, transparent); box-sizing: border-box; }
+.ops-ed-sched th.tl, .ops-ed-sched td.tl { width: 30%; min-width: 260px; }
+@media (max-width: 560px) { .ops-ed-sched td.act { min-width: 9rem; } .ops-ed-sched th.tl, .ops-ed-sched td.tl { min-width: 150px; } }
 /* 4. Permits */
 .ops-pm-teams { display: flex; flex-wrap: wrap; gap: 8px; }
 .ops-pm-teams button { font: inherit; font-size: 12.5px; display: inline-flex; align-items: center; gap: 8px; padding: 5px 6px 5px 12px; border-radius: 999px; border: 1px solid var(--acc-line);
@@ -1091,7 +1154,22 @@
     <div class="ops-card ops-bcard" id="card-apps">
       <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">Applications</span><span class="ops-banner-n" id="app-count">—</span></h2>
       <p class="ops-note">Status of each operations software system as written in the report. CMMS (OA) shows actual vs plan % for each EPCI package.</p>
-      <div class="ops-svc ops-app" id="list-apps" data-source="workstreams cmms"></div>
+      <div class="ops-svc ops-app" id="list-apps" data-source="workstreams cmms edms_reports"></div>
+    </div>
+    <div class="ops-card ops-bcard" id="card-edms">
+      <h2 class="ops-banner"><span class="ops-banner-mark" aria-hidden="true"></span><span class="ops-banner-t">EDMS Portal implementation</span><span class="ops-banner-n" id="edms-count">—</span></h2>
+      <div class="ops-ed-meta" id="edms-meta" data-source="edms_reports"></div>
+      <h3 class="ops-ed-h">Progress by phase</h3>
+      <p class="ops-note">Weighted % complete of each phase as written in the contractor's weekly report. Phase weights add up to 100% of the contract scope.</p>
+      <div class="ops-ed-phases" id="edms-phases" data-source="edms_schedule"></div>
+      <div class="ops-ed-wait" id="edms-wait" data-source="edms_schedule" hidden></div>
+      <div class="ops-ed-weeks" id="edms-weeks" data-source="edms_activities"></div>
+      <h3 class="ops-ed-h">Project schedule</h3>
+      <p class="ops-note">Bar: scheduled start to scheduled end. Diamond: completed date. A task whose scheduled end has passed without a completed date is marked.</p>
+      <div class="ops-tl-legend" aria-hidden="true">
+        <span><i class="ed-sw done"></i>Completed</span><span><i class="ed-sw prog"></i>In progress</span><span><i class="ed-sw late"></i>In progress, scheduled end passed</span><span><i class="ed-sw todo"></i>Not started</span><span><i class="mk done"></i>Completed date</span><span><i class="ln"></i>Report date</span>
+      </div>
+      <div class="ops-tender ops-ed-sched" id="edms-sched" data-source="edms_schedule"></div>
     </div>
   </section>
 
@@ -1547,7 +1625,7 @@ function showPage(p, push) {
 // it scrolls into view. Dates are left as they are. Anything still waiting is finished at once when the page
 // changes or is printed, so no figure can stay at 0.
 const cuReduce = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
-const CU_NUM = '.ops-tile .ops-big, .ops-ring .v, .ops-ring-card .l b, .ops-cbta-gh .n b, .ops-cm-r .t b, .ops-banner-n, .ops-pc .v';
+const CU_NUM = '.ops-tile .ops-big, .ops-ed-ph .v, .ops-ring .v, .ops-ring-card .l b, .ops-cbta-gh .n b, .ops-cm-r .t b, .ops-banner-n, .ops-pc .v';
 const CU_BAR = '.ops-tile-meter i, .ops-fill, .ops-cm-track i, .ops-pc .bar i, .ops-cbta .ops-stack > div';
 const CU_DATE = /\b(?:19|20)\d{2}\b|\d+\/\d+\/\d+/;
 let cuObs = null, cuPending = new Set();
@@ -2331,6 +2409,7 @@ const itemNo = (r) => (r.no || '').split('.').map(Number);
 // 3. Applications. One card per system in report order; the status is shown as written. CMMS (OA) is the
 // 3.6 card and shows actual vs plan % for each EPCI package.
 const APP_ICONS = [
+  [/edms/i, '<path d="M3.5 7.5V18a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V9.5a2 2 0 0 0-2-2H12l-2-2.5H5.5a2 2 0 0 0-2 2z"/><path d="M8 13h8M8 16.5h5"/>'],
   [/pdms/i, '<ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/>'],
   [/aims/i, '<path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6z"/><path d="M8.6 12.2l2.3 2.3 4.6-4.8"/>'],
   [/oscc/i, '<rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M8.5 20.5h7M12 16.5v4M6.5 12.5l3-3.2 2.6 2.4 4.4-4.4"/>'],
@@ -2344,6 +2423,7 @@ function appItems() {
   if (d.status !== 'ok') return null;
   const items = d.data.filter((r) => r.area === 'Applications').map((r) => ({ no: r.no, item: r.item, status: r.status }));
   if (cm.status === 'ok' && cm.data.length) items.push({ no: '3.6', item: 'CMMS (OA)', cmms: cm.data.slice().sort((a, b) => (a.package < b.package ? -1 : 1)) });
+  const ed = edmsLatest(); if (ed) items.push({ no: '9.9', item: 'EDMS Portal', edms: ed });
   return items.sort((a, b) => { const x = itemNo(a), y = itemNo(b); return (x[0] || 99) - (y[0] || 99) || (x[1] || 0) - (y[1] || 0); });
 }
 function drawWorkstreams() {
@@ -2352,13 +2432,21 @@ function drawWorkstreams() {
   if (!items) { box.replaceChildren(); kpis.replaceChildren(); count.textContent = '—'; return; }
   const pts = (r) => r.actual_pct - r.plan_pct, fpts = (v) => (v > 0 ? '+' : v < 0 ? '−' : '') + H.f1(Math.abs(v));
   box.replaceChildren(...items.map((r) => {
-    const has = r.status || r.cmms, card = H.el('article', 'ops-svc-card' + (has ? '' : ' empty'));
+    const has = r.status || r.cmms || r.edms, card = H.el('article', 'ops-svc-card' + (has ? '' : ' empty'));
     const head = H.el('div', 'ops-svc-head'), hit = APP_ICONS.find(([re]) => re.test(r.item || ''));
     const ic = H.el('span', 'ops-svc-ic'); ic.setAttribute('aria-hidden', 'true');
     ic.innerHTML = `<svg viewBox="0 0 24 24">${hit ? hit[1] : '<rect x="4" y="4" width="16" height="16" rx="3"/>'}</svg>`;
     head.append(ic, H.el('h3', null, r.item));
     card.append(head);
-    if (r.cmms) {
+    if (r.edms) {
+      const e = r.edms, cm = H.el('div', 'ops-cm'), row = H.el('div', 'ops-cm-r'), t = H.el('div', 't'), tr = H.el('div', 'ops-cm-track'), fill = H.el('i');
+      t.append(H.el('span', 'k', L('Overall progress', 'Tiến độ tổng')), H.el('b', null, edPct(e.rep.overall_pct)));
+      fill.style.width = Math.min(100, e.rep.overall_pct) + '%'; tr.append(fill);
+      const go = H.el('a', 'ops-ed-go'); go.href = '#card-edms'; go.textContent = L('Schedule and weekly activities ↓', 'Lịch dự án và hoạt động trong tuần ↓');
+      go.addEventListener('click', (ev) => { ev.preventDefault(); document.getElementById('card-edms').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      row.append(t, tr, H.el('div', 'd ed', L(`Weekly report ${edPeriod(e.rep)}`, `Báo cáo tuần ${edPeriod(e.rep)}`) + (e.golive ? L(` · go-live planned ${H.fmtDay(e.golive)}`, ` · go-live theo KH ${H.fmtDay(e.golive)}`) : '')));
+      cm.append(row, go); card.append(cm);
+    } else if (r.cmms) {
       const cm = H.el('div', 'ops-cm');
       r.cmms.forEach((c) => {
         const row = H.el('div', 'ops-cm-r'), t = H.el('div', 't'), v = H.el('span');
@@ -2375,7 +2463,7 @@ function drawWorkstreams() {
     } else card.append(H.el('p', null, r.status ? D(r.status) : L('No information yet', 'Chưa có thông tin')));
     return card;
   }));
-  const n = items.filter((r) => r.status || r.cmms).length;
+  const n = items.filter((r) => r.status || r.cmms || r.edms).length;
   count.textContent = L(`${items.length} systems · ${n} with a status`, `${items.length} hệ thống · ${n} có cập nhật`);
   const out = [kpiTile(L('Systems tracked', 'Hệ thống theo dõi'), String(items.length), n === items.length
     ? L('Every system has a status in the report', 'Tất cả hệ thống đều có cập nhật trong báo cáo')
@@ -2385,7 +2473,137 @@ function drawWorkstreams() {
     out.push(kpiTile(`CMMS (OA) · ${c.package}`, H.p100(c.actual_pct),
       L(`Plan ${H.p100(c.plan_pct)} · ${fpts(dv)} pts vs plan`, `Kế hoạch ${H.p100(c.plan_pct)} · ${fpts(dv)} điểm % so với KH`), { frac: c.actual_pct / 100 }));
   });
+  const ed = (items.find((r) => r.edms) || {}).edms;
+  if (ed) {
+    const dd = ed.golive ? Math.round((ed.golive - H.REPORT_DATE) / 864e5) : null;
+    out.push(kpiTile(L('EDMS Portal · overall progress', 'EDMS Portal · tiến độ tổng'), edPct(ed.rep.overall_pct),
+      ed.golive ? L(`Go-live planned ${H.fmtDay(ed.golive)}${dd > 0 ? ` · in ${dd} days` : ''}`, `Go-live theo KH ${H.fmtDay(ed.golive)}${dd > 0 ? ` · còn ${dd} ngày` : ''}`) : L(`Weekly report ${edPeriod(ed.rep)}`, `Báo cáo tuần ${edPeriod(ed.rep)}`),
+      { frac: ed.rep.overall_pct / 100 }));
+  }
   kpis.replaceChildren(...out);
+  drawEdms();
+}
+
+// EDMS Portal: the contractor's latest weekly report (cover, Appendix 1 schedule, sections I and II), shown as
+// written. Only arithmetic is added: days between dates and whether a scheduled end has passed on the report date.
+const edPct = (v) => (v == null ? '—' : L(d3.format('.2f')(v), d3.format('.2f')(v).replace('.', ',')) + '%');
+const edPeriod = (r) => (r.period_from && r.period_to ? `${H.fmtDay(H.day(r.period_from))} – ${H.fmtDay(H.day(r.period_to))}` : '—');
+const ED_ST = { Completed: ['done', 'Completed', 'Hoàn thành'], 'In Progress': ['prog', 'In progress', 'Đang thực hiện'], 'Not Started': ['todo', 'Not started', 'Chưa bắt đầu'] };
+function edmsLatest() {
+  const r = dash.data('edms_reports');
+  if (r.status !== 'ok' || !r.data.length) return null;
+  const rep = r.data.slice().sort((a, b) => ((a.period_to || '') < (b.period_to || '') ? -1 : 1)).at(-1);
+  const s = dash.data('edms_schedule'), a = dash.data('edms_activities');
+  const sched = s.status === 'ok' ? s.data.filter((x) => x.report === rep.doc_no).sort((x, y) => x.seq - y.seq) : [];
+  const acts = a.status === 'ok' ? a.data.filter((x) => x.report === rep.doc_no).sort((x, y) => x.seq - y.seq) : [];
+  const gl = sched.find((x) => x.level !== 'Phase' && /go-live/i.test(x.task || '') && x.end);
+  return { rep, sched, acts, golive: gl && gl.end ? H.day(gl.end) : null };
+}
+function drawEdms() {
+  const ed = edmsLatest(), R = H.REPORT_DATE, DAY = 864e5;
+  const ids = ['edms-meta', 'edms-phases', 'edms-weeks', 'edms-sched'];
+  if (!ed) { ids.forEach((i) => document.getElementById(i).replaceChildren()); document.getElementById('edms-count').textContent = '—'; document.getElementById('edms-wait').hidden = true; return; }
+  const { rep, sched, acts } = ed;
+  document.getElementById('edms-count').textContent = L(`Report ${edPeriod(rep)} · ${edPct(rep.overall_pct)}`, `Báo cáo ${edPeriod(rep)} · ${edPct(rep.overall_pct)}`);
+  const meta = document.getElementById('edms-meta');
+  meta.replaceChildren(...[[L('Contract', 'Hợp đồng'), rep.contract], [L('Contractor', 'Nhà thầu'), rep.contractor], [L('Weekly report', 'Báo cáo tuần'), rep.doc_no]]
+    .filter(([, v]) => v).map(([k, v]) => { const e = H.el('span', 'it'); e.append(H.el('span', 'k', k), H.el('b', null, v)); return e; }));
+
+  // Phases with their tasks (rows between one phase row and the next).
+  const phases = []; sched.forEach((x) => { if (x.level === 'Phase') phases.push({ ...x, tasks: [] }); else if (phases.length) phases.at(-1).tasks.push(x); });
+  document.getElementById('edms-phases').replaceChildren(...phases.map((ph) => {
+    const w = ph.tasks.filter((t) => t.weight_pct != null && t.start && t.end);
+    const s0 = w.length ? d3.min(w, (t) => H.day(t.start)) : null, s1 = w.length ? d3.max(w, (t) => H.day(t.end)) : null;
+    const v = ph.completed_pct ?? 0, st = v >= 100 ? 'done' : v > 0 ? 'prog' : 'todo';
+    const row = H.el('div', 'ops-ed-ph ' + st), head = H.el('div', 'h');
+    head.append(H.el('span', 't', ph.task), H.el('span', 'w', L(`weight ${ph.weight_pct}%`, `trọng số ${ph.weight_pct}%`)));
+    const tr = H.el('div', 'ops-track'), f = H.el('div', 'ops-fill'); f.style.width = Math.min(100, v) + '%'; tr.append(f);
+    const val = H.el('span', 'v', edPct(ph.completed_pct ?? 0));
+    const when = H.el('span', 'when', s0 ? `${H.fmtDay(s0)} – ${H.fmtDay(s1)}` : '');
+    row.append(head, tr, val, when);
+    return row;
+  }));
+
+  // Items waiting for PQPOC, as noted in the report.
+  const waitBox = document.getElementById('edms-wait'), waits = sched.filter((x) => /awaiting pqpoc/i.test(x.note || ''));
+  waitBox.hidden = !waits.length;
+  if (waits.length) {
+    const ul = H.el('ul');
+    waits.forEach((x) => {
+      const li = H.el('li'); li.append(H.el('b', null, x.task));
+      const late = x.end && H.day(x.end) < R ? Math.round((R - H.day(x.end)) / DAY) : 0;
+      li.append(H.el('span', 'm', (x.end ? L(`Scheduled end ${H.fmtDay(H.day(x.end))}`, `Hạn theo KH ${H.fmtDay(H.day(x.end))}`) : '') + (late ? L(` · ${late} days ago`, ` · đã qua ${late} ngày`) : '')), H.el('span', 'n', x.note));
+      ul.append(li);
+    });
+    const ic = H.el('span', 'ops-coord-ic'); ic.setAttribute('aria-hidden', 'true'); ic.innerHTML = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>';
+    const body = H.el('div'); body.append(H.el('div', 'ttl', L(`Awaiting PQPOC approval · ${waits.length}`, `Đang chờ PQPOC phê duyệt · ${waits.length}`)), ul);
+    waitBox.replaceChildren(ic, body);
+  }
+
+  // Sections I and II of the report.
+  const sec = (key, title) => {
+    const list = acts.filter((x) => x.section === key); if (!list.length) return null;
+    const col = H.el('div', 'col'), ol = H.el('ul');
+    col.append(H.el('div', 'ttl', title));
+    list.forEach((x) => {
+      const li = H.el('li'), top = H.el('div', 'top');
+      if (x.group) top.append(H.el('span', 'g', x.group));
+      if (x.status) { const s = ED_ST[x.status]; top.append(H.el('span', 'ops-ed-st ' + (s ? s[0] : ''), s ? L(s[1], s[2]) : x.status)); }
+      li.append(top, H.el('div', 'a', x.activity), H.el('div', 'm', [x.responsibility, x.date ? H.fmtDay(H.day(x.date)) : null].filter(Boolean).join(' · ')));
+      ol.append(li);
+    });
+    col.append(ol); return col;
+  };
+  document.getElementById('edms-weeks').replaceChildren(...[sec('This week', L(`Activities this week · ${edPeriod(rep)}`, `Hoạt động trong tuần · ${edPeriod(rep)}`)), sec('Planned', L('Planned activities', 'Hoạt động kế hoạch'))].filter(Boolean));
+
+  // Schedule table with a timeline. The axis covers the weighted tasks; a longer period runs off the right edge.
+  const tasks = sched.filter((x) => x.level !== 'Phase');
+  const core = tasks.filter((x) => x.weight_pct != null && x.start && x.end);
+  const t0 = d3.utcMonth.floor(d3.min(core, (x) => H.day(x.start))), t1 = d3.utcMonth.offset(d3.utcMonth.floor(d3.max(core.concat([{ end: d3.utcFormat('%Y-%m-%d')(R) }]), (x) => H.day(x.end))), 1);
+  const x = (d) => Math.max(0, Math.min(100, ((d - t0) / (t1 - t0)) * 100));
+  const months = d3.utcMonth.range(t0, t1);
+  const lines = () => months.slice(1).map((m) => { const e = H.el('span', 'm'); e.style.left = x(m) + '%'; return e; });
+  const todayLine = () => { const e = H.el('span', 'today'); e.style.left = x(R) + '%'; return e; };
+  const table = H.el('table'), thead = H.el('thead'), hr = H.el('tr');
+  [[L('No.', 'STT'), 'num'], [L('Task / key deliverable', 'Công việc / sản phẩm'), null], [L('Responsibility', 'Phụ trách'), 'hide-sm'], [L('Scheduled', 'Kế hoạch'), null],
+    [L('Completed', 'Hoàn thành'), 'hide-xs'], [L('Status', 'Trạng thái'), null]].forEach(([h, c]) => hr.append(H.el('th', c, h)));
+  const axTh = H.el('th', 'tl'), axis = H.el('div', 'ops-tl-axis');
+  months.forEach((m) => { const e = H.el('span', null, H.fmtMonthShort(m)); e.style.left = x(new Date(+m + (d3.utcMonth.offset(m, 1) - m) / 2)) + '%'; axis.append(e); });
+  axis.append(...lines(), todayLine()); axTh.append(axis); hr.append(axTh); thead.append(hr);
+  const tb = H.el('tbody');
+  sched.forEach((r) => {
+    if (r.level === 'Phase') {
+      const tr = H.el('tr', 'ed-ph'), td = H.el('td'); td.colSpan = 7;
+      td.append(H.el('span', 't', r.task), H.el('span', 'c', L(`weight ${r.weight_pct}% · ${edPct(r.completed_pct ?? 0)} complete`, `trọng số ${r.weight_pct}% · hoàn thành ${edPct(r.completed_pct ?? 0)}`)));
+      tr.append(td); tb.append(tr); return;
+    }
+    const s = r.start ? H.day(r.start) : null, e = r.end ? H.day(r.end) : null, c = r.completed ? H.day(r.completed) : null;
+    const late = r.status !== 'Completed' && e && e < R;
+    const key = r.status === 'Completed' ? 'done' : late ? 'late' : r.status === 'In Progress' ? 'prog' : 'todo';
+    const tr = H.el('tr', (r.level === 'Sub-task' ? 'ed-sub ' : '') + 'ed-' + key);
+    const name = H.el('td', 'act'); name.append(H.el('span', 'nm', r.task));
+    if (r.weight_pct != null) name.append(H.el('span', 'wt', L(`weight ${r.weight_pct}%`, `trọng số ${r.weight_pct}%`) + (r.completed_pct != null && r.status !== 'Completed' ? L(` · ${r.completed_pct}% complete`, ` · hoàn thành ${r.completed_pct}%`) : '')));
+    if (r.note) name.append(H.el('span', 'note', r.note));
+    const sch = H.el('td', 'dt', s && e ? `${H.fmtDay(s)} – ${H.fmtDay(e)}` : '—');
+    const done = H.el('td', 'dt hide-xs', c ? H.fmtDay(c) : '—');
+    if (c && e && c > e) done.append(H.el('small', 'lag', L(`${Math.round((c - e) / DAY)} d after scheduled end`, `sau hạn KH ${Math.round((c - e) / DAY)} ngày`)));
+    const stTd = H.el('td'), sm = ED_ST[r.status];
+    stTd.append(H.el('span', 'ops-ed-st ' + (sm ? sm[0] : ''), sm ? L(sm[1], sm[2]) : (r.status || '—')));
+    if (late) stTd.append(H.el('small', 'lag', L(`scheduled end passed ${Math.round((R - e) / DAY)} d ago`, `đã qua hạn KH ${Math.round((R - e) / DAY)} ngày`)));
+    const tl = H.el('td', 'tl'), lane = H.el('div', 'ops-tl');
+    lane.append(...lines(), todayLine());
+    if (s && e) {
+      const b = H.el('span', 'ed-bar ' + key); b.style.left = x(s) + '%'; b.style.width = Math.max(0.8, x(d3.utcDay.offset(e, 1)) - x(s)) + '%';
+      if (e >= t1) b.classList.add('clip');
+      b.title = L('Scheduled ', 'Kế hoạch ') + `${H.fmtDay(s)} – ${H.fmtDay(e)}`; lane.append(b);
+    }
+    if (c) { const m = H.el('i', 'mk done'); m.style.left = x(c) + '%'; m.title = L('Completed ', 'Hoàn thành ') + H.fmtDay(c); lane.append(m); }
+    tl.append(lane);
+    tr.append(H.el('td', 'num', r.no || ''), name, H.el('td', 'hide-sm', r.responsibility || '—'), sch, done, stTd, tl);
+    tb.append(tr);
+  });
+  const box = H.el('div', 'ops-tablebox'); box.style.maxHeight = 'none'; table.append(thead, tb); box.append(table);
+  document.getElementById('edms-sched').replaceChildren(box);
 }
 
 // 6. Logistics. One card per service in report order (6.1 …), the status shown as written; a service the
@@ -3188,7 +3406,7 @@ function drawOverview() {
       sub: mc ? L(`${H.fmtMonth(H.month(mc.month))} · Onshore ${mc.onshore_actual}/${mc.onshore_plan} · Offshore ${mc.offshore_actual}/${mc.offshore_plan}`, `${H.fmtMonth(H.month(mc.month))} · Onshore ${mc.onshore_actual}/${mc.onshore_plan} · Offshore ${mc.offshore_actual}/${mc.offshore_plan}`) : '' },
     { no: 2, tab: 'training', t: L('Training', 'Đào tạo'), area: 'Training & Competence', big: mPlan ? pct(mEarn / mPlan) : '—', frac: mPlan ? mEarn / mPlan : null,
       sub: L(`Mandatory ${mEarn}/${mPlan} courses · CBTA modules ${cb ? pct(cb.progress_pct) : '—'}`, `Bắt buộc ${mEarn}/${mPlan} khóa · Module CBTA ${cb ? pct(cb.progress_pct) : '—'}`) },
-    { no: 3, tab: 'apps', t: L('Applications', 'Ứng dụng'), area: 'Applications & Systems', big: `${wsArea('Applications').length + (cm.length ? 1 : 0)}<small> ${L('systems', 'hệ thống')}</small>`,
+    { no: 3, tab: 'apps', t: L('Applications', 'Ứng dụng'), area: 'Applications & Systems', big: `${wsArea('Applications').length + (cm.length ? 1 : 0) + (rows('cur', 'edms_reports').length ? 1 : 0)}<small> ${L('systems', 'hệ thống')}</small>`,
       sub: cm.length ? 'CMMS ' + cm.slice().sort((a, b) => (a.package < b.package ? -1 : 1)).map((r) => `${r.package} ${H.f1(r.actual_pct)}% / ${H.f1(r.plan_pct)}%`).join(' · ') : '' },
     { no: 4, tab: 'permits', t: L('Certificates & licenses', 'Chứng chỉ & giấy phép'), area: 'Permits & Licences', big: `${permits.length}<small> ${L('in register', 'trong danh mục')}</small>`,
       sub: L(`${waiting} waiting · ${soon} expiring within 6 months`, `${waiting} đang chờ · ${soon} hết hạn trong 6 tháng`) },
@@ -3396,6 +3614,7 @@ const AREAS = [ // [table, area title EN, VI, tab]
   ['orr_departments', 'ORR by department', 'ORR theo phòng ban', 'orr'], ['contract_packages', 'Contract packages', 'Gói thầu hợp đồng', 'contracts'], ['orr_risks', 'ORR risk assessment', 'Đánh giá rủi ro ORR', 'orr'],
   ['procedures', 'Procedures', 'Quy trình', 'procedures'],
   ['pr_pipeline', 'PRs in progress', 'PR đang xử lý', 'contracts'], ['packages_no_pr', 'Packages without PR', 'Gói chưa có PR', 'contracts'], ['cmms', 'CMMS', 'CMMS', 'apps'],
+  ['edms_reports', 'EDMS Portal weekly reports', 'Báo cáo tuần EDMS Portal', 'apps'], ['edms_schedule', 'EDMS Portal schedule', 'Lịch dự án EDMS Portal', 'apps'], ['edms_activities', 'EDMS Portal weekly activities', 'Hoạt động tuần EDMS Portal', 'apps'],
   ['workstreams', 'Workstreams', 'Trạng thái công việc', 'apps'], ['permits', 'Permits', 'Giấy phép', 'permits'], ['tender_schedule', 'Tender schedule', 'Tiến độ đấu thầu', 'logistics'],
   ['precom_plan', 'Pre-commissioning', 'Pre-com', 'startup'], ['startup_sequence', 'Start-up sequence', 'Trình tự khởi động', 'startup'],
 ];
@@ -3405,6 +3624,7 @@ const KEYS = {
   precom_plan: ['activity'], cbta: ['platform', 'team'], mandatory: ['team'], staffing: ['group'], manpower_groups: ['group', 'month'], cmms: ['package'],
   workstreams: ['area', 'item'], permits: ['team', 'permit', 'facility', 'description'], tender_schedule: ['package', 'no'], readiness: ['area'], milestones: ['milestone'],
   hse_matrix: ['course'], cbta_modules: ['platform', 'team', 'no'], orr_team_plan: ['team', 'month'], orr_departments: ['department', 'month'], orr_risks: ['item'], contract_packages: ['package'],
+  edms_reports: ['doc_no'], edms_schedule: ['report', 'seq'], edms_activities: ['report', 'seq'],
 };
 const FIELDS = {
   total_plan: ['Total plan', 'KH tổng'], total_actual: ['Total actual', 'TT tổng'], onshore_plan: ['Onshore plan', 'KH trên bờ'], onshore_actual: ['Onshore actual', 'TT trên bờ'],
@@ -3441,6 +3661,7 @@ const rowLabel = {
   orr_departments: (r) => `${r.department}${r.month ? ' · ' + H.fmtMonth(H.month(r.month)) : ''}`,
   orr_risks: (r) => `${r.item}. ${r.activity || ''}`,
   contract_packages: (r) => `${r.package} · ${r.current_status || ''}`,
+  edms_reports: (r) => `${r.doc_no} · ${r.overall_pct}%`, edms_schedule: (r) => `${r.no} ${r.task}`, edms_activities: (r) => r.activity,
 };
 const label = (t, r) => (rowLabel[t] ? rowLabel[t](r) : String(r[KEYS[t][0]] ?? '—'));
 const fieldName = (f) => (FIELDS[f] ? L(FIELDS[f][0], FIELDS[f][1]) : f);

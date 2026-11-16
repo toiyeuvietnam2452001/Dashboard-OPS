@@ -9,7 +9,7 @@ IDS = ['meta', 'manpower', 'staffing', 'cbta', 'mandatory', 'vendor_training', '
        'orr_groups', 'procedures', 'packages_no_pr', 'pr_pipeline', 'cmms', 'workstreams', 'permits', 'precom_plan',
        'startup_sequence', 'readiness', 'milestones', 'hse_matrix', 'cbta_modules', 'orr_team_plan', 'tender_schedule',
        'orr_departments', 'orr_risks', 'contract_packages',
-       'manpower_groups']
+       'manpower_groups', 'edms_reports', 'edms_schedule', 'edms_activities']
 data = {i: json.load(open(os.path.join(D, i + '.json'))) for i in IDS}
 data['_updated_at'] = '2026-10-21T00:00:00Z'
 VI = json.load(open(os.path.join(G, 'i18n-vi.json'), encoding='utf-8'))
