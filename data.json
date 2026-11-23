@@ -1,4 +1,83 @@
 {
+ "cbta": [
+  {
+   "ojt_modules": 11,
+   "theory_pct": 6.25,
+   "developing": 0,
+   "review": 0,
+   "completed": 11,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 11,
+   "team": "Deck crew"
+  },
+  {
+   "ojt_modules": 39,
+   "theory_pct": 7.85,
+   "developing": 1,
+   "review": null,
+   "completed": 35,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 39,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 38,
+   "theory_pct": 1.48,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 38,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 36,
+   "theory_pct": 3.87,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 36,
+   "team": "P&P"
+  },
+  {
+   "ojt_modules": 35,
+   "theory_pct": 0,
+   "developing": 2,
+   "review": 2,
+   "completed": 20,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 24,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 31,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 1,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 22,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 29,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 0,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 21,
+   "team": "P&P"
+  }
+ ],
  "staffing": [
   {
    "filled": 47,
@@ -558,85 +637,6 @@
    "month": "2028-12"
   }
  ],
- "cbta": [
-  {
-   "ojt_modules": 11,
-   "theory_pct": 6.25,
-   "developing": 0,
-   "review": 0,
-   "completed": 11,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 11,
-   "team": "Deck crew"
-  },
-  {
-   "ojt_modules": 39,
-   "theory_pct": 7.85,
-   "developing": 1,
-   "review": null,
-   "completed": 35,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 39,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 38,
-   "theory_pct": 1.48,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 38,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 36,
-   "theory_pct": 3.87,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 36,
-   "team": "P&P"
-  },
-  {
-   "ojt_modules": 35,
-   "theory_pct": 0,
-   "developing": 2,
-   "review": 2,
-   "completed": 20,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 24,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 31,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 1,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 22,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 29,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 0,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 21,
-   "team": "P&P"
-  }
- ],
  "orr_teams": [
   {
    "weight_pct": 27.3,
@@ -720,44 +720,6 @@
    "team": "Production Eng"
   }
  ],
- "mandatory": [
-  {
-   "planned": 72,
-   "balance": 49,
-   "earned": 23,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 270,
-   "balance": 144,
-   "earned": 126,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 210,
-   "balance": 94,
-   "earned": 116,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 328,
-   "balance": 127,
-   "earned": 201,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 263,
-   "balance": 175,
-   "earned": 88,
-   "team": "Management"
-  },
-  {
-   "planned": 242,
-   "balance": 96,
-   "earned": 146,
-   "team": "WHP team"
-  }
- ],
  "vendor_training": [
   {
    "period": "2026-09",
@@ -834,6 +796,44 @@
   {
    "period": "2028",
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
+  }
+ ],
+ "mandatory": [
+  {
+   "planned": 72,
+   "balance": 49,
+   "earned": 23,
+   "team": "CPP Deck crew"
+  },
+  {
+   "planned": 270,
+   "balance": 144,
+   "earned": 126,
+   "team": "CPP E&I"
+  },
+  {
+   "planned": 210,
+   "balance": 94,
+   "earned": 116,
+   "team": "CPP M&R"
+  },
+  {
+   "planned": 328,
+   "balance": 127,
+   "earned": 201,
+   "team": "CPP P&P"
+  },
+  {
+   "planned": 263,
+   "balance": 175,
+   "earned": 88,
+   "team": "Management"
+  },
+  {
+   "planned": 242,
+   "balance": 96,
+   "earned": 146,
+   "team": "WHP team"
   }
  ],
  "orr_groups": [
@@ -1955,6 +1955,122 @@
    "id": "HSE-40",
    "remark": "Issued",
    "document": "Pressure cylinder management Procedure"
+  }
+ ],
+ "workstreams": [
+  {
+   "area": "Manpower",
+   "status": "Deputy GM, OIM 2, Snr. Mechanical Engineer 1, HSE Supervisor 2, FSO Rep 1",
+   "no": "1",
+   "item": "Vacant positions"
+  },
+  {
+   "area": "Training",
+   "status": "CBTA development: Wellhead 98.5% complete; CPP 84.5% complete. Completion is expected by the end of December 2026.",
+   "no": "2.2",
+   "item": "CBTA"
+  },
+  {
+   "area": "Applications",
+   "status": "TCEAR.",
+   "no": "3.2",
+   "item": "AIMS"
+  },
+  {
+   "area": "Applications",
+   "status": "Phase 2 (Plant Maintenance, Inventory & Warehouse): training and UAT completed. Preparing to kick off Phase 3 (KPIs and reports).",
+   "no": "3.5",
+   "item": "EAM/SAP"
+  },
+  {
+   "area": "Applications",
+   "status": "Functional configuration completed. NGS is finalising the reporting module.",
+   "no": "3.4",
+   "item": "HRIS"
+  },
+  {
+   "area": "Applications",
+   "status": "Phase 1: blueprint completed; platform development in progress.",
+   "no": "3.7",
+   "item": "OMS"
+  },
+  {
+   "area": "Applications",
+   "status": "ITB issued 06 Nov 26",
+   "no": "3.3",
+   "item": "OSCC"
+  },
+  {
+   "area": "Applications",
+   "status": "Technical evaluation report in preparation.",
+   "no": "3.1",
+   "item": "PDMS"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "PR đã phê duyệt, các PIC đã hoàn thiện cơ bản gần 100% CSP cho ITB",
+   "no": "6.6",
+   "item": "Catering services"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "raise: PIA đã trình ký eO từ ngày 03/11, hiện đang ở PIC OPS (Hợp đồng chính 31/12/26 hết hạn cần triển khai sớm)",
+   "no": "6.5",
+   "item": "Crew change service to Nam Can"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "combine with DCD’s contract: SCM đang trình ký PIA Helicopter từ 27/10, hiện đang đến Tp. SCM",
+   "no": "6.1",
+   "item": "Helicopter"
+  },
+  {
+   "area": "Logistics & services",
+   "status": null,
+   "no": "6.7",
+   "item": "Medical services"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "đã raise PR",
+   "no": "6.4",
+   "item": "MGO"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "ITB",
+   "no": "6.2",
+   "item": "Supply vessel, FCB, security boat"
+  },
+  {
+   "area": "Logistics & services",
+   "status": "Combine with DEV, DCD",
+   "no": "6.3",
+   "item": "Vessel inspection"
+  },
+  {
+   "area": "Coordination",
+   "status": "Separated into two procedures. Already sent out to Parties for review (SWPOC, EVNGENCO2/NĐCT, PVN, MOECO). Plan to send to NSMO this week for review (the 2nd procedure).",
+   "no": "8.1",
+   "item": "Coordination procedure"
+  },
+  {
+   "area": "Coordination",
+   "status": "Last updated and sent out on 28-Oct-26",
+   "no": "8.2",
+   "item": "Production profile"
+  },
+  {
+   "area": "Commissioning",
+   "status": "E-house, HVAC, Crane, FM200, LQ UPS.",
+   "no": "10.2",
+   "item": "Installation, pre-com, com"
+  },
+  {
+   "area": "Commissioning",
+   "status": "Findings -> Punch list -> Close out.",
+   "no": "10.1",
+   "item": "Offshore preservation"
   }
  ],
  "cmms": [
@@ -3267,194 +3383,6 @@
    "permit": "Fire Protection Approval (PCCC)"
   }
  ],
- "workstreams": [
-  {
-   "area": "Manpower",
-   "status": "Deputy GM, OIM 2, Snr. Mechanical Engineer 1, HSE Supervisor 2, FSO Rep 1",
-   "no": "1",
-   "item": "Vacant positions"
-  },
-  {
-   "area": "Training",
-   "status": "CBTA development: Wellhead 98.5% complete; CPP 84.5% complete. Completion is expected by the end of December 2026.",
-   "no": "2.2",
-   "item": "CBTA"
-  },
-  {
-   "area": "Applications",
-   "status": "TCEAR.",
-   "no": "3.2",
-   "item": "AIMS"
-  },
-  {
-   "area": "Applications",
-   "status": "Phase 2 (Plant Maintenance, Inventory & Warehouse): training and UAT completed. Preparing to kick off Phase 3 (KPIs and reports).",
-   "no": "3.5",
-   "item": "EAM/SAP"
-  },
-  {
-   "area": "Applications",
-   "status": "Functional configuration completed. NGS is finalising the reporting module.",
-   "no": "3.4",
-   "item": "HRIS"
-  },
-  {
-   "area": "Applications",
-   "status": "Phase 1: blueprint completed; platform development in progress.",
-   "no": "3.7",
-   "item": "OMS"
-  },
-  {
-   "area": "Applications",
-   "status": "ITB issued 06 Nov 26",
-   "no": "3.3",
-   "item": "OSCC"
-  },
-  {
-   "area": "Applications",
-   "status": "Technical evaluation report in preparation.",
-   "no": "3.1",
-   "item": "PDMS"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "PR đã phê duyệt, các PIC đã hoàn thiện cơ bản gần 100% CSP cho ITB",
-   "no": "6.6",
-   "item": "Catering services"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "raise: PIA đã trình ký eO từ ngày 03/11, hiện đang ở PIC OPS (Hợp đồng chính 31/12/26 hết hạn cần triển khai sớm)",
-   "no": "6.5",
-   "item": "Crew change service to Nam Can"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "combine with DCD’s contract: SCM đang trình ký PIA Helicopter từ 27/10, hiện đang đến Tp. SCM",
-   "no": "6.1",
-   "item": "Helicopter"
-  },
-  {
-   "area": "Logistics & services",
-   "status": null,
-   "no": "6.7",
-   "item": "Medical services"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "đã raise PR",
-   "no": "6.4",
-   "item": "MGO"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "ITB",
-   "no": "6.2",
-   "item": "Supply vessel, FCB, security boat"
-  },
-  {
-   "area": "Logistics & services",
-   "status": "Combine with DEV, DCD",
-   "no": "6.3",
-   "item": "Vessel inspection"
-  },
-  {
-   "area": "Coordination",
-   "status": "Separated into two procedures. Already sent out to Parties for review (SWPOC, EVNGENCO2/NĐCT, PVN, MOECO). Plan to send to NSMO this week for review (the 2nd procedure).",
-   "no": "8.1",
-   "item": "Coordination procedure"
-  },
-  {
-   "area": "Coordination",
-   "status": "Last updated and sent out on 28-Oct-26",
-   "no": "8.2",
-   "item": "Production profile"
-  },
-  {
-   "area": "Commissioning",
-   "status": "E-house, HVAC, Crane, FM200, LQ UPS.",
-   "no": "10.2",
-   "item": "Installation, pre-com, com"
-  },
-  {
-   "area": "Commissioning",
-   "status": "Findings -> Punch list -> Close out.",
-   "no": "10.1",
-   "item": "Offshore preservation"
-  }
- ],
- "startup_sequence": [
-  {
-   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
-   "step": 1,
-   "phase": "Preparation"
-  },
-  {
-   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
-   "step": 2,
-   "phase": "Start up CPP"
-  },
-  {
-   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
-   "step": 3,
-   "phase": "First well"
-  },
-  {
-   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
-   "step": 4,
-   "phase": "Pressurize CPP"
-  },
-  {
-   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
-   "step": 5,
-   "phase": "Gas & fuel gas"
-  },
-  {
-   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
-   "step": 6,
-   "phase": "Second well"
-  },
-  {
-   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
-   "step": 7,
-   "phase": "GTG to fuel gas"
-  },
-  {
-   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
-   "step": 8,
-   "phase": "Third well"
-  },
-  {
-   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
-   "step": 9,
-   "phase": "Ramp up wells"
-  },
-  {
-   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
-   "step": 10,
-   "phase": "GTC & WHRU"
-  },
-  {
-   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
-   "step": 11,
-   "phase": "Dew point"
-  },
-  {
-   "action": "Start MRU; close bypass line when gas dew point is on spec",
-   "step": 12,
-   "phase": "MRU"
-  },
-  {
-   "action": "Export gas to export gas pipeline",
-   "step": 13,
-   "phase": "Export gas"
-  },
-  {
-   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
-   "step": 14,
-   "phase": "Condensate & PW"
-  }
- ],
  "readiness": [
   {
    "owner": null,
@@ -3639,6 +3567,78 @@
    "plan_finish": "2027-02-26",
    "plan_start": "2027-01-25",
    "activity": "Comm Train 1 – Glycol Regeneration (FTP)"
+  }
+ ],
+ "startup_sequence": [
+  {
+   "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
+   "step": 1,
+   "phase": "Preparation"
+  },
+  {
+   "action": "Start 1 GTG on diesel mode; start CPP air compressor",
+   "step": 2,
+   "phase": "Start up CPP"
+  },
+  {
+   "action": "Open 1st AQWA well to test separator; pressurize AQWA process; drain completion liquid to sea",
+   "step": 3,
+   "phase": "First well"
+  },
+  {
+   "action": "Route gas and liquid to CPP; pressurize CPP and flare tower; route liquid to liquid separation system",
+   "step": 4,
+   "phase": "Pressurize CPP"
+  },
+  {
+   "action": "Route gas to gas system and start fuel gas system (purging/blanket gas, fuel gas, chemical system)",
+   "step": 5,
+   "phase": "Gas & fuel gas"
+  },
+  {
+   "action": "Open 2nd AQWA well to test; switch 1st well out of test",
+   "step": 6,
+   "phase": "Second well"
+  },
+  {
+   "action": "Switch GTG to fuel gas; start 2nd GTG on fuel gas; start glycol regeneration and hot oil systems in cold circulation",
+   "step": 7,
+   "phase": "GTG to fuel gas"
+  },
+  {
+   "action": "Open 3rd AQWA well; switch 2nd well out of test and 3rd well to test",
+   "step": 8,
+   "phase": "Third well"
+  },
+  {
+   "action": "Open 4th–7th wells on AQWA, then 8th well and re-open other wells",
+   "step": 9,
+   "phase": "Ramp up wells"
+  },
+  {
+   "action": "Start GTC in circulation mode; start WHRU to heat hot oil and glycol regeneration",
+   "step": 10,
+   "phase": "GTC & WHRU"
+  },
+  {
+   "action": "Start dew point system (JT valve); open MRU bypass; switch dew point from JT valve to expander unit if needed",
+   "step": 11,
+   "phase": "Dew point"
+  },
+  {
+   "action": "Start MRU; close bypass line when gas dew point is on spec",
+   "step": 12,
+   "phase": "MRU"
+  },
+  {
+   "action": "Export gas to export gas pipeline",
+   "step": 13,
+   "phase": "Export gas"
+  },
+  {
+   "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
+   "step": 14,
+   "phase": "Condensate & PW"
   }
  ],
  "milestones": [
@@ -6196,6 +6196,98 @@
    "department": "TOTAL"
   }
  ],
+ "tender_schedule": [
+  {
+   "planned_date": "2026-10-13",
+   "actual_date": null,
+   "no": 1,
+   "duration_days": 5,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s endorsement of CSP"
+  },
+  {
+   "planned_date": "2026-10-27",
+   "actual_date": null,
+   "no": 2,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Contractor Parties’ approval of Bidder List"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 3,
+   "duration_days": 14,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "PETROVIETNAM’s approval of Bidder List and ITB"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 4,
+   "duration_days": 0,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Issuance"
+  },
+  {
+   "planned_date": "2026-12-30",
+   "actual_date": null,
+   "no": 5,
+   "duration_days": 30,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Submission Deadline"
+  },
+  {
+   "planned_date": "2026-12-31",
+   "actual_date": null,
+   "no": 6,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Bid Opening"
+  },
+  {
+   "planned_date": "2027-01-29",
+   "actual_date": null,
+   "no": 7,
+   "duration_days": 20,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Evaluation"
+  },
+  {
+   "planned_date": "2027-02-03",
+   "actual_date": null,
+   "no": 8,
+   "duration_days": 3,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s approval of Technical Evaluation Report"
+  },
+  {
+   "planned_date": "2027-02-11",
+   "actual_date": null,
+   "no": 9,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Bid Opening"
+  },
+  {
+   "planned_date": "2027-02-25",
+   "actual_date": null,
+   "no": 10,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Evaluation"
+  }
+ ],
  "orr_team_plan": [
   {
    "month": "2026-10",
@@ -6684,96 +6776,292 @@
    "team": "Production OPS"
   }
  ],
- "tender_schedule": [
+ "orr_risks": [
   {
-   "planned_date": "2026-10-13",
-   "actual_date": null,
-   "no": 1,
-   "duration_days": 5,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Tender Committee’s endorsement of CSP"
+   "resource": 2,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 241,
+   "interface": 2,
+   "new_activity_name": "Intergrated Plan",
+   "vendor": 1,
+   "activity": "OPS master schedule"
   },
   {
-   "planned_date": "2026-10-27",
-   "actual_date": null,
-   "no": 2,
-   "duration_days": 10,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Contractor Parties’ approval of Bidder List"
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 332,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Operations Excellence Dashboard Updating Procedure"
   },
   {
-   "planned_date": "2026-11-16",
-   "actual_date": null,
-   "no": 3,
-   "duration_days": 14,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "PETROVIETNAM’s approval of Bidder List and ITB"
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 458,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Identify spares based on 2 year operations spares from Project and recommend by OPS"
   },
   {
-   "planned_date": "2026-11-16",
-   "actual_date": null,
-   "no": 4,
-   "duration_days": 0,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Bid Issuance"
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 481,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Vendor training & roll out"
   },
   {
-   "planned_date": "2026-12-30",
-   "actual_date": null,
-   "no": 5,
-   "duration_days": 30,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Bid Submission Deadline"
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 491,
+   "interface": 2,
+   "new_activity_name": "Develop training system (HRIS)",
+   "vendor": 1,
+   "activity": "Training delivery"
   },
   {
-   "planned_date": "2026-12-31",
-   "actual_date": null,
-   "no": 6,
-   "duration_days": 1,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Technical Bid Opening"
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": "Expedite POS to recruit personnel",
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 495,
+   "interface": 2,
+   "new_activity_name": "Recruitment offshore outsource manpower",
+   "vendor": 2,
+   "activity": "Review manpower contract and evaluate the performance"
   },
   {
-   "planned_date": "2027-01-29",
-   "actual_date": null,
-   "no": 7,
-   "duration_days": 20,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Technical Evaluation"
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 506,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Contractors Performance Review Meeting (Production, HSE, OPEX, and other milestone,...)"
   },
   {
-   "planned_date": "2027-02-03",
-   "actual_date": null,
-   "no": 8,
-   "duration_days": 3,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Tender Committee’s approval of Technical Evaluation Report"
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 511,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Incident reporting follow Incident investigation procedure (Incident Reporting and Investigation Procedure)"
   },
   {
-   "planned_date": "2027-02-11",
-   "actual_date": null,
-   "no": 9,
-   "duration_days": 1,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Commercial Bid Opening"
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 515,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Internal and external audit program (PTW, IC, overside work, ..audit, Aviation fuel audit, ISO14001 audit,.....)"
   },
   {
-   "planned_date": "2027-02-25",
-   "actual_date": null,
-   "no": 10,
-   "duration_days": 10,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Commercial Evaluation"
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 522,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Implement preservation maintenance programme"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 524,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Develop Logistic Plan for commissioning Team (transfers to and from offshore)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 547,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Additional Operating Spares to be purchased beyond Development purchased 2YOS"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 549,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "What monitoring equipment does Rig have and Safety Equipment"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 576,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "IT equipment"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Study / lesson learnt from Thailand Field. Contact Potetial Vendor/Supplier",
+   "avg_score": 2,
+   "scope": 4,
+   "contract": 1,
+   "item": 582,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Provision of chemical pigging services for pipeline"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 610,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Provision of special PPE"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 631,
+   "interface": 2,
+   "new_activity_name": "Provision of Offshore Catering Services",
+   "vendor": 2,
+   "activity": "Catering contract Food/Drinking water/Fresh Water/cooking utensa…"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 632,
+   "interface": 2,
+   "new_activity_name": "Provision of Medical Services contract",
+   "vendor": 2,
+   "activity": "Provision of Offshore Medical Services"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 649,
+   "interface": 2,
+   "new_activity_name": "2027+4 WPB",
+   "vendor": 2,
+   "activity": "Operations WP&B"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 651,
+   "interface": 2,
+   "new_activity_name": "Operations Coordination Procedure",
+   "vendor": 1,
+   "activity": "TOSA(Coordination procedure)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 681,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Recruitment & Training  Coordination (base on training matrix)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 682,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
   }
  ],
  "contract_packages": [
@@ -7166,294 +7454,6 @@
    "ros_required": "2027-06-01",
    "status": null,
    "package": "CMMS Replicator <Offshore Facility> (CMMS.REPA)"
-  }
- ],
- "orr_risks": [
-  {
-   "resource": 2,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 241,
-   "interface": 2,
-   "new_activity_name": "Intergrated Plan",
-   "vendor": 1,
-   "activity": "OPS master schedule"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 332,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Operations Excellence Dashboard Updating Procedure"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
-   "avg_score": 1.6,
-   "scope": 1,
-   "contract": 1,
-   "item": 458,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 3,
-   "activity": "Identify spares based on 2 year operations spares from Project and recommend by OPS"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 481,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Vendor training & roll out"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 2,
-   "contract": 1,
-   "item": 491,
-   "interface": 2,
-   "new_activity_name": "Develop training system (HRIS)",
-   "vendor": 1,
-   "activity": "Training delivery"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": "Expedite POS to recruit personnel",
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 495,
-   "interface": 2,
-   "new_activity_name": "Recruitment offshore outsource manpower",
-   "vendor": 2,
-   "activity": "Review manpower contract and evaluate the performance"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 506,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Contractors Performance Review Meeting (Production, HSE, OPEX, and other milestone,...)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 511,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Incident reporting follow Incident investigation procedure (Incident Reporting and Investigation Procedure)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 515,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Internal and external audit program (PTW, IC, overside work, ..audit, Aviation fuel audit, ISO14001 audit,.....)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 522,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Implement preservation maintenance programme"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 524,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Develop Logistic Plan for commissioning Team (transfers to and from offshore)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
-   "avg_score": 1.6,
-   "scope": 1,
-   "contract": 1,
-   "item": 547,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 3,
-   "activity": "Additional Operating Spares to be purchased beyond Development purchased 2YOS"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 549,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "What monitoring equipment does Rig have and Safety Equipment"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 576,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "IT equipment"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Study / lesson learnt from Thailand Field. Contact Potetial Vendor/Supplier",
-   "avg_score": 2,
-   "scope": 4,
-   "contract": 1,
-   "item": 582,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Provision of chemical pigging services for pipeline"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 2,
-   "contract": 1,
-   "item": 610,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Provision of special PPE"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 631,
-   "interface": 2,
-   "new_activity_name": "Provision of Offshore Catering Services",
-   "vendor": 2,
-   "activity": "Catering contract Food/Drinking water/Fresh Water/cooking utensa…"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 632,
-   "interface": 2,
-   "new_activity_name": "Provision of Medical Services contract",
-   "vendor": 2,
-   "activity": "Provision of Offshore Medical Services"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 649,
-   "interface": 2,
-   "new_activity_name": "2027+4 WPB",
-   "vendor": 2,
-   "activity": "Operations WP&B"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 651,
-   "interface": 2,
-   "new_activity_name": "Operations Coordination Procedure",
-   "vendor": 1,
-   "activity": "TOSA(Coordination procedure)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 681,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Recruitment & Training  Coordination (base on training matrix)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 682,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
   }
  ],
  "manpower_groups": [
@@ -9858,17 +9858,6 @@
    "key": "Services Contract 2028-12"
   }
  ],
- "edms_reports": [
-  {
-   "contractor": "True Technology Company Ltd.",
-   "overall_pct": 67.9,
-   "project": "EDMS PORTAL IMPLEMENTATION UNDER ADDENDUM NO 01",
-   "contract": "Contract Addendum No. 01 to Contract No. 3100000176",
-   "period_to": "2026-11-14",
-   "period_from": "2026-11-09",
-   "doc_no": "EDMS-WR-TT-PQPOC-008"
-  }
- ],
  "edms_activities": [
   {
    "group": "Licensing, Infrastructure Setup",
@@ -9929,6 +9918,17 @@
    "seq": 6,
    "report": "EDMS-WR-TT-PQPOC-008",
    "activity": "Prepare the user guide."
+  }
+ ],
+ "edms_reports": [
+  {
+   "contractor": "True Technology Company Ltd.",
+   "overall_pct": 67.9,
+   "project": "EDMS PORTAL IMPLEMENTATION UNDER ADDENDUM NO 01",
+   "contract": "Contract Addendum No. 01 to Contract No. 3100000176",
+   "period_to": "2026-11-14",
+   "period_from": "2026-11-09",
+   "doc_no": "EDMS-WR-TT-PQPOC-008"
   }
  ],
  "edms_schedule": [
@@ -10520,8 +10520,8 @@
  ],
  "meta": [
   {
-   "report_date": "2026-11-23",
-   "as_of": "2026-11-23",
+   "report_date": "2026-11-24",
+   "as_of": "2026-11-24",
    "state": "open",
    "name": "Báo cáo OPS – cập nhật liên tục",
    "report_title": "Operations Readiness Preparation",
