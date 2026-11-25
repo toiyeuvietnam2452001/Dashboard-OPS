@@ -1,6 +1,12 @@
 {
- "latest": "2026-11-25",
+ "latest": "2026-11-26",
  "reports": [
+  {
+   "date": "2026-11-26",
+   "updated_at": "2026-11-16T01:12:00.000Z",
+   "title": "Operations Readiness Preparation",
+   "versions": []
+  },
   {
    "date": "2026-11-25",
    "updated_at": "2026-11-16T01:12:00.000Z",
