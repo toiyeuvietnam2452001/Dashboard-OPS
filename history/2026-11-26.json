@@ -1,4 +1,100 @@
 {
+ "cbta": [
+  {
+   "ojt_modules": 11,
+   "theory_pct": 6.25,
+   "developing": 0,
+   "review": 0,
+   "completed": 11,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 11,
+   "team": "Deck crew"
+  },
+  {
+   "ojt_modules": 39,
+   "theory_pct": 7.85,
+   "developing": 1,
+   "review": null,
+   "completed": 35,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 39,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 38,
+   "theory_pct": 1.48,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 38,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 36,
+   "theory_pct": 3.87,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 36,
+   "team": "P&P"
+  },
+  {
+   "ojt_modules": 35,
+   "theory_pct": 0,
+   "developing": 2,
+   "review": 2,
+   "completed": 20,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 24,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 31,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 1,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 22,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 29,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 0,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 21,
+   "team": "P&P"
+  }
+ ],
+ "staffing": [
+  {
+   "filled": 47,
+   "required": 50,
+   "group": "Offshore"
+  },
+  {
+   "filled": 32,
+   "required": 34,
+   "group": "Onshore"
+  },
+  {
+   "filled": 9,
+   "required": 38,
+   "group": "Outsource (Offshore)"
+  }
+ ],
  "manpower": [
   {
    "offshore_plan": 2,
@@ -541,140 +637,6 @@
    "month": "2028-12"
   }
  ],
- "cbta": [
-  {
-   "ojt_modules": 11,
-   "theory_pct": 6.25,
-   "developing": 0,
-   "review": 0,
-   "completed": 11,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 11,
-   "team": "Deck crew"
-  },
-  {
-   "ojt_modules": 39,
-   "theory_pct": 7.85,
-   "developing": 1,
-   "review": null,
-   "completed": 35,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 39,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 38,
-   "theory_pct": 1.48,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 38,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 36,
-   "theory_pct": 3.87,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 36,
-   "team": "P&P"
-  },
-  {
-   "ojt_modules": 35,
-   "theory_pct": 0,
-   "developing": 2,
-   "review": 2,
-   "completed": 20,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 24,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 31,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 1,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 22,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 29,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 0,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 21,
-   "team": "P&P"
-  }
- ],
- "staffing": [
-  {
-   "filled": 47,
-   "required": 50,
-   "group": "Offshore"
-  },
-  {
-   "filled": 32,
-   "required": 34,
-   "group": "Onshore"
-  },
-  {
-   "filled": 9,
-   "required": 38,
-   "group": "Outsource (Offshore)"
-  }
- ],
- "mandatory": [
-  {
-   "planned": 72,
-   "balance": 49,
-   "earned": 23,
-   "team": "CPP Deck crew"
-  },
-  {
-   "planned": 270,
-   "balance": 144,
-   "earned": 126,
-   "team": "CPP E&I"
-  },
-  {
-   "planned": 210,
-   "balance": 94,
-   "earned": 116,
-   "team": "CPP M&R"
-  },
-  {
-   "planned": 328,
-   "balance": 127,
-   "earned": 201,
-   "team": "CPP P&P"
-  },
-  {
-   "planned": 263,
-   "balance": 175,
-   "earned": 88,
-   "team": "Management"
-  },
-  {
-   "planned": 242,
-   "balance": 96,
-   "earned": 146,
-   "team": "WHP team"
-  }
- ],
  "orr_teams": [
   {
    "weight_pct": 27.3,
@@ -836,6 +798,66 @@
    "course": "Vapour Recovery Compressor (CPPT-MEC005)"
   }
  ],
+ "mandatory": [
+  {
+   "planned": 72,
+   "balance": 49,
+   "earned": 23,
+   "team": "CPP Deck crew"
+  },
+  {
+   "planned": 270,
+   "balance": 144,
+   "earned": 126,
+   "team": "CPP E&I"
+  },
+  {
+   "planned": 210,
+   "balance": 94,
+   "earned": 116,
+   "team": "CPP M&R"
+  },
+  {
+   "planned": 328,
+   "balance": 127,
+   "earned": 201,
+   "team": "CPP P&P"
+  },
+  {
+   "planned": 263,
+   "balance": 175,
+   "earned": 88,
+   "team": "Management"
+  },
+  {
+   "planned": 242,
+   "balance": 96,
+   "earned": 146,
+   "team": "WHP team"
+  }
+ ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
+  }
+ ],
  "orr_curve": [
   {
    "actual_pct": 71.3,
@@ -881,28 +903,6 @@
    "actual_pct": null,
    "plan_pct": 95,
    "month": "2027-06"
-  }
- ],
- "orr_groups": [
-  {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
-  },
-  {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
-  },
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
-  },
-  {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
   }
  ],
  "orr_elements": [
@@ -1955,18 +1955,6 @@
    "id": "HSE-40",
    "remark": "Issued",
    "document": "Pressure cylinder management Procedure"
-  }
- ],
- "cmms": [
-  {
-   "actual_pct": 82.11,
-   "plan_pct": 85,
-   "package": "EPCI#2"
-  },
-  {
-   "actual_pct": 41.58,
-   "plan_pct": 42.3,
-   "package": "EPCI#1"
   }
  ],
  "workstreams": [
@@ -3383,6 +3371,76 @@
    "permit": "Fire Protection Approval (PCCC)"
   }
  ],
+ "cmms": [
+  {
+   "actual_pct": 82.11,
+   "plan_pct": 85,
+   "package": "EPCI#2"
+  },
+  {
+   "actual_pct": 41.58,
+   "plan_pct": 42.3,
+   "package": "EPCI#1"
+  }
+ ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
+  }
+ ],
  "precom_plan": [
   {
    "actual_start": null,
@@ -3581,64 +3639,6 @@
    "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
    "step": 14,
    "phase": "Condensate & PW"
-  }
- ],
- "readiness": [
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
   }
  ],
  "milestones": [
@@ -6062,6 +6062,98 @@
    "course": "Electrical safety"
   }
  ],
+ "tender_schedule": [
+  {
+   "planned_date": "2026-10-13",
+   "actual_date": null,
+   "no": 1,
+   "duration_days": 5,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s endorsement of CSP"
+  },
+  {
+   "planned_date": "2026-10-27",
+   "actual_date": null,
+   "no": 2,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Contractor Parties’ approval of Bidder List"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 3,
+   "duration_days": 14,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "PETROVIETNAM’s approval of Bidder List and ITB"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 4,
+   "duration_days": 0,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Issuance"
+  },
+  {
+   "planned_date": "2026-12-30",
+   "actual_date": null,
+   "no": 5,
+   "duration_days": 30,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Submission Deadline"
+  },
+  {
+   "planned_date": "2026-12-31",
+   "actual_date": null,
+   "no": 6,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Bid Opening"
+  },
+  {
+   "planned_date": "2027-01-29",
+   "actual_date": null,
+   "no": 7,
+   "duration_days": 20,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Evaluation"
+  },
+  {
+   "planned_date": "2027-02-03",
+   "actual_date": null,
+   "no": 8,
+   "duration_days": 3,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s approval of Technical Evaluation Report"
+  },
+  {
+   "planned_date": "2027-02-11",
+   "actual_date": null,
+   "no": 9,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Bid Opening"
+  },
+  {
+   "planned_date": "2027-02-25",
+   "actual_date": null,
+   "no": 10,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Evaluation"
+  }
+ ],
  "orr_departments": [
   {
    "order": 1,
@@ -6194,98 +6286,6 @@
    "actual_pct": 66.3,
    "weight_pct": 100,
    "department": "TOTAL"
-  }
- ],
- "tender_schedule": [
-  {
-   "planned_date": "2026-10-13",
-   "actual_date": null,
-   "no": 1,
-   "duration_days": 5,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Tender Committee’s endorsement of CSP"
-  },
-  {
-   "planned_date": "2026-10-27",
-   "actual_date": null,
-   "no": 2,
-   "duration_days": 10,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Contractor Parties’ approval of Bidder List"
-  },
-  {
-   "planned_date": "2026-11-16",
-   "actual_date": null,
-   "no": 3,
-   "duration_days": 14,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "PETROVIETNAM’s approval of Bidder List and ITB"
-  },
-  {
-   "planned_date": "2026-11-16",
-   "actual_date": null,
-   "no": 4,
-   "duration_days": 0,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Bid Issuance"
-  },
-  {
-   "planned_date": "2026-12-30",
-   "actual_date": null,
-   "no": 5,
-   "duration_days": 30,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Bid Submission Deadline"
-  },
-  {
-   "planned_date": "2026-12-31",
-   "actual_date": null,
-   "no": 6,
-   "duration_days": 1,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Technical Bid Opening"
-  },
-  {
-   "planned_date": "2027-01-29",
-   "actual_date": null,
-   "no": 7,
-   "duration_days": 20,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Technical Evaluation"
-  },
-  {
-   "planned_date": "2027-02-03",
-   "actual_date": null,
-   "no": 8,
-   "duration_days": 3,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Tender Committee’s approval of Technical Evaluation Report"
-  },
-  {
-   "planned_date": "2027-02-11",
-   "actual_date": null,
-   "no": 9,
-   "duration_days": 1,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Commercial Bid Opening"
-  },
-  {
-   "planned_date": "2027-02-25",
-   "actual_date": null,
-   "no": 10,
-   "duration_days": 10,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Commercial Evaluation"
   }
  ],
  "orr_team_plan": [
@@ -6776,294 +6776,6 @@
    "team": "Production OPS"
   }
  ],
- "orr_risks": [
-  {
-   "resource": 2,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 241,
-   "interface": 2,
-   "new_activity_name": "Intergrated Plan",
-   "vendor": 1,
-   "activity": "OPS master schedule"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 332,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Operations Excellence Dashboard Updating Procedure"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
-   "avg_score": 1.6,
-   "scope": 1,
-   "contract": 1,
-   "item": 458,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 3,
-   "activity": "Identify spares based on 2 year operations spares from Project and recommend by OPS"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 481,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Vendor training & roll out"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 2,
-   "contract": 1,
-   "item": 491,
-   "interface": 2,
-   "new_activity_name": "Develop training system (HRIS)",
-   "vendor": 1,
-   "activity": "Training delivery"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": "Expedite POS to recruit personnel",
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 495,
-   "interface": 2,
-   "new_activity_name": "Recruitment offshore outsource manpower",
-   "vendor": 2,
-   "activity": "Review manpower contract and evaluate the performance"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 506,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Contractors Performance Review Meeting (Production, HSE, OPEX, and other milestone,...)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 511,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Incident reporting follow Incident investigation procedure (Incident Reporting and Investigation Procedure)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 515,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Internal and external audit program (PTW, IC, overside work, ..audit, Aviation fuel audit, ISO14001 audit,.....)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 522,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Implement preservation maintenance programme"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 524,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Develop Logistic Plan for commissioning Team (transfers to and from offshore)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
-   "avg_score": 1.6,
-   "scope": 1,
-   "contract": 1,
-   "item": 547,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 3,
-   "activity": "Additional Operating Spares to be purchased beyond Development purchased 2YOS"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 549,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "What monitoring equipment does Rig have and Safety Equipment"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 576,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "IT equipment"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Study / lesson learnt from Thailand Field. Contact Potetial Vendor/Supplier",
-   "avg_score": 2,
-   "scope": 4,
-   "contract": 1,
-   "item": 582,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Provision of chemical pigging services for pipeline"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 2,
-   "contract": 1,
-   "item": 610,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Provision of special PPE"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 631,
-   "interface": 2,
-   "new_activity_name": "Provision of Offshore Catering Services",
-   "vendor": 2,
-   "activity": "Catering contract Food/Drinking water/Fresh Water/cooking utensa…"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 632,
-   "interface": 2,
-   "new_activity_name": "Provision of Medical Services contract",
-   "vendor": 2,
-   "activity": "Provision of Offshore Medical Services"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 649,
-   "interface": 2,
-   "new_activity_name": "2027+4 WPB",
-   "vendor": 2,
-   "activity": "Operations WP&B"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 651,
-   "interface": 2,
-   "new_activity_name": "Operations Coordination Procedure",
-   "vendor": 1,
-   "activity": "TOSA(Coordination procedure)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 681,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Recruitment & Training  Coordination (base on training matrix)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 682,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
-  }
- ],
  "contract_packages": [
   {
    "loa_required": null,
@@ -7454,6 +7166,294 @@
    "ros_required": "2027-06-01",
    "status": null,
    "package": "CMMS Replicator <Offshore Facility> (CMMS.REPA)"
+  }
+ ],
+ "orr_risks": [
+  {
+   "resource": 2,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 241,
+   "interface": 2,
+   "new_activity_name": "Intergrated Plan",
+   "vendor": 1,
+   "activity": "OPS master schedule"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 332,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Operations Excellence Dashboard Updating Procedure"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 458,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Identify spares based on 2 year operations spares from Project and recommend by OPS"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 481,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Vendor training & roll out"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 491,
+   "interface": 2,
+   "new_activity_name": "Develop training system (HRIS)",
+   "vendor": 1,
+   "activity": "Training delivery"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": "Expedite POS to recruit personnel",
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 495,
+   "interface": 2,
+   "new_activity_name": "Recruitment offshore outsource manpower",
+   "vendor": 2,
+   "activity": "Review manpower contract and evaluate the performance"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 506,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Contractors Performance Review Meeting (Production, HSE, OPEX, and other milestone,...)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 511,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Incident reporting follow Incident investigation procedure (Incident Reporting and Investigation Procedure)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 515,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Internal and external audit program (PTW, IC, overside work, ..audit, Aviation fuel audit, ISO14001 audit,.....)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 522,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Implement preservation maintenance programme"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 524,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Develop Logistic Plan for commissioning Team (transfers to and from offshore)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 547,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Additional Operating Spares to be purchased beyond Development purchased 2YOS"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 549,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "What monitoring equipment does Rig have and Safety Equipment"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 576,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "IT equipment"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Study / lesson learnt from Thailand Field. Contact Potetial Vendor/Supplier",
+   "avg_score": 2,
+   "scope": 4,
+   "contract": 1,
+   "item": 582,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Provision of chemical pigging services for pipeline"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 610,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Provision of special PPE"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 631,
+   "interface": 2,
+   "new_activity_name": "Provision of Offshore Catering Services",
+   "vendor": 2,
+   "activity": "Catering contract Food/Drinking water/Fresh Water/cooking utensa…"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 632,
+   "interface": 2,
+   "new_activity_name": "Provision of Medical Services contract",
+   "vendor": 2,
+   "activity": "Provision of Offshore Medical Services"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 649,
+   "interface": 2,
+   "new_activity_name": "2027+4 WPB",
+   "vendor": 2,
+   "activity": "Operations WP&B"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 651,
+   "interface": 2,
+   "new_activity_name": "Operations Coordination Procedure",
+   "vendor": 1,
+   "activity": "TOSA(Coordination procedure)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 681,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Recruitment & Training  Coordination (base on training matrix)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 682,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
   }
  ],
  "manpower_groups": [
@@ -9867,6 +9867,7 @@
    "responsibility": "Truetech",
    "seq": 1,
    "report": "EDMS-WR-TT-PQPOC-008",
+   "note": null,
    "activity": "Delivery of Software Licenses (Windows Server 2025, SQL Server 2025)"
   },
   {
@@ -9877,6 +9878,7 @@
    "responsibility": "Truetech",
    "seq": 2,
    "report": "EDMS-WR-TT-PQPOC-008",
+   "note": null,
    "activity": "Completed deployment to the PQPOC environment"
   },
   {
@@ -9887,6 +9889,7 @@
    "responsibility": "Truetech / PQPOC",
    "seq": 3,
    "report": "EDMS-WR-TT-PQPOC-008",
+   "note": null,
    "activity": "Conducted system testing"
   },
   {
@@ -9897,6 +9900,7 @@
    "responsibility": "Truetech",
    "seq": 4,
    "report": "EDMS-WR-TT-PQPOC-008",
+   "note": null,
    "activity": "Continued system updates based on comments received during system testing."
   },
   {
@@ -9907,6 +9911,7 @@
    "responsibility": "Truetech",
    "seq": 5,
    "report": "EDMS-WR-TT-PQPOC-008",
+   "note": null,
    "activity": "Complete system updates based on comments received during system testing."
   },
   {
@@ -9917,7 +9922,63 @@
    "responsibility": "Truetech",
    "seq": 6,
    "report": "EDMS-WR-TT-PQPOC-008",
+   "note": null,
    "activity": "Prepare the user guide."
+  },
+  {
+   "group": "System Testing",
+   "section": "This week",
+   "status": "In Progress",
+   "date": "2026-11-20",
+   "responsibility": "Truetech",
+   "seq": 1,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "note": "Functional updates are complete. Truetech will continue DNS and LDAP configuration in coordination with PQPOC IT.",
+   "activity": "Continued updating the EDMS Portal based on feedback from system testing."
+  },
+  {
+   "group": "Training, User Acceptance Testing",
+   "section": "This week",
+   "status": "Completed",
+   "date": "2026-11-21",
+   "responsibility": "Truetech",
+   "seq": 2,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "note": null,
+   "activity": "Completed preparation of the EDMS Portal User Guide."
+  },
+  {
+   "group": "System Testing",
+   "section": "Planned",
+   "status": null,
+   "date": "2026-11-25",
+   "responsibility": "Truetech / PQPOC IT",
+   "seq": 3,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "note": null,
+   "activity": "Coordinate with PQPOC IT to complete DNS and LDAP configuration for the EDMS Portal."
+  },
+  {
+   "group": "System Testing",
+   "section": "Planned",
+   "status": null,
+   "date": "2026-11-27",
+   "responsibility": "PQPOC",
+   "seq": 4,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "note": "PQPOC can proceed with functional testing while DNS and LDAP configuration is underway.",
+   "activity": "Test the EDMS Portal and report any issues identified."
+  },
+  {
+   "group": "System Testing",
+   "section": "Planned",
+   "status": null,
+   "date": null,
+   "responsibility": "Truetech",
+   "seq": 5,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "note": null,
+   "activity": "Review issues reported by PQPOC and update the Portal as needed."
   }
  ],
  "edms_schedule": [
@@ -10505,6 +10566,591 @@
    "completed": null,
    "status": "Not Started",
    "task": "Support & Maintenance Services Period (Effective until Feb 28, 2030)"
+  },
+  {
+   "start": null,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": null,
+   "completed_pct": 100,
+   "seq": 1,
+   "responsibility": null,
+   "no": "I",
+   "note": null,
+   "level": "Phase",
+   "weight_pct": 4,
+   "completed": null,
+   "status": null,
+   "task": "PROJECT INITIATION & GOVERNANCE"
+  },
+  {
+   "start": "2026-09-17",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-09-25",
+   "completed_pct": 100,
+   "seq": 2,
+   "responsibility": "Truetech / PQPOC",
+   "no": "1.1",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 2,
+   "completed": "2026-09-23",
+   "status": "Completed",
+   "task": "Project Kick-off Meeting (KOM)"
+  },
+  {
+   "start": "2026-09-17",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-09-25",
+   "completed_pct": 100,
+   "seq": 3,
+   "responsibility": "Truetech / PQPOC",
+   "no": "1.2",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 2,
+   "completed": "2026-09-28",
+   "status": "Completed",
+   "task": "Project Planning & Mobilization"
+  },
+  {
+   "start": null,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": null,
+   "completed_pct": 84.21,
+   "seq": 4,
+   "responsibility": null,
+   "no": "II",
+   "note": null,
+   "level": "Phase",
+   "weight_pct": 19,
+   "completed": null,
+   "status": null,
+   "task": "SURVEY & SOLUTION DESIGN"
+  },
+  {
+   "start": "2026-09-21",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-09-25",
+   "completed_pct": 100,
+   "seq": 5,
+   "responsibility": "Truetech / PQPOC",
+   "no": "2.1",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 2,
+   "completed": "2026-09-23",
+   "status": "Completed",
+   "task": "System & Requirement Survey"
+  },
+  {
+   "start": "2026-09-28",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-02",
+   "completed_pct": 100,
+   "seq": 6,
+   "responsibility": "Truetech / PQPOC",
+   "no": "2.2",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 6,
+   "completed": "2026-10-02",
+   "status": "Completed",
+   "task": "Survey Findings Consolidation, Review & Confirmation"
+  },
+  {
+   "start": "2026-10-05",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-09",
+   "completed_pct": 100,
+   "seq": 7,
+   "responsibility": "Truetech",
+   "no": "2.3",
+   "note": "Resubmitted on 23-Oct-26",
+   "level": "Task",
+   "weight_pct": 8,
+   "completed": "2026-10-10",
+   "status": "Completed",
+   "task": "Consolidated Solution Design Package Submission (Document Profile Data Model, Synchronization Design, Infrastructure Sizing, Backup & Disaster Recovery (DR) Plan)"
+  },
+  {
+   "start": "2026-10-12",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-16",
+   "completed_pct": null,
+   "seq": 8,
+   "responsibility": "PQPOC",
+   "no": "2.4",
+   "note": "Design document resubmitted on 23-Oct-26. Awaiting PQPOC approval.",
+   "level": "Task",
+   "weight_pct": 3,
+   "completed": null,
+   "status": "In Progress",
+   "task": "Client Written Approval for Solution Design Package"
+  },
+  {
+   "start": null,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": null,
+   "completed_pct": 96,
+   "seq": 9,
+   "responsibility": null,
+   "no": "III",
+   "note": null,
+   "level": "Phase",
+   "weight_pct": 15,
+   "completed": null,
+   "status": null,
+   "task": "LICENSING, INFRASTRUCTURE SETUP"
+  },
+  {
+   "start": "2026-09-28",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-02",
+   "completed_pct": 100,
+   "seq": 10,
+   "responsibility": "Truetech",
+   "no": "3.1",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 4,
+   "completed": "2026-10-02",
+   "status": "Completed",
+   "task": "Infrastructure & Environment Requirements / Specification"
+  },
+  {
+   "start": "2026-10-05",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-16",
+   "completed_pct": 100,
+   "seq": 11,
+   "responsibility": "Truetech / PQPOC IT",
+   "no": "3.2",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 5,
+   "completed": "2026-10-27",
+   "status": "Completed",
+   "task": "Environment Preparation & Provisioning"
+  },
+  {
+   "start": "2026-10-05",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-16",
+   "completed_pct": null,
+   "seq": 12,
+   "responsibility": "Truetech",
+   "no": "3.2.1",
+   "note": null,
+   "level": "Sub-task",
+   "weight_pct": null,
+   "completed": "2026-10-16",
+   "status": "Completed",
+   "task": "Non-Production Environment"
+  },
+  {
+   "start": "2026-10-12",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-30",
+   "completed_pct": null,
+   "seq": 13,
+   "responsibility": "PQPOC",
+   "no": "3.2.2",
+   "note": null,
+   "level": "Sub-task",
+   "weight_pct": null,
+   "completed": "2026-10-27",
+   "status": "Completed",
+   "task": "Production Environment"
+  },
+  {
+   "start": "2026-09-28",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-16",
+   "completed_pct": 70,
+   "seq": 14,
+   "responsibility": "Truetech",
+   "no": "3.3",
+   "note": "Windows Server and SQL Server licenses delivered on 10-Nov-26. The EDMS Portal license will be delivered upon completion of UAT.",
+   "level": "Task",
+   "weight_pct": 2,
+   "completed": null,
+   "status": "In Progress",
+   "task": "Delivery of Software Licenses (Windows Server 2025, SQL Server 2025, EDMS Portal)"
+  },
+  {
+   "start": "2026-10-19",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-23",
+   "completed_pct": 100,
+   "seq": 15,
+   "responsibility": "Truetech / PQPOC IT",
+   "no": "3.4",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 4,
+   "completed": "2026-11-06",
+   "status": "Completed",
+   "task": "OS / DB & Prerequisite Software Installation"
+  },
+  {
+   "start": "2026-10-19",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-23",
+   "completed_pct": null,
+   "seq": 16,
+   "responsibility": "Truetech",
+   "no": "3.4.1",
+   "note": null,
+   "level": "Sub-task",
+   "weight_pct": null,
+   "completed": "2026-10-23",
+   "status": "Completed",
+   "task": "Non-Production Environment"
+  },
+  {
+   "start": "2026-11-02",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-11-06",
+   "completed_pct": null,
+   "seq": 17,
+   "responsibility": "Truetech / PQPOC IT",
+   "no": "3.4.2",
+   "note": null,
+   "level": "Sub-task",
+   "weight_pct": null,
+   "completed": "2026-11-06",
+   "status": "Completed",
+   "task": "Production Environment"
+  },
+  {
+   "start": null,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": null,
+   "completed_pct": 100,
+   "seq": 18,
+   "responsibility": null,
+   "no": "IV",
+   "note": null,
+   "level": "Phase",
+   "weight_pct": 22,
+   "completed": null,
+   "status": null,
+   "task": "PORTAL BUILD & CONFIGURATION"
+  },
+  {
+   "start": "2026-10-05",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-23",
+   "completed_pct": 100,
+   "seq": 19,
+   "responsibility": "Truetech",
+   "no": "4.1",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 17,
+   "completed": "2026-11-06",
+   "status": "Completed",
+   "task": "Portal Build, Configuration, Integration & Internal Validation"
+  },
+  {
+   "start": "2026-10-26",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-30",
+   "completed_pct": 100,
+   "seq": 20,
+   "responsibility": "Truetech",
+   "no": "4.2",
+   "note": "EDMS Portal",
+   "level": "Task",
+   "weight_pct": 5,
+   "completed": "2026-11-11",
+   "status": "Completed",
+   "task": "Prototype / Demo Environment Preparation & Client Review"
+  },
+  {
+   "start": null,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": null,
+   "completed_pct": 79.44,
+   "seq": 21,
+   "responsibility": null,
+   "no": "V",
+   "note": null,
+   "level": "Phase",
+   "weight_pct": 18,
+   "completed": null,
+   "status": null,
+   "task": "SYSTEM INTEGRATION TESTING (SIT)"
+  },
+  {
+   "start": "2026-10-19",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-23",
+   "completed_pct": 100,
+   "seq": 22,
+   "responsibility": "Truetech",
+   "no": "5.1",
+   "note": "Resubmitted on 01-Nov-26",
+   "level": "Task",
+   "weight_pct": 3,
+   "completed": "2026-10-25",
+   "status": "Completed",
+   "task": "Test Plan & Strategy Package Submission (SIT/UAT)"
+  },
+  {
+   "start": "2026-10-26",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-10-30",
+   "completed_pct": 50,
+   "seq": 23,
+   "responsibility": "PQPOC",
+   "no": "5.2",
+   "note": "Awaiting PQPOC approval.",
+   "level": "Task",
+   "weight_pct": 2,
+   "completed": null,
+   "status": "In Progress",
+   "task": "Client Written Approval for Test Plan & Strategy Package"
+  },
+  {
+   "start": "2026-11-02",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-11-06",
+   "completed_pct": 100,
+   "seq": 24,
+   "responsibility": "Truetech",
+   "no": "5.3",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 4,
+   "completed": "2026-11-10",
+   "status": "Completed",
+   "task": "Deployment to PQPOC Environment & Readiness Check"
+  },
+  {
+   "start": "2026-11-09",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-11-13",
+   "completed_pct": 90,
+   "seq": 25,
+   "responsibility": "Truetech / PQPOC",
+   "no": "5.4",
+   "note": "Functional updates are complete. Truetech will continue DNS and LDAP configuration in coordination with PQPOC IT.",
+   "level": "Task",
+   "weight_pct": 7,
+   "completed": null,
+   "status": "In Progress",
+   "task": "SIT Execution & Defect Resolution (0 Outstanding Critical/High Defects)"
+  },
+  {
+   "start": "2026-11-16",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-11-20",
+   "completed_pct": null,
+   "seq": 26,
+   "responsibility": "Truetech / PQPOC",
+   "no": "5.5",
+   "note": "Obtain formal SIT completion sign-off, subject to completion of system updates and verification.",
+   "level": "Task",
+   "weight_pct": 2,
+   "completed": null,
+   "status": "Not Started",
+   "task": "Formal SIT Completion Sign-off"
+  },
+  {
+   "start": null,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": null,
+   "completed_pct": 21.43,
+   "seq": 27,
+   "responsibility": null,
+   "no": "VI",
+   "note": null,
+   "level": "Phase",
+   "weight_pct": 14,
+   "completed": null,
+   "status": null,
+   "task": "TRAINING, USER ACCEPTANCE TESTING (UAT) & GO-LIVE"
+  },
+  {
+   "start": "2026-11-16",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-11-20",
+   "completed_pct": 100,
+   "seq": 28,
+   "responsibility": "Truetech",
+   "no": "6.1",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 3,
+   "completed": "2026-11-21",
+   "status": "Completed",
+   "task": "Training Materials Preparation"
+  },
+  {
+   "start": "2026-11-23",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-11-27",
+   "completed_pct": null,
+   "seq": 29,
+   "responsibility": "Truetech / PQPOC",
+   "no": "6.2",
+   "note": "Training is planned for the UAT period (30 Nov-4 Dec 2026)",
+   "level": "Task",
+   "weight_pct": 3,
+   "completed": null,
+   "status": "Not Started",
+   "task": "Pre-deployment Training for System Administrators & Key Users"
+  },
+  {
+   "start": "2026-11-30",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-12-04",
+   "completed_pct": null,
+   "seq": 30,
+   "responsibility": "PQPOC / Truetech",
+   "no": "6.3",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 4,
+   "completed": null,
+   "status": "Not Started",
+   "task": "User Acceptance Testing (UAT) Execution & Defect Resolution (0 Critical/High Defects)"
+  },
+  {
+   "start": "2026-12-07",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-12-08",
+   "completed_pct": null,
+   "seq": 31,
+   "responsibility": "PQPOC",
+   "no": "6.4",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 1,
+   "completed": null,
+   "status": "Not Started",
+   "task": "Formal UAT Sign-off Approval"
+  },
+  {
+   "start": "2026-12-09",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-12-10",
+   "completed_pct": null,
+   "seq": 32,
+   "responsibility": "TrueTech / PQPOC",
+   "no": "6.5",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 2,
+   "completed": null,
+   "status": "Not Started",
+   "task": "Production Deployment"
+  },
+  {
+   "start": "2026-12-11",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-12-11",
+   "completed_pct": null,
+   "seq": 33,
+   "responsibility": "Truetech / PQPOC",
+   "no": "6.6",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 1,
+   "completed": null,
+   "status": "Not Started",
+   "task": "OFFICIAL SYSTEM GO-LIVE (End of 12-Week Target Timeline)"
+  },
+  {
+   "start": null,
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": null,
+   "completed_pct": 0,
+   "seq": 34,
+   "responsibility": null,
+   "no": "VII",
+   "note": null,
+   "level": "Phase",
+   "weight_pct": 8,
+   "completed": null,
+   "status": null,
+   "task": "HYPERCARE SUPPORT, FINAL ACCEPTANCE & WARRANTY"
+  },
+  {
+   "start": "2026-12-12",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2027-01-08",
+   "completed_pct": null,
+   "seq": 35,
+   "responsibility": "Truetech",
+   "no": "7.1",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 4,
+   "completed": null,
+   "status": "Not Started",
+   "task": "4-Week Hypercare Support Services (Onsite/Remote Operations)"
+  },
+  {
+   "start": "2026-12-18",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2026-12-27",
+   "completed_pct": null,
+   "seq": 36,
+   "responsibility": "Truetech",
+   "no": "7.2",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 1,
+   "completed": null,
+   "status": "Not Started",
+   "task": "Post-deployment Training"
+  },
+  {
+   "start": "2026-12-25",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2027-01-03",
+   "completed_pct": null,
+   "seq": 37,
+   "responsibility": "Truetech",
+   "no": "7.3",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 1,
+   "completed": null,
+   "status": "Not Started",
+   "task": "Final Documentation Handover"
+  },
+  {
+   "start": "2027-01-11",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2027-01-29",
+   "completed_pct": null,
+   "seq": 38,
+   "responsibility": "PQPOC",
+   "no": "7.4",
+   "note": null,
+   "level": "Task",
+   "weight_pct": 2,
+   "completed": null,
+   "status": "Not Started",
+   "task": "Issuance of Final Certificate of Acceptance (within 15 working days)"
+  },
+  {
+   "start": "2027-01-11",
+   "report": "EDMS-WR-TT-PQPOC-009",
+   "end": "2030-02-28",
+   "completed_pct": null,
+   "seq": 39,
+   "responsibility": "Truetech",
+   "no": "7.5",
+   "note": null,
+   "level": "Task",
+   "weight_pct": null,
+   "completed": null,
+   "status": "Not Started",
+   "task": "Support & Maintenance Services Period (Effective until Feb 28, 2030)"
   }
  ],
  "edms_reports": [
@@ -10516,6 +11162,15 @@
    "period_to": "2026-11-14",
    "period_from": "2026-11-09",
    "doc_no": "EDMS-WR-TT-PQPOC-008"
+  },
+  {
+   "contractor": "True Technology Company Ltd.",
+   "overall_pct": 73.7,
+   "project": "EDMS PORTAL IMPLEMENTATION UNDER ADDENDUM NO 01",
+   "contract": "Contract Addendum No. 01 to Contract No. 3100000176",
+   "period_to": "2026-11-21",
+   "period_from": "2026-11-16",
+   "doc_no": "EDMS-WR-TT-PQPOC-009"
   }
  ],
  "meta": [
@@ -10533,6 +11188,6 @@
    "classification": "Internal"
   }
  ],
- "_updated_at": "2026-11-16T01:12:00.000Z",
+ "_updated_at": "2026-11-26T06:32:00.000Z",
  "_source": "notion"
 }
