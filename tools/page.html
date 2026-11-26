@@ -489,6 +489,7 @@
 .ops-ed-weeks .g { font-size: 11px; font-weight: 600; color: var(--acc); }
 .ops-ed-weeks .a { font-weight: 600; color: var(--color-fg); }
 .ops-ed-weeks .m { color: var(--color-fg-muted); }
+.ops-ed-weeks .n { color: var(--color-fg-muted); font-style: italic; padding: 4px 8px; border-radius: 8px; background: color-mix(in srgb, var(--acc) 7%, transparent); }
 .ops-ed-st { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 650; white-space: nowrap; color: var(--color-fg-muted); background: color-mix(in srgb, var(--color-fg-muted) 12%, transparent); }
 .ops-ed-st.done { color: var(--color-ok); background: color-mix(in srgb, var(--color-ok) 13%, transparent); }
 .ops-ed-st.prog { color: var(--acc); background: color-mix(in srgb, var(--acc) 14%, transparent); }
@@ -2550,6 +2551,7 @@ function drawEdms() {
       if (x.group) top.append(H.el('span', 'g', x.group));
       if (x.status) { const s = ED_ST[x.status]; top.append(H.el('span', 'ops-ed-st ' + (s ? s[0] : ''), s ? L(s[1], s[2]) : x.status)); }
       li.append(top, H.el('div', 'a', x.activity), H.el('div', 'm', [x.responsibility, x.date ? H.fmtDay(H.day(x.date)) : null].filter(Boolean).join(' · ')));
+      if (x.note) li.append(H.el('div', 'n', x.note));
       ol.append(li);
     });
     col.append(ol); return col;
