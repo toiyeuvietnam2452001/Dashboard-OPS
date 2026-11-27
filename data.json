@@ -1,4 +1,83 @@
 {
+ "cbta": [
+  {
+   "ojt_modules": 11,
+   "theory_pct": 6.25,
+   "developing": 0,
+   "review": 0,
+   "completed": 11,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 11,
+   "team": "Deck crew"
+  },
+  {
+   "ojt_modules": 39,
+   "theory_pct": 7.85,
+   "developing": 1,
+   "review": null,
+   "completed": 35,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 39,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 38,
+   "theory_pct": 1.48,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 38,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 36,
+   "theory_pct": 3.87,
+   "developing": 6,
+   "review": 1,
+   "completed": 27,
+   "ojt_pct": 0,
+   "platform": "CPP",
+   "modules": 36,
+   "team": "P&P"
+  },
+  {
+   "ojt_modules": 35,
+   "theory_pct": 0,
+   "developing": 2,
+   "review": 2,
+   "completed": 20,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 24,
+   "team": "E&I"
+  },
+  {
+   "ojt_modules": 31,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 1,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 22,
+   "team": "M&R"
+  },
+  {
+   "ojt_modules": 29,
+   "theory_pct": 0,
+   "developing": 0,
+   "review": 0,
+   "completed": 21,
+   "ojt_pct": 0,
+   "platform": "WHP",
+   "modules": 21,
+   "team": "P&P"
+  }
+ ],
  "staffing": [
   {
    "filled": 47,
@@ -558,85 +637,6 @@
    "month": "2028-12"
   }
  ],
- "cbta": [
-  {
-   "ojt_modules": 11,
-   "theory_pct": 6.25,
-   "developing": 0,
-   "review": 0,
-   "completed": 11,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 11,
-   "team": "Deck crew"
-  },
-  {
-   "ojt_modules": 39,
-   "theory_pct": 7.85,
-   "developing": 1,
-   "review": null,
-   "completed": 35,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 39,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 38,
-   "theory_pct": 1.48,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 38,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 36,
-   "theory_pct": 3.87,
-   "developing": 6,
-   "review": 1,
-   "completed": 27,
-   "ojt_pct": 0,
-   "platform": "CPP",
-   "modules": 36,
-   "team": "P&P"
-  },
-  {
-   "ojt_modules": 35,
-   "theory_pct": 0,
-   "developing": 2,
-   "review": 2,
-   "completed": 20,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 24,
-   "team": "E&I"
-  },
-  {
-   "ojt_modules": 31,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 1,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 22,
-   "team": "M&R"
-  },
-  {
-   "ojt_modules": 29,
-   "theory_pct": 0,
-   "developing": 0,
-   "review": 0,
-   "completed": 21,
-   "ojt_pct": 0,
-   "platform": "WHP",
-   "modules": 21,
-   "team": "P&P"
-  }
- ],
  "mandatory": [
   {
    "planned": 72,
@@ -673,84 +673,6 @@
    "balance": 96,
    "earned": 146,
    "team": "WHP team"
-  }
- ],
- "vendor_training": [
-  {
-   "period": "2026-09",
-   "course": "ICSS – EPCI#2"
-  },
-  {
-   "period": "2026-10",
-   "course": "Asset Integrity Management"
-  },
-  {
-   "period": "2026-10",
-   "course": "E-house"
-  },
-  {
-   "period": "2026-10",
-   "course": "Gas Conditioning and Processing – G-4"
-  },
-  {
-   "period": "2026-11",
-   "course": "Gas Purification Technology: Mercury Removal"
-  },
-  {
-   "period": "2026-11",
-   "course": "ICSS – EPCI#1"
-  },
-  {
-   "period": "2026-12",
-   "course": "E-house"
-  },
-  {
-   "period": "2026-12",
-   "course": "ICSS – EPCI#1"
-  },
-  {
-   "period": "2027-01",
-   "course": "Telecom System (CPC0-TEL001)"
-  },
-  {
-   "period": "2027-03",
-   "course": "HVAC system (MEL 41 – HVAC)"
-  },
-  {
-   "period": "2027-04",
-   "course": "Analyser – Water in Oil & Gas Chromatography (CPC0-ICS017)"
-  },
-  {
-   "period": "2027-04",
-   "course": "Mark CS O&M"
-  },
-  {
-   "period": "2027-05",
-   "course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)"
-  },
-  {
-   "period": "2027-05",
-   "course": "Metering Skid (CPPT-ICS001)"
-  },
-  {
-   "period": "2027-11",
-   "course": "ECPI#2 – Gas booster compressor"
-  },
-  {
-   "period": "2027-12",
-   "course": "EDG (CLQU-MEC005)"
-  },
-  {
-   "period": "2028",
-   "course": "Gas Turbine Generator (GTG, MER 02)"
-  },
-  {
-   "period": "2028",
-   "course": "Turbo Expander (CPPT-MEC003)"
-  },
-  {
-   "period": "2028",
-   "course": "Vapour Recovery Compressor (CPPT-MEC005)"
   }
  ],
  "orr_teams": [
@@ -834,6 +756,106 @@
    "plan_pct": 60.6,
    "plan_end_pct": 99,
    "team": "Production Eng"
+  }
+ ],
+ "vendor_training": [
+  {
+   "period": "2026-09",
+   "course": "ICSS – EPCI#2"
+  },
+  {
+   "period": "2026-10",
+   "course": "Asset Integrity Management"
+  },
+  {
+   "period": "2026-10",
+   "course": "E-house"
+  },
+  {
+   "period": "2026-10",
+   "course": "Gas Conditioning and Processing – G-4"
+  },
+  {
+   "period": "2026-11",
+   "course": "Gas Purification Technology: Mercury Removal"
+  },
+  {
+   "period": "2026-11",
+   "course": "ICSS – EPCI#1"
+  },
+  {
+   "period": "2026-12",
+   "course": "E-house"
+  },
+  {
+   "period": "2026-12",
+   "course": "ICSS – EPCI#1"
+  },
+  {
+   "period": "2027-01",
+   "course": "Telecom System (CPC0-TEL001)"
+  },
+  {
+   "period": "2027-03",
+   "course": "HVAC system (MEL 41 – HVAC)"
+  },
+  {
+   "period": "2027-04",
+   "course": "Analyser – Water in Oil & Gas Chromatography (CPC0-ICS017)"
+  },
+  {
+   "period": "2027-04",
+   "course": "Mark CS O&M"
+  },
+  {
+   "period": "2027-05",
+   "course": "Analyser – Moisture & Reid Vapor (CPC0-ICS031)"
+  },
+  {
+   "period": "2027-05",
+   "course": "Metering Skid (CPPT-ICS001)"
+  },
+  {
+   "period": "2027-11",
+   "course": "ECPI#2 – Gas booster compressor"
+  },
+  {
+   "period": "2027-12",
+   "course": "EDG (CLQU-MEC005)"
+  },
+  {
+   "period": "2028",
+   "course": "Gas Turbine Generator (GTG, MER 02)"
+  },
+  {
+   "period": "2028",
+   "course": "Turbo Expander (CPPT-MEC003)"
+  },
+  {
+   "period": "2028",
+   "course": "Vapour Recovery Compressor (CPPT-MEC005)"
+  }
+ ],
+ "orr_groups": [
+  {
+   "progress_pct": 66.3,
+   "items": 48,
+   "group": "PEOPLE"
+  },
+  {
+   "progress_pct": 61.4,
+   "items": 60,
+   "group": "PLANT"
+  },
+  {
+   "progress_pct": 66,
+   "items": 590,
+   "group": "PROCESS"
+  },
+  {
+   "progress_pct": 65.6,
+   "items": 698,
+   "group": "TOTAL"
   }
  ],
  "orr_elements": [
@@ -1004,28 +1026,6 @@
    "element": "Design, Engineering, Operability & Maintainability Assurance",
    "group": "PROCESS",
    "code": "PR-14"
-  }
- ],
- "orr_groups": [
-  {
-   "progress_pct": 66.3,
-   "items": 48,
-   "group": "PEOPLE"
-  },
-  {
-   "progress_pct": 61.4,
-   "items": 60,
-   "group": "PLANT"
-  },
-  {
-   "progress_pct": 66,
-   "items": 590,
-   "group": "PROCESS"
-  },
-  {
-   "progress_pct": 65.6,
-   "items": 698,
-   "group": "TOTAL"
   }
  ],
  "orr_curve": [
@@ -1957,18 +1957,6 @@
    "document": "Pressure cylinder management Procedure"
   }
  ],
- "cmms": [
-  {
-   "actual_pct": 82.11,
-   "plan_pct": 85,
-   "package": "EPCI#2"
-  },
-  {
-   "actual_pct": 41.58,
-   "plan_pct": 42.3,
-   "package": "EPCI#1"
-  }
- ],
  "workstreams": [
   {
    "area": "Manpower",
@@ -2083,6 +2071,18 @@
    "status": "Findings -> Punch list -> Close out.",
    "no": "10.1",
    "item": "Offshore preservation"
+  }
+ ],
+ "cmms": [
+  {
+   "actual_pct": 82.11,
+   "plan_pct": 85,
+   "package": "EPCI#2"
+  },
+  {
+   "actual_pct": 41.58,
+   "plan_pct": 42.3,
+   "package": "EPCI#1"
   }
  ],
  "permits": [
@@ -3383,64 +3383,6 @@
    "permit": "Fire Protection Approval (PCCC)"
   }
  ],
- "readiness": [
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 1,
-   "area": "Manpower"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 2,
-   "area": "Training & Competence"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 3,
-   "area": "ORR Checklist"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 4,
-   "area": "Procedures"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 5,
-   "area": "Contracts & Procurement"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 6,
-   "area": "Permits & Licences"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 7,
-   "area": "Applications & Systems"
-  },
-  {
-   "owner": null,
-   "comment": null,
-   "status_override": null,
-   "order": 8,
-   "area": "Commissioning & Start-up"
-  }
- ],
  "startup_sequence": [
   {
    "action": "Dewater and purge export gas pipelines; purge process systems; start LQ emergency DG for power; start LQ air compressor",
@@ -3511,6 +3453,64 @@
    "action": "Condensate to stabilizer in circulation (VRU recycle at turndown), export to FSO when on spec; produced water injected into AQWA wells if on spec, off-spec to FSO",
    "step": 14,
    "phase": "Condensate & PW"
+  }
+ ],
+ "readiness": [
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 1,
+   "area": "Manpower"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 2,
+   "area": "Training & Competence"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 3,
+   "area": "ORR Checklist"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 4,
+   "area": "Procedures"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 5,
+   "area": "Contracts & Procurement"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 6,
+   "area": "Permits & Licences"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 7,
+   "area": "Applications & Systems"
+  },
+  {
+   "owner": null,
+   "comment": null,
+   "status_override": null,
+   "order": 8,
+   "area": "Commissioning & Start-up"
   }
  ],
  "precom_plan": [
@@ -3681,6 +3681,678 @@
    "actual_date": null,
    "order": 5,
    "milestone": "First Gas (sales gas)"
+  }
+ ],
+ "cbta_modules": [
+  {
+   "no": 1,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-01",
+   "module": "WHP Process and Facilities Overview"
+  },
+  {
+   "no": 2,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-02",
+   "module": "Wellheads, Manifolds and Test Separator System"
+  },
+  {
+   "no": 3,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-03",
+   "module": "Gas Process, Receiving and Export System"
+  },
+  {
+   "no": 4,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-04",
+   "module": "Gas Booster Compresor System"
+  },
+  {
+   "no": 5,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-05",
+   "module": "Water Injection System"
+  },
+  {
+   "no": 6,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-06",
+   "module": "Gas Analyzer System"
+  },
+  {
+   "no": 7,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-07",
+   "module": "WHCP and HPU System"
+  },
+  {
+   "no": 8,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-08",
+   "module": "Vent System"
+  },
+  {
+   "no": 9,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-09",
+   "module": "Drain System"
+  },
+  {
+   "no": 10,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Process CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-10",
+   "module": "Chemical Injection System"
+  },
+  {
+   "no": 11,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Utility CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-11",
+   "module": "Utility and Instrument Air System"
+  },
+  {
+   "no": 12,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Utility CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-12",
+   "module": "Utility and Instrument Gas System"
+  },
+  {
+   "no": 13,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Utility CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-13",
+   "module": "Diesel Storage and Distribution"
+  },
+  {
+   "no": 14,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "Utility CBTA",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-14",
+   "module": "Utility Fresh Water And Sanitary System"
+  },
+  {
+   "no": 15,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-15",
+   "module": "Process Control System"
+  },
+  {
+   "no": 16,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-16",
+   "module": "Communication And Surveillance System"
+  },
+  {
+   "no": 17,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-17",
+   "module": "Emergency Shutdown System"
+  },
+  {
+   "no": 18,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-18",
+   "module": "Platform Control Shutdown"
+  },
+  {
+   "no": 19,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-19",
+   "module": "Platform Start Up"
+  },
+  {
+   "no": 20,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-20",
+   "module": "SIMOP for P&P"
+  },
+  {
+   "no": 21,
+   "status": "Completed",
+   "team": "P&P",
+   "developer": "HOANGPD",
+   "platform": "WHP",
+   "area": "ESD, F&G, Control, Communication",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-21",
+   "module": "Emergency Response"
+  },
+  {
+   "no": 1,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-01",
+   "module": "Hazardous Area Classification"
+  },
+  {
+   "no": 2,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-02",
+   "module": "Electrical Safety"
+  },
+  {
+   "no": 3,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "ICSS System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-03",
+   "module": "ICSS System Overview"
+  },
+  {
+   "no": 4,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "ICSS System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-04",
+   "module": "ICSS Software System"
+  },
+  {
+   "no": 5,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "ICSS System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-05",
+   "module": "ICSS Hardware System and Communication Network"
+  },
+  {
+   "no": 6,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-06",
+   "module": "Electrical System Overview"
+  },
+  {
+   "no": 7,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-07",
+   "module": "Diesel Engine Generator"
+  },
+  {
+   "no": 8,
+   "status": null,
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-08",
+   "module": "Gas Engine Generator"
+  },
+  {
+   "no": 9,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-09",
+   "module": "Electrical Black Start"
+  },
+  {
+   "no": 10,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-10",
+   "module": "Navigation Aid and Fog Horn System"
+  },
+  {
+   "no": 11,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-11",
+   "module": "LV Switchgear and Distribution system"
+  },
+  {
+   "no": 12,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Electrical System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-12",
+   "module": "24VDC UPS System"
+  },
+  {
+   "no": 13,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-13",
+   "module": "WHCP and HPU System"
+  },
+  {
+   "no": 14,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-14",
+   "module": "Choke, SDV, Control Valve"
+  },
+  {
+   "no": 15,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-15",
+   "module": "Fire & Gas System"
+  },
+  {
+   "no": 16,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-16",
+   "module": "Level/Pressure/Temperature and Flow Meter Transmitters"
+  },
+  {
+   "no": 17,
+   "status": "Review & Approval",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-17",
+   "module": "Emergency Shutdown System"
+  },
+  {
+   "no": 18,
+   "status": "Completed",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Instrument System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-18",
+   "module": "Utility and Instrument Gas System"
+  },
+  {
+   "no": 19,
+   "status": "Developing",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Telecom System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-19",
+   "module": "Telecom System Overview"
+  },
+  {
+   "no": 20,
+   "status": "Developing",
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Telecom System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-20",
+   "module": "Communication, CCTV And Surveillance System"
+  },
+  {
+   "no": 21,
+   "status": null,
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Package Maintenance",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-21",
+   "module": "Gas Booster Compressor Maintenance"
+  },
+  {
+   "no": 22,
+   "status": null,
+   "team": "E&I",
+   "developer": "NIN NH",
+   "platform": "WHP",
+   "area": "Package Maintenance",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-22",
+   "module": "Crane Maintenance"
+  },
+  {
+   "no": 23,
+   "status": "Review & Approval",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Package Maintenance",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-23",
+   "module": "Gas Chromatograph System"
+  },
+  {
+   "no": 24,
+   "status": "Review & Approval",
+   "team": "E&I",
+   "developer": "QUYNH NH",
+   "platform": "WHP",
+   "area": "Package Maintenance",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-24",
+   "module": "AQWA PAGA System"
+  },
+  {
+   "no": 1,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-01",
+   "module": "Spool- Flanges, Bolts, Fittings and Gaskets"
+  },
+  {
+   "no": 2,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-02",
+   "module": "Lubrication Fundamental"
+  },
+  {
+   "no": 3,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-03",
+   "module": "Mechanical Measuring Tools"
+  },
+  {
+   "no": 4,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-04",
+   "module": "Coupling Aligment"
+  },
+  {
+   "no": 5,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-05",
+   "module": "Filters"
+  },
+  {
+   "no": 6,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-06",
+   "module": "Power Tooling"
+  },
+  {
+   "no": 7,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-07",
+   "module": "Valves Operation and Maintenance"
+  },
+  {
+   "no": 8,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-08",
+   "module": "Pressure Safety Valve"
+  },
+  {
+   "no": 9,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "General",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-09",
+   "module": "Choke Valve"
+  },
+  {
+   "no": 10,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-10",
+   "module": "Portable Water System"
+  },
+  {
+   "no": 11,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-11",
+   "module": "Diesel Storage and Distribution"
+  },
+  {
+   "no": 12,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-12",
+   "module": "Safety Equipment"
+  },
+  {
+   "no": 13,
+   "status": "Review & Approval",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-13",
+   "module": "Chemical Storage and Distribution System"
+  },
+  {
+   "no": 14,
+   "status": "Developing",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Utility System",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-14",
+   "module": "Mechanical Handling System"
+  },
+  {
+   "no": 15,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-15",
+   "module": "Positive Displacement Pump"
+  },
+  {
+   "no": 16,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-16",
+   "module": "Diesel Engine Generator"
+  },
+  {
+   "no": 17,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-17",
+   "module": "Gas Engine Generator"
+  },
+  {
+   "no": 18,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-18",
+   "module": "Gas Booster Compressor"
+  },
+  {
+   "no": 19,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Rotating Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-19",
+   "module": "Cooling & Exhaust Fans"
+  },
+  {
+   "no": 20,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Static Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-20",
+   "module": "Air Fin Coolers"
+  },
+  {
+   "no": 21,
+   "status": "Completed",
+   "team": "M&R",
+   "developer": "QUANPH",
+   "platform": "WHP",
+   "area": "Static Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-21",
+   "module": "Drums & Vessels"
+  },
+  {
+   "no": 22,
+   "status": "Developing",
+   "team": "M&R",
+   "developer": "MINHCA",
+   "platform": "WHP",
+   "area": "Static Equipment",
+   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-22",
+   "module": "Pig Laucher/ Receiver"
   }
  ],
  "hse_matrix": [
@@ -5390,770 +6062,6 @@
    "course": "Electrical safety"
   }
  ],
- "cbta_modules": [
-  {
-   "no": 1,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-01",
-   "module": "WHP Process and Facilities Overview"
-  },
-  {
-   "no": 2,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-02",
-   "module": "Wellheads, Manifolds and Test Separator System"
-  },
-  {
-   "no": 3,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-03",
-   "module": "Gas Process, Receiving and Export System"
-  },
-  {
-   "no": 4,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-04",
-   "module": "Gas Booster Compresor System"
-  },
-  {
-   "no": 5,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-05",
-   "module": "Water Injection System"
-  },
-  {
-   "no": 6,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-06",
-   "module": "Gas Analyzer System"
-  },
-  {
-   "no": 7,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-07",
-   "module": "WHCP and HPU System"
-  },
-  {
-   "no": 8,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-08",
-   "module": "Vent System"
-  },
-  {
-   "no": 9,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-09",
-   "module": "Drain System"
-  },
-  {
-   "no": 10,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Process CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-10",
-   "module": "Chemical Injection System"
-  },
-  {
-   "no": 11,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Utility CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-11",
-   "module": "Utility and Instrument Air System"
-  },
-  {
-   "no": 12,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Utility CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-12",
-   "module": "Utility and Instrument Gas System"
-  },
-  {
-   "no": 13,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Utility CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-13",
-   "module": "Diesel Storage and Distribution"
-  },
-  {
-   "no": 14,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "Utility CBTA",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-14",
-   "module": "Utility Fresh Water And Sanitary System"
-  },
-  {
-   "no": 15,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-15",
-   "module": "Process Control System"
-  },
-  {
-   "no": 16,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-16",
-   "module": "Communication And Surveillance System"
-  },
-  {
-   "no": 17,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-17",
-   "module": "Emergency Shutdown System"
-  },
-  {
-   "no": 18,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-18",
-   "module": "Platform Control Shutdown"
-  },
-  {
-   "no": 19,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-19",
-   "module": "Platform Start Up"
-  },
-  {
-   "no": 20,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-20",
-   "module": "SIMOP for P&P"
-  },
-  {
-   "no": 21,
-   "status": "Completed",
-   "team": "P&P",
-   "developer": "HOANGPD",
-   "platform": "WHP",
-   "area": "ESD, F&G, Control, Communication",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00001-21",
-   "module": "Emergency Response"
-  },
-  {
-   "no": 1,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-01",
-   "module": "Hazardous Area Classification"
-  },
-  {
-   "no": 2,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-02",
-   "module": "Electrical Safety"
-  },
-  {
-   "no": 3,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "ICSS System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-03",
-   "module": "ICSS System Overview"
-  },
-  {
-   "no": 4,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "ICSS System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-04",
-   "module": "ICSS Software System"
-  },
-  {
-   "no": 5,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "ICSS System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-05",
-   "module": "ICSS Hardware System and Communication Network"
-  },
-  {
-   "no": 6,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-06",
-   "module": "Electrical System Overview"
-  },
-  {
-   "no": 7,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-07",
-   "module": "Diesel Engine Generator"
-  },
-  {
-   "no": 8,
-   "status": null,
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-08",
-   "module": "Gas Engine Generator"
-  },
-  {
-   "no": 9,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-09",
-   "module": "Electrical Black Start"
-  },
-  {
-   "no": 10,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-10",
-   "module": "Navigation Aid and Fog Horn System"
-  },
-  {
-   "no": 11,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-11",
-   "module": "LV Switchgear and Distribution system"
-  },
-  {
-   "no": 12,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Electrical System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-12",
-   "module": "24VDC UPS System"
-  },
-  {
-   "no": 13,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-13",
-   "module": "WHCP and HPU System"
-  },
-  {
-   "no": 14,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-14",
-   "module": "Choke, SDV, Control Valve"
-  },
-  {
-   "no": 15,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-15",
-   "module": "Fire & Gas System"
-  },
-  {
-   "no": 16,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-16",
-   "module": "Level/Pressure/Temperature and Flow Meter Transmitters"
-  },
-  {
-   "no": 17,
-   "status": "Review & Approval",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-17",
-   "module": "Emergency Shutdown System"
-  },
-  {
-   "no": 18,
-   "status": "Completed",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Instrument System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-18",
-   "module": "Utility and Instrument Gas System"
-  },
-  {
-   "no": 19,
-   "status": "Developing",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Telecom System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-19",
-   "module": "Telecom System Overview"
-  },
-  {
-   "no": 20,
-   "status": "Developing",
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Telecom System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-20",
-   "module": "Communication, CCTV And Surveillance System"
-  },
-  {
-   "no": 21,
-   "status": null,
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Package Maintenance",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-21",
-   "module": "Gas Booster Compressor Maintenance"
-  },
-  {
-   "no": 22,
-   "status": null,
-   "team": "E&I",
-   "developer": "NIN NH",
-   "platform": "WHP",
-   "area": "Package Maintenance",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-22",
-   "module": "Crane Maintenance"
-  },
-  {
-   "no": 23,
-   "status": "Review & Approval",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Package Maintenance",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-23",
-   "module": "Gas Chromatograph System"
-  },
-  {
-   "no": 24,
-   "status": "Review & Approval",
-   "team": "E&I",
-   "developer": "QUYNH NH",
-   "platform": "WHP",
-   "area": "Package Maintenance",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00002-24",
-   "module": "AQWA PAGA System"
-  },
-  {
-   "no": 1,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-01",
-   "module": "Spool- Flanges, Bolts, Fittings and Gaskets"
-  },
-  {
-   "no": 2,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-02",
-   "module": "Lubrication Fundamental"
-  },
-  {
-   "no": 3,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-03",
-   "module": "Mechanical Measuring Tools"
-  },
-  {
-   "no": 4,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-04",
-   "module": "Coupling Aligment"
-  },
-  {
-   "no": 5,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-05",
-   "module": "Filters"
-  },
-  {
-   "no": 6,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-06",
-   "module": "Power Tooling"
-  },
-  {
-   "no": 7,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-07",
-   "module": "Valves Operation and Maintenance"
-  },
-  {
-   "no": 8,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-08",
-   "module": "Pressure Safety Valve"
-  },
-  {
-   "no": 9,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "General",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-09",
-   "module": "Choke Valve"
-  },
-  {
-   "no": 10,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-10",
-   "module": "Portable Water System"
-  },
-  {
-   "no": 11,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-11",
-   "module": "Diesel Storage and Distribution"
-  },
-  {
-   "no": 12,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-12",
-   "module": "Safety Equipment"
-  },
-  {
-   "no": 13,
-   "status": "Review & Approval",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-13",
-   "module": "Chemical Storage and Distribution System"
-  },
-  {
-   "no": 14,
-   "status": "Developing",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Utility System",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-14",
-   "module": "Mechanical Handling System"
-  },
-  {
-   "no": 15,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-15",
-   "module": "Positive Displacement Pump"
-  },
-  {
-   "no": 16,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-16",
-   "module": "Diesel Engine Generator"
-  },
-  {
-   "no": 17,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-17",
-   "module": "Gas Engine Generator"
-  },
-  {
-   "no": 18,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-18",
-   "module": "Gas Booster Compressor"
-  },
-  {
-   "no": 19,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Rotating Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-19",
-   "module": "Cooling & Exhaust Fans"
-  },
-  {
-   "no": 20,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Static Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-20",
-   "module": "Air Fin Coolers"
-  },
-  {
-   "no": 21,
-   "status": "Completed",
-   "team": "M&R",
-   "developer": "QUANPH",
-   "platform": "WHP",
-   "area": "Static Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-21",
-   "module": "Drums & Vessels"
-  },
-  {
-   "no": 22,
-   "status": "Developing",
-   "team": "M&R",
-   "developer": "MINHCA",
-   "platform": "WHP",
-   "area": "Static Equipment",
-   "doc_no": "PQ-HWP0-OPS-TRN-PQC-00003-22",
-   "module": "Pig Laucher/ Receiver"
-  }
- ],
- "tender_schedule": [
-  {
-   "planned_date": "2026-10-13",
-   "actual_date": null,
-   "no": 1,
-   "duration_days": 5,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Tender Committee’s endorsement of CSP"
-  },
-  {
-   "planned_date": "2026-10-27",
-   "actual_date": null,
-   "no": 2,
-   "duration_days": 10,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Contractor Parties’ approval of Bidder List"
-  },
-  {
-   "planned_date": "2026-11-16",
-   "actual_date": null,
-   "no": 3,
-   "duration_days": 14,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "PETROVIETNAM’s approval of Bidder List and ITB"
-  },
-  {
-   "planned_date": "2026-11-16",
-   "actual_date": null,
-   "no": 4,
-   "duration_days": 0,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Bid Issuance"
-  },
-  {
-   "planned_date": "2026-12-30",
-   "actual_date": null,
-   "no": 5,
-   "duration_days": 30,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Bid Submission Deadline"
-  },
-  {
-   "planned_date": "2026-12-31",
-   "actual_date": null,
-   "no": 6,
-   "duration_days": 1,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Technical Bid Opening"
-  },
-  {
-   "planned_date": "2027-01-29",
-   "actual_date": null,
-   "no": 7,
-   "duration_days": 20,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Technical Evaluation"
-  },
-  {
-   "planned_date": "2027-02-03",
-   "actual_date": null,
-   "no": 8,
-   "duration_days": 3,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Tender Committee’s approval of Technical Evaluation Report"
-  },
-  {
-   "planned_date": "2027-02-11",
-   "actual_date": null,
-   "no": 9,
-   "duration_days": 1,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Commercial Bid Opening"
-  },
-  {
-   "planned_date": "2027-02-25",
-   "actual_date": null,
-   "no": 10,
-   "duration_days": 10,
-   "source_doc": "PQPOC.2026.18601",
-   "package": "Gói tàu",
-   "activity": "Commercial Evaluation"
-  }
- ],
  "orr_departments": [
   {
    "order": 1,
@@ -6286,6 +6194,98 @@
    "actual_pct": 66.3,
    "weight_pct": 100,
    "department": "TOTAL"
+  }
+ ],
+ "tender_schedule": [
+  {
+   "planned_date": "2026-10-13",
+   "actual_date": null,
+   "no": 1,
+   "duration_days": 5,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s endorsement of CSP"
+  },
+  {
+   "planned_date": "2026-10-27",
+   "actual_date": null,
+   "no": 2,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Contractor Parties’ approval of Bidder List"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 3,
+   "duration_days": 14,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "PETROVIETNAM’s approval of Bidder List and ITB"
+  },
+  {
+   "planned_date": "2026-11-16",
+   "actual_date": null,
+   "no": 4,
+   "duration_days": 0,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Issuance"
+  },
+  {
+   "planned_date": "2026-12-30",
+   "actual_date": null,
+   "no": 5,
+   "duration_days": 30,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Bid Submission Deadline"
+  },
+  {
+   "planned_date": "2026-12-31",
+   "actual_date": null,
+   "no": 6,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Bid Opening"
+  },
+  {
+   "planned_date": "2027-01-29",
+   "actual_date": null,
+   "no": 7,
+   "duration_days": 20,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Technical Evaluation"
+  },
+  {
+   "planned_date": "2027-02-03",
+   "actual_date": null,
+   "no": 8,
+   "duration_days": 3,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Tender Committee’s approval of Technical Evaluation Report"
+  },
+  {
+   "planned_date": "2027-02-11",
+   "actual_date": null,
+   "no": 9,
+   "duration_days": 1,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Bid Opening"
+  },
+  {
+   "planned_date": "2027-02-25",
+   "actual_date": null,
+   "no": 10,
+   "duration_days": 10,
+   "source_doc": "PQPOC.2026.18601",
+   "package": "Gói tàu",
+   "activity": "Commercial Evaluation"
   }
  ],
  "orr_team_plan": [
@@ -6776,6 +6776,294 @@
    "team": "Production OPS"
   }
  ],
+ "orr_risks": [
+  {
+   "resource": 2,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 241,
+   "interface": 2,
+   "new_activity_name": "Intergrated Plan",
+   "vendor": 1,
+   "activity": "OPS master schedule"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 332,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Operations Excellence Dashboard Updating Procedure"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 458,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Identify spares based on 2 year operations spares from Project and recommend by OPS"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 481,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Vendor training & roll out"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 491,
+   "interface": 2,
+   "new_activity_name": "Develop training system (HRIS)",
+   "vendor": 1,
+   "activity": "Training delivery"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": "Expedite POS to recruit personnel",
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 495,
+   "interface": 2,
+   "new_activity_name": "Recruitment offshore outsource manpower",
+   "vendor": 2,
+   "activity": "Review manpower contract and evaluate the performance"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 506,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Contractors Performance Review Meeting (Production, HSE, OPEX, and other milestone,...)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 511,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Incident reporting follow Incident investigation procedure (Incident Reporting and Investigation Procedure)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 515,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Internal and external audit program (PTW, IC, overside work, ..audit, Aviation fuel audit, ISO14001 audit,.....)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 522,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Implement preservation maintenance programme"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 524,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Develop Logistic Plan for commissioning Team (transfers to and from offshore)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
+   "avg_score": 1.6,
+   "scope": 1,
+   "contract": 1,
+   "item": 547,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 3,
+   "activity": "Additional Operating Spares to be purchased beyond Development purchased 2YOS"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 549,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "What monitoring equipment does Rig have and Safety Equipment"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 576,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "IT equipment"
+  },
+  {
+   "resource": 1,
+   "risk_status": "YELLOW",
+   "action_plan": "Study / lesson learnt from Thailand Field. Contact Potetial Vendor/Supplier",
+   "avg_score": 2,
+   "scope": 4,
+   "contract": 1,
+   "item": 582,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 2,
+   "activity": "Provision of chemical pigging services for pipeline"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 2,
+   "contract": 1,
+   "item": 610,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Provision of special PPE"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 631,
+   "interface": 2,
+   "new_activity_name": "Provision of Offshore Catering Services",
+   "vendor": 2,
+   "activity": "Catering contract Food/Drinking water/Fresh Water/cooking utensa…"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 632,
+   "interface": 2,
+   "new_activity_name": "Provision of Medical Services contract",
+   "vendor": 2,
+   "activity": "Provision of Offshore Medical Services"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.4,
+   "scope": 1,
+   "contract": 1,
+   "item": 649,
+   "interface": 2,
+   "new_activity_name": "2027+4 WPB",
+   "vendor": 2,
+   "activity": "Operations WP&B"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 651,
+   "interface": 2,
+   "new_activity_name": "Operations Coordination Procedure",
+   "vendor": 1,
+   "activity": "TOSA(Coordination procedure)"
+  },
+  {
+   "resource": null,
+   "risk_status": null,
+   "action_plan": null,
+   "avg_score": null,
+   "scope": null,
+   "contract": null,
+   "item": 681,
+   "interface": null,
+   "new_activity_name": null,
+   "vendor": null,
+   "activity": "Recruitment & Training  Coordination (base on training matrix)"
+  },
+  {
+   "resource": 1,
+   "risk_status": "GREEN",
+   "action_plan": null,
+   "avg_score": 1.2,
+   "scope": 1,
+   "contract": 1,
+   "item": 682,
+   "interface": 2,
+   "new_activity_name": null,
+   "vendor": 1,
+   "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
+  }
+ ],
  "contract_packages": [
   {
    "loa_required": null,
@@ -7166,294 +7454,6 @@
    "ros_required": "2027-06-01",
    "status": null,
    "package": "CMMS Replicator <Offshore Facility> (CMMS.REPA)"
-  }
- ],
- "orr_risks": [
-  {
-   "resource": 2,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 241,
-   "interface": 2,
-   "new_activity_name": "Intergrated Plan",
-   "vendor": 1,
-   "activity": "OPS master schedule"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 332,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Operations Excellence Dashboard Updating Procedure"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
-   "avg_score": 1.6,
-   "scope": 1,
-   "contract": 1,
-   "item": 458,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 3,
-   "activity": "Identify spares based on 2 year operations spares from Project and recommend by OPS"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 481,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Vendor training & roll out"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 2,
-   "contract": 1,
-   "item": 491,
-   "interface": 2,
-   "new_activity_name": "Develop training system (HRIS)",
-   "vendor": 1,
-   "activity": "Training delivery"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": "Expedite POS to recruit personnel",
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 495,
-   "interface": 2,
-   "new_activity_name": "Recruitment offshore outsource manpower",
-   "vendor": 2,
-   "activity": "Review manpower contract and evaluate the performance"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 506,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Contractors Performance Review Meeting (Production, HSE, OPEX, and other milestone,...)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 511,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Incident reporting follow Incident investigation procedure (Incident Reporting and Investigation Procedure)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 515,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Internal and external audit program (PTW, IC, overside work, ..audit, Aviation fuel audit, ISO14001 audit,.....)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 522,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Implement preservation maintenance programme"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 524,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Develop Logistic Plan for commissioning Team (transfers to and from offshore)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Coordinate with DEV to expedite Vendor feedback and confirmation",
-   "avg_score": 1.6,
-   "scope": 1,
-   "contract": 1,
-   "item": 547,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 3,
-   "activity": "Additional Operating Spares to be purchased beyond Development purchased 2YOS"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 549,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "What monitoring equipment does Rig have and Safety Equipment"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 576,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "IT equipment"
-  },
-  {
-   "resource": 1,
-   "risk_status": "YELLOW",
-   "action_plan": "Study / lesson learnt from Thailand Field. Contact Potetial Vendor/Supplier",
-   "avg_score": 2,
-   "scope": 4,
-   "contract": 1,
-   "item": 582,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 2,
-   "activity": "Provision of chemical pigging services for pipeline"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 2,
-   "contract": 1,
-   "item": 610,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Provision of special PPE"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 631,
-   "interface": 2,
-   "new_activity_name": "Provision of Offshore Catering Services",
-   "vendor": 2,
-   "activity": "Catering contract Food/Drinking water/Fresh Water/cooking utensa…"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 632,
-   "interface": 2,
-   "new_activity_name": "Provision of Medical Services contract",
-   "vendor": 2,
-   "activity": "Provision of Offshore Medical Services"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.4,
-   "scope": 1,
-   "contract": 1,
-   "item": 649,
-   "interface": 2,
-   "new_activity_name": "2027+4 WPB",
-   "vendor": 2,
-   "activity": "Operations WP&B"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 651,
-   "interface": 2,
-   "new_activity_name": "Operations Coordination Procedure",
-   "vendor": 1,
-   "activity": "TOSA(Coordination procedure)"
-  },
-  {
-   "resource": null,
-   "risk_status": null,
-   "action_plan": null,
-   "avg_score": null,
-   "scope": null,
-   "contract": null,
-   "item": 681,
-   "interface": null,
-   "new_activity_name": null,
-   "vendor": null,
-   "activity": "Recruitment & Training  Coordination (base on training matrix)"
-  },
-  {
-   "resource": 1,
-   "risk_status": "GREEN",
-   "action_plan": null,
-   "avg_score": 1.2,
-   "scope": 1,
-   "contract": 1,
-   "item": 682,
-   "interface": 2,
-   "new_activity_name": null,
-   "vendor": 1,
-   "activity": "Commercial Part of OPS Contracts(refer to Element 20)"
   }
  ],
  "manpower_groups": [
@@ -11175,8 +11175,8 @@
  ],
  "meta": [
   {
-   "report_date": "2026-11-27",
-   "as_of": "2026-11-27",
+   "report_date": "2026-11-28",
+   "as_of": "2026-11-28",
    "state": "open",
    "name": "Báo cáo OPS – cập nhật liên tục",
    "report_title": "Operations Readiness Preparation",
